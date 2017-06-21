@@ -82,6 +82,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F5BE2F51EFAA1040054C53F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4FE8FF3F1EF4FC0600D31840 /* ViewController.swift */,
+				4FE8FF721EF5095B00D31840 /* ImageViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		4F5BE2F61EFAA1170054C53F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4FE8FF701EF5000400D31840 /* Info.swift */,
+				4FE8FF6E1EF4FCC600D31840 /* NetworkingModel.swift */,
+				4FE8FF441EF4FC0600D31840 /* BCD.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		4F5BE2F71EFAA12B0054C53F /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				4FE8FF471EF4FC0600D31840 /* Assets.xcassets */,
+				4FE8FF491EF4FC0600D31840 /* LaunchScreen.storyboard */,
+				4FE8FF411EF4FC0600D31840 /* Main.storyboard */,
+			);
+			name = "User Interface";
+			sourceTree = "<group>";
+		};
+		4F5BE2F81EFAA13A0054C53F /* Ignore */ = {
+			isa = PBXGroup;
+			children = (
+				4FE8FF3D1EF4FC0600D31840 /* AppDelegate.swift */,
+				4FE8FF4C1EF4FC0600D31840 /* Info.plist */,
+			);
+			name = Ignore;
+			sourceTree = "<group>";
+		};
 		4FE8FF311EF4FC0600D31840 = {
 			isa = PBXGroup;
 			children = (
@@ -105,16 +143,10 @@
 		4FE8FF3C1EF4FC0600D31840 /* BCD */ = {
 			isa = PBXGroup;
 			children = (
-				4FE8FF3D1EF4FC0600D31840 /* AppDelegate.swift */,
-				4FE8FF3F1EF4FC0600D31840 /* ViewController.swift */,
-				4FE8FF411EF4FC0600D31840 /* Main.storyboard */,
-				4FE8FF471EF4FC0600D31840 /* Assets.xcassets */,
-				4FE8FF491EF4FC0600D31840 /* LaunchScreen.storyboard */,
-				4FE8FF4C1EF4FC0600D31840 /* Info.plist */,
-				4FE8FF441EF4FC0600D31840 /* BCD.xcdatamodeld */,
-				4FE8FF6E1EF4FCC600D31840 /* NetworkingModel.swift */,
-				4FE8FF701EF5000400D31840 /* Info.swift */,
-				4FE8FF721EF5095B00D31840 /* ImageViewController.swift */,
+				4F5BE2F81EFAA13A0054C53F /* Ignore */,
+				4F5BE2F71EFAA12B0054C53F /* User Interface */,
+				4F5BE2F61EFAA1170054C53F /* Model */,
+				4F5BE2F51EFAA1040054C53F /* ViewController */,
 			);
 			path = BCD;
 			sourceTree = "<group>";
@@ -532,6 +564,7 @@
 				4FE8FF671EF4FC0600D31840 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4FE8FF681EF4FC0600D31840 /* Build configuration list for PBXNativeTarget "BCDTests" */ = {
 			isa = XCConfigurationList;
@@ -540,6 +573,7 @@
 				4FE8FF6A1EF4FC0600D31840 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4FE8FF6B1EF4FC0600D31840 /* Build configuration list for PBXNativeTarget "BCDUITests" */ = {
 			isa = XCConfigurationList;
@@ -548,6 +582,7 @@
 				4FE8FF6D1EF4FC0600D31840 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
