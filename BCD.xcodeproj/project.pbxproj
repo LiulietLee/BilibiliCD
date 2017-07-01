@@ -237,7 +237,7 @@
 				TargetAttributes = {
 					4FE8FF391EF4FC0600D31840 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = LLAMDMVSAB;
+						DevelopmentTeam = ANB6MDJTLF;
 						ProvisioningStyle = Automatic;
 					};
 					4FE8FF501EF4FC0600D31840 = {
@@ -465,12 +465,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = LLAMDMVSAB;
+				DEVELOPMENT_TEAM = ANB6MDJTLF;
 				INFOPLIST_FILE = BCD/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Future-Code-Institute.BCD";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -478,12 +480,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = LLAMDMVSAB;
+				DEVELOPMENT_TEAM = ANB6MDJTLF;
 				INFOPLIST_FILE = BCD/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Future-Code-Institute.BCD";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
