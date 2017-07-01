@@ -12,12 +12,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var goButton: UIButton!
+    @IBOutlet weak var menu: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         goButton.isEnabled = false
         textField.delegate = self
         textField.becomeFirstResponder()
+        menu.target = self.revealViewController()
+        menu.action = #selector(revealViewController().revealToggle(_:))
+        self.view.addGestureRecognizer(revealViewController().panGestureRecognizer())
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

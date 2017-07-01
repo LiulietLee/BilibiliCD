@@ -52,6 +52,7 @@ class ImageViewController: UIViewController,NetworkingDelegate {
     
     func gotImage(image: UIImage) {
         imageView.image = image
+        downloadButton.isEnabled = true
     }
     
     func connectError() {

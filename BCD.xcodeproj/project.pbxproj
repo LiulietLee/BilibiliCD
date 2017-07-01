@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4FDA09381F07C22A0096866C /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDA09371F07C22A0096866C /* SWRevealViewController.m */; };
+		4FDA093B1F07C6FE0096866C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDA093A1F07C6FE0096866C /* DetailViewController.swift */; };
 		4FE8FF3E1EF4FC0600D31840 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF3D1EF4FC0600D31840 /* AppDelegate.swift */; };
 		4FE8FF401EF4FC0600D31840 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF3F1EF4FC0600D31840 /* ViewController.swift */; };
 		4FE8FF431EF4FC0600D31840 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FE8FF411EF4FC0600D31840 /* Main.storyboard */; };
@@ -38,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4FDA09351F07C22A0096866C /* BCD-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BCD-Bridging-Header.h"; sourceTree = "<group>"; };
+		4FDA09361F07C22A0096866C /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		4FDA09371F07C22A0096866C /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		4FDA093A1F07C6FE0096866C /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		4FE8FF3A1EF4FC0600D31840 /* BCD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BCD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FE8FF3D1EF4FC0600D31840 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FE8FF3F1EF4FC0600D31840 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +93,7 @@
 			children = (
 				4FE8FF3F1EF4FC0600D31840 /* ViewController.swift */,
 				4FE8FF721EF5095B00D31840 /* ImageViewController.swift */,
+				4FDA093A1F07C6FE0096866C /* DetailViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -104,6 +111,7 @@
 		4F5BE2F71EFAA12B0054C53F /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
+				4FDA09391F07C25C0096866C /* Material Design */,
 				4FE8FF471EF4FC0600D31840 /* Assets.xcassets */,
 				4FE8FF491EF4FC0600D31840 /* LaunchScreen.storyboard */,
 				4FE8FF411EF4FC0600D31840 /* Main.storyboard */,
@@ -111,13 +119,23 @@
 			name = "User Interface";
 			sourceTree = "<group>";
 		};
-		4F5BE2F81EFAA13A0054C53F /* Ignore */ = {
+		4F5BE2F81EFAA13A0054C53F /* Supporting File */ = {
 			isa = PBXGroup;
 			children = (
 				4FE8FF3D1EF4FC0600D31840 /* AppDelegate.swift */,
 				4FE8FF4C1EF4FC0600D31840 /* Info.plist */,
 			);
-			name = Ignore;
+			name = "Supporting File";
+			sourceTree = "<group>";
+		};
+		4FDA09391F07C25C0096866C /* Material Design */ = {
+			isa = PBXGroup;
+			children = (
+				4FDA09361F07C22A0096866C /* SWRevealViewController.h */,
+				4FDA09371F07C22A0096866C /* SWRevealViewController.m */,
+				4FDA09351F07C22A0096866C /* BCD-Bridging-Header.h */,
+			);
+			name = "Material Design";
 			sourceTree = "<group>";
 		};
 		4FE8FF311EF4FC0600D31840 = {
@@ -143,7 +161,7 @@
 		4FE8FF3C1EF4FC0600D31840 /* BCD */ = {
 			isa = PBXGroup;
 			children = (
-				4F5BE2F81EFAA13A0054C53F /* Ignore */,
+				4F5BE2F81EFAA13A0054C53F /* Supporting File */,
 				4F5BE2F71EFAA12B0054C53F /* User Interface */,
 				4F5BE2F61EFAA1170054C53F /* Model */,
 				4F5BE2F51EFAA1040054C53F /* ViewController */,
@@ -238,6 +256,7 @@
 					4FE8FF391EF4FC0600D31840 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = ANB6MDJTLF;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					4FE8FF501EF4FC0600D31840 = {
@@ -306,12 +325,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FDA09381F07C22A0096866C /* SWRevealViewController.m in Sources */,
 				4FE8FF401EF4FC0600D31840 /* ViewController.swift in Sources */,
 				4FE8FF711EF5000400D31840 /* Info.swift in Sources */,
 				4FE8FF6F1EF4FCC600D31840 /* NetworkingModel.swift in Sources */,
 				4FE8FF3E1EF4FC0600D31840 /* AppDelegate.swift in Sources */,
 				4FE8FF731EF5095B00D31840 /* ImageViewController.swift in Sources */,
 				4FE8FF461EF4FC0600D31840 /* BCD.xcdatamodeld in Sources */,
+				4FDA093B1F07C6FE0096866C /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,12 +486,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = ANB6MDJTLF;
 				INFOPLIST_FILE = BCD/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Future-Code-Institute.BCD";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BCD/BCD-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -480,12 +504,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = ANB6MDJTLF;
 				INFOPLIST_FILE = BCD/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Future-Code-Institute.BCD";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BCD/BCD-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
