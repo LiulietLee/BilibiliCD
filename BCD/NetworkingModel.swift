@@ -12,7 +12,6 @@ protocol NetworkingDelegate {
     func gotVideoInfo(info: Info)
     func gotImage(image: UIImage)
     func connectError()
-    func fetchingError()
 }
 
 class NetworkingModel {
@@ -47,13 +46,13 @@ class NetworkingModel {
                     } catch {
                         print("serialize error")
                         if let del = self.delegate {
-                            del.fetchingError()
+                            del.connectError()
                             self.getImageFromImageUrlPath(path: newInfo!.imageUrl!)
                         }
                     }
                 } else {
                     if let del = self.delegate {
-                        del.fetchingError()
+                        del.connectError()
                     }
                 }
             }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4FB3D95F1F08EE670043066B /* ImageSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB3D95E1F08EE670043066B /* ImageSegue.swift */; };
+		4FB3D9611F09DD9C0043066B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB3D9601F09DD9C0043066B /* LoadingView.swift */; };
 		4FDA09381F07C22A0096866C /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDA09371F07C22A0096866C /* SWRevealViewController.m */; };
 		4FDA093B1F07C6FE0096866C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDA093A1F07C6FE0096866C /* DetailViewController.swift */; };
 		4FE8FF3E1EF4FC0600D31840 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF3D1EF4FC0600D31840 /* AppDelegate.swift */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4FB3D95E1F08EE670043066B /* ImageSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSegue.swift; sourceTree = "<group>"; };
+		4FB3D9601F09DD9C0043066B /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		4FDA09351F07C22A0096866C /* BCD-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BCD-Bridging-Header.h"; sourceTree = "<group>"; };
 		4FDA09361F07C22A0096866C /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		4FDA09371F07C22A0096866C /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -115,6 +119,8 @@
 				4FE8FF471EF4FC0600D31840 /* Assets.xcassets */,
 				4FE8FF491EF4FC0600D31840 /* LaunchScreen.storyboard */,
 				4FE8FF411EF4FC0600D31840 /* Main.storyboard */,
+				4FB3D95E1F08EE670043066B /* ImageSegue.swift */,
+				4FB3D9601F09DD9C0043066B /* LoadingView.swift */,
 			);
 			name = "User Interface";
 			sourceTree = "<group>";
@@ -326,7 +332,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FDA09381F07C22A0096866C /* SWRevealViewController.m in Sources */,
+				4FB3D95F1F08EE670043066B /* ImageSegue.swift in Sources */,
 				4FE8FF401EF4FC0600D31840 /* ViewController.swift in Sources */,
+				4FB3D9611F09DD9C0043066B /* LoadingView.swift in Sources */,
 				4FE8FF711EF5000400D31840 /* Info.swift in Sources */,
 				4FE8FF6F1EF4FCC600D31840 /* NetworkingModel.swift in Sources */,
 				4FE8FF3E1EF4FC0600D31840 /* AppDelegate.swift in Sources */,

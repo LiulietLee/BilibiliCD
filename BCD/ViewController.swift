@@ -36,5 +36,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         return true
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "getImage" {
+            let vc = segue.destination as! ImageViewController
+            if let numText = textField.text {
+                let num = Int(numText)!
+                vc.avNum = num
+            }
+        }
+    }
+    
 }
 

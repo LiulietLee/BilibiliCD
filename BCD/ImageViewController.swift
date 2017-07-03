@@ -17,7 +17,8 @@ class ImageViewController: UIViewController,NetworkingDelegate {
     @IBOutlet weak var downloadButton: UIBarButtonItem!
 
     var avNum: Int?
-    let model = NetworkingModel()
+    fileprivate let model = NetworkingModel()
+    fileprivate let loadingView = LoadingView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,15 @@ class ImageViewController: UIViewController,NetworkingDelegate {
             print("No av number")
         }
         
+        titleLabel.text = ""
+        authorLabel.text = ""
+        urlLabel.text = ""
+        
         downloadButton.isEnabled = false
+        
+        loadingView.frame = view.bounds
+        view.addSubview(loadingView)
+        view.bringSubview(toFront: loadingView)
     }
     
     @IBAction func downloadButtonTapped(_ sender: UIBarButtonItem) {
@@ -53,24 +62,23 @@ class ImageViewController: UIViewController,NetworkingDelegate {
     func gotImage(image: UIImage) {
         imageView.image = image
         downloadButton.isEnabled = true
+        loadingView.dismiss()
     }
     
     func connectError() {
         print("Cannot connect\n")
-        titleLabel.text = "Cannot connect to server..."
-    }
-    
-    func fetchingError() {
-        print("Cannot fetch data\n")
-        titleLabel.text = "Cannot fetch data from server..."
+        titleLabel.text = "啊叻？"
+        authorLabel.text = "视频不见了？"
+        urlLabel.text = ""
+        loadingView.dismiss()
+        imageView.image = UIImage(named: "error_image")
     }
 
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
     }
 
 }
