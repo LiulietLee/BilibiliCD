@@ -18,6 +18,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         goButton.isEnabled = false
         textField.delegate = self
+        textField.layer.borderColor = UIColor.clear.cgColor
         textField.becomeFirstResponder()
         menu.target = self.revealViewController()
         menu.action = #selector(revealViewController().revealToggle(_:))

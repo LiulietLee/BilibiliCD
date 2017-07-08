@@ -88,8 +88,9 @@ class ImageViewController: UIViewController,NetworkingDelegate {
         enableButtons()
         
         titleLabel.text = info.title!
-        authorLabel.text = info.author!
+        authorLabel.text = "UP主：" + info.author!
         urlLabel.text = info.imageUrl!
+        urlLabel.sizeToFit()
     }
     
     func gotImage(image: UIImage) {
