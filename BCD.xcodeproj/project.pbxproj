@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F3ED7D41F10ACAB000D2941 /* LLDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3ED7D31F10ACAB000D2941 /* LLDialog.swift */; };
 		4FB3D95F1F08EE670043066B /* ImageSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB3D95E1F08EE670043066B /* ImageSegue.swift */; };
 		4FB3D9611F09DD9C0043066B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB3D9601F09DD9C0043066B /* LoadingView.swift */; };
 		4FDA09381F07C22A0096866C /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDA09371F07C22A0096866C /* SWRevealViewController.m */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F3ED7D31F10ACAB000D2941 /* LLDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLDialog.swift; sourceTree = "<group>"; };
 		4FB3D95E1F08EE670043066B /* ImageSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSegue.swift; sourceTree = "<group>"; };
 		4FB3D9601F09DD9C0043066B /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		4FDA09351F07C22A0096866C /* BCD-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BCD-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				4FDA09391F07C25C0096866C /* Material Design */,
 				4FE8FF471EF4FC0600D31840 /* Assets.xcassets */,
 				4FE8FF491EF4FC0600D31840 /* LaunchScreen.storyboard */,
+				4F3ED7D31F10ACAB000D2941 /* LLDialog.swift */,
 				4FE8FF411EF4FC0600D31840 /* Main.storyboard */,
 				4FB3D95E1F08EE670043066B /* ImageSegue.swift */,
 				4FB3D9601F09DD9C0043066B /* LoadingView.swift */,
@@ -333,6 +336,7 @@
 			files = (
 				4FDA09381F07C22A0096866C /* SWRevealViewController.m in Sources */,
 				4FB3D95F1F08EE670043066B /* ImageSegue.swift in Sources */,
+				4F3ED7D41F10ACAB000D2941 /* LLDialog.swift in Sources */,
 				4FE8FF401EF4FC0600D31840 /* ViewController.swift in Sources */,
 				4FB3D9611F09DD9C0043066B /* LoadingView.swift in Sources */,
 				4FE8FF711EF5000400D31840 /* Info.swift in Sources */,

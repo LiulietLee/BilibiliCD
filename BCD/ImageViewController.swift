@@ -15,10 +15,16 @@ class ImageViewController: UIViewController,NetworkingDelegate {
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var urlLabel: UILabel!
     @IBOutlet weak var downloadButton: UIBarButtonItem!
-
+    @IBOutlet weak var pushButton: UIButton!
+    
     var avNum: Int?
     fileprivate let model = NetworkingModel()
     fileprivate let loadingView = LoadingView()
+    fileprivate var image = UIImage() {
+        willSet {
+            imageView.image = newValue
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +42,7 @@ class ImageViewController: UIViewController,NetworkingDelegate {
         authorLabel.text = ""
         urlLabel.text = ""
         
-        downloadButton.isEnabled = false
+        disableButtons()
         
         loadingView.frame = view.bounds
         view.addSubview(loadingView)
@@ -44,15 +50,42 @@ class ImageViewController: UIViewController,NetworkingDelegate {
     }
     
     @IBAction func downloadButtonTapped(_ sender: UIBarButtonItem) {
-        
+        saveImage()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    
+    @objc fileprivate func saveImage() {
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(imageSavingFinished(_:didFinishSavingWithError:contextInfo:)), nil)
+    }
+    
+    @objc fileprivate func imageSavingFinished(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        let dialog = LLDialog()
+        if let error = error {
+            dialog.title = "啊叻？！"
+            dialog.message = "下载出错了Σ( ￣□￣||)"
+            dialog.setNegativeButton(withTitle: "好吧")
+            dialog.setPositiveButton(withTitle: "再试一次", target: self, action: #selector(saveImage))
+            dialog.show()
+            print(error)
+        } else {
+            dialog.title = "保存成功！"
+            dialog.message = "封面被成功保存(〜￣△￣)〜"
+            dialog.setPositiveButton(withTitle: "OK")
+            dialog.show()
+        }
+    }
+    
+    fileprivate func enableButtons() {
+        downloadButton.isEnabled = true
+        pushButton.isEnabled = true
+    }
+    
+    fileprivate func disableButtons() {
+        downloadButton.isEnabled = false
+        pushButton.isEnabled = false
     }
     
     func gotVideoInfo(info: Info) {
-        downloadButton.isEnabled = true
+        enableButtons()
         
         titleLabel.text = info.title!
         authorLabel.text = info.author!
@@ -61,7 +94,7 @@ class ImageViewController: UIViewController,NetworkingDelegate {
     
     func gotImage(image: UIImage) {
         imageView.image = image
-        downloadButton.isEnabled = true
+        enableButtons()
         loadingView.dismiss()
     }
     
@@ -78,7 +111,10 @@ class ImageViewController: UIViewController,NetworkingDelegate {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if segue.identifier == "segue" {
+            let vc = segue.destination as! DetailViewController
+            vc.image = image
+        }
     }
 
 }

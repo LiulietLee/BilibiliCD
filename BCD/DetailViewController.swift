@@ -39,6 +39,10 @@ class DetailViewController: UIViewController {
         sender.scale = 1.0
     }
     
+    @IBAction func goBackButtonTapped() {
+    
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -60,7 +60,7 @@
             </objects>
             <point key="canvasLocation" x="924" y="150"/>
         </scene>
-        <!--av number-->
+        <!--Image View Controller-->
         <scene sceneID="YLA-BA-Fka">
             <objects>
                 <viewController id="J1l-gt-L0q" customClass="ImageViewController" customModule="BCD" customModuleProvider="target" sceneMemberID="viewController">
@@ -90,7 +90,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="url link" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aci-Vb-666">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="url link" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aci-Vb-666">
                                 <rect key="frame" x="16" y="352.5" width="50" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -99,7 +99,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fjh-fO-3X6">
                                 <rect key="frame" x="16" y="72" width="343" height="214.5"/>
                                 <connections>
-                                    <segue destination="c48-nJ-AAz" kind="custom" identifier="segue" customClass="ImageSegue" customModule="BCD" customModuleProvider="target" id="jpk-Zu-PYG"/>
+                                    <segue destination="c48-nJ-AAz" kind="show" identifier="segue" action="showDetailViewController:sender:" id="jpk-Zu-PYG"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -123,8 +123,8 @@
                             <constraint firstItem="Fjh-fO-3X6" firstAttribute="leading" secondItem="13G-b0-rWc" secondAttribute="leadingMargin" id="yFx-Od-8Ic"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="av number" id="5Ou-hn-z2Q">
-                        <barButtonItem key="rightBarButtonItem" title="download" id="0oG-Vt-gM6">
+                    <navigationItem key="navigationItem" id="5Ou-hn-z2Q">
+                        <barButtonItem key="rightBarButtonItem" image="ic_file_download" id="0oG-Vt-gM6">
                             <connections>
                                 <action selector="downloadButtonTapped:" destination="J1l-gt-L0q" id="MLX-AS-MC9"/>
                             </connections>
@@ -134,6 +134,7 @@
                         <outlet property="authorLabel" destination="odB-KX-ctA" id="jVD-uh-FZZ"/>
                         <outlet property="downloadButton" destination="0oG-Vt-gM6" id="A8A-pY-jCw"/>
                         <outlet property="imageView" destination="Zsa-yu-und" id="ULy-o4-fq7"/>
+                        <outlet property="pushButton" destination="Fjh-fO-3X6" id="eUZ-th-yGD"/>
                         <outlet property="titleLabel" destination="FLk-Ji-R8x" id="w7n-fL-1RN"/>
                         <outlet property="urlLabel" destination="Aci-Vb-666" id="HW4-eP-VTW"/>
                     </connections>
@@ -160,17 +161,11 @@
                                     <constraint firstAttribute="width" secondItem="BB4-Rm-pPw" secondAttribute="height" multiplier="8:5" id="I7z-kL-keP"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9oR-Fl-ry5">
-                                <rect key="frame" x="313" y="20" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="BB4-Rm-pPw" firstAttribute="centerY" secondItem="R1a-R9-uef" secondAttribute="centerY" id="G1u-Ul-ixo"/>
-                            <constraint firstItem="9oR-Fl-ry5" firstAttribute="top" secondItem="Qz3-tw-mPa" secondAttribute="bottom" id="Qnb-uo-9N7"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="9oR-Fl-ry5" secondAttribute="trailing" id="Ram-02-cCn"/>
                             <constraint firstItem="BB4-Rm-pPw" firstAttribute="centerX" secondItem="R1a-R9-uef" secondAttribute="centerX" id="Rfw-mt-uoM"/>
                             <constraint firstItem="BB4-Rm-pPw" firstAttribute="width" secondItem="R1a-R9-uef" secondAttribute="width" id="zsQ-hj-1aQ"/>
                         </constraints>
@@ -271,6 +266,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_file_download" width="24" height="24"/>
         <image name="ic_menu" width="24" height="24"/>
     </resources>
 </document>
