@@ -36,6 +36,8 @@ class DetailViewController: UIViewController {
 
     @IBAction func zoom(_ sender: UIPinchGestureRecognizer) {
         widthConstraint.constant *= sender.scale
+        xConstraint.constant *= sender.scale
+        yConstraint.constant *= sender.scale
         sender.scale = 1.0
     }
     

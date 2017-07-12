@@ -16,7 +16,7 @@
 		4F3ED7D41F10ACAB000D2941 /* LLDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3ED7D31F10ACAB000D2941 /* LLDialog.swift */; };
 		4F4157A21F1331000042FF40 /* SourceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4157A11F1331000042FF40 /* SourceTableViewController.swift */; };
 		4F4157A41F134B880042FF40 /* TeaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4157A31F134B880042FF40 /* TeaViewController.swift */; };
-		4F4157A61F134B940042FF40 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4157A51F134B940042FF40 /* AboutViewController.swift */; };
+		4F9B213F1F16187000D3BDD2 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9B213E1F16187000D3BDD2 /* AboutViewController.swift */; };
 		4F9BBEA21F11102000C984DA /* MKCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9BBE951F11102000C984DA /* MKCardView.swift */; };
 		4F9BBEA31F11102000C984DA /* MKNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9BBE961F11102000C984DA /* MKNavigationBar.swift */; };
 		4F9BBEA41F11102000C984DA /* MKActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9BBE971F11102000C984DA /* MKActivityIndicator.swift */; };
@@ -75,7 +75,7 @@
 		4F3ED7D31F10ACAB000D2941 /* LLDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLDialog.swift; sourceTree = "<group>"; };
 		4F4157A11F1331000042FF40 /* SourceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceTableViewController.swift; sourceTree = "<group>"; };
 		4F4157A31F134B880042FF40 /* TeaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeaViewController.swift; sourceTree = "<group>"; };
-		4F4157A51F134B940042FF40 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		4F9B213E1F16187000D3BDD2 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		4F9BBE951F11102000C984DA /* MKCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKCardView.swift; sourceTree = "<group>"; };
 		4F9BBE961F11102000C984DA /* MKNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKNavigationBar.swift; sourceTree = "<group>"; };
 		4F9BBE971F11102000C984DA /* MKActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKActivityIndicator.swift; sourceTree = "<group>"; };
@@ -144,9 +144,9 @@
 				4FE8FF3F1EF4FC0600D31840 /* ViewController.swift */,
 				4FE8FF721EF5095B00D31840 /* ImageViewController.swift */,
 				4FDA093A1F07C6FE0096866C /* DetailViewController.swift */,
+				4F9B213E1F16187000D3BDD2 /* AboutViewController.swift */,
 				4F4157A11F1331000042FF40 /* SourceTableViewController.swift */,
 				4F4157A31F134B880042FF40 /* TeaViewController.swift */,
-				4F4157A51F134B940042FF40 /* AboutViewController.swift */,
 				4F26AA801F14D32400E1123D /* ColoredNavController.swift */,
 				4F26AA7E1F14D2B000E1123D /* BlueNavController.swift */,
 				4F26AA821F14D3D400E1123D /* SakuraNavController.swift */,
@@ -424,12 +424,12 @@
 				4FE8FF3E1EF4FC0600D31840 /* AppDelegate.swift in Sources */,
 				4F9BBEA21F11102000C984DA /* MKCardView.swift in Sources */,
 				4F9BBEAE1F11102000C984DA /* MKSwitch.swift in Sources */,
+				4F9B213F1F16187000D3BDD2 /* AboutViewController.swift in Sources */,
 				4FE8FF731EF5095B00D31840 /* ImageViewController.swift in Sources */,
 				4F07B1CD1F139A8D0009F6A1 /* SWRevealViewController.m in Sources */,
 				4F9BBEB01F1112D000C984DA /* MenuCell.swift in Sources */,
 				4F26AA7F1F14D2B000E1123D /* BlueNavController.swift in Sources */,
 				4F9BBEA51F11102000C984DA /* MKButton.swift in Sources */,
-				4F4157A61F134B940042FF40 /* AboutViewController.swift in Sources */,
 				4FE8FF461EF4FC0600D31840 /* BCD.xcdatamodeld in Sources */,
 				4F26AA811F14D32400E1123D /* ColoredNavController.swift in Sources */,
 				4FDA093B1F07C6FE0096866C /* DetailViewController.swift in Sources */,
