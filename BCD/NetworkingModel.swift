@@ -22,7 +22,7 @@ class NetworkingModel {
     open func getInfoFromAvNumber(avNum: Int) {
         var newInfo: Info?
         
-        let path = "https://www.bilibili.com/video/av" + String(avNum)
+        let path = "https://protected-woodland-39232.herokuapp.com/video/ios/" + String(avNum) + "/"
         let url = URL(string: path)
         let request = URLRequest(url: url!)
         let task = session.dataTask(with: request) { (data, response, error) in
@@ -32,27 +32,33 @@ class NetworkingModel {
                     del.connectError()
                 }
             } else {
-                if let content = data {
-                    do {
-                        let jsonData = try JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
-                        
-                        newInfo?.author = jsonData["author"] as? String ?? "Can't get author"
-                        newInfo?.title = jsonData["title"] as? String ?? "Can't get title"
-                        newInfo?.imageUrl = jsonData["url"] as? String ?? "Can't get url of cover"
-                        
-                        if let del = self.delegate {
-                            del.gotVideoInfo(info: newInfo!)
+                DispatchQueue.main.async {
+                    if let content = data {
+                        do {
+                            let jsonData = try JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
+                            
+                            newInfo?.author = jsonData["author"] as? String ?? "Can't get author"
+                            newInfo?.title = jsonData["title"] as? String ?? "Can't get title"
+                            newInfo?.imageUrl = jsonData["url"] as? String ?? "Can't get url of cover"
+                            
+                            if let del = self.delegate {
+                                if newInfo!.imageUrl == "error" {
+                                    del.connectError()
+                                } else {
+                                    del.gotVideoInfo(info: newInfo!)
+                                    self.getImageFromImageUrlPath(path: newInfo!.imageUrl!)
+                                }
+                            }
+                        } catch {
+                            print("serialize error")
+                            if let del = self.delegate {
+                                del.connectError()
+                            }
                         }
-                    } catch {
-                        print("serialize error")
+                    } else {
                         if let del = self.delegate {
                             del.connectError()
-                            self.getImageFromImageUrlPath(path: newInfo!.imageUrl!)
                         }
-                    }
-                } else {
-                    if let del = self.delegate {
-                        del.connectError()
                     }
                 }
             }
@@ -73,9 +79,11 @@ class NetworkingModel {
                 }
             } else {
                 if let content = data {
-                    if let img = UIImage(data: content) {
-                        if let del = self.delegate {
-                            del.gotImage(image: img)
+                    DispatchQueue.main.async {
+                        if let img = UIImage(data: content) {
+                            if let del = self.delegate {
+                                del.gotImage(image: img)
+                            }
                         }
                     }
                 }

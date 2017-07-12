@@ -21,8 +21,8 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         if let img = image {
             imageView.image = img
+            widthConstraint.constant = view.bounds.size.width
         } else {
-            // todo
             print("no image here")
         }
     }
@@ -37,10 +37,6 @@ class DetailViewController: UIViewController {
     @IBAction func zoom(_ sender: UIPinchGestureRecognizer) {
         widthConstraint.constant *= sender.scale
         sender.scale = 1.0
-    }
-    
-    @IBAction func goBackButtonTapped() {
-    
     }
     
     /*

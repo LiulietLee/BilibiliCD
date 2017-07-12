@@ -21,7 +21,7 @@ class SourceTableViewController: UITableViewController {
         
         menuButton.target = self.revealViewController()
         menuButton.action = #selector(revealViewController().revealToggle(_:))
-        self.view.addGestureRecognizer(revealViewController().panGestureRecognizer())
+        view.addGestureRecognizer(revealViewController().panGestureRecognizer())
     }
 
     // MARK: - Table view data source

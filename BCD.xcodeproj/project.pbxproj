@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F07B1CD1F139A8D0009F6A1 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F07B1CC1F139A8D0009F6A1 /* SWRevealViewController.m */; };
+		4F26AA7F1F14D2B000E1123D /* BlueNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F26AA7E1F14D2B000E1123D /* BlueNavController.swift */; };
+		4F26AA811F14D32400E1123D /* ColoredNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F26AA801F14D32400E1123D /* ColoredNavController.swift */; };
+		4F26AA831F14D3D400E1123D /* SakuraNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F26AA821F14D3D400E1123D /* SakuraNavController.swift */; };
+		4F26AA851F14D45900E1123D /* BrownNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F26AA841F14D45900E1123D /* BrownNavController.swift */; };
+		4F26AA871F14D51100E1123D /* GreyNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F26AA861F14D51100E1123D /* GreyNavController.swift */; };
 		4F3ED7D41F10ACAB000D2941 /* LLDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3ED7D31F10ACAB000D2941 /* LLDialog.swift */; };
 		4F4157A21F1331000042FF40 /* SourceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4157A11F1331000042FF40 /* SourceTableViewController.swift */; };
 		4F4157A41F134B880042FF40 /* TeaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4157A31F134B880042FF40 /* TeaViewController.swift */; };
@@ -25,10 +31,8 @@
 		4F9BBEAD1F11102000C984DA /* MKSnackbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9BBEA01F11102000C984DA /* MKSnackbar.swift */; };
 		4F9BBEAE1F11102000C984DA /* MKSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9BBEA11F11102000C984DA /* MKSwitch.swift */; };
 		4F9BBEB01F1112D000C984DA /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9BBEAF1F1112D000C984DA /* MenuCell.swift */; };
-		4F9BBEB21F1114D900C984DA /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9BBEB11F1114D900C984DA /* NavigationViewController.swift */; };
 		4FB3D95F1F08EE670043066B /* ImageSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB3D95E1F08EE670043066B /* ImageSegue.swift */; };
 		4FB3D9611F09DD9C0043066B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB3D9601F09DD9C0043066B /* LoadingView.swift */; };
-		4FDA09381F07C22A0096866C /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDA09371F07C22A0096866C /* SWRevealViewController.m */; };
 		4FDA093B1F07C6FE0096866C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDA093A1F07C6FE0096866C /* DetailViewController.swift */; };
 		4FE8FF3E1EF4FC0600D31840 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF3D1EF4FC0600D31840 /* AppDelegate.swift */; };
 		4FE8FF401EF4FC0600D31840 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF3F1EF4FC0600D31840 /* ViewController.swift */; };
@@ -61,6 +65,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F07B1CB1F139A8D0009F6A1 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		4F07B1CC1F139A8D0009F6A1 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		4F26AA7E1F14D2B000E1123D /* BlueNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueNavController.swift; sourceTree = "<group>"; };
+		4F26AA801F14D32400E1123D /* ColoredNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColoredNavController.swift; sourceTree = "<group>"; };
+		4F26AA821F14D3D400E1123D /* SakuraNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SakuraNavController.swift; sourceTree = "<group>"; };
+		4F26AA841F14D45900E1123D /* BrownNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrownNavController.swift; sourceTree = "<group>"; };
+		4F26AA861F14D51100E1123D /* GreyNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreyNavController.swift; sourceTree = "<group>"; };
 		4F3ED7D31F10ACAB000D2941 /* LLDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLDialog.swift; sourceTree = "<group>"; };
 		4F4157A11F1331000042FF40 /* SourceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceTableViewController.swift; sourceTree = "<group>"; };
 		4F4157A31F134B880042FF40 /* TeaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeaViewController.swift; sourceTree = "<group>"; };
@@ -79,12 +90,9 @@
 		4F9BBEA01F11102000C984DA /* MKSnackbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKSnackbar.swift; sourceTree = "<group>"; };
 		4F9BBEA11F11102000C984DA /* MKSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKSwitch.swift; sourceTree = "<group>"; };
 		4F9BBEAF1F1112D000C984DA /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
-		4F9BBEB11F1114D900C984DA /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		4FB3D95E1F08EE670043066B /* ImageSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSegue.swift; sourceTree = "<group>"; };
 		4FB3D9601F09DD9C0043066B /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		4FDA09351F07C22A0096866C /* BCD-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BCD-Bridging-Header.h"; sourceTree = "<group>"; };
-		4FDA09361F07C22A0096866C /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
-		4FDA09371F07C22A0096866C /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		4FDA093A1F07C6FE0096866C /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		4FE8FF3A1EF4FC0600D31840 /* BCD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BCD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FE8FF3D1EF4FC0600D31840 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +147,11 @@
 				4F4157A11F1331000042FF40 /* SourceTableViewController.swift */,
 				4F4157A31F134B880042FF40 /* TeaViewController.swift */,
 				4F4157A51F134B940042FF40 /* AboutViewController.swift */,
+				4F26AA801F14D32400E1123D /* ColoredNavController.swift */,
+				4F26AA7E1F14D2B000E1123D /* BlueNavController.swift */,
+				4F26AA821F14D3D400E1123D /* SakuraNavController.swift */,
+				4F26AA841F14D45900E1123D /* BrownNavController.swift */,
+				4F26AA861F14D51100E1123D /* GreyNavController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -163,7 +176,6 @@
 				4FB3D95E1F08EE670043066B /* ImageSegue.swift */,
 				4FB3D9601F09DD9C0043066B /* LoadingView.swift */,
 				4F9BBEAF1F1112D000C984DA /* MenuCell.swift */,
-				4F9BBEB11F1114D900C984DA /* NavigationViewController.swift */,
 			);
 			name = "User Interface";
 			sourceTree = "<group>";
@@ -173,6 +185,7 @@
 			children = (
 				4FE8FF3D1EF4FC0600D31840 /* AppDelegate.swift */,
 				4FE8FF4C1EF4FC0600D31840 /* Info.plist */,
+				4FDA09351F07C22A0096866C /* BCD-Bridging-Header.h */,
 			);
 			name = "Supporting File";
 			sourceTree = "<group>";
@@ -181,9 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				4F3ED7D31F10ACAB000D2941 /* LLDialog.swift */,
-				4FDA09361F07C22A0096866C /* SWRevealViewController.h */,
-				4FDA09371F07C22A0096866C /* SWRevealViewController.m */,
-				4FDA09351F07C22A0096866C /* BCD-Bridging-Header.h */,
+				4F07B1CB1F139A8D0009F6A1 /* SWRevealViewController.h */,
+				4F07B1CC1F139A8D0009F6A1 /* SWRevealViewController.m */,
 				4F9BBE951F11102000C984DA /* MKCardView.swift */,
 				4F9BBE961F11102000C984DA /* MKNavigationBar.swift */,
 				4F9BBE971F11102000C984DA /* MKActivityIndicator.swift */,
@@ -388,12 +400,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FDA09381F07C22A0096866C /* SWRevealViewController.m in Sources */,
 				4FB3D95F1F08EE670043066B /* ImageSegue.swift in Sources */,
 				4F3ED7D41F10ACAB000D2941 /* LLDialog.swift in Sources */,
 				4FE8FF401EF4FC0600D31840 /* ViewController.swift in Sources */,
 				4F9BBEA91F11102000C984DA /* MKLabel.swift in Sources */,
+				4F26AA851F14D45900E1123D /* BrownNavController.swift in Sources */,
 				4F9BBEA61F11102000C984DA /* MKCollectionViewCell.swift in Sources */,
+				4F26AA831F14D3D400E1123D /* SakuraNavController.swift in Sources */,
 				4F9BBEAA1F11102000C984DA /* MKImageView.swift in Sources */,
 				4F9BBEA81F11102000C984DA /* MKTableViewCell.swift in Sources */,
 				4F9BBEA41F11102000C984DA /* MKActivityIndicator.swift in Sources */,
@@ -403,19 +416,22 @@
 				4F9BBEAB1F11102000C984DA /* MKLayer.swift in Sources */,
 				4F9BBEAC1F11102000C984DA /* MKColor.swift in Sources */,
 				4FB3D9611F09DD9C0043066B /* LoadingView.swift in Sources */,
-				4F9BBEB21F1114D900C984DA /* NavigationViewController.swift in Sources */,
 				4FE8FF711EF5000400D31840 /* Info.swift in Sources */,
 				4F9BBEA71F11102000C984DA /* MKTextField.swift in Sources */,
+				4F26AA871F14D51100E1123D /* GreyNavController.swift in Sources */,
 				4F4157A21F1331000042FF40 /* SourceTableViewController.swift in Sources */,
 				4FE8FF6F1EF4FCC600D31840 /* NetworkingModel.swift in Sources */,
 				4FE8FF3E1EF4FC0600D31840 /* AppDelegate.swift in Sources */,
 				4F9BBEA21F11102000C984DA /* MKCardView.swift in Sources */,
 				4F9BBEAE1F11102000C984DA /* MKSwitch.swift in Sources */,
 				4FE8FF731EF5095B00D31840 /* ImageViewController.swift in Sources */,
+				4F07B1CD1F139A8D0009F6A1 /* SWRevealViewController.m in Sources */,
 				4F9BBEB01F1112D000C984DA /* MenuCell.swift in Sources */,
+				4F26AA7F1F14D2B000E1123D /* BlueNavController.swift in Sources */,
 				4F9BBEA51F11102000C984DA /* MKButton.swift in Sources */,
 				4F4157A61F134B940042FF40 /* AboutViewController.swift in Sources */,
 				4FE8FF461EF4FC0600D31840 /* BCD.xcdatamodeld in Sources */,
+				4F26AA811F14D32400E1123D /* ColoredNavController.swift in Sources */,
 				4FDA093B1F07C6FE0096866C /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

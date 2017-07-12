@@ -23,56 +23,225 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="在这里输入AV号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F09-Py-h2Y" customClass="MKTextField" customModule="BCD" customModuleProvider="target">
-                                <rect key="frame" x="16" y="72" width="343" height="60"/>
-                                <color key="tintColor" red="0.40090259909999998" green="0.80100601910000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WkO-Vo-nK5" customClass="MKButton" customModule="BCD" customModuleProvider="target">
+                                <rect key="frame" x="293" y="72" width="66" height="66"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="1Bk-pa-LkK"/>
+                                    <constraint firstAttribute="width" secondItem="WkO-Vo-nK5" secondAttribute="height" multiplier="1:1" id="5cq-QK-RAa"/>
+                                    <constraint firstAttribute="height" constant="66" id="Q3b-yM-l51"/>
                                 </constraints>
-                                <color key="textColor" red="0.23633283376693726" green="0.47275239229202271" blue="0.59371215105056763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="go"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="floatingPlaceholderEnabled" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="floatingLabelBottomMargin">
-                                        <real key="value" value="8"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bottomBorderEnabled" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WkO-Vo-nK5" customClass="MKButton" customModule="BCD" customModuleProvider="target">
-                                <rect key="frame" x="291" y="140" width="68" height="36"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
-                                <state key="normal" title="获取封面">
+                                <state key="normal" image="ic_backspace">
                                     <color key="titleColor" red="0.40090259909999998" green="0.80100601910000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="J1l-gt-L0q" kind="show" identifier="getImage" id="ZLI-Kf-e0X"/>
+                                    <action selector="backspaceButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="5x6-WV-hcd"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="av0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="6Ki-9m-7UR">
+                                <rect key="frame" x="90" y="74" width="195" height="66"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Light" family="PingFang HK" pointSize="26"/>
+                                <color key="textColor" red="0.40090259909999998" green="0.80100601910000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gJ-Wu-D4U" customClass="MKButton" customModule="BCD" customModuleProvider="target">
+                                <rect key="frame" x="141" y="537.5" width="109" height="121.5"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="40"/>
+                                <state key="normal" title="0">
+                                    <color key="titleColor" red="0.40090259909999998" green="0.80100601910000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="numberButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="09K-Kt-FFj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5FV-ng-vLE" customClass="MKButton" customModule="BCD" customModuleProvider="target">
+                                <rect key="frame" x="258" y="407.5" width="109" height="122"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="40"/>
+                                <state key="normal" title="9">
+                                    <color key="titleColor" red="0.40090259909999998" green="0.80100601910000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="numberButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I6q-qm-JiN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gq4-jN-Rz8" customClass="MKButton" customModule="BCD" customModuleProvider="target">
+                                <rect key="frame" x="141" y="407.5" width="109" height="122"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="40"/>
+                                <state key="normal" title="8">
+                                    <color key="titleColor" red="0.40090259909999998" green="0.80100601910000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="numberButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7NU-1W-sIP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoC-Sf-2pO" customClass="MKButton" customModule="BCD" customModuleProvider="target">
+                                <rect key="frame" x="24" y="407.5" width="109" height="122"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="40"/>
+                                <state key="normal" title="7">
+                                    <color key="titleColor" red="0.40090259909999998" green="0.80100601910000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="numberButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xtT-QY-XY3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Jv-ZF-1xQ" customClass="MKButton" customModule="BCD" customModuleProvider="target">
+                                <rect key="frame" x="258" y="278" width="109" height="121.5"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="40"/>
+                                <state key="normal" title="6">
+                                    <color key="titleColor" red="0.40090259909999998" green="0.80100601910000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="numberButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vSg-3y-Jci"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dp3-9z-bWD" customClass="MKButton" customModule="BCD" customModuleProvider="target">
+                                <rect key="frame" x="141" y="278" width="109" height="121.5"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="40"/>
+                                <state key="normal" title="5">
+                                    <color key="titleColor" red="0.40090259909999998" green="0.80100601910000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="numberButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y5g-io-gMm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wv9-Id-3O0" customClass="MKButton" customModule="BCD" customModuleProvider="target">
+                                <rect key="frame" x="24" y="278" width="109" height="121.5"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="40"/>
+                                <state key="normal" title="4">
+                                    <color key="titleColor" red="0.40090259909999998" green="0.80100601910000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="numberButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2qx-Fb-ENm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPg-fz-nPK" customClass="MKButton" customModule="BCD" customModuleProvider="target">
+                                <rect key="frame" x="258" y="148" width="109" height="122"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="40"/>
+                                <state key="normal" title="3">
+                                    <color key="titleColor" red="0.40090259909999998" green="0.80100601910000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="numberButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qIm-3h-wyF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vv4-nB-5IW" customClass="MKButton" customModule="BCD" customModuleProvider="target">
+                                <rect key="frame" x="141" y="148" width="109" height="122"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="40"/>
+                                <state key="normal" title="2">
+                                    <color key="titleColor" red="0.40090259909999998" green="0.80100601910000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="numberButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s1Z-F7-NSG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kmh-jW-Sy8" customClass="MKButton" customModule="BCD" customModuleProvider="target">
+                                <rect key="frame" x="24" y="148" width="109" height="122"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="40"/>
+                                <state key="normal" title="1">
+                                    <color key="titleColor" red="0.40090259909999998" green="0.80100601910000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="numberButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TEH-Ls-6Ox"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a3V-eH-kiT">
+                                <rect key="frame" x="24" y="537.5" width="109" height="121.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TFu-X0-Xuu">
+                                <rect key="frame" x="258" y="537.5" width="109" height="121.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JxB-sJ-9mF" customClass="MKButton" customModule="BCD" customModuleProvider="target">
+                                <rect key="frame" x="16" y="74" width="66" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="JxB-sJ-9mF" secondAttribute="height" multiplier="1:1" id="7Xg-0q-ZZK"/>
+                                    <constraint firstAttribute="height" constant="66" id="HcY-bq-0eV"/>
+                                </constraints>
+                                <state key="normal" image="ic_search">
+                                    <color key="titleColor" red="0.40090259909999998" green="0.80100601910000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="J1l-gt-L0q" kind="show" id="Eeb-QN-AAw"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="WkO-Vo-nK5" firstAttribute="top" secondItem="F09-Py-h2Y" secondAttribute="bottom" constant="8" id="1fC-Uh-S0E"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="F09-Py-h2Y" secondAttribute="leading" id="PRk-Pr-Wi8"/>
-                            <constraint firstItem="F09-Py-h2Y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TFY-fU-N64"/>
-                            <constraint firstItem="F09-Py-h2Y" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="VYs-ky-V01"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="WkO-Vo-nK5" secondAttribute="trailing" id="aEC-W7-mc2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="F09-Py-h2Y" secondAttribute="trailing" id="aXP-wS-wbM"/>
+                            <constraint firstItem="zoC-Sf-2pO" firstAttribute="height" secondItem="Kmh-jW-Sy8" secondAttribute="height" id="2h7-QN-cXq"/>
+                            <constraint firstItem="vv4-nB-5IW" firstAttribute="width" secondItem="Kmh-jW-Sy8" secondAttribute="width" id="6Vp-cd-c6q"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="a3V-eH-kiT" secondAttribute="bottom" constant="8" id="6iq-Bu-JtR"/>
+                            <constraint firstItem="wv9-Id-3O0" firstAttribute="width" secondItem="Kmh-jW-Sy8" secondAttribute="width" id="6zZ-jC-puv"/>
+                            <constraint firstItem="TFu-X0-Xuu" firstAttribute="height" secondItem="Kmh-jW-Sy8" secondAttribute="height" id="7fZ-Vc-Gkk"/>
+                            <constraint firstItem="zoC-Sf-2pO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="85U-sO-vWo"/>
+                            <constraint firstItem="uPg-fz-nPK" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="8" id="9c6-hM-g0F"/>
+                            <constraint firstItem="TFu-X0-Xuu" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="8" id="BOG-Sw-MlE"/>
+                            <constraint firstItem="a3V-eH-kiT" firstAttribute="width" secondItem="Kmh-jW-Sy8" secondAttribute="width" id="BiG-gf-sil"/>
+                            <constraint firstItem="7Jv-ZF-1xQ" firstAttribute="height" secondItem="Kmh-jW-Sy8" secondAttribute="height" id="DbF-Fg-jO3"/>
+                            <constraint firstItem="wv9-Id-3O0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="E2w-OW-kp3"/>
+                            <constraint firstItem="a3V-eH-kiT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="G5Y-08-wZK"/>
+                            <constraint firstItem="Kmh-jW-Sy8" firstAttribute="top" secondItem="6Ki-9m-7UR" secondAttribute="bottom" constant="8" id="Gb3-Mo-f41"/>
+                            <constraint firstItem="4gJ-Wu-D4U" firstAttribute="top" secondItem="gq4-jN-Rz8" secondAttribute="bottom" constant="8" id="Hhd-KI-IXO"/>
+                            <constraint firstItem="Kmh-jW-Sy8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="ITo-Qu-SKl"/>
+                            <constraint firstItem="gq4-jN-Rz8" firstAttribute="height" secondItem="Kmh-jW-Sy8" secondAttribute="height" id="IWS-Jv-TLz"/>
+                            <constraint firstItem="a3V-eH-kiT" firstAttribute="top" secondItem="zoC-Sf-2pO" secondAttribute="bottom" constant="8" id="JAX-Pj-2Nd"/>
+                            <constraint firstItem="gq4-jN-Rz8" firstAttribute="leading" secondItem="zoC-Sf-2pO" secondAttribute="trailing" constant="8" id="KTS-JR-1ls"/>
+                            <constraint firstItem="6Ki-9m-7UR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="L6q-xZ-1Xv"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4gJ-Wu-D4U" secondAttribute="bottom" constant="8" id="Lfl-B4-Lce"/>
+                            <constraint firstItem="5FV-ng-vLE" firstAttribute="width" secondItem="Kmh-jW-Sy8" secondAttribute="width" id="Li4-0l-NaM"/>
+                            <constraint firstItem="JxB-sJ-9mF" firstAttribute="width" secondItem="JxB-sJ-9mF" secondAttribute="height" multiplier="1:1" id="Mqa-Sh-YjH"/>
+                            <constraint firstItem="vv4-nB-5IW" firstAttribute="height" secondItem="Kmh-jW-Sy8" secondAttribute="height" id="NZU-ci-nye"/>
+                            <constraint firstItem="zoC-Sf-2pO" firstAttribute="top" secondItem="wv9-Id-3O0" secondAttribute="bottom" constant="8" id="Oy1-Uc-7LC"/>
+                            <constraint firstItem="vv4-nB-5IW" firstAttribute="top" secondItem="6Ki-9m-7UR" secondAttribute="bottom" constant="8" id="Q7Q-x5-gE0"/>
+                            <constraint firstItem="TFu-X0-Xuu" firstAttribute="top" secondItem="5FV-ng-vLE" secondAttribute="bottom" constant="8" id="QB9-s6-juP"/>
+                            <constraint firstItem="gq4-jN-Rz8" firstAttribute="top" secondItem="Dp3-9z-bWD" secondAttribute="bottom" constant="8" id="SXg-25-VTx"/>
+                            <constraint firstItem="vv4-nB-5IW" firstAttribute="leading" secondItem="Kmh-jW-Sy8" secondAttribute="trailing" constant="8" id="TQc-ML-V3O"/>
+                            <constraint firstItem="wv9-Id-3O0" firstAttribute="height" secondItem="Kmh-jW-Sy8" secondAttribute="height" id="U7C-i7-jmo"/>
+                            <constraint firstItem="4gJ-Wu-D4U" firstAttribute="height" secondItem="Kmh-jW-Sy8" secondAttribute="height" id="XZC-FY-DGk"/>
+                            <constraint firstItem="Dp3-9z-bWD" firstAttribute="top" secondItem="vv4-nB-5IW" secondAttribute="bottom" constant="8" id="Xi5-L1-gsx"/>
+                            <constraint firstItem="4gJ-Wu-D4U" firstAttribute="width" secondItem="Kmh-jW-Sy8" secondAttribute="width" id="YWt-Gd-cAS"/>
+                            <constraint firstItem="5FV-ng-vLE" firstAttribute="top" secondItem="7Jv-ZF-1xQ" secondAttribute="bottom" constant="8" id="ZA8-63-DQw"/>
+                            <constraint firstItem="6Ki-9m-7UR" firstAttribute="leading" secondItem="JxB-sJ-9mF" secondAttribute="trailing" constant="8" id="ZBE-R2-v1O"/>
+                            <constraint firstItem="zoC-Sf-2pO" firstAttribute="width" secondItem="Kmh-jW-Sy8" secondAttribute="width" id="b4a-Ff-4Uk"/>
+                            <constraint firstItem="7Jv-ZF-1xQ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="8" id="daq-qr-Ri7"/>
+                            <constraint firstItem="WkO-Vo-nK5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="ddu-FD-Kky"/>
+                            <constraint firstItem="gq4-jN-Rz8" firstAttribute="width" secondItem="Kmh-jW-Sy8" secondAttribute="width" id="dzN-i9-ofG"/>
+                            <constraint firstItem="uPg-fz-nPK" firstAttribute="top" secondItem="6Ki-9m-7UR" secondAttribute="bottom" constant="8" id="eJz-ah-uLj"/>
+                            <constraint firstItem="WkO-Vo-nK5" firstAttribute="leading" secondItem="6Ki-9m-7UR" secondAttribute="trailing" constant="8" id="eZ6-T5-kRl"/>
+                            <constraint firstItem="uPg-fz-nPK" firstAttribute="leading" secondItem="vv4-nB-5IW" secondAttribute="trailing" constant="8" id="fa9-8d-NBV"/>
+                            <constraint firstItem="wv9-Id-3O0" firstAttribute="top" secondItem="Kmh-jW-Sy8" secondAttribute="bottom" constant="8" id="gV2-ew-cnn"/>
+                            <constraint firstItem="Dp3-9z-bWD" firstAttribute="leading" secondItem="wv9-Id-3O0" secondAttribute="trailing" constant="8" id="iqg-Ls-arX"/>
+                            <constraint firstItem="uPg-fz-nPK" firstAttribute="height" secondItem="Kmh-jW-Sy8" secondAttribute="height" id="jBx-4S-bwJ"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="JxB-sJ-9mF" secondAttribute="leading" id="l51-Pa-wfh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WkO-Vo-nK5" secondAttribute="trailing" id="lfZ-76-OPd"/>
+                            <constraint firstItem="7Jv-ZF-1xQ" firstAttribute="width" secondItem="Kmh-jW-Sy8" secondAttribute="width" id="lgB-OT-l0k"/>
+                            <constraint firstItem="5FV-ng-vLE" firstAttribute="leading" secondItem="gq4-jN-Rz8" secondAttribute="trailing" constant="8" id="mDc-Q5-7YY"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="TFu-X0-Xuu" secondAttribute="bottom" constant="8" id="nfX-ow-mlP"/>
+                            <constraint firstItem="7Jv-ZF-1xQ" firstAttribute="top" secondItem="uPg-fz-nPK" secondAttribute="bottom" constant="8" id="nlW-5v-a7R"/>
+                            <constraint firstItem="Dp3-9z-bWD" firstAttribute="height" secondItem="Kmh-jW-Sy8" secondAttribute="height" id="oAL-pD-7bw"/>
+                            <constraint firstItem="7Jv-ZF-1xQ" firstAttribute="leading" secondItem="Dp3-9z-bWD" secondAttribute="trailing" constant="8" id="pJP-R2-AQr"/>
+                            <constraint firstItem="Dp3-9z-bWD" firstAttribute="width" secondItem="Kmh-jW-Sy8" secondAttribute="width" id="qxz-6c-uTQ"/>
+                            <constraint firstItem="5FV-ng-vLE" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="8" id="rEn-sL-lK2"/>
+                            <constraint firstItem="5FV-ng-vLE" firstAttribute="height" secondItem="Kmh-jW-Sy8" secondAttribute="height" id="rXS-Si-xBH"/>
+                            <constraint firstItem="JxB-sJ-9mF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="ros-xr-J1G"/>
+                            <constraint firstItem="a3V-eH-kiT" firstAttribute="height" secondItem="Kmh-jW-Sy8" secondAttribute="height" id="tRB-7l-VEQ"/>
+                            <constraint firstItem="6Ki-9m-7UR" firstAttribute="height" secondItem="WkO-Vo-nK5" secondAttribute="height" id="ukb-xD-CDB"/>
+                            <constraint firstItem="TFu-X0-Xuu" firstAttribute="width" secondItem="Kmh-jW-Sy8" secondAttribute="width" id="vMu-3K-cAc"/>
+                            <constraint firstItem="uPg-fz-nPK" firstAttribute="width" secondItem="Kmh-jW-Sy8" secondAttribute="width" id="w6d-ch-YTf"/>
+                            <constraint firstItem="4gJ-Wu-D4U" firstAttribute="leading" secondItem="a3V-eH-kiT" secondAttribute="trailing" constant="8" id="wjw-Rr-PUY"/>
+                            <constraint firstItem="TFu-X0-Xuu" firstAttribute="leading" secondItem="4gJ-Wu-D4U" secondAttribute="trailing" constant="8" id="yRv-Nf-QgI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="封面下载" id="Vxh-nz-ozR">
                         <barButtonItem key="leftBarButtonItem" image="ic_menu" id="jUr-6b-adq"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="goButton" destination="WkO-Vo-nK5" id="xWl-fV-m6S"/>
+                        <outlet property="avLabel" destination="6Ki-9m-7UR" id="Q4y-OT-GJV"/>
+                        <outlet property="goButton" destination="JxB-sJ-9mF" id="OSC-RZ-zLv"/>
                         <outlet property="menu" destination="jUr-6b-adq" id="bZf-ma-9VD"/>
-                        <outlet property="textField" destination="F09-Py-h2Y" id="vcd-sx-HZC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="924" y="36"/>
+            <point key="canvasLocation" x="924" y="35.532233883058474"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="YLA-BA-Fka">
@@ -94,26 +263,26 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="视频标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLk-Ji-R8x">
                                 <rect key="frame" x="16" y="295" width="343" height="24"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Light" family="PingFang HK" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="17"/>
                                 <color key="textColor" red="0.40090259909999998" green="0.80100601910000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UP主" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odB-KX-ctA">
                                 <rect key="frame" x="16" y="327" width="343" height="24"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Light" family="PingFang HK" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="17"/>
                                 <color key="textColor" red="0.40090259909999998" green="0.80100601910000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URL" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aci-Vb-666">
                                 <rect key="frame" x="16" y="359" width="343" height="24"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Light" family="PingFang HK" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="17"/>
                                 <color key="textColor" red="0.40090259909999998" green="0.80100601910000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fjh-fO-3X6">
                                 <rect key="frame" x="16" y="72" width="343" height="214.5"/>
                                 <connections>
-                                    <segue destination="c48-nJ-AAz" kind="show" identifier="segue" action="showDetailViewController:sender:" id="jpk-Zu-PYG"/>
+                                    <segue destination="c48-nJ-AAz" kind="show" id="3xr-kp-XcO"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -175,6 +344,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BB4-Rm-pPw">
                                 <rect key="frame" x="0.0" y="216.5" width="375" height="234"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="DUy-qD-oqQ"/>
                                     <constraint firstAttribute="width" secondItem="BB4-Rm-pPw" secondAttribute="height" multiplier="8:5" id="I7z-kL-keP"/>
                                 </constraints>
                             </imageView>
@@ -184,7 +354,6 @@
                         <constraints>
                             <constraint firstItem="BB4-Rm-pPw" firstAttribute="centerY" secondItem="R1a-R9-uef" secondAttribute="centerY" id="G1u-Ul-ixo"/>
                             <constraint firstItem="BB4-Rm-pPw" firstAttribute="centerX" secondItem="R1a-R9-uef" secondAttribute="centerX" id="Rfw-mt-uoM"/>
-                            <constraint firstItem="BB4-Rm-pPw" firstAttribute="width" secondItem="R1a-R9-uef" secondAttribute="width" id="zsQ-hj-1aQ"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="gn1-0n-eak" appends="YES" id="VDH-fz-A34"/>
@@ -194,7 +363,7 @@
                     <navigationItem key="navigationItem" id="KRb-BT-2Od"/>
                     <connections>
                         <outlet property="imageView" destination="BB4-Rm-pPw" id="0H2-kT-7V0"/>
-                        <outlet property="widthConstraint" destination="zsQ-hj-1aQ" id="CaE-Vf-4Ca"/>
+                        <outlet property="widthConstraint" destination="DUy-qD-oqQ" id="mUL-JN-zb6"/>
                         <outlet property="xConstraint" destination="Rfw-mt-uoM" id="UZs-Rm-29B"/>
                         <outlet property="yConstraint" destination="G1u-Ul-ixo" id="D1b-bN-CAg"/>
                     </connections>
@@ -233,20 +402,20 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bET-bc-yy8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-758" y="-342"/>
+            <point key="canvasLocation" x="-910" y="-478"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="KXV-K8-HiE">
             <objects>
                 <tableViewController id="mzC-9p-ilu" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ftn-Hg-hxF">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ftn-Hg-hxF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
                             <tableViewSection id="S8v-5y-c5p">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="Hro-Iv-QCX" customClass="MenuCell" customModule="BCD" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="Hro-Iv-QCX" customClass="MKTableViewCell" customModule="BCD" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hro-Iv-QCX" id="Zpp-25-tPW">
@@ -270,8 +439,11 @@
                                                 <color key="value" red="0.40090259909999998" green="0.80100601910000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="uMu-2d-WQe" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="pFk-eZ-ib2"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="wVV-1r-QdC" customClass="MenuCell" customModule="BCD" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="wVV-1r-QdC" customClass="MKTableViewCell" customModule="BCD" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="70" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wVV-1r-QdC" id="GHp-cm-bDL">
@@ -290,19 +462,24 @@
                                                 <constraint firstAttribute="leadingMargin" secondItem="vJ8-G9-0kA" secondAttribute="leading" constant="-8" id="V8f-c8-8YQ"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="rippleLayerColor">
+                                                <color key="value" red="0.99692672491073608" green="0.48709040880203247" blue="0.65352439880371094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="JH2-KG-Bsf" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="VS2-Jr-6Th"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="Gom-jE-D2T" customClass="MenuCell" customModule="BCD" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="Gom-jE-D2T" customClass="MKTableViewCell" customModule="BCD" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="140" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gom-jE-D2T" id="eLa-IK-kSb">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关于我" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IqQ-Uo-fXu">
-                                                    <rect key="frame" x="16" y="23" width="51" height="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关于我们" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IqQ-Uo-fXu">
+                                                    <rect key="frame" x="16" y="23" width="68" height="24"/>
                                                     <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -313,11 +490,16 @@
                                                 <constraint firstItem="IqQ-Uo-fXu" firstAttribute="centerY" secondItem="eLa-IK-kSb" secondAttribute="centerY" id="RjA-xl-Gcl"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="rippleLayerColor">
+                                                <color key="value" red="0.8176116943359375" green="0.73280304670333862" blue="0.74446588754653931" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="NFI-Ou-sCf" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="xkI-Je-9lR"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="uHg-dJ-JSI" customClass="MenuCell" customModule="BCD" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="uHg-dJ-JSI" customClass="MKTableViewCell" customModule="BCD" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="210" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uHg-dJ-JSI" id="deU-j9-5Ba">
@@ -336,6 +518,11 @@
                                                 <constraint firstAttribute="leadingMargin" secondItem="rDn-Ac-ukI" secondAttribute="leading" constant="-8" id="kI5-Nj-eVa"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="rippleLayerColor">
+                                                <color key="value" red="0.38015270233154297" green="0.38382208347320557" blue="0.41283655166625977" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="dzb-zd-eId" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="rMX-bf-Ig1"/>
                                         </connections>
@@ -353,10 +540,10 @@
             </objects>
             <point key="canvasLocation" x="39" y="-1421"/>
         </scene>
-        <!--Navigation View Controller-->
+        <!--Sakura Nav Controller-->
         <scene sceneID="44n-tu-Tg1">
             <objects>
-                <navigationController id="JH2-KG-Bsf" customClass="NavigationViewController" customModule="BCD" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="JH2-KG-Bsf" customClass="SakuraNavController" customModule="BCD" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="D9S-xp-Vvo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -395,10 +582,10 @@
             </objects>
             <point key="canvasLocation" x="1662" y="-745"/>
         </scene>
-        <!--Navigation View Controller-->
+        <!--Blue Nav Controller-->
         <scene sceneID="adv-Hp-AZI">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uMu-2d-WQe" customClass="NavigationViewController" customModule="BCD" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uMu-2d-WQe" customClass="BlueNavController" customModule="BCD" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Cy-pq-ZJn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -413,10 +600,10 @@
             </objects>
             <point key="canvasLocation" x="126" y="36"/>
         </scene>
-        <!--Navigation View Controller-->
+        <!--Brown Nav Controller-->
         <scene sceneID="MXM-cb-vGL">
             <objects>
-                <navigationController id="NFI-Ou-sCf" customClass="NavigationViewController" customModule="BCD" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="NFI-Ou-sCf" customClass="BrownNavController" customModule="BCD" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="e0R-6N-1lg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -429,7 +616,7 @@
             </objects>
             <point key="canvasLocation" x="924" y="-1420"/>
         </scene>
-        <!--关于我-->
+        <!--关于我们-->
         <scene sceneID="eBQ-II-A7U">
             <objects>
                 <viewController id="7Ig-a5-IaU" customClass="AboutViewController" customModule="BCD" customModuleProvider="target" sceneMemberID="viewController">
@@ -443,7 +630,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="关于我" id="fQR-aV-r8w">
+                    <navigationItem key="navigationItem" title="关于我们" id="fQR-aV-r8w">
                         <barButtonItem key="leftBarButtonItem" image="ic_menu" id="Dco-Cl-S1E"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -455,10 +642,10 @@
             </objects>
             <point key="canvasLocation" x="1662" y="-1420"/>
         </scene>
-        <!--Navigation View Controller-->
+        <!--Grey Nav Controller-->
         <scene sceneID="B9q-Ms-qVS">
             <objects>
-                <navigationController id="dzb-zd-eId" customClass="NavigationViewController" customModule="BCD" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="dzb-zd-eId" customClass="GreyNavController" customModule="BCD" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="I6W-ge-YiO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -507,7 +694,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_backspace" width="24" height="24"/>
         <image name="ic_file_download" width="24" height="24"/>
         <image name="ic_menu" width="24" height="24"/>
+        <image name="ic_search" width="24" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="pFk-eZ-ib2"/>
+    </inferredMetricsTieBreakers>
 </document>

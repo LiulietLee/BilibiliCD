@@ -31,7 +31,7 @@ class ImageViewController: UIViewController,NetworkingDelegate {
         
         model.delegate = self
         if let num = avNum {
-            self.title = String(num)
+            self.title = "av" + String(num)
             model.getInfoFromAvNumber(avNum: num)
         } else {
             self.title = "No av number"
@@ -44,7 +44,7 @@ class ImageViewController: UIViewController,NetworkingDelegate {
         
         disableButtons()
         
-        loadingView.frame = view.bounds
+        //loadingView.frame = view.bounds
         view.addSubview(loadingView)
         view.bringSubview(toFront: loadingView)
     }
@@ -54,10 +54,10 @@ class ImageViewController: UIViewController,NetworkingDelegate {
     }
     
     @objc fileprivate func saveImage() {
-        UIImageWriteToSavedPhotosAlbum(image, self, #selector(imageSavingFinished(_:didFinishSavingWithError:contextInfo:)), nil)
+        UIImageWriteToSavedPhotosAlbum(imageView.image!, self, #selector(imageSavingFinished(_:didFinishSavingWithError:contextInfo:)), nil)
     }
     
-    @objc fileprivate func imageSavingFinished(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+    func imageSavingFinished(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
         let dialog = LLDialog()
         if let error = error {
             dialog.title = "啊叻？！"
@@ -84,9 +84,7 @@ class ImageViewController: UIViewController,NetworkingDelegate {
         pushButton.isEnabled = false
     }
     
-    func gotVideoInfo(info: Info) {
-        enableButtons()
-        
+    func gotVideoInfo(info: Info) {        
         titleLabel.text = info.title!
         authorLabel.text = "UP主：" + info.author!
         urlLabel.text = info.imageUrl!
@@ -112,10 +110,8 @@ class ImageViewController: UIViewController,NetworkingDelegate {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "segue" {
-            let vc = segue.destination as! DetailViewController
-            vc.image = image
-        }
+        let vc = segue.destination as! DetailViewController
+        vc.image = imageView.image!
     }
 
 }

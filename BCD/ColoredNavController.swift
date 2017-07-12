@@ -1,38 +1,26 @@
 //
-//  NavigationViewController.swift
-//  Pick Color
+//  ColoredNavController.swift
+//  BCD
 //
-//  Created by Liuliet.Lee on 13/8/15.
-//  Copyright (c) 2015 Liuliet.Lee. All rights reserved.
+//  Created by Liuliet.Lee on 11/7/2017.
+//  Copyright © 2017 Liuliet.Lee. All rights reserved.
 //
 
 import UIKit
 
-class NavigationViewController: UINavigationController {
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        UIApplication.shared.statusBarStyle = .lightContent
-    }
+class ColoredNavController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationBar.barTintColor = UIColor(rgb: 0x66ccff)
         navigationBar.tintColor = .white
         navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
         
         navigationBar.layer.shadowColor = UIColor.black.cgColor
-        navigationBar.layer.shadowOffset = CGSize(width: 0.2, height: 0.2)
+        navigationBar.layer.shadowOffset = CGSize(width: 0.1, height: 0.1)
         navigationBar.layer.shadowRadius = 1.5
         navigationBar.layer.shadowOpacity = 1.0
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        UIApplication.shared.statusBarStyle = .default
-    }
-    
 }
 
 extension UIColor {
