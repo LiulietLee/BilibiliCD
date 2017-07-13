@@ -12,6 +12,7 @@ protocol NetworkingDelegate {
     func gotVideoInfo(info: Info)
     func gotImage(image: UIImage)
     func connectError()
+    func cannotFindVideo()
 }
 
 class NetworkingModel {
@@ -43,7 +44,7 @@ class NetworkingModel {
                             
                             if let del = self.delegate {
                                 if newInfo!.imageUrl == "error" {
-                                    del.connectError()
+                                    del.cannotFindVideo()
                                 } else {
                                     del.gotVideoInfo(info: newInfo!)
                                     self.getImageFromImageUrlPath(path: newInfo!.imageUrl!)
@@ -85,6 +86,10 @@ class NetworkingModel {
                                 del.gotImage(image: img)
                             }
                         }
+                    }
+                } else {
+                    if let del = self.delegate {
+                        del.connectError()
                     }
                 }
             }

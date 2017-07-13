@@ -13,6 +13,7 @@
 		4F26AA831F14D3D400E1123D /* SakuraNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F26AA821F14D3D400E1123D /* SakuraNavController.swift */; };
 		4F26AA851F14D45900E1123D /* BrownNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F26AA841F14D45900E1123D /* BrownNavController.swift */; };
 		4F26AA871F14D51100E1123D /* GreyNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F26AA861F14D51100E1123D /* GreyNavController.swift */; };
+		4F3077A01F174E9300E1C1AF /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3077961F17478100E1C1AF /* GoogleMobileAds.framework */; };
 		4F3ED7D41F10ACAB000D2941 /* LLDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3ED7D31F10ACAB000D2941 /* LLDialog.swift */; };
 		4F4157A21F1331000042FF40 /* SourceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4157A11F1331000042FF40 /* SourceTableViewController.swift */; };
 		4F4157A41F134B880042FF40 /* TeaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4157A31F134B880042FF40 /* TeaViewController.swift */; };
@@ -30,7 +31,6 @@
 		4F9BBEAC1F11102000C984DA /* MKColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9BBE9F1F11102000C984DA /* MKColor.swift */; };
 		4F9BBEAD1F11102000C984DA /* MKSnackbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9BBEA01F11102000C984DA /* MKSnackbar.swift */; };
 		4F9BBEAE1F11102000C984DA /* MKSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9BBEA11F11102000C984DA /* MKSwitch.swift */; };
-		4FB3D95F1F08EE670043066B /* ImageSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB3D95E1F08EE670043066B /* ImageSegue.swift */; };
 		4FB3D9611F09DD9C0043066B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB3D9601F09DD9C0043066B /* LoadingView.swift */; };
 		4FDA093B1F07C6FE0096866C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDA093A1F07C6FE0096866C /* DetailViewController.swift */; };
 		4FE8FF3E1EF4FC0600D31840 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF3D1EF4FC0600D31840 /* AppDelegate.swift */; };
@@ -71,6 +71,8 @@
 		4F26AA821F14D3D400E1123D /* SakuraNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SakuraNavController.swift; sourceTree = "<group>"; };
 		4F26AA841F14D45900E1123D /* BrownNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrownNavController.swift; sourceTree = "<group>"; };
 		4F26AA861F14D51100E1123D /* GreyNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreyNavController.swift; sourceTree = "<group>"; };
+		4F3077961F17478100E1C1AF /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "../GoogleMobileAdsSdkiOS-7.21.0/GoogleMobileAds.framework"; sourceTree = "<group>"; };
+		4F30779C1F17494200E1C1AF /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		4F3ED7D31F10ACAB000D2941 /* LLDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLDialog.swift; sourceTree = "<group>"; };
 		4F4157A11F1331000042FF40 /* SourceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceTableViewController.swift; sourceTree = "<group>"; };
 		4F4157A31F134B880042FF40 /* TeaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeaViewController.swift; sourceTree = "<group>"; };
@@ -88,7 +90,6 @@
 		4F9BBE9F1F11102000C984DA /* MKColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKColor.swift; sourceTree = "<group>"; };
 		4F9BBEA01F11102000C984DA /* MKSnackbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKSnackbar.swift; sourceTree = "<group>"; };
 		4F9BBEA11F11102000C984DA /* MKSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKSwitch.swift; sourceTree = "<group>"; };
-		4FB3D95E1F08EE670043066B /* ImageSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSegue.swift; sourceTree = "<group>"; };
 		4FB3D9601F09DD9C0043066B /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		4FDA09351F07C22A0096866C /* BCD-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BCD-Bridging-Header.h"; sourceTree = "<group>"; };
 		4FDA093A1F07C6FE0096866C /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F3077A01F174E9300E1C1AF /* GoogleMobileAds.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +138,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F3077951F17478100E1C1AF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4F3077961F17478100E1C1AF /* GoogleMobileAds.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4F5BE2F51EFAA1040054C53F /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,7 +181,6 @@
 				4FE8FF471EF4FC0600D31840 /* Assets.xcassets */,
 				4FE8FF491EF4FC0600D31840 /* LaunchScreen.storyboard */,
 				4FE8FF411EF4FC0600D31840 /* Main.storyboard */,
-				4FB3D95E1F08EE670043066B /* ImageSegue.swift */,
 				4FB3D9601F09DD9C0043066B /* LoadingView.swift */,
 			);
 			name = "User Interface";
@@ -213,10 +222,12 @@
 		4FE8FF311EF4FC0600D31840 = {
 			isa = PBXGroup;
 			children = (
+				4F30779C1F17494200E1C1AF /* GoogleMobileAds.framework */,
 				4FE8FF3C1EF4FC0600D31840 /* BCD */,
 				4FE8FF541EF4FC0600D31840 /* BCDTests */,
 				4FE8FF5F1EF4FC0600D31840 /* BCDUITests */,
 				4FE8FF3B1EF4FC0600D31840 /* Products */,
+				4F3077951F17478100E1C1AF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -397,7 +408,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FB3D95F1F08EE670043066B /* ImageSegue.swift in Sources */,
 				4F3ED7D41F10ACAB000D2941 /* LLDialog.swift in Sources */,
 				4FE8FF401EF4FC0600D31840 /* ViewController.swift in Sources */,
 				4F9BBEA91F11102000C984DA /* MKLabel.swift in Sources */,
@@ -584,6 +594,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = ANB6MDJTLF;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = BCD/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -602,6 +616,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = ANB6MDJTLF;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = BCD/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

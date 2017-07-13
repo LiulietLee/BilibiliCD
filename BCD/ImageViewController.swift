@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class ImageViewController: UIViewController,NetworkingDelegate {
+class ImageViewController: UIViewController, NetworkingDelegate, GADBannerViewDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -26,6 +27,15 @@ class ImageViewController: UIViewController,NetworkingDelegate {
         }
     }
     
+    lazy var adBannerView: GADBannerView = {
+        let adBannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
+        adBannerView.adUnitID = "ca-app-pub-9289196786381154/6636960629"
+        adBannerView.delegate = self
+        adBannerView.rootViewController = self
+        
+        return adBannerView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,6 +47,8 @@ class ImageViewController: UIViewController,NetworkingDelegate {
             self.title = "No av number"
             print("No av number")
         }
+        
+        adBannerView.load(GADRequest())
         
         titleLabel.text = ""
         authorLabel.text = ""
@@ -100,10 +112,26 @@ class ImageViewController: UIViewController,NetworkingDelegate {
     func connectError() {
         print("Cannot connect\n")
         titleLabel.text = "啊叻？"
-        authorLabel.text = "视频不见了？"
+        authorLabel.text = "连不上服务器了？"
         urlLabel.text = ""
         loadingView!.dismiss()
         imageView.image = UIImage(named: "error_image")
+    }
+    
+    func cannotFindVideo() {
+        titleLabel.text = "啊叻？"
+        authorLabel.text = "视频不见了？"
+        urlLabel.text = ""
+        loadingView!.dismiss()
+        imageView.image = UIImage(named: "novideo_image")
+    }
+    
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        let height = view.bounds.size.height
+        let y = height - bannerView.bounds.size.height
+        bannerView.frame = CGRect(origin: CGPoint(x: 0, y: y), size: bannerView.bounds.size)
+        view.addSubview(bannerView)
+        view.sendSubview(toBack: bannerView)
     }
 
     // MARK: - Navigation
