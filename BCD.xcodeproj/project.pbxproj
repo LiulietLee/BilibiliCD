@@ -30,7 +30,6 @@
 		4F9BBEAC1F11102000C984DA /* MKColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9BBE9F1F11102000C984DA /* MKColor.swift */; };
 		4F9BBEAD1F11102000C984DA /* MKSnackbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9BBEA01F11102000C984DA /* MKSnackbar.swift */; };
 		4F9BBEAE1F11102000C984DA /* MKSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9BBEA11F11102000C984DA /* MKSwitch.swift */; };
-		4F9BBEB01F1112D000C984DA /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9BBEAF1F1112D000C984DA /* MenuCell.swift */; };
 		4FB3D95F1F08EE670043066B /* ImageSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB3D95E1F08EE670043066B /* ImageSegue.swift */; };
 		4FB3D9611F09DD9C0043066B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB3D9601F09DD9C0043066B /* LoadingView.swift */; };
 		4FDA093B1F07C6FE0096866C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDA093A1F07C6FE0096866C /* DetailViewController.swift */; };
@@ -89,7 +88,6 @@
 		4F9BBE9F1F11102000C984DA /* MKColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKColor.swift; sourceTree = "<group>"; };
 		4F9BBEA01F11102000C984DA /* MKSnackbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKSnackbar.swift; sourceTree = "<group>"; };
 		4F9BBEA11F11102000C984DA /* MKSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKSwitch.swift; sourceTree = "<group>"; };
-		4F9BBEAF1F1112D000C984DA /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		4FB3D95E1F08EE670043066B /* ImageSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSegue.swift; sourceTree = "<group>"; };
 		4FB3D9601F09DD9C0043066B /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		4FDA09351F07C22A0096866C /* BCD-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BCD-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -175,7 +173,6 @@
 				4FE8FF411EF4FC0600D31840 /* Main.storyboard */,
 				4FB3D95E1F08EE670043066B /* ImageSegue.swift */,
 				4FB3D9601F09DD9C0043066B /* LoadingView.swift */,
-				4F9BBEAF1F1112D000C984DA /* MenuCell.swift */,
 			);
 			name = "User Interface";
 			sourceTree = "<group>";
@@ -427,7 +424,6 @@
 				4F9B213F1F16187000D3BDD2 /* AboutViewController.swift in Sources */,
 				4FE8FF731EF5095B00D31840 /* ImageViewController.swift in Sources */,
 				4F07B1CD1F139A8D0009F6A1 /* SWRevealViewController.m in Sources */,
-				4F9BBEB01F1112D000C984DA /* MenuCell.swift in Sources */,
 				4F26AA7F1F14D2B000E1123D /* BlueNavController.swift in Sources */,
 				4F9BBEA51F11102000C984DA /* MKButton.swift in Sources */,
 				4FE8FF461EF4FC0600D31840 /* BCD.xcdatamodeld in Sources */,
