@@ -317,10 +317,15 @@
                                     <action selector="downloadButtonTapped:" destination="J1l-gt-L0q" id="MLX-AS-MC9"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="ic_blockAd" id="YmM-GZ-JyQ"/>
+                            <barButtonItem image="ic_blockAd" id="YmM-GZ-JyQ">
+                                <connections>
+                                    <action selector="adButtonTapped:" destination="J1l-gt-L0q" id="wl0-a1-eKM"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="adButton" destination="YmM-GZ-JyQ" id="c2x-0f-oi7"/>
                         <outlet property="authorLabel" destination="odB-KX-ctA" id="jVD-uh-FZZ"/>
                         <outlet property="downloadButton" destination="0oG-Vt-gM6" id="A8A-pY-jCw"/>
                         <outlet property="imageView" destination="Zsa-yu-und" id="ULy-o4-fq7"/>

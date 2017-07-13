@@ -11,6 +11,7 @@ import GoogleMobileAds
 
 class ImageViewController: UIViewController, NetworkingDelegate, GADBannerViewDelegate {
     
+    @IBOutlet weak var adButton: UIBarButtonItem!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
@@ -19,7 +20,8 @@ class ImageViewController: UIViewController, NetworkingDelegate, GADBannerViewDe
     @IBOutlet weak var pushButton: UIButton!
     
     var avNum: Int?
-    fileprivate let model = NetworkingModel()
+    fileprivate let netModel = NetworkingModel()
+    fileprivate let dataModel = CoreDataModel()
     fileprivate var loadingView: LoadingView? = nil
     fileprivate var image = UIImage() {
         willSet {
@@ -39,16 +41,14 @@ class ImageViewController: UIViewController, NetworkingDelegate, GADBannerViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        model.delegate = self
+        netModel.delegate = self
         if let num = avNum {
             self.title = "av" + String(num)
-            model.getInfoFromAvNumber(avNum: num)
+            netModel.getInfoFromAvNumber(avNum: num)
         } else {
             self.title = "No av number"
             print("No av number")
         }
-        
-        adBannerView.load(GADRequest())
         
         titleLabel.text = ""
         authorLabel.text = ""
@@ -63,6 +63,48 @@ class ImageViewController: UIViewController, NetworkingDelegate, GADBannerViewDe
     
     @IBAction func downloadButtonTapped(_ sender: UIBarButtonItem) {
         saveImage()
+    }
+    
+    @IBAction func adButtonTapped(_ sender: UIBarButtonItem) {
+        let dialog = LLDialog()
+        dialog.title = "广告显示设置"
+        dialog.message = "屏幕下方的广告是我们维持服务的主要收入来源，但为了方便强迫症，您可以在这里自由选择是否显示广告，不需要额外付费。"
+        dialog.setNegativeButton(withTitle: "关闭广告", target: self, action: #selector(disableToShowAd))
+        dialog.setPositiveButton(withTitle: "显示广告", target: self, action: #selector(ableToShowAd))
+        dialog.show()
+    }
+    
+    @objc fileprivate func disableToShowAd() {
+        if dataModel.readAdPremission()! {
+            dataModel.setAdPremissionWith(false)
+            let dialog = LLDialog()
+            dialog.title = "广告已关闭"
+            dialog.message = "从下次开始您将不会再看到广告。"
+            dialog.setPositiveButton(withTitle: "嗯")
+            dialog.show()
+        }
+    }
+    
+    @objc fileprivate func ableToShowAd() {
+        if !dataModel.readAdPremission()! {
+            dataModel.setAdPremissionWith(true)
+            let dialog = LLDialog()
+            dialog.title = "广告已显示"
+            dialog.message = "从下次开始将会显示广告，谢谢您的支持\nε=ε=(ノ≧∇≦)ノ"
+            dialog.setPositiveButton(withTitle: "嗯")
+            dialog.show()
+        }
+    }
+    
+    fileprivate func getAd() {
+        if let per = dataModel.readAdPremission() {
+            if per {
+                adBannerView.load(GADRequest())
+            }
+        } else {
+            dataModel.setAdPremissionWith(true)
+            adBannerView.load(GADRequest())
+        }
     }
     
     @objc fileprivate func saveImage() {
@@ -89,11 +131,13 @@ class ImageViewController: UIViewController, NetworkingDelegate, GADBannerViewDe
     fileprivate func enableButtons() {
         downloadButton.isEnabled = true
         pushButton.isEnabled = true
+        adButton.isEnabled = true
     }
     
     fileprivate func disableButtons() {
         downloadButton.isEnabled = false
         pushButton.isEnabled = false
+        adButton.isEnabled = false
     }
     
     func gotVideoInfo(info: Info) {        
@@ -107,6 +151,7 @@ class ImageViewController: UIViewController, NetworkingDelegate, GADBannerViewDe
         imageView.image = image
         enableButtons()
         loadingView!.dismiss()
+        getAd()
     }
     
     func connectError() {
@@ -131,7 +176,6 @@ class ImageViewController: UIViewController, NetworkingDelegate, GADBannerViewDe
         let y = height - bannerView.bounds.size.height
         bannerView.frame = CGRect(origin: CGPoint(x: 0, y: y), size: bannerView.bounds.size)
         view.addSubview(bannerView)
-        view.sendSubview(toBack: bannerView)
     }
 
     // MARK: - Navigation
