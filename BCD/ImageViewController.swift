@@ -76,34 +76,32 @@ class ImageViewController: UIViewController, NetworkingDelegate, GADBannerViewDe
     
     @objc fileprivate func disableToShowAd() {
         if dataModel.readAdPremission()! {
+            if let adView = view.viewWithTag(10086) {
+                adView.removeFromSuperview()
+            }
             dataModel.setAdPremissionWith(false)
-            let dialog = LLDialog()
-            dialog.title = "广告已关闭"
-            dialog.message = "从下次开始您将不会再看到广告。"
-            dialog.setPositiveButton(withTitle: "嗯")
-            dialog.show()
         }
     }
     
     @objc fileprivate func ableToShowAd() {
         if !dataModel.readAdPremission()! {
             dataModel.setAdPremissionWith(true)
-            let dialog = LLDialog()
-            dialog.title = "广告已显示"
-            dialog.message = "从下次开始将会显示广告，谢谢您的支持\nε=ε=(ノ≧∇≦)ノ"
-            dialog.setPositiveButton(withTitle: "嗯")
-            dialog.show()
+            getAd()
         }
     }
     
     fileprivate func getAd() {
+        let request = GADRequest()
+        
+        request.testDevices = [ kGADSimulatorID, "d9496780e274c9b1407bdef5d8d5b3d9" ]
+        
         if let per = dataModel.readAdPremission() {
             if per {
-                adBannerView.load(GADRequest())
+                adBannerView.load(request)
             }
         } else {
             dataModel.setAdPremissionWith(true)
-            adBannerView.load(GADRequest())
+            adBannerView.load(request)
         }
     }
     
@@ -176,6 +174,7 @@ class ImageViewController: UIViewController, NetworkingDelegate, GADBannerViewDe
         let y = height - bannerView.bounds.size.height
         bannerView.frame = CGRect(origin: CGPoint(x: 0, y: y), size: bannerView.bounds.size)
         view.addSubview(bannerView)
+        bannerView.tag = 10086
     }
 
     // MARK: - Navigation

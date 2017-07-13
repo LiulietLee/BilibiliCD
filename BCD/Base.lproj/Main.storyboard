@@ -649,6 +649,9 @@
                                                         <constraint firstAttribute="height" constant="99" id="Itn-dj-j1S"/>
                                                         <constraint firstAttribute="width" constant="99" id="MwI-vS-cII"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.radius" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Liuliet.Lee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onh-KQ-Wle">
                                                     <rect key="frame" x="123" y="24" width="91.5" height="27.5"/>
