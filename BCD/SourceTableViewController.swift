@@ -13,8 +13,8 @@ class SourceTableViewController: UITableViewController {
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
     fileprivate let list: [(name: String, url: String)] =
-        [("LLDialog", "https://github.com/LiulietLee/LLDialog/blob/master/LICENSE.txt"),
-        ("MaterialKit", "https://github.com/ApolloZhu/MaterialKit/blob/master/LICENSE")]
+        [("Liuliet.Lee/LLDialog", "https://github.com/LiulietLee/LLDialog/blob/master/LICENSE.txt"),
+        ("ApolloZhu/MaterialKit", "https://github.com/ApolloZhu/MaterialKit/blob/master/LICENSE")]
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -27,6 +27,13 @@ class DetailViewController: UIViewController {
         }
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        xConstraint.constant = 0
+        yConstraint.constant = 0
+        widthConstraint.constant = view.bounds.size.width
+    }
+    
     @IBAction func move(_ sender: UIPanGestureRecognizer) {
         let translate = sender.translation(in: view)
         xConstraint.constant += translate.x
@@ -40,6 +47,7 @@ class DetailViewController: UIViewController {
         yConstraint.constant *= sender.scale
         sender.scale = 1.0
     }
+    
     
     /*
     // MARK: - Navigation

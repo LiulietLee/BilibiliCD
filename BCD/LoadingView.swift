@@ -10,11 +10,33 @@ import UIKit
 
 class LoadingView: UIView {
 
-
-    override func draw(_ rect: CGRect) {
-        
+    fileprivate var active = MKActivityIndicator()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
     }
 
+    fileprivate func setup() {
+        self.backgroundColor = .white
+        let width = self.bounds.size.width
+        let height = self.bounds.size.height
+        let x = width * 0.375
+        let y = height * 0.375
+        let w = width * 0.25
+        let f = CGRect(x: x, y: y, width: w, height: w)
+        active.frame = f
+        active.color = UIColor(red: 1.06, green: 0.403, blue: 0.599, alpha: 1.0)
+        self.addSubview(active)
+        self.bringSubview(toFront: active)
+        active.startAnimating()
+    }
+    
     public func dismiss() {
         UIView.animate(
             withDuration: 0.5,

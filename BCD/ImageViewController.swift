@@ -19,7 +19,7 @@ class ImageViewController: UIViewController,NetworkingDelegate {
     
     var avNum: Int?
     fileprivate let model = NetworkingModel()
-    fileprivate let loadingView = LoadingView()
+    fileprivate var loadingView: LoadingView? = nil
     fileprivate var image = UIImage() {
         willSet {
             imageView.image = newValue
@@ -44,9 +44,9 @@ class ImageViewController: UIViewController,NetworkingDelegate {
         
         disableButtons()
         
-        //loadingView.frame = view.bounds
-        view.addSubview(loadingView)
-        view.bringSubview(toFront: loadingView)
+        loadingView = LoadingView(frame: view.bounds)
+        view.addSubview(loadingView!)
+        view.bringSubview(toFront: loadingView!)
     }
     
     @IBAction func downloadButtonTapped(_ sender: UIBarButtonItem) {
@@ -94,7 +94,7 @@ class ImageViewController: UIViewController,NetworkingDelegate {
     func gotImage(image: UIImage) {
         imageView.image = image
         enableButtons()
-        loadingView.dismiss()
+        loadingView!.dismiss()
     }
     
     func connectError() {
@@ -102,7 +102,7 @@ class ImageViewController: UIViewController,NetworkingDelegate {
         titleLabel.text = "啊叻？"
         authorLabel.text = "视频不见了？"
         urlLabel.text = ""
-        loadingView.dismiss()
+        loadingView!.dismiss()
         imageView.image = UIImage(named: "error_image")
     }
 
