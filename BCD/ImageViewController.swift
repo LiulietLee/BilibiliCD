@@ -68,7 +68,7 @@ class ImageViewController: UIViewController, NetworkingDelegate, GADBannerViewDe
     @IBAction func adButtonTapped(_ sender: UIBarButtonItem) {
         let dialog = LLDialog()
         dialog.title = "广告显示设置"
-        dialog.message = "屏幕下方的广告是我们维持服务的主要收入来源，但为了方便强迫症，您可以在这里自由选择是否显示广告，不需要额外付费。"
+        dialog.message = "屏幕下方的广告是我们维持服务的主要收入来源，但为了方便强迫症，你可以在这里自由选择是否显示广告，不需要额外付费。"
         dialog.setNegativeButton(withTitle: "关闭广告", target: self, action: #selector(disableToShowAd))
         dialog.setPositiveButton(withTitle: "显示广告", target: self, action: #selector(ableToShowAd))
         dialog.show()
@@ -142,8 +142,10 @@ class ImageViewController: UIViewController, NetworkingDelegate, GADBannerViewDe
     func gotVideoInfo(info: Info) {        
         titleLabel.text = info.title!
         authorLabel.text = "UP主：" + info.author!
-        urlLabel.text = info.imageUrl!
+        urlLabel.text = "URL：" + info.imageUrl!
         urlLabel.sizeToFit()
+        titleLabel.sizeToFit()
+        authorLabel.sizeToFit()
     }
     
     func gotImage(image: UIImage) {
@@ -157,7 +159,7 @@ class ImageViewController: UIViewController, NetworkingDelegate, GADBannerViewDe
         print("Cannot connect\n")
         titleLabel.text = "啊叻？"
         authorLabel.text = "连不上服务器了？"
-        urlLabel.text = ""
+        urlLabel.text = "提示：如果一直提示这个可能是我们的服(V)务(P)器(S)炸了，你可以去「关于我们」页面找我们反映情况哦~"
         loadingView!.dismiss()
         imageView.image = UIImage(named: "error_image")
     }
@@ -165,7 +167,7 @@ class ImageViewController: UIViewController, NetworkingDelegate, GADBannerViewDe
     func cannotFindVideo() {
         titleLabel.text = "啊叻？"
         authorLabel.text = "视频不见了？"
-        urlLabel.text = ""
+        urlLabel.text = "提示：目前暂时还抓不到「会员的世界」的封面哦(\"▔□▔)/"
         loadingView!.dismiss()
         imageView.image = UIImage(named: "novideo_image")
     }

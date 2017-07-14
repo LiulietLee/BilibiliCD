@@ -28,7 +28,6 @@ class DetailViewController: UIViewController {
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
         xConstraint.constant = 0
         yConstraint.constant = 0
         widthConstraint.constant = view.bounds.size.width
@@ -48,6 +47,14 @@ class DetailViewController: UIViewController {
         sender.scale = 1.0
     }
     
+    @IBAction func zoomIn(_ sender: UITapGestureRecognizer) {
+        self.widthConstraint.constant *= 2
+        self.xConstraint.constant *= 2
+        self.yConstraint.constant *= 2
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
     
     /*
     // MARK: - Navigation

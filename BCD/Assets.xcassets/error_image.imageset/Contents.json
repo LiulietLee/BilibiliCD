@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "download.png",
+      "filename" : "error_image.png",
       "scale" : "1x"
     },
     {
