@@ -13,6 +13,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var avLabel: UILabel!
     @IBOutlet weak var goButton: UIButton!
     @IBOutlet weak var menu: UIBarButtonItem!
+    fileprivate var timer = Timer()
+    fileprivate var repeatTappingTime = 0
     fileprivate var avNumber = 0 {
         willSet {
             avLabel.text = "av" + String(newValue)
@@ -39,6 +41,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func backspaceButtonTapped() {
         avNumber /= 10
+        
+        if repeatTappingTime == 0 {
+            timer = Timer.scheduledTimer(withTimeInterval: 0.35, repeats: false, block: { (t) in
+                self.repeatTappingTime = 0
+            })
+        } else if repeatTappingTime >= 2 {
+            avNumber = 0
+        }
+        
+        repeatTappingTime += 1
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

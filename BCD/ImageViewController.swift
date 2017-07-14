@@ -102,6 +102,7 @@ class ImageViewController: UIViewController, NetworkingDelegate, GADBannerViewDe
         } else {
             dataModel.setAdPremissionWith(true)
             adBannerView.load(request)
+            adButtonTapped(UIBarButtonItem())
         }
     }
     
@@ -177,6 +178,10 @@ class ImageViewController: UIViewController, NetworkingDelegate, GADBannerViewDe
         bannerView.tag = 10086
     }
 
+    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+        getAd()
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

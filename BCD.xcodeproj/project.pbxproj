@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4F07B1CD1F139A8D0009F6A1 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F07B1CC1F139A8D0009F6A1 /* SWRevealViewController.m */; };
-		4F26AA7F1F14D2B000E1123D /* BlueNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F26AA7E1F14D2B000E1123D /* BlueNavController.swift */; };
 		4F26AA811F14D32400E1123D /* ColoredNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F26AA801F14D32400E1123D /* ColoredNavController.swift */; };
 		4F26AA831F14D3D400E1123D /* SakuraNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F26AA821F14D3D400E1123D /* SakuraNavController.swift */; };
 		4F26AA851F14D45900E1123D /* BrownNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F26AA841F14D45900E1123D /* BrownNavController.swift */; };
@@ -20,16 +19,13 @@
 		4F3077B81F1768E000E1C1AF /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3077B71F1768E000E1C1AF /* CoreDataModel.swift */; };
 		4F3ED7D41F10ACAB000D2941 /* LLDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3ED7D31F10ACAB000D2941 /* LLDialog.swift */; };
 		4F4157A21F1331000042FF40 /* SourceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4157A11F1331000042FF40 /* SourceTableViewController.swift */; };
-		4F4157A41F134B880042FF40 /* TeaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4157A31F134B880042FF40 /* TeaViewController.swift */; };
+		4F5041CA1F18AF1C00B59337 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F5041C91F18AF1C00B59337 /* Assets.xcassets */; };
 		4F9B213F1F16187000D3BDD2 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9B213E1F16187000D3BDD2 /* AboutViewController.swift */; };
 		4F9BBEA21F11102000C984DA /* MKCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9BBE951F11102000C984DA /* MKCardView.swift */; };
-		4F9BBEA31F11102000C984DA /* MKNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9BBE961F11102000C984DA /* MKNavigationBar.swift */; };
 		4F9BBEA41F11102000C984DA /* MKActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9BBE971F11102000C984DA /* MKActivityIndicator.swift */; };
 		4F9BBEA51F11102000C984DA /* MKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9BBE981F11102000C984DA /* MKButton.swift */; };
-		4F9BBEA61F11102000C984DA /* MKCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9BBE991F11102000C984DA /* MKCollectionViewCell.swift */; };
 		4F9BBEA71F11102000C984DA /* MKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9BBE9A1F11102000C984DA /* MKTextField.swift */; };
 		4F9BBEA81F11102000C984DA /* MKTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9BBE9B1F11102000C984DA /* MKTableViewCell.swift */; };
-		4F9BBEA91F11102000C984DA /* MKLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9BBE9C1F11102000C984DA /* MKLabel.swift */; };
 		4F9BBEAA1F11102000C984DA /* MKImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9BBE9D1F11102000C984DA /* MKImageView.swift */; };
 		4F9BBEAB1F11102000C984DA /* MKLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9BBE9E1F11102000C984DA /* MKLayer.swift */; };
 		4F9BBEAC1F11102000C984DA /* MKColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9BBE9F1F11102000C984DA /* MKColor.swift */; };
@@ -40,7 +36,6 @@
 		4FE8FF3E1EF4FC0600D31840 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF3D1EF4FC0600D31840 /* AppDelegate.swift */; };
 		4FE8FF401EF4FC0600D31840 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF3F1EF4FC0600D31840 /* ViewController.swift */; };
 		4FE8FF431EF4FC0600D31840 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FE8FF411EF4FC0600D31840 /* Main.storyboard */; };
-		4FE8FF481EF4FC0600D31840 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FE8FF471EF4FC0600D31840 /* Assets.xcassets */; };
 		4FE8FF4B1EF4FC0600D31840 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FE8FF491EF4FC0600D31840 /* LaunchScreen.storyboard */; };
 		4FE8FF561EF4FC0600D31840 /* BCDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF551EF4FC0600D31840 /* BCDTests.swift */; };
 		4FE8FF611EF4FC0600D31840 /* BCDUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF601EF4FC0600D31840 /* BCDUITests.swift */; };
@@ -69,7 +64,6 @@
 /* Begin PBXFileReference section */
 		4F07B1CB1F139A8D0009F6A1 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		4F07B1CC1F139A8D0009F6A1 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
-		4F26AA7E1F14D2B000E1123D /* BlueNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueNavController.swift; sourceTree = "<group>"; };
 		4F26AA801F14D32400E1123D /* ColoredNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColoredNavController.swift; sourceTree = "<group>"; };
 		4F26AA821F14D3D400E1123D /* SakuraNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SakuraNavController.swift; sourceTree = "<group>"; };
 		4F26AA841F14D45900E1123D /* BrownNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrownNavController.swift; sourceTree = "<group>"; };
@@ -82,16 +76,13 @@
 		4F3077B71F1768E000E1C1AF /* CoreDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataModel.swift; sourceTree = "<group>"; };
 		4F3ED7D31F10ACAB000D2941 /* LLDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLDialog.swift; sourceTree = "<group>"; };
 		4F4157A11F1331000042FF40 /* SourceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceTableViewController.swift; sourceTree = "<group>"; };
-		4F4157A31F134B880042FF40 /* TeaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeaViewController.swift; sourceTree = "<group>"; };
+		4F5041C91F18AF1C00B59337 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F9B213E1F16187000D3BDD2 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		4F9BBE951F11102000C984DA /* MKCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKCardView.swift; sourceTree = "<group>"; };
-		4F9BBE961F11102000C984DA /* MKNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKNavigationBar.swift; sourceTree = "<group>"; };
 		4F9BBE971F11102000C984DA /* MKActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKActivityIndicator.swift; sourceTree = "<group>"; };
 		4F9BBE981F11102000C984DA /* MKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKButton.swift; sourceTree = "<group>"; };
-		4F9BBE991F11102000C984DA /* MKCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKCollectionViewCell.swift; sourceTree = "<group>"; };
 		4F9BBE9A1F11102000C984DA /* MKTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKTextField.swift; sourceTree = "<group>"; };
 		4F9BBE9B1F11102000C984DA /* MKTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKTableViewCell.swift; sourceTree = "<group>"; };
-		4F9BBE9C1F11102000C984DA /* MKLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLabel.swift; sourceTree = "<group>"; };
 		4F9BBE9D1F11102000C984DA /* MKImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKImageView.swift; sourceTree = "<group>"; };
 		4F9BBE9E1F11102000C984DA /* MKLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLayer.swift; sourceTree = "<group>"; };
 		4F9BBE9F1F11102000C984DA /* MKColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKColor.swift; sourceTree = "<group>"; };
@@ -104,7 +95,6 @@
 		4FE8FF3D1EF4FC0600D31840 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FE8FF3F1EF4FC0600D31840 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4FE8FF421EF4FC0600D31840 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4FE8FF471EF4FC0600D31840 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4FE8FF4A1EF4FC0600D31840 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4FE8FF4C1EF4FC0600D31840 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FE8FF511EF4FC0600D31840 /* BCDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BCDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,9 +150,7 @@
 				4FDA093A1F07C6FE0096866C /* DetailViewController.swift */,
 				4F9B213E1F16187000D3BDD2 /* AboutViewController.swift */,
 				4F4157A11F1331000042FF40 /* SourceTableViewController.swift */,
-				4F4157A31F134B880042FF40 /* TeaViewController.swift */,
 				4F26AA801F14D32400E1123D /* ColoredNavController.swift */,
-				4F26AA7E1F14D2B000E1123D /* BlueNavController.swift */,
 				4F26AA821F14D3D400E1123D /* SakuraNavController.swift */,
 				4F26AA841F14D45900E1123D /* BrownNavController.swift */,
 				4F26AA861F14D51100E1123D /* GreyNavController.swift */,
@@ -187,7 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				4FDA09391F07C25C0096866C /* Material Design */,
-				4FE8FF471EF4FC0600D31840 /* Assets.xcassets */,
+				4F5041C91F18AF1C00B59337 /* Assets.xcassets */,
 				4FE8FF491EF4FC0600D31840 /* LaunchScreen.storyboard */,
 				4FE8FF411EF4FC0600D31840 /* Main.storyboard */,
 				4FB3D9601F09DD9C0043066B /* LoadingView.swift */,
@@ -208,17 +196,14 @@
 		4FDA09391F07C25C0096866C /* Material Design */ = {
 			isa = PBXGroup;
 			children = (
-				4F3ED7D31F10ACAB000D2941 /* LLDialog.swift */,
 				4F07B1CB1F139A8D0009F6A1 /* SWRevealViewController.h */,
 				4F07B1CC1F139A8D0009F6A1 /* SWRevealViewController.m */,
+				4F3ED7D31F10ACAB000D2941 /* LLDialog.swift */,
 				4F9BBE951F11102000C984DA /* MKCardView.swift */,
-				4F9BBE961F11102000C984DA /* MKNavigationBar.swift */,
 				4F9BBE971F11102000C984DA /* MKActivityIndicator.swift */,
 				4F9BBE981F11102000C984DA /* MKButton.swift */,
-				4F9BBE991F11102000C984DA /* MKCollectionViewCell.swift */,
 				4F9BBE9A1F11102000C984DA /* MKTextField.swift */,
 				4F9BBE9B1F11102000C984DA /* MKTableViewCell.swift */,
-				4F9BBE9C1F11102000C984DA /* MKLabel.swift */,
 				4F9BBE9D1F11102000C984DA /* MKImageView.swift */,
 				4F9BBE9E1F11102000C984DA /* MKLayer.swift */,
 				4F9BBE9F1F11102000C984DA /* MKColor.swift */,
@@ -391,7 +376,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FE8FF4B1EF4FC0600D31840 /* LaunchScreen.storyboard in Resources */,
-				4FE8FF481EF4FC0600D31840 /* Assets.xcassets in Resources */,
+				4F5041CA1F18AF1C00B59337 /* Assets.xcassets in Resources */,
 				4FE8FF431EF4FC0600D31840 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,9 +404,7 @@
 			files = (
 				4F3ED7D41F10ACAB000D2941 /* LLDialog.swift in Sources */,
 				4FE8FF401EF4FC0600D31840 /* ViewController.swift in Sources */,
-				4F9BBEA91F11102000C984DA /* MKLabel.swift in Sources */,
 				4F26AA851F14D45900E1123D /* BrownNavController.swift in Sources */,
-				4F9BBEA61F11102000C984DA /* MKCollectionViewCell.swift in Sources */,
 				4F26AA831F14D3D400E1123D /* SakuraNavController.swift in Sources */,
 				4F3077B81F1768E000E1C1AF /* CoreDataModel.swift in Sources */,
 				4F3077B51F1768B600E1C1AF /* Permission+CoreDataClass.swift in Sources */,
@@ -429,8 +412,6 @@
 				4F9BBEA81F11102000C984DA /* MKTableViewCell.swift in Sources */,
 				4F9BBEA41F11102000C984DA /* MKActivityIndicator.swift in Sources */,
 				4F9BBEAD1F11102000C984DA /* MKSnackbar.swift in Sources */,
-				4F9BBEA31F11102000C984DA /* MKNavigationBar.swift in Sources */,
-				4F4157A41F134B880042FF40 /* TeaViewController.swift in Sources */,
 				4F9BBEAB1F11102000C984DA /* MKLayer.swift in Sources */,
 				4F9BBEAC1F11102000C984DA /* MKColor.swift in Sources */,
 				4FB3D9611F09DD9C0043066B /* LoadingView.swift in Sources */,
@@ -447,7 +428,6 @@
 				4F9B213F1F16187000D3BDD2 /* AboutViewController.swift in Sources */,
 				4FE8FF731EF5095B00D31840 /* ImageViewController.swift in Sources */,
 				4F07B1CD1F139A8D0009F6A1 /* SWRevealViewController.m in Sources */,
-				4F26AA7F1F14D2B000E1123D /* BlueNavController.swift in Sources */,
 				4F9BBEA51F11102000C984DA /* MKButton.swift in Sources */,
 				4F26AA811F14D32400E1123D /* ColoredNavController.swift in Sources */,
 				4FDA093B1F07C6FE0096866C /* DetailViewController.swift in Sources */,
