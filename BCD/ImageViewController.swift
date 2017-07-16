@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMobileAds
 
-class ImageViewController: UIViewController, NetworkingDelegate, GADBannerViewDelegate {
+class ImageViewController: UIViewController, VideoCoverDelegate, GADBannerViewDelegate {
     
     @IBOutlet weak var adButton: UIBarButtonItem!
     @IBOutlet weak var imageView: UIImageView!
@@ -41,7 +41,7 @@ class ImageViewController: UIViewController, NetworkingDelegate, GADBannerViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        netModel.delegate = self
+        netModel.delegateForVideo = self
         if let num = avNum {
             self.title = "av" + String(num)
             netModel.getInfoFromAvNumber(avNum: num)
