@@ -37,7 +37,7 @@ class NetworkingModel {
     open func getInfoFromAvNumber(avNum: Int) {
         var newInfo: Info?
         
-        let path = "https://protected-woodland-39232.herokuapp.com/video/ios/" + String(avNum) + "/"
+        let path = "http://bilibilicd.tk:81/video/ios/" + String(avNum) + "/"
         let url = URL(string: path)
         let request = URLRequest(url: url!)
         let task = session.dataTask(with: request) { (data, response, error) in

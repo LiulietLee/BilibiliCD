@@ -11,6 +11,7 @@ import UIKit
 class DetailViewController: UIViewController {
     
     var image: UIImage?
+    fileprivate var isZoomedIn = false
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var yConstraint: NSLayoutConstraint!
@@ -48,12 +49,20 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func zoomIn(_ sender: UITapGestureRecognizer) {
-        self.widthConstraint.constant *= 2
-        self.xConstraint.constant *= 2
-        self.yConstraint.constant *= 2
+        let scale: CGFloat = 3
+        if !isZoomedIn {
+            self.widthConstraint.constant *= scale
+            self.xConstraint.constant *= scale
+            self.yConstraint.constant *= scale
+        } else {
+            self.widthConstraint.constant /= scale
+            self.xConstraint.constant /= scale
+            self.yConstraint.constant /= scale
+        }
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
+        isZoomedIn = !isZoomedIn
     }
     
     /*
