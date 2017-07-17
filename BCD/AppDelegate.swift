@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         UIApplication.shared.statusBarStyle = .lightContent
         GADMobileAds.configure(withApplicationID: "ca-app-pub-9289196786381154~9730027828")
-
         return true
     }
 
