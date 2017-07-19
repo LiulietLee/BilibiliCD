@@ -26,12 +26,48 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(getURLFromPasteboard),
+                                               name: NSNotification.Name(rawValue: notiKey),
+                                               object: nil)
+    }
+
+    @objc fileprivate func getURLFromPasteboard() {
+        if let urlString = UIPasteboard.general.string {
+            let tempArray = Array(urlString.characters)
+            var avNum = 0
+            var isAvNum = false
+            for i in 0..<tempArray.count {
+                let j = tempArray.count - i - 1
+                if let singleNum = Int(String(tempArray[j])) {
+                    var num = singleNum
+                    num *= Int(NSDecimalNumber(decimal: pow(10, i)))
+                    avNum += num
+                } else if tempArray[j] == "/" {
+                    continue
+                } else if tempArray[j] == "v" && j >= 1 {
+                    if tempArray[j - 1] == "a" {
+                        isAvNum = true
+                        break
+                    }
+                }
+            }
+            
+            if isAvNum {
+                avNumber = avNum
+            }
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         goButton.isEnabled = false
         menu.target = revealViewController()
         menu.action = #selector(SWRevealViewController.revealToggle(_:))
         view.addGestureRecognizer(revealViewController().panGestureRecognizer())
+        getURLFromPasteboard()
     }
     
     @IBAction func numberButtonTapped(_ sender: UIButton) {

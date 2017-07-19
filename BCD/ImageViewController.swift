@@ -68,7 +68,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate, GADBannerViewDe
     @IBAction func adButtonTapped(_ sender: UIBarButtonItem) {
         let dialog = LLDialog()
         dialog.title = "广告显示设置"
-        dialog.message = "屏幕下方的广告是我们维持服务的主要收入来源，但为了方便强迫症，你可以在这里自由选择是否显示广告，不需要额外付费。"
+        dialog.message = "屏幕下方的广告是我们维持服务的主要收入来源，但为了方便强迫症，您可以在这里自由选择是否显示广告，不需要额外付费。"
         dialog.setNegativeButton(withTitle: "关闭广告", target: self, action: #selector(disableToShowAd))
         dialog.setPositiveButton(withTitle: "显示广告", target: self, action: #selector(ableToShowAd))
         dialog.show()
@@ -93,7 +93,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate, GADBannerViewDe
     fileprivate func getAd() {
         let request = GADRequest()
         
-        request.testDevices = [ kGADSimulatorID, "d9496780e274c9b1407bdef5d8d5b3d9" ]
+        request.testDevices = [ kGADSimulatorID, "d9496780e274c9b1407bdef5d8d5b3d9", "0d27b1f9900926d4c67b23fa32c54bdb" ]
         
         if let per = dataModel.readAdPremission() {
             if per {
