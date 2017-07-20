@@ -23,7 +23,9 @@ class AboutViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let url = developers[indexPath.row]
-        UIApplication.shared.open(URL(string: url)!, options: [:], completionHandler: nil)
+        if indexPath.row < developers.count {
+            let url = developers[indexPath.row]
+            UIApplication.shared.open(URL(string: url)!, options: [:], completionHandler: nil)
+        }
     }
 }

@@ -873,17 +873,17 @@
                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="    因此我希望能找个会画画的帮忙拯救一下这个丑不拉几的界面。如果你有时间，有能力的话，欢迎加入我们" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aug-ZI-g2q">
-                                <rect key="frame" x="16" y="281" width="288" height="87.5"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="    因此我希望能找个会画画的（妹子）帮忙画几幅插画放到这个App里面，让App变得更萌一点。如果你有时间，有能力的话，欢迎加入我们" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aug-ZI-g2q">
+                                <rect key="frame" x="16" y="281" width="288" height="111.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eyK-mB-ju4">
-                                <rect key="frame" x="16" y="377" width="288" height="172"/>
+                                <rect key="frame" x="16" y="401" width="288" height="148"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoo-UE-2CD">
-                                        <rect key="frame" x="98.5" y="67" width="91" height="38"/>
+                                        <rect key="frame" x="98.5" y="55" width="91" height="38"/>
                                         <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="18"/>
                                         <state key="normal" title="给我发私信">
                                             <color key="titleColor" red="0.62329528805000001" green="0.55563846115023729" blue="0.56725834804633624" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
