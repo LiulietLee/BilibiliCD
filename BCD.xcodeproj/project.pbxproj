@@ -19,6 +19,7 @@
 		4F3077B81F1768E000E1C1AF /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3077B71F1768E000E1C1AF /* CoreDataModel.swift */; };
 		4F3ED7D41F10ACAB000D2941 /* LLDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3ED7D31F10ACAB000D2941 /* LLDialog.swift */; };
 		4F4157A21F1331000042FF40 /* SourceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4157A11F1331000042FF40 /* SourceTableViewController.swift */; };
+		4F42628A1F20CC9900B9646D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F4262891F20CC9900B9646D /* GoogleService-Info.plist */; };
 		4F5041CA1F18AF1C00B59337 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F5041C91F18AF1C00B59337 /* Assets.xcassets */; };
 		4F9B213F1F16187000D3BDD2 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9B213E1F16187000D3BDD2 /* AboutViewController.swift */; };
 		4F9BBEA21F11102000C984DA /* MKCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9BBE951F11102000C984DA /* MKCardView.swift */; };
@@ -47,6 +48,7 @@
 		4FE8FF711EF5000400D31840 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF701EF5000400D31840 /* Info.swift */; };
 		4FE8FF731EF5095B00D31840 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF721EF5095B00D31840 /* ImageViewController.swift */; };
 		4FF426D61F1FA61E00A8EF79 /* FindArtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF426D51F1FA61E00A8EF79 /* FindArtViewController.swift */; };
+		BC4B291BC0D86E977A19D835 /* libPods-BCD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1901769E00E741DB8E634FF /* libPods-BCD.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,7 @@
 		4F3077B71F1768E000E1C1AF /* CoreDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataModel.swift; sourceTree = "<group>"; };
 		4F3ED7D31F10ACAB000D2941 /* LLDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLDialog.swift; sourceTree = "<group>"; };
 		4F4157A11F1331000042FF40 /* SourceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceTableViewController.swift; sourceTree = "<group>"; };
+		4F4262891F20CC9900B9646D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4F5041C91F18AF1C00B59337 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F9B213E1F16187000D3BDD2 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		4F9BBE951F11102000C984DA /* MKCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKCardView.swift; sourceTree = "<group>"; };
@@ -117,6 +120,9 @@
 		4FE8FF701EF5000400D31840 /* Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		4FE8FF721EF5095B00D31840 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		4FF426D51F1FA61E00A8EF79 /* FindArtViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindArtViewController.swift; sourceTree = "<group>"; };
+		8A8078299F9F4EA6B414ED7D /* Pods-BCD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BCD/Pods-BCD.debug.xcconfig"; sourceTree = "<group>"; };
+		A1901769E00E741DB8E634FF /* libPods-BCD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BCD.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD6425538132C362B8653B3A /* Pods-BCD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCD.release.xcconfig"; path = "Pods/Target Support Files/Pods-BCD/Pods-BCD.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +131,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F3077A01F174E9300E1C1AF /* GoogleMobileAds.framework in Frameworks */,
+				BC4B291BC0D86E977A19D835 /* libPods-BCD.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				4F3077961F17478100E1C1AF /* GoogleMobileAds.framework */,
+				A1901769E00E741DB8E634FF /* libPods-BCD.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -204,6 +212,7 @@
 			children = (
 				4FD61C4C1F1CF64A00D61498 /* BCD.entitlements */,
 				4FE8FF3D1EF4FC0600D31840 /* AppDelegate.swift */,
+				4F4262891F20CC9900B9646D /* GoogleService-Info.plist */,
 				4FE8FF4C1EF4FC0600D31840 /* Info.plist */,
 				4FDA09351F07C22A0096866C /* BCD-Bridging-Header.h */,
 			);
@@ -239,6 +248,7 @@
 				4FE8FF5F1EF4FC0600D31840 /* BCDUITests */,
 				4FE8FF3B1EF4FC0600D31840 /* Products */,
 				4F3077951F17478100E1C1AF /* Frameworks */,
+				9F8777D193FA8FFCFE41B3E0 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -281,6 +291,15 @@
 			path = BCDUITests;
 			sourceTree = "<group>";
 		};
+		9F8777D193FA8FFCFE41B3E0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8A8078299F9F4EA6B414ED7D /* Pods-BCD.debug.xcconfig */,
+				FD6425538132C362B8653B3A /* Pods-BCD.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -288,9 +307,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4FE8FF651EF4FC0600D31840 /* Build configuration list for PBXNativeTarget "BCD" */;
 			buildPhases = (
+				0BAFF8C5C4560CD26254462B /* [CP] Check Pods Manifest.lock */,
 				4FE8FF361EF4FC0600D31840 /* Sources */,
 				4FE8FF371EF4FC0600D31840 /* Frameworks */,
 				4FE8FF381EF4FC0600D31840 /* Resources */,
+				5AED74E885AB7EFE68AF69D1 /* [CP] Embed Pods Frameworks */,
+				A539433C3C43E3E011A81045 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -353,8 +375,11 @@
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Push = {
-								enabled = 0;
+								enabled = 1;
 							};
 							com.apple.iCloud = {
 								enabled = 0;
@@ -401,6 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FE8FF4B1EF4FC0600D31840 /* LaunchScreen.storyboard in Resources */,
+				4F42628A1F20CC9900B9646D /* GoogleService-Info.plist in Resources */,
 				4F5041CA1F18AF1C00B59337 /* Assets.xcassets in Resources */,
 				4FE8FF431EF4FC0600D31840 /* Main.storyboard in Resources */,
 			);
@@ -421,6 +447,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0BAFF8C5C4560CD26254462B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5AED74E885AB7EFE68AF69D1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BCD/Pods-BCD-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A539433C3C43E3E011A81045 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BCD/Pods-BCD-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4FE8FF361EF4FC0600D31840 /* Sources */ = {
@@ -537,7 +611,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jiahuan Shi (ANB6MDJTLF)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jiahuan Shi (ANB6MDJTLF)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -556,9 +631,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "96b488ea-a5d6-4df4-b380-6358dd3d4300";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -601,7 +677,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -612,9 +688,13 @@
 		};
 		4FE8FF661EF4FC0600D31840 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A8078299F9F4EA6B414ED7D /* Pods-BCD.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = BCD/BCD.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: com.Future-Code-Institute.BCD";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = ANB6MDJTLF;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -623,8 +703,10 @@
 				INFOPLIST_FILE = BCD/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Future-Code-Institute.BCD";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Future-Code-Institute.BCD";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "BCD/BCD-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -634,9 +716,12 @@
 		};
 		4FE8FF671EF4FC0600D31840 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD6425538132C362B8653B3A /* Pods-BCD.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = BCD/BCD.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = ANB6MDJTLF;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -645,8 +730,10 @@
 				INFOPLIST_FILE = BCD/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Future-Code-Institute.BCD";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Future-Code-Institute.BCD";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "BCD/BCD-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
