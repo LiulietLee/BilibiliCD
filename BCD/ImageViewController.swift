@@ -93,7 +93,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate, GADBannerViewDe
     fileprivate func getAd() {
         let request = GADRequest()
         
-        request.testDevices = [ kGADSimulatorID, "d9496780e274c9b1407bdef5d8d5b3d9", "0d27b1f9900926d4c67b23fa32c54bdb" ]
+        // request.testDevices = [ kGADSimulatorID, "d9496780e274c9b1407bdef5d8d5b3d9", "0d27b1f9900926d4c67b23fa32c54bdb" ]
         
         if let per = dataModel.readAdPremission() {
             if per {
@@ -153,6 +153,17 @@ class ImageViewController: UIViewController, VideoCoverDelegate, GADBannerViewDe
         enableButtons()
         loadingView!.dismiss()
         getAd()
+        addItemToDB()
+    }
+    
+    fileprivate func addItemToDB() {
+        let av = "av" + String(avNum!)
+        let title = titleLabel.text!
+        let date = Date() as NSDate
+        let up = authorLabel.text!
+        let url = urlLabel.text!
+        let image = UIImagePNGRepresentation(imageView.image!)! as NSData
+        dataModel.addNewHistory(av: av, date: date, image: image, title: title, up: up, url: url)
     }
     
     func connectError() {

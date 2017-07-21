@@ -15,7 +15,7 @@
         <!--封面下载-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BCD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BilibiliCD" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -24,7 +24,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WkO-Vo-nK5" customClass="MKButton" customModule="BCD" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WkO-Vo-nK5" customClass="MKButton" customModule="BilibiliCD" customModuleProvider="target">
                                 <rect key="frame" x="238" y="72" width="66" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="WkO-Vo-nK5" secondAttribute="height" multiplier="1:1" id="5cq-QK-RAa"/>
@@ -43,7 +43,7 @@
                                 <color key="textColor" red="0.99692672490000001" green="0.48709040879999999" blue="0.65352439880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gJ-Wu-D4U" customClass="MKButton" customModule="BCD" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gJ-Wu-D4U" customClass="MKButton" customModule="BilibiliCD" customModuleProvider="target">
                                 <rect key="frame" x="117.5" y="463" width="85" height="97"/>
                                 <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="40"/>
                                 <state key="normal" title="0">
@@ -53,7 +53,7 @@
                                     <action selector="numberButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="09K-Kt-FFj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5FV-ng-vLE" customClass="MKButton" customModule="BCD" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5FV-ng-vLE" customClass="MKButton" customModule="BilibiliCD" customModuleProvider="target">
                                 <rect key="frame" x="210.5" y="358" width="85.5" height="97"/>
                                 <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="40"/>
                                 <state key="normal" title="9">
@@ -63,7 +63,7 @@
                                     <action selector="numberButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I6q-qm-JiN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gq4-jN-Rz8" customClass="MKButton" customModule="BCD" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gq4-jN-Rz8" customClass="MKButton" customModule="BilibiliCD" customModuleProvider="target">
                                 <rect key="frame" x="117.5" y="358" width="85" height="97"/>
                                 <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="40"/>
                                 <state key="normal" title="8">
@@ -73,7 +73,7 @@
                                     <action selector="numberButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7NU-1W-sIP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoC-Sf-2pO" customClass="MKButton" customModule="BCD" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoC-Sf-2pO" customClass="MKButton" customModule="BilibiliCD" customModuleProvider="target">
                                 <rect key="frame" x="24" y="358" width="85.5" height="97"/>
                                 <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="40"/>
                                 <state key="normal" title="7">
@@ -83,7 +83,7 @@
                                     <action selector="numberButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xtT-QY-XY3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Jv-ZF-1xQ" customClass="MKButton" customModule="BCD" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Jv-ZF-1xQ" customClass="MKButton" customModule="BilibiliCD" customModuleProvider="target">
                                 <rect key="frame" x="210.5" y="253" width="85.5" height="97"/>
                                 <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="40"/>
                                 <state key="normal" title="6">
@@ -93,7 +93,7 @@
                                     <action selector="numberButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vSg-3y-Jci"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dp3-9z-bWD" customClass="MKButton" customModule="BCD" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dp3-9z-bWD" customClass="MKButton" customModule="BilibiliCD" customModuleProvider="target">
                                 <rect key="frame" x="117.5" y="253" width="85" height="97"/>
                                 <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="40"/>
                                 <state key="normal" title="5">
@@ -103,7 +103,7 @@
                                     <action selector="numberButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y5g-io-gMm"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wv9-Id-3O0" customClass="MKButton" customModule="BCD" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wv9-Id-3O0" customClass="MKButton" customModule="BilibiliCD" customModuleProvider="target">
                                 <rect key="frame" x="24" y="253" width="85.5" height="97"/>
                                 <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="40"/>
                                 <state key="normal" title="4">
@@ -113,7 +113,7 @@
                                     <action selector="numberButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2qx-Fb-ENm"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPg-fz-nPK" customClass="MKButton" customModule="BCD" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPg-fz-nPK" customClass="MKButton" customModule="BilibiliCD" customModuleProvider="target">
                                 <rect key="frame" x="210.5" y="148" width="85.5" height="97"/>
                                 <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="40"/>
                                 <state key="normal" title="3">
@@ -123,7 +123,7 @@
                                     <action selector="numberButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qIm-3h-wyF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vv4-nB-5IW" customClass="MKButton" customModule="BCD" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vv4-nB-5IW" customClass="MKButton" customModule="BilibiliCD" customModuleProvider="target">
                                 <rect key="frame" x="117.5" y="148" width="85" height="97"/>
                                 <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="40"/>
                                 <state key="normal" title="2">
@@ -133,7 +133,7 @@
                                     <action selector="numberButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s1Z-F7-NSG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kmh-jW-Sy8" customClass="MKButton" customModule="BCD" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kmh-jW-Sy8" customClass="MKButton" customModule="BilibiliCD" customModuleProvider="target">
                                 <rect key="frame" x="24" y="148" width="85.5" height="97"/>
                                 <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="40"/>
                                 <state key="normal" title="1">
@@ -151,7 +151,7 @@
                                 <rect key="frame" x="210.5" y="463" width="85.5" height="97"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JxB-sJ-9mF" customClass="MKButton" customModule="BCD" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JxB-sJ-9mF" customClass="MKButton" customModule="BilibiliCD" customModuleProvider="target">
                                 <rect key="frame" x="16" y="74" width="66" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="JxB-sJ-9mF" secondAttribute="height" multiplier="1:1" id="7Xg-0q-ZZK"/>
@@ -252,7 +252,7 @@
         <!--Tutorial Content View Controller-->
         <scene sceneID="TBj-ub-Ghc">
             <objects>
-                <viewController storyboardIdentifier="content" id="Rfk-8v-X96" customClass="TutorialContentViewController" customModule="BCD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="content" id="Rfk-8v-X96" customClass="TutorialContentViewController" customModule="BilibiliCD" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="I2J-LA-ODF"/>
                         <viewControllerLayoutGuide type="bottom" id="tJZ-NM-hEU"/>
@@ -284,7 +284,7 @@
         <!--Tutorial Page View Controller-->
         <scene sceneID="b9f-XS-0oe">
             <objects>
-                <pageViewController storyboardIdentifier="page" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="RdM-4W-Kpz" customClass="TutorialPageViewController" customModule="BCD" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="page" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="RdM-4W-Kpz" customClass="TutorialPageViewController" customModule="BilibiliCD" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ev-kG-Zhv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1661" y="814"/>
@@ -292,7 +292,7 @@
         <!--Tutorial View Controller-->
         <scene sceneID="GY0-eR-vwK">
             <objects>
-                <viewController id="D67-0g-9IQ" customClass="TutorialViewController" customModule="BCD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="D67-0g-9IQ" customClass="TutorialViewController" customModule="BilibiliCD" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xo7-6h-jAg"/>
                         <viewControllerLayoutGuide type="bottom" id="Xq8-e8-eI4"/>
@@ -301,7 +301,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XsU-ss-UBH" customClass="MKButton" customModule="BCD" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XsU-ss-UBH" customClass="MKButton" customModule="BilibiliCD" customModuleProvider="target">
                                 <rect key="frame" x="16" y="508" width="288" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="sdC-d6-FmO"/>
@@ -325,10 +325,106 @@
             </objects>
             <point key="canvasLocation" x="923" y="815"/>
         </scene>
+        <!--历史记录-->
+        <scene sceneID="kfI-zA-GAF">
+            <objects>
+                <viewController id="Mdq-yi-nk0" customClass="HistoryViewController" customModule="BilibiliCD" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KT3-4e-6Nz"/>
+                        <viewControllerLayoutGuide type="bottom" id="0MF-ph-1u6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="P92-VT-zyS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MF4-nh-3l8">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" id="Fp5-t7-21j" customClass="HistoryCell" customModule="BilibiliCD" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fp5-t7-21j" id="Byn-cT-jmi">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CTr-1J-z2U">
+                                                    <rect key="frame" x="8" y="8" width="134.5" height="84"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="CTr-1J-z2U" secondAttribute="height" multiplier="8:5" id="CYa-or-o71"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="视频标题" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFh-Yw-OOf">
+                                                    <rect key="frame" x="150" y="8" width="162" height="67"/>
+                                                    <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OGf-D3-97r">
+                                                    <rect key="frame" x="150" y="75" width="162" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="17" id="Hi1-MW-j4l"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="12"/>
+                                                    <color key="textColor" red="0.46167968749999999" green="0.46167968749999999" blue="0.46167968749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="leadingMargin" secondItem="CTr-1J-z2U" secondAttribute="leading" id="4Yi-77-POV"/>
+                                                <constraint firstItem="mFh-Yw-OOf" firstAttribute="leading" secondItem="CTr-1J-z2U" secondAttribute="trailing" constant="7.5" id="A85-Hd-cSz"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="CTr-1J-z2U" secondAttribute="bottom" id="Ner-I4-yV8"/>
+                                                <constraint firstAttribute="topMargin" secondItem="mFh-Yw-OOf" secondAttribute="top" id="Q04-kx-FNM"/>
+                                                <constraint firstItem="OGf-D3-97r" firstAttribute="top" secondItem="mFh-Yw-OOf" secondAttribute="bottom" id="TaF-Q8-RT9"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="OGf-D3-97r" secondAttribute="bottom" id="Z5I-uX-9DI"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="CTr-1J-z2U" secondAttribute="leading" id="fmz-xv-XJE"/>
+                                                <constraint firstAttribute="topMargin" secondItem="CTr-1J-z2U" secondAttribute="top" id="imt-rY-y5H"/>
+                                                <constraint firstItem="OGf-D3-97r" firstAttribute="leading" secondItem="CTr-1J-z2U" secondAttribute="trailing" constant="7.5" id="nkX-u4-6O3"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="OGf-D3-97r" secondAttribute="trailing" id="psL-d8-F6N"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="mFh-Yw-OOf" secondAttribute="trailing" id="qZ9-Pe-BkV"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="coverView" destination="CTr-1J-z2U" id="iUj-2p-YBY"/>
+                                            <outlet property="dateLabel" destination="OGf-D3-97r" id="Rrx-Pq-FLx"/>
+                                            <outlet property="titleLabel" destination="mFh-Yw-OOf" id="ktZ-hn-C05"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="MF4-nh-3l8" secondAttribute="trailing" id="5Do-Pg-ShS"/>
+                            <constraint firstItem="MF4-nh-3l8" firstAttribute="leading" secondItem="P92-VT-zyS" secondAttribute="leading" id="QAi-xJ-Gqy"/>
+                            <constraint firstItem="MF4-nh-3l8" firstAttribute="top" secondItem="P92-VT-zyS" secondAttribute="top" id="g1w-0x-X8t"/>
+                            <constraint firstItem="0MF-ph-1u6" firstAttribute="top" secondItem="MF4-nh-3l8" secondAttribute="bottom" id="gN4-li-qPa"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="历史记录" id="4A2-Rh-b2z">
+                        <barButtonItem key="leftBarButtonItem" image="ic_menu" id="XId-7b-7sz"/>
+                        <rightBarButtonItems>
+                            <barButtonItem image="ic_delete" id="1nb-KM-qp5">
+                                <connections>
+                                    <action selector="clearButtonTapped:" destination="Mdq-yi-nk0" id="IOh-h2-uZS"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="ic_settings" id="yVs-3c-060"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menu" destination="XId-7b-7sz" id="jbZ-Ed-2LE"/>
+                        <outlet property="tableView" destination="MF4-nh-3l8" id="Nc3-XI-FlI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CsH-Dz-dT7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1980" y="-675"/>
+        </scene>
         <!--Image View Controller-->
         <scene sceneID="YLA-BA-Fka">
             <objects>
-                <viewController id="J1l-gt-L0q" customClass="ImageViewController" customModule="BCD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="J1l-gt-L0q" customClass="ImageViewController" customModule="BilibiliCD" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fgQ-2S-BVx"/>
                         <viewControllerLayoutGuide type="bottom" id="LdW-Kp-l09"/>
@@ -422,7 +518,7 @@
         <!--Detail View Controller-->
         <scene sceneID="ueF-gf-9ae">
             <objects>
-                <viewController id="c48-nJ-AAz" customClass="DetailViewController" customModule="BCD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="c48-nJ-AAz" customClass="DetailViewController" customModule="BilibiliCD" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Qz3-tw-mPa"/>
                         <viewControllerLayoutGuide type="bottom" id="ixj-1V-Qce"/>
@@ -511,7 +607,7 @@
                         <sections>
                             <tableViewSection id="S8v-5y-c5p">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="Hro-Iv-QCX" customClass="MKTableViewCell" customModule="BCD" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="Hro-Iv-QCX" customClass="MKTableViewCell" customModule="BilibiliCD" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hro-Iv-QCX" id="Zpp-25-tPW">
@@ -539,15 +635,43 @@
                                             <segue destination="uMu-2d-WQe" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="pFk-eZ-ib2"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="Gom-jE-D2T" customClass="MKTableViewCell" customModule="BCD" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="9Iv-ea-W26" customClass="MKTableViewCell" customModule="BilibiliCD" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="90" width="320" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Iv-ea-W26" id="fpD-S8-CQc">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="历史记录" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAn-Uv-9dK">
+                                                    <rect key="frame" x="16" y="31" width="80" height="28"/>
+                                                    <fontDescription key="fontDescription" name="PingFangHK-Medium" family="PingFang HK" pointSize="20"/>
+                                                    <color key="textColor" red="0.26734374999999999" green="0.26734374999999999" blue="0.26734374999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="leadingMargin" secondItem="wAn-Uv-9dK" secondAttribute="leading" constant="-8" id="Z2M-wO-hgm"/>
+                                                <constraint firstItem="wAn-Uv-9dK" firstAttribute="centerY" secondItem="fpD-S8-CQc" secondAttribute="centerY" id="tJ9-TD-bpc"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="rippleLayerColor">
+                                                <color key="value" red="0.40090259909999998" green="0.80100601910000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="Enq-T1-832" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="QYP-Sc-lmq"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="Gom-jE-D2T" customClass="MKTableViewCell" customModule="BilibiliCD" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="180" width="320" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gom-jE-D2T" id="eLa-IK-kSb">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关于我们" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IqQ-Uo-fXu">
-                                                    <rect key="frame" x="16" y="31.5" width="80" height="28"/>
+                                                    <rect key="frame" x="16" y="31" width="80" height="28"/>
                                                     <fontDescription key="fontDescription" name="PingFangHK-Medium" family="PingFang HK" pointSize="20"/>
                                                     <color key="textColor" red="0.26734374999999999" green="0.26734374999999999" blue="0.26734374999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -567,15 +691,15 @@
                                             <segue destination="NFI-Ou-sCf" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="xkI-Je-9lR"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="uHg-dJ-JSI" customClass="MKTableViewCell" customModule="BCD" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="180" width="320" height="90"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="uHg-dJ-JSI" customClass="MKTableViewCell" customModule="BilibiliCD" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="270" width="320" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uHg-dJ-JSI" id="deU-j9-5Ba">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开源组件许可" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDn-Ac-ukI">
-                                                    <rect key="frame" x="16" y="31.5" width="120" height="28"/>
+                                                    <rect key="frame" x="16" y="31" width="120" height="28"/>
                                                     <fontDescription key="fontDescription" name="PingFangHK-Medium" family="PingFang HK" pointSize="20"/>
                                                     <color key="textColor" red="0.26734374999999999" green="0.26734374999999999" blue="0.26734374999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -611,7 +735,7 @@
         <!--Sakura Nav Controller-->
         <scene sceneID="adv-Hp-AZI">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uMu-2d-WQe" customClass="SakuraNavController" customModule="BCD" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uMu-2d-WQe" customClass="SakuraNavController" customModule="BilibiliCD" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Cy-pq-ZJn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -629,7 +753,7 @@
         <!--Brown Nav Controller-->
         <scene sceneID="MXM-cb-vGL">
             <objects>
-                <navigationController id="NFI-Ou-sCf" customClass="BrownNavController" customModule="BCD" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="NFI-Ou-sCf" customClass="BrownNavController" customModule="BilibiliCD" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="e0R-6N-1lg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -640,12 +764,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XY7-jC-Dyh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1294" y="-776"/>
+            <point key="canvasLocation" x="1239" y="-1438"/>
         </scene>
         <!--关于我们-->
         <scene sceneID="pog-2U-nTP">
             <objects>
-                <tableViewController id="nvZ-Ez-EOX" customClass="AboutViewController" customModule="BCD" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="nvZ-Ez-EOX" customClass="AboutViewController" customModule="BilibiliCD" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="x6Q-MI-X3e">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -653,7 +777,7 @@
                         <sections>
                             <tableViewSection id="p1s-2s-cpN">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="186" id="FeN-22-e5s" customClass="MKTableViewCell" customModule="BCD" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="186" id="FeN-22-e5s" customClass="MKTableViewCell" customModule="BilibiliCD" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="186"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FeN-22-e5s" id="FCp-sq-b2P">
@@ -674,19 +798,19 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Liuliet.Lee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onh-KQ-Wle">
-                                                    <rect key="frame" x="124" y="24" width="100.5" height="30.5"/>
+                                                    <rect key="frame" x="124" y="24" width="101" height="31"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS开发爱好者" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNL-cd-1tt">
-                                                    <rect key="frame" x="124" y="63" width="133" height="27.5"/>
+                                                    <rect key="frame" x="124" y="63" width="133" height="28"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B站科技区划水UP主" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRS-N4-fEY">
-                                                    <rect key="frame" x="124" y="98" width="178" height="27.5"/>
+                                                    <rect key="frame" x="124" y="99" width="178" height="28"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -712,7 +836,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="186" id="uIh-v5-SS6" customClass="MKTableViewCell" customModule="BCD" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="186" id="uIh-v5-SS6" customClass="MKTableViewCell" customModule="BilibiliCD" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="186" width="320" height="186"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uIh-v5-SS6" id="ZtW-Bj-mlV">
@@ -733,19 +857,19 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="波诺先生" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sic-Zd-lix">
-                                                    <rect key="frame" x="124" y="24" width="88" height="30.5"/>
+                                                    <rect key="frame" x="124" y="24" width="88" height="31"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="路人ACMer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Lh-UM-q0e">
-                                                    <rect key="frame" x="124" y="62.5" width="103.5" height="28"/>
+                                                    <rect key="frame" x="124" y="63" width="104" height="28"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Python哲学家" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDl-XA-WvY">
-                                                    <rect key="frame" x="124" y="98.5" width="122" height="28"/>
+                                                    <rect key="frame" x="124" y="99" width="122" height="28"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -771,7 +895,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="186" id="2WN-IM-W0V" customClass="MKTableViewCell" customModule="BCD" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="186" id="2WN-IM-W0V" customClass="MKTableViewCell" customModule="BilibiliCD" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="372" width="320" height="186"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2WN-IM-W0V" id="EKK-je-SIu">
@@ -798,13 +922,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="如果您有时间，有能力" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uep-Z3-u6T">
-                                                    <rect key="frame" x="124" y="62.5" width="190" height="26"/>
+                                                    <rect key="frame" x="124" y="63" width="190" height="26"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎加入我们的团队" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9BJ-Yp-spw">
-                                                    <rect key="frame" x="124" y="96.5" width="171" height="26"/>
+                                                    <rect key="frame" x="124" y="97" width="171" height="26"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -850,12 +974,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vLd-xB-YNX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2033" y="-777"/>
+            <point key="canvasLocation" x="1980" y="-1439"/>
         </scene>
         <!--美工（tan90°）-->
         <scene sceneID="kDK-Yp-cHs">
             <objects>
-                <viewController id="YeT-dB-PfP" customClass="FindArtViewController" customModule="BCD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="YeT-dB-PfP" customClass="FindArtViewController" customModule="BilibiliCD" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vip-hF-RvZ"/>
                         <viewControllerLayoutGuide type="bottom" id="jWk-wV-ceW"/>
@@ -880,10 +1004,10 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eyK-mB-ju4">
-                                <rect key="frame" x="16" y="401" width="288" height="148"/>
+                                <rect key="frame" x="16" y="401.5" width="288" height="147.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoo-UE-2CD">
-                                        <rect key="frame" x="98.5" y="55" width="91" height="38"/>
+                                        <rect key="frame" x="99" y="54.5" width="91" height="38"/>
                                         <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="18"/>
                                         <state key="normal" title="给我发私信">
                                             <color key="titleColor" red="0.62329528805000001" green="0.55563846115023729" blue="0.56725834804633624" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -918,12 +1042,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Udq-wt-h8N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2835" y="-777.46478873239437"/>
+            <point key="canvasLocation" x="2783" y="-1439"/>
         </scene>
         <!--Grey Nav Controller-->
         <scene sceneID="B9q-Ms-qVS">
             <objects>
-                <navigationController id="dzb-zd-eId" customClass="GreyNavController" customModule="BCD" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="dzb-zd-eId" customClass="GreyNavController" customModule="BilibiliCD" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="I6W-ge-YiO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -934,12 +1058,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lmF-pE-Q0y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1292" y="-1483"/>
+            <point key="canvasLocation" x="1238" y="-2143"/>
         </scene>
         <!--开源组件许可-->
         <scene sceneID="Sgm-F5-nPb">
             <objects>
-                <tableViewController id="7By-k2-vxO" customClass="SourceTableViewController" customModule="BCD" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="7By-k2-vxO" customClass="SourceTableViewController" customModule="BilibiliCD" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="cLT-cT-Ud3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -968,18 +1092,38 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vy3-zc-q3z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2033" y="-1483"/>
+            <point key="canvasLocation" x="1980" y="-2143"/>
+        </scene>
+        <!--Blue Nav Controller-->
+        <scene sceneID="HtT-6U-nq4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Enq-T1-832" customClass="BlueNavController" customModule="BilibiliCD" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qXM-f5-261">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Mdq-yi-nk0" kind="relationship" relationship="rootViewController" id="fxB-ur-NDG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rlB-9R-m0U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1238" y="-674"/>
         </scene>
     </scenes>
     <resources>
         <image name="akkarin" width="250" height="250"/>
         <image name="bonuo-pro" width="580" height="580"/>
         <image name="ic_backspace" width="24" height="24"/>
+        <image name="ic_delete" width="24" height="24"/>
         <image name="ic_file_download" width="24" height="24"/>
         <image name="ic_goback" width="24" height="24"/>
         <image name="ic_help_outline" width="24" height="24"/>
         <image name="ic_menu" width="24" height="24"/>
         <image name="ic_search" width="24" height="24"/>
+        <image name="ic_settings" width="24" height="24"/>
         <image name="liuliet-pro" width="346" height="360"/>
     </resources>
     <inferredMetricsTieBreakers>

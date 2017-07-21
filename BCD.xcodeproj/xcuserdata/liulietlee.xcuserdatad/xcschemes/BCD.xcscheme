@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4FE8FF391EF4FC0600D31840"
-               BuildableName = "BCD.app"
+               BuildableName = "BilibiliCD.app"
                BlueprintName = "BCD"
                ReferencedContainer = "container:BCD.xcodeproj">
             </BuildableReference>
@@ -23,7 +23,7 @@
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4FE8FF391EF4FC0600D31840"
-            BuildableName = "BCD.app"
+            BuildableName = "BilibiliCD.app"
             BlueprintName = "BCD"
             ReferencedContainer = "container:BCD.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4FE8FF391EF4FC0600D31840"
-            BuildableName = "BCD.app"
+            BuildableName = "BilibiliCD.app"
             BlueprintName = "BCD"
             ReferencedContainer = "container:BCD.xcodeproj">
          </BuildableReference>
@@ -95,14 +95,14 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4FE8FF391EF4FC0600D31840"
-            BuildableName = "BCD.app"
+            BuildableName = "BilibiliCD.app"
             BlueprintName = "BCD"
             ReferencedContainer = "container:BCD.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
-      buildConfiguration = "Debug">
+      buildConfiguration = "Release">
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
