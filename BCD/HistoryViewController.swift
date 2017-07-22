@@ -8,14 +8,16 @@
 
 import UIKit
 
-class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate, SetHistoryNumDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var menu: UIBarButtonItem!
     fileprivate let dataModel = CoreDataModel()
     fileprivate var history = [History]()
+    fileprivate let nothingLabel = UILabel()
 
     override func viewWillAppear(_ animated: Bool) {
+        dataModel.refreshHistory()
         history = dataModel.getHistory()
     }
     
@@ -29,8 +31,45 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         view.addGestureRecognizer(revealViewController().panGestureRecognizer())
     }
     
+    fileprivate func setLabel() {
+        nothingLabel.text = "这里空空如也"
+        nothingLabel.textColor = UIColor(rgb: 0x66ccff)
+        nothingLabel.font = UIFont(name: "Avenir", size: 32.0)
+        nothingLabel.translatesAutoresizingMaskIntoConstraints = false
+        nothingLabel.textAlignment = .center
+        
+        self.view.addSubview(nothingLabel)
+        
+        let midXCon = NSLayoutConstraint(item: nothingLabel, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1, constant: 0)
+        let midYCon = NSLayoutConstraint(item: nothingLabel, attribute: .centerY, relatedBy: .equal, toItem: self.view, attribute: .centerY, multiplier: 1, constant: 0)
+        
+        self.view.addConstraint(midXCon)
+        self.view.addConstraint(midYCon)
+    }
+    
+    fileprivate func showLabel() {
+        nothingLabel.isHidden = false
+        self.view.bringSubview(toFront: nothingLabel)
+    }
+    
+    fileprivate func hideLabel() {
+        nothingLabel.isHidden = true
+        self.view.sendSubview(toBack: nothingLabel)
+    }
+    
     @IBAction func clearButtonTapped(_ sender: UIBarButtonItem) {
-        // todo
+        let dialog = LLDialog()
+        dialog.title = "乃确定不是手滑了么"
+        dialog.message = "真的要清空历史记录嘛？"
+        dialog.setPositiveButton(withTitle: "我手滑了")
+        dialog.setNegativeButton(withTitle: "是的", target: self, action: #selector(clearHistory))
+        dialog.show()
+    }
+    
+    @objc fileprivate func clearHistory() {
+        dataModel.clearHistory()
+        history = []
+        tableView.reloadData()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -38,12 +77,16 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if history.count == 0 {
+            setLabel()
+            showLabel()
+        }
+        
         return history.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        // todo
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -56,15 +99,48 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        let item = history[indexPath.row]
+        dataModel.deleteHistory(item: item)
+        history = dataModel.getHistory()
+        tableView.reloadData()
+    }
+    
+    func historyNumLimitChanged() {
+        dataModel.refreshHistory()
+        history = dataModel.getHistory()
+        tableView.reloadData()
+    }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "set limit" {
+            if let vc = segue.destination as? SetHistoryNumViewController {
+                vc.delegate = self
+                if let controller = vc.popoverPresentationController {
+                    controller.delegate = self
+                }
+            }
+        } else if segue.identifier == "detail" {
+            if let vc = segue.destination as? ImageViewController {
+                let cell = sender as! HistoryCell
+                let indexPath = tableView.indexPath(for: cell)!
+                let item = history[indexPath.row]
+                var avString = item.av!
+                let index = avString.index(avString.startIndex, offsetBy: 2)
+                avString = avString.substring(from: index)
+                vc.avNum = Int(avString)!
+                vc.itemFromHistory = item
+            }
+        }
     }
-    */
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
+    }
 
 }
+ 

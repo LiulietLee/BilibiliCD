@@ -388,6 +388,7 @@
                                             <outlet property="coverView" destination="CTr-1J-z2U" id="iUj-2p-YBY"/>
                                             <outlet property="dateLabel" destination="OGf-D3-97r" id="Rrx-Pq-FLx"/>
                                             <outlet property="titleLabel" destination="mFh-Yw-OOf" id="ktZ-hn-C05"/>
+                                            <segue destination="J1l-gt-L0q" kind="show" identifier="detail" id="4Jb-o1-lRn"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -409,7 +410,13 @@
                                     <action selector="clearButtonTapped:" destination="Mdq-yi-nk0" id="IOh-h2-uZS"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="ic_settings" id="yVs-3c-060"/>
+                            <barButtonItem image="ic_settings" id="yVs-3c-060">
+                                <connections>
+                                    <segue destination="r8L-6q-K1a" kind="popoverPresentation" identifier="set limit" popoverAnchorBarButtonItem="yVs-3c-060" id="aV6-tm-gKG">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
@@ -1112,6 +1119,90 @@
             </objects>
             <point key="canvasLocation" x="1238" y="-674"/>
         </scene>
+        <!--Set History Num View Controller-->
+        <scene sceneID="2Cp-ec-VBJ">
+            <objects>
+                <viewController id="r8L-6q-K1a" customClass="SetHistoryNumViewController" customModule="BilibiliCD" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LeO-YT-ez2"/>
+                        <viewControllerLayoutGuide type="bottom" id="sf7-ms-zsu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KEh-3y-msY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="历史记录数量上限" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wcg-QB-ee6" customClass="MKTextField" customModule="BilibiliCD" customModuleProvider="target">
+                                <rect key="frame" x="16" y="44" width="288" height="60"/>
+                                <color key="tintColor" red="0.40090259909999998" green="0.80100601910000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="MDO-f4-ey1"/>
+                                </constraints>
+                                <color key="textColor" red="0.23753800820000001" green="0.47453992239999998" blue="0.59218749999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="21"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="floatingPlaceholderEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bottomBorderEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="floatingLabelBottomMargin">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VaP-rH-8UN" customClass="MKButton" customModule="BilibiliCD" customModuleProvider="target">
+                                <rect key="frame" x="16" y="112" width="90" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="nY3-Zg-ydl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="18"/>
+                                <color key="tintColor" red="0.40090259909999998" green="0.80100601910000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="取消"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cancelButtonTapped" destination="r8L-6q-K1a" eventType="touchUpInside" id="RSF-LH-Kbs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1GK-6P-ci7" customClass="MKButton" customModule="BilibiliCD" customModuleProvider="target">
+                                <rect key="frame" x="224" y="112" width="80" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="Ab2-Wn-y1i"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="18"/>
+                                <color key="tintColor" red="0.40090259909999998" green="0.80100601910000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="保存"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveButtonTapped" destination="r8L-6q-K1a" eventType="touchUpInside" id="eLS-BC-9gb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="Wcg-QB-ee6" secondAttribute="leading" id="JOJ-LT-Jxu"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="VaP-rH-8UN" secondAttribute="leading" id="NMv-Hd-BQX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Wcg-QB-ee6" secondAttribute="trailing" id="YKb-fH-4p8"/>
+                            <constraint firstItem="VaP-rH-8UN" firstAttribute="top" secondItem="Wcg-QB-ee6" secondAttribute="bottom" constant="8" id="h1j-1x-vYQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1GK-6P-ci7" secondAttribute="trailing" id="n6d-R0-nI7"/>
+                            <constraint firstItem="1GK-6P-ci7" firstAttribute="top" secondItem="Wcg-QB-ee6" secondAttribute="bottom" constant="8" id="nya-Zr-l0K"/>
+                            <constraint firstItem="Wcg-QB-ee6" firstAttribute="top" secondItem="LeO-YT-ez2" secondAttribute="bottom" constant="24" id="q0H-59-UaB"/>
+                        </constraints>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="360" height="150"/>
+                    <connections>
+                        <outlet property="numberField" destination="Wcg-QB-ee6" id="hKU-zz-up0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nVq-I9-0V8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2783" y="-675"/>
+        </scene>
     </scenes>
     <resources>
         <image name="akkarin" width="250" height="250"/>
@@ -1128,5 +1219,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="pFk-eZ-ib2"/>
+        <segue reference="4Jb-o1-lRn"/>
     </inferredMetricsTieBreakers>
 </document>

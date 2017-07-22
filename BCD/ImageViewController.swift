@@ -20,6 +20,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate, GADBannerViewDe
     @IBOutlet weak var pushButton: UIButton!
     
     var avNum: Int?
+    var itemFromHistory: History?
     fileprivate let netModel = NetworkingModel()
     fileprivate let dataModel = CoreDataModel()
     fileprivate var loadingView: LoadingView? = nil
@@ -44,21 +45,31 @@ class ImageViewController: UIViewController, VideoCoverDelegate, GADBannerViewDe
         netModel.delegateForVideo = self
         if let num = avNum {
             self.title = "av" + String(num)
-            netModel.getInfoFromAvNumber(avNum: num)
+            if itemFromHistory == nil {
+                netModel.getInfoFromAvNumber(avNum: num)
+            }
         } else {
             self.title = "No av number"
             print("No av number")
         }
         
-        titleLabel.text = ""
-        authorLabel.text = ""
-        urlLabel.text = ""
-        
-        disableButtons()
-        
-        loadingView = LoadingView(frame: view.bounds)
-        view.addSubview(loadingView!)
-        view.bringSubview(toFront: loadingView!)
+        if itemFromHistory == nil {
+            titleLabel.text = ""
+            authorLabel.text = ""
+            urlLabel.text = ""
+            
+            disableButtons()
+            
+            loadingView = LoadingView(frame: view.bounds)
+            view.addSubview(loadingView!)
+            view.bringSubview(toFront: loadingView!)
+        } else {
+            titleLabel.text = itemFromHistory!.title!
+            authorLabel.text = itemFromHistory!.up!
+            urlLabel.text = itemFromHistory!.url!
+            imageView.image = UIImage(data: itemFromHistory!.image! as Data, scale: 1.0)
+            getAd()
+        }
     }
     
     @IBAction func downloadButtonTapped(_ sender: UIBarButtonItem) {

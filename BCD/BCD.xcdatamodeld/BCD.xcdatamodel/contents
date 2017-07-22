@@ -11,8 +11,12 @@
     <entity name="Permission" representedClassName="Permission" syncable="YES">
         <attribute name="adPerm" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
     </entity>
+    <entity name="Setting" representedClassName="Setting" syncable="YES">
+        <attribute name="historyNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
     <elements>
         <element name="History" positionX="-54" positionY="0" width="128" height="135"/>
         <element name="Permission" positionX="-54" positionY="-9" width="128" height="60"/>
+        <element name="Setting" positionX="-54" positionY="45" width="128" height="60"/>
     </elements>
 </model>
