@@ -87,7 +87,8 @@ class NetworkingModel {
         var upusers = [Upuser]()
         var sum = 0
         
-        let path = "url here" + searchText
+        let userName = searchText.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
+        let path = "http://bilibilicd.tk/ios/upuser-keyword=" + userName
         let url = URL(string: path)
         let request = URLRequest(url: url!)
         let tesk = session.dataTask(with: request) { (data, response, error) in

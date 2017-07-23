@@ -20,6 +20,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        isShowingImage = true
         if let img = image {
             imageView.image = img
             widthConstraint.constant = view.bounds.size.width

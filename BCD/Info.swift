@@ -8,6 +8,8 @@
 
 import Foundation
 
+public var isShowingImage = false
+
 class Info {
     var author: String?
     var title: String?

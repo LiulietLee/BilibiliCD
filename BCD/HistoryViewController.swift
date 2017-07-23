@@ -62,7 +62,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         dialog.title = "乃确定不是手滑了么"
         dialog.message = "真的要清空历史记录嘛？"
         dialog.setPositiveButton(withTitle: "我手滑了")
-        dialog.setNegativeButton(withTitle: "是的", target: self, action: #selector(clearHistory))
+        dialog.setNegativeButton(withTitle: "确认清空", target: self, action: #selector(clearHistory))
         dialog.show()
     }
     

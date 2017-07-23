@@ -39,9 +39,15 @@ class ImageViewController: UIViewController, VideoCoverDelegate, GADBannerViewDe
         return adBannerView
     }()
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        isShowingImage = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        isShowingImage = true
         netModel.delegateForVideo = self
         if let num = avNum {
             self.title = "av" + String(num)
@@ -68,6 +74,10 @@ class ImageViewController: UIViewController, VideoCoverDelegate, GADBannerViewDe
             authorLabel.text = itemFromHistory!.up!
             urlLabel.text = itemFromHistory!.url!
             imageView.image = UIImage(data: itemFromHistory!.image! as Data, scale: 1.0)
+            
+            titleLabel.textColor = UIColor(rgb: 0x66ccff)
+            authorLabel.textColor = UIColor(rgb: 0x66ccff)
+            urlLabel.textColor = UIColor(rgb: 0x66ccff)
             getAd()
         }
     }

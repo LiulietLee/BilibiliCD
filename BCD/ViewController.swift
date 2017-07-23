@@ -35,6 +35,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 
     @objc fileprivate func getURLFromPasteboard() {
+        if isShowingImage { return }
         if let urlString = UIPasteboard.general.string {
             let tempArray = Array(urlString.characters)
             var avNum = 0
@@ -57,12 +58,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             if isAvNum {
                 avNumber = avNum
+                isShowingImage = true
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "image controller") as!ImageViewController
+                nextViewController.avNum = avNumber
+                self.show(nextViewController, sender: self)
             }
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        isShowingImage = false
         goButton.isEnabled = false
         menu.target = revealViewController()
         menu.action = #selector(SWRevealViewController.revealToggle(_:))

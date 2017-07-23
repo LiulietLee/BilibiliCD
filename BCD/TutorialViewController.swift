@@ -13,8 +13,7 @@ class TutorialViewController: UIViewController, UIPageViewControllerDataSource {
     fileprivate var pageController = UIPageViewController()
     fileprivate let pageImages = [UIImage(named: "tut1"),
                                   UIImage(named: "tut2"),
-                                  UIImage(named: "tut3"),
-                                  UIImage(named: "tut4")]
+                                  UIImage(named: "tut3")]
     
     override func viewDidLoad() {
         super.viewDidLoad()

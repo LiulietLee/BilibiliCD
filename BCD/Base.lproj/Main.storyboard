@@ -431,7 +431,7 @@
         <!--Image View Controller-->
         <scene sceneID="YLA-BA-Fka">
             <objects>
-                <viewController id="J1l-gt-L0q" customClass="ImageViewController" customModule="BilibiliCD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="image controller" id="J1l-gt-L0q" customClass="ImageViewController" customModule="BilibiliCD" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fgQ-2S-BVx"/>
                         <viewControllerLayoutGuide type="bottom" id="LdW-Kp-l09"/>
@@ -1004,7 +1004,7 @@
                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="    因此我希望能找个会画画的（妹子）帮忙画几幅插画放到这个App里面，让App变得更萌一点。如果你有时间，有能力的话，欢迎加入我们" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aug-ZI-g2q">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="    因此我希望能找个会画画的（妹子）帮忙画几幅插画放到这个App里面，让App变得更萌一点。如果你有时间，有能力的话，欢迎加入我们！" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aug-ZI-g2q">
                                 <rect key="frame" x="16" y="281" width="288" height="111.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
@@ -1219,6 +1219,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="pFk-eZ-ib2"/>
-        <segue reference="4Jb-o1-lRn"/>
+        <segue reference="Eeb-QN-AAw"/>
     </inferredMetricsTieBreakers>
 </document>

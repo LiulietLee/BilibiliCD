@@ -67,7 +67,6 @@ class CoreDataModel {
     func refreshHistory() {
         if let limit = getHistoryNum() {
             checkHistoryNumLimit(limit)
-            if limit == 0 { return }
         }
     }
     
@@ -122,14 +121,17 @@ class CoreDataModel {
         }
     }
     
-    fileprivate func checkHistoryNumLimit(_ limit: Int) {
-        let list = getHistory()
-        let count = list.count
+    fileprivate func checkHistoryNumLimit(_ limit: Int, history: [History]? = nil) {
+        var list = history
+        if list == nil {
+            list = getHistory()
+        }
+        let count = list!.count
         if count == 0 { return }
         let overflow = count - limit
         if overflow > 0 {
             for i in 0..<overflow {
-                let lastestItem = list[count - 1 - i]
+                let lastestItem = list![count - 1 - i]
                 
                 deleteHistory(item: lastestItem)
             }
@@ -139,7 +141,7 @@ class CoreDataModel {
     // MARK: - Setting
     
     fileprivate func initSetting() {
-        let initHistoryNum: Int16 = 10
+        let initHistoryNum: Int16 = 6
         let entity = NSEntityDescription.entity(forEntityName: "Setting", in: context)!
         let newItem = Setting(entity: entity, insertInto: context)
         newItem.historyNumber = initHistoryNum
