@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xAa-In-jj9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xAa-In-jj9">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -249,6 +249,14 @@
             </objects>
             <point key="canvasLocation" x="924" y="35.532233883058474"/>
         </scene>
+        <!--Tutorial Page View Controller-->
+        <scene sceneID="fZx-fV-87X">
+            <objects>
+                <pageViewController storyboardIdentifier="page" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="8Tt-kR-4bu" customClass="TutorialPageViewController" customModule="BilibiliCD" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gcj-Gs-ziM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1661" y="812"/>
+        </scene>
         <!--Tutorial Content View Controller-->
         <scene sceneID="TBj-ub-Ghc">
             <objects>
@@ -281,14 +289,6 @@
             </objects>
             <point key="canvasLocation" x="2405.625" y="812.32394366197184"/>
         </scene>
-        <!--Tutorial Page View Controller-->
-        <scene sceneID="b9f-XS-0oe">
-            <objects>
-                <pageViewController storyboardIdentifier="page" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="RdM-4W-Kpz" customClass="TutorialPageViewController" customModule="BilibiliCD" customModuleProvider="target" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0ev-kG-Zhv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1661" y="814"/>
-        </scene>
         <!--Tutorial View Controller-->
         <scene sceneID="GY0-eR-vwK">
             <objects>
@@ -302,9 +302,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XsU-ss-UBH" customClass="MKButton" customModule="BilibiliCD" customModuleProvider="target">
-                                <rect key="frame" x="16" y="508" width="288" height="40"/>
+                                <rect key="frame" x="0.0" y="508" width="320" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="sdC-d6-FmO"/>
+                                    <constraint firstAttribute="height" constant="60" id="sdC-d6-FmO"/>
                                 </constraints>
                                 <state key="normal" image="ic_goback"/>
                                 <connections>
@@ -315,9 +315,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="XsU-ss-UBH" secondAttribute="trailing" id="MYR-jV-DMh"/>
-                            <constraint firstItem="Xq8-e8-eI4" firstAttribute="top" secondItem="XsU-ss-UBH" secondAttribute="bottom" constant="20" id="PlG-5B-n1z"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="XsU-ss-UBH" secondAttribute="leading" id="o6G-Za-wRu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XsU-ss-UBH" secondAttribute="trailing" constant="-16" id="MYR-jV-DMh"/>
+                            <constraint firstItem="Xq8-e8-eI4" firstAttribute="top" secondItem="XsU-ss-UBH" secondAttribute="bottom" id="PlG-5B-n1z"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="XsU-ss-UBH" secondAttribute="leading" constant="16" id="o6G-Za-wRu"/>
                         </constraints>
                     </view>
                 </viewController>
