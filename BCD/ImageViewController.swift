@@ -114,7 +114,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate, GADBannerViewDe
     fileprivate func getAd() {
         let request = GADRequest()
         
-        // request.testDevices = [ kGADSimulatorID, "d9496780e274c9b1407bdef5d8d5b3d9", "0d27b1f9900926d4c67b23fa32c54bdb" ]
+        request.testDevices = [ kGADSimulatorID, "d9496780e274c9b1407bdef5d8d5b3d9", "0d27b1f9900926d4c67b23fa32c54bdb" ]
         
         if let per = dataModel.readAdPremission() {
             if per {
