@@ -11,20 +11,18 @@ import UIKit
 class TutorialViewController: UIViewController, UIPageViewControllerDataSource {
 
     fileprivate var pageController = UIPageViewController()
-    fileprivate let pageImages = [UIImage(named: "tut1"),
-                                  UIImage(named: "tut2"),
-                                  UIImage(named: "tut3")]
+    fileprivate let pageImages = [#imageLiteral(resourceName: "tut1"), #imageLiteral(resourceName: "tut2"), #imageLiteral(resourceName: "tut3")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        pageController = self.storyboard?.instantiateViewController(withIdentifier: "page") as! UIPageViewController
+        pageController = storyboard?.instantiateViewController(withIdentifier: "page") as! UIPageViewController
         pageController.dataSource = self
         let viewControllers = [viewControllerAt(index: 0)]
         pageController.setViewControllers(viewControllers, direction: .forward, animated: true, completion: nil)
         let size = view.bounds.size
         pageController.view.frame = CGRect(x: 0, y: 20, width: size.width, height: size.height - 80)
         
-        self.addChildViewController(pageController)
+        addChildViewController(pageController)
         view.addSubview(pageController.view)
         pageController.didMove(toParentViewController: self)
     }
@@ -34,8 +32,8 @@ class TutorialViewController: UIViewController, UIPageViewControllerDataSource {
             return TutorialContentViewController()
         }
         
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "content") as! TutorialContentViewController
-        vc.image = pageImages[index]!
+        let vc = storyboard?.instantiateViewController(withIdentifier: "content") as! TutorialContentViewController
+        vc.image = pageImages[index]
         vc.index = index
         
         return vc
@@ -72,6 +70,6 @@ class TutorialViewController: UIViewController, UIPageViewControllerDataSource {
     }
     
     @IBAction func goBack() {
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 }

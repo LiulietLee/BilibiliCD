@@ -503,7 +503,7 @@
                             </barButtonItem>
                             <barButtonItem title="Ad" id="YmM-GZ-JyQ">
                                 <connections>
-                                    <action selector="adButtonTapped:" destination="J1l-gt-L0q" id="wl0-a1-eKM"/>
+                                    <action selector="adButtonTapped" destination="J1l-gt-L0q" id="k6v-vH-o8K"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>

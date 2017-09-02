@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SWRevealViewController
 
 class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate, SetHistoryNumDelegate {
 
@@ -18,7 +19,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     override func viewWillAppear(_ animated: Bool) {
         dataModel.refreshHistory()
-        history = dataModel.getHistory()
+        history = dataModel.history
     }
     
     override func viewDidLoad() {
@@ -33,28 +34,28 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     fileprivate func setLabel() {
         nothingLabel.text = "这里空空如也"
-        nothingLabel.textColor = UIColor(rgb: 0x66ccff)
+        nothingLabel.textColor = .tianyiBlue
         nothingLabel.font = UIFont(name: "Avenir", size: 32.0)
         nothingLabel.translatesAutoresizingMaskIntoConstraints = false
         nothingLabel.textAlignment = .center
         
-        self.view.addSubview(nothingLabel)
+        view.addSubview(nothingLabel)
         
-        let midXCon = NSLayoutConstraint(item: nothingLabel, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1, constant: 0)
-        let midYCon = NSLayoutConstraint(item: nothingLabel, attribute: .centerY, relatedBy: .equal, toItem: self.view, attribute: .centerY, multiplier: 1, constant: 0)
+        let midXCon = NSLayoutConstraint(item: nothingLabel, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0)
+        let midYCon = NSLayoutConstraint(item: nothingLabel, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1, constant: 0)
         
-        self.view.addConstraint(midXCon)
-        self.view.addConstraint(midYCon)
+        view.addConstraint(midXCon)
+        view.addConstraint(midYCon)
     }
     
     fileprivate func showLabel() {
         nothingLabel.isHidden = false
-        self.view.bringSubview(toFront: nothingLabel)
+        view.bringSubview(toFront: nothingLabel)
     }
     
     fileprivate func hideLabel() {
         nothingLabel.isHidden = true
-        self.view.sendSubview(toBack: nothingLabel)
+        view.sendSubview(toBack: nothingLabel)
     }
     
     @IBAction func clearButtonTapped(_ sender: UIBarButtonItem) {
@@ -102,14 +103,14 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         let item = history[indexPath.row]
-        dataModel.deleteHistory(item: item)
-        history = dataModel.getHistory()
+        dataModel.deleteHistory(item)
+        history = dataModel.history
         tableView.reloadData()
     }
     
     func historyNumLimitChanged() {
         dataModel.refreshHistory()
-        history = dataModel.getHistory()
+        history = dataModel.history
         tableView.reloadData()
     }
 

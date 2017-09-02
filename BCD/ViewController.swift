@@ -7,17 +7,17 @@
 //
 
 import UIKit
+import SWRevealViewController
 
 class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var avLabel: UILabel!
     @IBOutlet weak var goButton: UIButton!
     @IBOutlet weak var menu: UIBarButtonItem!
-    fileprivate var timer = Timer()
     fileprivate var repeatTappingTime = 0
     fileprivate var avNumber = 0 {
         willSet {
-            avLabel.text = "av" + String(newValue)
+            avLabel.text = "av\(newValue)"
             if newValue == 0 {
                 goButton.isEnabled = false
             } else {
@@ -30,8 +30,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(getURLFromPasteboard),
-                                               name: NSNotification.Name(rawValue: notiKey),
+                                               name: .BCD,
                                                object: nil)
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
     }
 
     @objc fileprivate func getURLFromPasteboard() {
@@ -42,7 +47,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             var isAvNum = false
             for i in 0..<tempArray.count {
                 let j = tempArray.count - i - 1
-                if let singleNum = Int(String(tempArray[j])) {
+                if let singleNum = Int("\(tempArray[j])") {
                     var num = singleNum
                     num *= Int(NSDecimalNumber(decimal: pow(10, i)))
                     avNum += num
@@ -59,10 +64,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
             if isAvNum {
                 avNumber = avNum
                 isShowingImage = true
-                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "image controller") as!ImageViewController
+                let storyBoard = UIStoryboard(name: "Main", bundle:nil)
+                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "image controller") as! ImageViewController
                 nextViewController.avNum = avNumber
-                self.show(nextViewController, sender: self)
+                show(nextViewController, sender: self)
             }
         }
     }
@@ -78,7 +83,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func numberButtonTapped(_ sender: UIButton) {
-        let new = sender.title(for: .normal)!
+        let new = sender.currentTitle!
         avNumber = avNumber * 10 + Int(new)!
     }
     
@@ -86,9 +91,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         avNumber /= 10
         
         if repeatTappingTime == 0 {
-            timer = Timer.scheduledTimer(withTimeInterval: 0.35, repeats: false, block: { (t) in
+            _ = Timer.scheduledTimer(withTimeInterval: 0.35, repeats: false) { _ in
                 self.repeatTappingTime = 0
-            })
+            }
         } else if repeatTappingTime >= 2 {
             avNumber = 0
         }
@@ -97,9 +102,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? ImageViewController {
-            vc.avNum = avNumber
-        }
+        (segue.destination as? ImageViewController)?.avNum = avNumber
     }
     
 }

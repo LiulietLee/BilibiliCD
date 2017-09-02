@@ -20,7 +20,7 @@ class SourceTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        menuButton.target = self.revealViewController()
+        menuButton.target = revealViewController()
         menuButton.action = #selector(revealViewController().revealToggle(_:))
         view.addGestureRecognizer(revealViewController().panGestureRecognizer())
     }

@@ -25,16 +25,34 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.1)
   - GoogleToolboxForMac/NSData+zlib (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
+  - MaterialKit (0.4)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - Protobuf (3.3.0)
+  - SWRevealViewController (2.4.0)
 
 DEPENDENCIES:
   - Firebase/Core
   - Firebase/Messaging
+  - MaterialKit (from `https://github.com/ApolloZhu/MaterialKit.git`)
+  - SWRevealViewController (from `https://github.com/John-Lluch/SWRevealViewController.git`)
+
+EXTERNAL SOURCES:
+  MaterialKit:
+    :git: https://github.com/ApolloZhu/MaterialKit.git
+  SWRevealViewController:
+    :git: https://github.com/John-Lluch/SWRevealViewController.git
+
+CHECKOUT OPTIONS:
+  MaterialKit:
+    :commit: 8dee874cb4de7f6e09cdc68e8cbd2c589a5b71c9
+    :git: https://github.com/ApolloZhu/MaterialKit.git
+  SWRevealViewController:
+    :commit: bb4a110989d67a5fc5f5c533cacc92f6cb02f5e2
+    :git: https://github.com/John-Lluch/SWRevealViewController.git
 
 SPEC CHECKSUMS:
   Firebase: 1492bf04e1b73a7353b4fb2cf5a20bac9692f341
@@ -43,9 +61,11 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: 9fbf536668f4d3f0880e7438456dabd1376e294b
   FirebaseMessaging: 227406c05b0dc9290702d2e9f18ab5528f0c2cf2
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
-  nanopb: 22bc080fa3955e2116b6ff3ee6c2cb3c15ab97cb
+  MaterialKit: 2e5267bcf410b82793f2b92d2111f8ae4ed2c3f2
+  nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: d582fecf68201eac3d79ed61369ef45734394b9c
+  SWRevealViewController: b653f339865208c97be99a24876545f5be0cc4bb
 
-PODFILE CHECKSUM: 58e1735bec47f639ee19206a3aeee515b7b9ae73
+PODFILE CHECKSUM: cfece1e10f8ed2b955ac7fcce1e6071edc9e467b
 
 COCOAPODS: 1.2.1

@@ -9,8 +9,5 @@
 import UIKit
 
 class BlueNavController: ColoredNavController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        navigationBar.barTintColor = UIColor(rgb: 0x66ccff)
-    }
+    override var navbarTintColor: UIColor { return .tianyiBlue }
 }

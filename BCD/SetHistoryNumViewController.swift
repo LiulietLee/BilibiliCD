@@ -22,8 +22,8 @@ class SetHistoryNumViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let num = dataModel.getHistoryNum() {
-            numberField.text = String(num)
+        if let num = dataModel.historyNum {
+            numberField.text = "\(num)"
         }
         
         numberField.becomeFirstResponder()
@@ -32,13 +32,13 @@ class SetHistoryNumViewController: UIViewController {
     
     fileprivate func goBack() {
         numberField.resignFirstResponder()
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func saveButtonTapped() {
         if let text = numberField.text {
             if let num = Int(text) {
-                dataModel.setHistory(num: num)
+                dataModel.historyNum = num
                 if let del = delegate {
                     del.historyNumLimitChanged()
                 }
@@ -50,15 +50,5 @@ class SetHistoryNumViewController: UIViewController {
     @IBAction func cancelButtonTapped() {
         goBack()
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

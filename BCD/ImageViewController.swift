@@ -23,7 +23,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate, GADBannerViewDe
     var itemFromHistory: History?
     fileprivate let netModel = NetworkingModel()
     fileprivate let dataModel = CoreDataModel()
-    fileprivate var loadingView: LoadingView? = nil
+    fileprivate var loadingView: LoadingView!
     fileprivate var image = UIImage() {
         willSet {
             imageView.image = newValue
@@ -50,12 +50,12 @@ class ImageViewController: UIViewController, VideoCoverDelegate, GADBannerViewDe
         isShowingImage = true
         netModel.delegateForVideo = self
         if let num = avNum {
-            self.title = "av" + String(num)
+            title = "av\(num)"
             if itemFromHistory == nil {
                 netModel.getInfoFromAvNumber(avNum: num)
             }
         } else {
-            self.title = "No av number"
+            title = "No av number"
             print("No av number")
         }
         
@@ -67,17 +67,17 @@ class ImageViewController: UIViewController, VideoCoverDelegate, GADBannerViewDe
             disableButtons()
             
             loadingView = LoadingView(frame: view.bounds)
-            view.addSubview(loadingView!)
-            view.bringSubview(toFront: loadingView!)
+            view.addSubview(loadingView)
+            view.bringSubview(toFront: loadingView)
         } else {
             titleLabel.text = itemFromHistory!.title!
             authorLabel.text = itemFromHistory!.up!
             urlLabel.text = itemFromHistory!.url!
-            imageView.image = UIImage(data: itemFromHistory!.image! as Data, scale: 1.0)
+            imageView.image = UIImage(data: itemFromHistory!.image! as Data)
             
-            titleLabel.textColor = UIColor(rgb: 0x66ccff)
-            authorLabel.textColor = UIColor(rgb: 0x66ccff)
-            urlLabel.textColor = UIColor(rgb: 0x66ccff)
+            titleLabel.textColor = .tianyiBlue
+            authorLabel.textColor = .tianyiBlue
+            urlLabel.textColor = .tianyiBlue
             getAd()
         }
     }
@@ -86,27 +86,25 @@ class ImageViewController: UIViewController, VideoCoverDelegate, GADBannerViewDe
         saveImage()
     }
     
-    @IBAction func adButtonTapped(_ sender: UIBarButtonItem) {
+    @IBAction func adButtonTapped() {
         let dialog = LLDialog()
         dialog.title = "广告显示设置"
         dialog.message = "屏幕下方的广告是我们维持服务的主要收入来源，但为了方便强迫症，您可以在这里自由选择是否显示广告，不需要额外付费。"
         dialog.setNegativeButton(withTitle: "关闭广告", target: self, action: #selector(disableToShowAd))
-        dialog.setPositiveButton(withTitle: "显示广告", target: self, action: #selector(ableToShowAd))
+        dialog.setPositiveButton(withTitle: "显示广告", target: self, action: #selector(enableToShowAd))
         dialog.show()
     }
     
     @objc fileprivate func disableToShowAd() {
-        if dataModel.readAdPremission()! {
-            if let adView = view.viewWithTag(10086) {
-                adView.removeFromSuperview()
-            }
-            dataModel.setAdPremissionWith(false)
+        if dataModel.adPermission {
+            view.viewWithTag(10086)?.removeFromSuperview()
+            dataModel.adPermission = false
         }
     }
     
-    @objc fileprivate func ableToShowAd() {
-        if !dataModel.readAdPremission()! {
-            dataModel.setAdPremissionWith(true)
+    @objc fileprivate func enableToShowAd() {
+        if !dataModel.adPermission {
+            dataModel.adPermission = true
             getAd()
         }
     }
@@ -115,15 +113,13 @@ class ImageViewController: UIViewController, VideoCoverDelegate, GADBannerViewDe
         let request = GADRequest()
         
         request.testDevices = [ kGADSimulatorID, "d9496780e274c9b1407bdef5d8d5b3d9", "0d27b1f9900926d4c67b23fa32c54bdb", "97da998932e4df7e181e0683b1bd555c" ]
-        
-        if let per = dataModel.readAdPremission() {
-            if per {
-                adBannerView.load(request)
-            }
-        } else {
-            dataModel.setAdPremissionWith(true)
+
+        if dataModel.adPermission == nil {
+            dataModel.adPermission = true
+            adButtonTapped()
+        }
+        if dataModel.adPermission {
             adBannerView.load(request)
-            adButtonTapped(UIBarButtonItem())
         }
     }
     
@@ -160,31 +156,30 @@ class ImageViewController: UIViewController, VideoCoverDelegate, GADBannerViewDe
         adButton.isEnabled = false
     }
     
-    func gotVideoInfo(info: Info) {        
+    func gotVideoInfo(_ info: Info) {
         titleLabel.text = info.title!
-        authorLabel.text = "UP主：" + info.author!
-        urlLabel.text = "URL：" + info.imageUrl!
+        authorLabel.text = "UP主：\(info.author!)"
+        urlLabel.text = "URL：\(info.imageUrl!)"
         urlLabel.sizeToFit()
         titleLabel.sizeToFit()
         authorLabel.sizeToFit()
     }
     
-    func gotImage(image: UIImage) {
+    func gotImage(_ image: UIImage) {
         imageView.image = image
         enableButtons()
-        loadingView!.dismiss()
+        loadingView.dismiss()
         getAd()
         addItemToDB()
     }
     
     fileprivate func addItemToDB() {
-        let av = "av" + String(avNum!)
-        let title = titleLabel.text!
-        let date = Date() as NSDate
-        let up = authorLabel.text!
-        let url = urlLabel.text!
-        let image = UIImagePNGRepresentation(imageView.image!)! as NSData
-        dataModel.addNewHistory(av: av, date: date, image: image, title: title, up: up, url: url)
+        dataModel.addNewHistory(av: "av\(avNum!)",
+            date: NSDate(),
+            image: UIImagePNGRepresentation(imageView.image!)! as NSData,
+            title: titleLabel.text!,
+            up: authorLabel.text!,
+            url: urlLabel.text!)
     }
     
     func connectError() {
@@ -192,16 +187,16 @@ class ImageViewController: UIViewController, VideoCoverDelegate, GADBannerViewDe
         titleLabel.text = "啊叻？"
         authorLabel.text = "连不上服务器了？"
         urlLabel.text = "提示：如果一直提示这个可能是我们的服(V)务(P)器(S)炸了，你可以去「关于我们」页面找我们反映情况哦~"
-        loadingView!.dismiss()
-        imageView.image = UIImage(named: "error_image")
+        loadingView.dismiss()
+        imageView.image = #imageLiteral(resourceName: "error_image")
     }
     
     func cannotFindVideo() {
         titleLabel.text = "啊叻？"
         authorLabel.text = "视频不见了？"
         urlLabel.text = "提示：目前暂时还抓不到「会员的世界」的封面哦(\"▔□▔)/"
-        loadingView!.dismiss()
-        imageView.image = UIImage(named: "novideo_image")
+        loadingView.dismiss()
+        imageView.image = #imageLiteral(resourceName: "novideo_image")
     }
     
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {

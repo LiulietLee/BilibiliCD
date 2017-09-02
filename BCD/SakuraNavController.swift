@@ -9,8 +9,5 @@
 import UIKit
 
 class SakuraNavController: ColoredNavController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        navigationBar.barTintColor = UIColor(red: 1.06, green: 0.403, blue: 0.599, alpha: 1.0)
-    }
+    override var navbarTintColor: UIColor { return .bilibiliPink }
 }

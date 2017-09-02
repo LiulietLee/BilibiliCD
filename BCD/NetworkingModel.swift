@@ -8,15 +8,15 @@
 
 import UIKit
 
-protocol VideoCoverDelegate {
-    func gotVideoInfo(info: Info)
-    func gotImage(image: UIImage)
+protocol VideoCoverDelegate: class {
+    func gotVideoInfo(_ info: Info)
+    func gotImage(_ image: UIImage)
     func connectError()
     func cannotFindVideo()
 }
 
-protocol UpuserImgDelegate {
-    func gotUpusers(ups: [Upuser])
+protocol UpuserImgDelegate: class {
+    func gotUpusers(_ ups: [Upuser])
     func connectError()
     func cannotGetUser()
 }
@@ -30,106 +30,83 @@ struct Upuser {
 
 class NetworkingModel {
     
-    var delegateForVideo: VideoCoverDelegate?
-    var delegateForUpuser: UpuserImgDelegate?
+    weak var delegateForVideo: VideoCoverDelegate?
+    weak var delegateForUpuser: UpuserImgDelegate?
     let session = URLSession.shared
     
     open func getInfoFromAvNumber(avNum: Int) {
-        var newInfo: Info?
-        
-        let path = "http://bilibilicd.tk/video/ios/" + String(avNum) + "/"
+        let path = "http://bilibilicd.tk/video/ios/\(avNum)/"
         let url = URL(string: path)
         let request = URLRequest(url: url!)
         let task = session.dataTask(with: request) { (data, response, error) in
             if let err = error {
                 print(err)
-                if let del = self.delegateForVideo {
-                    del.connectError()
-                }
+                self.delegateForVideo?.connectError()
             } else {
                 DispatchQueue.main.async {
                     if let content = data {
                         do {
-                            let jsonData = try JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
-                            
-                            newInfo?.author = jsonData["author"] as? String ?? "Can't get author"
-                            newInfo?.title = jsonData["title"] as? String ?? "Can't get title"
-                            newInfo?.imageUrl = jsonData["url"] as? String ?? "Can't get url of cover"
+                            let jsonData = try JSONSerialization.jsonObject(with: content, options: .mutableContainers) as AnyObject
+
+                            let newInfo = Info()
+                            newInfo.author = jsonData["author"] as? String ?? "Can't get author"
+                            newInfo.title = jsonData["title"] as? String ?? "Can't get title"
+                            newInfo.imageUrl = jsonData["url"] as? String ?? "Can't get url of cover"
                             
                             if let del = self.delegateForVideo {
-                                if newInfo!.imageUrl == "error" {
+                                if newInfo.imageUrl == "error" {
                                     del.cannotFindVideo()
                                 } else {
-                                    del.gotVideoInfo(info: newInfo!)
-                                    self.getImageFromImageUrlPath(path: newInfo!.imageUrl!)
+                                    del.gotVideoInfo(newInfo)
+                                    self.getImage(fromUrlPath: newInfo.imageUrl!)
                                 }
                             }
                         } catch {
                             print("serialize error")
-                            if let del = self.delegateForVideo {
-                                del.connectError()
-                            }
+                            self.delegateForVideo?.connectError()
                         }
                     } else {
-                        if let del = self.delegateForVideo {
-                            del.connectError()
-                        }
+                        self.delegateForVideo?.connectError()
                     }
                 }
             }
         }
-        
-        newInfo = Info()
+
         task.resume()
     }
     
-    open func getUpuserFrom(searchText: String) {
-        var upusers = [Upuser]()
-        var sum = 0
-        
+    open func getUpuser(keyword searchText: String) {
         let userName = searchText.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
-        let path = "http://bilibilicd.tk/ios/upuser-keyword=" + userName
+        let path = "http://bilibilicd.tk/ios/upuser-keyword=\(userName)"
         let url = URL(string: path)
         let request = URLRequest(url: url!)
         let tesk = session.dataTask(with: request) { (data, response, error) in
             if let err = error {
                 print(err)
-                if let del = self.delegateForUpuser {
-                    del.connectError()
-                }
+                self.delegateForUpuser?.connectError()
             } else {
                 if let content = data {
                     DispatchQueue.main.async {
                         do {
-                            let jsonData = try JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
-                            
-                            sum = jsonData["sum"] as? Int ?? 0
-                            
-                            if sum == 0 {
-                                if let del = self.delegateForUpuser {
-                                    del.cannotGetUser()
+                            let jsonData = try JSONSerialization.jsonObject(with: content, options: .mutableContainers) as AnyObject
+
+                            guard let sum = jsonData["sum"] as? Int, sum > 0,
+                                let users = jsonData["upusers"] as? [AnyObject]
+                                else {
+                                    self.delegateForUpuser?.cannotGetUser()
                                     return
-                                }
                             }
-                            
-                            if let users = jsonData["upusers"] as? [AnyObject] {
-                                for user in users {
-                                    let name = user["name"] as? String ?? ""
-                                    let video = user["videonum"] as? String ?? ""
-                                    let fans = user["fansnum"] as? String ?? ""
-                                    let img = user["imgurl"] as? String ?? ""
-                                    let newUser = Upuser(name: name, videoNum: video, fansNum: fans, imgUrl: img)
-                                    upusers.append(newUser)
-                                }
+
+                            let upusers = users.map { user in
+                                return Upuser(name: user["name"] as? String ?? "",
+                                              videoNum: user["videonum"] as? String ?? "",
+                                              fansNum: user["fansnum"] as? String ?? "",
+                                              imgUrl: user["imgurl"] as? String ?? "")
                             }
-                            
-                            if let del = self.delegateForUpuser {
-                                del.gotUpusers(ups: upusers)
-                            }
+
+                            self.delegateForUpuser?.gotUpusers(upusers)
                         } catch {
-                            if let del = self.delegateForUpuser {
-                                del.connectError()
-                            }
+                            self.delegateForUpuser?.connectError()
                         }
                     }
                 }
@@ -138,28 +115,22 @@ class NetworkingModel {
         tesk.resume()
     }
     
-    private func getImageFromImageUrlPath(path: String) {
+    private func getImage(fromUrlPath path: String) {
         let url = URL(string: path)
         let request = URLRequest(url: url!)
         let task = session.dataTask(with: request) { (data, response, error) in
             if let err = error {
                 print(err)
-                if let del = self.delegateForVideo {
-                    del.connectError()
-                }
+                self.delegateForVideo?.connectError()
             } else {
                 if let content = data {
                     DispatchQueue.main.async {
                         if let img = UIImage(data: content) {
-                            if let del = self.delegateForVideo {
-                                del.gotImage(image: img)
-                            }
+                            self.delegateForVideo?.gotImage(img)
                         }
                     }
                 } else {
-                    if let del = self.delegateForVideo {
-                        del.connectError()
-                    }
+                    self.delegateForVideo?.connectError()
                 }
             }
         }

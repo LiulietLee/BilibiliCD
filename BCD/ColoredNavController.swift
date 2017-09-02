@@ -9,13 +9,14 @@
 import UIKit
 
 class ColoredNavController: UINavigationController {
-    
+    var navbarTintColor: UIColor { return .white }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationBar.tintColor = .white
         navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
         
+        navigationBar.tintColor = navbarTintColor
         navigationBar.layer.shadowColor = UIColor.black.cgColor
         navigationBar.layer.shadowOffset = CGSize(width: 0.1, height: 0.1)
         navigationBar.layer.shadowRadius = 1.5
@@ -24,12 +25,6 @@ class ColoredNavController: UINavigationController {
 }
 
 extension UIColor {
-    convenience init(rgb: UInt) {
-        self.init(
-            red: CGFloat((rgb & 0xFF0000) >> 16) / 255.0,
-            green: CGFloat((rgb & 0x00FF00) >> 8) / 255.0,
-            blue: CGFloat(rgb & 0x0000FF) / 255.0,
-            alpha: CGFloat(1.0)
-        )
-    }
+    static let tianyiBlue = UIColor(hex: 0x66ccff)
+    static let bilibiliPink = #colorLiteral(red: 1.06, green: 0.403, blue: 0.599, alpha: 1.0)
 }

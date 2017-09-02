@@ -6,6 +6,7 @@
 //  Copyright © 2017 Liuliet.Lee. All rights reserved.
 //
 
+import UIKit
 import Foundation
 import CoreData
 
@@ -25,33 +26,26 @@ class CoreDataModel {
     }
 
     // MARK: - AD
-    
-    func readAdPremission() -> Bool? {
-        do {
-            let searchResults = try context.fetch(PermFetchRequest)
-            if searchResults.count == 0 {
-                return nil
-            }
-            
-            let per = (searchResults as! [NSManagedObject])[0].value(forKey: "adPerm") as! Bool
-            return per
-        } catch {
-            print(error)
+    /// nil if not set yet.
+    var adPermission: Bool! {
+        get {
+            do {
+                let searchResults = try context.fetch(PermFetchRequest) as? [NSManagedObject]
+                return searchResults?.first?.value(forKey: "adPerm") as? Bool
+            } catch { print(error) }
+            return nil
         }
-        
-        return nil
+
+        set {
+            clearAdPermission()
+            let entity = NSEntityDescription.entity(forEntityName: "Permission", in: context)
+            let permission = NSManagedObject(entity: entity!, insertInto: context)
+            permission.setValue(newValue, forKey: "adPerm")
+            saveContext()
+        }
     }
     
-    func setAdPremissionWith(_ per: Bool) {
-        clearAdPermission()
-        
-        let entity = NSEntityDescription.entity(forEntityName: "Permission", in: context)
-        let permission = NSManagedObject(entity: entity!, insertInto: context)
-        permission.setValue(per, forKey: "adPerm")
-        saveContext()
-    }
-    
-    fileprivate func clearAdPermission() {
+    private func clearAdPermission() {
         do {
             let searchResults = try context.fetch(PermFetchRequest)
             for object in (searchResults as! [NSManagedObject]) {
@@ -65,12 +59,12 @@ class CoreDataModel {
     // MARK: - History
     
     func refreshHistory() {
-        if let limit = getHistoryNum() {
+        if let limit = historyNum {
             checkHistoryNumLimit(limit)
         }
     }
     
-    func getHistory() -> [History] {
+    var history: [History] {
         var items = [History]()
         
         let sort = NSSortDescriptor(key: #keyPath(History.date), ascending: true)
@@ -88,11 +82,9 @@ class CoreDataModel {
     
     func addNewHistory(av: String, date: NSDate, image: NSData, title: String, up: String, url: String) {
         refreshHistory()
-        
-        let history = getHistory()
-        if history.count != 0 {
-            if history[0].up! == up && history[0].title! == title { return }
-        }
+
+        let list = history
+        if list.count != 0, list[0].up == up && list[0].title == title { return }
         
         let entity = NSEntityDescription.entity(forEntityName: "History", in: context)!
         let newItem = History(entity: entity, insertInto: context)
@@ -105,7 +97,7 @@ class CoreDataModel {
         saveContext()
     }
     
-    func deleteHistory(item: History) {
+    func deleteHistory(_ item: History) {
         context.delete(item)
         saveContext()
     }
@@ -114,33 +106,29 @@ class CoreDataModel {
         do {
             let items = try context.fetch(HistFetchRequest) as! [History]
             for item in items {
-                deleteHistory(item: item)
+                deleteHistory(item)
             }
         } catch {
             print(error)
         }
     }
     
-    fileprivate func checkHistoryNumLimit(_ limit: Int, history: [History]? = nil) {
-        var list = history
-        if list == nil {
-            list = getHistory()
-        }
-        let count = list!.count
+    private func checkHistoryNumLimit(_ limit: Int, history: [History]! = nil) {
+        var list = history ?? self.history
+        let count = list.count
         if count == 0 { return }
         let overflow = count - limit
         if overflow > 0 {
             for i in 0..<overflow {
-                let lastestItem = list![count - 1 - i]
-                
-                deleteHistory(item: lastestItem)
+                let lastestItem = list[count - 1 - i]
+                deleteHistory(lastestItem)
             }
         }
     }
     
     // MARK: - Setting
     
-    fileprivate func initSetting() {
+    private func initSetting() {
         let initHistoryNum: Int16 = 6
         let entity = NSEntityDescription.entity(forEntityName: "Setting", in: context)!
         let newItem = Setting(entity: entity, insertInto: context)
@@ -148,12 +136,12 @@ class CoreDataModel {
         saveContext()
     }
     
-    fileprivate func getSetting() -> Setting? {
+    private var setting: Setting? {
         do {
             let searchResults = try context.fetch(SettFetchRequest)
             if searchResults.count == 0 {
                 initSetting()
-                return getSetting()
+                return self.setting
             } else {
                 return (searchResults[0] as! Setting)
             }
@@ -163,16 +151,14 @@ class CoreDataModel {
         
         return nil
     }
-    
-    func getHistoryNum() -> Int? {
-        let setting = getSetting()
-        return Int((setting?.historyNumber)!)
+
+    var historyNum: Int! {
+        get {
+            return Int(setting!.historyNumber)
+        }
+        set {
+            setting?.historyNumber = Int16(newValue)
+            saveContext()
+        }
     }
-    
-    func setHistory(num: Int) {
-        let setting = getSetting()
-        setting?.historyNumber = Int16(num)
-        saveContext()
-    }
-    
 }
