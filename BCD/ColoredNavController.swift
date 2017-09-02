@@ -9,14 +9,14 @@
 import UIKit
 
 class ColoredNavController: UINavigationController {
-    var navbarTintColor: UIColor { return .white }
+    var navbarTintColor: UIColor { return .black }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationBar.barTintColor = navbarTintColor
+        navigationBar.tintColor = .white
         navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
-        
-        navigationBar.tintColor = navbarTintColor
         navigationBar.layer.shadowColor = UIColor.black.cgColor
         navigationBar.layer.shadowOffset = CGSize(width: 0.1, height: 0.1)
         navigationBar.layer.shadowRadius = 1.5
