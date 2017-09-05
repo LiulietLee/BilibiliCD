@@ -9,12 +9,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MaterialKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-BCD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Protobuf.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SWRevealViewController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,22 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0EF8EB0BFE4E1CEC19C225161EC95505</key>
+		<key>111178F7432C5E1DCF9F6541CF0CF750</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A7A5CA87A389A35D3B50E2C45AA5C0EF</key>
+		<key>58A916C7C24836414B15F3B2F7F4A248</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CF4B35B9FC819386EB09219BC91827D7</key>
+		<key>9CAC23CBB7E9A00F71D065952F72A43E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FA9D13261AF395CF5D54BB3203DF2A6E</key>
+		<key>9EED52ABFE8D97D3FAC0D2F8E03C6521</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C5B80060FE8C664DF08841000F41D515</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E4DD95323C54A78F879DAB0F1508B8E7</key>
 		<dict>
 			<key>primary</key>
 			<true/>

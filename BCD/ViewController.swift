@@ -58,7 +58,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         isAvNum = true
                         break
                     }
-                }
+                } else { break }
             }
             
             if isAvNum {
