@@ -39,7 +39,7 @@ class DetailViewController: UIViewController {
         let translate = sender.translation(in: view)
         xConstraint.constant += translate.x
         yConstraint.constant += translate.y
-        sender.setTranslation(CGPoint.zero, in: view)
+        sender.setTranslation(.zero, in: view)
     }
 
     @IBAction func zoom(_ sender: UIPinchGestureRecognizer) {
@@ -52,13 +52,13 @@ class DetailViewController: UIViewController {
     @IBAction func zoomIn(_ sender: UITapGestureRecognizer) {
         let scale: CGFloat = 3
         if !isZoomedIn {
-            self.widthConstraint.constant *= scale
-            self.xConstraint.constant *= scale
-            self.yConstraint.constant *= scale
+            widthConstraint.constant *= scale
+            xConstraint.constant *= scale
+            yConstraint.constant *= scale
         } else {
-            self.widthConstraint.constant /= scale
-            self.xConstraint.constant /= scale
-            self.yConstraint.constant /= scale
+            widthConstraint.constant /= scale
+            xConstraint.constant /= scale
+            yConstraint.constant /= scale
         }
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MaterialKit
 
 class HistoryCell: MKTableViewCell {
     @IBOutlet weak var coverView: UIImageView!

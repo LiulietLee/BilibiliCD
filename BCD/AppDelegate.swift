@@ -13,7 +13,9 @@ import UserNotifications
 import Firebase
 import FirebaseMessaging
 
-let notiKey = "Future-Code-Institute.BCD"
+extension Notification.Name {
+    static let BCD = Notification.Name(rawValue: "Future-Code-Institute.BCD")
+}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -27,16 +29,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         GADMobileAds.configure(withApplicationID: "ca-app-pub-9289196786381154~9730027828")
         
         let pageController = UIPageControl.appearance()
-        pageController.pageIndicatorTintColor = UIColor.lightGray
-        pageController.currentPageIndicatorTintColor = UIColor.black
-        pageController.backgroundColor = UIColor.white
+        pageController.pageIndicatorTintColor = .lightGray
+        pageController.currentPageIndicatorTintColor = .black
+        pageController.backgroundColor = .white
         
         
         UNUserNotificationCenter.current().delegate = self
         let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-        UNUserNotificationCenter.current().requestAuthorization(
-            options: authOptions,
-            completionHandler: {_, _ in })
+        UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { _, _ in }
         application.registerForRemoteNotifications()
         
         FirebaseApp.configure()
@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         let token = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
-        print("device token = " + token)
+        print("device token = \(token)")
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
@@ -73,13 +73,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        NotificationCenter.default.post(name: Notification.Name(rawValue: notiKey), object: self)
+        NotificationCenter.default.post(name: .BCD, object: self)
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
-        self.saveContext()
+        saveContext()
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
@@ -87,17 +87,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         print("Handle push from foreground\(notification.request.content.userInfo)")
         
         let dict = notification.request.content.userInfo["aps"] as! NSDictionary
-        let d : [String : Any] = dict["alert"] as! [String : Any]
-        let body : String = d["body"] as! String
-        let title : String = d["title"] as! String
+        let d: [String: Any] = dict["alert"] as! [String : Any]
+        let body: String = d["body"] as! String
+        let title: String = d["title"] as! String
         print("Title:\(title) + body:\(body)")
-        self.showAlertAppDelegate(title: title,message:body,buttonTitle:"ok",window:self.window!)
+        showAlertAppDelegate(title: title, message: body, buttonTitle: "ok")
     }
     
-    func showAlertAppDelegate(title: String,message : String,buttonTitle: String,window: UIWindow){
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: buttonTitle, style: UIAlertActionStyle.default, handler: nil))
-        window.rootViewController?.present(alert, animated: false, completion: nil)
+    func showAlertAppDelegate(title: String, message: String, buttonTitle: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: buttonTitle, style: .default, handler: nil))
+        window?.rootViewController?.present(alert, animated: false, completion: nil)
     }
 
     // MARK: - Core Data stack

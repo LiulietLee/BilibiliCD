@@ -7,34 +7,26 @@
 //
 
 import UIKit
+import MaterialKit
 
 class LoadingView: UIView {
 
-    fileprivate var active = MKActivityIndicator()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setup()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setup()
-    }
+    fileprivate var indicator = MKActivityIndicator()
 
-    fileprivate func setup() {
-        self.backgroundColor = .white
-        let width = self.bounds.size.width
-        let height = self.bounds.size.height
+    override func willMove(toSuperview newSuperview: UIView?) {
+        super.willMove(toSuperview: newSuperview)
+        backgroundColor = .white
+        let width = bounds.size.width
+        let height = bounds.size.height
         let x = width * 0.375
         let y = height * 0.375
         let w = width * 0.25
         let f = CGRect(x: x, y: y, width: w, height: w)
-        active.frame = f
-        active.color = UIColor(red: 1.06, green: 0.403, blue: 0.599, alpha: 1.0)
-        self.addSubview(active)
-        self.bringSubview(toFront: active)
-        active.startAnimating()
+        indicator.frame = f
+        indicator.color = .bilibiliPink
+        addSubview(indicator)
+        bringSubview(toFront: indicator)
+        indicator.startAnimating()
     }
     
     public func dismiss() {
