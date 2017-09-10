@@ -20,6 +20,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate, GADBannerViewDe
     @IBOutlet weak var pushButton: UIButton!
     
     var avNum: Int?
+    var coverType = "video"
     var itemFromHistory: History?
     fileprivate let netModel = NetworkingModel()
     fileprivate let dataModel = CoreDataModel()
@@ -50,9 +51,17 @@ class ImageViewController: UIViewController, VideoCoverDelegate, GADBannerViewDe
         isShowingImage = true
         netModel.delegateForVideo = self
         if let num = avNum {
-            title = "av\(num)"
+            if coverType == "video" {
+                title = "av\(num)"
+            } else if coverType == "live" {
+                title = "lv\(num)"
+            }
             if itemFromHistory == nil {
-                netModel.getInfoFromAvNumber(avNum: num)
+                if coverType == "video" {
+                    netModel.getInfoFromAvNumber(avNum: num)
+                } else if coverType == "live" {
+                    netModel.getLiveInfo(lvNum: num)
+                }
             }
         } else {
             title = "No av number"

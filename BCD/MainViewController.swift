@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  BCD
 //
 //  Created by Liuliet.Lee on 17/6/2017.
@@ -9,7 +9,7 @@
 import UIKit
 import SWRevealViewController
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class MainViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var avLabel: UILabel!
     @IBOutlet weak var goButton: UIButton!
@@ -20,11 +20,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
             avLabel.text = "av\(newValue)"
             if newValue == 0 {
                 goButton.isEnabled = false
+                coverType = "video"
             } else {
                 goButton.isEnabled = true
             }
         }
     }
+    fileprivate var lvNumber = 0 {
+        willSet {
+            avLabel.text = "lv\(newValue)"
+            goButton.isEnabled = true
+        }
+    }
+    
+    fileprivate var coverType = "video"
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -44,7 +53,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if let urlString = UIPasteboard.general.string {
             let tempArray = Array(urlString.characters)
             var avNum = 0
-            var isAvNum = false
+            var isAvNum = false, isLvNum = false
             for i in 0..<tempArray.count {
                 let j = tempArray.count - i - 1
                 if let singleNum = Int("\(tempArray[j])") {
@@ -52,6 +61,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     num *= Int(NSDecimalNumber(decimal: pow(10, i)))
                     avNum += num
                 } else if tempArray[j] == "/" {
+                    if j > 22 {
+                        let index = urlString.index(urlString.startIndex, offsetBy: 21)
+                        print(urlString.substring(to: index))
+                        if urlString.substring(to: index) == "https://live.bilibili" {
+                            isLvNum = true
+                            break
+                        }
+                    }
                     continue
                 } else if tempArray[j] == "v" && j >= 1 {
                     if tempArray[j - 1] == "a" {
@@ -61,12 +78,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 } else { break }
             }
             
-            if isAvNum {
-                avNumber = avNum
+            if isAvNum || isLvNum {
                 isShowingImage = true
                 let storyBoard = UIStoryboard(name: "Main", bundle:nil)
                 let nextViewController = storyBoard.instantiateViewController(withIdentifier: "image controller") as! ImageViewController
-                nextViewController.avNum = avNumber
+
+                if isAvNum {
+                    avNumber = avNum
+                    nextViewController.avNum = avNumber
+                } else if isLvNum {
+                    lvNumber = avNum
+                    coverType = "live"
+                    nextViewController.avNum = lvNumber
+                }
+                
+                nextViewController.coverType = coverType
                 show(nextViewController, sender: self)
             }
         }

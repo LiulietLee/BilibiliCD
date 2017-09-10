@@ -34,6 +34,47 @@ class NetworkingModel {
     weak var delegateForUpuser: UpuserImgDelegate?
     let session = URLSession.shared
     
+    open func getLiveInfo(lvNum: Int) {
+        let path = "https://api.live.bilibili.com/AppRoom/index?device=phone&platform=ios&scale=3&build=10000&room_id=\(lvNum)"
+        let url = URL(string: path)
+        let request = URLRequest(url: url!)
+        let task = session.dataTask(with: request) { (data, response, error) in
+            if let err = error {
+                print(err)
+            } else {
+                DispatchQueue.main.async {
+                    if let content = data {
+                        do {
+                            let jsonData = try JSONSerialization.jsonObject(with: content, options: .mutableContainers) as AnyObject
+                            
+                            let newInfo = Info()
+                            let information = jsonData["data"] as AnyObject
+                            newInfo.author = information["uname"] as? String ?? "Can't get author"
+                            newInfo.title = information["title"] as? String ?? "Can't get title"
+                            newInfo.imageUrl = information["cover"] as? String ?? "Can't get url of cover"
+                            
+                            if let del = self.delegateForVideo {
+                                if newInfo.imageUrl == "error" {
+                                    del.cannotFindVideo()
+                                } else {
+                                    del.gotVideoInfo(newInfo)
+                                    self.getImage(fromUrlPath: newInfo.imageUrl!)
+                                }
+                            }
+                        } catch {
+                            print("serialize error")
+                            self.delegateForVideo?.connectError()
+                        }
+                    } else {
+                        self.delegateForVideo?.connectError()
+                    }
+                }
+            }
+        }
+        
+        task.resume()
+    }
+    
     open func getInfoFromAvNumber(avNum: Int) {
         let path = "http://bilibilicd.tk/video/ios/\(avNum)/"
         let url = URL(string: path)
