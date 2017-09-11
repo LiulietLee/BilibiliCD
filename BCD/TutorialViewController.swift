@@ -11,7 +11,7 @@ import UIKit
 class TutorialViewController: UIViewController, UIPageViewControllerDataSource {
 
     fileprivate var pageController = UIPageViewController()
-    fileprivate let pageImages = [#imageLiteral(resourceName: "tut1"), #imageLiteral(resourceName: "tut2"), #imageLiteral(resourceName: "tut3")]
+    fileprivate let pageImages = [#imageLiteral(resourceName: "tut1"), #imageLiteral(resourceName: "tut2"), #imageLiteral(resourceName: "tut3"), #imageLiteral(resourceName: "tut4")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
