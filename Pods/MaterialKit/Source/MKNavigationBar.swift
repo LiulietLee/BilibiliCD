@@ -38,7 +38,7 @@ open class MKNavigationBar: UINavigationBar {
 
     @IBInspectable open override var tintColor: UIColor! {
         didSet {
-            UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: tintColor]
+            UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: tintColor]
             UINavigationBar.appearance().tintColor = tintColor
         }
     }
@@ -64,7 +64,7 @@ open class MKNavigationBar: UINavigationBar {
         UINavigationBar.appearance().barTintColor = color
         UINavigationBar.appearance().backgroundColor = tintColor
         UINavigationBar.appearance().tintColor = tintColor
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: tintColor]
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: tintColor]
     }
 
     private func drawShadow() {

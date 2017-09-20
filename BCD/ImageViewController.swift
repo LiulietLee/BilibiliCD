@@ -136,7 +136,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate, GADBannerViewDe
         UIImageWriteToSavedPhotosAlbum(imageView.image!, self, #selector(imageSavingFinished(_:didFinishSavingWithError:contextInfo:)), nil)
     }
     
-    func imageSavingFinished(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+    @objc func imageSavingFinished(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
         let dialog = LLDialog()
         if let error = error {
             dialog.title = "啊叻？！"

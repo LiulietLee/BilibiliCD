@@ -93,7 +93,7 @@ open class MKSnackbar: UIControl {
             textLabel.alpha = 0
             textLabel.numberOfLines = 0
             textLabel.translatesAutoresizingMaskIntoConstraints = false
-            textLabel.setContentCompressionResistancePriority(UILayoutPriorityDefaultLow, for: .horizontal)
+            textLabel.setContentCompressionResistancePriority(UILayoutPriority.defaultLow, for: .horizontal)
             return textLabel
         }()
 
@@ -103,7 +103,7 @@ open class MKSnackbar: UIControl {
             actionButton.alpha = 0
             actionButton.isEnabled = false
             actionButton.translatesAutoresizingMaskIntoConstraints = false
-            actionButton.setContentHuggingPriority(UILayoutPriorityRequired, for: .horizontal)
+            actionButton.setContentHuggingPriority(UILayoutPriority.required, for: .horizontal)
             actionButton.addTarget(
                 self,
                 action: #selector(MKSnackbar.actionButtonClicked(_:)),
@@ -118,7 +118,7 @@ open class MKSnackbar: UIControl {
         MKSnackbarManager.instance.showSnackbar(self)
     }
 
-    open func dismiss() {
+    @objc open func dismiss() {
         if !isShowing || isAnimating {
             return
         }
@@ -168,7 +168,7 @@ open class MKSnackbar: UIControl {
 
     // Mark: Action
 
-    internal func actionButtonClicked(_ sender: AnyObject) {
+    @objc internal func actionButtonClicked(_ sender: AnyObject) {
         performDelegateAction(#selector(MKSnackbarDelegate.actionClicked(_:)))
         actionButton?.isEnabled = false
         dismiss()

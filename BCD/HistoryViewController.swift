@@ -132,7 +132,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
                 let item = history[indexPath.row]
                 var avString = item.av!
                 let index = avString.index(avString.startIndex, offsetBy: 2)
-                avString = avString.substring(from: index)
+                avString = String(avString[index...])
                 vc.avNum = Int(avString)!
                 vc.itemFromHistory = item
             }

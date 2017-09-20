@@ -58,13 +58,13 @@ class MainViewController: UIViewController, UITextFieldDelegate {
                 let j = tempArray.count - i - 1
                 if let singleNum = Int("\(tempArray[j])") {
                     var num = singleNum
-                    num *= Int(NSDecimalNumber(decimal: pow(10, i)))
+                    num *= Int(truncating: NSDecimalNumber(decimal: pow(10, i)))
                     avNum += num
                 } else if tempArray[j] == "/" {
                     if j > 22 {
                         let index = urlString.index(urlString.startIndex, offsetBy: 21)
-                        print(urlString.substring(to: index))
-                        if urlString.substring(to: index) == "https://live.bilibili" {
+                        // print(urlString[..<index])
+                        if urlString[..<index] == "https://live.bilibili" {
                             isLvNum = true
                             break
                         }
