@@ -14,17 +14,35 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var menu: UIBarButtonItem!
     fileprivate let dataModel = CoreDataModel()
-    fileprivate var history = [History]()
-    fileprivate let nothingLabel = UILabel()
-
-    override func viewWillAppear(_ animated: Bool) {
-        dataModel.refreshHistory()
-        history = dataModel.history
+    fileprivate var history = [History]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.loadingView.dismiss()
+                if self.history.count != 0 {
+                    self.tableView.reloadData()
+                } else {
+                    self.setLabel()
+                    self.showLabel()
+                }
+            }
+        }
     }
+    fileprivate let nothingLabel = UILabel()
+    fileprivate var loadingView: LoadingView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loadingView = LoadingView(frame: view.bounds)
+        loadingView.color = .tianyiBlue
+        view.addSubview(loadingView)
+        view.bringSubview(toFront: loadingView)
+
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.dataModel.refreshHistory()
+            self.history = self.dataModel.history
+        }
+
         tableView.delegate = self
         tableView.dataSource = self
         menu.target = revealViewController()
@@ -78,10 +96,10 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if history.count == 0 {
-            setLabel()
-            showLabel()
-        }
+//        if history.count == 0 {
+//            setLabel()
+//            showLabel()
+//        }
         
         return history.count
     }
@@ -96,7 +114,13 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy.MM.dd hh:mm"
         cell.dateLabel.text = formatter.string(from: history[indexPath.row].date! as Date)
-        cell.coverView.image = UIImage(data: history[indexPath.row].image! as Data, scale: 1.0)!
+        
+        DispatchQueue.global(qos: .userInteractive).async {
+            let image = UIImage(data: self.history[indexPath.row].image! as Data, scale: 1.0)!
+            DispatchQueue.main.async {
+                cell.coverView.image = image
+            }
+        }
         
         return cell
     }
@@ -118,6 +142,10 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationItem.backBarButtonItem = backItem
+
         if segue.identifier == "set limit" {
             if let vc = segue.destination as? SetHistoryNumViewController {
                 vc.delegate = self

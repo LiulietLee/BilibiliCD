@@ -1,16 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xAa-In-jj9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xAa-In-jj9">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Book</string>
+            <string>Avenir-Medium</string>
+        </array>
+        <array key="PingFang.ttc">
+            <string>PingFangHK-Light</string>
+            <string>PingFangHK-Medium</string>
+            <string>PingFangHK-Regular</string>
+            <string>PingFangHK-Semibold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--封面下载-->
         <scene sceneID="tne-QT-ifu">
@@ -745,7 +757,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uMu-2d-WQe" customClass="SakuraNavController" customModule="BilibiliCD" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Cy-pq-ZJn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -762,7 +774,7 @@
             <objects>
                 <navigationController id="NFI-Ou-sCf" customClass="BrownNavController" customModule="BilibiliCD" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="e0R-6N-1lg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -996,7 +1008,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="    まあ〜说是美工，其实只要会画画就行了。因为以我这个三流编程水平，太高端的界面也做不粗来，现在这个界面已经是我这个理工男的能力极限了。不用你说我也知道它很挫，但我有什么办法，我也很绝望啊( ´_ゝ｀)" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kl0-H4-mxE">
-                                <rect key="frame" x="16" y="20" width="288" height="253"/>
+                                <rect key="frame" x="16" y="84" width="288" height="253"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="253" id="f4R-51-gge"/>
@@ -1005,16 +1017,16 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="    因此我希望能找个会画画的（妹子）帮忙画几幅插画放到这个App里面，让App变得更萌一点。如果你有时间，有能力的话，欢迎加入我们！" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aug-ZI-g2q">
-                                <rect key="frame" x="16" y="281" width="288" height="111.5"/>
+                                <rect key="frame" x="16" y="345" width="288" height="111.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eyK-mB-ju4">
-                                <rect key="frame" x="16" y="401.5" width="288" height="147.5"/>
+                                <rect key="frame" x="16" y="465.5" width="288" height="83.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoo-UE-2CD">
-                                        <rect key="frame" x="99" y="54.5" width="91" height="38"/>
+                                        <rect key="frame" x="99" y="22.5" width="91" height="38"/>
                                         <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="18"/>
                                         <state key="normal" title="给我发私信">
                                             <color key="titleColor" red="0.62329528805000001" green="0.55563846115023729" blue="0.56725834804633624" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1056,7 +1068,7 @@
             <objects>
                 <navigationController id="dzb-zd-eId" customClass="GreyNavController" customModule="BilibiliCD" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="I6W-ge-YiO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -1107,7 +1119,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Enq-T1-832" customClass="BlueNavController" customModule="BilibiliCD" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qXM-f5-261">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1218,7 +1230,7 @@
         <image name="liuliet-pro" width="346" height="360"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Eeb-QN-AAw"/>
         <segue reference="dIf-Ib-BVL"/>
+        <segue reference="Eeb-QN-AAw"/>
     </inferredMetricsTieBreakers>
 </document>

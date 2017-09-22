@@ -12,6 +12,7 @@ import MaterialKit
 class LoadingView: UIView {
 
     fileprivate var indicator = MKActivityIndicator()
+    var color = UIColor.bilibiliPink
 
     override func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
@@ -23,7 +24,7 @@ class LoadingView: UIView {
         let w = width * 0.25
         let f = CGRect(x: x, y: y, width: w, height: w)
         indicator.frame = f
-        indicator.color = .bilibiliPink
+        indicator.color = color
         addSubview(indicator)
         bringSubview(toFront: indicator)
         indicator.startAnimating()

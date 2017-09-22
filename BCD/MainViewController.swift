@@ -106,6 +106,10 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         menu.action = #selector(SWRevealViewController.revealToggle(_:))
         view.addGestureRecognizer(revealViewController().panGestureRecognizer())
         getURLFromPasteboard()
+        
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationItem.backBarButtonItem = backItem
     }
     
     @IBAction func numberButtonTapped(_ sender: UIButton) {
