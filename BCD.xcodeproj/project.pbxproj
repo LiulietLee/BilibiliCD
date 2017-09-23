@@ -31,12 +31,11 @@
 		4F5041CA1F18AF1C00B59337 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F5041C91F18AF1C00B59337 /* Assets.xcassets */; };
 		4F585B2A1F760B38004D1285 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF701EF5000400D31840 /* Info.swift */; };
 		4F585B2B1F760B38004D1285 /* NetworkingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF6E1EF4FCC600D31840 /* NetworkingModel.swift */; };
-		4F585B2D1F760FA7004D1285 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB3D9601F09DD9C0043066B /* LoadingView.swift */; };
 		4F585B351F76144D004D1285 /* Pods_BCD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018D8C88BE8E9E6C2D578E97 /* Pods_BCD.framework */; };
-		4F585B4D1F76169D004D1285 /* ColoredNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F26AA801F14D32400E1123D /* ColoredNavController.swift */; };
-		4F585B531F761710004D1285 /* MaterialKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F585B521F761708004D1285 /* MaterialKit.framework */; };
+		4F585B591F7627E2004D1285 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F5041C91F18AF1C00B59337 /* Assets.xcassets */; };
 		4F99A9971F21F0B600AE4143 /* BCD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F99A9951F21F0B600AE4143 /* BCD.xcdatamodeld */; };
 		4F9B213F1F16187000D3BDD2 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9B213E1F16187000D3BDD2 /* AboutViewController.swift */; };
+		4FA99A341F7661AE00CB2210 /* LLDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BFDF781F5B2D29002EE246 /* LLDialog.swift */; };
 		4FB044851F1F49CA00F96D5A /* TutorialContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB044841F1F49CA00F96D5A /* TutorialContentViewController.swift */; };
 		4FB044871F1F49D800F96D5A /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB044861F1F49D800F96D5A /* TutorialViewController.swift */; };
 		4FB3D9611F09DD9C0043066B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB3D9601F09DD9C0043066B /* LoadingView.swift */; };
@@ -115,7 +114,6 @@
 		4F4262891F20CC9900B9646D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4F5041C91F18AF1C00B59337 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F585B371F7614B4004D1285 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "../GoogleMobileAdsSdkiOS-7.21.0/GoogleMobileAds.framework"; sourceTree = "<group>"; };
-		4F585B521F761708004D1285 /* MaterialKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MaterialKit.framework; sourceTree = "<group>"; };
 		4F99A9961F21F0B600AE4143 /* BCD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BCD.xcdatamodel; sourceTree = "<group>"; };
 		4F9B213E1F16187000D3BDD2 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		4FB044841F1F49CA00F96D5A /* TutorialContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialContentViewController.swift; sourceTree = "<group>"; };
@@ -145,7 +143,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F585B531F761710004D1285 /* MaterialKit.framework in Frameworks */,
 				4F585B351F76144D004D1285 /* Pods_BCD.framework in Frameworks */,
 				4F2DB5DB1F75F7D400FB2315 /* NotificationCenter.framework in Frameworks */,
 			);
@@ -193,14 +190,6 @@
 				4F2DB5DA1F75F7D400FB2315 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		4F585B511F761708004D1285 /* frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				4F585B521F761708004D1285 /* MaterialKit.framework */,
-			);
-			path = frameworks;
 			sourceTree = "<group>";
 		};
 		4F5BE2F51EFAA1040054C53F /* ViewController */ = {
@@ -269,7 +258,6 @@
 				4F585B371F7614B4004D1285 /* GoogleMobileAds.framework */,
 				4FE8FF3C1EF4FC0600D31840 /* BCD */,
 				4F2DB5DC1F75F7D400FB2315 /* BilibiliCD */,
-				4F585B511F761708004D1285 /* frameworks */,
 				4FE8FF3B1EF4FC0600D31840 /* Products */,
 				4F3077951F17478100E1C1AF /* Frameworks */,
 				9F8777D193FA8FFCFE41B3E0 /* Pods */,
@@ -414,6 +402,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F585B591F7627E2004D1285 /* Assets.xcassets in Resources */,
 				4F2DB5E11F75F7D400FB2315 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,9 +474,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F2DB5DE1F75F7D400FB2315 /* TodayViewController.swift in Sources */,
+				4FA99A341F7661AE00CB2210 /* LLDialog.swift in Sources */,
 				4F585B2A1F760B38004D1285 /* Info.swift in Sources */,
-				4F585B2D1F760FA7004D1285 /* LoadingView.swift in Sources */,
-				4F585B4D1F76169D004D1285 /* ColoredNavController.swift in Sources */,
 				4F585B2B1F760B38004D1285 /* NetworkingModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

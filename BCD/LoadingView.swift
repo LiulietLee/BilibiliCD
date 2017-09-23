@@ -21,7 +21,7 @@ class LoadingView: UIView {
         let height = bounds.size.height
         let x = width * 0.375
         let y = height * 0.375
-        let w = width * 0.25
+        let w = min(width, height) * 0.25
         let f = CGRect(x: x, y: y, width: w, height: w)
         indicator.frame = f
         indicator.color = color

@@ -11,6 +11,7 @@ import NotificationCenter
 
 class TodayViewController: UIViewController, NCWidgetProviding, VideoCoverDelegate {
     
+    @IBOutlet weak var loadingText: UILabel!
     @IBOutlet weak var downloadButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -18,16 +19,11 @@ class TodayViewController: UIViewController, NCWidgetProviding, VideoCoverDelega
     private var coverType = "video"
     private var number = 10086
     private let netModel = NetworkingModel()
-    private var loadingView: LoadingView! = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         netModel.delegateForVideo = self
-        
-        loadingView = LoadingView(frame: view.bounds)
-        view.addSubview(loadingView)
-        view.bringSubview(toFront: loadingView)
-        
+        downloadButton.setTitleColor(.white, for: .normal)
         scanPasteBoard()
     }
     
@@ -86,14 +82,20 @@ class TodayViewController: UIViewController, NCWidgetProviding, VideoCoverDelega
     }
     func gotImage(_ image: UIImage) {
         imageView.image = image
-        loadingView.dismiss()
         downloadButton.isEnabled = true
+        loadingText.removeFromSuperview()
     }
     func connectError() {
-        loadingView.dismiss()
+        numberLabel.text = "啊叻？！连不上服务器了？"
+        titleLabel.text = "原因大概是我们的服(V)务(P)器(S)炸了"
+        imageView.image = #imageLiteral(resourceName: "error_image")
+        loadingText.removeFromSuperview()
     }
     func cannotFindVideo() {
-        loadingView.dismiss()
+        numberLabel.text = "啊叻？！视频不见了？"
+        titleLabel.text = "目前还抓不到「会员的世界」的封面哦"
+        imageView.image = #imageLiteral(resourceName: "novideo_image")
+        loadingText.removeFromSuperview()
     }
     
     @IBAction func downloadImage() {
@@ -108,7 +110,15 @@ class TodayViewController: UIViewController, NCWidgetProviding, VideoCoverDelega
         if let error = error {
             print(error)
         } else {
-            print("yes!")
+            UIView.animate(withDuration: 0.3, animations: {
+                self.downloadButton.backgroundColor = .white
+            }, completion: { (finish) in
+                if finish {
+                    UIView.animate(withDuration: 0.3, animations: {
+                        self.downloadButton.backgroundColor = .clear
+                    })
+                }
+            })
         }
     }
     
