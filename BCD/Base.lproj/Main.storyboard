@@ -331,6 +331,9 @@
                             <constraint firstAttribute="leadingMargin" secondItem="XsU-ss-UBH" secondAttribute="leading" constant="16" id="o6G-Za-wRu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="closeButton" destination="XsU-ss-UBH" id="8G2-TJ-038"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sHi-um-JDb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
