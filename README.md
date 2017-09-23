@@ -5,7 +5,7 @@
 
 ## 编译环境
 - Xcode 9
-- Swift 4
+- Swift 4
 
 ## 系统要求
 iOS 10.0 以上
