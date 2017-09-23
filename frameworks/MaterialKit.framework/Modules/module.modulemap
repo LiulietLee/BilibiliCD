@@ -1,0 +1,11 @@
+framework module MaterialKit {
+  umbrella header "MaterialKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module MaterialKit.Swift {
+    header "MaterialKit-Swift.h"
+    requires objc
+}

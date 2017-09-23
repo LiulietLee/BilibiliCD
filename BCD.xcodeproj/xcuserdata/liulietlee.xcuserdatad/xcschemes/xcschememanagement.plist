@@ -9,9 +9,19 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>BilibiliCD.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>4F2DB5D81F75F7D400FB2315</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>4FE8FF391EF4FC0600D31840</key>
 		<dict>
 			<key>primary</key>
