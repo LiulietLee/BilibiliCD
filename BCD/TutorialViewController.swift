@@ -20,12 +20,11 @@ class TutorialViewController: UIViewController, UIPageViewControllerDataSource {
         pageController.dataSource = self
         let viewControllers = [viewControllerAt(index: 0)]
         pageController.setViewControllers(viewControllers, direction: .forward, animated: true, completion: nil)
-        let size = view.bounds.size
-        pageController.view.frame = CGRect(x: 0, y: 20, width: size.width, height: size.height - 80)
         
         addChildViewController(pageController)
         view.addSubview(pageController.view)
         pageController.didMove(toParentViewController: self)
+        view.bringSubview(toFront: closeButton)
     }
     
     fileprivate func viewControllerAt(index: Int) -> TutorialContentViewController {
