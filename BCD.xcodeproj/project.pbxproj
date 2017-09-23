@@ -51,6 +51,8 @@
 		4FE8FF731EF5095B00D31840 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF721EF5095B00D31840 /* ImageViewController.swift */; };
 		4FF426D61F1FA61E00A8EF79 /* FindArtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF426D51F1FA61E00A8EF79 /* FindArtViewController.swift */; };
 		52BFDF791F5B2D29002EE246 /* LLDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BFDF781F5B2D29002EE246 /* LLDialog.swift */; };
+		52E4E47D1F76C6A9008EF09C /* BilibiliCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E4E47C1F76C6A9008EF09C /* BilibiliCover.swift */; };
+		52E4E47E1F76C6B6008EF09C /* BilibiliCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E4E47C1F76C6A9008EF09C /* BilibiliCover.swift */; };
 		EBB2B5B133F4BE33C74FFDA4 /* Pods_BCD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018D8C88BE8E9E6C2D578E97 /* Pods_BCD.framework */; };
 /* End PBXBuildFile section */
 
@@ -134,6 +136,7 @@
 		4FE8FF721EF5095B00D31840 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		4FF426D51F1FA61E00A8EF79 /* FindArtViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindArtViewController.swift; sourceTree = "<group>"; };
 		52BFDF781F5B2D29002EE246 /* LLDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLDialog.swift; sourceTree = "<group>"; };
+		52E4E47C1F76C6A9008EF09C /* BilibiliCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BilibiliCover.swift; sourceTree = "<group>"; };
 		8A8078299F9F4EA6B414ED7D /* Pods-BCD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BCD/Pods-BCD.debug.xcconfig"; sourceTree = "<group>"; };
 		FD6425538132C362B8653B3A /* Pods-BCD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCD.release.xcconfig"; path = "Pods/Target Support Files/Pods-BCD/Pods-BCD.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -214,8 +217,6 @@
 		4F5BE2F61EFAA1170054C53F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4FE8FF701EF5000400D31840 /* Info.swift */,
-				4FE8FF6E1EF4FCC600D31840 /* NetworkingModel.swift */,
 				4F3077B71F1768E000E1C1AF /* CoreDataModel.swift */,
 				4F99A9951F21F0B600AE4143 /* BCD.xcdatamodeld */,
 				4F2AFBB31F21FEC600AA7CC7 /* Permission+CoreDataClass.swift */,
@@ -255,6 +256,7 @@
 		4FE8FF311EF4FC0600D31840 = {
 			isa = PBXGroup;
 			children = (
+				52E4E47F1F76CF95008EF09C /* Shared */,
 				4F585B371F7614B4004D1285 /* GoogleMobileAds.framework */,
 				4FE8FF3C1EF4FC0600D31840 /* BCD */,
 				4F2DB5DC1F75F7D400FB2315 /* BilibiliCD */,
@@ -290,6 +292,16 @@
 				52BFDF781F5B2D29002EE246 /* LLDialog.swift */,
 			);
 			name = "Material Design";
+			sourceTree = "<group>";
+		};
+		52E4E47F1F76CF95008EF09C /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				4FE8FF701EF5000400D31840 /* Info.swift */,
+				4FE8FF6E1EF4FCC600D31840 /* NetworkingModel.swift */,
+				52E4E47C1F76C6A9008EF09C /* BilibiliCover.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		9F8777D193FA8FFCFE41B3E0 /* Pods */ = {
@@ -477,6 +489,7 @@
 				4FA99A341F7661AE00CB2210 /* LLDialog.swift in Sources */,
 				4F585B2A1F760B38004D1285 /* Info.swift in Sources */,
 				4F585B2B1F760B38004D1285 /* NetworkingModel.swift in Sources */,
+				52E4E47E1F76C6B6008EF09C /* BilibiliCover.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +502,7 @@
 				4F26AA851F14D45900E1123D /* BrownNavController.swift in Sources */,
 				4F26AA831F14D3D400E1123D /* SakuraNavController.swift in Sources */,
 				4F3077B81F1768E000E1C1AF /* CoreDataModel.swift in Sources */,
+				52E4E47D1F76C6A9008EF09C /* BilibiliCover.swift in Sources */,
 				4F99A9971F21F0B600AE4143 /* BCD.xcdatamodeld in Sources */,
 				4F04A0D11F2311B7007D86B1 /* Setting+CoreDataClass.swift in Sources */,
 				4FB044851F1F49CA00F96D5A /* TutorialContentViewController.swift in Sources */,
@@ -742,7 +756,6 @@
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -771,7 +784,6 @@
 				PRODUCT_NAME = BilibiliCD;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -158,10 +158,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
                 let cell = sender as! HistoryCell
                 let indexPath = tableView.indexPath(for: cell)!
                 let item = history[indexPath.row]
-                var avString = item.av!
-                let index = avString.index(avString.startIndex, offsetBy: 2)
-                avString = String(avString[index...])
-                vc.avNum = Int(avString)!
+                vc.cover = BilibiliCover(item.av!)
                 vc.itemFromHistory = item
             }
         }

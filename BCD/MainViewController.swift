@@ -10,7 +10,7 @@ import UIKit
 import SWRevealViewController
 
 class MainViewController: UIViewController, UITextFieldDelegate {
-
+    
     @IBOutlet weak var avLabel: UILabel!
     @IBOutlet weak var goButton: UIButton!
     @IBOutlet weak var menu: UIBarButtonItem!
@@ -20,7 +20,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
             avLabel.text = "av\(newValue)"
             if newValue == 0 {
                 goButton.isEnabled = false
-                coverType = "video"
+                coverType = .video
             } else {
                 goButton.isEnabled = true
             }
@@ -33,7 +33,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    fileprivate var coverType = "video"
+    fileprivate var coverType = BilibiliCover.Category.video
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -42,62 +42,31 @@ class MainViewController: UIViewController, UITextFieldDelegate {
                                                name: .BCD,
                                                object: nil)
     }
-
+    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         NotificationCenter.default.removeObserver(self)
     }
-
+    
     @objc fileprivate func getURLFromPasteboard() {
         if isShowingImage { return }
-        if let urlString = UIPasteboard.general.string {
-            let tempArray = Array(urlString.characters)
-            var avNum = 0
-            var isAvNum = false, isLvNum = false
-            for i in 0..<tempArray.count {
-                let j = tempArray.count - i - 1
-                if let singleNum = Int("\(tempArray[j])") {
-                    var num = singleNum
-                    num *= Int(truncating: NSDecimalNumber(decimal: pow(10, i)))
-                    avNum += num
-                } else if tempArray[j] == "/" {
-                    if j > 22 {
-                        let index = urlString.index(urlString.startIndex, offsetBy: 21)
-                        // print(urlString[..<index])
-                        if urlString[..<index] == "https://live.bilibili" {
-                            isLvNum = true
-                            break
-                        }
-                    }
-                    continue
-                } else if tempArray[j] == "v" && j >= 1 {
-                    if tempArray[j - 1] == "a" {
-                        isAvNum = true
-                        break
-                    }
-                } else { break }
-            }
+        if let cover = BilibiliCover.fromPasteboard() {
+            isShowingImage = true
+            let storyBoard = UIStoryboard(name: "Main", bundle:nil)
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "image controller") as! ImageViewController
             
-            if isAvNum || isLvNum {
-                isShowingImage = true
-                let storyBoard = UIStoryboard(name: "Main", bundle:nil)
-                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "image controller") as! ImageViewController
-
-                if isAvNum {
-                    avNumber = avNum
-                    nextViewController.avNum = avNumber
-                } else if isLvNum {
-                    lvNumber = avNum
-                    coverType = "live"
-                    nextViewController.avNum = lvNumber
-                }
-                
-                nextViewController.coverType = coverType
-                show(nextViewController, sender: self)
+            
+            coverType = cover.type
+            if coverType == .video {
+                avNumber = cover.number
+            } else {
+                lvNumber = cover.number
             }
+            nextViewController.cover = cover
+            show(nextViewController, sender: self)
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         isShowingImage = false
@@ -132,7 +101,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        (segue.destination as? ImageViewController)?.avNum = avNumber
+        (segue.destination as? ImageViewController)?.cover = BilibiliCover(id: avNumber)
     }
     
 }

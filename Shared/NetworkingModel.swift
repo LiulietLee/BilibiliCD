@@ -21,11 +21,17 @@ protocol UpuserImgDelegate: class {
     func cannotGetUser()
 }
 
-struct Upuser {
+struct Upuser: Decodable {
     var name: String
     var videoNum: String
     var fansNum: String
-    var imgUrl: String
+    var imgURL: String
+    enum CodingKeys: String, CodingKey {
+        case name
+        case videoNum = "videonum"
+        case fansNum = "fansnum"
+        case imgURL = "imgurl"
+    }
 }
 
 class NetworkingModel {
@@ -45,20 +51,18 @@ class NetworkingModel {
                 DispatchQueue.main.async {
                     if let content = data {
                         do {
-                            let jsonData = try JSONSerialization.jsonObject(with: content, options: .mutableContainers) as AnyObject
-                            
-                            let newInfo = Info()
-                            let information = jsonData["data"] as AnyObject
-                            newInfo.author = information["uname"] as? String ?? "Can't get author"
-                            newInfo.title = information["title"] as? String ?? "Can't get title"
-                            newInfo.imageUrl = information["cover"] as? String ?? "Can't get url of cover"
+                            struct InfoWrapper: Decodable {
+                                let data: Info
+                            }
+                            let jsonData = try JSONDecoder().decode(InfoWrapper.self, from: content)
+                            let newInfo = jsonData.data
                             
                             if let del = self.delegateForVideo {
-                                if newInfo.imageUrl == "error" {
-                                    del.cannotFindVideo()
-                                } else {
+                                if newInfo.imageURL != "error" {
                                     del.gotVideoInfo(newInfo)
-                                    self.getImage(fromUrlPath: newInfo.imageUrl!)
+                                    self.getImage(fromUrlPath: newInfo.imageURL)
+                                } else {
+                                    del.cannotFindVideo()
                                 }
                             }
                         } catch {
@@ -87,19 +91,14 @@ class NetworkingModel {
                 DispatchQueue.main.async {
                     if let content = data {
                         do {
-                            let jsonData = try JSONSerialization.jsonObject(with: content, options: .mutableContainers) as AnyObject
-
-                            let newInfo = Info()
-                            newInfo.author = jsonData["author"] as? String ?? "Can't get author"
-                            newInfo.title = jsonData["title"] as? String ?? "Can't get title"
-                            newInfo.imageUrl = jsonData["url"] as? String ?? "Can't get url of cover"
+                            let newInfo = try JSONDecoder().decode(Info.self, from: content)
                             
                             if let del = self.delegateForVideo {
-                                if newInfo.imageUrl == "error" {
+                                if newInfo.imageURL == "error" {
                                     del.cannotFindVideo()
                                 } else {
                                     del.gotVideoInfo(newInfo)
-                                    self.getImage(fromUrlPath: newInfo.imageUrl!)
+                                    self.getImage(fromUrlPath: newInfo.imageURL)
                                 }
                             }
                         } catch {
@@ -112,7 +111,7 @@ class NetworkingModel {
                 }
             }
         }
-
+        
         task.resume()
     }
     
@@ -129,23 +128,19 @@ class NetworkingModel {
                 if let content = data {
                     DispatchQueue.main.async {
                         do {
-                            let jsonData = try JSONSerialization.jsonObject(with: content, options: .mutableContainers) as AnyObject
-
-                            guard let sum = jsonData["sum"] as? Int, sum > 0,
-                                let users = jsonData["upusers"] as? [AnyObject]
-                                else {
-                                    self.delegateForUpuser?.cannotGetUser()
-                                    return
+                            struct UpuserWrapper: Decodable {
+                                let sum: Int
+                                let upusers: [Upuser]
                             }
-
-                            let upusers = users.map { user in
-                                return Upuser(name: user["name"] as? String ?? "",
-                                              videoNum: user["videonum"] as? String ?? "",
-                                              fansNum: user["fansnum"] as? String ?? "",
-                                              imgUrl: user["imgurl"] as? String ?? "")
+                            
+                            let jsonData = try JSONDecoder().decode(UpuserWrapper.self, from: content)
+                            
+                            if jsonData.sum > 0 && jsonData.upusers.count > 0 {
+                                self.delegateForUpuser?.gotUpusers(jsonData.upusers)
+                            } else {
+                                self.delegateForUpuser?.cannotGetUser()
                             }
-
-                            self.delegateForUpuser?.gotUpusers(upusers)
+                            
                         } catch {
                             self.delegateForUpuser?.connectError()
                         }
