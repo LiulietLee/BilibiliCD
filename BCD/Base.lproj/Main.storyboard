@@ -321,7 +321,6 @@
                                 <state key="normal" image="ic_goback"/>
                                 <connections>
                                     <action selector="goBack" destination="D67-0g-9IQ" eventType="touchUpInside" id="49y-Sk-6uT"/>
-                                    <action selector="goBack" destination="Rfk-8v-X96" eventType="touchUpInside" id="ALA-3F-BQM"/>
                                 </connections>
                             </button>
                         </subviews>

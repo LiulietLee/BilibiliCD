@@ -7,15 +7,16 @@
 //
 
 import UIKit
+import MaterialKit
 
 class TutorialViewController: UIViewController, UIPageViewControllerDataSource {
-
+    @IBOutlet private weak var closeButton: MKButton!
     fileprivate var pageController = UIPageViewController()
     fileprivate let pageImages = [#imageLiteral(resourceName: "tut1"), #imageLiteral(resourceName: "tut2"), #imageLiteral(resourceName: "tut3"), #imageLiteral(resourceName: "tut4")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        pageController = storyboard?.instantiateViewController(withIdentifier: "page") as! UIPageViewController
+        pageController = storyboard?.instantiateViewController(withIdentifier: "page") as! TutorialPageViewController
         pageController.dataSource = self
         let viewControllers = [viewControllerAt(index: 0)]
         pageController.setViewControllers(viewControllers, direction: .forward, animated: true, completion: nil)

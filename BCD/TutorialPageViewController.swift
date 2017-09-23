@@ -8,10 +8,4 @@
 
 import UIKit
 
-class TutorialPageViewController: UIPageViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
-}
+class TutorialPageViewController: UIPageViewController { }
