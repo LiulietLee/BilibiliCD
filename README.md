@@ -8,7 +8,7 @@
 - [ ] 获取用户头像
 - [X] 获取直播间封面
 - [ ] 历史记录优化
-- [ ] Today Weight
+- [ ] Today Widget
 
 ## App Store
 上架啥的根本没戏完全不可能 (=・ω・=)
