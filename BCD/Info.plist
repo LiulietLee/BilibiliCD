@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>我们需要通过访问照片应用来保存封面</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>zh</string>
 	<key>CFBundleDisplayName</key>
@@ -29,12 +27,10 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>我们需要通过访问照片应用来保存封面</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>我们需要通过访问照片应用来保存封面</string>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>remote-notification</string>
-	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

@@ -118,6 +118,7 @@
 		4F585B371F7614B4004D1285 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "../GoogleMobileAdsSdkiOS-7.21.0/GoogleMobileAds.framework"; sourceTree = "<group>"; };
 		4F99A9961F21F0B600AE4143 /* BCD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BCD.xcdatamodel; sourceTree = "<group>"; };
 		4F9B213E1F16187000D3BDD2 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		4FA99A371F775FDB00CB2210 /* BilibiliCD.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BilibiliCD.entitlements; sourceTree = "<group>"; };
 		4FB044841F1F49CA00F96D5A /* TutorialContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialContentViewController.swift; sourceTree = "<group>"; };
 		4FB044861F1F49D800F96D5A /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		4FB3D9601F09DD9C0043066B /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -178,6 +179,7 @@
 		4F2DB5DC1F75F7D400FB2315 /* BilibiliCD */ = {
 			isa = PBXGroup;
 			children = (
+				4FA99A371F775FDB00CB2210 /* BilibiliCD.entitlements */,
 				4F2DB5DD1F75F7D400FB2315 /* TodayViewController.swift */,
 				4F2DB5DF1F75F7D400FB2315 /* MainInterface.storyboard */,
 				4F2DB5E21F75F7D400FB2315 /* Info.plist */,
@@ -370,6 +372,11 @@
 						CreatedOnToolsVersion = 9.0;
 						DevelopmentTeam = ANB6MDJTLF;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					4FE8FF391EF4FC0600D31840 = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -377,8 +384,11 @@
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
-							com.apple.BackgroundModes = {
+							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
+							};
+							com.apple.BackgroundModes = {
+								enabled = 0;
 							};
 							com.apple.Push = {
 								enabled = 1;
@@ -574,19 +584,17 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = BilibiliCD/BilibiliCD.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ANB6MDJTLF;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/frameworks",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = BilibiliCD/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Future-Code-Institute.BCD.BilibiliCD";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Future-Code-Institute.BCD.BilibiliCD1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -601,19 +609,17 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = BilibiliCD/BilibiliCD.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ANB6MDJTLF;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/frameworks",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = BilibiliCD/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Future-Code-Institute.BCD.BilibiliCD";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Future-Code-Institute.BCD.BilibiliCD1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
