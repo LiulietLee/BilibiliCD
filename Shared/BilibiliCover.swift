@@ -9,7 +9,7 @@
 import UIKit
 
 struct BilibiliCover {
-    let number: Int
+    internal(set) var number: Int
     let type: Category
     enum Category { case video, live }
     var shortDescription: String {

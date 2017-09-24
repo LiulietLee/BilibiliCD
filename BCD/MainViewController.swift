@@ -15,25 +15,27 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var goButton: UIButton!
     @IBOutlet weak var menu: UIBarButtonItem!
     fileprivate var repeatTappingTime = 0
-    fileprivate var avNumber = 0 {
-        willSet {
-            avLabel.text = "av\(newValue)"
-            if newValue == 0 {
+    var cover = BilibiliCover(number: 0, type: .video) {
+        didSet {
+            avLabel?.text = cover.shortDescription
+            if cover.number == 0 {
                 goButton.isEnabled = false
-                coverType = .video
+                if (cover.type != .video) {
+                    cover = BilibiliCover(number: 0, type: .video)
+                }
             } else {
                 goButton.isEnabled = true
             }
         }
     }
-    fileprivate var lvNumber = 0 {
-        willSet {
-            avLabel.text = "lv\(newValue)"
-            goButton.isEnabled = true
+    private var avNumber: Int {
+        get { return cover.number }
+        set {
+            if newValue != avNumber {
+                cover.number = newValue
+            }
         }
     }
-    
-    fileprivate var coverType = BilibiliCover.Category.video
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -50,19 +52,13 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     
     @objc fileprivate func getURLFromPasteboard() {
         if isShowingImage { return }
-        if let cover = BilibiliCover.fromPasteboard() {
+        if let newCover = BilibiliCover.fromPasteboard() {
             isShowingImage = true
             let storyBoard = UIStoryboard(name: "Main", bundle:nil)
             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "image controller") as! ImageViewController
             
-            
-            coverType = cover.type
-            if coverType == .video {
-                avNumber = cover.number
-            } else {
-                lvNumber = cover.number
-            }
-            nextViewController.cover = cover
+            self.cover = newCover
+            nextViewController.cover = newCover
             show(nextViewController, sender: self)
         }
     }
@@ -101,8 +97,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        (segue.destination as? ImageViewController)?.cover = BilibiliCover(id: avNumber)
+        (segue.destination as? ImageViewController)?.cover = cover
     }
     
 }
-

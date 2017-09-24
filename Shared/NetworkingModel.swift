@@ -58,7 +58,8 @@ class NetworkingModel {
                             let newInfo = jsonData.data
                             
                             if let del = self.delegateForVideo {
-                                if newInfo.imageURL != "error" {
+                                if !newInfo.imageURL.isEmpty
+                                    && newInfo.imageURL != "error" {
                                     del.gotVideoInfo(newInfo)
                                     self.getImage(fromUrlPath: newInfo.imageURL)
                                 } else {
