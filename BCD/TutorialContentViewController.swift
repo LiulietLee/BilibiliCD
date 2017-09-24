@@ -10,13 +10,12 @@ import UIKit
 
 class TutorialContentViewController: UIViewController {
 
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet private weak var imageView: UIImageView!
     var image = UIImage()
     var index = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         imageView.image = image
     }
 

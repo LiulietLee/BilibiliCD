@@ -19,8 +19,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate, GADBannerViewDe
     @IBOutlet weak var downloadButton: UIBarButtonItem!
     @IBOutlet weak var pushButton: UIButton!
     
-    var avNum: Int?
-    var coverType = "video"
+    var cover: BilibiliCover?
     var itemFromHistory: History?
     fileprivate let netModel = NetworkingModel()
     fileprivate let dataModel = CoreDataModel()
@@ -50,17 +49,12 @@ class ImageViewController: UIViewController, VideoCoverDelegate, GADBannerViewDe
         
         isShowingImage = true
         netModel.delegateForVideo = self
-        if let num = avNum {
-            if coverType == "video" {
-                title = "av\(num)"
-            } else if coverType == "live" {
-                title = "lv\(num)"
-            }
+        if let cover = cover {
+            title = cover.shortDescription
             if itemFromHistory == nil {
-                if coverType == "video" {
-                    netModel.getInfoFromAvNumber(avNum: num)
-                } else if coverType == "live" {
-                    netModel.getLiveInfo(lvNum: num)
+                switch cover.type {
+                case .video: netModel.getInfoFromAvNumber(avNum: cover.number)
+                case .live:  netModel.getLiveInfo(lvNum: cover.number)
                 }
             }
         } else {
@@ -122,7 +116,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate, GADBannerViewDe
         let request = GADRequest()
         
         request.testDevices = [ kGADSimulatorID, "d9496780e274c9b1407bdef5d8d5b3d9", "0d27b1f9900926d4c67b23fa32c54bdb", "97da998932e4df7e181e0683b1bd555c" ]
-
+        
         if dataModel.adPermission == nil {
             dataModel.adPermission = true
             adButtonTapped()
@@ -166,9 +160,9 @@ class ImageViewController: UIViewController, VideoCoverDelegate, GADBannerViewDe
     }
     
     func gotVideoInfo(_ info: Info) {
-        titleLabel.text = info.title!
-        authorLabel.text = "UP主：\(info.author!)"
-        urlLabel.text = "URL：\(info.imageUrl!)"
+        titleLabel.text = info.title
+        authorLabel.text = "UP主：\(info.author)"
+        urlLabel.text = "URL：\(info.imageURL)"
         urlLabel.sizeToFit()
         titleLabel.sizeToFit()
         authorLabel.sizeToFit()
@@ -183,7 +177,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate, GADBannerViewDe
     }
     
     fileprivate func addItemToDB() {
-        dataModel.addNewHistory(av: "av\(avNum!)",
+        dataModel.addNewHistory(av: cover!.shortDescription,
             date: NSDate(),
             image: UIImagePNGRepresentation(imageView.image!)! as NSData,
             title: titleLabel.text!,
@@ -215,21 +209,21 @@ class ImageViewController: UIViewController, VideoCoverDelegate, GADBannerViewDe
         view.addSubview(bannerView)
         bannerView.tag = 10086
     }
-
+    
     func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
         getAd()
     }
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let backItem = UIBarButtonItem()
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
-
+        
         let vc = segue.destination as! DetailViewController
         vc.image = imageView.image!
     }
-
+    
 }

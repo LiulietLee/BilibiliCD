@@ -10,7 +10,7 @@ import UIKit
 import SWRevealViewController
 
 class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate, SetHistoryNumDelegate {
-
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var menu: UIBarButtonItem!
     fileprivate let dataModel = CoreDataModel()
@@ -37,12 +37,12 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         loadingView.color = .tianyiBlue
         view.addSubview(loadingView)
         view.bringSubview(toFront: loadingView)
-
+        
         DispatchQueue.global(qos: .userInitiated).async {
             self.dataModel.refreshHistory()
             self.history = self.dataModel.history
         }
-
+        
         tableView.delegate = self
         tableView.dataSource = self
         menu.target = revealViewController()
@@ -96,10 +96,10 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if history.count == 0 {
-//            setLabel()
-//            showLabel()
-//        }
+        //        if history.count == 0 {
+        //            setLabel()
+        //            showLabel()
+        //        }
         
         return history.count
     }
@@ -137,15 +137,15 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         history = dataModel.history
         tableView.reloadData()
     }
-
+    
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let backItem = UIBarButtonItem()
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
-
+        
         if segue.identifier == "set limit" {
             if let vc = segue.destination as? SetHistoryNumViewController {
                 vc.delegate = self
@@ -154,14 +154,11 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
                 }
             }
         } else if segue.identifier == "detail" {
-            if let vc = segue.destination as? ImageViewController {
-                let cell = sender as! HistoryCell
-                let indexPath = tableView.indexPath(for: cell)!
+            if let vc = segue.destination as? ImageViewController,
+                let cell = sender as? HistoryCell,
+                let indexPath = tableView.indexPath(for: cell) {
                 let item = history[indexPath.row]
-                var avString = item.av!
-                let index = avString.index(avString.startIndex, offsetBy: 2)
-                avString = String(avString[index...])
-                vc.avNum = Int(avString)!
+                vc.cover = BilibiliCover(item.av!)
                 vc.itemFromHistory = item
             }
         }
@@ -170,6 +167,5 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
     }
-
+    
 }
- 
