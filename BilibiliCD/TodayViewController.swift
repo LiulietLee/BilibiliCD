@@ -16,9 +16,12 @@ class TodayViewController: UIViewController, NCWidgetProviding, VideoCoverDelega
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var numberLabel: UILabel!
-    private var coverType = BilibiliCover.Category.video
+    private var cover: BilibiliCover?
     private var number = 10086
     private let netModel = NetworkingModel()
+    private let dataModel = CoreDataModel()
+    private var upName = ""
+    private var urlString = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,17 +32,14 @@ class TodayViewController: UIViewController, NCWidgetProviding, VideoCoverDelega
     
     private func scanPasteBoard() {
         if let cover = BilibiliCover.fromPasteboard() {
+            self.cover = cover
             number = cover.number
-            coverType = cover.type
             numberLabel.text = cover.shortDescription
-            fetchCover()
-        }
-    }
-    
-    private func fetchCover() {
-        switch coverType {
-        case .live:  netModel.getLiveInfo(lvNum: number)
-        case .video: netModel.getInfoFromAvNumber(avNum: number)
+
+            switch cover.type {
+            case .live:  netModel.getLiveInfo(lvNum: number)
+            case .video: netModel.getInfoFromAvNumber(avNum: number)
+            }
         }
     }
     
@@ -51,6 +51,13 @@ class TodayViewController: UIViewController, NCWidgetProviding, VideoCoverDelega
         imageView.image = image
         downloadButton.isEnabled = true
         loadingText.removeFromSuperview()
+        
+        dataModel.addNewHistory(av: cover!.shortDescription,
+                                date: NSDate(),
+                                image: UIImagePNGRepresentation(imageView.image!)! as NSData,
+                                title: titleLabel.text!,
+                                up: upName,
+                                url: urlString)
     }
     
     func connectError() {

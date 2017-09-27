@@ -15,7 +15,8 @@ class SourceTableViewController: UITableViewController {
     fileprivate let list: [(name: String, url: String)] =
         [("Liuliet.Lee/LLDialog", "https://github.com/LiulietLee/LLDialog/blob/master/LICENSE.txt"),
         ("ApolloZhu/MaterialKit", "https://github.com/ApolloZhu/MaterialKit/blob/master/LICENSE"),
-        ("John-Lluch/SWRevealViewController", "https://github.com/John-Lluch/SWRevealViewController/blob/master/LICENSE.txt")]
+        ("John-Lluch/SWRevealViewController", "https://github.com/John-Lluch/SWRevealViewController/blob/master/LICENSE.txt"),
+        ("maximbilan/iOS-Shared-CoreData-Storage-for-App-Groups", "https://github.com/maximbilan/iOS-Shared-CoreData-Storage-for-App-Groups")]
     
     override func viewDidLoad() {
         super.viewDidLoad()

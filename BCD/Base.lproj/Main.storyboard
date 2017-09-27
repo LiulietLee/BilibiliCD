@@ -313,7 +313,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XsU-ss-UBH" customClass="MKButton" customModule="MaterialKit">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XsU-ss-UBH">
                                 <rect key="frame" x="0.0" y="488" width="320" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="sdC-d6-FmO"/>

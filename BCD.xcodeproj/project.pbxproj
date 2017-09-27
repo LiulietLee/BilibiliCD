@@ -10,6 +10,14 @@
 		4F04A0D11F2311B7007D86B1 /* Setting+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F04A0CF1F2311B7007D86B1 /* Setting+CoreDataClass.swift */; };
 		4F04A0D21F2311B7007D86B1 /* Setting+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F04A0D01F2311B7007D86B1 /* Setting+CoreDataProperties.swift */; };
 		4F04A0D41F23195A007D86B1 /* SetHistoryNumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F04A0D31F23195A007D86B1 /* SetHistoryNumViewController.swift */; };
+		4F09E1C51F7A971300CDDEE8 /* Permission+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2AFBB31F21FEC600AA7CC7 /* Permission+CoreDataClass.swift */; };
+		4F09E1C61F7A971300CDDEE8 /* Permission+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2AFBB41F21FEC600AA7CC7 /* Permission+CoreDataProperties.swift */; };
+		4F09E1C71F7A971300CDDEE8 /* History+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2AFBB91F2201E500AA7CC7 /* History+CoreDataClass.swift */; };
+		4F09E1C81F7A971300CDDEE8 /* History+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2AFBBA1F2201E500AA7CC7 /* History+CoreDataProperties.swift */; };
+		4F09E1C91F7A971300CDDEE8 /* Setting+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F04A0CF1F2311B7007D86B1 /* Setting+CoreDataClass.swift */; };
+		4F09E1CA1F7A971300CDDEE8 /* Setting+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F04A0D01F2311B7007D86B1 /* Setting+CoreDataProperties.swift */; };
+		4F09E1CB1F7A971600CDDEE8 /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3077B71F1768E000E1C1AF /* CoreDataModel.swift */; };
+		4F09E1CC1F7A971B00CDDEE8 /* BCD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F99A9951F21F0B600AE4143 /* BCD.xcdatamodeld */; };
 		4F26AA811F14D32400E1123D /* ColoredNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F26AA801F14D32400E1123D /* ColoredNavController.swift */; };
 		4F26AA831F14D3D400E1123D /* SakuraNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F26AA821F14D3D400E1123D /* SakuraNavController.swift */; };
 		4F26AA851F14D45900E1123D /* BrownNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F26AA841F14D45900E1123D /* BrownNavController.swift */; };
@@ -33,6 +41,8 @@
 		4F585B2B1F760B38004D1285 /* NetworkingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF6E1EF4FCC600D31840 /* NetworkingModel.swift */; };
 		4F585B351F76144D004D1285 /* Pods_BCD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018D8C88BE8E9E6C2D578E97 /* Pods_BCD.framework */; };
 		4F585B591F7627E2004D1285 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F5041C91F18AF1C00B59337 /* Assets.xcassets */; };
+		4F8B90721F7B2E3800AB158D /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B90711F7B2E3800AB158D /* CoreDataStorage.swift */; };
+		4F8B90731F7B2E3800AB158D /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B90711F7B2E3800AB158D /* CoreDataStorage.swift */; };
 		4F99A9971F21F0B600AE4143 /* BCD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F99A9951F21F0B600AE4143 /* BCD.xcdatamodeld */; };
 		4F9B213F1F16187000D3BDD2 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9B213E1F16187000D3BDD2 /* AboutViewController.swift */; };
 		4FA99A341F7661AE00CB2210 /* LLDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BFDF781F5B2D29002EE246 /* LLDialog.swift */; };
@@ -116,6 +126,7 @@
 		4F4262891F20CC9900B9646D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4F5041C91F18AF1C00B59337 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F585B371F7614B4004D1285 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "../GoogleMobileAdsSdkiOS-7.21.0/GoogleMobileAds.framework"; sourceTree = "<group>"; };
+		4F8B90711F7B2E3800AB158D /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 		4F99A9961F21F0B600AE4143 /* BCD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BCD.xcdatamodel; sourceTree = "<group>"; };
 		4F9B213E1F16187000D3BDD2 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		4FA99A371F775FDB00CB2210 /* BilibiliCD.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BilibiliCD.entitlements; sourceTree = "<group>"; };
@@ -299,6 +310,7 @@
 		52E4E47F1F76CF95008EF09C /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				4F8B90711F7B2E3800AB158D /* CoreDataStorage.swift */,
 				4FE8FF701EF5000400D31840 /* Info.swift */,
 				4FE8FF6E1EF4FCC600D31840 /* NetworkingModel.swift */,
 				52E4E47C1F76C6A9008EF09C /* BilibiliCover.swift */,
@@ -495,10 +507,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F09E1C91F7A971300CDDEE8 /* Setting+CoreDataClass.swift in Sources */,
 				4F2DB5DE1F75F7D400FB2315 /* TodayViewController.swift in Sources */,
+				4F09E1C61F7A971300CDDEE8 /* Permission+CoreDataProperties.swift in Sources */,
 				4FA99A341F7661AE00CB2210 /* LLDialog.swift in Sources */,
+				4F09E1C51F7A971300CDDEE8 /* Permission+CoreDataClass.swift in Sources */,
+				4F09E1CA1F7A971300CDDEE8 /* Setting+CoreDataProperties.swift in Sources */,
+				4F09E1CB1F7A971600CDDEE8 /* CoreDataModel.swift in Sources */,
+				4F09E1C71F7A971300CDDEE8 /* History+CoreDataClass.swift in Sources */,
+				4F09E1C81F7A971300CDDEE8 /* History+CoreDataProperties.swift in Sources */,
 				4F585B2A1F760B38004D1285 /* Info.swift in Sources */,
+				4F09E1CC1F7A971B00CDDEE8 /* BCD.xcdatamodeld in Sources */,
 				4F585B2B1F760B38004D1285 /* NetworkingModel.swift in Sources */,
+				4F8B90721F7B2E3800AB158D /* CoreDataStorage.swift in Sources */,
 				52E4E47E1F76C6B6008EF09C /* BilibiliCover.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -515,6 +536,7 @@
 				52E4E47D1F76C6A9008EF09C /* BilibiliCover.swift in Sources */,
 				4F99A9971F21F0B600AE4143 /* BCD.xcdatamodeld in Sources */,
 				4F04A0D11F2311B7007D86B1 /* Setting+CoreDataClass.swift in Sources */,
+				4F8B90731F7B2E3800AB158D /* CoreDataStorage.swift in Sources */,
 				4FB044851F1F49CA00F96D5A /* TutorialContentViewController.swift in Sources */,
 				4FF426D61F1FA61E00A8EF79 /* FindArtViewController.swift in Sources */,
 				4F2AFBA41F21FBD100AA7CC7 /* HistoryViewController.swift in Sources */,

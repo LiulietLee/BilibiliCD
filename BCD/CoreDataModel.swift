@@ -12,17 +12,13 @@ import CoreData
 
 class CoreDataModel {
     
-    fileprivate let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    fileprivate let context = CoreDataStorage.mainQueueContext()
     fileprivate let PermFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Permission")
     fileprivate let HistFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "History")
     fileprivate let SettFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Setting")
     
     fileprivate func saveContext() {
-        do {
-            try context.save()
-        } catch {
-            print(error)
-        }
+        CoreDataStorage.saveContext(self.context)
     }
 
     // MARK: - AD

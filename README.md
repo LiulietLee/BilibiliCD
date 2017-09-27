@@ -16,7 +16,7 @@ iOS 10.0 以上
 - [ ] 获取用户头像
 - [ ] 历史记录优化
 - [ ] 修复 iOS 11 无法接受通知的 Bug
-- [ ] Today Widget
+- [X] Today Widget
 - [X] 获取直播间封面
 
 ## App Store
