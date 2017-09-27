@@ -89,6 +89,17 @@ class ImageViewController: UIViewController, VideoCoverDelegate, GADBannerViewDe
         saveImage()
     }
     
+    @IBAction func titleButtonTapped() {
+        if let cover = self.cover {
+            var url = ""
+            switch cover.type {
+            case .video: url = "https://www.bilibili.com/video/\(cover.shortDescription)/"
+            case .live: url = "http://live.bilibili.com/\(cover.number)"
+            }
+            UIApplication.shared.open(URL(string: url)!, options: [:], completionHandler: nil)
+        }
+    }
+    
     @IBAction func adButtonTapped() {
         let dialog = LLDialog()
         dialog.title = "广告显示设置"

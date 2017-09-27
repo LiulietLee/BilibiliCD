@@ -45,6 +45,8 @@ class TodayViewController: UIViewController, NCWidgetProviding, VideoCoverDelega
     
     func gotVideoInfo(_ info: Info) {
         titleLabel.text = info.title
+        upName = info.author
+        urlString = info.imageURL
     }
     
     func gotImage(_ image: UIImage) {
