@@ -519,21 +519,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5Ou-hn-z2Q">
-                        <rightBarButtonItems>
-                            <barButtonItem image="ic_file_download" id="0oG-Vt-gM6">
-                                <connections>
-                                    <action selector="downloadButtonTapped:" destination="J1l-gt-L0q" id="MLX-AS-MC9"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Ad" id="YmM-GZ-JyQ">
-                                <connections>
-                                    <action selector="adButtonTapped" destination="J1l-gt-L0q" id="k6v-vH-o8K"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" image="ic_file_download" id="0oG-Vt-gM6">
+                            <connections>
+                                <action selector="downloadButtonTapped:" destination="J1l-gt-L0q" id="MLX-AS-MC9"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="adButton" destination="YmM-GZ-JyQ" id="c2x-0f-oi7"/>
                         <outlet property="authorLabel" destination="odB-KX-ctA" id="jVD-uh-FZZ"/>
                         <outlet property="downloadButton" destination="0oG-Vt-gM6" id="A8A-pY-jCw"/>
                         <outlet property="imageView" destination="Zsa-yu-und" id="ULy-o4-fq7"/>
