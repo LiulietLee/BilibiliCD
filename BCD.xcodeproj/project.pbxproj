@@ -39,7 +39,6 @@
 		4F5041CA1F18AF1C00B59337 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F5041C91F18AF1C00B59337 /* Assets.xcassets */; };
 		4F585B2A1F760B38004D1285 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF701EF5000400D31840 /* Info.swift */; };
 		4F585B2B1F760B38004D1285 /* NetworkingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF6E1EF4FCC600D31840 /* NetworkingModel.swift */; };
-		4F585B351F76144D004D1285 /* Pods_BCD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018D8C88BE8E9E6C2D578E97 /* Pods_BCD.framework */; };
 		4F585B591F7627E2004D1285 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F5041C91F18AF1C00B59337 /* Assets.xcassets */; };
 		4F8B90721F7B2E3800AB158D /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B90711F7B2E3800AB158D /* CoreDataStorage.swift */; };
 		4F8B90731F7B2E3800AB158D /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B90711F7B2E3800AB158D /* CoreDataStorage.swift */; };
@@ -158,7 +157,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F585B351F76144D004D1285 /* Pods_BCD.framework in Frameworks */,
 				4F2DB5DB1F75F7D400FB2315 /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
