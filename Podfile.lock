@@ -22,7 +22,7 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.1)
   - GoogleToolboxForMac/NSData+zlib (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
-  - MaterialKit (0.4)
+  - MaterialKit (0.6.2)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
@@ -45,7 +45,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   MaterialKit:
-    :commit: f01903c7c15c3293376065bee66b29fd1f20396c
+    :commit: 9c6bec10d0fbfd406e95d782d80c983972c5805f
     :git: https://github.com/ApolloZhu/MaterialKit.git
   SWRevealViewController:
     :commit: bb4a110989d67a5fc5f5c533cacc92f6cb02f5e2
@@ -58,11 +58,11 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: a4fc702b5a026f7322964376047f1a3f1f7cc6ff
   FirebaseMessaging: 227406c05b0dc9290702d2e9f18ab5528f0c2cf2
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
-  MaterialKit: 2e5267bcf410b82793f2b92d2111f8ae4ed2c3f2
+  MaterialKit: 7a21f9c5d9af43afa20d3fa25054bef8087ced24
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 03eef2ee0b674770735cf79d9c4d3659cf6908e8
   SWRevealViewController: b653f339865208c97be99a24876545f5be0cc4bb
 
-PODFILE CHECKSUM: 1b81484a7ce6864cd379f094db2ff263b0072416
+PODFILE CHECKSUM: c30bd4c4759f2a5edcdf96b8b47aba2803df1cd1
 
 COCOAPODS: 1.2.1
