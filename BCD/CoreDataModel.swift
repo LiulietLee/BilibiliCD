@@ -12,48 +12,13 @@ import CoreData
 
 class CoreDataModel {
     
-    fileprivate let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    fileprivate let context = CoreDataStorage.mainQueueContext()
     fileprivate let PermFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Permission")
     fileprivate let HistFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "History")
     fileprivate let SettFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Setting")
     
     fileprivate func saveContext() {
-        do {
-            try context.save()
-        } catch {
-            print(error)
-        }
-    }
-
-    // MARK: - AD
-    /// nil if not set yet.
-    var adPermission: Bool! {
-        get {
-            do {
-                let searchResults = try context.fetch(PermFetchRequest) as? [NSManagedObject]
-                return searchResults?.first?.value(forKey: "adPerm") as? Bool
-            } catch { print(error) }
-            return nil
-        }
-
-        set {
-            clearAdPermission()
-            let entity = NSEntityDescription.entity(forEntityName: "Permission", in: context)
-            let permission = NSManagedObject(entity: entity!, insertInto: context)
-            permission.setValue(newValue, forKey: "adPerm")
-            saveContext()
-        }
-    }
-    
-    private func clearAdPermission() {
-        do {
-            let searchResults = try context.fetch(PermFetchRequest)
-            for object in (searchResults as! [NSManagedObject]) {
-                context.delete(object)
-            }
-        } catch {
-            print(error)
-        }
+        CoreDataStorage.saveContext(self.context)
     }
     
     // MARK: - History

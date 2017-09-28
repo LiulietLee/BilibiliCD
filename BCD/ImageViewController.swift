@@ -7,11 +7,9 @@
 //
 
 import UIKit
-import GoogleMobileAds
 
-class ImageViewController: UIViewController, VideoCoverDelegate, GADBannerViewDelegate {
+class ImageViewController: UIViewController, VideoCoverDelegate {
     
-    @IBOutlet weak var adButton: UIBarButtonItem!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
@@ -29,15 +27,6 @@ class ImageViewController: UIViewController, VideoCoverDelegate, GADBannerViewDe
             imageView.image = newValue
         }
     }
-    
-    lazy var adBannerView: GADBannerView = {
-        let adBannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
-        adBannerView.adUnitID = "ca-app-pub-9289196786381154/6636960629"
-        adBannerView.delegate = self
-        adBannerView.rootViewController = self
-        
-        return adBannerView
-    }()
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -81,7 +70,6 @@ class ImageViewController: UIViewController, VideoCoverDelegate, GADBannerViewDe
             titleLabel.textColor = .tianyiBlue
             authorLabel.textColor = .tianyiBlue
             urlLabel.textColor = .tianyiBlue
-            getAd()
         }
     }
     
@@ -89,40 +77,14 @@ class ImageViewController: UIViewController, VideoCoverDelegate, GADBannerViewDe
         saveImage()
     }
     
-    @IBAction func adButtonTapped() {
-        let dialog = LLDialog()
-        dialog.title = "广告显示设置"
-        dialog.message = "屏幕下方的广告是我们维持服务的主要收入来源，但为了方便强迫症，您可以在这里自由选择是否显示广告，不需要额外付费。"
-        dialog.setNegativeButton(withTitle: "关闭广告", target: self, action: #selector(disableToShowAd))
-        dialog.setPositiveButton(withTitle: "显示广告", target: self, action: #selector(enableToShowAd))
-        dialog.show()
-    }
-    
-    @objc fileprivate func disableToShowAd() {
-        if dataModel.adPermission {
-            view.viewWithTag(10086)?.removeFromSuperview()
-            dataModel.adPermission = false
-        }
-    }
-    
-    @objc fileprivate func enableToShowAd() {
-        if !dataModel.adPermission {
-            dataModel.adPermission = true
-            getAd()
-        }
-    }
-    
-    fileprivate func getAd() {
-        let request = GADRequest()
-        
-        request.testDevices = [ kGADSimulatorID, "d9496780e274c9b1407bdef5d8d5b3d9", "0d27b1f9900926d4c67b23fa32c54bdb", "97da998932e4df7e181e0683b1bd555c" ]
-        
-        if dataModel.adPermission == nil {
-            dataModel.adPermission = true
-            adButtonTapped()
-        }
-        if dataModel.adPermission {
-            adBannerView.load(request)
+    @IBAction func titleButtonTapped() {
+        if let cover = self.cover {
+            var url = ""
+            switch cover.type {
+            case .video: url = "https://www.bilibili.com/video/\(cover.shortDescription)/"
+            case .live: url = "http://live.bilibili.com/\(cover.number)"
+            }
+            UIApplication.shared.open(URL(string: url)!, options: [:], completionHandler: nil)
         }
     }
     
@@ -150,13 +112,11 @@ class ImageViewController: UIViewController, VideoCoverDelegate, GADBannerViewDe
     fileprivate func enableButtons() {
         downloadButton.isEnabled = true
         pushButton.isEnabled = true
-        adButton.isEnabled = true
     }
     
     fileprivate func disableButtons() {
         downloadButton.isEnabled = false
         pushButton.isEnabled = false
-        adButton.isEnabled = false
     }
     
     func gotVideoInfo(_ info: Info) {
@@ -172,7 +132,6 @@ class ImageViewController: UIViewController, VideoCoverDelegate, GADBannerViewDe
         imageView.image = image
         enableButtons()
         loadingView.dismiss()
-        getAd()
         addItemToDB()
     }
     
@@ -200,18 +159,6 @@ class ImageViewController: UIViewController, VideoCoverDelegate, GADBannerViewDe
         urlLabel.text = "提示：目前暂时还抓不到「会员的世界」的封面哦(\"▔□▔)/"
         loadingView.dismiss()
         imageView.image = #imageLiteral(resourceName: "novideo_image")
-    }
-    
-    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
-        let height = view.bounds.size.height
-        let y = height - bannerView.bounds.size.height
-        bannerView.frame = CGRect(origin: CGPoint(x: 0, y: y), size: bannerView.bounds.size)
-        view.addSubview(bannerView)
-        bannerView.tag = 10086
-    }
-    
-    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
-        getAd()
     }
     
     // MARK: - Navigation
