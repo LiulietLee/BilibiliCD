@@ -31,7 +31,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, VideoCoverDelega
     }
     
     private func scanPasteBoard() {
-        if let cover = BilibiliCover.fromPasteboard() {
+        if let cover = BilibiliCover.fromPasteboard(), cover != self.cover {
             self.cover = cover
             number = cover.number
             numberLabel.text = cover.shortDescription
@@ -106,7 +106,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, VideoCoverDelega
         // If an error is encountered, use NCUpdateResult.Failed
         // If there's no update required, use NCUpdateResult.NoData
         // If there's an update, use NCUpdateResult.NewData
-        
+        scanPasteBoard()
         completionHandler(NCUpdateResult.newData)
     }
     

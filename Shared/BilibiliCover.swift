@@ -86,3 +86,10 @@ extension BilibiliCover {
         return nil
     }
 }
+
+extension BilibiliCover: Equatable {
+    public static func ==(lhs: BilibiliCover, rhs: BilibiliCover) -> Bool {
+        return lhs.type   == rhs.type
+            && lhs.number == rhs.number
+    }
+}
