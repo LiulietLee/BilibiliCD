@@ -9,7 +9,7 @@
 import UIKit
 
 struct BilibiliCover {
-    internal(set) var number: Int
+    internal(set) var number: UInt64
     let type: Category
     enum Category { case video, live }
     var shortDescription: String {
@@ -20,10 +20,16 @@ struct BilibiliCover {
             return "lv\(number)"
         }
     }
+    var url: URL! {
+        switch type {
+        case .video: return URL(string: "https://www.bilibili.com/video/\(shortDescription)/")
+        case .live: return URL(string: "https://live.bilibili.com/\(number)")
+        }
+    }
 }
 
 extension BilibiliCover {
-    init(id: Int, type: Category = .video) {
+    init(id: UInt64, type: Category = .video) {
         self.number = id
         self.type = type
     }
@@ -38,22 +44,22 @@ extension BilibiliCover {
                 index = string.startIndex
             }
         }
-        guard let id = Int(string[index...]) else { return  nil }
+        guard let id = UInt64(string[index...]) else { return  nil }
         number = id
     }
     
     // TODO: Use regex?
     static func fromPasteboard() -> BilibiliCover? {
         if let urlString = UIPasteboard.general.string {
+            
             let tempArray = Array(urlString.characters)
-            var avNum = 0
+            var avNum = UInt64()
             var isAvNum = false, isLvNum = false
             for i in 0..<tempArray.count {
                 let j = tempArray.count - i - 1
-                if let singleNum = Int("\(tempArray[j])") {
-                    var num = singleNum
-                    num *= Int(truncating: NSDecimalNumber(decimal: pow(10, i)))
-                    avNum += num
+                if let singleNum = UInt64("\(tempArray[j])") {
+                    let num = singleNum &* UInt64(truncating: NSDecimalNumber(decimal: pow(10, i)))
+                    avNum = avNum &+ num
                 } else if tempArray[j] == "/" {
                     if j > 22 {
                         let index = urlString.index(urlString.startIndex, offsetBy: 21)
@@ -77,5 +83,12 @@ extension BilibiliCover {
             }
         }
         return nil
+    }
+}
+
+extension BilibiliCover: Equatable {
+    public static func ==(lhs: BilibiliCover, rhs: BilibiliCover) -> Bool {
+        return lhs.type   == rhs.type
+            && lhs.number == rhs.number
     }
 }

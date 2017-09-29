@@ -78,13 +78,8 @@ class ImageViewController: UIViewController, VideoCoverDelegate {
     }
     
     @IBAction func titleButtonTapped() {
-        if let cover = self.cover {
-            var url = ""
-            switch cover.type {
-            case .video: url = "https://www.bilibili.com/video/\(cover.shortDescription)/"
-            case .live: url = "http://live.bilibili.com/\(cover.number)"
-            }
-            UIApplication.shared.open(URL(string: url)!, options: [:], completionHandler: nil)
+        if let cover = cover {
+            UIApplication.shared.open(cover.url)
         }
     }
     

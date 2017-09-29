@@ -40,11 +40,11 @@ class NetworkingModel {
     weak var delegateForUpuser: UpuserImgDelegate?
     let session = URLSession.shared
     
-    open func getLiveInfo(lvNum: Int) {
+    open func getLiveInfo(lvNum: UInt64) {
         let path = "https://api.live.bilibili.com/AppRoom/index?device=phone&platform=ios&scale=3&build=10000&room_id=\(lvNum)"
         let url = URL(string: path)
         let request = URLRequest(url: url!)
-        let task = session.dataTask(with: request) { (data, response, error) in
+        let task = session.dataTask(with: request) { data, response, error in
             if let err = error {
                 print(err)
             } else {
@@ -80,11 +80,11 @@ class NetworkingModel {
         task.resume()
     }
     
-    open func getInfoFromAvNumber(avNum: Int) {
+    open func getInfoFromAvNumber(avNum: UInt64) {
         let path = "http://bilibilicd.tk/video/ios/\(avNum)/"
         let url = URL(string: path)
         let request = URLRequest(url: url!)
-        let task = session.dataTask(with: request) { (data, response, error) in
+        let task = session.dataTask(with: request) { data, response, error in
             if let err = error {
                 print(err)
                 self.delegateForVideo?.connectError()
@@ -121,7 +121,7 @@ class NetworkingModel {
         let path = "http://bilibilicd.tk/ios/upuser-keyword=\(userName)"
         let url = URL(string: path)
         let request = URLRequest(url: url!)
-        let tesk = session.dataTask(with: request) { (data, response, error) in
+        let tesk = session.dataTask(with: request) { data, response, error in
             if let err = error {
                 print(err)
                 self.delegateForUpuser?.connectError()
@@ -155,7 +155,7 @@ class NetworkingModel {
     private func getImage(fromUrlPath path: String) {
         let url = URL(string: path)
         let request = URLRequest(url: url!)
-        let task = session.dataTask(with: request) { (data, response, error) in
+        let task = session.dataTask(with: request) { data, response, error in
             if let err = error {
                 print(err)
                 self.delegateForVideo?.connectError()
