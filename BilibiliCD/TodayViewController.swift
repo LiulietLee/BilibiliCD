@@ -17,7 +17,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, VideoCoverDelega
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var numberLabel: UILabel!
     private var cover: BilibiliCover?
-    private var number = 10086
+    private var number: UInt64 = 10086
     private let netModel = NetworkingModel()
     private let dataModel = CoreDataModel()
     private var upName = ""
@@ -90,7 +90,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, VideoCoverDelega
         } else {
             UIView.animate(withDuration: 0.3, animations: {
                 self.downloadButton.backgroundColor = .white
-            }, completion: { (finished) in
+            }, completion: { finished in
                 if finished {
                     UIView.animate(withDuration: 0.3) {
                         self.downloadButton.backgroundColor = .clear

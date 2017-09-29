@@ -20,7 +20,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
             avLabel?.text = cover.shortDescription
             if cover.number == 0 {
                 goButton.isEnabled = false
-                if (cover.type != .video) {
+                if cover.type != .video {
                     cover = BilibiliCover(number: 0, type: .video)
                 }
             } else {
@@ -28,11 +28,14 @@ class MainViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
-    private var avNumber: Int {
+    private var avNumber: UInt64 {
         get { return cover.number }
         set {
-            if newValue != avNumber {
+            if newValue > avNumber {
                 cover.number = newValue
+            } else if newValue < avNumber {
+                // Overflow happend
+                cover.number = 0
             }
         }
     }
@@ -79,7 +82,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func numberButtonTapped(_ sender: UIButton) {
         let new = sender.currentTitle!
-        avNumber = avNumber * 10 + Int(new)!
+        avNumber = avNumber &* 10 &+ UInt64(new)!
     }
     
     @IBAction func backspaceButtonTapped() {

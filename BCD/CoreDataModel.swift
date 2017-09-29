@@ -12,13 +12,13 @@ import CoreData
 
 class CoreDataModel {
     
-    fileprivate let context = CoreDataStorage.mainQueueContext()
+    fileprivate let context = CoreDataStorage.sharedInstance.mainQueueContext
     fileprivate let PermFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Permission")
     fileprivate let HistFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "History")
     fileprivate let SettFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Setting")
     
     fileprivate func saveContext() {
-        CoreDataStorage.saveContext(self.context)
+        CoreDataStorage.sharedInstance.saveContext(context)
     }
     
     // MARK: - History
@@ -108,7 +108,7 @@ class CoreDataModel {
                 initSetting()
                 return self.setting
             } else {
-                return (searchResults[0] as! Setting)
+                return searchResults[0] as? Setting
             }
         } catch {
             print(error)
@@ -119,7 +119,7 @@ class CoreDataModel {
 
     var historyNum: Int! {
         get {
-            return Int(setting!.historyNumber)
+            return Int(setting?.historyNumber ?? 0)
         }
         set {
             setting?.historyNumber = Int16(newValue)
