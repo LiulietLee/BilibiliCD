@@ -13,7 +13,8 @@ class AboutViewController: UITableViewController {
 
     @IBOutlet weak var menu: UIBarButtonItem!
     fileprivate let developers = ["https://space.bilibili.com/4056345/#!/",
-                                  "http://shallweitalk.com/#"]
+                                  "http://shallweitalk.com/#",
+                                  "https://apollozhu.github.io/"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
