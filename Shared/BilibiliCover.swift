@@ -57,7 +57,6 @@ extension BilibiliCover {
                 } else if tempArray[j] == "/" {
                     if j > 22 {
                         let index = urlString.index(urlString.startIndex, offsetBy: 21)
-                        // print(urlString[..<index])
                         if urlString[..<index] == "https://live.bilibili" {
                             isLvNum = true
                             break
