@@ -11,19 +11,19 @@ import UIKit
 struct BilibiliCover {
     internal(set) var number: UInt64
     let type: Category
-    enum Category { case video, live }
+    enum Category { case video, live, article }
     var shortDescription: String {
         switch type {
-        case .video:
-            return "av\(number)"
-        case .live:
-            return "lv\(number)"
+        case .video:   return "av\(number)"
+        case .live:    return "lv\(number)"
+        case .article: return "cv\(number)"
         }
     }
     var url: URL! {
         switch type {
-        case .video: return URL(string: "https://www.bilibili.com/video/\(shortDescription)/")
-        case .live: return URL(string: "https://live.bilibili.com/\(number)")
+        case .video:   return URL(string: "https://www.bilibili.com/video/\(shortDescription)/")
+        case .live:    return URL(string: "https://live.bilibili.com/\(number)")
+        case .article: return URL(string: "https://www.bilibili.com/read/\(shortDescription)")
         }
     }
 }
@@ -38,6 +38,8 @@ extension BilibiliCover {
         var index = string.index(string.startIndex, offsetBy: 2)
         if string.hasPrefix("lv") {
             type = .live
+        } else if string.hasPrefix("cv") {
+            type = .article
         } else {
             type = .video
             if !string.hasPrefix("av") {
@@ -54,7 +56,7 @@ extension BilibiliCover {
             
             let tempArray = Array(urlString.characters)
             var avNum = UInt64()
-            var isAvNum = false, isLvNum = false
+            var isAvNum = false, isLvNum = false, isCvNum = false
             for i in 0..<tempArray.count {
                 let j = tempArray.count - i - 1
                 if let singleNum = UInt64("\(tempArray[j])") {
@@ -62,10 +64,16 @@ extension BilibiliCover {
                     avNum = avNum &+ num
                 } else if tempArray[j] == "/" {
                     if j > 22 {
-                        let index = urlString.index(urlString.startIndex, offsetBy: 21)
+                        var index = urlString.index(urlString.startIndex, offsetBy: 21)
                         if urlString[..<index] == "https://live.bilibili" {
                             isLvNum = true
                             break
+                        } else {
+                            index = urlString.index(urlString.startIndex, offsetBy: 29)
+                            if urlString[..<index] == "https://www.bilibili.com/read" {
+                                isCvNum = true
+                                break
+                            }
                         }
                     }
                     continue
@@ -78,8 +86,14 @@ extension BilibiliCover {
             }
             
             
-            if isAvNum || isLvNum {
-                return BilibiliCover(number: avNum, type: isLvNum ? .live : .video)
+            if isAvNum || isLvNum || isCvNum {
+                var type = BilibiliCover.Category.video
+                if isLvNum {
+                    type = .live
+                } else if isCvNum {
+                    type = .article
+                }
+                return BilibiliCover(number: avNum, type: type)
             }
         }
         return nil

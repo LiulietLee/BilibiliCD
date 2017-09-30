@@ -80,6 +80,42 @@ class NetworkingModel {
         task.resume()
     }
     
+    open func getArticleInfo(cvNum: UInt64) {
+        let path = "http://bilibilicd.tk/ios/article/\(cvNum)/"
+        let url = URL(string: path)
+        let request = URLRequest(url: url!)
+        let task = session.dataTask(with: request) { (data, response, error) in
+            if let err = error {
+                print(err)
+                self.delegateForVideo?.connectError()
+            } else {
+                DispatchQueue.main.async {
+                    if let content = data {
+                        do {
+                            let newInfo = try JSONDecoder().decode(Info.self, from: content)
+                            
+                            if let del = self.delegateForVideo {
+                                if newInfo.imageURL == "error" {
+                                    del.cannotFindVideo()
+                                } else {
+                                    del.gotVideoInfo(newInfo)
+                                    self.getImage(fromUrlPath: newInfo.imageURL)
+                                }
+                            }
+                        } catch {
+                            print("serialize error")
+                            self.delegateForVideo?.connectError()
+                        }
+                    } else {
+                        self.delegateForVideo?.connectError()
+                    }
+                }
+            }
+        }
+        
+        task.resume()
+    }
+    
     open func getInfoFromAvNumber(avNum: UInt64) {
         let path = "http://bilibilicd.tk/video/ios/\(avNum)/"
         let url = URL(string: path)

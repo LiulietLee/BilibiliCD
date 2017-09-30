@@ -42,8 +42,9 @@ class ImageViewController: UIViewController, VideoCoverDelegate {
             title = cover.shortDescription
             if itemFromHistory == nil {
                 switch cover.type {
-                case .video: netModel.getInfoFromAvNumber(avNum: cover.number)
-                case .live:  netModel.getLiveInfo(lvNum: cover.number)
+                case .video:   netModel.getInfoFromAvNumber(avNum: cover.number)
+                case .live:    netModel.getLiveInfo(lvNum: cover.number)
+                case .article: netModel.getArticleInfo(cvNum: cover.number)
                 }
             }
         } else {

@@ -49,7 +49,7 @@ class CoreDataModel {
         refreshHistory()
 
         let list = history
-        if list.count != 0, list[0].up == up && list[0].title == title { return }
+        if list.count != 0, list[0].up == up && list[0].av == av { return }
         
         let entity = NSEntityDescription.entity(forEntityName: "History", in: context)!
         let newItem = History(entity: entity, insertInto: context)
