@@ -37,8 +37,9 @@ class TodayViewController: UIViewController, NCWidgetProviding, VideoCoverDelega
             numberLabel.text = cover.shortDescription
 
             switch cover.type {
-            case .live:  netModel.getLiveInfo(lvNum: number)
-            case .video: netModel.getInfoFromAvNumber(avNum: number)
+            case .live:    netModel.getLiveInfo(lvNum: number)
+            case .video:   netModel.getInfoFromAvNumber(avNum: number)
+            case .article: netModel.getArticleInfo(cvNum: number)
             }
         }
     }

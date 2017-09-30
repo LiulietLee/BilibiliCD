@@ -64,22 +64,19 @@ extension BilibiliCover {
                     avNum = avNum &+ num
                 } else if tempArray[j] == "/" {
                     if j > 22 {
-                        var index = urlString.index(urlString.startIndex, offsetBy: 21)
+                        let index = urlString.index(urlString.startIndex, offsetBy: 21)
                         if urlString[..<index] == "https://live.bilibili" {
                             isLvNum = true
                             break
-                        } else {
-                            index = urlString.index(urlString.startIndex, offsetBy: 29)
-                            if urlString[..<index] == "https://www.bilibili.com/read" {
-                                isCvNum = true
-                                break
-                            }
                         }
                     }
                     continue
                 } else if tempArray[j] == "v" && j >= 1 {
                     if tempArray[j - 1] == "a" {
                         isAvNum = true
+                        break
+                    } else if tempArray[j - 1] == "c" {
+                        isCvNum = true
                         break
                     }
                 } else { break }
