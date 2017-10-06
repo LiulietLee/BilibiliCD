@@ -15,6 +15,7 @@ class CoreDataModel {
     fileprivate let context = CoreDataStorage.sharedInstance.mainQueueContext
     fileprivate let PermFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Permission")
     fileprivate let HistFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "History")
+    fileprivate let OrigFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "OriginCover")
     fileprivate let SettFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Setting")
     
     fileprivate func saveContext() {
@@ -45,20 +46,31 @@ class CoreDataModel {
         return items
     }
     
-    func addNewHistory(av: String, date: NSDate, image: NSData, title: String, up: String, url: String) {
+    func addNewHistory(av: String, date: Date, image: UIImage, title: String, up: String, url: String) {
         refreshHistory()
 
         let list = history
         if list.count != 0, list[0].up == up && list[0].av == av { return }
         
+        let originCoverData = image.toData()
+        let resizedCoverData = image.resize().toData()
+        
         let entity = NSEntityDescription.entity(forEntityName: "History", in: context)!
         let newItem = History(entity: entity, insertInto: context)
         newItem.av = av
         newItem.date = date
-        newItem.image = image
+        newItem.image = resizedCoverData
         newItem.title = title
         newItem.up = up
         newItem.url = url
+        
+        let origEntity = NSEntityDescription.entity(forEntityName: "OriginCover", in: context)!
+        let newOrig = OriginCover(entity: origEntity, insertInto: context)
+        newOrig.image = originCoverData
+        
+        newItem.origin = newOrig
+        newOrig.history = newItem
+        
         saveContext()
     }
     
@@ -70,9 +82,7 @@ class CoreDataModel {
     func clearHistory() {
         do {
             let items = try context.fetch(HistFetchRequest) as! [History]
-            for item in items {
-                deleteHistory(item)
-            }
+            for item in items { deleteHistory(item) }
         } catch {
             print(error)
         }
@@ -85,8 +95,7 @@ class CoreDataModel {
         let overflow = count - limit
         if overflow > 0 {
             for i in 0..<overflow {
-                let lastestItem = list[count - 1 - i]
-                deleteHistory(lastestItem)
+                deleteHistory(list[count - 1 - i])
             }
         }
     }
@@ -94,7 +103,7 @@ class CoreDataModel {
     // MARK: - Setting
     
     private func initSetting() {
-        let initHistoryNum: Int16 = 6
+        let initHistoryNum: Int16 = 12
         let entity = NSEntityDescription.entity(forEntityName: "Setting", in: context)!
         let newItem = Setting(entity: entity, insertInto: context)
         newItem.historyNumber = initHistoryNum
@@ -127,3 +136,18 @@ class CoreDataModel {
         }
     }
 }
+
+extension UIImage {
+    func toData() -> Data {
+        return UIImagePNGRepresentation(self)! as Data
+    }
+    
+    func resize() -> UIImage {
+        UIGraphicsBeginImageContext(CGSize(width: 135, height: 84))
+        self.draw(in: CGRect(x: 0, y: 0, width: 135, height: 84))
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return resizedImage
+    }
+}
+

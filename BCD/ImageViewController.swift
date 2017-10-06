@@ -66,7 +66,12 @@ class ImageViewController: UIViewController, VideoCoverDelegate {
             titleLabel.text = itemFromHistory!.title!
             authorLabel.text = itemFromHistory!.up!
             urlLabel.text = itemFromHistory!.url!
-            imageView.image = UIImage(data: itemFromHistory!.image! as Data)
+            
+            if let originCoverData = itemFromHistory?.origin?.image {
+                imageView.image = UIImage(data: originCoverData)
+            } else {
+                imageView.image = UIImage(data: itemFromHistory!.image! as Data)
+            }
             
             titleLabel.textColor = .tianyiBlue
             authorLabel.textColor = .tianyiBlue
@@ -133,8 +138,8 @@ class ImageViewController: UIViewController, VideoCoverDelegate {
     
     fileprivate func addItemToDB() {
         dataModel.addNewHistory(av: cover!.shortDescription,
-            date: NSDate(),
-            image: UIImagePNGRepresentation(imageView.image!)! as NSData,
+            date: Date(),
+            image: imageView.image!,
             title: titleLabel.text!,
             up: authorLabel.text!,
             url: urlLabel.text!)
