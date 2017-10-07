@@ -294,7 +294,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomCons" destination="uAg-mW-uNb" id="Wjr-NP-Qfa"/>
                         <outlet property="imageView" destination="62v-HH-Nsn" id="SrD-4m-m3U"/>
+                        <outlet property="topCons" destination="Xil-vb-KEL" id="KV3-rz-ohr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K0t-pe-vky" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -314,7 +316,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XsU-ss-UBH">
-                                <rect key="frame" x="0.0" y="488" width="320" height="60"/>
+                                <rect key="frame" x="0.0" y="508" width="320" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="sdC-d6-FmO"/>
                                 </constraints>
@@ -327,11 +329,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="XsU-ss-UBH" secondAttribute="trailing" constant="-16" id="MYR-jV-DMh"/>
-                            <constraint firstItem="Xq8-e8-eI4" firstAttribute="top" secondItem="XsU-ss-UBH" secondAttribute="bottom" constant="20" id="PlG-5B-n1z"/>
+                            <constraint firstItem="Xq8-e8-eI4" firstAttribute="top" secondItem="XsU-ss-UBH" secondAttribute="bottom" id="PlG-5B-n1z"/>
                             <constraint firstAttribute="leadingMargin" secondItem="XsU-ss-UBH" secondAttribute="leading" constant="16" id="o6G-Za-wRu"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomConsOfBackButton" destination="PlG-5B-n1z" id="hog-Tw-yWw"/>
                         <outlet property="closeButton" destination="XsU-ss-UBH" id="8G2-TJ-038"/>
                     </connections>
                 </viewController>
