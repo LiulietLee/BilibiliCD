@@ -1,7 +1,10 @@
 # BilibiliCD
-用来下载B站视频封面的 iOS App
+> 用来下载B站视频封面的 iOS App
 
-![img_1630](https://user-images.githubusercontent.com/9763162/29995984-929bf76a-9028-11e7-8240-f3d6a975d693.PNG)
+![](https://github.com/LiulietLee/BilibiliCD/blob/master/Screenshots/IMG_1943.PNG)
+![](https://github.com/LiulietLee/BilibiliCD/blob/master/Screenshots/IMG_1944.PNG)
+![](https://github.com/LiulietLee/BilibiliCD/blob/master/Screenshots/IMG_1945.PNG)
+
 
 ## 编译环境
 - Xcode 9
@@ -11,9 +14,10 @@
 iOS 10.0 以上
 
 ## TODO
-- [ ] 获取用户头像
 - [ ] 获取「会员的世界」
 - [ ] 优化对 iPad 的支持
+- [ ] 封面图片无损放大 // 基于 waifu2x
+- [ ] 历史记录表里世界
 - [X] 历史记录优化
 - [X] 获取专栏封面
 - [X] 修复 iOS 11 无法接受通知的 Bug
