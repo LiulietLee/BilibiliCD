@@ -2,7 +2,6 @@
 > 用来下载B站视频封面的 iOS App
 
 ![](https://github.com/LiulietLee/BilibiliCD/blob/master/Screenshots/IMG_1943.PNG)
-![](https://github.com/LiulietLee/BilibiliCD/blob/master/Screenshots/IMG_1944.PNG)
 ![](https://github.com/LiulietLee/BilibiliCD/blob/master/Screenshots/IMG_1945.PNG)
 
 
