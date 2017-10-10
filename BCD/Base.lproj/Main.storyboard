@@ -294,9 +294,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="bottomCons" destination="uAg-mW-uNb" id="Wjr-NP-Qfa"/>
                         <outlet property="imageView" destination="62v-HH-Nsn" id="SrD-4m-m3U"/>
-                        <outlet property="topCons" destination="Xil-vb-KEL" id="KV3-rz-ohr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K0t-pe-vky" userLabel="First Responder" sceneMemberID="firstResponder"/>
