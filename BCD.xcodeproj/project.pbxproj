@@ -21,6 +21,7 @@
 		4F2DB5E51F75F7D400FB2315 /* BilibiliCD.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4F2DB5D91F75F7D400FB2315 /* BilibiliCD.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4F3077B81F1768E000E1C1AF /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3077B71F1768E000E1C1AF /* CoreDataModel.swift */; };
 		4F4157A21F1331000042FF40 /* SourceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4157A11F1331000042FF40 /* SourceTableViewController.swift */; };
+		4F4E60FC1F8DACE000BB9847 /* MotionDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E60FB1F8DACE000BB9847 /* MotionDetector.swift */; };
 		4F5041CA1F18AF1C00B59337 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F5041C91F18AF1C00B59337 /* Assets.xcassets */; };
 		4F585B2A1F760B38004D1285 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF701EF5000400D31840 /* Info.swift */; };
 		4F585B2B1F760B38004D1285 /* NetworkingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF6E1EF4FCC600D31840 /* NetworkingModel.swift */; };
@@ -103,6 +104,7 @@
 		4F2DB5E21F75F7D400FB2315 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F3077B71F1768E000E1C1AF /* CoreDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataModel.swift; sourceTree = "<group>"; };
 		4F4157A11F1331000042FF40 /* SourceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceTableViewController.swift; sourceTree = "<group>"; };
+		4F4E60FB1F8DACE000BB9847 /* MotionDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionDetector.swift; sourceTree = "<group>"; };
 		4F5041C91F18AF1C00B59337 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F8B90711F7B2E3800AB158D /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 		4F99A9961F21F0B600AE4143 /* BCD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BCD.xcdatamodel; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 		4F5BE2F61EFAA1170054C53F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4F4E60FB1F8DACE000BB9847 /* MotionDetector.swift */,
 				4F3077B71F1768E000E1C1AF /* CoreDataModel.swift */,
 				4F99A9951F21F0B600AE4143 /* BCD.xcdatamodeld */,
 			);
@@ -509,6 +512,7 @@
 				4F26AA831F14D3D400E1123D /* SakuraNavController.swift in Sources */,
 				4F3077B81F1768E000E1C1AF /* CoreDataModel.swift in Sources */,
 				52E4E47D1F76C6A9008EF09C /* BilibiliCover.swift in Sources */,
+				4F4E60FC1F8DACE000BB9847 /* MotionDetector.swift in Sources */,
 				4F99A9971F21F0B600AE4143 /* BCD.xcdatamodeld in Sources */,
 				4F8B90731F7B2E3800AB158D /* CoreDataStorage.swift in Sources */,
 				4FB044851F1F49CA00F96D5A /* TutorialContentViewController.swift in Sources */,

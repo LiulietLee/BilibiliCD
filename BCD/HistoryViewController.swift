@@ -9,11 +9,12 @@
 import UIKit
 import SWRevealViewController
 
-class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate, SetHistoryNumDelegate {
+class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate, SetHistoryNumDelegate, MotionDetectorDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var menu: UIBarButtonItem!
     fileprivate let dataModel = CoreDataModel()
+    fileprivate let motionDetector = MotionDetector()
     fileprivate var history = [History]() {
         didSet {
             DispatchQueue.main.async {
@@ -27,6 +28,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
         }
     }
+    fileprivate var isShowingFullHistory = false
     fileprivate let nothingLabel = UILabel()
     fileprivate var loadingView: LoadingView!
     
@@ -48,6 +50,17 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         menu.target = revealViewController()
         menu.action = #selector(SWRevealViewController.revealToggle(_:))
         view.addGestureRecognizer(revealViewController().panGestureRecognizer())
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        motionDetector.beginDetect()
+        motionDetector.delegate = self
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        motionDetector.endDetect()
     }
     
     fileprivate func setLabel() {
@@ -115,27 +128,62 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         formatter.dateFormat = "yyyy.MM.dd hh:mm"
         cell.dateLabel.text = formatter.string(from: history[indexPath.row].date! as Date)
         
-        DispatchQueue.global(qos: .userInteractive).async {
-            let image = UIImage(data: self.history[indexPath.row].image! as Data, scale: 1.0)!
-            DispatchQueue.main.async {
-                cell.coverView.image = image
+        if history[indexPath.row].isHidden { cell.titleLabel.textColor = .lightGray }
+        else { cell.titleLabel.textColor = .black }
+
+        if !history[indexPath.row].isHidden || isShowingFullHistory {
+            DispatchQueue.global(qos: .userInteractive).async {
+                let image = UIImage(data: self.history[indexPath.row].image! as Data, scale: 1.0)!
+                DispatchQueue.main.async {
+                    cell.coverView.image = image
+                }
             }
+        } else {
+            cell.coverView.image = #imageLiteral(resourceName: "sadpanda")
         }
         
         return cell
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        let item = history[indexPath.row]
-        dataModel.deleteHistory(item)
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
+        let item = history[editActionsForRowAt.row]
+
+        let delete = UITableViewRowAction(style: .normal, title: "Delete") { action, index in
+            self.dataModel.deleteHistory(item)
+            self.reloadRow(at: editActionsForRowAt)
+        }
+        delete.backgroundColor = .red
+        
+        let hide = UITableViewRowAction(style: .normal, title: "Hide") { action, index in
+            self.dataModel.changeIsHiddenOf(item)
+            self.reloadRow(at: editActionsForRowAt)
+        }
+        hide.backgroundColor = .lightGray
+        
+        return [delete, hide]
+    }
+    
+    fileprivate func reloadRow(at index: IndexPath) {
         history = dataModel.history
         tableView.reloadData()
+        // tableView.deleteRows(at: [index], with: .automatic)
     }
     
     func historyNumLimitChanged() {
         dataModel.refreshHistory()
         history = dataModel.history
         tableView.reloadData()
+    }
+    
+    func openInsideWorld() {
+        self.navigationController?.navigationBar.barTintColor = .black
+        isShowingFullHistory = true
+        tableView.reloadData()
+        motionDetector.endDetect()
     }
     
     // MARK: - Navigation
@@ -162,6 +210,19 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
                 vc.itemFromHistory = item
             }
         }
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String?, sender: Any?) -> Bool {
+        if isShowingFullHistory { return true }
+        if let ident = identifier {
+            if ident == "detail",
+                let cell = sender as? HistoryCell,
+                let indexPath = tableView.indexPath(for: cell) {
+                let item = history[indexPath.row]
+                if item.isHidden { return false }
+            }
+        }
+        return true
     }
     
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {

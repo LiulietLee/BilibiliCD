@@ -363,7 +363,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CTr-1J-z2U">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CTr-1J-z2U">
                                                     <rect key="frame" x="8" y="8" width="134.5" height="84"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="CTr-1J-z2U" secondAttribute="height" multiplier="8:5" id="CYa-or-o71"/>

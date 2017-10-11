@@ -74,6 +74,11 @@ class CoreDataModel {
         saveContext()
     }
     
+    func changeIsHiddenOf(_ item: History) {
+        item.isHidden = !item.isHidden
+        saveContext()
+    }
+    
     func deleteHistory(_ item: History) {
         context.delete(item)
         saveContext()
