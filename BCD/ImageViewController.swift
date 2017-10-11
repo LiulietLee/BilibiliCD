@@ -73,10 +73,19 @@ class ImageViewController: UIViewController, VideoCoverDelegate {
                 imageView.image = UIImage(data: itemFromHistory!.image! as Data)
             }
             
-            titleLabel.textColor = .tianyiBlue
-            authorLabel.textColor = .tianyiBlue
-            urlLabel.textColor = .tianyiBlue
+            if itemFromHistory!.isHidden {
+                changeTextColor(to: .black)
+            } else {
+                changeTextColor(to: .tianyiBlue)
+            }
         }
+    }
+    
+    fileprivate func changeTextColor(to color: UIColor) {
+        titleLabel.textColor = color
+        authorLabel.textColor = color
+        urlLabel.textColor = color
+        self.navigationController?.navigationBar.barTintColor = color
     }
     
     @IBAction func downloadButtonTapped(_ sender: UIBarButtonItem) {

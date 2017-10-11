@@ -15,9 +15,13 @@ protocol SetHistoryNumDelegate {
 class SetHistoryNumViewController: UIViewController {
 
     @IBOutlet weak var numberField: UITextField!
-    fileprivate let dataModel = CoreDataModel()
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton!
     
+    fileprivate let dataModel = CoreDataModel()
+
     var delegate: SetHistoryNumDelegate?
+    var isShowingFullHistory = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +32,19 @@ class SetHistoryNumViewController: UIViewController {
         
         numberField.becomeFirstResponder()
         numberField.layer.borderColor = UIColor.clear.cgColor
+        
+        if isShowingFullHistory {
+            changeColor(to: .black)
+        } else {
+            changeColor(to: .tianyiBlue)
+        }
+    }
+    
+    fileprivate func changeColor(to color: UIColor) {
+        cancelButton.setTitleColor(color, for: .normal)
+        saveButton.setTitleColor(color, for: .normal)
+        numberField.textColor = color
+        numberField.tintColor = color
     }
     
     fileprivate func goBack() {

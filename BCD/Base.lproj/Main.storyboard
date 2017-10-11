@@ -479,7 +479,7 @@
                                     <segue destination="c48-nJ-AAz" kind="show" id="3xr-kp-XcO"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zsa-yu-und">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zsa-yu-und">
                                 <rect key="frame" x="0.0" y="64" width="320" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Zsa-yu-und" secondAttribute="height" multiplier="8:5" id="ljQ-Qi-F7c"/>
@@ -551,7 +551,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BB4-Rm-pPw">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BB4-Rm-pPw">
                                 <rect key="frame" x="-27.5" y="167" width="375" height="234"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="DUy-qD-oqQ"/>
@@ -1229,7 +1229,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="MDO-f4-ey1"/>
                                 </constraints>
-                                <color key="textColor" red="0.23753800820000001" green="0.47453992239999998" blue="0.59218749999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.40111959171684908" green="0.80133390584552511" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                                 <userDefinedRuntimeAttributes>
@@ -1288,7 +1288,9 @@
                     </view>
                     <value key="contentSizeForViewInPopover" type="size" width="360" height="150"/>
                     <connections>
+                        <outlet property="cancelButton" destination="VaP-rH-8UN" id="SO0-d6-Ess"/>
                         <outlet property="numberField" destination="Wcg-QB-ee6" id="hKU-zz-up0"/>
+                        <outlet property="saveButton" destination="1GK-6P-ci7" id="lFZ-Is-5yc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nVq-I9-0V8" userLabel="First Responder" sceneMemberID="firstResponder"/>

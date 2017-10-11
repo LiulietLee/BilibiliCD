@@ -30,10 +30,10 @@ class MotionDetector {
         
         let queue = OperationQueue.current
         motionManager.startAccelerometerUpdates(to: queue!, withHandler: { (data, error) in
-//            guard error == nil else {
-//                print(error!)
-//                return
-//            }
+            guard error == nil else {
+                print(error!)
+                return
+            }
 
             if self.motionManager.isAccelerometerActive {
                 if let rotation = data?.acceleration {

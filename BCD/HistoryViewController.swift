@@ -50,12 +50,44 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         menu.target = revealViewController()
         menu.action = #selector(SWRevealViewController.revealToggle(_:))
         view.addGestureRecognizer(revealViewController().panGestureRecognizer())
+        
+        if !isAppAlreadyLaunchedOnce() {
+            showTutMessage()
+        }
+    }
+    
+    fileprivate func isAppAlreadyLaunchedOnce() -> Bool {
+        let defaults = UserDefaults.standard
+        
+        if defaults.string(forKey: "isAppAlreadyLaunchedOnce") != nil{
+            return true
+        } else {
+            defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
+            return false
+        }
+    }
+    
+    fileprivate func showTutMessage() {
+        let dialog = LLDialog()
+        dialog.title = "「里世界」的使用方法"
+        dialog.message = "这是你第一次打开历史记录，想看看历史记录的使用方法么？（以后将不会再次提示，建议选择右边的选项）"
+        dialog.setNegativeButton(withTitle: "不用了")
+        dialog.setPositiveButton(withTitle: "好的", target: self, action: #selector(showTutorial))
+    }
+    
+    @objc fileprivate func showTutorial() {
+        // todo
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         motionDetector.beginDetect()
         motionDetector.delegate = self
+        if isShowingFullHistory {
+            self.navigationController?.navigationBar.barTintColor = .black
+        } else {
+            self.navigationController?.navigationBar.barTintColor = .tianyiBlue
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -109,11 +141,6 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //        if history.count == 0 {
-        //            setLabel()
-        //            showLabel()
-        //        }
-        
         return history.count
     }
     
@@ -123,15 +150,12 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HistoryCell
-        cell.titleLabel.text = history[indexPath.row].title!
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy.MM.dd hh:mm"
-        cell.dateLabel.text = formatter.string(from: history[indexPath.row].date! as Date)
         
-        if history[indexPath.row].isHidden { cell.titleLabel.textColor = .lightGray }
-        else { cell.titleLabel.textColor = .black }
-
         if !history[indexPath.row].isHidden || isShowingFullHistory {
+            cell.titleLabel.text = history[indexPath.row].title!
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy.MM.dd hh:mm"
+            cell.dateLabel.text = formatter.string(from: history[indexPath.row].date! as Date)
             DispatchQueue.global(qos: .userInteractive).async {
                 let image = UIImage(data: self.history[indexPath.row].image! as Data, scale: 1.0)!
                 DispatchQueue.main.async {
@@ -139,6 +163,8 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
                 }
             }
         } else {
+            cell.titleLabel.text = "[数据删除]"
+            cell.dateLabel.text = "[数据删除]"
             cell.coverView.image = #imageLiteral(resourceName: "sadpanda")
         }
         
@@ -151,26 +177,29 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
         let item = history[editActionsForRowAt.row]
+        
+        var hideString = "隐藏"
+        if item.isHidden {
+            if !isShowingFullHistory {
+                return []
+            }
+            hideString = "显示"
+        }
+        let hide = UITableViewRowAction(style: .normal, title: hideString) { action, index in
+            self.dataModel.changeIsHiddenOf(item)
+            self.history = self.dataModel.history
+            self.tableView.reloadData()
+        }
+        hide.backgroundColor = .lightGray
 
-        let delete = UITableViewRowAction(style: .normal, title: "Delete") { action, index in
+        let delete = UITableViewRowAction(style: .normal, title: "删除") { action, index in
             self.dataModel.deleteHistory(item)
-            self.reloadRow(at: editActionsForRowAt)
+            self.history = self.dataModel.history
+            self.tableView.deleteRows(at: [editActionsForRowAt], with: .automatic)
         }
         delete.backgroundColor = .red
         
-        let hide = UITableViewRowAction(style: .normal, title: "Hide") { action, index in
-            self.dataModel.changeIsHiddenOf(item)
-            self.reloadRow(at: editActionsForRowAt)
-        }
-        hide.backgroundColor = .lightGray
-        
         return [delete, hide]
-    }
-    
-    fileprivate func reloadRow(at index: IndexPath) {
-        history = dataModel.history
-        tableView.reloadData()
-        // tableView.deleteRows(at: [index], with: .automatic)
     }
     
     func historyNumLimitChanged() {
@@ -197,6 +226,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         if segue.identifier == "set limit" {
             if let vc = segue.destination as? SetHistoryNumViewController {
                 vc.delegate = self
+                vc.isShowingFullHistory = isShowingFullHistory
                 if let controller = vc.popoverPresentationController {
                     controller.delegate = self
                 }
@@ -213,9 +243,9 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String?, sender: Any?) -> Bool {
-        if isShowingFullHistory { return true }
-        if let ident = identifier {
-            if ident == "detail",
+        if !isShowingFullHistory {
+            if let ident = identifier,
+                ident == "detail",
                 let cell = sender as? HistoryCell,
                 let indexPath = tableView.indexPath(for: cell) {
                 let item = history[indexPath.row]
