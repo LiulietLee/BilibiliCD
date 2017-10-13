@@ -69,14 +69,16 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     fileprivate func showTutMessage() {
         let dialog = LLDialog()
-        dialog.title = "「里世界」的使用方法"
-        dialog.message = "这是你第一次打开历史记录，想看看历史记录的使用方法么？（以后将不会再次提示，建议选择右边的选项）"
+        dialog.title = "(=・ω・=)"
+        dialog.message = "想看看历史记录「里世界」的使用方法么？"
         dialog.setNegativeButton(withTitle: "不用了")
         dialog.setPositiveButton(withTitle: "好的", target: self, action: #selector(showTutorial))
+        dialog.show()
     }
     
     @objc fileprivate func showTutorial() {
-        // todo
+        let vc = HisTutViewController()
+        present(vc, animated: true, completion: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {

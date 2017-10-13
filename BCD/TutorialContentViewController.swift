@@ -11,6 +11,7 @@ import UIKit
 class TutorialContentViewController: UIViewController {
     
     @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet weak var insideButton: UIButton!
     
     var image = UIImage()
     var index = Int()
@@ -18,6 +19,15 @@ class TutorialContentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.image = image
+        
+        insideButton.titleLabel!.lineBreakMode = .byWordWrapping
+        if index != 6 {
+            insideButton.removeFromSuperview()
+        }
     }
 
+    @IBAction func goInside() {
+        let vc = HisTutViewController()
+        present(vc, animated: true, completion: nil)
+    }
 }

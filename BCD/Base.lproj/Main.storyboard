@@ -284,17 +284,31 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="62v-HH-Nsn">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKT-Rp-hSt">
+                                <rect key="frame" x="32" y="364" width="256" height="44"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <state key="normal" title="另外历史记录里我还搞了个「里世界」，你可以戳这里看看使用方法">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="goInside" destination="Rfk-8v-X96" eventType="touchUpInside" id="Er1-VK-BRL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="62v-HH-Nsn" secondAttribute="trailing" id="7Ir-Qt-ZNP"/>
-                            <constraint firstItem="62v-HH-Nsn" firstAttribute="top" secondItem="MvM-Px-gqJ" secondAttribute="top" id="Xil-vb-KEL"/>
+                            <constraint firstItem="IKT-Rp-hSt" firstAttribute="trailing" secondItem="MvM-Px-gqJ" secondAttribute="trailingMargin" constant="-16" id="QE8-SR-QmD"/>
+                            <constraint firstItem="62v-HH-Nsn" firstAttribute="top" secondItem="MvM-Px-gqJ" secondAttribute="top" id="SPI-oZ-v3N"/>
                             <constraint firstItem="62v-HH-Nsn" firstAttribute="leading" secondItem="MvM-Px-gqJ" secondAttribute="leading" id="plg-fK-ZYQ"/>
                             <constraint firstItem="tJZ-NM-hEU" firstAttribute="top" secondItem="62v-HH-Nsn" secondAttribute="bottom" id="uAg-mW-uNb"/>
+                            <constraint firstItem="IKT-Rp-hSt" firstAttribute="leading" secondItem="MvM-Px-gqJ" secondAttribute="leadingMargin" constant="16" id="wAZ-xJ-msd"/>
+                            <constraint firstItem="tJZ-NM-hEU" firstAttribute="top" secondItem="IKT-Rp-hSt" secondAttribute="bottom" constant="160" id="yom-or-Ytb"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="62v-HH-Nsn" id="SrD-4m-m3U"/>
+                        <outlet property="insideButton" destination="IKT-Rp-hSt" id="GvI-e8-nFR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K0t-pe-vky" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1300,8 +1314,8 @@
     </scenes>
     <resources>
         <image name="akkarin" width="250" height="250"/>
-        <image name="az-pro" width="712" height="712"/>
-        <image name="bonuo-pro" width="580" height="580"/>
+        <image name="az-pro" width="170" height="170"/>
+        <image name="bonuo-pro" width="170" height="170"/>
         <image name="ic_backspace" width="24" height="24"/>
         <image name="ic_delete" width="24" height="24"/>
         <image name="ic_file_download" width="24" height="24"/>
@@ -1310,7 +1324,7 @@
         <image name="ic_menu" width="24" height="24"/>
         <image name="ic_search" width="24" height="24"/>
         <image name="ic_settings" width="24" height="24"/>
-        <image name="liuliet-pro" width="346" height="360"/>
+        <image name="liuliet-pro" width="115" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="pFk-eZ-ib2"/>

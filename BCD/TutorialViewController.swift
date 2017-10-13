@@ -13,7 +13,7 @@ class TutorialViewController: UIViewController, UIPageViewControllerDataSource {
     @IBOutlet private weak var closeButton: UIButton!
     @IBOutlet weak var bottomConsOfBackButton: NSLayoutConstraint!
     fileprivate var pageController = UIPageViewController()
-    fileprivate let pageImages = [#imageLiteral(resourceName: "tut1"), #imageLiteral(resourceName: "tut2"), #imageLiteral(resourceName: "tut3"), #imageLiteral(resourceName: "tut4"), #imageLiteral(resourceName: "tut5"), #imageLiteral(resourceName: "tut6")]
+    fileprivate let pageImages = [#imageLiteral(resourceName: "tut1"), #imageLiteral(resourceName: "tut2"), #imageLiteral(resourceName: "tut3"), #imageLiteral(resourceName: "tut4"), #imageLiteral(resourceName: "tut5"), #imageLiteral(resourceName: "tut6"), #imageLiteral(resourceName: "tut7")]
 
     override func viewDidLoad() {
         super.viewDidLoad()

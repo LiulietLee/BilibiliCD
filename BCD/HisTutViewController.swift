@@ -1,0 +1,52 @@
+//
+//  HisTutViewController.swift
+//  BCD
+//
+//  Created by Liuliet.Lee on 12/10/2017.
+//  Copyright © 2017 Liuliet.Lee. All rights reserved.
+//
+
+import UIKit
+
+class HisTutViewController: UIViewController {
+
+    fileprivate var webView: UIWebView!
+    fileprivate var back: UIButton!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        let size = view.bounds
+        webView = UIWebView()
+        webView.frame = CGRect(x: 0.0, y: -20.0, width: size.width, height: size.height + 22.0)
+        
+        let url = Bundle.main.url(forResource: "HisTutPage/index", withExtension: "html")
+        let request = URLRequest(url: url!)
+        webView.loadRequest(request)
+        
+        let margin: CGFloat = 20.0
+        let width: CGFloat = 40.0
+        back = UIButton(frame: CGRect(x: size.width - margin - width,
+                                      y: margin * 1.25, width: width, height: width))
+        back.setImage(#imageLiteral(resourceName: "ic_arrow_downward"), for: .normal)
+        back.addTarget(self, action: #selector(goBack), for: .touchUpInside)
+        
+        view.addSubview(webView)
+        view.addSubview(back)
+    }
+    
+    @objc fileprivate func goBack() {
+        self.dismiss(animated: true, completion: nil)
+    }
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
