@@ -32,6 +32,10 @@ class TodayViewController: UIViewController, NCWidgetProviding, VideoCoverDelega
     
     private func scanPasteBoard() {
         if let cover = BilibiliCover.fromPasteboard(), cover != self.cover {
+            if dataModel.isExistInHistory(cover: cover) {
+                loadingText.text = "这个封面似乎已经\n在历史记录里了呢"
+                return
+            }
             self.cover = cover
             number = cover.number
             numberLabel.text = cover.shortDescription

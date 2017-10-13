@@ -26,11 +26,20 @@ class HisTutViewController: UIViewController {
         
         let margin: CGFloat = 20.0
         let width: CGFloat = 40.0
-        back = UIButton(frame: CGRect(x: size.width - margin - width,
-                                      y: margin * 1.25, width: width, height: width))
+        back = UIButton()
+        back.frame = CGRect(x: size.width - margin - width,
+                            y: margin * 1.25, width: width, height: width)
+        
+        if UIDevice().isiPhoneX() {
+            // 我真特么想一锤子锤烂 iPhone X ！这哪个ZZ设计出来的这么奇葩的屏幕啊 ！
+            webView.frame = CGRect(x: 0.0, y: -45.0, width: size.width, height: size.height + 40.0)
+            back = UIButton(frame: CGRect(x: size.width - margin - width,
+                                          y: margin * 1.75, width: width, height: width))
+        }
+        
         back.setImage(#imageLiteral(resourceName: "ic_arrow_downward"), for: .normal)
         back.addTarget(self, action: #selector(goBack), for: .touchUpInside)
-        
+
         view.addSubview(webView)
         view.addSubview(back)
     }

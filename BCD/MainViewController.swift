@@ -15,6 +15,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var goButton: UIButton!
     @IBOutlet weak var menu: UIBarButtonItem!
     fileprivate var repeatTappingTime = 0
+    fileprivate var dataModel = CoreDataModel()
     var cover = BilibiliCover(number: 0, type: .video) {
         didSet {
             avLabel?.text = cover.shortDescription
@@ -56,13 +57,15 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     @objc fileprivate func getURLFromPasteboard() {
         if isShowingImage { return }
         if let newCover = BilibiliCover.fromPasteboard() {
-            isShowingImage = true
-            let storyBoard = UIStoryboard(name: "Main", bundle:nil)
-            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "image controller") as! ImageViewController
-            
             self.cover = newCover
-            nextViewController.cover = newCover
-            show(nextViewController, sender: self)
+            if !dataModel.isExistInHistory(cover: newCover) {
+                isShowingImage = true
+                let storyBoard = UIStoryboard(name: "Main", bundle:nil)
+                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "image controller") as! ImageViewController
+                
+                nextViewController.cover = newCover
+                show(nextViewController, sender: self)
+            }
         }
     }
     

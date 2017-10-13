@@ -74,6 +74,18 @@ class CoreDataModel {
         saveContext()
     }
     
+    func isExistInHistory(cover: BilibiliCover) -> Bool {
+        let history = self.history
+        
+        for item in history {
+            if item.av == cover.shortDescription {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
     func changeIsHiddenOf(_ item: History) {
         item.isHidden = !item.isHidden
         saveContext()
