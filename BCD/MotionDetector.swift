@@ -37,7 +37,7 @@ class MotionDetector {
 
             if self.motionManager.isAccelerometerActive {
                 if let rotation = data?.acceleration {
-                    if rotation.y > 0.85 {
+                    if rotation.y > 0.85 && rotation.y < 1.0 {
                         self.delegate?.openInsideWorld()
                     }
                 }
