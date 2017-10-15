@@ -13,7 +13,6 @@ class DetailViewController: UIViewController {
     var image: UIImage?
     fileprivate var isZoomedIn = false
     @IBOutlet weak var imageView: UIImageView!
-    
     @IBOutlet weak var yConstraint: NSLayoutConstraint!
     @IBOutlet weak var xConstraint: NSLayoutConstraint!
     @IBOutlet weak var widthConstraint: NSLayoutConstraint!

@@ -498,6 +498,9 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Zsa-yu-und" secondAttribute="height" multiplier="8:5" id="ljQ-Qi-F7c"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="cover"/>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9B-rN-u5C">
                                 <rect key="frame" x="16" y="280" width="288" height="268"/>
@@ -566,11 +569,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BB4-Rm-pPw">
-                                <rect key="frame" x="-27.5" y="167" width="375" height="234"/>
+                                <rect key="frame" x="-27" y="167" width="375" height="234"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="DUy-qD-oqQ"/>
                                     <constraint firstAttribute="width" secondItem="BB4-Rm-pPw" secondAttribute="height" multiplier="8:5" id="I7z-kL-keP"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="cover"/>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -586,6 +592,9 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="KRb-BT-2Od"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="imageView" destination="BB4-Rm-pPw" id="0H2-kT-7V0"/>
                         <outlet property="widthConstraint" destination="DUy-qD-oqQ" id="mUL-JN-zb6"/>

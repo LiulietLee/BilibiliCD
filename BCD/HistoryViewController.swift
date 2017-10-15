@@ -8,6 +8,7 @@
 
 import UIKit
 import SWRevealViewController
+import ViewAnimator
 
 class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate, SetHistoryNumDelegate, MotionDetectorDelegate {
     
@@ -15,6 +16,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var menu: UIBarButtonItem!
     fileprivate let dataModel = CoreDataModel()
     fileprivate let motionDetector = MotionDetector()
+    fileprivate var isAnimatedOnce = false
     fileprivate var history = [History]() {
         didSet {
             DispatchQueue.main.async {
@@ -24,6 +26,10 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
                 } else {
                     self.setLabel()
                     self.showLabel()
+                }
+                
+                if !self.isAnimatedOnce {
+                    self.animateView()
                 }
             }
         }
@@ -54,6 +60,11 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         if !isAppAlreadyLaunchedOnce() {
             showTutMessage()
         }
+    }
+    
+    fileprivate func animateView() {
+        view.doAnimation()
+        isAnimatedOnce = true
     }
     
     fileprivate func isAppAlreadyLaunchedOnce() -> Bool {
@@ -197,7 +208,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         let delete = UITableViewRowAction(style: .normal, title: "删除") { action, index in
             self.dataModel.deleteHistory(item)
             self.history = self.dataModel.history
-            self.tableView.deleteRows(at: [editActionsForRowAt], with: .automatic)
+            self.tableView.deleteRows(at: [editActionsForRowAt], with: .left)
         }
         delete.backgroundColor = .red
         
