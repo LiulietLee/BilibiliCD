@@ -45,6 +45,8 @@ class TodayViewController: UIViewController, NCWidgetProviding, VideoCoverDelega
             case .video:   netModel.getInfoFromAvNumber(avNum: number)
             case .article: netModel.getArticleInfo(cvNum: number)
             }
+        } else {
+            loadingText.text = "今天真是寂寞如雪哦"
         }
     }
     
@@ -76,7 +78,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, VideoCoverDelega
     
     func cannotFindVideo() {
         numberLabel.text = "啊叻？！视频不见了？"
-        titleLabel.text = "目前还抓不到「会员的世界」的封面哦"
+        titleLabel.text = "大概这个视频是真的不见了吧"
         imageView.image = #imageLiteral(resourceName: "novideo_image")
         loadingText.removeFromSuperview()
     }

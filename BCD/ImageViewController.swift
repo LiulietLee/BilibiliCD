@@ -166,7 +166,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate {
     func cannotFindVideo() {
         titleLabel.text = "啊叻？"
         authorLabel.text = "视频不见了？"
-        urlLabel.text = "提示：目前暂时还抓不到「会员的世界」的封面哦(\"▔□▔)/"
+        urlLabel.text = "emmmmmmmm... 大概这个视频是真的不见了吧 (\"▔□▔)/"
         loadingView.dismiss()
         imageView.image = #imageLiteral(resourceName: "novideo_image")
     }
