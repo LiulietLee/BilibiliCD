@@ -7,13 +7,13 @@
 //
 
 import UIKit
+import Hero
 
 class ColoredNavController: UINavigationController {
     var navbarTintColor: UIColor { return .black }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         navigationBar.barTintColor = navbarTintColor
         navigationBar.tintColor = .white
         navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]

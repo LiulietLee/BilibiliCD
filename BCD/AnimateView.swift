@@ -10,11 +10,10 @@ import UIKit
 import ViewAnimator
 
 extension UIView {
-    func doAnimation() {
+    func doAnimation(type: AnimationType) {
         let interval = ViewAnimatorConfig.interval
         for (index, view) in self.subviews.enumerated() {
             let delay = Double(index) * interval
-            let type = AnimationType.from(direction: .bottom, offset: ViewAnimatorConfig.offset)
             if let animatable = view as? Animatable {
                 animatable.animateViews(animationType: type, delay: delay)
             } else {

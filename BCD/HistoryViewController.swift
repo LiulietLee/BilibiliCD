@@ -63,7 +63,8 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     fileprivate func animateView() {
-        view.doAnimation()
+        let type = AnimationType.from(direction: .bottom, offset: ViewAnimatorConfig.offset)
+        view.doAnimation(type: type)
         isAnimatedOnce = true
     }
     

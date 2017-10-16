@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ViewAnimator
 
 class ImageViewController: UIViewController, VideoCoverDelegate {
     
@@ -78,7 +79,14 @@ class ImageViewController: UIViewController, VideoCoverDelegate {
             } else {
                 changeTextColor(to: .tianyiBlue)
             }
+            
+            animateView()
         }
+    }
+    
+    fileprivate func animateView() {
+        let type = AnimationType.from(direction: .right, offset: ViewAnimatorConfig.offset)
+        view.doAnimation(type: type)
     }
     
     fileprivate func changeTextColor(to color: UIColor) {
@@ -143,6 +151,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate {
         enableButtons()
         loadingView.dismiss()
         addItemToDB()
+        animateView()
     }
     
     fileprivate func addItemToDB() {

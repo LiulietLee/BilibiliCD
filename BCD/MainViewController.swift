@@ -8,6 +8,7 @@
 
 import UIKit
 import SWRevealViewController
+import ViewAnimator
 
 class MainViewController: UIViewController, UITextFieldDelegate {
     
@@ -53,7 +54,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         super.viewDidDisappear(animated)
         NotificationCenter.default.removeObserver(self)
     }
-    
+
     @objc fileprivate func getURLFromPasteboard() {
         if isShowingImage { return }
         if let newCover = BilibiliCover.fromPasteboard() {
