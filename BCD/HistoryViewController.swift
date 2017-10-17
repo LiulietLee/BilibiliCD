@@ -21,6 +21,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         didSet {
             DispatchQueue.main.async {
                 self.loadingView.dismiss()
+                
                 if self.history.count != 0 {
                     self.tableView.reloadData()
                 } else {

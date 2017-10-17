@@ -47,22 +47,8 @@ class DetailViewController: UIViewController {
         yConstraint.constant *= sender.scale
         sender.scale = 1.0
     }
-    
-    @IBAction func zoomIn(_ sender: UITapGestureRecognizer) {
-        let scale: CGFloat = 3
-        if !isZoomedIn {
-            widthConstraint.constant *= scale
-            xConstraint.constant *= scale
-            yConstraint.constant *= scale
-        } else {
-            widthConstraint.constant /= scale
-            xConstraint.constant /= scale
-            yConstraint.constant /= scale
-        }
-        UIView.animate(withDuration: 0.3) {
-            self.view.layoutIfNeeded()
-        }
-        isZoomedIn = !isZoomedIn
-    }
 
+    @IBAction func goBack(_ sender: UITapGestureRecognizer) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }

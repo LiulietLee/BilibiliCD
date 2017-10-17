@@ -469,18 +469,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zsa-yu-und">
-                                <rect key="frame" x="0.0" y="64" width="320" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Zsa-yu-und" secondAttribute="height" multiplier="8:5" id="ljQ-Qi-F7c"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="cover"/>
-                                </userDefinedRuntimeAttributes>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="视频标题" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLk-Ji-R8x">
-                                <rect key="frame" x="16" y="280" width="288" height="24"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URL" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aci-Vb-666">
+                                <rect key="frame" x="16" y="344" width="288" height="22"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
                                 <color key="textColor" red="0.99692672490000001" green="0.48709040879999999" blue="0.65352439880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -490,20 +481,32 @@
                                 <color key="textColor" red="0.99692672490000001" green="0.48709040879999999" blue="0.65352439880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URL" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aci-Vb-666">
-                                <rect key="frame" x="16" y="344" width="288" height="22"/>
-                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="视频标题" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLk-Ji-R8x">
+                                <rect key="frame" x="16" y="280" width="288" height="24"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="17"/>
                                 <color key="textColor" red="0.99692672490000001" green="0.48709040879999999" blue="0.65352439880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zsa-yu-und">
+                                <rect key="frame" x="0.0" y="64" width="320" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Zsa-yu-und" secondAttribute="height" multiplier="8:5" id="ljQ-Qi-F7c"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="cover"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fjh-fO-3X6">
                                 <rect key="frame" x="0.0" y="64" width="320" height="200"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="cover"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="c48-nJ-AAz" kind="show" id="3xr-kp-XcO"/>
+                                    <segue destination="c48-nJ-AAz" kind="presentation" id="3xr-kp-XcO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9B-rN-u5C">
-                                <rect key="frame" x="16" y="280" width="288" height="268"/>
+                                <rect key="frame" x="16" y="280" width="288" height="86"/>
                                 <connections>
                                     <action selector="titleButtonTapped" destination="J1l-gt-L0q" eventType="touchUpInside" id="mOS-lb-txs"/>
                                 </connections>
@@ -516,10 +519,10 @@
                             <constraint firstItem="odB-KX-ctA" firstAttribute="leading" secondItem="FLk-Ji-R8x" secondAttribute="leading" id="Anm-Qe-bh9"/>
                             <constraint firstItem="odB-KX-ctA" firstAttribute="top" secondItem="FLk-Ji-R8x" secondAttribute="bottom" constant="8" id="BQI-CX-0Ev"/>
                             <constraint firstItem="FLk-Ji-R8x" firstAttribute="leading" secondItem="13G-b0-rWc" secondAttribute="leadingMargin" id="Fhp-A0-95D"/>
-                            <constraint firstItem="LdW-Kp-l09" firstAttribute="top" secondItem="p9B-rN-u5C" secondAttribute="bottom" constant="20" id="Han-4D-J3H"/>
                             <constraint firstItem="Fjh-fO-3X6" firstAttribute="leading" secondItem="13G-b0-rWc" secondAttribute="leading" id="Kgy-YS-Uas"/>
                             <constraint firstItem="p9B-rN-u5C" firstAttribute="top" secondItem="Zsa-yu-und" secondAttribute="bottom" constant="16" id="Qgb-OT-VAp"/>
                             <constraint firstItem="Fjh-fO-3X6" firstAttribute="top" secondItem="fgQ-2S-BVx" secondAttribute="bottom" id="Tdf-qF-uj5"/>
+                            <constraint firstItem="p9B-rN-u5C" firstAttribute="bottom" secondItem="Aci-Vb-666" secondAttribute="bottom" id="V77-g9-CLe"/>
                             <constraint firstItem="p9B-rN-u5C" firstAttribute="leading" secondItem="13G-b0-rWc" secondAttribute="leading" constant="16" id="WNt-wH-Cec"/>
                             <constraint firstItem="FLk-Ji-R8x" firstAttribute="top" secondItem="Zsa-yu-und" secondAttribute="bottom" constant="16" id="fPx-72-145"/>
                             <constraint firstItem="Aci-Vb-666" firstAttribute="top" secondItem="odB-KX-ctA" secondAttribute="bottom" constant="8" id="gVe-zJ-h8i"/>
@@ -543,9 +546,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="authorLabel" destination="odB-KX-ctA" id="jVD-uh-FZZ"/>
                         <outlet property="downloadButton" destination="0oG-Vt-gM6" id="A8A-pY-jCw"/>
@@ -591,7 +591,7 @@
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="gn1-0n-eak" appends="YES" id="VDH-fz-A34"/>
                             <outletCollection property="gestureRecognizers" destination="XyJ-Fm-0yI" appends="YES" id="PXk-3V-r12"/>
-                            <outletCollection property="gestureRecognizers" destination="ByT-vW-r03" appends="YES" id="HxG-Ic-7xh"/>
+                            <outletCollection property="gestureRecognizers" destination="vx0-us-ZPc" appends="YES" id="Hej-Sh-y33"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="KRb-BT-2Od"/>
@@ -616,9 +616,9 @@
                         <action selector="zoom:" destination="c48-nJ-AAz" id="GKQ-Al-5BO"/>
                     </connections>
                 </pinchGestureRecognizer>
-                <tapGestureRecognizer numberOfTapsRequired="2" id="ByT-vW-r03">
+                <tapGestureRecognizer id="vx0-us-ZPc">
                     <connections>
-                        <action selector="zoomIn:" destination="c48-nJ-AAz" id="Nb8-QS-wBl"/>
+                        <action selector="goBack:" destination="c48-nJ-AAz" id="d6R-c4-89g"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -1241,10 +1241,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="历史记录数量上限" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wcg-QB-ee6" customClass="MKTextField" customModule="MaterialKit">
-                                <rect key="frame" x="16" y="44" width="288" height="60"/>
+                                <rect key="frame" x="16" y="44" width="288" height="70"/>
                                 <color key="tintColor" red="0.40090259909999998" green="0.80100601910000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="MDO-f4-ey1"/>
+                                    <constraint firstAttribute="height" constant="70" id="MDO-f4-ey1"/>
                                 </constraints>
                                 <color key="textColor" red="0.40111959171684908" green="0.80133390584552511" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="21"/>
@@ -1258,7 +1258,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VaP-rH-8UN" customClass="MKButton" customModule="MaterialKit">
-                                <rect key="frame" x="16" y="112" width="90" height="38"/>
+                                <rect key="frame" x="16" y="122" width="90" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="nY3-Zg-ydl"/>
                                 </constraints>
@@ -1275,7 +1275,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1GK-6P-ci7" customClass="MKButton" customModule="MaterialKit">
-                                <rect key="frame" x="224" y="112" width="80" height="38"/>
+                                <rect key="frame" x="224" y="122" width="80" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="Ab2-Wn-y1i"/>
                                 </constraints>
@@ -1331,6 +1331,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="pFk-eZ-ib2"/>
-        <segue reference="Eeb-QN-AAw"/>
+        <segue reference="4Jb-o1-lRn"/>
     </inferredMetricsTieBreakers>
 </document>

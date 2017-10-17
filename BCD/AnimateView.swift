@@ -14,6 +14,7 @@ extension UIView {
         let interval = ViewAnimatorConfig.interval
         for (index, view) in self.subviews.enumerated() {
             let delay = Double(index) * interval
+            if let _ = view as? LoadingView { continue }
             if let animatable = view as? Animatable {
                 animatable.animateViews(animationType: type, delay: delay)
             } else {
