@@ -12,12 +12,13 @@ import CoreData
 
 class CoreDataModel {
     
+    fileprivate let nudity = Nudity()
     fileprivate let context = CoreDataStorage.sharedInstance.mainQueueContext
     fileprivate let PermFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Permission")
     fileprivate let HistFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "History")
     fileprivate let OrigFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "OriginCover")
     fileprivate let SettFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Setting")
-    
+
     fileprivate func saveContext() {
         CoreDataStorage.sharedInstance.saveContext(context)
     }
@@ -63,6 +64,7 @@ class CoreDataModel {
         newItem.title = title
         newItem.up = up
         newItem.url = url
+        newItem.isHidden = isNeedHid(image)
         
         let origEntity = NSEntityDescription.entity(forEntityName: "OriginCover", in: context)!
         let newOrig = OriginCover(entity: origEntity, insertInto: context)
@@ -72,6 +74,21 @@ class CoreDataModel {
         newOrig.history = newItem
         
         saveContext()
+    }
+    
+    fileprivate func isNeedHid(_ cover: UIImage) -> Bool {
+        guard let pixelBuffer = cover.toPixelBuffer() else {
+            return false
+        }
+        do {
+            let perdiction = try nudity.prediction(data: pixelBuffer).prob
+            if perdiction["SFW"]! < 0.6 {
+                return true
+            }
+        } catch {
+            print("can't perdiction")
+        }
+        return false
     }
     
     func isExistInHistory(cover: BilibiliCover) -> Bool {

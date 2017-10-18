@@ -51,6 +51,10 @@
 		4FE8FF711EF5000400D31840 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF701EF5000400D31840 /* Info.swift */; };
 		4FE8FF731EF5095B00D31840 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF721EF5095B00D31840 /* ImageViewController.swift */; };
 		4FF426D61F1FA61E00A8EF79 /* FindArtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF426D51F1FA61E00A8EF79 /* FindArtViewController.swift */; };
+		4FFB80D31F970B2E00626CD7 /* Nudity.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB80D21F970B2E00626CD7 /* Nudity.mlmodel */; };
+		4FFB80D81F970B7800626CD7 /* UIImageToCVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB80D71F970B7800626CD7 /* UIImageToCVPixelBuffer.swift */; };
+		4FFB80D91F970B8600626CD7 /* Nudity.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB80D21F970B2E00626CD7 /* Nudity.mlmodel */; };
+		4FFB80DA1F971D7300626CD7 /* UIImageToCVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB80D71F970B7800626CD7 /* UIImageToCVPixelBuffer.swift */; };
 		52BFDF791F5B2D29002EE246 /* LLDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BFDF781F5B2D29002EE246 /* LLDialog.swift */; };
 		52E4E47D1F76C6A9008EF09C /* BilibiliCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E4E47C1F76C6A9008EF09C /* BilibiliCover.swift */; };
 		52E4E47E1F76C6B6008EF09C /* BilibiliCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E4E47C1F76C6A9008EF09C /* BilibiliCover.swift */; };
@@ -135,6 +139,8 @@
 		4FE8FF701EF5000400D31840 /* Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		4FE8FF721EF5095B00D31840 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		4FF426D51F1FA61E00A8EF79 /* FindArtViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindArtViewController.swift; sourceTree = "<group>"; };
+		4FFB80D21F970B2E00626CD7 /* Nudity.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Nudity.mlmodel; sourceTree = "<group>"; };
+		4FFB80D71F970B7800626CD7 /* UIImageToCVPixelBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageToCVPixelBuffer.swift; sourceTree = "<group>"; };
 		52BFDF781F5B2D29002EE246 /* LLDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLDialog.swift; sourceTree = "<group>"; };
 		52E4E47C1F76C6A9008EF09C /* BilibiliCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BilibiliCover.swift; sourceTree = "<group>"; };
 		8A8078299F9F4EA6B414ED7D /* Pods-BCD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BCD/Pods-BCD.debug.xcconfig"; sourceTree = "<group>"; };
@@ -216,6 +222,7 @@
 		4F5BE2F61EFAA1170054C53F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4FFB80D41F970B3600626CD7 /* Core ML */,
 				4F4E60FB1F8DACE000BB9847 /* MotionDetector.swift */,
 				4F3077B71F1768E000E1C1AF /* CoreDataModel.swift */,
 				4F99A9951F21F0B600AE4143 /* BCD.xcdatamodeld */,
@@ -280,6 +287,15 @@
 				4F5BE2F51EFAA1040054C53F /* ViewController */,
 			);
 			path = BCD;
+			sourceTree = "<group>";
+		};
+		4FFB80D41F970B3600626CD7 /* Core ML */ = {
+			isa = PBXGroup;
+			children = (
+				4FFB80D21F970B2E00626CD7 /* Nudity.mlmodel */,
+				4FFB80D71F970B7800626CD7 /* UIImageToCVPixelBuffer.swift */,
+			);
+			name = "Core ML";
 			sourceTree = "<group>";
 		};
 		52BFDF7A1F5B2D30002EE246 /* Material Design */ = {
@@ -509,6 +525,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FFB80DA1F971D7300626CD7 /* UIImageToCVPixelBuffer.swift in Sources */,
 				4F2DB5DE1F75F7D400FB2315 /* TodayViewController.swift in Sources */,
 				4FA99A341F7661AE00CB2210 /* LLDialog.swift in Sources */,
 				4F959A7D1F8751760097DE30 /* CoreDataModel.swift in Sources */,
@@ -516,6 +533,7 @@
 				4F585B2B1F760B38004D1285 /* NetworkingModel.swift in Sources */,
 				4F959A7C1F8751650097DE30 /* BCD.xcdatamodeld in Sources */,
 				4F8B90721F7B2E3800AB158D /* CoreDataStorage.swift in Sources */,
+				4FFB80D91F970B8600626CD7 /* Nudity.mlmodel in Sources */,
 				52E4E47E1F76C6B6008EF09C /* BilibiliCover.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -535,10 +553,12 @@
 				4FB044851F1F49CA00F96D5A /* TutorialContentViewController.swift in Sources */,
 				4FF426D61F1FA61E00A8EF79 /* FindArtViewController.swift in Sources */,
 				4F2AFBA41F21FBD100AA7CC7 /* HistoryViewController.swift in Sources */,
+				4FFB80D31F970B2E00626CD7 /* Nudity.mlmodel in Sources */,
 				4FB3D9611F09DD9C0043066B /* LoadingView.swift in Sources */,
 				4FE8FF711EF5000400D31840 /* Info.swift in Sources */,
 				4F26AA871F14D51100E1123D /* GreyNavController.swift in Sources */,
 				4F4157A21F1331000042FF40 /* SourceTableViewController.swift in Sources */,
+				4FFB80D81F970B7800626CD7 /* UIImageToCVPixelBuffer.swift in Sources */,
 				4FE8FF6F1EF4FCC600D31840 /* NetworkingModel.swift in Sources */,
 				4FE8FF3E1EF4FC0600D31840 /* AppDelegate.swift in Sources */,
 				4FBD1D591F1F40D400C1CD59 /* TutorialPageViewController.swift in Sources */,
@@ -608,7 +628,7 @@
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = BilibiliCD/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Future-Code-Institute.BCD.BilibiliCD1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -633,7 +653,7 @@
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = BilibiliCD/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Future-Code-Institute.BCD.BilibiliCD1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -771,7 +791,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = BCD/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Future-Code-Institute.BCD";
 				PRODUCT_NAME = BilibiliCD;
@@ -800,7 +820,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = BCD/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Future-Code-Institute.BCD";
 				PRODUCT_NAME = BilibiliCD;
