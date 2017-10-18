@@ -76,18 +76,28 @@ class CoreDataModel {
         saveContext()
     }
     
-    fileprivate func isNeedHid(_ cover: UIImage) -> Bool {
-        guard let pixelBuffer = cover.toPixelBuffer() else {
-            return false
-        }
-        do {
-            let perdiction = try nudity.prediction(data: pixelBuffer).prob
-            if perdiction["SFW"]! < 0.6 {
-                return true
+    func isNeedHid(_ cover: UIImage) -> Bool {
+        let size = CGSize(width: 224, height: 224)
+        
+        let resizedImages = cover.resizeTo(newSize: size)
+        
+        for image in resizedImages {
+            guard let buffer = image?.pixelBuffer() else {
+                fatalError("Converting to pixel buffer failed!")
             }
-        } catch {
-            print("can't perdiction")
+            
+            guard let result = try? nudity.prediction(data: buffer) else {
+                fatalError("Prediction failed!")
+            }
+            
+            let confidence = result.prob["SFW"]! * 100.0
+            let converted = String(format: "%.2f", confidence)
+            
+            print("SFW - \(converted) %")
+            
+            if confidence < 70.0 { return true }
         }
+        
         return false
     }
     

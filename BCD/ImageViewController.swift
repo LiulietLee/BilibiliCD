@@ -23,6 +23,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate {
     fileprivate let netModel = NetworkingModel()
     fileprivate let dataModel = CoreDataModel()
     fileprivate var loadingView: LoadingView!
+    fileprivate let nudity = Nudity()
     fileprivate var image = UIImage() {
         willSet {
             imageView.image = newValue
@@ -81,6 +82,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate {
             }
             
             animateView()
+            dataModel.isNeedHid(imageView.image!)
         }
     }
     
@@ -150,8 +152,10 @@ class ImageViewController: UIViewController, VideoCoverDelegate {
         imageView.image = image
         enableButtons()
         loadingView.dismiss()
-        addItemToDB()
         animateView()
+        DispatchQueue.global(qos: .userInteractive).async {
+            self.addItemToDB()
+        }
     }
     
     fileprivate func addItemToDB() {
@@ -160,7 +164,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate {
             image: imageView.image!,
             title: titleLabel.text!,
             up: authorLabel.text!,
-            url: urlLabel.text!)
+            url: urlLabel.text!)        
     }
     
     func connectError() {
