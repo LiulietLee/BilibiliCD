@@ -17,8 +17,8 @@ extension UIImage {
         
         let rects = [
             CGRect(x: 0, y: 0, width: h, height: h),
-            CGRect(x: 0.5 * (w - h), y: 0, width: h, height: h),
-            CGRect(x: w - h, y: 0, width: h, height: h)
+            CGRect(x: w - h, y: 0, width: h, height: h),
+            CGRect(x: 0.5 * (w - h), y: 0, width: h, height: h)
         ]
         
         var results = [UIImage?]()

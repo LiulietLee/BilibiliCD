@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Hero
 
 class ColoredNavController: UINavigationController {
     var navbarTintColor: UIColor { return .black }

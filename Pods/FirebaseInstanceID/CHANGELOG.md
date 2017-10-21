@@ -1,3 +1,6 @@
+# 2017-10-11 -- v2.0.5
+- Improved support for working in shared Keychain environments.
+
 # 2017-09-26 -- v2.0.4
 - Fixed an issue where the FCM token was not associating correctly with an APNs
   device token, depending on when the APNs device token was made available.

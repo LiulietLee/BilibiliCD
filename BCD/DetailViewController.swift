@@ -7,11 +7,11 @@
 //
 
 import UIKit
+import ViewAnimator
 
 class DetailViewController: UIViewController {
     
     var image: UIImage?
-    fileprivate var isZoomedIn = false
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var yConstraint: NSLayoutConstraint!
     @IBOutlet weak var xConstraint: NSLayoutConstraint!
@@ -26,6 +26,9 @@ class DetailViewController: UIViewController {
         } else {
             print("no image here")
         }
+        
+        let type = AnimationType.from(direction: .right, offset: ViewAnimatorConfig.offset)
+        view.doAnimation(type: type)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -48,7 +51,13 @@ class DetailViewController: UIViewController {
         sender.scale = 1.0
     }
 
-    @IBAction func goBack(_ sender: UITapGestureRecognizer) {
-        self.dismiss(animated: true, completion: nil)
+    @IBAction func zoomIn(_ sender: UITapGestureRecognizer) {
+        widthConstraint.constant *= 2.0
+        xConstraint.constant *= 2.0
+        yConstraint.constant *= 2.0
+        UIView.animate(withDuration: 0.6) {
+            self.view.layoutIfNeeded()
+        }
     }
+    
 }

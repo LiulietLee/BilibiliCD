@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -502,7 +501,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="cover"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="c48-nJ-AAz" kind="presentation" id="3xr-kp-XcO"/>
+                                    <segue destination="c48-nJ-AAz" kind="show" id="3xr-kp-XcO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9B-rN-u5C">
@@ -616,9 +615,9 @@
                         <action selector="zoom:" destination="c48-nJ-AAz" id="GKQ-Al-5BO"/>
                     </connections>
                 </pinchGestureRecognizer>
-                <tapGestureRecognizer id="vx0-us-ZPc">
+                <tapGestureRecognizer numberOfTapsRequired="2" id="vx0-us-ZPc">
                     <connections>
-                        <action selector="goBack:" destination="c48-nJ-AAz" id="d6R-c4-89g"/>
+                        <action selector="zoomIn:" destination="c48-nJ-AAz" id="yX8-xa-Th8"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

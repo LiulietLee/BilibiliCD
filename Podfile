@@ -9,5 +9,4 @@ target 'BCD' do
     pod 'SWRevealViewController', :git => 'https://github.com/John-Lluch/SWRevealViewController.git'
     pod 'MaterialKit', :git => 'https://github.com/ApolloZhu/MaterialKit.git'
     pod 'ViewAnimator'
-    pod 'Hero'
 end

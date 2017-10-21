@@ -1,24 +1,18 @@
-<!--# ViewAnimator-->
+<img src="https://cdn.rawgit.com/marcosgriselli/ViewAnimator/3c78b078/Resources/banner.svg" height="80"/>
 
-<img src="https://cdn.rawgit.com/marcosgriselli/ViewAnimator/cf065e96/Resources/banner.svg" height="150"/>
-
-**ViewAnimator** is a library for building complex iOS UIView animations in an easy way. It provides one line animations for any view included the ones which contain other views like UITableView and UICollectionView with it's cells or UIStackView with it's arrangedSubviews.
+**ViewAnimator** is a library for building complex iOS UIView animations in an easy way. It provides one line animations for any view included the ones which contain other views like UITableView and UICollectionView with its cells or UIStackView with its arrangedSubviews.
 
 
 [![Version](https://img.shields.io/cocoapods/v/ViewAnimator.svg?style=flat)](http://cocoapods.org/pods/ViewAnimator)
 ![iOS 9+](https://img.shields.io/badge/iOS-9%2B-blue.svg?style=flat)
 ![Swift 4](https://img.shields.io/badge/Swift-4-orange.svg?style=flat)
 [![License](https://img.shields.io/cocoapods/l/ViewAnimator.svg?style=flat)](http://cocoapods.org/pods/ViewAnimator)
-[![Platform](https://img.shields.io/cocoapods/p/ViewAnimator.svg?style=flat)](http://cocoapods.org/pods/ViewAnimator)
+[![codebeat badge](https://codebeat.co/badges/633fb33d-66b6-4034-93c0-0f52c5d0e15c)](https://codebeat.co/projects/github-com-marcosgriselli-viewanimator-master)
 
-### Entire View
-<img src="https://cdn.rawgit.com/marcosgriselli/ViewAnimator/cf065e96/Resources/entireView.svg"/>
-
-### UITableView
+### Entire View&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UITableView&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UICollectionView
+<img src="https://cdn.rawgit.com/marcosgriselli/ViewAnimator/cf065e96/Resources/entireView.svg"/>&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://cdn.rawgit.com/marcosgriselli/ViewAnimator/cf065e96/Resources/horizontal.svg"/>&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="https://cdn.rawgit.com/marcosgriselli/ViewAnimator/cf065e96/Resources/vertical.svg"/>
-
-### UICollectionView
+<img src="https://cdn.rawgit.com/marcosgriselli/ViewAnimator/cf065e96/Resources/vertical.svg"/>&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://cdn.rawgit.com/marcosgriselli/ViewAnimator/cf065e96/Resources/collection.svg"/>&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://cdn.rawgit.com/marcosgriselli/ViewAnimator/cf065e96/Resources/collectionX.svg"/>
 
@@ -58,16 +52,16 @@ Drop the swift files inside of [ViewAnimator/Classes](https://github.com/marcosg
 `Direction` provides the axis where the animation should take place and it's movement direction.
 
 ```swift
-let type = AnimationType.from(direction: .top, offset: 30.0)
-view.animate(animationType: type)
+let animation = AnimationType.from(direction: .top, offset: 30.0)
+view.animate(animations: [animation])
 ```
 
 #### Zoom
 Zoom in and Zoom out animation support.
 
 ```swift
-let type = AnimationType.zoom(scale: 0.5)
-view.animate(animationType: type)
+let animation = AnimationType.zoom(scale: 0.5)
+view.animate(animations: [animation])
 ```
 
 ### Animatable
@@ -75,13 +69,13 @@ view.animate(animationType: type)
 `UITableView`, `UICollectionView` and `UIStackView` conform to `Animatable` protocol. This lets us animate their visible subviews or cells with only one function. 
 
 ```swift
-func animateViews(animationType: AnimationType,
-                      initialAlpha: CGFloat,
-                      finalAlpha: CGFloat,
-                      delay: Double,
-                      duration: TimeInterval,
-                      animationInterval: TimeInterval,
-                      completion: CompletionBlock?)
+func animateViews(animations: [Animation],
+                  initialAlpha: CGFloat,
+                  finalAlpha: CGFloat,
+                  delay: Double,
+                  duration: TimeInterval,
+                  animationInterval: TimeInterval,
+                  completion: CompletionBlock?)
 ```
 
 All of this parameters have default values except AnimationType. They can be modified globaly with `ViewAnimatorConfig` static properties.
@@ -93,12 +87,44 @@ If you are just trying to see how `ViewAnimator` can fit in your project and don
 view.animateRandom()
 ```
 
+### Combined Animations
+
+You can combine conformances of `Animation` to apply multiple transforms on your animation block. 
+
+```swift 
+        let fromAnimation = AnimationType.from(direction: .right, offset: 30.0)
+        let zoomAnimation = AnimationType.zoom(scale: 0.2)
+        let rotateAnimation = AnimationType.rotate(angle: CGFloat.pi/6)
+        collectionView.animateViews(animations: [zoomAnimation, rotateAnimation], duration: 0.5)
+        tableView.animateViews(animations: [fromAnimation, zoomAnimation], duration: 0.5)
+
+```
+
+## Animation
+
+`Animation` protocol provides you the posibility of expanding the animations supported by `ViewAnimator` with exception of the `animateRandom` function.
+
+```swift 
+public protocol Animation {
+    var initialTransform: CGAffineTransform { get }
+}
+```
+
+## TODO
+
+- [x] Create protocol for the animations.
+- [x] Support combining animations.
+- [ ] Add Carthage support.
+- [ ] Add SPM support.
+- [ ] Add more use cases to the example app.
+- [ ] Add autohide functionality.
+
 
 ## Project Details
 
 ### Requirements
 * Swift 4.0
-* Xcode 8.0+
+* Xcode 9.0+
 * iOS 9.0+
 
 ### Contributing

@@ -16,9 +16,9 @@ extension UIView {
             let delay = Double(index) * interval
             if let _ = view as? LoadingView { continue }
             if let animatable = view as? Animatable {
-                animatable.animateViews(animationType: type, delay: delay)
+                animatable.animateViews(animations: [type], delay: delay)
             } else {
-                view.animate(animationType: type, delay: delay)
+                view.animate(animations: [type], delay: delay)
             }
         }
     }

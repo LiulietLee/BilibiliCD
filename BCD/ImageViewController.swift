@@ -82,7 +82,6 @@ class ImageViewController: UIViewController, VideoCoverDelegate {
             }
             
             animateView()
-            dataModel.isNeedHid(imageView.image!)
         }
     }
     
@@ -190,6 +189,10 @@ class ImageViewController: UIViewController, VideoCoverDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! DetailViewController
         vc.image = imageView.image!
+        
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationItem.backBarButtonItem = backItem
     }
     
 }
