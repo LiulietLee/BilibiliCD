@@ -1,0 +1,66 @@
+* { margin: 0; padding: 0; }
+body { 
+    font-family: "Roboto", UILanguageFont, Arial, sans-serif ;
+    background: #fdfdfd;
+}
+.description h1 {
+    background: #6cf;
+    color: #fff;
+    padding: 70px 40px 28px 20px;
+    font-weight: normal;
+}
+.description p {
+    margin: 20px 10px;
+    color: #777;
+    letter-spacing: 0.38px;
+}
+section { 
+    margin: 45px 16px; 
+    border-top: 0.3px #ddd solid;
+}
+section h4 {
+    margin-top: 24px;
+    font-weight: normal;
+    font-size: 125%;
+    letter-spacing: 0.38px;
+    color: #333;
+}
+.image-container {
+    text-align: center;
+    padding: 0 16px;
+    margin: 30px 0;
+}
+.image-container img {
+    width: 100%;
+    box-shadow: 1px 1px 2px #555;
+}
+.image-container p {
+    color: #777;
+    letter-spacing: 0.38px;
+    margin-top: 16px;
+    font-size: 75%;
+}
+a {
+    display: block;
+    text-decoration: none;
+    text-align: right;
+    color: #777;    
+}
+.go-back a {
+    text-align: center;
+    color: #ddd;
+    background: #555;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    font-size: 150%;
+}
+section ol {
+    padding: 0 20px 0 40px;
+    margin-top: 20px;
+    border-left: 3px solid #999;
+}
+section ol li {
+    letter-spacing: 0.38px;
+    margin: 10px 0;
+}

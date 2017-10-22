@@ -50,30 +50,32 @@ class CoreDataModel {
     func addNewHistory(av: String, date: Date, image: UIImage, title: String, up: String, url: String) {
         refreshHistory()
 
-        let list = history
-        if list.count != 0, list[0].up == up && list[0].av == av { return }
-        
-        let originCoverData = image.toData()
-        let resizedCoverData = image.resize().toData()
-        
-        let entity = NSEntityDescription.entity(forEntityName: "History", in: context)!
-        let newItem = History(entity: entity, insertInto: context)
-        newItem.av = av
-        newItem.date = date
-        newItem.image = resizedCoverData
-        newItem.title = title
-        newItem.up = up
-        newItem.url = url
-        newItem.isHidden = isNeedHid(image)
-        
-        let origEntity = NSEntityDescription.entity(forEntityName: "OriginCover", in: context)!
-        let newOrig = OriginCover(entity: origEntity, insertInto: context)
-        newOrig.image = originCoverData
-        
-        newItem.origin = newOrig
-        newOrig.history = newItem
-        
-        saveContext()
+        DispatchQueue.global(qos: .userInteractive).async {
+            let list = self.history
+            if list.count != 0, list[0].up == up && list[0].av == av { return }
+            
+            let originCoverData = image.toData()
+            let resizedCoverData = image.resize().toData()
+            
+            let entity = NSEntityDescription.entity(forEntityName: "History", in: self.context)!
+            let newItem = History(entity: entity, insertInto: self.context)
+            newItem.av = av
+            newItem.date = date
+            newItem.image = resizedCoverData
+            newItem.title = title
+            newItem.up = up
+            newItem.url = url
+            newItem.isHidden = self.isNeedHid(image)
+            
+            let origEntity = NSEntityDescription.entity(forEntityName: "OriginCover", in: self.context)!
+            let newOrig = OriginCover(entity: origEntity, insertInto: self.context)
+            newOrig.image = originCoverData
+            
+            newItem.origin = newOrig
+            newOrig.history = newItem
+            
+            self.saveContext()
+        }
     }
     
     func isNeedHid(_ cover: UIImage) -> Bool {

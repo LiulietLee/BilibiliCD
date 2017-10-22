@@ -13,6 +13,8 @@ class HisTutViewController: UIViewController {
     fileprivate var webView: UIWebView!
     fileprivate var back: UIButton!
     
+    var page = "index"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,7 +22,7 @@ class HisTutViewController: UIViewController {
         webView = UIWebView()
         webView.frame = CGRect(x: 0.0, y: -20.0, width: size.width, height: size.height + 22.0)
         
-        let url = Bundle.main.url(forResource: "HisTutPage/index", withExtension: "html")
+        let url = Bundle.main.url(forResource: "HisTutPage/\(page)", withExtension: "html")
         let request = URLRequest(url: url!)
         webView.loadRequest(request)
         

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>「自动和谐」功能简介</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="description">
+        <h1 id="top">关于「自动和谐」功能的介绍</h1>
+        <p>
+            「自动和谐」这个东西利用了 iOS 11 的 Core ML 这个特性，通过 Nudity 这个模型区分哪些是安全的封面，哪些是「不可描述」的封面。
+        </p>
+        <p>
+            当然了，这个模型并不能完全准确地和谐掉每一张需要和谐的封面，误伤也是在所难免的，但是经过我几天的测试感觉这个模型的准确率还是比较好的。
+        </p>
+        <p>
+            在这个版本中我暂时没有添加关闭这个功能的设置，如果你感觉更新完之后卡顿比较明显或者非常不喜欢这个功能的话可以先降到前一版本，如果我看到没人降到前一版本的话这个设置就不做了。
+        </p>
+    </div>
+
+    <section>
+        <h4>
+            每当你获取一张新封面之后，Nudity 会自动判断这张图是否需要和谐。为了增加识别准确性，我将一张封面拆成左中右三个部分，分别扔到 Nudity 里计算结果。
+        </h4>
+        <div class="image-container">                    
+            <img src="Images/LAR.png" alt="cut cover">
+            <p>图片来源：av15578224</p>
+        </div>
+    </section>
+
+    <section>
+        <h4>
+            Nudity 对于每一部分都会计算出一个 SFW（Safe For Work）值，左中右任何一个的值低于 70% 的时候就认定这张封面需要被和谐。
+        </h4>
+        <div class="image-container">                    
+            <img src="Images/LAR-SFW.png" alt="cover with SFW value">
+            <p>可以看到这张图的 SFW 值是比较高的</p>
+        </div>
+    </section>
+
+    <section>
+        <h4>
+            基本实现就是这样的。下面是基于我几天来的实验得出的规律：
+        </h4>
+        <ol>
+            <li>Nudity 对三次元福利图的识别率比较高，大部分都能准确识别出来</li>
+            <li>但是它对泳装图计算出的 SFW 值普遍较高，不禁让我怀疑作者针对泳装做过优化（姑且称之为优化吧）</li>
+            <li>Nudity 对二次元福利图的识别率也比较高，准确度与三次元差不多</li>
+            <li>Nudity 对 MMD 的计算结果比较玄学，容易出现漏网之鱼，不过好在基本没人下 MMD 的封面</li>
+        </ol>
+    </section>
+
+    <section>
+        <h4>
+            那有没有规律之外的特例呢？这个当然是有的，并且这个例子让我一度想放弃这个模型……
+        </h4>
+        <div class="image-container">
+            <img src="Images/shouban.png" alt="shou ban image">
+            <p>还记得这个98个逸的手办么？</p>
+        </div>
+        <h4>
+            你可能会觉得这个封面没什么，其实我也是这么觉得，但是 Nudity 计算出的 SFW 值却只有 <b>10% 左右。</b>很多正儿八经的福利图都达不到这个数值。
+        </h4>
+    </section>
+
+    <section>
+        <h4>
+            まあ〜差不多要说的就是这些了，希望各位玩的开心。最后给你们展示下我几天来的测试结果：
+        </h4>
+        <div class="image-container">
+            <img src="Images/my-history.png" alt="my history">
+            <p>里面堆满了不可描述啊喂 (ーー゛)</p>
+        </div>
+    </section>
+
+    <div class="go-back">
+        <a href="#top">返回顶部</a>            
+    </div>
+</body>
+</html>

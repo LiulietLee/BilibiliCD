@@ -58,7 +58,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         menu.action = #selector(SWRevealViewController.revealToggle(_:))
         view.addGestureRecognizer(revealViewController().panGestureRecognizer())
         
-        if !isAppAlreadyLaunchedOnce() {
+        if !isAppAlreadyLaunchedOnce {
             showTutMessage()
         }
     }
@@ -69,22 +69,11 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         isAnimatedOnce = true
     }
     
-    fileprivate func isAppAlreadyLaunchedOnce() -> Bool {
-        let defaults = UserDefaults.standard
-        
-        if defaults.string(forKey: "isAppAlreadyLaunchedOnce") != nil{
-            return true
-        } else {
-            defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
-            return false
-        }
-    }
-    
     fileprivate func showTutMessage() {
         let dialog = LLDialog()
         dialog.title = "(=・ω・=)"
         dialog.message = "想看看历史记录「里世界」的使用方法么？"
-        dialog.setNegativeButton(withTitle: "不用了")
+        dialog.setNegativeButton(withTitle: "可以", target: self, action: #selector(showTutorial))
         dialog.setPositiveButton(withTitle: "好的", target: self, action: #selector(showTutorial))
         dialog.show()
     }

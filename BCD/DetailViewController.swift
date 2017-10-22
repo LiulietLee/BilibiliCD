@@ -55,7 +55,7 @@ class DetailViewController: UIViewController {
         widthConstraint.constant *= 2.0
         xConstraint.constant *= 2.0
         yConstraint.constant *= 2.0
-        UIView.animate(withDuration: 0.6) {
+        UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()
         }
     }

@@ -82,6 +82,25 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         let backItem = UIBarButtonItem()
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
+        
+        if !isAppAlreadyLaunchedTwice {
+            showTutMessage()
+        }
+    }
+    
+    fileprivate func showTutMessage() {
+        let dialog = LLDialog()
+        dialog.title = "(=・ω・=)"
+        dialog.message = "想了解下「自动和谐」的什么东西嘛？"
+        dialog.setNegativeButton(withTitle: "可以", target: self, action: #selector(showTutorial))
+        dialog.setPositiveButton(withTitle: "好的", target: self, action: #selector(showTutorial))
+        dialog.show()
+    }
+    
+    @objc fileprivate func showTutorial() {
+        let vc = HisTutViewController()
+        vc.page = "AutoHide"
+        present(vc, animated: true, completion: nil)
     }
     
     @IBAction func numberButtonTapped(_ sender: UIButton) {

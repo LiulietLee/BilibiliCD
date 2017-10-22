@@ -152,9 +152,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate {
         enableButtons()
         loadingView.dismiss()
         animateView()
-        DispatchQueue.global(qos: .userInteractive).async {
-            self.addItemToDB()
-        }
+        addItemToDB()
     }
     
     fileprivate func addItemToDB() {
