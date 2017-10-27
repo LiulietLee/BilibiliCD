@@ -17,7 +17,9 @@ class SourceTableViewController: UITableViewController {
         ("ApolloZhu/MaterialKit", "https://github.com/ApolloZhu/MaterialKit/blob/master"),
         ("John-Lluch/SWRevealViewController", "https://github.com/John-Lluch/SWRevealViewController/blob/master"),
         ("maximbilan/iOS-Shared-CoreData-Storage-for-App-Groups", "https://github.com/maximbilan/iOS-Shared-CoreData-Storage-for-App-Groups"),
-        ("ph1ps/Nudity-CoreML", "https://github.com/ph1ps/Nudity-CoreML")]
+        ("ph1ps/Nudity-CoreML", "https://github.com/ph1ps/Nudity-CoreML"),
+        ("marcosgriselli/ViewAnimator", "https://github.com/marcosgriselli/ViewAnimator"),
+        ("imxieyi/waifu2x-ios", "https://github.com/imxieyi/waifu2x-ios")]
     
     override func viewDidLoad() {
         super.viewDidLoad()

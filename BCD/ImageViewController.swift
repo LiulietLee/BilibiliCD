@@ -9,7 +9,7 @@
 import UIKit
 import ViewAnimator
 
-class ImageViewController: UIViewController, VideoCoverDelegate {
+class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -155,13 +155,20 @@ class ImageViewController: UIViewController, VideoCoverDelegate {
         addItemToDB()
     }
     
+    func scaleSucceed(scaledImage: UIImage) {
+        imageView.image = scaledImage
+        dataModel.changeOriginCover(of: itemFromHistory!, image: scaledImage)
+    }
+    
     fileprivate func addItemToDB() {
-        dataModel.addNewHistory(av: cover!.shortDescription,
-            date: Date(),
-            image: imageView.image!,
-            title: titleLabel.text!,
-            up: authorLabel.text!,
-            url: urlLabel.text!)        
+        let image = imageView.image!
+        let title = titleLabel.text!
+        let upName = authorLabel.text!
+        let url = urlLabel.text!
+        
+        DispatchQueue.global(qos: .userInteractive).async {
+            self.itemFromHistory = self.dataModel.addNewHistory(av: self.cover!.shortDescription, date: Date(), image: image, title: title, up: upName, url: url)
+        }
     }
     
     func connectError() {
@@ -185,12 +192,16 @@ class ImageViewController: UIViewController, VideoCoverDelegate {
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! DetailViewController
-        vc.image = imageView.image!
-        
         let backItem = UIBarButtonItem()
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
+
+        if let vc = segue.destination as? DetailViewController {
+            vc.image = imageView.image!
+        } else if let vc = segue.destination as? Waifu2xViewController {
+            vc.originImage = imageView.image
+            vc.delegate = self
+        }
     }
     
 }

@@ -539,11 +539,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5Ou-hn-z2Q">
-                        <barButtonItem key="rightBarButtonItem" image="ic_file_download" id="0oG-Vt-gM6">
-                            <connections>
-                                <action selector="downloadButtonTapped:" destination="J1l-gt-L0q" id="MLX-AS-MC9"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="ic_file_download" id="0oG-Vt-gM6">
+                                <connections>
+                                    <action selector="downloadButtonTapped:" destination="J1l-gt-L0q" id="MLX-AS-MC9"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="2x" id="dZL-My-eYI">
+                                <connections>
+                                    <segue destination="bBP-L5-6UR" kind="show" id="IKd-8F-zZq"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="authorLabel" destination="odB-KX-ctA" id="jVD-uh-FZZ"/>
@@ -621,7 +628,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2406" y="36"/>
+            <point key="canvasLocation" x="3563" y="514"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="Whc-xL-60m">
@@ -1313,6 +1320,55 @@
             </objects>
             <point key="canvasLocation" x="2783" y="-675"/>
         </scene>
+        <!--无损放大（beta）-->
+        <scene sceneID="mot-uj-qLi">
+            <objects>
+                <viewController id="bBP-L5-6UR" customClass="Waifu2xViewController" customModule="BilibiliCD" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vyg-Fb-xa9"/>
+                        <viewControllerLayoutGuide type="bottom" id="Atl-bW-8cP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ri0-xV-fBD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="balabala~" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="15L-wZ-pVX">
+                                <rect key="frame" x="16" y="72" width="288" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vaA-To-T4u">
+                                <rect key="frame" x="124" y="120" width="73" height="63"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="36"/>
+                                <state key="normal" title="开始">
+                                    <color key="titleColor" red="0.4011195917" green="0.80133390579999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startScale" destination="bBP-L5-6UR" eventType="touchUpInside" id="Jkl-fy-IKy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="15L-wZ-pVX" firstAttribute="top" secondItem="Vyg-Fb-xa9" secondAttribute="bottom" constant="8" id="YAg-jo-NT5"/>
+                            <constraint firstItem="15L-wZ-pVX" firstAttribute="trailing" secondItem="ri0-xV-fBD" secondAttribute="trailingMargin" id="axx-qN-SFl"/>
+                            <constraint firstItem="15L-wZ-pVX" firstAttribute="leading" secondItem="ri0-xV-fBD" secondAttribute="leadingMargin" id="seX-63-T0f"/>
+                            <constraint firstItem="vaA-To-T4u" firstAttribute="centerX" secondItem="ri0-xV-fBD" secondAttribute="centerX" id="tEQ-Gd-ZbP"/>
+                            <constraint firstItem="vaA-To-T4u" firstAttribute="top" secondItem="15L-wZ-pVX" secondAttribute="bottom" constant="8" id="vg4-jS-EVJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="无损放大（beta）" id="ab2-Wo-toz"/>
+                    <connections>
+                        <outlet property="startButton" destination="vaA-To-T4u" id="Wgb-p1-w43"/>
+                        <outlet property="textView" destination="15L-wZ-pVX" id="QXD-08-ODY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mWd-Mw-Ns4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3562.5" y="-209.1549295774648"/>
+        </scene>
     </scenes>
     <resources>
         <image name="akkarin" width="250" height="250"/>
@@ -1330,6 +1386,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="pFk-eZ-ib2"/>
-        <segue reference="4Jb-o1-lRn"/>
+        <segue reference="Eeb-QN-AAw"/>
     </inferredMetricsTieBreakers>
 </document>

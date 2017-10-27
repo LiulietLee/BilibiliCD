@@ -47,35 +47,36 @@ class CoreDataModel {
         return items
     }
     
-    func addNewHistory(av: String, date: Date, image: UIImage, title: String, up: String, url: String) {
+    func addNewHistory(av: String, date: Date, image: UIImage, title: String, up: String, url: String) -> History {
         refreshHistory()
 
-        DispatchQueue.global(qos: .userInteractive).async {
-            let list = self.history
-            if list.count != 0, list[0].up == up && list[0].av == av { return }
-            
-            let originCoverData = image.toData()
-            let resizedCoverData = image.resize().toData()
-            
-            let entity = NSEntityDescription.entity(forEntityName: "History", in: self.context)!
-            let newItem = History(entity: entity, insertInto: self.context)
-            newItem.av = av
-            newItem.date = date
-            newItem.image = resizedCoverData
-            newItem.title = title
-            newItem.up = up
-            newItem.url = url
-            newItem.isHidden = self.isNeedHid(image)
-            
-            let origEntity = NSEntityDescription.entity(forEntityName: "OriginCover", in: self.context)!
-            let newOrig = OriginCover(entity: origEntity, insertInto: self.context)
-            newOrig.image = originCoverData
-            
-            newItem.origin = newOrig
-            newOrig.history = newItem
-            
-            self.saveContext()
-        }
+        let entity = NSEntityDescription.entity(forEntityName: "History", in: self.context)!
+        let newItem = History(entity: entity, insertInto: self.context)
+
+        let list = self.history
+        if list.count != 0, list[0].up == up && list[0].av == av { return list[0] }
+        
+        let originCoverData = image.toData()
+        let resizedCoverData = image.resize().toData()
+        
+        newItem.av = av
+        newItem.date = date
+        newItem.image = resizedCoverData
+        newItem.title = title
+        newItem.up = up
+        newItem.url = url
+        newItem.isHidden = self.isNeedHid(image)
+        
+        let origEntity = NSEntityDescription.entity(forEntityName: "OriginCover", in: self.context)!
+        let newOrig = OriginCover(entity: origEntity, insertInto: self.context)
+        newOrig.image = originCoverData
+        
+        newItem.origin = newOrig
+        newOrig.history = newItem
+        
+        self.saveContext()
+        
+        return newItem
     }
     
     func isNeedHid(_ cover: UIImage) -> Bool {
@@ -113,6 +114,11 @@ class CoreDataModel {
         }
         
         return false
+    }
+    
+    func changeOriginCover(of item: History, image: UIImage) {
+        item.origin?.image = image.toData()
+        saveContext()
     }
     
     func changeIsHiddenOf(_ item: History) {
