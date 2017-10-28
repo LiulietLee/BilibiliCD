@@ -14,7 +14,6 @@ protocol Waifu2xDelegate {
 
 class Waifu2xViewController: UIViewController {
     
-    @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var startButton: UIButton!
     var originImage: UIImage?
     var delegate: Waifu2xDelegate?
@@ -22,13 +21,19 @@ class Waifu2xViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        textView.text = "注意这次是真的 beta 版测试！\n"
         
         if originImage == nil {
             startButton.isEnabled = false
         }
         
         print("image width: \(originImage!.size.width), height: \(originImage!.size.height)")
+    }
+    
+    @IBAction func openTut() {
+        let vc = HisTutViewController()
+        vc.page = "AboutWaifu2x"
+        present(vc, animated: true, completion: nil)
+
     }
     
     @IBAction func startScale() {

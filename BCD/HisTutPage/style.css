@@ -58,7 +58,7 @@ a {
 section ol {
     padding: 0 20px 0 40px;
     margin-top: 20px;
-    border-left: 3px solid #999;
+    border-left: 4px solid #aaa;
 }
 section ol li {
     letter-spacing: 0.38px;

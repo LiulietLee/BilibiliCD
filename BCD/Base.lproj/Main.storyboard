@@ -1332,15 +1332,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="balabala~" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="15L-wZ-pVX">
-                                <rect key="frame" x="16" y="72" width="288" height="40"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vaA-To-T4u">
-                                <rect key="frame" x="124" y="120" width="73" height="63"/>
+                                <rect key="frame" x="124" y="433" width="73" height="63"/>
                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="36"/>
                                 <state key="normal" title="开始">
                                     <color key="titleColor" red="0.4011195917" green="0.80133390579999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1349,20 +1342,42 @@
                                     <action selector="startScale" destination="bBP-L5-6UR" eventType="touchUpInside" id="Jkl-fy-IKy"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="注意：这次是真的 beta 测试！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="j8M-XY-9fi">
+                                <rect key="frame" x="24" y="72" width="272" height="28"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="在点「开始」之前请务必看看" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zAO-Rx-cEl">
+                                <rect key="frame" x="24" y="108" width="260" height="28"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grA-eJ-n4g">
+                                <rect key="frame" x="221" y="144" width="63" height="40"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <state key="normal" title="➤ 这个"/>
+                                <connections>
+                                    <action selector="openTut" destination="bBP-L5-6UR" eventType="touchUpInside" id="fsk-JR-Fdt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="15L-wZ-pVX" firstAttribute="top" secondItem="Vyg-Fb-xa9" secondAttribute="bottom" constant="8" id="YAg-jo-NT5"/>
-                            <constraint firstItem="15L-wZ-pVX" firstAttribute="trailing" secondItem="ri0-xV-fBD" secondAttribute="trailingMargin" id="axx-qN-SFl"/>
-                            <constraint firstItem="15L-wZ-pVX" firstAttribute="leading" secondItem="ri0-xV-fBD" secondAttribute="leadingMargin" id="seX-63-T0f"/>
+                            <constraint firstItem="j8M-XY-9fi" firstAttribute="top" secondItem="Vyg-Fb-xa9" secondAttribute="bottom" constant="8" id="2zW-0x-enE"/>
+                            <constraint firstItem="j8M-XY-9fi" firstAttribute="centerX" secondItem="ri0-xV-fBD" secondAttribute="centerX" id="5Ju-uf-ioF"/>
+                            <constraint firstItem="grA-eJ-n4g" firstAttribute="top" secondItem="zAO-Rx-cEl" secondAttribute="bottom" constant="8" id="DqB-80-Grw"/>
+                            <constraint firstItem="zAO-Rx-cEl" firstAttribute="top" secondItem="j8M-XY-9fi" secondAttribute="bottom" constant="8" id="JSU-jE-8ef"/>
+                            <constraint firstItem="zAO-Rx-cEl" firstAttribute="leading" secondItem="j8M-XY-9fi" secondAttribute="leading" id="iBo-sa-djr"/>
+                            <constraint firstItem="grA-eJ-n4g" firstAttribute="trailing" secondItem="zAO-Rx-cEl" secondAttribute="trailing" id="jOC-ym-vUt"/>
+                            <constraint firstItem="Atl-bW-8cP" firstAttribute="top" secondItem="vaA-To-T4u" secondAttribute="bottom" constant="72" id="qPR-h7-Pur"/>
                             <constraint firstItem="vaA-To-T4u" firstAttribute="centerX" secondItem="ri0-xV-fBD" secondAttribute="centerX" id="tEQ-Gd-ZbP"/>
-                            <constraint firstItem="vaA-To-T4u" firstAttribute="top" secondItem="15L-wZ-pVX" secondAttribute="bottom" constant="8" id="vg4-jS-EVJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="无损放大（beta）" id="ab2-Wo-toz"/>
                     <connections>
                         <outlet property="startButton" destination="vaA-To-T4u" id="Wgb-p1-w43"/>
-                        <outlet property="textView" destination="15L-wZ-pVX" id="QXD-08-ODY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mWd-Mw-Ns4" userLabel="First Responder" sceneMemberID="firstResponder"/>
