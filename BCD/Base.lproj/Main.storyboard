@@ -557,6 +557,7 @@
                         <outlet property="downloadButton" destination="0oG-Vt-gM6" id="A8A-pY-jCw"/>
                         <outlet property="imageView" destination="Zsa-yu-und" id="ULy-o4-fq7"/>
                         <outlet property="pushButton" destination="Fjh-fO-3X6" id="eUZ-th-yGD"/>
+                        <outlet property="scaleButton" destination="dZL-My-eYI" id="j0k-rY-0ZN"/>
                         <outlet property="titleLabel" destination="FLk-Ji-R8x" id="w7n-fL-1RN"/>
                         <outlet property="urlLabel" destination="Aci-Vb-666" id="HW4-eP-VTW"/>
                     </connections>
@@ -1340,6 +1341,7 @@
                                 </state>
                                 <connections>
                                     <action selector="startScale" destination="bBP-L5-6UR" eventType="touchUpInside" id="Jkl-fy-IKy"/>
+                                    <segue destination="iSx-S3-BJY" kind="presentation" id="mjy-wT-uLT"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="注意：这次是真的 beta 测试！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="j8M-XY-9fi">
@@ -1383,6 +1385,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mWd-Mw-Ns4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3562.5" y="-209.1549295774648"/>
+        </scene>
+        <!--Scaling View Controller-->
+        <scene sceneID="Q6j-bn-sMR">
+            <objects>
+                <viewController id="iSx-S3-BJY" customClass="ScalingViewController" customModule="BilibiliCD" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nQ4-gh-5AT"/>
+                        <viewControllerLayoutGuide type="bottom" id="DB8-2G-PV7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LFp-si-MUe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P80-Y2-ItF">
+                                <rect key="frame" x="0.0" y="62" width="320" height="165"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="P80-Y2-ItF" secondAttribute="height" multiplier="440:227" id="dgs-nu-aVY"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="图片尺寸：1080 x 768" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HgV-6J-QrD">
+                                <rect key="frame" x="16" y="267" width="288" height="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <color key="textColor" red="0.9219921875" green="0.9219921875" blue="0.9219921875" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="预计时间：300s" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOv-la-xwi">
+                                <rect key="frame" x="16" y="309" width="288" height="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <color key="textColor" red="0.9219921875" green="0.9219921875" blue="0.9219921875" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请耐心等待一下哦……" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hC7-uv-Awi">
+                                <rect key="frame" x="16" y="383" width="288" height="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <color key="textColor" red="0.9219921875" green="0.9219921875" blue="0.9219921875" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14899864792823792" green="0.14903163909912109" blue="0.14899659156799316" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hC7-uv-Awi" firstAttribute="leading" secondItem="LFp-si-MUe" secondAttribute="leadingMargin" id="2wD-ac-RrB"/>
+                            <constraint firstItem="dOv-la-xwi" firstAttribute="top" secondItem="HgV-6J-QrD" secondAttribute="bottom" constant="18" id="3oa-FM-wha"/>
+                            <constraint firstItem="dOv-la-xwi" firstAttribute="trailing" secondItem="LFp-si-MUe" secondAttribute="trailingMargin" id="6AT-0y-i3P"/>
+                            <constraint firstItem="P80-Y2-ItF" firstAttribute="top" secondItem="nQ4-gh-5AT" secondAttribute="bottom" constant="42" id="M6S-qf-Ojm"/>
+                            <constraint firstAttribute="trailing" secondItem="P80-Y2-ItF" secondAttribute="trailing" id="Mmh-6i-hiB"/>
+                            <constraint firstItem="HgV-6J-QrD" firstAttribute="leading" secondItem="LFp-si-MUe" secondAttribute="leadingMargin" id="OSj-ni-MnS"/>
+                            <constraint firstItem="P80-Y2-ItF" firstAttribute="leading" secondItem="LFp-si-MUe" secondAttribute="leading" id="dmq-CB-OTu"/>
+                            <constraint firstItem="HgV-6J-QrD" firstAttribute="top" secondItem="P80-Y2-ItF" secondAttribute="bottom" constant="40" id="lpb-8K-f7K"/>
+                            <constraint firstItem="hC7-uv-Awi" firstAttribute="trailing" secondItem="LFp-si-MUe" secondAttribute="trailingMargin" id="otF-Er-Uzd"/>
+                            <constraint firstItem="hC7-uv-Awi" firstAttribute="top" secondItem="dOv-la-xwi" secondAttribute="bottom" constant="50" id="p56-i6-kpA"/>
+                            <constraint firstItem="HgV-6J-QrD" firstAttribute="trailing" secondItem="LFp-si-MUe" secondAttribute="trailingMargin" id="rc8-kB-DDx"/>
+                            <constraint firstItem="dOv-la-xwi" firstAttribute="leading" secondItem="LFp-si-MUe" secondAttribute="leadingMargin" id="ycH-er-ah1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="P80-Y2-ItF" id="AN9-bb-28a"/>
+                        <outlet property="sizeLabel" destination="HgV-6J-QrD" id="NtN-O6-iSD"/>
+                        <outlet property="timeLabel" destination="dOv-la-xwi" id="SM4-Oe-eNy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CjG-sC-som" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4282.5" y="-209.1549295774648"/>
         </scene>
     </scenes>
     <resources>

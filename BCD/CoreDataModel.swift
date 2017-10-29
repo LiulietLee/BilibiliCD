@@ -191,7 +191,7 @@ class CoreDataModel {
 
 extension UIImage {
     func toData() -> Data {
-        return UIImagePNGRepresentation(self)! as Data
+        return UIImagePNGRepresentation(self)!
     }
     
     func resize() -> UIImage {

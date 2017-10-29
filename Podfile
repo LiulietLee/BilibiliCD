@@ -4,7 +4,7 @@
 target 'BCD' do
     use_frameworks!
     pod 'Firebase/Core'
-    pod 'FirebaseMessaging', '2.0.0'
+    pod 'FirebaseMessaging'
     pod 'FirebaseInstanceID'
     pod 'SWRevealViewController', :git => 'https://github.com/John-Lluch/SWRevealViewController.git'
     pod 'MaterialKit', :git => 'https://github.com/ApolloZhu/MaterialKit.git'

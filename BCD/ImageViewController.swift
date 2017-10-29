@@ -17,6 +17,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
     @IBOutlet weak var urlLabel: UILabel!
     @IBOutlet weak var downloadButton: UIBarButtonItem!
     @IBOutlet weak var pushButton: UIButton!
+    @IBOutlet weak var scaleButton: UIBarButtonItem!
     
     var cover: BilibiliCover?
     var itemFromHistory: History?
@@ -130,11 +131,13 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
     
     fileprivate func enableButtons() {
         downloadButton.isEnabled = true
+        scaleButton.isEnabled = true
         pushButton.isEnabled = true
     }
     
     fileprivate func disableButtons() {
         downloadButton.isEnabled = false
+        scaleButton.isEnabled = false
         pushButton.isEnabled = false
     }
     

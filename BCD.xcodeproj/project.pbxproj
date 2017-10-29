@@ -70,6 +70,9 @@
 		4FE9A5651FA30389002CABF9 /* anime_noise3_model.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4FE9A55B1FA30389002CABF9 /* anime_noise3_model.mlmodel */; };
 		4FE9A5661FA30389002CABF9 /* anime_noise0_model.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4FE9A55C1FA30389002CABF9 /* anime_noise0_model.mlmodel */; };
 		4FF426D61F1FA61E00A8EF79 /* FindArtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF426D51F1FA61E00A8EF79 /* FindArtViewController.swift */; };
+		4FF6C4A91FA4324200A34870 /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF6C4A81FA4324200A34870 /* UIImage+Gif.swift */; };
+		4FF6C4AB1FA4337C00A34870 /* scaling.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4FF6C4AA1FA4337C00A34870 /* scaling.gif */; };
+		4FF6C4AD1FA44BD300A34870 /* ScalingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF6C4AC1FA44BD300A34870 /* ScalingViewController.swift */; };
 		4FFB80D31F970B2E00626CD7 /* Nudity.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB80D21F970B2E00626CD7 /* Nudity.mlmodel */; };
 		4FFB80D81F970B7800626CD7 /* UIImageToCVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB80D71F970B7800626CD7 /* UIImageToCVPixelBuffer.swift */; };
 		4FFB80D91F970B8600626CD7 /* Nudity.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB80D21F970B2E00626CD7 /* Nudity.mlmodel */; };
@@ -177,6 +180,9 @@
 		4FE9A55B1FA30389002CABF9 /* anime_noise3_model.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = anime_noise3_model.mlmodel; sourceTree = "<group>"; };
 		4FE9A55C1FA30389002CABF9 /* anime_noise0_model.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = anime_noise0_model.mlmodel; sourceTree = "<group>"; };
 		4FF426D51F1FA61E00A8EF79 /* FindArtViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindArtViewController.swift; sourceTree = "<group>"; };
+		4FF6C4A81FA4324200A34870 /* UIImage+Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
+		4FF6C4AA1FA4337C00A34870 /* scaling.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = scaling.gif; sourceTree = "<group>"; };
+		4FF6C4AC1FA44BD300A34870 /* ScalingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalingViewController.swift; sourceTree = "<group>"; };
 		4FFB80D21F970B2E00626CD7 /* Nudity.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Nudity.mlmodel; sourceTree = "<group>"; };
 		4FFB80D71F970B7800626CD7 /* UIImageToCVPixelBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageToCVPixelBuffer.swift; sourceTree = "<group>"; };
 		52BFDF781F5B2D29002EE246 /* LLDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLDialog.swift; sourceTree = "<group>"; };
@@ -253,6 +259,7 @@
 				4F04A0D31F23195A007D86B1 /* SetHistoryNumViewController.swift */,
 				4F76B87F1F8FB4FD00F714B9 /* HisTutViewController.swift */,
 				4FE9A5421FA30023002CABF9 /* Waifu2xViewController.swift */,
+				4FF6C4AC1FA44BD300A34870 /* ScalingViewController.swift */,
 				4F04A0D51F2321EB007D86B1 /* NavigationController */,
 			);
 			name = ViewController;
@@ -266,6 +273,7 @@
 				4F3077B71F1768E000E1C1AF /* CoreDataModel.swift */,
 				4F99A9951F21F0B600AE4143 /* BCD.xcdatamodeld */,
 				4F6C86351F9C6C0700417A23 /* CheckLaunchTime.swift */,
+				4FF6C4A81FA4324200A34870 /* UIImage+Gif.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -273,14 +281,15 @@
 		4F5BE2F71EFAA12B0054C53F /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
-				52BFDF7A1F5B2D30002EE246 /* Material Design */,
+				4FF6C4AA1FA4337C00A34870 /* scaling.gif */,
 				4F5041C91F18AF1C00B59337 /* Assets.xcassets */,
 				4FE8FF491EF4FC0600D31840 /* LaunchScreen.storyboard */,
 				4FE8FF411EF4FC0600D31840 /* Main.storyboard */,
-				4FB3D9601F09DD9C0043066B /* LoadingView.swift */,
 				4F2AFBA51F21FC6400AA7CC7 /* HistoryCell.swift */,
 				4F76B8A61F90865B00F714B9 /* DetectiPhoneX.swift */,
 				4F8385AC1F93AB050018D733 /* AnimateView.swift */,
+				52BFDF781F5B2D29002EE246 /* LLDialog.swift */,
+				4FB3D9601F09DD9C0043066B /* LoadingView.swift */,
 			);
 			name = "User Interface";
 			sourceTree = "<group>";
@@ -361,14 +370,6 @@
 				4FFB80D71F970B7800626CD7 /* UIImageToCVPixelBuffer.swift */,
 			);
 			name = "Core ML";
-			sourceTree = "<group>";
-		};
-		52BFDF7A1F5B2D30002EE246 /* Material Design */ = {
-			isa = PBXGroup;
-			children = (
-				52BFDF781F5B2D29002EE246 /* LLDialog.swift */,
-			);
-			name = "Material Design";
 			sourceTree = "<group>";
 		};
 		52E4E47F1F76CF95008EF09C /* Shared */ = {
@@ -513,6 +514,7 @@
 				4F0C72771F7CD5DE006C9BC5 /* GoogleService-Info.plist in Resources */,
 				4F5041CA1F18AF1C00B59337 /* Assets.xcassets in Resources */,
 				4FE8FF431EF4FC0600D31840 /* Main.storyboard in Resources */,
+				4FF6C4AB1FA4337C00A34870 /* scaling.gif in Resources */,
 				4F76B8A51F905CB200F714B9 /* HisTutPage in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -605,6 +607,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FF6C4A91FA4324200A34870 /* UIImage+Gif.swift in Sources */,
 				4FE8FF401EF4FC0600D31840 /* MainViewController.swift in Sources */,
 				4FE9A5661FA30389002CABF9 /* anime_noise0_model.mlmodel in Sources */,
 				4FE9A54F1FA3019C002CABF9 /* UIImage+MultiArray.swift in Sources */,
@@ -642,6 +645,7 @@
 				4FE9A5641FA30389002CABF9 /* anime_noise2_model.mlmodel in Sources */,
 				4F9B213F1F16187000D3BDD2 /* AboutViewController.swift in Sources */,
 				4FE8FF731EF5095B00D31840 /* ImageViewController.swift in Sources */,
+				4FF6C4AD1FA44BD300A34870 /* ScalingViewController.swift in Sources */,
 				4FE9A55E1FA30389002CABF9 /* anime_noise1_model.mlmodel in Sources */,
 				4FE9A5521FA3019C002CABF9 /* UIImage+Bicubic.swift in Sources */,
 				4F76B8A71F90865B00F714B9 /* DetectiPhoneX.swift in Sources */,
