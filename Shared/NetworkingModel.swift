@@ -188,6 +188,32 @@ class NetworkingModel {
         tesk.resume()
     }
     
+    open func sendScaleData(type: String, size: CGSize, time: Double) {
+        let stringUrl = "http://www.bilibilicd.tk/ios/waifu2x/?iphone=\(type)&time=\(time)&len=\(size.height)&wid=\(size.width)"
+        let url = URL(string: stringUrl.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed)!)!
+        let task = session.dataTask(with: url) { data, response, error in
+            if let err = error {
+                print(err)
+            } else {
+                if let content = data {
+                    do {
+                        struct statusWrapper: Decodable {
+                            let status: String
+                        }
+                        
+                        let json = try JSONDecoder().decode(statusWrapper.self, from: content)
+                        
+                        print(json.status)
+                    } catch {
+                        print("data error")
+                    }
+                }
+            }
+        }
+        
+        task.resume()
+    }
+    
     private func getImage(fromUrlPath path: String) {
         let url = URL(string: path)
         let request = URLRequest(url: url!)

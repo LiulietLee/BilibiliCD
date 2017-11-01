@@ -8,29 +8,29 @@
 
 import UIKit
 
-public var isAppAlreadyLaunchedOnce: Bool {
+public var isNeedToDisplayHisTut: Bool {
     let defaults = UserDefaults.standard
     
-    if defaults.string(forKey: "isAppAlreadyLaunchedOnce") != nil{
-        return true
-    } else {
-        defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
+    if defaults.string(forKey: "isNeedToDisplayHisTut") != nil{
         return false
+    } else {
+        defaults.set(true, forKey: "isNeedToDisplayHisTut")
+        return true
     }
 }
 
-public var isAppAlreadyLaunchedTwice: Bool {
+public var isNeedToDisplayAutoHis: Bool {
     let defaults = UserDefaults.standard
     
-    if defaults.string(forKey: "isAppAlreadyLaunchedOnce") != nil{
-        if defaults.string(forKey: "isAppAlreadyLaunchedTwice") != nil{
-            return true
-        } else {
-            defaults.set(true, forKey: "isAppAlreadyLaunchedTwice")
+    if defaults.string(forKey: "isNeedToDisplayHisTut") != nil{
+        if defaults.string(forKey: "isNeedToDisplayAutoHis") != nil{
             return false
+        } else {
+            defaults.set(true, forKey: "isNeedToDisplayAutoHis")
+            return true
         }
     } else {
-        return true
+        return false
     }
 
 }

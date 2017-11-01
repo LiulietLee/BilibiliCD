@@ -104,16 +104,16 @@ class CoreDataModel {
         return false
     }
     
-    func isExistInHistory(cover: BilibiliCover) -> Bool {
+    func isExistInHistory(cover: BilibiliCover) -> History? {
         let history = self.history
         
         for item in history {
             if item.av == cover.shortDescription {
-                return true
+                return item
             }
         }
         
-        return false
+        return nil
     }
     
     func changeOriginCover(of item: History, image: UIImage) {
@@ -155,7 +155,7 @@ class CoreDataModel {
     // MARK: - Setting
     
     private func initSetting() {
-        let initHistoryNum: Int16 = 12
+        let initHistoryNum: Int16 = 120
         let entity = NSEntityDescription.entity(forEntityName: "Setting", in: context)!
         let newItem = Setting(entity: entity, insertInto: context)
         newItem.historyNumber = initHistoryNum

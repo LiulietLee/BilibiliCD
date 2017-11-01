@@ -1183,7 +1183,7 @@
             </objects>
             <point key="canvasLocation" x="1238" y="-2143"/>
         </scene>
-        <!--开源组件许可-->
+        <!--开源组件-->
         <scene sceneID="Sgm-F5-nPb">
             <objects>
                 <tableViewController id="7By-k2-vxO" customClass="SourceTableViewController" customModule="BilibiliCD" customModuleProvider="target" sceneMemberID="viewController">
@@ -1206,7 +1206,7 @@
                             <outlet property="delegate" destination="7By-k2-vxO" id="HEN-Xy-HgK"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="开源组件许可" id="aFA-IP-1Ig">
+                    <navigationItem key="navigationItem" title="开源组件" id="aFA-IP-1Ig">
                         <barButtonItem key="leftBarButtonItem" image="ic_menu" id="GhB-Hw-ZsK"/>
                     </navigationItem>
                     <connections>
@@ -1345,19 +1345,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="注意：这次是真的 beta 测试！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="j8M-XY-9fi">
-                                <rect key="frame" x="24" y="72" width="272" height="28"/>
+                                <rect key="frame" x="24" y="88" width="272" height="28"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="在点「开始」之前请务必看看" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zAO-Rx-cEl">
-                                <rect key="frame" x="24" y="108" width="260" height="28"/>
+                                <rect key="frame" x="24" y="124" width="260" height="28"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grA-eJ-n4g">
-                                <rect key="frame" x="221" y="144" width="63" height="40"/>
+                                <rect key="frame" x="221" y="160" width="63" height="40"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                 <state key="normal" title="➤ 这个"/>
                                 <connections>
@@ -1367,7 +1367,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="j8M-XY-9fi" firstAttribute="top" secondItem="Vyg-Fb-xa9" secondAttribute="bottom" constant="8" id="2zW-0x-enE"/>
+                            <constraint firstItem="j8M-XY-9fi" firstAttribute="top" secondItem="Vyg-Fb-xa9" secondAttribute="bottom" constant="24" id="2zW-0x-enE"/>
                             <constraint firstItem="j8M-XY-9fi" firstAttribute="centerX" secondItem="ri0-xV-fBD" secondAttribute="centerX" id="5Ju-uf-ioF"/>
                             <constraint firstItem="grA-eJ-n4g" firstAttribute="top" secondItem="zAO-Rx-cEl" secondAttribute="bottom" constant="8" id="DqB-80-Grw"/>
                             <constraint firstItem="zAO-Rx-cEl" firstAttribute="top" secondItem="j8M-XY-9fi" secondAttribute="bottom" constant="8" id="JSU-jE-8ef"/>
@@ -1410,7 +1410,7 @@
                                 <color key="textColor" red="0.9219921875" green="0.9219921875" blue="0.9219921875" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="预计时间：300s" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOv-la-xwi">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="预计时间：300s" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOv-la-xwi">
                                 <rect key="frame" x="16" y="309" width="288" height="24"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <color key="textColor" red="0.9219921875" green="0.9219921875" blue="0.9219921875" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

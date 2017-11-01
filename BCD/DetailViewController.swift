@@ -52,10 +52,10 @@ class DetailViewController: UIViewController {
     }
 
     @IBAction func zoomIn(_ sender: UITapGestureRecognizer) {
-        widthConstraint.constant *= 2.0
-        xConstraint.constant *= 2.0
-        yConstraint.constant *= 2.0
-        UIView.animate(withDuration: 0.5) {
+        widthConstraint.constant *= 3.0
+        xConstraint.constant *= 3.0
+        yConstraint.constant *= 3.0
+        UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
     }

@@ -32,7 +32,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, VideoCoverDelega
     
     private func scanPasteBoard() {
         if let cover = BilibiliCover.fromPasteboard(), cover != self.cover {
-            if dataModel.isExistInHistory(cover: cover) {
+            if dataModel.isExistInHistory(cover: cover) != nil {
                 loadingText.text = "这个封面似乎已经\n在历史记录里了呢"
                 return
             }
@@ -61,7 +61,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, VideoCoverDelega
         downloadButton.isEnabled = true
         loadingText.removeFromSuperview()
         
-        dataModel.addNewHistory(av: cover!.shortDescription,
+        _ = dataModel.addNewHistory(av: cover!.shortDescription,
                                 date: Date(),
                                 image: imageView.image!,
                                 title: titleLabel.text!,

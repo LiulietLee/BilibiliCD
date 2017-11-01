@@ -17,6 +17,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var menu: UIBarButtonItem!
     fileprivate var repeatTappingTime = 0
     fileprivate var dataModel = CoreDataModel()
+    fileprivate var existCover: History? = nil
     var cover = BilibiliCover(number: 0, type: .video) {
         didSet {
             avLabel?.text = cover.shortDescription
@@ -59,7 +60,9 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         if isShowingImage { return }
         if let newCover = BilibiliCover.fromPasteboard() {
             self.cover = newCover
-            if !dataModel.isExistInHistory(cover: newCover) {
+            if let temp = dataModel.isExistInHistory(cover: newCover) {
+                existCover = temp
+            } else {
                 isShowingImage = true
                 let storyBoard = UIStoryboard(name: "Main", bundle:nil)
                 let nextViewController = storyBoard.instantiateViewController(withIdentifier: "image controller") as! ImageViewController
@@ -83,7 +86,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
         
-        if !isAppAlreadyLaunchedTwice {
+        if isNeedToDisplayAutoHis {
             showTutMessage()
         }
     }
@@ -123,7 +126,10 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        (segue.destination as? ImageViewController)?.cover = cover
+        if let vc = segue.destination as? ImageViewController {
+            vc.cover = cover
+            vc.itemFromHistory = existCover
+        }
     }
     
 }
