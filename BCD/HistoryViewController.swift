@@ -156,14 +156,16 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HistoryCell
         
         if !history[indexPath.row].isHidden || isShowingFullHistory {
-            cell.titleLabel.text = history[indexPath.row].title!
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy.MM.dd hh:mm"
-            cell.dateLabel.text = formatter.string(from: history[indexPath.row].date! as Date)
-            DispatchQueue.global(qos: .userInteractive).async {
-                let image = UIImage(data: self.history[indexPath.row].image! as Data, scale: 1.0)!
-                DispatchQueue.main.async {
-                    cell.coverView.image = image
+            if history[indexPath.row].title != nil {
+                cell.titleLabel.text = history[indexPath.row].title!
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy.MM.dd hh:mm"
+                cell.dateLabel.text = formatter.string(from: history[indexPath.row].date! as Date)
+                DispatchQueue.global(qos: .userInteractive).async {
+                    let image = UIImage(data: self.history[indexPath.row].image! as Data, scale: 1.0)!
+                    DispatchQueue.main.async {
+                        cell.coverView.image = image
+                    }
                 }
             }
         } else {

@@ -54,7 +54,7 @@ extension BilibiliCover {
     static func fromPasteboard() -> BilibiliCover? {
         if let urlString = UIPasteboard.general.string {
             
-            let tempArray = Array(urlString.characters)
+            let tempArray = Array(urlString)
             var avNum = UInt64()
             var isAvNum = false, isLvNum = false, isCvNum = false
             for i in 0..<tempArray.count {
@@ -81,7 +81,6 @@ extension BilibiliCover {
                     }
                 } else { break }
             }
-            
             
             if isAvNum || isLvNum || isCvNum {
                 var type = BilibiliCover.Category.video

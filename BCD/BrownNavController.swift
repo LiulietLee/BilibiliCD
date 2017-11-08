@@ -9,5 +9,5 @@
 import UIKit
 
 class BrownNavController: ColoredNavController {
-    override var navbarTintColor: UIColor { return #colorLiteral(red: 0.792, green: 0.694, blue: 0.705, alpha: 1.0) }
+    override var navbarTintColor: UIColor { return #colorLiteral(red: 0.5811992188, green: 0.506980945, blue: 0.5177996961, alpha: 1) }
 }
