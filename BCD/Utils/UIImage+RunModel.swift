@@ -11,6 +11,7 @@ import UIKit
 import CoreML
 
 public enum Model {
+    case none
     case anime_noise0
     case anime_noise1
     case anime_noise2
@@ -123,6 +124,8 @@ extension UIImage {
                 }
                 resultArrays.append(resultArray)
             }
+        case .none:
+            break
         }
         
         // Merge arrays into one array

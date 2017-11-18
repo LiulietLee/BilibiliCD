@@ -1333,53 +1333,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vaA-To-T4u">
-                                <rect key="frame" x="124" y="433" width="73" height="63"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="36"/>
-                                <state key="normal" title="开始">
-                                    <color key="titleColor" red="0.4011195917" green="0.80133390579999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="rRV-i3-O9v">
+                                <rect key="frame" x="0.0" y="64" width="320" height="444"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="4Ok-Gn-PMt">
+                                        <rect key="frame" x="0.0" y="55.5" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Ok-Gn-PMt" id="VY1-dA-cBB">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGb-J3-zip">
+                                <rect key="frame" x="0.0" y="508" width="320" height="60"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="aus-2f-bXY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <state key="normal" title="放大开始">
+                                    <color key="titleColor" red="0.96460121870000004" green="0.96476620440000005" blue="0.96459084750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="startScale" destination="bBP-L5-6UR" eventType="touchUpInside" id="Jkl-fy-IKy"/>
-                                    <segue destination="iSx-S3-BJY" kind="presentation" id="mjy-wT-uLT"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="注意：这次是真的 beta 测试！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="j8M-XY-9fi">
-                                <rect key="frame" x="24" y="88" width="272" height="28"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="在点「开始」之前请务必看看" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zAO-Rx-cEl">
-                                <rect key="frame" x="24" y="124" width="260" height="28"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grA-eJ-n4g">
-                                <rect key="frame" x="221" y="160" width="63" height="40"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
-                                <state key="normal" title="➤ 这个"/>
-                                <connections>
-                                    <action selector="openTut" destination="bBP-L5-6UR" eventType="touchUpInside" id="fsk-JR-Fdt"/>
+                                    <action selector="startScale" destination="bBP-L5-6UR" eventType="touchUpInside" id="PN5-Kh-mll"/>
+                                    <segue destination="iSx-S3-BJY" kind="presentation" id="0uX-fp-HoJ"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="j8M-XY-9fi" firstAttribute="top" secondItem="Vyg-Fb-xa9" secondAttribute="bottom" constant="24" id="2zW-0x-enE"/>
-                            <constraint firstItem="j8M-XY-9fi" firstAttribute="centerX" secondItem="ri0-xV-fBD" secondAttribute="centerX" id="5Ju-uf-ioF"/>
-                            <constraint firstItem="grA-eJ-n4g" firstAttribute="top" secondItem="zAO-Rx-cEl" secondAttribute="bottom" constant="8" id="DqB-80-Grw"/>
-                            <constraint firstItem="zAO-Rx-cEl" firstAttribute="top" secondItem="j8M-XY-9fi" secondAttribute="bottom" constant="8" id="JSU-jE-8ef"/>
-                            <constraint firstItem="zAO-Rx-cEl" firstAttribute="leading" secondItem="j8M-XY-9fi" secondAttribute="leading" id="iBo-sa-djr"/>
-                            <constraint firstItem="grA-eJ-n4g" firstAttribute="trailing" secondItem="zAO-Rx-cEl" secondAttribute="trailing" id="jOC-ym-vUt"/>
-                            <constraint firstItem="Atl-bW-8cP" firstAttribute="top" secondItem="vaA-To-T4u" secondAttribute="bottom" constant="72" id="qPR-h7-Pur"/>
-                            <constraint firstItem="vaA-To-T4u" firstAttribute="centerX" secondItem="ri0-xV-fBD" secondAttribute="centerX" id="tEQ-Gd-ZbP"/>
+                            <constraint firstAttribute="bottom" secondItem="aGb-J3-zip" secondAttribute="bottom" id="1Xd-C5-bxo"/>
+                            <constraint firstItem="rRV-i3-O9v" firstAttribute="top" secondItem="Vyg-Fb-xa9" secondAttribute="bottom" id="98F-h4-V7b"/>
+                            <constraint firstItem="aGb-J3-zip" firstAttribute="top" secondItem="rRV-i3-O9v" secondAttribute="bottom" id="EOV-ix-yp1"/>
+                            <constraint firstItem="rRV-i3-O9v" firstAttribute="leading" secondItem="ri0-xV-fBD" secondAttribute="leading" id="GIG-x0-ehz"/>
+                            <constraint firstAttribute="trailing" secondItem="rRV-i3-O9v" secondAttribute="trailing" id="Yon-pe-5B2"/>
+                            <constraint firstItem="aGb-J3-zip" firstAttribute="leading" secondItem="ri0-xV-fBD" secondAttribute="leading" id="ct0-zP-5KR"/>
+                            <constraint firstAttribute="trailing" secondItem="aGb-J3-zip" secondAttribute="trailing" id="kHs-2h-oBn"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="无损放大（beta）" id="ab2-Wo-toz"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="无损放大（beta）" id="ab2-Wo-toz">
+                        <barButtonItem key="rightBarButtonItem" image="ic_help_outline" id="sUc-Is-DP5">
+                            <connections>
+                                <action selector="openTut" destination="bBP-L5-6UR" id="D6I-gL-KOa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="startButton" destination="vaA-To-T4u" id="Wgb-p1-w43"/>
+                        <outlet property="startButton" destination="aGb-J3-zip" id="1ih-oN-mnp"/>
+                        <outlet property="tableView" destination="rRV-i3-O9v" id="SVP-Uy-Llc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mWd-Mw-Ns4" userLabel="First Responder" sceneMemberID="firstResponder"/>

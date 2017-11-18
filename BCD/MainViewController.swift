@@ -45,6 +45,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.barTintColor = .bilibiliPink
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(getURLFromPasteboard),
                                                name: .BCD,

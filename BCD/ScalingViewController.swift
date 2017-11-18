@@ -19,7 +19,16 @@ class ScalingViewController: UIViewController {
     var image = UIImage()
     var delegate: ScalingViewControllerDelegate?
     fileprivate let netModel = NetworkingModel()
-    
+    var protoc = [0, 2, 1]
+    var selectNoiseModel = [
+        [Model.none, Model.anime_noise0, Model.anime_noise1, Model.anime_noise2, Model.anime_noise3],
+        [Model.none, Model.photo_noise0, Model.photo_noise1, Model.photo_noise2, Model.photo_noise3]
+    ]
+    var selectScaleModel = [
+        [Model.none, Model.anime_scale2x],
+        [Model.none, Model.photo_scale2x]
+    ]
+
     @IBOutlet weak var sizeLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView! {
@@ -47,10 +56,10 @@ class ScalingViewController: UIViewController {
         let start = DispatchTime.now()
         let background = DispatchQueue(label: "background")
         background.async {
-            let image_noise = self.image.run(model: .anime_noise2)?.reload()
+            let image_noise = self.image.run(model: self.selectNoiseModel[self.protoc[0]][self.protoc[1]])?.reload()
             DispatchQueue.main.async {
                 background.async {
-                    let image_scale = image_noise?.scale2x().reload()?.run(model: .anime_scale2x)
+                    let image_scale = image_noise?.scale2x().reload()?.run(model: self.selectNoiseModel[self.protoc[0]][self.protoc[2]])
                     DispatchQueue.main.async {
                         let end = DispatchTime.now()
                         let nanotime = end.uptimeNanoseconds - start.uptimeNanoseconds

@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import WebKit
 
 class HisTutViewController: UIViewController {
 
-    fileprivate var webView: UIWebView!
+    fileprivate var webView: WKWebView!
     fileprivate var back: UIButton!
     
     var page = "index"
@@ -19,12 +20,12 @@ class HisTutViewController: UIViewController {
         super.viewDidLoad()
 
         let size = view.bounds
-        webView = UIWebView()
+        webView = WKWebView()
         webView.frame = CGRect(x: 0.0, y: -20.0, width: size.width, height: size.height + 22.0)
         
         let url = Bundle.main.url(forResource: "HisTutPage/\(page)", withExtension: "html")
         let request = URLRequest(url: url!)
-        webView.loadRequest(request)
+        webView.load(request)
         
         let margin: CGFloat = 20.0
         let width: CGFloat = 40.0
