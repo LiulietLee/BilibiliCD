@@ -129,7 +129,11 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? ImageViewController {
             vc.cover = cover
-            vc.itemFromHistory = existCover
+            if let eCover = existCover {
+                if eCover.av == cover.shortDescription {
+                    vc.itemFromHistory = existCover
+                }
+            }
         }
     }
     
