@@ -24,7 +24,7 @@ class Waifu2xViewController: UIViewController, ScalingViewControllerDelegate, UI
     fileprivate let footer = ["次元壁不可破！", "这是选降噪力度的，建议只在图片确实有噪点时使用这个功能", ""]
     fileprivate let list = [
         ["二次元", "三次元"],
-        ["None", "Easy", "Normal", "Hard", "Lunatic"],
+        ["None", "Low", "Medium", "High", "Lunatic"],
         ["None", "2x"]
     ]
     
@@ -91,7 +91,7 @@ class Waifu2xViewController: UIViewController, ScalingViewControllerDelegate, UI
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let text = list[indexPath.section][indexPath.row]
         cell.textLabel?.text = text
-        if text == "二次元" || text == "Normal" || text == "2x" {
+        if text == "二次元" || text == "Medium" || text == "2x" {
             cell.accessoryType = .checkmark
         }
         return cell

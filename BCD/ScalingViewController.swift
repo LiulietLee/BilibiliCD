@@ -42,34 +42,53 @@ class ScalingViewController: UIViewController {
         
         let size = image.size
         sizeLabel.text = "图片尺寸：\(size.width) x \(size.height)"
-        timeLabel.text = "在我的残废 iPhone 6 上的\n预计时间：\(calculateRemainingTime(size: Double(size.width * size.height)))s"
-        
-        scaleImage()
+        timeLabel.text = "其实我是想做个进度条来着...\n但是又做不粗来...\n所以就全当这里有进度条了吧"
     }
     
-    fileprivate func calculateRemainingTime(size: Double) -> Int {
-        let time = 0.0002 * size + 11.19
-        return Int(time)
+    override func viewDidAppear(_ animated: Bool) {
+        if (protoc[1] == 0 && protoc[2] == 0) {
+            self.delegate?.scaleSucceed(scaledImage: image)
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            scaleImage()
+        }
     }
+    
+//    fileprivate func calculateRemainingTime(size: Double) -> Int {
+//        let time = 0.0002 * size + 11.19
+//        return Int(time)
+//    }
     
     fileprivate func scaleImage() {
         let start = DispatchTime.now()
         let background = DispatchQueue(label: "background")
+        
         background.async {
-            let image_noise = self.image.run(model: self.selectNoiseModel[self.protoc[0]][self.protoc[1]])?.reload()
-            DispatchQueue.main.async {
-                background.async {
-                    let image_scale = image_noise?.scale2x().reload()?.run(model: self.selectNoiseModel[self.protoc[0]][self.protoc[2]])
-                    DispatchQueue.main.async {
-                        let end = DispatchTime.now()
-                        let nanotime = end.uptimeNanoseconds - start.uptimeNanoseconds
-                        let timeInterval = Double(nanotime) / 1_000_000_000
-                        print("time: \(timeInterval)")
-                        self.delegate?.scaleSucceed(scaledImage: image_scale!)
-                        self.netModel.sendScaleData(type: Device.version().rawValue, size: self.image.size, time: timeInterval)
-                        self.dismiss(animated: true, completion: nil)
+            var image_noise = self.image
+            if (self.protoc[1] != 0) {
+                image_noise = (self.image.run(model: self.selectNoiseModel[self.protoc[0]][self.protoc[1]])?.reload())!
+            }
+        
+            // 这段还没测，撑不住了先睡觉了
+            if (self.protoc[2] != 0) {
+                DispatchQueue.main.async {
+                    background.async {
+                        let image_scale = image_noise.scale2x().reload()?.run(model: self.selectNoiseModel[self.protoc[0]][self.protoc[2]])
+                        DispatchQueue.main.async {
+                            let end = DispatchTime.now()
+                            let nanotime = end.uptimeNanoseconds - start.uptimeNanoseconds
+                            let timeInterval = Double(nanotime) / 1_000_000_000
+                            print("time: \(timeInterval)")
+                            self.delegate?.scaleSucceed(scaledImage: image_scale!)
+                            // self.netModel.sendScaleData(type: Device.version().rawValue, size: self.image.size, time: timeInterval)
+                            self.dismiss(animated: true, completion: nil)
+                        }
                     }
                 }
+            } else {
+                self.delegate?.scaleSucceed(scaledImage: image_noise)
+                // self.netModel.sendScaleData(type: Device.version().rawValue, size: self.image.size, time: timeInterval)
+                self.dismiss(animated: true, completion: nil)
             }
         }
     }
