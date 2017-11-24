@@ -69,7 +69,6 @@ class ScalingViewController: UIViewController {
                 image_noise = (self.image.run(model: self.selectNoiseModel[self.protoc[0]][self.protoc[1]])?.reload())!
             }
         
-            // 这段还没测，撑不住了先睡觉了
             if (self.protoc[2] != 0) {
                 DispatchQueue.main.async {
                     background.async {

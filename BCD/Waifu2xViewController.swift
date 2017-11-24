@@ -21,7 +21,7 @@ class Waifu2xViewController: UIViewController, ScalingViewControllerDelegate, UI
     
     fileprivate var protoc = [0, 2, 1]
     fileprivate let header = ["次元", "降噪", "放大"]
-    fileprivate let footer = ["次元壁不可破！", "这是选降噪力度的，建议只在图片确实有噪点时使用这个功能", ""]
+    fileprivate let footer = ["次元壁不可破！", "这是选降噪力度的，想放大的话建议直接用 Lunatic", ""]
     fileprivate let list = [
         ["二次元", "三次元"],
         ["None", "Low", "Medium", "High", "Lunatic"],
@@ -35,13 +35,12 @@ class Waifu2xViewController: UIViewController, ScalingViewControllerDelegate, UI
         tableView.delegate = self
         tableView.tableFooterView = UIView()
         
+        tableView.tintColor = self.navigationController?.navigationBar.barTintColor
         startButton.backgroundColor = self.navigationController?.navigationBar.barTintColor
         
-        if originImage == nil {
-            if !(originImage!.size.width > 150 &&
-                originImage!.size.height > 150 &&
-                originImage!.size.width < 1200 &&
-                originImage!.size.height < 1200) {
+        if originImage != nil {
+            if originImage!.size.width <= 150 || originImage!.size.height <= 150 {
+                startButton.setTitle("图片太小啦", for: .normal)
                 startButton.isEnabled = false
             }
         }
