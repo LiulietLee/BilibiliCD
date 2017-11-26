@@ -161,6 +161,13 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
     func scaleSucceed(scaledImage: UIImage) {
         imageView.image = scaledImage
         dataModel.changeOriginCover(of: itemFromHistory!, image: scaledImage)
+        scaleButton.isEnabled = false
+        
+        let dialog = LLDialog()
+        dialog.title = "(｡･ω･｡)"
+        dialog.message = "放大完成~"
+        dialog.setPositiveButton(withTitle: "嗯")
+        dialog.show()
     }
     
     fileprivate func addItemToDB() {

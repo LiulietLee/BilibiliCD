@@ -56,6 +56,11 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         super.viewDidDisappear(animated)
         NotificationCenter.default.removeObserver(self)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        getURLFromPasteboard()
+    }
 
     @objc fileprivate func getURLFromPasteboard() {
         if isShowingImage { return }
@@ -81,7 +86,6 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         menu.target = revealViewController()
         menu.action = #selector(SWRevealViewController.revealToggle(_:))
         view.addGestureRecognizer(revealViewController().panGestureRecognizer())
-        getURLFromPasteboard()
         
         let backItem = UIBarButtonItem()
         backItem.title = ""

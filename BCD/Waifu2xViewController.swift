@@ -90,8 +90,10 @@ class Waifu2xViewController: UIViewController, ScalingViewControllerDelegate, UI
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let text = list[indexPath.section][indexPath.row]
         cell.textLabel?.text = text
-        if text == "二次元" || text == "Medium" || text == "2x" {
+        if protoc[indexPath.section] == indexPath.row {
             cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
         }
         return cell
     }
