@@ -35,7 +35,16 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
         }
     }
-    fileprivate var isShowingFullHistory = false
+    fileprivate var isShowingFullHistory = false {
+        didSet {
+            if oldValue {
+                self.navigationController?.navigationBar.barTintColor = .tianyiBlue
+            } else {
+                self.navigationController?.navigationBar.barTintColor = .black
+            }
+            tableView.reloadData()
+        }
+    }
     fileprivate let nothingLabel = UILabel()
     fileprivate var loadingView: LoadingView!
     
@@ -63,6 +72,28 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        motionDetector.beginDetect()
+        motionDetector.delegate = self
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(hideCellsIfNeeded),
+                                               name: .notiWhenAppWillResignActive,
+                                               object: nil) 
+    }
+    
+    @objc fileprivate func hideCellsIfNeeded() {
+        if isShowingFullHistory {
+            isShowingFullHistory = false
+        }
+    }
+    
     fileprivate func animateView() {
         let type = AnimationType.from(direction: .bottom, offset: ViewAnimatorConfig.offset)
         view.doAnimation(type: type)
@@ -81,17 +112,6 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     @objc fileprivate func showTutorial() {
         let vc = HisTutViewController()
         present(vc, animated: true, completion: nil)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        motionDetector.beginDetect()
-        motionDetector.delegate = self
-        if isShowingFullHistory {
-            self.navigationController?.navigationBar.barTintColor = .black
-        } else {
-            self.navigationController?.navigationBar.barTintColor = .tianyiBlue
-        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {

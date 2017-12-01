@@ -13,7 +13,8 @@ import Firebase
 import FirebaseMessaging
 
 extension Notification.Name {
-    static let BCD = Notification.Name(rawValue: "Future-Code-Institute.BCD")
+    static let notiWhenAppDidBecomeActive = Notification.Name(rawValue: "scan pasteboard")
+    static let notiWhenAppWillResignActive = Notification.Name(rawValue: "hide cover")
 }
 
 @UIApplicationMain
@@ -31,19 +32,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         pageController.currentPageIndicatorTintColor = .black
         pageController.backgroundColor = .white
         
-        if #available(iOS 10.0, *) {
-            // For iOS 10 display notification (sent via APNS)
-            UNUserNotificationCenter.current().delegate = self
-            
-            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-            UNUserNotificationCenter.current().requestAuthorization(
-                options: authOptions,
-                completionHandler: { _, _ in })
-        } else {
-            let settings: UIUserNotificationSettings =
-                UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-            application.registerUserNotificationSettings(settings)
-        }
+        UNUserNotificationCenter.current().delegate = self
+        
+        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+        UNUserNotificationCenter.current().requestAuthorization(
+            options: authOptions,
+            completionHandler: { _, _ in })
+
         
         application.registerForRemoteNotifications()
 
@@ -66,6 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+        NotificationCenter.default.post(name: .notiWhenAppWillResignActive, object: self)
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
@@ -79,7 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        NotificationCenter.default.post(name: .BCD, object: self)
+        NotificationCenter.default.post(name: .notiWhenAppDidBecomeActive, object: self)
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

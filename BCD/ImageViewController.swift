@@ -36,6 +36,23 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
         isShowingImage = false
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(goBackIfNeeded),
+                                               name: .notiWhenAppWillResignActive,
+                                               object: nil)
+    }
+    
+    @objc fileprivate func goBackIfNeeded() {
+        if itemFromHistory != nil, itemFromHistory!.isHidden {
+            let storyBoard = UIStoryboard(name: "Main", bundle:nil)
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "main") as! MainViewController
+            
+            show(nextViewController, sender: self)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -208,6 +225,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
 
         if let vc = segue.destination as? DetailViewController {
             vc.image = imageView.image!
+            vc.isHidden = itemFromHistory?.isHidden
         } else if let vc = segue.destination as? Waifu2xViewController {
             vc.originImage = imageView.image
             vc.delegate = self

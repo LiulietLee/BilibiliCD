@@ -12,6 +12,7 @@ import ViewAnimator
 class DetailViewController: UIViewController {
     
     var image: UIImage?
+    var isHidden: Bool? = nil
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var yConstraint: NSLayoutConstraint!
     @IBOutlet weak var xConstraint: NSLayoutConstraint!
@@ -29,6 +30,23 @@ class DetailViewController: UIViewController {
         
         let type = AnimationType.from(direction: .right, offset: ViewAnimatorConfig.offset)
         view.doAnimation(type: type)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(goBackIfNeeded),
+                                               name: .notiWhenAppWillResignActive,
+                                               object: nil)
+    }
+    
+    @objc fileprivate func goBackIfNeeded() {
+        if isHidden == true {
+            let storyBoard = UIStoryboard(name: "Main", bundle:nil)
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "main") as! MainViewController
+            
+            show(nextViewController, sender: self)
+        }
     }
 
     override func viewWillDisappear(_ animated: Bool) {

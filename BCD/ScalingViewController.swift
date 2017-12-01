@@ -18,13 +18,13 @@ class ScalingViewController: UIViewController {
     
     var image = UIImage()
     var delegate: ScalingViewControllerDelegate?
-    fileprivate let netModel = NetworkingModel()
     var protoc = [0, 2, 1]
-    var selectNoiseModel = [
+    fileprivate let netModel = NetworkingModel()
+    fileprivate var selectNoiseModel = [
         [Model.none, Model.anime_noise0, Model.anime_noise1, Model.anime_noise2, Model.anime_noise3],
         [Model.none, Model.photo_noise0, Model.photo_noise1, Model.photo_noise2, Model.photo_noise3]
     ]
-    var selectScaleModel = [
+    fileprivate var selectScaleModel = [
         [Model.none, Model.anime_scale2x],
         [Model.none, Model.photo_scale2x]
     ]
