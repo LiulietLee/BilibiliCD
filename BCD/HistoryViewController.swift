@@ -84,7 +84,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(hideCellsIfNeeded),
-                                               name: .notiWhenAppWillResignActive,
+                                               name: .UIApplicationWillResignActive,
                                                object: nil) 
     }
     

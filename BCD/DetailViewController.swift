@@ -36,7 +36,7 @@ class DetailViewController: UIViewController {
         super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(goBackIfNeeded),
-                                               name: .notiWhenAppWillResignActive,
+                                               name: .UIApplicationWillResignActive,
                                                object: nil)
     }
     
