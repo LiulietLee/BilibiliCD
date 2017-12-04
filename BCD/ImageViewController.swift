@@ -40,7 +40,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
         super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(goBackIfNeeded),
-                                               name: .notiWhenAppWillResignActive,
+                                               name: .UIApplicationWillResignActive,
                                                object: nil)
     }
     
