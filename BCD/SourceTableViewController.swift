@@ -12,15 +12,16 @@ class SourceTableViewController: UITableViewController {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
-    fileprivate let list: [(name: String, url: String)] =
-        [("Liuliet.Lee/LLDialog", "https://github.com/LiulietLee/LLDialog/blob/master"),
+    fileprivate let list: [(name: String, url: String)] = [
+        ("Liuliet.Lee/LLDialog", "https://github.com/LiulietLee/LLDialog/blob/master"),
         ("ApolloZhu/MaterialKit", "https://github.com/ApolloZhu/MaterialKit/blob/master"),
         ("John-Lluch/SWRevealViewController", "https://github.com/John-Lluch/SWRevealViewController/blob/master"),
         ("maximbilan/iOS-Shared-CoreData-Storage-for-App-Groups", "https://github.com/maximbilan/iOS-Shared-CoreData-Storage-for-App-Groups"),
         ("ph1ps/Nudity-CoreML", "https://github.com/ph1ps/Nudity-CoreML"),
         ("marcosgriselli/ViewAnimator", "https://github.com/marcosgriselli/ViewAnimator"),
         ("imxieyi/waifu2x-ios", "https://github.com/imxieyi/waifu2x-ios"),
-        ("Ekhoo/Device", "https://github.com/Ekhoo/Device")]
+        ("Ekhoo/Device", "https://github.com/Ekhoo/Device")
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()

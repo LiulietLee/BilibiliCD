@@ -43,6 +43,8 @@ class ScalingViewController: UIViewController {
         let size = image.size
         sizeLabel.text = "图片尺寸：\(size.width) x \(size.height)"
         timeLabel.text = "其实我是想做个进度条来着...\n但是又做不粗来...\n所以就全当这里有进度条了吧"
+        
+        // TODO: - progress bar
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -85,9 +87,11 @@ class ScalingViewController: UIViewController {
                     }
                 }
             } else {
-                self.delegate?.scaleSucceed(scaledImage: image_noise)
-                // self.netModel.sendScaleData(type: Device.version().rawValue, size: self.image.size, time: timeInterval)
-                self.dismiss(animated: true, completion: nil)
+                DispatchQueue.main.async {
+                    self.delegate?.scaleSucceed(scaledImage: image_noise)
+                    // self.netModel.sendScaleData(type: Device.version().rawValue, size: self.image.size, time: timeInterval)
+                    self.dismiss(animated: true, completion: nil)
+                }
             }
         }
     }
