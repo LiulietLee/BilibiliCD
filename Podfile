@@ -10,5 +10,4 @@ target 'BCD' do
     pod 'MaterialKit', :git => 'https://github.com/ApolloZhu/MaterialKit.git'
     pod 'ViewAnimator'
     pod "Device", '~> 3.0.3'
-    pod 'MaterialComponents'
 end

@@ -30,13 +30,17 @@ public extension UIView {
                         duration: TimeInterval = ViewAnimatorConfig.duration,
                         completion: CompletionBlock? = nil) {
         
-        // Apply initial transform and alpha
-        animations.forEach { transform = transform.concatenating($0.initialTransform) }
+        let preTransform = transform
+        
+        // Apply transforms and alpha
+        animations.forEach {
+            transform = transform.concatenating($0.initialTransform)
+        }
         alpha = initialAlpha
         
         DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
             UIView.animate(withDuration: duration, animations: { [weak self] in
-                self?.transform = CGAffineTransform.identity
+                self?.transform = preTransform
                 self?.alpha = finalAlpha
                 }, completion: { _ in
                     completion?()
@@ -47,7 +51,7 @@ public extension UIView {
     /// Animates all the subviews of the view calling the function.
     ///
     /// - Parameters:
-    ///   - animationType: AnimationType to perform.
+    ///   - animations: Animations to perform.
     ///   - interval: Interval of the animations between subviews.
     public func animateAll(animations: [Animation],
                            interval: Double = ViewAnimatorConfig.interval) {
