@@ -104,7 +104,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         let dialog = LLDialog()
         dialog.title = "(=・ω・=)"
         dialog.message = "想看看历史记录「里世界」的使用方法么？"
-        dialog.setNegativeButton(withTitle: "可以", target: self, action: #selector(showTutorial))
+        dialog.setNegativeButton(withTitle: "不想")
         dialog.setPositiveButton(withTitle: "好的", target: self, action: #selector(showTutorial))
         dialog.show()
     }

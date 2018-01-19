@@ -100,7 +100,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         let dialog = LLDialog()
         dialog.title = "(=・ω・=)"
         dialog.message = "想了解下「自动和谐」的什么东西嘛？"
-        dialog.setNegativeButton(withTitle: "可以", target: self, action: #selector(showTutorial))
+        dialog.setNegativeButton(withTitle: "不想")
         dialog.setPositiveButton(withTitle: "好的", target: self, action: #selector(showTutorial))
         dialog.show()
     }

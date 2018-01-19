@@ -34,12 +34,11 @@ class CoreDataModel {
     var history: [History] {
         var items = [History]()
         
-        let sort = NSSortDescriptor(key: #keyPath(History.date), ascending: true)
+        let sort = NSSortDescriptor(key: #keyPath(History.date), ascending: false)
         HistFetchRequest.sortDescriptors = [sort]
         
         do {
             items = try context.fetch(HistFetchRequest) as! [History]
-            items = items.reversed()
         } catch {
             print(error)
         }
@@ -65,7 +64,7 @@ class CoreDataModel {
         newItem.title = title
         newItem.up = up
         newItem.url = url
-        newItem.isHidden = self.isNeedHid(image)
+        newItem.isHidden = isNeedHid(image)
         
         let origEntity = NSEntityDescription.entity(forEntityName: "OriginCover", in: self.context)!
         let newOrig = OriginCover(entity: origEntity, insertInto: self.context)
