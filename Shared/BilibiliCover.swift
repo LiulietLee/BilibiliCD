@@ -34,65 +34,20 @@ extension BilibiliCover {
         self.type = type
     }
     
-    init?(_ string: String) {
-        var index = string.index(string.startIndex, offsetBy: 2)
-        if string.hasPrefix("lv") {
+    init?(_ shortDescription: String) {
+        var index = shortDescription.index(shortDescription.startIndex, offsetBy: 2)
+        if shortDescription.hasPrefix("lv") {
             type = .live
-        } else if string.hasPrefix("cv") {
+        } else if shortDescription.hasPrefix("cv") {
             type = .article
         } else {
             type = .video
-            if !string.hasPrefix("av") {
-                index = string.startIndex
+            if !shortDescription.hasPrefix("av") {
+                index = shortDescription.startIndex
             }
         }
-        guard let id = UInt64(string[index...]) else { return  nil }
+        guard let id = UInt64(shortDescription[index...]) else { return nil }
         number = id
-    }
-    
-    // TODO: Use regex?
-    static func fromPasteboard() -> BilibiliCover? {
-        if let urlString = UIPasteboard.general.string {
-            
-            let tempArray = Array(urlString)
-            var avNum = UInt64()
-            var isAvNum = false, isLvNum = false, isCvNum = false
-            for i in 0..<tempArray.count {
-                let j = tempArray.count - i - 1
-                if let singleNum = UInt64("\(tempArray[j])") {
-                    let num = singleNum &* UInt64(truncating: NSDecimalNumber(decimal: pow(10, i)))
-                    avNum = avNum &+ num
-                } else if tempArray[j] == "/" {
-                    if j > 22 {
-                        let index = urlString.index(urlString.startIndex, offsetBy: 21)
-                        if urlString[..<index] == "https://live.bilibili" {
-                            isLvNum = true
-                            break
-                        }
-                    }
-                    continue
-                } else if tempArray[j] == "v" && j >= 1 {
-                    if tempArray[j - 1] == "a" {
-                        isAvNum = true
-                        break
-                    } else if tempArray[j - 1] == "c" {
-                        isCvNum = true
-                        break
-                    }
-                } else { break }
-            }
-            
-            if isAvNum || isLvNum || isCvNum {
-                var type = BilibiliCover.Category.video
-                if isLvNum {
-                    type = .live
-                } else if isCvNum {
-                    type = .article
-                }
-                return BilibiliCover(number: avNum, type: type)
-            }
-        }
-        return nil
     }
 }
 
@@ -100,5 +55,33 @@ extension BilibiliCover: Equatable {
     public static func ==(lhs: BilibiliCover, rhs: BilibiliCover) -> Bool {
         return lhs.type   == rhs.type
             && lhs.number == rhs.number
+    }
+}
+
+extension BilibiliCover {
+    static let avNumberMatcher = try! NSRegularExpression(pattern: "(?<=av)\\d+")
+    static let cvNumberMatcher = try! NSRegularExpression(pattern: "(?<=cv)\\d+")
+    static let numberMatcher = try! NSRegularExpression(pattern: "\\d+")
+    
+    static func fromPasteboard() -> BilibiliCover? {
+        guard let urlString = UIPasteboard.general.string else { return nil }
+        if let avNumber = avNumberMatcher.numberFound(in: urlString) {
+            return BilibiliCover(number: avNumber, type: .video)
+        } else if let cvNumber = cvNumberMatcher.numberFound(in: urlString) {
+            return BilibiliCover(number: cvNumber, type: .article)
+        } else if urlString.contains("live.bilibili")
+            , let number = numberMatcher.numberFound(in: urlString) {
+            return BilibiliCover(number: number, type: .live)
+        } else { return nil }
+    }
+}
+
+extension NSRegularExpression {
+    fileprivate func numberFound(in string: String) -> UInt64? {
+        let nsRange = NSRange(string.startIndex..<string.endIndex, in: string)
+        guard let matchNSRange = firstMatch(in: string, range: nsRange)?.range
+            , let matchRange = Range(matchNSRange, in: string)
+            else { return nil }
+        return UInt64(string[matchRange])
     }
 }

@@ -177,7 +177,6 @@ class NetworkingModel {
                             } else {
                                 self.delegateForUpuser?.cannotGetUser()
                             }
-                            
                         } catch {
                             self.delegateForUpuser?.connectError()
                         }
@@ -190,7 +189,7 @@ class NetworkingModel {
     
     open func sendScaleData(type: String, size: CGSize, time: Double) {
         let stringUrl = "http://www.bilibilicd.tk/ios/waifu2x/?iphone=\(type)&time=\(time)&len=\(size.height)&wid=\(size.width)"
-        let url = URL(string: stringUrl.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed)!)!
+        let url = URL(string: stringUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)!
         let task = session.dataTask(with: url) { data, response, error in
             if let err = error {
                 print(err)
