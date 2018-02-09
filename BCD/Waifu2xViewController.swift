@@ -19,10 +19,10 @@ class Waifu2xViewController: UIViewController, ScalingViewControllerDelegate, UI
     var originImage: UIImage?
     var delegate: Waifu2xDelegate?
     
-    fileprivate var protoc = [0, 2, 1] // protoc = [次元, 降噪, 放大]
-    fileprivate let header = ["次元", "降噪", "放大"]
-    fileprivate let footer = ["次元壁不可破！", "这是选降噪力度的，想放大的话建议直接用 Lunatic", ""]
-    fileprivate let list = [
+    private var protoc = [0, 2, 1] // protoc = [次元, 降噪, 放大]
+    private let header = ["次元", "降噪", "放大"]
+    private let footer = ["次元壁不可破！", "这是选降噪力度的，想放大的话建议直接用 Lunatic", ""]
+    private let list = [
         ["二次元", "三次元"],
         ["None", "Low", "Medium", "High", "Lunatic"],
         ["None", "2x"]

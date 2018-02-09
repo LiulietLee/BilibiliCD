@@ -12,7 +12,7 @@ import SWRevealViewController
 class AboutViewController: UITableViewController {
 
     @IBOutlet weak var menu: UIBarButtonItem!
-    fileprivate let developers = [
+    private let developers = [
         "https://space.bilibili.com/4056345/#!/",
         "http://shallweitalk.com/#",
         "https://apollozhu.github.io/"

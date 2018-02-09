@@ -30,7 +30,7 @@ class LoadingView: UIView {
         indicator.startAnimating()
     }
     
-    public func dismiss() {
+    func dismiss() {
         UIView.animate(
             withDuration: 0.5,
             animations: { [weak self] in

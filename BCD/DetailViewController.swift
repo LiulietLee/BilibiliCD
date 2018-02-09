@@ -40,7 +40,7 @@ class DetailViewController: UIViewController {
                                                object: nil)
     }
     
-    @objc fileprivate func goBackIfNeeded() {
+    @objc private func goBackIfNeeded() {
         if isHidden == true {
             let storyBoard = UIStoryboard(name: "Main", bundle:nil)
             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "main") as! MainViewController

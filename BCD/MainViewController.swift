@@ -15,9 +15,9 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var avLabel: UILabel!
     @IBOutlet weak var goButton: UIButton!
     @IBOutlet weak var menu: UIBarButtonItem!
-    fileprivate var repeatTappingTime = 0
-    fileprivate var dataModel = CoreDataModel()
-    fileprivate var existCover: History? = nil
+    private var repeatTappingTime = 0
+    private var dataModel = CoreDataModel()
+    private var existCover: History? = nil
     var cover = BilibiliCover(number: 0, type: .video) {
         didSet {
             avLabel?.text = cover.shortDescription
@@ -62,7 +62,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         getURLFromPasteboard()
     }
 
-    @objc fileprivate func getURLFromPasteboard() {
+    @objc private func getURLFromPasteboard() {
         if isShowingImage { return }
         if let newCover = BilibiliCover.fromPasteboard() {
             self.cover = newCover
@@ -96,7 +96,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    fileprivate func showTutMessage() {
+    private func showTutMessage() {
         let dialog = LLDialog()
         dialog.title = "(=・ω・=)"
         dialog.message = "想了解下「自动和谐」的什么东西嘛？"
@@ -105,7 +105,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         dialog.show()
     }
     
-    @objc fileprivate func showTutorial() {
+    @objc private func showTutorial() {
         let vc = HisTutViewController()
         vc.page = "AutoHide"
         present(vc, animated: true, completion: nil)

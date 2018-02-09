@@ -12,7 +12,7 @@ class SourceTableViewController: UITableViewController {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
-    fileprivate let list: [(name: String, url: String)] = [
+    private let list: [(name: String, url: String)] = [
         ("Liuliet.Lee/LLDialog", "https://github.com/LiulietLee/LLDialog/blob/master"),
         ("ApolloZhu/MaterialKit", "https://github.com/ApolloZhu/MaterialKit/blob/master"),
         ("John-Lluch/SWRevealViewController", "https://github.com/John-Lluch/SWRevealViewController/blob/master"),

@@ -19,12 +19,12 @@ class ScalingViewController: UIViewController {
     var image = UIImage()
     var delegate: ScalingViewControllerDelegate?
     var protoc = [0, 2, 1]
-    fileprivate let netModel = NetworkingModel()
-    fileprivate var selectNoiseModel = [
+    private let netModel = NetworkingModel()
+    private var selectNoiseModel = [
         [Model.none, Model.anime_noise0, Model.anime_noise1, Model.anime_noise2, Model.anime_noise3],
         [Model.none, Model.photo_noise0, Model.photo_noise1, Model.photo_noise2, Model.photo_noise3]
     ]
-    fileprivate var selectScaleModel = [
+    private var selectScaleModel = [
         [Model.none, Model.anime_scale2x],
         [Model.none, Model.photo_scale2x]
     ]
@@ -56,12 +56,12 @@ class ScalingViewController: UIViewController {
         }
     }
     
-//    fileprivate func calculateRemainingTime(size: Double) -> Int {
+//    private func calculateRemainingTime(size: Double) -> Int {
 //        let time = 0.0002 * size + 11.19
 //        return Int(time)
 //    }
     
-    fileprivate func scaleImage() {
+    private func scaleImage() {
         let start = DispatchTime.now()
         let background = DispatchQueue(label: "background")
         

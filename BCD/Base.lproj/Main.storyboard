@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xAa-In-jj9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xAa-In-jj9">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
@@ -672,7 +672,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="封面下载" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADb-Jg-p7A">
-                                                    <rect key="frame" x="24" y="31" width="80" height="28"/>
+                                                    <rect key="frame" x="24" y="31" width="280" height="28"/>
                                                     <fontDescription key="fontDescription" name="PingFangHK-Medium" family="PingFang HK" pointSize="20"/>
                                                     <color key="textColor" red="0.26734374999999999" green="0.26734374999999999" blue="0.26734374999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -680,6 +680,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ADb-Jg-p7A" firstAttribute="centerY" secondItem="Zpp-25-tPW" secondAttribute="centerY" id="IQX-N7-qOb"/>
+                                                <constraint firstItem="ADb-Jg-p7A" firstAttribute="trailing" secondItem="Zpp-25-tPW" secondAttribute="trailingMargin" id="JiU-vv-cj8"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="ADb-Jg-p7A" secondAttribute="leading" constant="-8" id="jHX-ML-34S"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -700,13 +701,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="历史记录" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAn-Uv-9dK">
-                                                    <rect key="frame" x="24" y="31" width="80" height="28"/>
+                                                    <rect key="frame" x="24" y="31" width="280" height="28"/>
                                                     <fontDescription key="fontDescription" name="PingFangHK-Medium" family="PingFang HK" pointSize="20"/>
                                                     <color key="textColor" red="0.26734374999999999" green="0.26734374999999999" blue="0.26734374999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="wAn-Uv-9dK" firstAttribute="trailing" secondItem="fpD-S8-CQc" secondAttribute="trailingMargin" id="B9k-RZ-UrN"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="wAn-Uv-9dK" secondAttribute="leading" constant="-8" id="Z2M-wO-hgm"/>
                                                 <constraint firstItem="wAn-Uv-9dK" firstAttribute="centerY" secondItem="fpD-S8-CQc" secondAttribute="centerY" id="tJ9-TD-bpc"/>
                                             </constraints>
@@ -728,7 +730,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关于我们" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IqQ-Uo-fXu">
-                                                    <rect key="frame" x="24" y="31" width="80" height="28"/>
+                                                    <rect key="frame" x="24" y="31" width="280" height="28"/>
                                                     <fontDescription key="fontDescription" name="PingFangHK-Medium" family="PingFang HK" pointSize="20"/>
                                                     <color key="textColor" red="0.26734374999999999" green="0.26734374999999999" blue="0.26734374999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -737,6 +739,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="leadingMargin" secondItem="IqQ-Uo-fXu" secondAttribute="leading" constant="-8" id="Lr8-rQ-Oby"/>
                                                 <constraint firstItem="IqQ-Uo-fXu" firstAttribute="centerY" secondItem="eLa-IK-kSb" secondAttribute="centerY" id="RjA-xl-Gcl"/>
+                                                <constraint firstItem="IqQ-Uo-fXu" firstAttribute="trailing" secondItem="eLa-IK-kSb" secondAttribute="trailingMargin" id="eRc-Jf-l0f"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <userDefinedRuntimeAttributes>
@@ -756,7 +759,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开源组件" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDn-Ac-ukI">
-                                                    <rect key="frame" x="24" y="31" width="80" height="28"/>
+                                                    <rect key="frame" x="24" y="31" width="280" height="28"/>
                                                     <fontDescription key="fontDescription" name="PingFangHK-Medium" family="PingFang HK" pointSize="20"/>
                                                     <color key="textColor" red="0.26734374999999999" green="0.26734374999999999" blue="0.26734374999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -764,6 +767,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="rDn-Ac-ukI" firstAttribute="centerY" secondItem="deU-j9-5Ba" secondAttribute="centerY" id="15g-ou-nvZ"/>
+                                                <constraint firstItem="rDn-Ac-ukI" firstAttribute="trailing" secondItem="deU-j9-5Ba" secondAttribute="trailingMargin" id="fOh-aZ-rnf"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="rDn-Ac-ukI" secondAttribute="leading" constant="-8" id="kI5-Nj-eVa"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -787,7 +791,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RhH-PI-aW1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="126" y="-1130"/>
+            <point key="canvasLocation" x="125.625" y="-1130.2816901408451"/>
         </scene>
         <!--Sakura Nav Controller-->
         <scene sceneID="adv-Hp-AZI">
@@ -1265,10 +1269,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VaP-rH-8UN" customClass="MKButton" customModule="MaterialKit">
-                                <rect key="frame" x="16" y="122" width="90" height="38"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="nY3-Zg-ydl"/>
-                                </constraints>
+                                <rect key="frame" x="16" y="122" width="140" height="38"/>
                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="18"/>
                                 <color key="tintColor" red="0.40090259909999998" green="0.80100601910000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="取消"/>
@@ -1282,10 +1283,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1GK-6P-ci7" customClass="MKButton" customModule="MaterialKit">
-                                <rect key="frame" x="224" y="122" width="80" height="38"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="Ab2-Wn-y1i"/>
-                                </constraints>
+                                <rect key="frame" x="164" y="122" width="140" height="38"/>
                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="18"/>
                                 <color key="tintColor" red="0.40090259909999998" green="0.80100601910000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="保存"/>
@@ -1301,10 +1299,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="1GK-6P-ci7" firstAttribute="leading" secondItem="VaP-rH-8UN" secondAttribute="trailing" constant="8" id="4Cm-RS-LB7"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Wcg-QB-ee6" secondAttribute="leading" id="JOJ-LT-Jxu"/>
                             <constraint firstAttribute="leadingMargin" secondItem="VaP-rH-8UN" secondAttribute="leading" id="NMv-Hd-BQX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Wcg-QB-ee6" secondAttribute="trailing" id="YKb-fH-4p8"/>
                             <constraint firstItem="VaP-rH-8UN" firstAttribute="top" secondItem="Wcg-QB-ee6" secondAttribute="bottom" constant="8" id="h1j-1x-vYQ"/>
+                            <constraint firstItem="1GK-6P-ci7" firstAttribute="width" secondItem="VaP-rH-8UN" secondAttribute="width" id="lAT-I6-fhW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1GK-6P-ci7" secondAttribute="trailing" id="n6d-R0-nI7"/>
                             <constraint firstItem="1GK-6P-ci7" firstAttribute="top" secondItem="Wcg-QB-ee6" secondAttribute="bottom" constant="8" id="nya-Zr-l0K"/>
                             <constraint firstItem="Wcg-QB-ee6" firstAttribute="top" secondItem="LeO-YT-ez2" secondAttribute="bottom" constant="24" id="q0H-59-UaB"/>
@@ -1319,7 +1319,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nVq-I9-0V8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2783" y="-675"/>
+            <point key="canvasLocation" x="2782.5" y="-675"/>
         </scene>
         <!--无损放大（beta）-->
         <scene sceneID="mot-uj-qLi">
@@ -1472,6 +1472,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="pFk-eZ-ib2"/>
-        <segue reference="Eeb-QN-AAw"/>
+        <segue reference="4Jb-o1-lRn"/>
     </inferredMetricsTieBreakers>
 </document>

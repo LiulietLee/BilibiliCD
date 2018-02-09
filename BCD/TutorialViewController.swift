@@ -12,8 +12,8 @@ import MaterialKit
 class TutorialViewController: UIViewController, UIPageViewControllerDataSource {
     @IBOutlet private weak var closeButton: UIButton!
     @IBOutlet weak var bottomConsOfBackButton: NSLayoutConstraint!
-    fileprivate var pageController = UIPageViewController()
-    fileprivate let pageImages = [#imageLiteral(resourceName: "tut1"), #imageLiteral(resourceName: "tut2"), #imageLiteral(resourceName: "tut3"), #imageLiteral(resourceName: "tut4"), #imageLiteral(resourceName: "tut5"), #imageLiteral(resourceName: "tut6"), #imageLiteral(resourceName: "tut7")]
+    private var pageController = UIPageViewController()
+    private let pageImages = [#imageLiteral(resourceName: "tut1"), #imageLiteral(resourceName: "tut2"), #imageLiteral(resourceName: "tut3"), #imageLiteral(resourceName: "tut4"), #imageLiteral(resourceName: "tut5"), #imageLiteral(resourceName: "tut6"), #imageLiteral(resourceName: "tut7")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +39,7 @@ class TutorialViewController: UIViewController, UIPageViewControllerDataSource {
         view.bringSubview(toFront: closeButton)
     }
     
-    fileprivate func viewControllerAt(index: Int) -> TutorialContentViewController {
+    private func viewControllerAt(index: Int) -> TutorialContentViewController {
         if index >= pageImages.count {
             return TutorialContentViewController()
         }

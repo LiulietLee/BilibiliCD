@@ -12,14 +12,14 @@ import CoreData
 
 class CoreDataModel {
     
-    fileprivate let nudity = Nudity()
-    fileprivate let context = CoreDataStorage.sharedInstance.mainQueueContext
-    fileprivate let PermFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Permission")
-    fileprivate let HistFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "History")
-    fileprivate let OrigFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "OriginCover")
-    fileprivate let SettFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Setting")
+    private let nudity = Nudity()
+    private let context = CoreDataStorage.sharedInstance.mainQueueContext
+    private let PermFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Permission")
+    private let HistFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "History")
+    private let OrigFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "OriginCover")
+    private let SettFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Setting")
 
-    fileprivate func saveContext() {
+    private func saveContext() {
         CoreDataStorage.sharedInstance.saveContext(context)
     }
     
@@ -49,10 +49,10 @@ class CoreDataModel {
     func addNewHistory(av: String, date: Date, image: UIImage, title: String, up: String, url: String) -> History {
         refreshHistory()
 
-        let entity = NSEntityDescription.entity(forEntityName: "History", in: self.context)!
-        let newItem = History(entity: entity, insertInto: self.context)
+        let entity = NSEntityDescription.entity(forEntityName: "History", in: context)!
+        let newItem = History(entity: entity, insertInto: context)
 
-        let list = self.history
+        let list = history
         if list.count != 0, list[0].up == up && list[0].av == av { return list[0] }
         
         let originCoverData = image.toData()
@@ -66,14 +66,14 @@ class CoreDataModel {
         newItem.url = url
         newItem.isHidden = isNeedHid(image)
         
-        let origEntity = NSEntityDescription.entity(forEntityName: "OriginCover", in: self.context)!
-        let newOrig = OriginCover(entity: origEntity, insertInto: self.context)
+        let origEntity = NSEntityDescription.entity(forEntityName: "OriginCover", in: context)!
+        let newOrig = OriginCover(entity: origEntity, insertInto: context)
         newOrig.image = originCoverData
         
         newItem.origin = newOrig
         newOrig.history = newItem
         
-        self.saveContext()
+        saveContext()
         
         return newItem
     }

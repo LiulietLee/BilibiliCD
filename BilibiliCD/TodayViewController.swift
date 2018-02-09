@@ -87,7 +87,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, VideoCoverDelega
         saveImage()
     }
     
-    @objc fileprivate func saveImage() {
+    @objc private func saveImage() {
         UIImageWriteToSavedPhotosAlbum(imageView.image!, self, #selector(imageSavingFinished(_:didFinishSavingWithError:contextInfo:)), nil)
     }
     

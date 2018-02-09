@@ -11,8 +11,8 @@ import WebKit
 
 class HisTutViewController: UIViewController {
 
-    fileprivate var webView: WKWebView!
-    fileprivate var back: UIButton!
+    private var webView: WKWebView!
+    private var back: UIButton!
     
     var page = "index"
     
@@ -47,7 +47,7 @@ class HisTutViewController: UIViewController {
         view.addSubview(back)
     }
     
-    @objc fileprivate func goBack() {
+    @objc private func goBack() {
         self.dismiss(animated: true, completion: nil)
     }
 

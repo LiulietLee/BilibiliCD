@@ -21,11 +21,11 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
     
     var cover: BilibiliCover?
     var itemFromHistory: History?
-    fileprivate let netModel = NetworkingModel()
-    fileprivate let dataModel = CoreDataModel()
-    fileprivate var loadingView: LoadingView!
-    fileprivate let nudity = Nudity()
-    fileprivate var image = UIImage() {
+    private let netModel = NetworkingModel()
+    private let dataModel = CoreDataModel()
+    private var loadingView: LoadingView!
+    private let nudity = Nudity()
+    private var image = UIImage() {
         willSet {
             imageView.image = newValue
         }
@@ -44,7 +44,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
                                                object: nil)
     }
     
-    @objc fileprivate func goBackIfNeeded() {
+    @objc private func goBackIfNeeded() {
         if itemFromHistory != nil, itemFromHistory!.isHidden {
             let storyBoard = UIStoryboard(name: "Main", bundle:nil)
             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "main") as! MainViewController
@@ -103,12 +103,12 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
         }
     }
     
-    fileprivate func animateView() {
+    private func animateView() {
         let type = AnimationType.from(direction: .right, offset: ViewAnimatorConfig.offset)
         view.doAnimation(type: type)
     }
     
-    fileprivate func changeTextColor(to color: UIColor) {
+    private func changeTextColor(to color: UIColor) {
         titleLabel.textColor = color
         authorLabel.textColor = color
         urlLabel.textColor = color
@@ -125,7 +125,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
         }
     }
     
-    @objc fileprivate func saveImage() {
+    @objc private func saveImage() {
         UIImageWriteToSavedPhotosAlbum(imageView.image!, self, #selector(imageSavingFinished(_:didFinishSavingWithError:contextInfo:)), nil)
     }
     
@@ -146,13 +146,13 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
         }
     }
     
-    fileprivate func enableButtons() {
+    private func enableButtons() {
         downloadButton.isEnabled = true
         scaleButton.isEnabled = true
         pushButton.isEnabled = true
     }
     
-    fileprivate func disableButtons() {
+    private func disableButtons() {
         downloadButton.isEnabled = false
         scaleButton.isEnabled = false
         pushButton.isEnabled = false
@@ -187,7 +187,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
         dialog.show()
     }
     
-    fileprivate func addItemToDB() {
+    private func addItemToDB() {
         let image = imageView.image!
         let title = titleLabel.text!
         let upName = authorLabel.text!

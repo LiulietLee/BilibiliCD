@@ -18,7 +18,7 @@ class SetHistoryNumViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     
-    fileprivate let dataModel = CoreDataModel()
+    private let dataModel = CoreDataModel()
 
     var delegate: SetHistoryNumDelegate?
     var isShowingFullHistory = false
@@ -40,14 +40,14 @@ class SetHistoryNumViewController: UIViewController {
         }
     }
     
-    fileprivate func changeColor(to color: UIColor) {
+    private func changeColor(to color: UIColor) {
         cancelButton.setTitleColor(color, for: .normal)
         saveButton.setTitleColor(color, for: .normal)
         numberField.textColor = color
         numberField.tintColor = color
     }
     
-    fileprivate func goBack() {
+    private func goBack() {
         numberField.resignFirstResponder()
         dismiss(animated: true, completion: nil)
     }

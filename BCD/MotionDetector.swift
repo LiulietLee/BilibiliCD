@@ -17,8 +17,8 @@ class MotionDetector {
     
     var delegate: MotionDetectorDelegate?
     
-    fileprivate let motionManager = CMMotionManager()
-    fileprivate let timeInterval: TimeInterval = 0.5
+    private let motionManager = CMMotionManager()
+    private let timeInterval: TimeInterval = 0.5
     
     func beginDetect() {
         guard motionManager.isGyroAvailable else {

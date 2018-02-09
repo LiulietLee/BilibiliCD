@@ -14,10 +14,10 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var menu: UIBarButtonItem!
-    fileprivate let dataModel = CoreDataModel()
-    fileprivate let motionDetector = MotionDetector()
-    fileprivate var isAnimatedOnce = false
-    fileprivate var history = [History]() {
+    private let dataModel = CoreDataModel()
+    private let motionDetector = MotionDetector()
+    private var isAnimatedOnce = false
+    private var history = [History]() {
         didSet {
             DispatchQueue.main.async {
                 self.loadingView.dismiss()
@@ -35,7 +35,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
         }
     }
-    fileprivate var isShowingFullHistory = false {
+    private var isShowingFullHistory = false {
         didSet {
             if oldValue {
                 self.navigationController?.navigationBar.barTintColor = .tianyiBlue
@@ -45,8 +45,8 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
             tableView.reloadData()
         }
     }
-    fileprivate let nothingLabel = UILabel()
-    fileprivate var loadingView: LoadingView!
+    private let nothingLabel = UILabel()
+    private var loadingView: LoadingView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,19 +88,19 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
                                                object: nil) 
     }
     
-    @objc fileprivate func hideCellsIfNeeded() {
+    @objc private func hideCellsIfNeeded() {
         if isShowingFullHistory {
             isShowingFullHistory = false
         }
     }
     
-    fileprivate func animateView() {
+    private func animateView() {
         let type = AnimationType.from(direction: .bottom, offset: ViewAnimatorConfig.offset)
         view.doAnimation(type: type)
         isAnimatedOnce = true
     }
     
-    fileprivate func showTutMessage() {
+    private func showTutMessage() {
         let dialog = LLDialog()
         dialog.title = "(=・ω・=)"
         dialog.message = "想看看历史记录「里世界」的使用方法么？"
@@ -109,7 +109,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         dialog.show()
     }
     
-    @objc fileprivate func showTutorial() {
+    @objc private func showTutorial() {
         let vc = HisTutViewController()
         present(vc, animated: true, completion: nil)
     }
@@ -119,7 +119,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         motionDetector.endDetect()
     }
     
-    fileprivate func setLabel() {
+    private func setLabel() {
         nothingLabel.text = "这里空空如也"
         nothingLabel.textColor = .tianyiBlue
         nothingLabel.font = UIFont(name: "Avenir", size: 32.0)
@@ -135,12 +135,12 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         view.addConstraint(midYCon)
     }
     
-    fileprivate func showLabel() {
+    private func showLabel() {
         nothingLabel.isHidden = false
         view.bringSubview(toFront: nothingLabel)
     }
     
-    fileprivate func hideLabel() {
+    private func hideLabel() {
         nothingLabel.isHidden = true
         view.sendSubview(toBack: nothingLabel)
     }
@@ -154,7 +154,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         dialog.show()
     }
     
-    @objc fileprivate func clearHistory() {
+    @objc private func clearHistory() {
         dataModel.clearHistory()
         history = []
         tableView.reloadData()
