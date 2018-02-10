@@ -35,14 +35,13 @@ class Waifu2xViewController: UIViewController, ScalingViewControllerDelegate, UI
         tableView.delegate = self
         tableView.tableFooterView = UIView()
         
-        tableView.tintColor = self.navigationController?.navigationBar.barTintColor
-        startButton.backgroundColor = self.navigationController?.navigationBar.barTintColor
+        tableView.tintColor = navigationController?.navigationBar.barTintColor
+        startButton.backgroundColor = navigationController?.navigationBar.barTintColor
         
-        if originImage != nil {
-            if originImage!.size.width <= 150 || originImage!.size.height <= 150 {
-                startButton.setTitle("图片太小啦", for: .normal)
-                startButton.isEnabled = false
-            }
+        if originImage != nil,
+            originImage!.size.width <= 150 || originImage!.size.height <= 150 {
+            startButton.setTitle("图片太小啦", for: .normal)
+            startButton.isEnabled = false
         }
         
         print("image width: \(originImage!.size.width), height: \(originImage!.size.height)")
@@ -73,10 +72,9 @@ class Waifu2xViewController: UIViewController, ScalingViewControllerDelegate, UI
             protoc[indexPath.section] = indexPath.row
             for i in 0..<list[indexPath.section].count {
                 let currentIndex = IndexPath(row: i, section: indexPath.section)
-                if currentIndex != indexPath {
-                    if let deselectCell = tableView.cellForRow(at: currentIndex) {
-                        deselectCell.accessoryType = .none
-                    }
+                if currentIndex != indexPath,
+                    let deselectCell = tableView.cellForRow(at: currentIndex) {
+                    deselectCell.accessoryType = .none
                 }
             }
         }
@@ -108,7 +106,6 @@ class Waifu2xViewController: UIViewController, ScalingViewControllerDelegate, UI
     
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? ScalingViewController {
             vc.image = originImage!
@@ -116,5 +113,4 @@ class Waifu2xViewController: UIViewController, ScalingViewControllerDelegate, UI
             vc.protoc = protoc
         }
     }
-
 }

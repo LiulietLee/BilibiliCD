@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIDevice {
-    func isiPhoneX() -> Bool {
+    var isiPhoneX: Bool {
         if self.userInterfaceIdiom == .phone {
             return UIScreen.main.nativeBounds.height == 2436
         }

@@ -11,7 +11,7 @@ import UIKit
 public var isNeedToDisplayHisTut: Bool {
     let defaults = UserDefaults.standard
     
-    if defaults.string(forKey: "isNeedToDisplayHisTut") != nil{
+    if defaults.string(forKey: "isNeedToDisplayHisTut") != nil {
         return false
     } else {
         defaults.set(true, forKey: "isNeedToDisplayHisTut")
@@ -22,8 +22,8 @@ public var isNeedToDisplayHisTut: Bool {
 public var isNeedToDisplayAutoHis: Bool {
     let defaults = UserDefaults.standard
     
-    if defaults.string(forKey: "isNeedToDisplayHisTut") != nil{
-        if defaults.string(forKey: "isNeedToDisplayAutoHis") != nil{
+    if defaults.string(forKey: "isNeedToDisplayHisTut") != nil {
+        if defaults.string(forKey: "isNeedToDisplayAutoHis") != nil {
             return false
         } else {
             defaults.set(true, forKey: "isNeedToDisplayAutoHis")

@@ -10,23 +10,23 @@
 import UIKit
 import Device
 
-protocol ScalingViewControllerDelegate {
+protocol ScalingViewControllerDelegate: AnyObject {
     func scaleSucceed(scaledImage: UIImage)
 }
 
 class ScalingViewController: UIViewController {
     
     var image = UIImage()
-    var delegate: ScalingViewControllerDelegate?
+    weak var delegate: ScalingViewControllerDelegate?
     var protoc = [0, 2, 1]
     private let netModel = NetworkingModel()
-    private var selectNoiseModel = [
-        [Model.none, Model.anime_noise0, Model.anime_noise1, Model.anime_noise2, Model.anime_noise3],
-        [Model.none, Model.photo_noise0, Model.photo_noise1, Model.photo_noise2, Model.photo_noise3]
+    private let selectNoiseModel: [[Model]] = [
+        [.none, .anime_noise0, .anime_noise1, .anime_noise2, .anime_noise3],
+        [.none, .photo_noise0, .photo_noise1, .photo_noise2, .photo_noise3]
     ]
-    private var selectScaleModel = [
-        [Model.none, Model.anime_scale2x],
-        [Model.none, Model.photo_scale2x]
+    private let selectScaleModel: [[Model]] = [
+        [.none, .anime_scale2x],
+        [.none, .photo_scale2x]
     ]
 
     @IBOutlet weak var sizeLabel: UILabel!
@@ -42,13 +42,12 @@ class ScalingViewController: UIViewController {
         
         let size = image.size
         sizeLabel.text = "图片尺寸：\(size.width) x \(size.height)"
-        timeLabel.text = "其实我是想做个进度条来着...\n但是又做不粗来...\n所以就全当这里有进度条了吧"
-        
         // TODO: - progress bar
+        timeLabel.text = "其实我是想做个进度条来着...\n但是又做不粗来...\n所以就全当这里有进度条了吧"
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if (protoc[1] == 0 && protoc[2] == 0) {
+        if protoc[1] == 0 && protoc[2] == 0 {
             self.delegate?.scaleSucceed(scaledImage: image)
             self.dismiss(animated: true, completion: nil)
         } else {
@@ -67,21 +66,21 @@ class ScalingViewController: UIViewController {
         
         background.async {
             var image_noise = self.image
-            if (self.protoc[1] != 0) {
+            if self.protoc[1] != 0 {
                 image_noise = (self.image.run(model: self.selectNoiseModel[self.protoc[0]][self.protoc[1]])?.reload())!
             }
         
-            if (self.protoc[2] != 0) {
+            if self.protoc[2] != 0 {
                 DispatchQueue.main.async {
                     background.async {
                         let image_scale = image_noise.scale2x().reload()?.run(model: self.selectNoiseModel[self.protoc[0]][self.protoc[2]])
+                        let end = DispatchTime.now()
+                        let nanotime = end.uptimeNanoseconds - start.uptimeNanoseconds
+                        let timeInterval = Double(nanotime) / 1_000_000_000
+                        print("time: \(timeInterval)")
+                        // self.netModel.sendScaleData(type: Device.version().rawValue, size: self.image.size, time: timeInterval)
                         DispatchQueue.main.async {
-                            let end = DispatchTime.now()
-                            let nanotime = end.uptimeNanoseconds - start.uptimeNanoseconds
-                            let timeInterval = Double(nanotime) / 1_000_000_000
-                            print("time: \(timeInterval)")
                             self.delegate?.scaleSucceed(scaledImage: image_scale!)
-                            // self.netModel.sendScaleData(type: Device.version().rawValue, size: self.image.size, time: timeInterval)
                             self.dismiss(animated: true, completion: nil)
                         }
                     }
@@ -95,15 +94,4 @@ class ScalingViewController: UIViewController {
             }
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

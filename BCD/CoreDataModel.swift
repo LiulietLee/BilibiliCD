@@ -31,7 +31,7 @@ class CoreDataModel {
         }
     }
     
-    var history: [History] {
+    func fetchHistory() -> [History] {
         var items = [History]()
         
         let sort = NSSortDescriptor(key: #keyPath(History.date), ascending: false)
@@ -52,7 +52,7 @@ class CoreDataModel {
         let entity = NSEntityDescription.entity(forEntityName: "History", in: context)!
         let newItem = History(entity: entity, insertInto: context)
 
-        let list = history
+        let list = fetchHistory()
         if list.count != 0, list[0].up == up && list[0].av == av { return list[0] }
         
         let originCoverData = image.toData()
@@ -104,7 +104,7 @@ class CoreDataModel {
     }
     
     func isExistInHistory(cover: BilibiliCover) -> History? {
-        let history = self.history
+        let history = fetchHistory()
         
         for item in history {
             if item.av == cover.shortDescription {
@@ -140,7 +140,7 @@ class CoreDataModel {
     }
     
     private func checkHistoryNumLimit(_ limit: Int, history: [History]! = nil) {
-        var list = history ?? self.history
+        var list = history ?? fetchHistory()
         let count = list.count
         if count == 0 { return }
         let overflow = count - limit

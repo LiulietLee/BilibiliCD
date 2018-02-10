@@ -33,7 +33,7 @@ class HisTutViewController: UIViewController {
         back.frame = CGRect(x: size.width - margin - width,
                             y: margin * 1.25, width: width, height: width)
         
-        if UIDevice().isiPhoneX() {
+        if UIDevice().isiPhoneX {
             // 我真特么想一锤子锤烂 iPhone X ！这哪个ZZ设计出来的这么奇葩的屏幕啊 ！
             webView.frame = CGRect(x: 0.0, y: -45.0, width: size.width, height: size.height + 40.0)
             back = UIButton(frame: CGRect(x: size.width - margin - width,
@@ -48,17 +48,6 @@ class HisTutViewController: UIViewController {
     }
     
     @objc private func goBack() {
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
