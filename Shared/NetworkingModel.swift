@@ -7,6 +7,7 @@
 //
 
 import UIKit
+// FIXME: import BilibiliKit
 
 protocol VideoCoverDelegate: class {
     func gotVideoInfo(_ info: Info)
@@ -121,35 +122,28 @@ class NetworkingModel {
         let url = URL(string: path)
         let request = URLRequest(url: url!)
         let task = session.dataTask(with: request) { data, response, error in
-            if let err = error {
-                print(err)
-                self.delegateForVideo?.connectError()
-            } else {
-                DispatchQueue.main.async {
-                    if let content = data {
-                        do {
-                            let newInfo = try JSONDecoder().decode(Info.self, from: content)
-                            
-                            if let del = self.delegateForVideo {
-                                if newInfo.imageURL == "error" {
-                                    del.cannotFindVideo()
-                                } else {
-                                    del.gotVideoInfo(newInfo)
-                                    self.getImage(fromUrlPath: newInfo.imageURL)
-                                }
-                            }
-                        } catch {
-                            print("serialize error")
-                            self.delegateForVideo?.connectError()
-                        }
-                    } else {
-                        self.delegateForVideo?.connectError()
-                    }
+            guard let delegate = self.delegateForVideo else { return }
+            guard error == nil
+                , let content = data
+                , let newInfo = try? JSONDecoder().decode(Info.self, from: content)
+                else {
+                    return self.getInfoFromBilibili(forAV: avNum, onFailure: delegate.connectError)
+            }
+            DispatchQueue.main.async {
+                if newInfo.imageURL == "error" {
+                    self.getInfoFromBilibili(forAV: avNum, onFailure: delegate.cannotFindVideo)
+                } else {
+                    delegate.gotVideoInfo(newInfo)
+                    self.getImage(fromUrlPath: newInfo.imageURL)
                 }
             }
         }
-        
         task.resume()
+    }
+    
+    // FIXME: Wait for BilibiliKit
+    private func getInfoFromBilibili(forAV: UInt64, onFailure reportFailure: @escaping () -> Void) {
+        DispatchQueue.main.async { reportFailure() }
     }
     
     open func getUpuser(keyword searchText: String) {
