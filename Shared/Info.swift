@@ -60,14 +60,14 @@ let italicize: [NSAttributedStringKey: Any] = [
 
 let paraStyle: NSParagraphStyle = {
     let style = NSMutableParagraphStyle()
-    style.headIndent = 24
+    style.headIndent = 36
     style.lineHeightMultiple = 2
     return style
 }()
 
 let hangingIndent: [NSAttributedStringKey: Any] = [
     .paragraphStyle: paraStyle,
-    .font: UIFont(name: "Times New Roman", size: 12)!
+    .font: UIFont(name: "Times New Roman", size: 12) ?? UIFont.systemFont(ofSize: 12)
 ]
 
 extension DateFormatter {
