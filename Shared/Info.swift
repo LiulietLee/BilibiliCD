@@ -40,3 +40,9 @@ extension Info: Decodable {
         }
     }
 }
+
+extension Info {
+    var isValid: Bool {
+        return !imageURL.isEmpty && imageURL != "error"
+    }
+}

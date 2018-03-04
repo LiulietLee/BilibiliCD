@@ -77,6 +77,16 @@
 		4FFB80D81F970B7800626CD7 /* UIImageToCVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB80D71F970B7800626CD7 /* UIImageToCVPixelBuffer.swift */; };
 		4FFB80D91F970B8600626CD7 /* Nudity.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB80D21F970B2E00626CD7 /* Nudity.mlmodel */; };
 		4FFB80DA1F971D7300626CD7 /* UIImageToCVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB80D71F970B7800626CD7 /* UIImageToCVPixelBuffer.swift */; };
+		528A30D0204B899C00EF40D9 /* URLSession+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A30CC204B899400EF40D9 /* URLSession+Extensions.swift */; };
+		528A30D1204B899C00EF40D9 /* URLSession+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A30CC204B899400EF40D9 /* URLSession+Extensions.swift */; };
+		528A30D2204B899C00EF40D9 /* BKVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A30CD204B899500EF40D9 /* BKVideo.swift */; };
+		528A30D3204B899C00EF40D9 /* BKVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A30CD204B899500EF40D9 /* BKVideo.swift */; };
+		528A30D4204B899C00EF40D9 /* BKApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A30CE204B899600EF40D9 /* BKApp.swift */; };
+		528A30D5204B899C00EF40D9 /* BKApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A30CE204B899600EF40D9 /* BKApp.swift */; };
+		528A30D6204B899C00EF40D9 /* BKVideo+Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A30CF204B899C00EF40D9 /* BKVideo+Info.swift */; };
+		528A30D7204B899C00EF40D9 /* BKVideo+Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A30CF204B899C00EF40D9 /* BKVideo+Info.swift */; };
+		528A30D9204B8D0000EF40D9 /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A30D8204B8D0000EF40D9 /* URL+Extensions.swift */; };
+		528A30DA204B8D0000EF40D9 /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A30D8204B8D0000EF40D9 /* URL+Extensions.swift */; };
 		52BFDF791F5B2D29002EE246 /* LLDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BFDF781F5B2D29002EE246 /* LLDialog.swift */; };
 		52E4E47D1F76C6A9008EF09C /* BilibiliCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E4E47C1F76C6A9008EF09C /* BilibiliCover.swift */; };
 		52E4E47E1F76C6B6008EF09C /* BilibiliCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E4E47C1F76C6A9008EF09C /* BilibiliCover.swift */; };
@@ -186,6 +196,11 @@
 		4FFB80D21F970B2E00626CD7 /* Nudity.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Nudity.mlmodel; sourceTree = "<group>"; };
 		4FFB80D71F970B7800626CD7 /* UIImageToCVPixelBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageToCVPixelBuffer.swift; sourceTree = "<group>"; };
 		526B5BCC202EEA2D00E76FB3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		528A30CC204B899400EF40D9 /* URLSession+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLSession+Extensions.swift"; sourceTree = "<group>"; };
+		528A30CD204B899500EF40D9 /* BKVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKVideo.swift; sourceTree = "<group>"; };
+		528A30CE204B899600EF40D9 /* BKApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKApp.swift; sourceTree = "<group>"; };
+		528A30CF204B899C00EF40D9 /* BKVideo+Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BKVideo+Info.swift"; sourceTree = "<group>"; };
+		528A30D8204B8D0000EF40D9 /* URL+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
 		52BFDF781F5B2D29002EE246 /* LLDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLDialog.swift; sourceTree = "<group>"; };
 		52E4E47C1F76C6A9008EF09C /* BilibiliCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BilibiliCover.swift; sourceTree = "<group>"; };
 		8A8078299F9F4EA6B414ED7D /* Pods-BCD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BCD/Pods-BCD.debug.xcconfig"; sourceTree = "<group>"; };
@@ -374,9 +389,22 @@
 			name = "Core ML";
 			sourceTree = "<group>";
 		};
+		528A30CB204B889800EF40D9 /* BilibiliKit */ = {
+			isa = PBXGroup;
+			children = (
+				528A30CE204B899600EF40D9 /* BKApp.swift */,
+				528A30CD204B899500EF40D9 /* BKVideo.swift */,
+				528A30CF204B899C00EF40D9 /* BKVideo+Info.swift */,
+				528A30D8204B8D0000EF40D9 /* URL+Extensions.swift */,
+				528A30CC204B899400EF40D9 /* URLSession+Extensions.swift */,
+			);
+			path = BilibiliKit;
+			sourceTree = "<group>";
+		};
 		52E4E47F1F76CF95008EF09C /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				528A30CB204B889800EF40D9 /* BilibiliKit */,
 				4F8B90711F7B2E3800AB158D /* CoreDataStorage.swift */,
 				4FE8FF701EF5000400D31840 /* Info.swift */,
 				4FE8FF6E1EF4FCC600D31840 /* NetworkingModel.swift */,
@@ -595,12 +623,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FFB80DA1F971D7300626CD7 /* UIImageToCVPixelBuffer.swift in Sources */,
+				528A30D1204B899C00EF40D9 /* URLSession+Extensions.swift in Sources */,
+				528A30D5204B899C00EF40D9 /* BKApp.swift in Sources */,
 				4F2DB5DE1F75F7D400FB2315 /* TodayViewController.swift in Sources */,
 				4FA99A341F7661AE00CB2210 /* LLDialog.swift in Sources */,
 				4F959A7D1F8751760097DE30 /* CoreDataModel.swift in Sources */,
 				4F585B2A1F760B38004D1285 /* Info.swift in Sources */,
+				528A30DA204B8D0000EF40D9 /* URL+Extensions.swift in Sources */,
 				4F585B2B1F760B38004D1285 /* NetworkingModel.swift in Sources */,
+				528A30D7204B899C00EF40D9 /* BKVideo+Info.swift in Sources */,
 				4F959A7C1F8751650097DE30 /* BCD.xcdatamodeld in Sources */,
+				528A30D3204B899C00EF40D9 /* BKVideo.swift in Sources */,
 				4F8B90721F7B2E3800AB158D /* CoreDataStorage.swift in Sources */,
 				4FFB80D91F970B8600626CD7 /* Nudity.mlmodel in Sources */,
 				52E4E47E1F76C6B6008EF09C /* BilibiliCover.swift in Sources */,
@@ -619,6 +652,7 @@
 				4FE9A5501FA3019C002CABF9 /* UIImage+IO.swift in Sources */,
 				4F26AA851F14D45900E1123D /* BrownNavController.swift in Sources */,
 				4FE9A5611FA30389002CABF9 /* anime_scale2x_model.mlmodel in Sources */,
+				528A30D0204B899C00EF40D9 /* URLSession+Extensions.swift in Sources */,
 				4F26AA831F14D3D400E1123D /* SakuraNavController.swift in Sources */,
 				4FE9A55D1FA30389002CABF9 /* photo_noise0_model.mlmodel in Sources */,
 				4FE9A54E1FA3019C002CABF9 /* UIImage+Reload.swift in Sources */,
@@ -631,6 +665,7 @@
 				4FE9A5621FA30389002CABF9 /* photo_noise3_model.mlmodel in Sources */,
 				4FE9A5601FA30389002CABF9 /* photo_noise2_model.mlmodel in Sources */,
 				4FB044851F1F49CA00F96D5A /* TutorialContentViewController.swift in Sources */,
+				528A30D9204B8D0000EF40D9 /* URL+Extensions.swift in Sources */,
 				4FF426D61F1FA61E00A8EF79 /* FindArtViewController.swift in Sources */,
 				4FE9A55F1FA30389002CABF9 /* photo_scale2x_model.mlmodel in Sources */,
 				4F2AFBA41F21FBD100AA7CC7 /* HistoryViewController.swift in Sources */,
@@ -640,11 +675,14 @@
 				4FE8FF711EF5000400D31840 /* Info.swift in Sources */,
 				4F26AA871F14D51100E1123D /* GreyNavController.swift in Sources */,
 				4F4157A21F1331000042FF40 /* SourceTableViewController.swift in Sources */,
+				528A30D6204B899C00EF40D9 /* BKVideo+Info.swift in Sources */,
 				4FFB80D81F970B7800626CD7 /* UIImageToCVPixelBuffer.swift in Sources */,
+				528A30D2204B899C00EF40D9 /* BKVideo.swift in Sources */,
 				4FE9A54D1FA3019C002CABF9 /* UIImage+RunModel.swift in Sources */,
 				4FE8FF6F1EF4FCC600D31840 /* NetworkingModel.swift in Sources */,
 				4FE9A54C1FA3019C002CABF9 /* ThreadPool.swift in Sources */,
 				4FE8FF3E1EF4FC0600D31840 /* AppDelegate.swift in Sources */,
+				528A30D4204B899C00EF40D9 /* BKApp.swift in Sources */,
 				4FBD1D591F1F40D400C1CD59 /* TutorialPageViewController.swift in Sources */,
 				4FE9A5641FA30389002CABF9 /* anime_noise2_model.mlmodel in Sources */,
 				4F9B213F1F16187000D3BDD2 /* AboutViewController.swift in Sources */,
@@ -862,7 +900,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
