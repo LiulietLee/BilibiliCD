@@ -46,3 +46,50 @@ extension Info {
         return !imageURL.isEmpty && imageURL != "error"
     }
 }
+
+enum CitationStyle {
+    case apa
+    case mla
+    case chicago
+    
+
+}
+
+let italicize: [NSAttributedStringKey: Any] = [
+    NSAttributedStringKey.obliqueness: 0.5 as NSNumber
+]
+
+extension Info {
+    func citation(ofStyle style: CitationStyle) -> NSAttributedString {
+        switch style {
+        case .apa:
+            let str = NSMutableAttributedString(string: "\(author). (n.d.). ")
+            str.append(NSAttributedString(string: title, attributes: italicize))
+            str.append(NSAttributedString(string: " [Image]. Retrieved from \(imageURL)"))
+            return str
+        case .mla:
+            let formatter = DateFormatter()
+            formatter.locale = Locale(identifier: "en_US_POSIX")
+            formatter.dateStyle = .medium
+            formatter.timeStyle = .none
+            let comp = formatter.string(from: Date()).components(separatedBy: " ")
+
+            let str = NSMutableAttributedString(string: "\(author). \"\(title).\" ")
+            str.append(NSAttributedString(string: "Bilibili", attributes: italicize))
+            let rest = ", Shanghai Kuanyu Digital Technology, \(imageURL). Accessed \(comp[0]) \(comp[1]). \(comp[2])."
+            str.append(NSAttributedString(string: rest))
+            return str
+        case .chicago:
+            let formatter = DateFormatter()
+            formatter.locale = Locale(identifier: "en_US_POSIX")
+            formatter.dateStyle = .long
+            formatter.timeStyle = .none
+            
+            let str = NSMutableAttributedString(string: "\(author). ")
+            str.append(NSAttributedString(string: title, attributes: italicize))
+            let rest = ". Image. Bilibili. Accessed \(formatter.string(from: Date())). \(imageURL)."
+            str.append(NSAttributedString(string: rest))
+            return str
+        }
+    }
+}
