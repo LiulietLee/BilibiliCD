@@ -61,7 +61,7 @@ extension BilibiliCover: Equatable {
 extension BilibiliCover {
     static let avNumberMatcher = try! NSRegularExpression(pattern: "(?<=av)\\d+")
     static let cvNumberMatcher = try! NSRegularExpression(pattern: "(?<=cv)\\d+")
-    static let numberMatcher = try! NSRegularExpression(pattern: "\\d+")
+    static let lvNumberMatcher = try! NSRegularExpression(pattern: "(?<=\\/)\\d+")
     
     static func fromPasteboard() -> BilibiliCover? {
         guard let urlString = UIPasteboard.general.string else { return nil }
@@ -70,7 +70,7 @@ extension BilibiliCover {
         } else if let cvNumber = cvNumberMatcher.numberFound(in: urlString) {
             return BilibiliCover(number: cvNumber, type: .article)
         } else if urlString.contains("live.bilibili")
-            , let number = numberMatcher.numberFound(in: urlString) {
+            , let number = lvNumberMatcher.numberFound(in: urlString) {
             return BilibiliCover(number: number, type: .live)
         } else { return nil }
     }
