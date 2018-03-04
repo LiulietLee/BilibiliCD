@@ -46,7 +46,7 @@ class CoreDataModel {
         return items
     }
     
-    func addNewHistory(av: String, date: Date, image: UIImage, title: String, up: String, url: String) -> History {
+    func addNewHistory(av: String, image: UIImage, title: String, up: String, url: String) -> History {
         refreshHistory()
 
         let entity = NSEntityDescription.entity(forEntityName: "History", in: context)!
@@ -59,7 +59,7 @@ class CoreDataModel {
         let resizedCoverData = image.resize().toData()
         
         newItem.av = av
-        newItem.date = date
+        newItem.date = Date()
         newItem.image = resizedCoverData
         newItem.title = title
         newItem.up = up

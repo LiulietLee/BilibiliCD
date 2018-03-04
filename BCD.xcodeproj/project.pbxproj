@@ -87,6 +87,7 @@
 		528A30D7204B899C00EF40D9 /* BKVideo+Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A30CF204B899C00EF40D9 /* BKVideo+Info.swift */; };
 		528A30D9204B8D0000EF40D9 /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A30D8204B8D0000EF40D9 /* URL+Extensions.swift */; };
 		528A30DA204B8D0000EF40D9 /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A30D8204B8D0000EF40D9 /* URL+Extensions.swift */; };
+		5292833D204BC44D009FEF65 /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF6C4A81FA4324200A34870 /* UIImage+Gif.swift */; };
 		52BFDF791F5B2D29002EE246 /* LLDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BFDF781F5B2D29002EE246 /* LLDialog.swift */; };
 		52E4E47D1F76C6A9008EF09C /* BilibiliCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E4E47C1F76C6A9008EF09C /* BilibiliCover.swift */; };
 		52E4E47E1F76C6B6008EF09C /* BilibiliCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E4E47C1F76C6A9008EF09C /* BilibiliCover.swift */; };
@@ -636,6 +637,7 @@
 				528A30D3204B899C00EF40D9 /* BKVideo.swift in Sources */,
 				4F8B90721F7B2E3800AB158D /* CoreDataStorage.swift in Sources */,
 				4FFB80D91F970B8600626CD7 /* Nudity.mlmodel in Sources */,
+				5292833D204BC44D009FEF65 /* UIImage+Gif.swift in Sources */,
 				52E4E47E1F76C6B6008EF09C /* BilibiliCover.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

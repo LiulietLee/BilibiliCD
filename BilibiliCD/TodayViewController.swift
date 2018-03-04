@@ -62,7 +62,6 @@ class TodayViewController: UIViewController, NCWidgetProviding, VideoCoverDelega
         loadingText.removeFromSuperview()
         
         _ = dataModel.addNewHistory(av: cover!.shortDescription,
-                                date: Date(),
                                 image: imageView.image!,
                                 title: titleLabel.text!,
                                 up: upName,

@@ -188,11 +188,18 @@ class NetworkingModel {
         let url = URL(string: path)
         let request = URLRequest(url: url!)
         let task = session.dataTask(with: request) { data, response, error in
-            if let content = data,
-                let img = UIImage(data: content) {
-                self.videoDelegate { $0.gotImage(img) }
+            if let content = data {
+                let img: UIImage?
+                if path.hasSuffix("gif") {
+                    img = UIImage.gif(data: content)
+                } else {
+                    img = UIImage(data: content)
+                }
+                if img != nil {
+                    self.videoDelegate { $0.gotImage(img!) }
+                }
             } else {
-                print(error ?? "image decoding failed")
+                print(error ?? "network error")
                 self.videoDelegate { $0.connectError() }
             }
         }

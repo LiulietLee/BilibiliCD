@@ -8,6 +8,8 @@
 
 import UIKit
 import ViewAnimator
+import MobileCoreServices
+import MaterialKit
 
 class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate {
     
@@ -18,13 +20,29 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
     @IBOutlet weak var downloadButton: UIBarButtonItem!
     @IBOutlet weak var pushButton: UIButton!
     @IBOutlet weak var scaleButton: UIBarButtonItem!
-    
+    @IBOutlet weak var separator: UIProgressView!
+    @IBOutlet weak var citationStyleControl: UISegmentedControl!
+    @IBOutlet weak var citationTextView: UITextView!
+    @IBOutlet weak var copyButton: UIButton!
+
+    @IBOutlet var labels: [UILabel]!
+
+
     var cover: BilibiliCover?
     var itemFromHistory: History?
     private let netModel = NetworkingModel()
     private let dataModel = CoreDataModel()
     private var loadingView: LoadingView!
     private let nudity = Nudity()
+    private var reference: (info: Info?, style: CitationStyle) = (nil, .apa) {
+        didSet {
+            guard let info = reference.info else { return }
+            citationTextView?.attributedText = info.citation(ofStyle: reference.style)
+            titleLabel?.text = info.title
+            authorLabel?.text = "UP主：\(info.author)"
+            urlLabel.text = "URL：\(info.imageURL)"
+        }
+    }
     private var image = UIImage() {
         willSet {
             imageView.image = newValue
@@ -83,14 +101,11 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
             view.addSubview(loadingView)
             view.bringSubview(toFront: loadingView)
         } else {
-            titleLabel.text = itemFromHistory!.title!
-            authorLabel.text = itemFromHistory!.up!
-            urlLabel.text = itemFromHistory!.url!
-            
+            reference.info = Info(author: itemFromHistory!.up!, title: itemFromHistory!.title!, imageURL: itemFromHistory!.url!)
             if let originCoverData = itemFromHistory?.origin?.image {
                 imageView.image = UIImage(data: originCoverData)
             } else {
-                imageView.image = UIImage(data: itemFromHistory!.image! as Data)
+                imageView.image = UIImage(data: itemFromHistory!.image!)
             }
             
             if itemFromHistory!.isHidden {
@@ -109,10 +124,11 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
     }
     
     private func changeTextColor(to color: UIColor) {
-        titleLabel.textColor = color
-        authorLabel.textColor = color
-        urlLabel.textColor = color
-        self.navigationController?.navigationBar.barTintColor = color
+        labels?.forEach { $0.textColor = color }
+        citationStyleControl?.tintColor = color
+        separator?.progressTintColor = color
+        copyButton?.tintColor = color
+        navigationController?.navigationBar.barTintColor = color
     }
     
     @IBAction func downloadButtonTapped(_ sender: UIBarButtonItem) {
@@ -159,12 +175,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
     }
     
     func gotVideoInfo(_ info: Info) {
-        titleLabel.text = info.title
-        authorLabel.text = "UP主：\(info.author)"
-        urlLabel.text = "URL：\(info.imageURL)"
-        urlLabel.sizeToFit()
-        titleLabel.sizeToFit()
-        authorLabel.sizeToFit()
+        reference.info = info
     }
     
     func gotImage(_ image: UIImage) {
@@ -188,13 +199,11 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
     }
     
     private func addItemToDB() {
-        let image = imageView.image!
-        let title = titleLabel.text!
-        let upName = authorLabel.text!
-        let url = urlLabel.text!
-        
         DispatchQueue.global(qos: .userInteractive).async {
-            self.itemFromHistory = self.dataModel.addNewHistory(av: self.cover!.shortDescription, date: Date(), image: image, title: title, up: upName, url: url)
+            [info = reference.info!, image = imageView.image!, id = cover!.shortDescription] in
+            self.itemFromHistory = self.dataModel.addNewHistory(
+                av: id, image: image, title: info.title, up: info.author, url: info.imageURL
+            )
         }
     }
     
@@ -214,7 +223,34 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
         loadingView.dismiss()
         imageView.image = #imageLiteral(resourceName: "novideo_image")
     }
-    
+
+    @IBAction func changeCitationFormat(_ sender: UISegmentedControl) {
+        reference.style = CitationStyle(rawValue: sender.selectedSegmentIndex)!
+    }
+
+    lazy var generator: UINotificationFeedbackGenerator = .init()
+
+    @IBAction func copyToPasteBoard() {
+        copyButton.resignFirstResponder()
+        do {
+            guard let citation = citationTextView.attributedText else { throw NSError() }
+            let range = NSRange(location: 0, length: citation.length)
+            let rtf = try citation.data(from: range, documentAttributes:
+                [.documentType : NSAttributedString.DocumentType.rtf])
+            UIPasteboard.general.items = [
+                [
+                    kUTTypeRTF as String: String(data: rtf, encoding: .utf8)!,
+                    kUTTypeUTF8PlainText as String: citation.string
+                ]
+            ]
+            generator.notificationOccurred(.success)
+            MKSnackbar(withTitle: "Copied", withDuration: nil, withTitleColor: nil, withActionButtonTitle: nil, withActionButtonColor: nil).show()
+        } catch {
+            generator.notificationOccurred(.error)
+            MKSnackbar(withTitle: "Failed to Copy", withDuration: nil, withTitleColor: nil, withActionButtonTitle: nil, withActionButtonColor: nil).show()
+        }
+    }
+
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -224,7 +260,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
         navigationItem.backBarButtonItem = backItem
 
         if let vc = segue.destination as? DetailViewController {
-            vc.image = imageView.image!
+            vc.image = imageView.image
             vc.isHidden = itemFromHistory?.isHidden
         } else if let vc = segue.destination as? Waifu2xViewController {
             vc.originImage = imageView.image

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public var isShowingImage = false
 
@@ -47,49 +48,66 @@ extension Info {
     }
 }
 
-enum CitationStyle {
+enum CitationStyle: Int {
     case apa
     case mla
     case chicago
-    
-
 }
 
 let italicize: [NSAttributedStringKey: Any] = [
-    NSAttributedStringKey.obliqueness: 0.5 as NSNumber
+    .obliqueness: 0.5 as NSNumber
 ]
+
+let paraStyle: NSParagraphStyle = {
+    let style = NSMutableParagraphStyle()
+    style.headIndent = 24
+    style.lineHeightMultiple = 2
+    return style
+}()
+
+let hangingIndent: [NSAttributedStringKey: Any] = [
+    .paragraphStyle: paraStyle,
+    .font: UIFont(name: "Times New Roman", size: 12)!
+]
+
+extension DateFormatter {
+    static let mla: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        return formatter
+    }()
+    static let chicago: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateStyle = .long
+        formatter.timeStyle = .none
+        return formatter
+    }()
+}
 
 extension Info {
     func citation(ofStyle style: CitationStyle) -> NSAttributedString {
+        let str: NSMutableAttributedString
         switch style {
         case .apa:
-            let str = NSMutableAttributedString(string: "\(author). (n.d.). ")
+            str = NSMutableAttributedString(string: "\(author). (n.d.). ")
             str.append(NSAttributedString(string: title, attributes: italicize))
             str.append(NSAttributedString(string: " [Image]. Retrieved from \(imageURL)"))
-            return str
         case .mla:
-            let formatter = DateFormatter()
-            formatter.locale = Locale(identifier: "en_US_POSIX")
-            formatter.dateStyle = .medium
-            formatter.timeStyle = .none
-            let comp = formatter.string(from: Date()).components(separatedBy: " ")
-
-            let str = NSMutableAttributedString(string: "\(author). \"\(title).\" ")
+            let comp = DateFormatter.mla.string(from: Date()).components(separatedBy: " ")
+            str = NSMutableAttributedString(string: "\(author). \"\(title).\" ")
             str.append(NSAttributedString(string: "Bilibili", attributes: italicize))
             let rest = ", Shanghai Kuanyu Digital Technology, \(imageURL). Accessed \(comp[0]) \(comp[1]). \(comp[2])."
             str.append(NSAttributedString(string: rest))
-            return str
         case .chicago:
-            let formatter = DateFormatter()
-            formatter.locale = Locale(identifier: "en_US_POSIX")
-            formatter.dateStyle = .long
-            formatter.timeStyle = .none
-            
-            let str = NSMutableAttributedString(string: "\(author). ")
+            str = NSMutableAttributedString(string: "\(author). ")
             str.append(NSAttributedString(string: title, attributes: italicize))
-            let rest = ". Image. Bilibili. Accessed \(formatter.string(from: Date())). \(imageURL)."
+            let rest = ". Image. Bilibili. Accessed \(DateFormatter.chicago.string(from: Date())). \(imageURL)."
             str.append(NSAttributedString(string: rest))
-            return str
         }
+        str.addAttributes(hangingIndent, range: NSRange(location: 0, length: str.length))
+        return str
     }
 }
