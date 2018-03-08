@@ -10,7 +10,7 @@ import UIKit
 
 protocol VideoCoverDelegate: class {
     func gotVideoInfo(_ info: Info)
-    func gotImage(_ image: UIImage)
+    func gotImage(_ image: Image)
     func connectError()
     func cannotFindVideo()
 }
@@ -189,14 +189,18 @@ class NetworkingModel {
         let request = URLRequest(url: url!)
         let task = session.dataTask(with: request) { data, response, error in
             if let content = data {
-                let img: UIImage?
-                if path.hasSuffix("gif") {
-                    img = UIImage.gif(data: content)
+                if path.isGIF {
+                    if let gif = UIImage.gif(data: content) {
+                        self.videoDelegate { $0.gotImage(.gif(gif, data: content)) }
+                    } else {
+                        self.videoDelegate { $0.connectError() }
+                    }
                 } else {
-                    img = UIImage(data: content)
-                }
-                if img != nil {
-                    self.videoDelegate { $0.gotImage(img!) }
+                    if let img = UIImage(data: content) {
+                        self.videoDelegate { $0.gotImage(.normal(img)) }
+                    } else {
+                        self.videoDelegate { $0.connectError() }
+                    }
                 }
             } else {
                 print(error ?? "network error")

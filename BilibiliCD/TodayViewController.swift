@@ -22,6 +22,12 @@ class TodayViewController: UIViewController, NCWidgetProviding, VideoCoverDelega
     private let dataModel = CoreDataModel()
     private var upName = ""
     private var urlString = ""
+    private var image: Image?
+
+    // If an error is encountered, use NCUpdateResult.Failed
+    // If there's no update required, use NCUpdateResult.NoData
+    // If there's an update, use NCUpdateResult.NewData
+    private var completionHandler: ((NCUpdateResult) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +40,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, VideoCoverDelega
         if let cover = BilibiliCover.fromPasteboard(), cover != self.cover {
             if dataModel.isExistInHistory(cover: cover) != nil {
                 loadingText.text = "这个封面似乎已经\n在历史记录里了呢"
+                completionHandler?(.noData)
                 return
             }
             self.cover = cover
@@ -47,6 +54,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, VideoCoverDelega
             }
         } else {
             loadingText.text = "今天真是寂寞如雪哦"
+            completionHandler?(.noData)
         }
     }
     
@@ -56,16 +64,18 @@ class TodayViewController: UIViewController, NCWidgetProviding, VideoCoverDelega
         urlString = "URL：\(info.imageURL)"
     }
     
-    func gotImage(_ image: UIImage) {
-        imageView.image = image
+    func gotImage(_ image: Image) {
+        self.image = image
+        imageView.image = image.uiImage
         downloadButton.isEnabled = true
         loadingText.removeFromSuperview()
         
-        _ = dataModel.addNewHistory(av: cover!.shortDescription,
-                                image: imageView.image!,
+        dataModel.addNewHistory(av: cover!.shortDescription,
+                                image: image,
                                 title: titleLabel.text!,
                                 up: upName,
                                 url: urlString)
+        completionHandler?(.newData)
     }
     
     func connectError() {
@@ -73,6 +83,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, VideoCoverDelega
         titleLabel.text = "原因大概是我们的服(V)务(P)器(S)炸了"
         imageView.image = #imageLiteral(resourceName: "error_image")
         loadingText.removeFromSuperview()
+        completionHandler?(.failed)
     }
     
     func cannotFindVideo() {
@@ -80,19 +91,23 @@ class TodayViewController: UIViewController, NCWidgetProviding, VideoCoverDelega
         titleLabel.text = "大概这个视频是真的不见了吧"
         imageView.image = #imageLiteral(resourceName: "novideo_image")
         loadingText.removeFromSuperview()
+        completionHandler?(.failed)
     }
     
     @IBAction func downloadImage() {
-        saveImage()
-    }
-    
-    @objc private func saveImage() {
-        UIImageWriteToSavedPhotosAlbum(imageView.image!, self, #selector(imageSavingFinished(_:didFinishSavingWithError:contextInfo:)), nil)
+        guard let image = image else {
+            return imageSaved(successfully: false, error: nil)
+        }
+        ImageSaver.saveImage(image, completionHandler: imageSaved, alternateHandler: #selector(imageSavingFinished(_:didFinishSavingWithError:contextInfo:)))
     }
     
     @objc func imageSavingFinished(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
-        if let error = error {
-            print(error)
+        imageSaved(successfully: error == nil, error: error)
+    }
+
+    private func imageSaved(successfully: Bool, error: Error?) {
+        if !successfully || error != nil {
+            print(error ?? "unknown error")
         } else {
             UIView.animate(withDuration: 0.3, animations: {
                 self.downloadButton.backgroundColor = .white
@@ -105,15 +120,10 @@ class TodayViewController: UIViewController, NCWidgetProviding, VideoCoverDelega
             })
         }
     }
-    
+
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         // Perform any setup necessary in order to update the view.
-        
-        // If an error is encountered, use NCUpdateResult.Failed
-        // If there's no update required, use NCUpdateResult.NoData
-        // If there's an update, use NCUpdateResult.NewData
+        self.completionHandler = completionHandler
         scanPasteBoard()
-        completionHandler(NCUpdateResult.newData)
     }
-    
 }

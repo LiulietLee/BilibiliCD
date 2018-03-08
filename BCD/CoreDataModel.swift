@@ -18,7 +18,7 @@ class CoreDataModel {
     private let HistFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "History")
     private let OrigFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "OriginCover")
     private let SettFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Setting")
-
+    
     private func saveContext() {
         CoreDataStorage.sharedInstance.saveContext(context)
     }
@@ -46,17 +46,25 @@ class CoreDataModel {
         return items
     }
     
-    func addNewHistory(av: String, image: UIImage, title: String, up: String, url: String) -> History {
+    @discardableResult
+    func addNewHistory(av: String, image: Image, title: String, up: String, url: String) -> History {
         refreshHistory()
-
+        
         let entity = NSEntityDescription.entity(forEntityName: "History", in: context)!
         let newItem = History(entity: entity, insertInto: context)
-
+        
         let list = fetchHistory()
         if list.count != 0, list[0].up == up && list[0].av == av { return list[0] }
         
-        let originCoverData = image.toData()
-        let resizedCoverData = image.resize().toData()
+        let uiImage = image.uiImage
+        let originCoverData: Data
+        switch image {
+        case .gif(_, data: let data):
+            originCoverData = data
+        case .normal:
+            originCoverData = uiImage.toData()
+        }
+        let resizedCoverData = uiImage.resized().toData()
         
         newItem.av = av
         newItem.date = Date()
@@ -64,7 +72,7 @@ class CoreDataModel {
         newItem.title = title
         newItem.up = up
         newItem.url = url
-        newItem.isHidden = isNeedHid(image)
+        newItem.isHidden = isNeedHid(uiImage)
         
         let origEntity = NSEntityDescription.entity(forEntityName: "OriginCover", in: context)!
         let newOrig = OriginCover(entity: origEntity, insertInto: context)
@@ -176,7 +184,7 @@ class CoreDataModel {
         
         return nil
     }
-
+    
     var historyNum: Int! {
         get {
             return Int(setting?.historyNumber ?? 0)
@@ -193,12 +201,34 @@ extension UIImage {
         return UIImagePNGRepresentation(self)!
     }
     
-    func resize() -> UIImage {
-        UIGraphicsBeginImageContext(CGSize(width: 135, height: 84))
-        self.draw(in: CGRect(x: 0, y: 0, width: 135, height: 84))
+    func resized(to size: CGSize = CGSize(width: 135, height: 84)) -> UIImage {
+        UIGraphicsBeginImageContext(size)
+        defer { UIGraphicsEndImageContext() }
+        draw(in: CGRect(origin: .zero, size: size))
         let resizedImage = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
         return resizedImage
     }
 }
 
+extension String {
+    var isGIF: Bool {
+        return hasSuffix("gif")
+    }
+}
+
+extension History {
+    var isGIF: Bool! {
+        return url?.isGIF
+    }
+    var uiImage: UIImage? {
+        if let originCoverData = origin?.image {
+            if isGIF {
+                return UIImage.gif(data: originCoverData)
+            } else {
+                return UIImage(data: originCoverData)
+            }
+        } else if let data = image {
+            return UIImage(data: data)
+        } else { return nil }
+    }
+}

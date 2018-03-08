@@ -87,6 +87,8 @@
 		528A30D7204B899C00EF40D9 /* BKVideo+Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A30CF204B899C00EF40D9 /* BKVideo+Info.swift */; };
 		528A30D9204B8D0000EF40D9 /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A30D8204B8D0000EF40D9 /* URL+Extensions.swift */; };
 		528A30DA204B8D0000EF40D9 /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A30D8204B8D0000EF40D9 /* URL+Extensions.swift */; };
+		5290FA032051B0DF00A1AAA4 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5290FA022051B0DF00A1AAA4 /* ImageSaver.swift */; };
+		5290FA042051B19B00A1AAA4 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5290FA022051B0DF00A1AAA4 /* ImageSaver.swift */; };
 		5292833D204BC44D009FEF65 /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF6C4A81FA4324200A34870 /* UIImage+Gif.swift */; };
 		52BFDF791F5B2D29002EE246 /* LLDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BFDF781F5B2D29002EE246 /* LLDialog.swift */; };
 		52E4E47D1F76C6A9008EF09C /* BilibiliCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E4E47C1F76C6A9008EF09C /* BilibiliCover.swift */; };
@@ -202,6 +204,7 @@
 		528A30CE204B899600EF40D9 /* BKApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKApp.swift; sourceTree = "<group>"; };
 		528A30CF204B899C00EF40D9 /* BKVideo+Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BKVideo+Info.swift"; sourceTree = "<group>"; };
 		528A30D8204B8D0000EF40D9 /* URL+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
+		5290FA022051B0DF00A1AAA4 /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
 		52BFDF781F5B2D29002EE246 /* LLDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLDialog.swift; sourceTree = "<group>"; };
 		52E4E47C1F76C6A9008EF09C /* BilibiliCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BilibiliCover.swift; sourceTree = "<group>"; };
 		8A8078299F9F4EA6B414ED7D /* Pods-BCD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BCD/Pods-BCD.debug.xcconfig"; sourceTree = "<group>"; };
@@ -410,6 +413,7 @@
 				4FE8FF701EF5000400D31840 /* Info.swift */,
 				4FE8FF6E1EF4FCC600D31840 /* NetworkingModel.swift */,
 				52E4E47C1F76C6A9008EF09C /* BilibiliCover.swift */,
+				5290FA022051B0DF00A1AAA4 /* ImageSaver.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -626,6 +630,7 @@
 				4FFB80DA1F971D7300626CD7 /* UIImageToCVPixelBuffer.swift in Sources */,
 				528A30D1204B899C00EF40D9 /* URLSession+Extensions.swift in Sources */,
 				528A30D5204B899C00EF40D9 /* BKApp.swift in Sources */,
+				5290FA042051B19B00A1AAA4 /* ImageSaver.swift in Sources */,
 				4F2DB5DE1F75F7D400FB2315 /* TodayViewController.swift in Sources */,
 				4FA99A341F7661AE00CB2210 /* LLDialog.swift in Sources */,
 				4F959A7D1F8751760097DE30 /* CoreDataModel.swift in Sources */,
@@ -686,6 +691,7 @@
 				4FE8FF3E1EF4FC0600D31840 /* AppDelegate.swift in Sources */,
 				528A30D4204B899C00EF40D9 /* BKApp.swift in Sources */,
 				4FBD1D591F1F40D400C1CD59 /* TutorialPageViewController.swift in Sources */,
+				5290FA032051B0DF00A1AAA4 /* ImageSaver.swift in Sources */,
 				4FE9A5641FA30389002CABF9 /* anime_noise2_model.mlmodel in Sources */,
 				4F9B213F1F16187000D3BDD2 /* AboutViewController.swift in Sources */,
 				4FE8FF731EF5095B00D31840 /* ImageViewController.swift in Sources */,

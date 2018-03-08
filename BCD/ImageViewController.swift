@@ -19,6 +19,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
     @IBOutlet weak var urlLabel: UILabel!
     @IBOutlet weak var downloadButton: UIBarButtonItem!
     @IBOutlet weak var pushButton: UIButton!
+    /// Should be disabled for GIF.
     @IBOutlet weak var scaleButton: UIBarButtonItem!
     @IBOutlet weak var separator: UIProgressView!
     @IBOutlet weak var citationStyleControl: UISegmentedControl!
@@ -41,11 +42,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
             titleLabel?.text = info.title
             authorLabel?.text = "UP主：\(info.author)"
             urlLabel.text = "URL：\(info.imageURL)"
-        }
-    }
-    private var image = UIImage() {
-        willSet {
-            imageView.image = newValue
+            scaleButton.isEnabled = !info.imageURL.isGIF
         }
     }
     
@@ -89,32 +86,25 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
             title = "No av number"
             print("No av number")
         }
-        
-        if itemFromHistory == nil {
+
+        if let item = itemFromHistory {
+            let url = item.url!
+            reference.info = Info(author: item.up!, title: item.title!, imageURL: url)
+            imageView.image = item.uiImage
+
+            changeTextColor(to: item.isHidden ? .black : .tianyiBlue)
+
+            animateView()
+        } else {
             titleLabel.text = ""
             authorLabel.text = ""
             urlLabel.text = ""
-            
+
             disableButtons()
-            
+
             loadingView = LoadingView(frame: view.bounds)
             view.addSubview(loadingView)
             view.bringSubview(toFront: loadingView)
-        } else {
-            reference.info = Info(author: itemFromHistory!.up!, title: itemFromHistory!.title!, imageURL: itemFromHistory!.url!)
-            if let originCoverData = itemFromHistory?.origin?.image {
-                imageView.image = UIImage(data: originCoverData)
-            } else {
-                imageView.image = UIImage(data: itemFromHistory!.image!)
-            }
-            
-            if itemFromHistory!.isHidden {
-                changeTextColor(to: .black)
-            } else {
-                changeTextColor(to: .tianyiBlue)
-            }
-            
-            animateView()
         }
     }
     
@@ -140,31 +130,50 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
             UIApplication.shared.open(cover.url)
         }
     }
-    
+
     @objc private func saveImage() {
-        UIImageWriteToSavedPhotosAlbum(imageView.image!, self, #selector(imageSavingFinished(_:didFinishSavingWithError:contextInfo:)), nil)
+        let image: Image
+        guard let item = itemFromHistory
+            , let url = item.url
+            , let uiImage = imageView?.image
+            , let data = item.origin?.image
+            else {
+                return imageSaved(successfully: false, error: nil)
+        }
+        if url.isGIF {
+            image = .gif(uiImage, data: data)
+        } else {
+            image = .normal(uiImage)
+        }
+        ImageSaver.saveImage(image, completionHandler: imageSaved, alternateHandler: #selector(imageSavingFinished(_:didFinishSavingWithError:contextInfo:)))
     }
     
     @objc func imageSavingFinished(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
-        let dialog = LLDialog()
-        if let error = error {
-            dialog.title = "啊叻？！"
-            dialog.message = "下载出错了Σ( ￣□￣||)"
-            dialog.setNegativeButton(withTitle: "好吧")
-            dialog.setPositiveButton(withTitle: "再试一次", target: self, action: #selector(saveImage))
-            dialog.show()
-            print(error)
-        } else {
-            dialog.title = "保存成功！"
-            dialog.message = "封面被成功保存(〜￣△￣)〜"
-            dialog.setPositiveButton(withTitle: "OK")
-            dialog.show()
+        imageSaved(successfully: error == nil, error: error)
+    }
+
+    private func imageSaved(successfully: Bool, error: Error?) {
+        DispatchQueue.main.async { [weak self] in
+            guard let `self` = self else { return }
+            let dialog = LLDialog()
+            if !successfully || error != nil {
+                dialog.title = "啊叻？！"
+                dialog.message = "保存出错了Σ( ￣□￣||)"
+                dialog.setNegativeButton(withTitle: "好吧")
+                dialog.setPositiveButton(withTitle: "再试一次", target: self, action: #selector(self.saveImage))
+                dialog.show()
+                print(error ?? "Unknown error")
+            } else {
+                dialog.title = "保存成功！"
+                dialog.message = "封面被成功保存(〜￣△￣)〜"
+                dialog.setPositiveButton(withTitle: "OK")
+                dialog.show()
+            }
         }
     }
     
     private func enableButtons() {
         downloadButton.isEnabled = true
-        scaleButton.isEnabled = true
         pushButton.isEnabled = true
     }
     
@@ -178,12 +187,16 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
         reference.info = info
     }
     
-    func gotImage(_ image: UIImage) {
-        imageView.image = image
+    func gotImage(_ image: Image) {
+        imageView.image = image.uiImage
+        switch image {
+        case .gif: scaleButton.isEnabled = false
+        case .normal: scaleButton.isEnabled = true
+        }
         enableButtons()
         loadingView.dismiss()
         animateView()
-        addItemToDB()
+        addItemToDB(image: image)
     }
     
     func scaleSucceed(scaledImage: UIImage) {
@@ -198,9 +211,9 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
         dialog.show()
     }
     
-    private func addItemToDB() {
+    private func addItemToDB(image: Image) {
         DispatchQueue.global(qos: .userInteractive).async {
-            [info = reference.info!, image = imageView.image!, id = cover!.shortDescription] in
+            [info = reference.info!, id = cover!.shortDescription] in
             self.itemFromHistory = self.dataModel.addNewHistory(
                 av: id, image: image, title: info.title, up: info.author, url: info.imageURL
             )
@@ -252,8 +265,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
     }
 
     // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let backItem = UIBarButtonItem()
         backItem.title = ""
@@ -267,5 +279,4 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
             vc.delegate = self
         }
     }
-    
 }

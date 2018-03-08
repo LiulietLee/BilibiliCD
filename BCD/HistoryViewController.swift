@@ -38,9 +38,9 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     private var isShowingFullHistory = false {
         didSet {
             if oldValue {
-                self.navigationController?.navigationBar.barTintColor = .tianyiBlue
+                navigationController?.navigationBar.barTintColor = .tianyiBlue
             } else {
-                self.navigationController?.navigationBar.barTintColor = .black
+                navigationController?.navigationBar.barTintColor = .black
             }
             tableView.reloadData()
         }
@@ -81,7 +81,6 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewWillAppear(animated)
         motionDetector.beginDetect()
         motionDetector.delegate = self
-        
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(hideCellsIfNeeded),
                                                name: .UIApplicationWillResignActive,
@@ -128,8 +127,8 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         view.addSubview(nothingLabel)
         
-        let midXCon = NSLayoutConstraint(item: nothingLabel, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0)
-        let midYCon = NSLayoutConstraint(item: nothingLabel, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1, constant: 0)
+        let midXCon = nothingLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        let midYCon = nothingLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         
         view.addConstraint(midXCon)
         view.addConstraint(midYCon)
@@ -181,8 +180,9 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
                 let formatter = DateFormatter()
                 formatter.dateFormat = "yyyy.MM.dd hh:mm"
                 cell.dateLabel.text = formatter.string(from: history[indexPath.row].date! as Date)
+                let item = history[indexPath.row]
                 DispatchQueue.global(qos: .userInteractive).async {
-                    let image = UIImage(data: self.history[indexPath.row].image! as Data, scale: 1.0)!
+                    let image = item.uiImage
                     DispatchQueue.main.async {
                         cell.coverView.image = image
                     }
@@ -217,7 +217,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
             self.tableView.reloadData()
         }
         hide.backgroundColor = .lightGray
-
+        
         let delete = UITableViewRowAction(style: .normal, title: "删除") { action, index in
             self.dataModel.deleteHistory(item)
             self.history = self.dataModel.fetchHistory()
@@ -243,40 +243,33 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     // MARK: - Navigation
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let backItem = UIBarButtonItem()
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
         
-        if segue.identifier == "set limit" {
-            if let vc = segue.destination as? SetHistoryNumViewController {
-                vc.delegate = self
-                vc.isShowingFullHistory = isShowingFullHistory
-                if let controller = vc.popoverPresentationController {
-                    controller.delegate = self
-                }
-            }
-        } else if segue.identifier == "detail" {
-            if let vc = segue.destination as? ImageViewController,
-                let cell = sender as? HistoryCell,
-                let indexPath = tableView.indexPath(for: cell) {
-                let item = history[indexPath.row]
-                vc.cover = BilibiliCover(item.av!)
-                vc.itemFromHistory = item
-            }
+        if segue.identifier == "set limit",
+            let vc = segue.destination as? SetHistoryNumViewController {
+            vc.delegate = self
+            vc.isShowingFullHistory = isShowingFullHistory
+            vc.popoverPresentationController?.delegate = self
+        } else if segue.identifier == "detail",
+            let vc = segue.destination as? ImageViewController,
+            let cell = sender as? HistoryCell,
+            let indexPath = tableView.indexPath(for: cell) {
+            let item = history[indexPath.row]
+            vc.cover = BilibiliCover(item.av!)
+            vc.itemFromHistory = item
         }
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String?, sender: Any?) -> Bool {
-        if !isShowingFullHistory {
-            if let ident = identifier,
-                ident == "detail",
-                let cell = sender as? HistoryCell,
-                let indexPath = tableView.indexPath(for: cell) {
-                let item = history[indexPath.row]
-                if item.isHidden { return false }
-            }
+        if !isShowingFullHistory,
+            identifier == "detail",
+            let cell = sender as? HistoryCell,
+            let indexPath = tableView.indexPath(for: cell) {
+            let item = history[indexPath.row]
+            if item.isHidden { return false }
         }
         return true
     }
@@ -284,5 +277,4 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
     }
-    
 }
