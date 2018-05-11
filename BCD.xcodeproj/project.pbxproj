@@ -207,6 +207,7 @@
 		5290FA022051B0DF00A1AAA4 /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
 		52BFDF781F5B2D29002EE246 /* LLDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLDialog.swift; sourceTree = "<group>"; };
 		52E4E47C1F76C6A9008EF09C /* BilibiliCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BilibiliCover.swift; sourceTree = "<group>"; };
+		5E33A0B9EFD979D55C5FC63C /* Pods_BilibiliCD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BilibiliCD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A8078299F9F4EA6B414ED7D /* Pods-BCD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BCD/Pods-BCD.debug.xcconfig"; sourceTree = "<group>"; };
 		FD6425538132C362B8653B3A /* Pods-BCD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCD.release.xcconfig"; path = "Pods/Target Support Files/Pods-BCD/Pods-BCD.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -259,6 +260,7 @@
 			children = (
 				018D8C88BE8E9E6C2D578E97 /* Pods_BCD.framework */,
 				4F2DB5DA1F75F7D400FB2315 /* NotificationCenter.framework */,
+				5E33A0B9EFD979D55C5FC63C /* Pods_BilibiliCD.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

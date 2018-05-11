@@ -40,6 +40,29 @@ class NetworkingModel {
     weak var delegateForUpuser: UpuserImgDelegate?
     let session = URLSession.shared
     
+    private let baseAPI = "http://bilibilicd.tk/api"
+    
+    enum CoverType: Int {
+        case none = 0
+        case video = 1
+        case article = 2
+        case live = 3
+    }
+    
+    private func generateAPI(byType type: CoverType, andNID nid: Int) -> URL? {
+        var api = baseAPI
+        
+        switch type {
+        case .video: api += "/av/info"
+        case .article: api += "/cv/info"
+        default: return nil
+        }
+        
+        api += "/\(nid)"
+        
+        return URL(string: api)
+    }
+    
     open func getLiveInfo(lvNum: UInt64) {
         let path = "https://api.live.bilibili.com/AppRoom/index?device=phone&platform=ios&scale=3&build=10000&room_id=\(lvNum)"
         let url = URL(string: path)
@@ -73,9 +96,11 @@ class NetworkingModel {
     }
     
     open func getArticleInfo(cvNum: UInt64) {
-        let path = "http://bilibilicd.tk/ios/article/\(cvNum)/"
-        let url = URL(string: path)
-        let request = URLRequest(url: url!)
+        guard let url = generateAPI(byType: .article, andNID: Int(cvNum)) else {
+            print("cannot generate api url")
+            return
+        }
+        let request = URLRequest(url: url)
         let task = session.dataTask(with: request) { (data, response, error) in
             if let content = data {
                 do {
@@ -100,9 +125,11 @@ class NetworkingModel {
     }
     
     open func getInfoFromAvNumber(avNum: UInt64) {
-        let path = "http://bilibilicd.tk/video/ios/\(avNum)/"
-        let url = URL(string: path)
-        let request = URLRequest(url: url!)
+        guard let url = generateAPI(byType: .video, andNID: Int(avNum)) else {
+            print("cannot generate api url")
+            return
+        }
+        let request = URLRequest(url: url)
         let task = session.dataTask(with: request) { data, response, error in
             guard error == nil, let content = data
                 , let newInfo = try? JSONDecoder().decode(Info.self, from: content)
@@ -131,57 +158,6 @@ class NetworkingModel {
             self.videoDelegate { $0.gotVideoInfo(newInfo) }
             self.getImage(fromUrlPath: url)
         }
-    }
-    
-    open func getUpuser(keyword searchText: String) {
-        let userName = searchText.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
-        let path = "http://bilibilicd.tk/ios/upuser-keyword=\(userName)"
-        let url = URL(string: path)
-        let request = URLRequest(url: url!)
-        let tesk = session.dataTask(with: request) { data, response, error in
-            if let content = data {
-                DispatchQueue.main.async {
-                    do {
-                        struct UpuserWrapper: Decodable {
-                            let sum: Int
-                            let upusers: [Upuser]
-                        }
-
-                        let jsonData = try JSONDecoder().decode(UpuserWrapper.self, from: content)
-
-                        if jsonData.sum > 0 && jsonData.upusers.count > 0 {
-                            self.delegateForUpuser?.gotUpusers(jsonData.upusers)
-                        } else {
-                            self.delegateForUpuser?.cannotGetUser()
-                        }
-                    } catch {
-                        self.delegateForUpuser?.connectError()
-                    }
-                }
-            } else {
-                print(error ?? "network error")
-                // TODO: Check if this needs to be on main thread.
-                self.delegateForUpuser?.connectError()
-            }
-        }
-        tesk.resume()
-    }
-    
-    open func sendScaleData(type: String, size: CGSize, time: Double) {
-        let stringUrl = "http://www.bilibilicd.tk/ios/waifu2x/?iphone=\(type)&time=\(time)&len=\(size.height)&wid=\(size.width)"
-        let url = URL(string: stringUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)!
-        let task = session.dataTask(with: url) { data, response, error in
-            if let content = data {
-                struct statusWrapper: Decodable {
-                    let status: String
-                }
-                let json = try? JSONDecoder().decode(statusWrapper.self, from: content)
-                print(json?.status ?? "data error")
-            } else {
-                print(error ?? "unknown error")
-            }
-        }
-        task.resume()
     }
     
     private func getImage(fromUrlPath path: String) {
