@@ -34,6 +34,7 @@ struct Upuser: Decodable {
     }
 }
 
+/// TODO: - 以后需要重构网络层
 class NetworkingModel {
     
     weak var delegateForVideo: VideoCoverDelegate?
@@ -47,18 +48,24 @@ class NetworkingModel {
         case video = 1
         case article = 2
         case live = 3
+        case hotList = 4
     }
     
-    private func generateAPI(byType type: CoverType, andNID nid: Int) -> URL? {
+    private func generateAPI(byType type: CoverType, andNID nid: Int? = nil) -> URL? {
         var api = baseAPI
         
-        switch type {
-        case .video: api += "/av/info"
-        case .article: api += "/cv/info"
-        default: return nil
+        if type == .hotList {
+            // todo
+        } else {
+            api += "/search?type="
+            switch type {
+            case .video: api += "av"
+            case .article: api += "cv"
+            default: return nil
+            }
         }
         
-        api += "/\(nid)"
+        api += "&nid=\(nid!)"
         
         return URL(string: api)
     }
@@ -97,8 +104,7 @@ class NetworkingModel {
     
     open func getArticleInfo(cvNum: UInt64) {
         guard let url = generateAPI(byType: .article, andNID: Int(cvNum)) else {
-            print("cannot generate api url")
-            return
+            fatalError("cannot generate api url")
         }
         let request = URLRequest(url: url)
         let task = session.dataTask(with: request) { (data, response, error) in
@@ -126,8 +132,7 @@ class NetworkingModel {
     
     open func getInfoFromAvNumber(avNum: UInt64) {
         guard let url = generateAPI(byType: .video, andNID: Int(avNum)) else {
-            print("cannot generate api url")
-            return
+            fatalError("cannot generate api url")
         }
         let request = URLRequest(url: url)
         let task = session.dataTask(with: request) { data, response, error in
