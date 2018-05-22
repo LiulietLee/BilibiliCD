@@ -486,7 +486,7 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="cover"/>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="200" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fjh-fO-3X6">
+                                    <button opaque="NO" contentMode="scaleAspectFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="200" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fjh-fO-3X6">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="cover"/>
