@@ -9,8 +9,6 @@
 import UIKit
 import CoreData
 import UserNotifications
-import Firebase
-import FirebaseMessaging
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -36,8 +34,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
         
         application.registerForRemoteNotifications()
-
-        FirebaseApp.configure()
         
         return true
     }
