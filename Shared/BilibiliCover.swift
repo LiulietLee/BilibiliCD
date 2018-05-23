@@ -8,15 +8,23 @@
 
 import UIKit
 
+enum CoverType: Int {
+    case none = 0
+    case video = 1
+    case article = 2
+    case live = 3
+    case hotList = 4
+}
+
 struct BilibiliCover {
     internal(set) var number: UInt64
-    let type: Category
-    enum Category { case video, live, article }
+    let type: CoverType
     var shortDescription: String {
         switch type {
         case .video:   return "av\(number)"
         case .live:    return "lv\(number)"
         case .article: return "cv\(number)"
+        default:       fatalError("todo \(type)")
         }
     }
     var url: URL! {
@@ -24,12 +32,13 @@ struct BilibiliCover {
         case .video:   return URL(string: "https://www.bilibili.com/video/\(shortDescription)/")
         case .live:    return URL(string: "https://live.bilibili.com/\(number)")
         case .article: return URL(string: "https://www.bilibili.com/read/\(shortDescription)")
+        default:       fatalError("todo \(type)")
         }
     }
 }
 
 extension BilibiliCover {
-    init(id: UInt64, type: Category = .video) {
+    init(id: UInt64, type: CoverType = .video) {
         self.number = id
         self.type = type
     }

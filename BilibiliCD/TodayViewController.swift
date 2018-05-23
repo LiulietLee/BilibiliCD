@@ -46,12 +46,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, VideoCoverDelega
             self.cover = cover
             number = cover.number
             numberLabel.text = cover.shortDescription
-
-            switch cover.type {
-            case .live:    netModel.getLiveInfo(lvNum: number)
-            case .video:   netModel.getInfoFromAvNumber(avNum: number)
-            case .article: netModel.getArticleInfo(cvNum: number)
-            }
+            netModel.getCoverInfo(byType: cover.type, andNID: Int(number))
         } else {
             loadingText.text = "今天真是寂寞如雪哦"
             completionHandler?(.noData)

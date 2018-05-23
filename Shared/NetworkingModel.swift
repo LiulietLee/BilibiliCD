@@ -43,14 +43,6 @@ class NetworkingModel {
     
     private let baseAPI = "http://bilibilicd.tk/api"
     
-    enum CoverType: Int {
-        case none = 0
-        case video = 1
-        case article = 2
-        case live = 3
-        case hotList = 4
-    }
-    
     private func generateAPI(byType type: CoverType, andNID nid: Int? = nil) -> URL? {
         var api = baseAPI
         
@@ -68,6 +60,38 @@ class NetworkingModel {
         api += "&nid=\(nid!)"
         
         return URL(string: api)
+    }
+    
+    open func getCoverInfo(byType type: CoverType, andNID nid: Int) {
+        guard let url = generateAPI(byType: type, andNID: nid) else {
+            fatalError("cannot generate api url")
+        }
+        let request = URLRequest(url: url)
+        let task = session.dataTask(with: request) { data, response, error in
+            if let content = data {
+                do {
+                    struct InfoWrapper: Decodable {
+                        let data: Info
+                    }
+                    let jsonData = try JSONDecoder().decode(InfoWrapper.self, from: content)
+                    let newInfo = jsonData.data
+                    
+                    if newInfo.isValid {
+                        self.videoDelegate { $0.gotVideoInfo(newInfo) }
+                        self.getImage(fromUrlPath: newInfo.imageURL)
+                    } else {
+                        self.videoDelegate { $0.cannotFindVideo() }
+                    }
+                } catch {
+                    print("serialize error")
+                    self.videoDelegate{ $0.connectError() }
+                }
+            } else {
+                print(error ?? "network error")
+                self.videoDelegate { $0.connectError() }
+            }
+        }
+        task.resume()
     }
     
     open func getLiveInfo(lvNum: UInt64) {
