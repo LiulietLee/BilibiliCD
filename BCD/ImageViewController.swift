@@ -76,11 +76,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
         if let cover = cover {
             title = cover.shortDescription
             if itemFromHistory == nil {
-                switch cover.type {
-                case .video:   netModel.getInfoFromAvNumber(avNum: cover.number)
-                case .live:    netModel.getLiveInfo(lvNum: cover.number)
-                case .article: netModel.getArticleInfo(cvNum: cover.number)
-                }
+                netModel.getCoverInfo(byType: cover.type, andNID: cover.number)
             }
         } else {
             title = "No av number"

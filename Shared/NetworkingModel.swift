@@ -41,18 +41,19 @@ class NetworkingModel {
     weak var delegateForUpuser: UpuserImgDelegate?
     let session = URLSession.shared
     
-    private let baseAPI = "http://bilibilicd.tk/api"
+    private let baseAPI = "http://www.bilibilicd.tk/api"
     
     private func generateAPI(byType type: CoverType, andNID nid: Int? = nil) -> URL? {
         var api = baseAPI
         
         if type == .hotList {
-            // todo
+            return URL(string: api + "/hot_list")
         } else {
             api += "/search?type="
             switch type {
             case .video: api += "av"
             case .article: api += "cv"
+            case .live: api += "lv"
             default: return nil
             }
         }
@@ -62,116 +63,25 @@ class NetworkingModel {
         return URL(string: api)
     }
     
-    open func getCoverInfo(byType type: CoverType, andNID nid: Int) {
-        guard let url = generateAPI(byType: type, andNID: nid) else {
+    open func getCoverInfo(byType type: CoverType, andNID nid: UInt64) {
+        guard let url = generateAPI(byType: type, andNID: Int(nid)) else {
             fatalError("cannot generate api url")
         }
         let request = URLRequest(url: url)
         let task = session.dataTask(with: request) { data, response, error in
-            if let content = data {
-                do {
-                    struct InfoWrapper: Decodable {
-                        let data: Info
-                    }
-                    let jsonData = try JSONDecoder().decode(InfoWrapper.self, from: content)
-                    let newInfo = jsonData.data
-                    
-                    if newInfo.isValid {
-                        self.videoDelegate { $0.gotVideoInfo(newInfo) }
-                        self.getImage(fromUrlPath: newInfo.imageURL)
-                    } else {
-                        self.videoDelegate { $0.cannotFindVideo() }
-                    }
-                } catch {
-                    print("serialize error")
-                    self.videoDelegate{ $0.connectError() }
-                }
-            } else {
-                print(error ?? "network error")
-                self.videoDelegate { $0.connectError() }
-            }
-        }
-        task.resume()
-    }
-    
-    open func getLiveInfo(lvNum: UInt64) {
-        let path = "https://api.live.bilibili.com/AppRoom/index?device=phone&platform=ios&scale=3&build=10000&room_id=\(lvNum)"
-        let url = URL(string: path)
-        let request = URLRequest(url: url!)
-        let task = session.dataTask(with: request) { data, response, error in
-            if let content = data {
-                do {
-                    struct InfoWrapper: Decodable {
-                        let data: Info
-                    }
-                    let jsonData = try JSONDecoder().decode(InfoWrapper.self, from: content)
-                    let newInfo = jsonData.data
-
-                    if newInfo.isValid {
-                        self.videoDelegate { $0.gotVideoInfo(newInfo) }
-                        self.getImage(fromUrlPath: newInfo.imageURL)
-                    } else {
-                        self.videoDelegate { $0.cannotFindVideo() }
-                    }
-                } catch {
-                    print("serialize error")
-                    self.videoDelegate{ $0.connectError() }
-                }
-            } else {
-                print(error ?? "network error")
-                self.videoDelegate { $0.connectError() }
-            }
-        }
-        
-        task.resume()
-    }
-    
-    open func getArticleInfo(cvNum: UInt64) {
-        guard let url = generateAPI(byType: .article, andNID: Int(cvNum)) else {
-            fatalError("cannot generate api url")
-        }
-        let request = URLRequest(url: url)
-        let task = session.dataTask(with: request) { (data, response, error) in
-            if let content = data {
-                do {
-                    let newInfo = try JSONDecoder().decode(Info.self, from: content)
-                    if newInfo.isValid {
-                        self.videoDelegate { $0.gotVideoInfo(newInfo) }
-                        self.getImage(fromUrlPath: newInfo.imageURL)
-                    } else {
-                        self.videoDelegate { $0.cannotFindVideo() }
-                    }
-                } catch {
-                    print("serialize error")
-                    self.videoDelegate { $0.connectError() }
-                }
-            } else {
-                print(error ?? "network error")
-                self.videoDelegate { $0.connectError() }
-            }
-        }
-        
-        task.resume()
-    }
-    
-    open func getInfoFromAvNumber(avNum: UInt64) {
-        guard let url = generateAPI(byType: .video, andNID: Int(avNum)) else {
-            fatalError("cannot generate api url")
-        }
-        let request = URLRequest(url: url)
-        let task = session.dataTask(with: request) { data, response, error in
-            guard error == nil, let content = data
-                , let newInfo = try? JSONDecoder().decode(Info.self, from: content)
+            guard error == nil,
+                let content = data,
+                let newInfo = try? JSONDecoder().decode(Info.self, from: content)
                 else {
-                    return self.getInfoFromBilibili(forAV: avNum, onFailure: {
-                        self.videoDelegate { $0.connectError() }
-                    })
+                    print(data!)
+                    self.videoDelegate { $0.connectError() }
+                    return
             }
             if newInfo.isValid {
                 self.videoDelegate { $0.gotVideoInfo(newInfo) }
                 self.getImage(fromUrlPath: newInfo.imageURL)
             } else {
-                self.getInfoFromBilibili(forAV: avNum, onFailure: {
+                self.getInfoFromBilibili(forAV: nid, onFailure: {
                     self.videoDelegate { $0.cannotFindVideo() }
                 })
             }

@@ -482,15 +482,9 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Zsa-yu-und" secondAttribute="height" multiplier="8:5" id="ljQ-Qi-F7c"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="cover"/>
-                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleAspectFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="200" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fjh-fO-3X6">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="cover"/>
-                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="c48-nJ-AAz" kind="show" id="3xr-kp-XcO"/>
                                         </connections>
@@ -653,9 +647,6 @@
                                     <constraint firstAttribute="width" constant="375" id="DUy-qD-oqQ"/>
                                     <constraint firstAttribute="width" secondItem="BB4-Rm-pPw" secondAttribute="height" multiplier="8:5" id="I7z-kL-keP"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="cover"/>
-                                </userDefinedRuntimeAttributes>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
