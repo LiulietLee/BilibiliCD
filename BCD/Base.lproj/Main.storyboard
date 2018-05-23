@@ -146,7 +146,8 @@
                                     <color key="titleColor" red="0.40090259909999998" green="0.80100601910000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="backspaceButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="5x6-WV-hcd"/>
+                                    <action selector="touchBackButtonDown" destination="BYZ-38-t0r" eventType="touchDown" id="zvv-Un-kBw"/>
+                                    <action selector="touchBackButtonUp" destination="BYZ-38-t0r" eventType="touchUpInside" id="bfW-Sb-k7L"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="av0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="6Ki-9m-7UR">
@@ -1533,6 +1534,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="pFk-eZ-ib2"/>
-        <segue reference="4Jb-o1-lRn"/>
+        <segue reference="Eeb-QN-AAw"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -15,7 +15,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var avLabel: UILabel!
     @IBOutlet weak var goButton: UIButton!
     @IBOutlet weak var menu: UIBarButtonItem!
-    private var repeatTappingTime = 0
+    private var touchTime = DispatchTime(uptimeNanoseconds: 0)
     private var dataModel = CoreDataModel()
     private var existCover: History? = nil
     var cover = BilibiliCover(number: 0, type: .video) {
@@ -33,14 +33,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     }
     private var avNumber: UInt64 {
         get { return cover.number }
-        set {
-            if newValue > avNumber {
-                cover.number = newValue
-            } else if newValue < avNumber {
-                // Overflow happend
-                cover.number = 0
-            }
-        }
+        set { cover.number = newValue }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -116,18 +109,19 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         avNumber = avNumber &* 10 &+ UInt64(new)!
     }
     
-    @IBAction func backspaceButtonTapped() {
-        avNumber /= 10
+    @IBAction func touchBackButtonDown() {
+        touchTime = DispatchTime.now()
+    }
+    @IBAction func touchBackButtonUp() {
+        let endTime = DispatchTime.now()
+        let nanoTime = endTime.uptimeNanoseconds - touchTime.uptimeNanoseconds
+        let interval = Double(nanoTime) / 1_000_000_000
         
-        if repeatTappingTime == 0 {
-            _ = Timer.scheduledTimer(withTimeInterval: 0.35, repeats: false) { _ in
-                self.repeatTappingTime = 0
-            }
-        } else if repeatTappingTime >= 2 {
+        if (interval > 0.4) {
             avNumber = 0
+        } else {
+            avNumber /= 10
         }
-        
-        repeatTappingTime += 1
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
