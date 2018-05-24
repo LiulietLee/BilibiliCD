@@ -23,9 +23,6 @@ class MainViewController: UIViewController, UITextFieldDelegate {
             avLabel?.text = cover.shortDescription
             if cover.number == 0 {
                 goButton.isEnabled = false
-                if cover.type != .video {
-                    cover = BilibiliCover(number: 0, type: .video)
-                }
             } else {
                 goButton.isEnabled = true
             }
@@ -87,6 +84,29 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         if isNeedToDisplayAutoHis {
             showTutMessage()
         }
+        
+        setSwitchCoverTypeButton()
+    }
+    
+    private func setSwitchCoverTypeButton() {
+        let button = UIButton()
+        button.addTarget(self, action: #selector(switchCoverType), for: .touchUpInside)
+        view.addSubview(button)
+        view.bringSubview(toFront: button)
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            button.topAnchor.constraint(equalTo: avLabel.topAnchor),
+            button.leadingAnchor.constraint(equalTo: avLabel.leadingAnchor),
+            button.trailingAnchor.constraint(equalTo: avLabel.trailingAnchor),
+            button.bottomAnchor.constraint(equalTo: avLabel.bottomAnchor)
+        ])
+    }
+    
+    @objc private func switchCoverType() {
+        let currentType = cover.type.rawValue
+        let nextType = (currentType - 1) % 3 + 1
+        cover = BilibiliCover(number: cover.number, type: CoverType(rawValue: nextType)!)
     }
     
     private func showTutMessage() {
