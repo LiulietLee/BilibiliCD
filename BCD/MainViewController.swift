@@ -105,7 +105,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     
     @objc private func switchCoverType() {
         let currentType = cover.type.rawValue
-        let nextType = (currentType - 1) % 3 + 1
+        let nextType = currentType % 3 + 1
         cover = BilibiliCover(number: cover.number, type: CoverType(rawValue: nextType)!)
     }
     
