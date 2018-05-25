@@ -28,13 +28,11 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
 
     @IBOutlet var labels: [UILabel]!
 
-
     var cover: BilibiliCover?
     var itemFromHistory: History?
     private let netModel = NetworkingModel()
     private let dataModel = CoreDataModel()
     private var loadingView: LoadingView!
-    private let nudity = Nudity()
     private var reference: (info: Info?, style: CitationStyle) = (nil, .apa) {
         didSet {
             guard let info = reference.info else { return }

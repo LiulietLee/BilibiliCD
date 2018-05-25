@@ -12,6 +12,8 @@ import CoreData
 
 class CoreDataModel {
     
+    static let shared = CoreDataModel()
+    
     private let nudity = Nudity()
     private let context = CoreDataStorage.sharedInstance.mainQueueContext
     private let PermFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Permission")
