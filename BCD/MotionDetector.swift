@@ -14,9 +14,7 @@ protocol MotionDetectorDelegate {
 }
 
 class MotionDetector {
-    
-    static let shared = MotionDetector()
-    
+        
     var delegate: MotionDetectorDelegate?
     
     private let motionManager = CMMotionManager()

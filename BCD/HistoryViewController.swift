@@ -14,7 +14,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var menu: UIBarButtonItem!
-    private let motionDetector = MotionDetector.shared
+    private let motionDetector = MotionDetector()
     private var isAnimatedOnce = false
     private var history = [History]() {
         didSet {
