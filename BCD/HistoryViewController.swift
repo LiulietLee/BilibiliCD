@@ -69,18 +69,18 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         if isNeedToDisplayHisTut {
             showTutMessage()
         }
+        
+        motionDetector.delegate = self
+        motionDetector.beginDetect()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        motionDetector.delegate = nil
         NotificationCenter.default.removeObserver(self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        motionDetector.beginDetect()
-        motionDetector.delegate = self
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(hideCellsIfNeeded),
                                                name: .UIApplicationWillResignActive,

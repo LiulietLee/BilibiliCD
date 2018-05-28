@@ -9,13 +9,13 @@
 import Foundation
 import CoreMotion
 
-protocol MotionDetectorDelegate {
+protocol MotionDetectorDelegate: class {
     func openInsideWorld()
 }
 
 class MotionDetector {
         
-    var delegate: MotionDetectorDelegate?
+    weak var delegate: MotionDetectorDelegate?
     
     private let motionManager = CMMotionManager()
     private let timeInterval: TimeInterval = 0.5
