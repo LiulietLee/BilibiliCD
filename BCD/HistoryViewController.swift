@@ -81,10 +81,12 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(hideCellsIfNeeded),
-                                               name: .UIApplicationWillResignActive,
-                                               object: nil) 
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(hideCellsIfNeeded),
+            name: .UIApplicationWillResignActive,
+            object: nil
+        ) 
     }
     
     @objc private func hideCellsIfNeeded() {
@@ -95,7 +97,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     private func animateView() {
         let type = AnimationType.from(direction: .bottom, offset: ViewAnimatorConfig.offset)
-        view.doAnimation(type: type)
+        view.animateTableView(type: type)
         isAnimatedOnce = true
     }
     

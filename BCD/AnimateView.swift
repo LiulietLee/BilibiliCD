@@ -15,10 +15,21 @@ extension UIView {
         for (index, view) in self.subviews.enumerated() {
             let delay = Double(index) * interval
             if let _ = view as? LoadingView { continue }
-            if let animatable = view as? Animatable {
-                animatable.animateViews(animations: [type], delay: delay)
-            } else {
-                view.animate(animations: [type], delay: delay)
+            view.animate(animations: [type], delay: delay)
+        }
+    }
+    
+    func animateTableView(type: AnimationType) {
+        let interval = ViewAnimatorConfig.interval
+        for (_, view) in self.subviews.enumerated() {
+            if let tableView = view as? UITableView {
+                var index = 0
+                for cell in tableView.visibleCells {
+                    let delay = Double(index) * interval
+                    cell.animate(animations: [type], delay: delay)
+                    index += 1
+                }
+                break
             }
         }
     }

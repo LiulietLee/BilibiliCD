@@ -13,6 +13,7 @@ import MaterialKit
 
 class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate {
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
@@ -104,7 +105,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
     
     private func animateView() {
         let type = AnimationType.from(direction: .right, offset: ViewAnimatorConfig.offset)
-        view.doAnimation(type: type)
+        scrollView.doAnimation(type: type)
     }
     
     private func changeTextColor(to color: UIColor) {
