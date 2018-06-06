@@ -1,9 +1,9 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/Device" "$PODS_CONFIGURATION_BUILD_DIR/MaterialKit" "$PODS_CONFIGURATION_BUILD_DIR/SWRevealViewController" "$PODS_CONFIGURATION_BUILD_DIR/ViewAnimator"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/BilibiliKit" "$PODS_CONFIGURATION_BUILD_DIR/Device" "$PODS_CONFIGURATION_BUILD_DIR/MaterialKit" "$PODS_CONFIGURATION_BUILD_DIR/SWRevealViewController" "$PODS_CONFIGURATION_BUILD_DIR/ViewAnimator"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/Device/Device.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/MaterialKit/MaterialKit.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/SWRevealViewController/SWRevealViewController.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/ViewAnimator/ViewAnimator.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "Device" -framework "MaterialKit" -framework "SWRevealViewController" -framework "ViewAnimator"
+OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/BilibiliKit/BilibiliKit.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Device/Device.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/MaterialKit/MaterialKit.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/SWRevealViewController/SWRevealViewController.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/ViewAnimator/ViewAnimator.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -framework "BilibiliKit" -framework "Device" -framework "MaterialKit" -framework "SWRevealViewController" -framework "ViewAnimator"
 OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
 PODS_BUILD_DIR = $BUILD_DIR
 PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

@@ -1,35 +1,43 @@
 PODS:
+  - BilibiliKit (1.1.4)
   - Device (3.0.3)
   - MaterialKit (0.6.2)
   - SWRevealViewController (2.4.0)
-  - ViewAnimator (1.0.3)
+  - ViewAnimator (2.1.1)
 
 DEPENDENCIES:
+  - BilibiliKit (from `https://github.com/ApolloZhu/BilibiliKit.git`)
   - Device (~> 3.0.3)
   - MaterialKit (from `https://github.com/ApolloZhu/MaterialKit.git`)
   - SWRevealViewController (from `https://github.com/John-Lluch/SWRevealViewController.git`)
   - ViewAnimator
 
 EXTERNAL SOURCES:
+  BilibiliKit:
+    :git: https://github.com/ApolloZhu/BilibiliKit.git
   MaterialKit:
     :git: https://github.com/ApolloZhu/MaterialKit.git
   SWRevealViewController:
     :git: https://github.com/John-Lluch/SWRevealViewController.git
 
 CHECKOUT OPTIONS:
+  BilibiliKit:
+    :commit: 7c9b03439a7c1d90ec296634d2302d9c6a7b882b
+    :git: https://github.com/ApolloZhu/BilibiliKit.git
   MaterialKit:
-    :commit: 9c6bec10d0fbfd406e95d782d80c983972c5805f
+    :commit: 022f7880647d655fba84dc187b03d13e5e5edbd0
     :git: https://github.com/ApolloZhu/MaterialKit.git
   SWRevealViewController:
     :commit: bb4a110989d67a5fc5f5c533cacc92f6cb02f5e2
     :git: https://github.com/John-Lluch/SWRevealViewController.git
 
 SPEC CHECKSUMS:
+  BilibiliKit: 3d2c1993975193ba66605cca4798eaa42d058d52
   Device: 9a5264ee4e0f392e7153d2c46b10c8df46b7aad2
   MaterialKit: 7a21f9c5d9af43afa20d3fa25054bef8087ced24
   SWRevealViewController: b653f339865208c97be99a24876545f5be0cc4bb
-  ViewAnimator: cddee3c465858c0a47411c831a9ce2267bb9061f
+  ViewAnimator: 43c31539508d995ea2c5e98338211f7c009b358f
 
-PODFILE CHECKSUM: bfdbb9021390918d9c1ad8736b8aa5c1686305b0
+PODFILE CHECKSUM: effc50585abd254dbd2c822a21c137cc706c0d88
 
 COCOAPODS: 1.3.1
