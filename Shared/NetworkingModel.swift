@@ -52,11 +52,10 @@ class NetworkingModel {
                 print(error!)
             }
         }
-        // TODO: - VPS 部署完成后 uncomment 下面这行代码
-        // task.resume()
+        task.resume()
     }
     
-    private func generateAPI(byType type: CoverType, andNID nid: Int? = nil, orInfo newInfo: Info? = nil) -> URL? {
+    private func generateAPI(byType type: CoverType, andNID nid: Int? = nil, andInfo newInfo: Info? = nil) -> URL? {
         var api = baseAPI
         
         if type == .hotList {
