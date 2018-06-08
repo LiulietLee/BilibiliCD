@@ -43,7 +43,7 @@ class NetworkingModel {
     private let baseAPI = "http://www.bilibilicd.tk/api"
     
     private func updateServerRecord(type: CoverType, nid: UInt64, info: Info) {
-        guard let url = generateAPI(byType: type, andNID: Int(nid), orInfo: info) else {
+        guard let url = generateAPI(byType: type, andNID: Int(nid), andInfo: info) else {
             fatalError("cannot generate api url")
         }
         let request = URLRequest(url: url)
