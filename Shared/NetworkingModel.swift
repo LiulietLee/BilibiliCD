@@ -34,7 +34,6 @@ struct Upuser: Decodable {
     }
 }
 
-/// TODO: - 以后需要重构网络层
 class NetworkingModel {
     
     weak var delegateForVideo: VideoCoverDelegate?
@@ -43,27 +42,51 @@ class NetworkingModel {
     
     private let baseAPI = "http://www.bilibilicd.tk/api"
     
-    private func generateAPI(byType type: CoverType, andNID nid: Int? = nil) -> URL? {
+    private func updateServerRecord(type: CoverType, nid: UInt64, info: Info) {
+        guard let url = generateAPI(byType: type, andNID: Int(nid), orInfo: info) else {
+            fatalError("cannot generate api url")
+        }
+        let request = URLRequest(url: url)
+        let task = session.dataTask(with: request) { data, response, error in
+            if error != nil {
+                print(error!)
+            }
+        }
+        // TODO: - VPS 部署完成后 uncomment 下面这行代码
+        // task.resume()
+    }
+    
+    private func generateAPI(byType type: CoverType, andNID nid: Int? = nil, orInfo newInfo: Info? = nil) -> URL? {
         var api = baseAPI
         
         if type == .hotList {
             return URL(string: api + "/hot_list")
         } else {
-            api += "/search?type="
+            api += "/db"
+            if newInfo != nil {
+                api += "/update?type="
+            } else {
+                api += "/search?type="
+            }
+            
             switch type {
             case .video: api += "av"
             case .article: api += "cv"
             case .live: api += "lv"
             default: return nil
             }
+
+            api += "&nid=\(nid!)"
+
+            if let info = newInfo {
+                api += "&url=\(info.imageURL)&title=\(info.title)&author=\(info.author)"
+            }
         }
         
-        api += "&nid=\(nid!)"
-        
-        return URL(string: api)
+        return URL(string: api.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!)
     }
     
-    open func getCoverInfo(byType type: CoverType, andNID nid: UInt64) {
+    private func fetchCoverRecordFromServer(withType type: CoverType, andID nid: UInt64) {
         guard let url = generateAPI(byType: type, andNID: Int(nid)) else {
             fatalError("cannot generate api url")
         }
@@ -73,29 +96,68 @@ class NetworkingModel {
                 let content = data,
                 let newInfo = try? JSONDecoder().decode(Info.self, from: content)
                 else {
-                    print(data!)
                     self.videoDelegate { $0.connectError() }
                     return
             }
             if newInfo.isValid {
                 self.videoDelegate { $0.gotVideoInfo(newInfo) }
                 self.getImage(fromUrlPath: newInfo.imageURL)
+                self.updateServerRecord(type: type, nid: nid, info: newInfo)
             } else {
-                self.getInfoFromBilibili(forAV: nid, onFailure: {
-                    self.videoDelegate { $0.cannotFindVideo() }
-                })
+                self.videoDelegate { $0.cannotFindVideo() }
             }
         }
         task.resume()
     }
     
-    private func getInfoFromBilibili(forAV: UInt64, onFailure: @escaping () -> Void) {
+    open func getCoverInfo(byType type: CoverType, andNID nid: UInt64) {
+        switch type {
+        case .video:   getInfo(forAV: nid)
+        case .article: getInfo(forCV: nid)
+        case .live:    getInfo(forLV: nid)
+        default: break
+        }
+    }
+    
+    private func getInfo(forAV: UInt64) {
         BKVideo(av: Int(forAV)).getInfo {
-            guard let info = $0 else { return onFailure() }
+            guard let info = $0 else {
+                self.fetchCoverRecordFromServer(withType: .video, andID: forAV)
+                return
+            }
             let url = info.coverImageURL.absoluteString
             let newInfo = Info(author: info.author, title: info.title, imageURL: url)
             self.videoDelegate { $0.gotVideoInfo(newInfo) }
             self.getImage(fromUrlPath: url)
+            self.updateServerRecord(type: .video, nid: forAV, info: newInfo)
+        }
+    }
+    
+    private func getInfo(forCV: UInt64) {
+        BKArticle(cv: Int(forCV)).getInfo {
+            guard let info = $0 else {
+                self.fetchCoverRecordFromServer(withType: .article, andID: forCV)
+                return
+            }
+            let url = info.coverImageURL.absoluteString
+            let newInfo = Info(author: info.author, title: info.title, imageURL: url)
+            self.videoDelegate { $0.gotVideoInfo(newInfo) }
+            self.getImage(fromUrlPath: url)
+            self.updateServerRecord(type: .article, nid: forCV, info: newInfo)
+        }
+    }
+    
+    private func getInfo(forLV: UInt64) {
+        BKLiveRoom(Int(forLV)).getInfo {
+            guard let info = $0 else {
+                self.fetchCoverRecordFromServer(withType: .live, andID: forLV)
+                return
+            }
+            let url = info.coverImageURL.absoluteString
+            let newInfo = Info(author: String(info.mid), title: info.title, imageURL: url)
+            self.videoDelegate { $0.gotVideoInfo(newInfo) }
+            self.getImage(fromUrlPath: url)
+            self.updateServerRecord(type: .live, nid: forLV, info: newInfo)
         }
     }
     
