@@ -54,8 +54,13 @@ class MainViewController: UIViewController, UITextFieldDelegate {
 
     @objc private func getURLFromPasteboard() {
         if isShowingImage { return }
+        
         if let newCover = BilibiliCover.fromPasteboard() {
-            self.cover = newCover
+            if cover != newCover {
+                cover = newCover
+            } else {
+                return
+            }
             if let temp = dataModel.isExistInHistory(cover: newCover) {
                 existCover = temp
             } else {

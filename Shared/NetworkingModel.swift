@@ -40,17 +40,45 @@ class NetworkingModel {
     weak var delegateForUpuser: UpuserImgDelegate?
     let session = URLSession.shared
     
-    private let baseAPI = "http://www.bilibilicd.tk/api"
+    private let production = true
+    private var baseAPI: String {
+        if production {
+            return "http://www.bilibilicd.tk/api"
+        } else {
+            return "http://127.0.0.1:8000/api"
+        }
+    }
     
     private func updateServerRecord(type: CoverType, nid: UInt64, info: Info) {
         guard let url = generateAPI(byType: type, andNID: Int(nid), andInfo: info) else {
             fatalError("cannot generate api url")
         }
-        let request = URLRequest(url: url)
-        let task = session.dataTask(with: request) { data, response, error in
-            if error != nil {
-                print(error!)
+
+        let parameters: [String : Any] = ["type": CoverType.stringType(type: type)!, "nid": nid, "url": info.imageURL, "title": info.title, "author": info.author]
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
+        } catch let error {
+            print(error.localizedDescription)
+        }
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print("error=\(String(describing: error))")
+                return
             }
+            
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(String(describing: response))")
+            }
+            
+            let responseString = String(data: data, encoding: .utf8)
+            print("responseString = \(String(describing: responseString))")
         }
         task.resume()
     }
@@ -63,7 +91,8 @@ class NetworkingModel {
         } else {
             api += "/db"
             if newInfo != nil {
-                api += "/update?type="
+                api += "/update"
+                return URL(string: api)
             } else {
                 api += "/search?type="
             }
@@ -76,13 +105,9 @@ class NetworkingModel {
             }
 
             api += "&nid=\(nid!)"
-
-            if let info = newInfo {
-                api += "&url=\(info.imageURL)&title=\(info.title)&author=\(info.author)"
-            }
         }
         
-        return URL(string: api.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!)
+        return URL(string: api)
     }
     
     private func fetchCoverRecordFromServer(withType type: CoverType, andID nid: UInt64) {

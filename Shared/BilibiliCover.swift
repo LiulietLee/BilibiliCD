@@ -14,6 +14,15 @@ enum CoverType: Int {
     case article = 2
     case live = 3
     case hotList = 4
+    
+    static func stringType(type: CoverType) -> String? {
+        switch type {
+        case .video:   return "av"
+        case .article: return "cv"
+        case .live:    return "lv"
+        default:       return nil
+        }
+    }
 }
 
 struct BilibiliCover {
