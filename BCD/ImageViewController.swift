@@ -41,7 +41,6 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
             titleLabel?.text = info.title
             authorLabel?.text = "UP主：\(info.author)"
             urlLabel.text = "URL：\(info.imageURL)"
-            scaleButton.isEnabled = !info.imageURL.isGIF
         }
     }
     
@@ -169,6 +168,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
     
     private func enableButtons() {
         downloadButton.isEnabled = true
+        scaleButton.isEnabled = !reference.info!.imageURL.isGIF
         pushButton.isEnabled = true
     }
     

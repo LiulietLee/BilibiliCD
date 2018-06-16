@@ -113,11 +113,15 @@ class CoreDataModel {
         return false
     }
     
-    func isExistInHistory(cover: BilibiliCover) -> History? {
+    func isExistInHistory(cover: BilibiliCover? = nil, stringID: String? = nil) -> History? {
+        if cover == nil && stringID == nil { return nil }
         let history = fetchHistory()
         
         for item in history {
-            if item.av == cover.shortDescription {
+            if cover != nil, item.av == cover!.shortDescription {
+                return item
+            }
+            if stringID != nil, item.av == stringID {
                 return item
             }
         }

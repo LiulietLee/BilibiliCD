@@ -40,7 +40,7 @@ class NetworkingModel {
     weak var delegateForUpuser: UpuserImgDelegate?
     let session = URLSession.shared
     
-    private let production = true
+    private let production = false
     private var baseAPI: String {
         if production {
             return "http://www.bilibilicd.tk/api"
@@ -120,13 +120,12 @@ class NetworkingModel {
                 let content = data,
                 let newInfo = try? JSONDecoder().decode(Info.self, from: content)
                 else {
-                    self.videoDelegate { $0.connectError() }
+                    self.videoDelegate { $0.cannotFindVideo() }
                     return
             }
             if newInfo.isValid {
                 self.videoDelegate { $0.gotVideoInfo(newInfo) }
                 self.getImage(fromUrlPath: newInfo.imageURL)
-                self.updateServerRecord(type: type, nid: nid, info: newInfo)
             } else {
                 self.videoDelegate { $0.cannotFindVideo() }
             }
