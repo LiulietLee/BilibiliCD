@@ -40,7 +40,7 @@ class NetworkingModel {
     weak var delegateForUpuser: UpuserImgDelegate?
     let session = URLSession.shared
     
-    private let production = false
+    private let production = true
     private var baseAPI: String {
         if production {
             return "http://www.bilibilicd.tk/api"
