@@ -19,7 +19,34 @@
 		4F2DB5DE1F75F7D400FB2315 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2DB5DD1F75F7D400FB2315 /* TodayViewController.swift */; };
 		4F2DB5E11F75F7D400FB2315 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F2DB5DF1F75F7D400FB2315 /* MainInterface.storyboard */; };
 		4F2DB5E51F75F7D400FB2315 /* BilibiliCD.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4F2DB5D91F75F7D400FB2315 /* BilibiliCD.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4F2F443D20DFDEE200C61EAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F5041C91F18AF1C00B59337 /* Assets.xcassets */; };
 		4F3077B81F1768E000E1C1AF /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3077B71F1768E000E1C1AF /* CoreDataModel.swift */; };
+		4F338F5720DD00410014226C /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F338F5620DD00410014226C /* ShareViewController.swift */; };
+		4F338F5A20DD00410014226C /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F338F5820DD00410014226C /* MainInterface.storyboard */; };
+		4F338F5E20DD00410014226C /* BCDSharing.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4F338F5420DD00410014226C /* BCDSharing.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4F338F6320DE566E0014226C /* BKArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE32F9220D514EE0043F648 /* BKArticle.swift */; };
+		4F338F6420DE566E0014226C /* BKVideo+Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE32F9320D514EE0043F648 /* BKVideo+Page.swift */; };
+		4F338F6520DE566E0014226C /* BKLiveRoom+Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE32F9420D514EE0043F648 /* BKLiveRoom+Info.swift */; };
+		4F338F6620DE566E0014226C /* URLSession+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE32F9520D514EE0043F648 /* URLSession+Extensions.swift */; };
+		4F338F6720DE566E0014226C /* BKApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE32F9620D514EE0043F648 /* BKApp.swift */; };
+		4F338F6820DE566E0014226C /* BKLiveRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE32F9720D514EE0043F648 /* BKLiveRoom.swift */; };
+		4F338F6920DE566E0014226C /* BKVideo+Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE32F9820D514EE0043F648 /* BKVideo+Info.swift */; };
+		4F338F6A20DE566E0014226C /* BKCookie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE32F9920D514EE0043F648 /* BKCookie.swift */; };
+		4F338F6B20DE566E0014226C /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE32F9A20D514EE0043F648 /* URL+Extensions.swift */; };
+		4F338F6C20DE566E0014226C /* BKVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE32F9B20D514EE0043F648 /* BKVideo.swift */; };
+		4F338F6D20DE566E0014226C /* BKArticle+Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE32F9C20D514EE0043F648 /* BKArticle+Info.swift */; };
+		4F338F6E20DE566E0014226C /* BKLoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE32F9D20D514EE0043F648 /* BKLoginHelper.swift */; };
+		4F338F6F20DE566E0014226C /* BKSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE32F9E20D514EE0043F648 /* BKSession.swift */; };
+		4F338F7020DE56730014226C /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B90711F7B2E3800AB158D /* CoreDataStorage.swift */; };
+		4F338F7120DE56730014226C /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF701EF5000400D31840 /* Info.swift */; };
+		4F338F7220DE56730014226C /* NetworkingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF6E1EF4FCC600D31840 /* NetworkingModel.swift */; };
+		4F338F7320DE56730014226C /* BilibiliCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E4E47C1F76C6A9008EF09C /* BilibiliCover.swift */; };
+		4F338F7420DE56730014226C /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5290FA022051B0DF00A1AAA4 /* ImageSaver.swift */; };
+		4F338F7520DE57020014226C /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3077B71F1768E000E1C1AF /* CoreDataModel.swift */; };
+		4F338F7620DE57050014226C /* BCD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F99A9951F21F0B600AE4143 /* BCD.xcdatamodeld */; };
+		4F338F7720DE598A0014226C /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF6C4A81FA4324200A34870 /* UIImage+Gif.swift */; };
+		4F338F7820DE59EF0014226C /* UIImageToCVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB80D71F970B7800626CD7 /* UIImageToCVPixelBuffer.swift */; };
+		4F338F7920DE5A070014226C /* Nudity.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB80D21F970B2E00626CD7 /* Nudity.mlmodel */; };
 		4F4157A21F1331000042FF40 /* SourceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4157A11F1331000042FF40 /* SourceTableViewController.swift */; };
 		4F4E60FC1F8DACE000BB9847 /* MotionDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E60FB1F8DACE000BB9847 /* MotionDetector.swift */; };
 		4F5041CA1F18AF1C00B59337 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F5041C91F18AF1C00B59337 /* Assets.xcassets */; };
@@ -109,7 +136,7 @@
 		52BFDF791F5B2D29002EE246 /* LLDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BFDF781F5B2D29002EE246 /* LLDialog.swift */; };
 		52E4E47D1F76C6A9008EF09C /* BilibiliCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E4E47C1F76C6A9008EF09C /* BilibiliCover.swift */; };
 		52E4E47E1F76C6B6008EF09C /* BilibiliCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E4E47C1F76C6A9008EF09C /* BilibiliCover.swift */; };
-		EBB2B5B133F4BE33C74FFDA4 /* Pods_BCD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018D8C88BE8E9E6C2D578E97 /* Pods_BCD.framework */; };
+		ACA6AB473F9866011CFB9920 /* Pods_BCD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1FDACCD6B09FD7A3A9DF0F1 /* Pods_BCD.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +146,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 4F2DB5D81F75F7D400FB2315;
 			remoteInfo = BilibiliCD;
+		};
+		4F338F5C20DD00410014226C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4FE8FF321EF4FC0600D31840 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F338F5320DD00410014226C;
+			remoteInfo = BCDSharing;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -130,6 +164,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				4F2DB5E51F75F7D400FB2315 /* BilibiliCD.appex in Embed App Extensions */,
+				4F338F5E20DD00410014226C /* BCDSharing.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,7 +182,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		018D8C88BE8E9E6C2D578E97 /* Pods_BCD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BCD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		014002F5C328A516653ECA7C /* Pods-BCD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BCD/Pods-BCD.debug.xcconfig"; sourceTree = "<group>"; };
 		4F04A0D31F23195A007D86B1 /* SetHistoryNumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetHistoryNumViewController.swift; sourceTree = "<group>"; };
 		4F0C72761F7CD5AD006C9BC5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4F26AA801F14D32400E1123D /* ColoredNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColoredNavController.swift; sourceTree = "<group>"; };
@@ -162,6 +197,11 @@
 		4F2DB5E01F75F7D400FB2315 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		4F2DB5E21F75F7D400FB2315 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F3077B71F1768E000E1C1AF /* CoreDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataModel.swift; sourceTree = "<group>"; };
+		4F338F5420DD00410014226C /* BCDSharing.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BCDSharing.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F338F5620DD00410014226C /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		4F338F5920DD00410014226C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		4F338F5B20DD00410014226C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F338F6220DE4A8D0014226C /* BCDSharing.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BCDSharing.entitlements; sourceTree = "<group>"; };
 		4F4157A11F1331000042FF40 /* SourceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceTableViewController.swift; sourceTree = "<group>"; };
 		4F4E60FB1F8DACE000BB9847 /* MotionDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionDetector.swift; sourceTree = "<group>"; };
 		4F5041C91F18AF1C00B59337 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -231,9 +271,8 @@
 		5290FA022051B0DF00A1AAA4 /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
 		52BFDF781F5B2D29002EE246 /* LLDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLDialog.swift; sourceTree = "<group>"; };
 		52E4E47C1F76C6A9008EF09C /* BilibiliCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BilibiliCover.swift; sourceTree = "<group>"; };
-		5E33A0B9EFD979D55C5FC63C /* Pods_BilibiliCD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BilibiliCD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8A8078299F9F4EA6B414ED7D /* Pods-BCD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BCD/Pods-BCD.debug.xcconfig"; sourceTree = "<group>"; };
-		FD6425538132C362B8653B3A /* Pods-BCD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCD.release.xcconfig"; path = "Pods/Target Support Files/Pods-BCD/Pods-BCD.release.xcconfig"; sourceTree = "<group>"; };
+		BEBA8FE984A9CFA0E03424B0 /* Pods-BCD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCD.release.xcconfig"; path = "Pods/Target Support Files/Pods-BCD/Pods-BCD.release.xcconfig"; sourceTree = "<group>"; };
+		C1FDACCD6B09FD7A3A9DF0F1 /* Pods_BCD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BCD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,11 +284,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4F338F5120DD00410014226C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4FE8FF371EF4FC0600D31840 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBB2B5B133F4BE33C74FFDA4 /* Pods_BCD.framework in Frameworks */,
+				ACA6AB473F9866011CFB9920 /* Pods_BCD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,11 +328,21 @@
 		4F3077951F17478100E1C1AF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				018D8C88BE8E9E6C2D578E97 /* Pods_BCD.framework */,
 				4F2DB5DA1F75F7D400FB2315 /* NotificationCenter.framework */,
-				5E33A0B9EFD979D55C5FC63C /* Pods_BilibiliCD.framework */,
+				C1FDACCD6B09FD7A3A9DF0F1 /* Pods_BCD.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4F338F5520DD00410014226C /* BCDSharing */ = {
+			isa = PBXGroup;
+			children = (
+				4F338F6220DE4A8D0014226C /* BCDSharing.entitlements */,
+				4F338F5620DD00410014226C /* ShareViewController.swift */,
+				4F338F5820DD00410014226C /* MainInterface.storyboard */,
+				4F338F5B20DD00410014226C /* Info.plist */,
+			);
+			path = BCDSharing;
 			sourceTree = "<group>";
 		};
 		4F5BE2F51EFAA1040054C53F /* ViewController */ = {
@@ -379,9 +435,10 @@
 				52E4E47F1F76CF95008EF09C /* Shared */,
 				4FE8FF3C1EF4FC0600D31840 /* BCD */,
 				4F2DB5DC1F75F7D400FB2315 /* BilibiliCD */,
+				4F338F5520DD00410014226C /* BCDSharing */,
 				4FE8FF3B1EF4FC0600D31840 /* Products */,
 				4F3077951F17478100E1C1AF /* Frameworks */,
-				9F8777D193FA8FFCFE41B3E0 /* Pods */,
+				D29527AD1C5758F5A4695C2A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -390,6 +447,7 @@
 			children = (
 				4FE8FF3A1EF4FC0600D31840 /* BilibiliCD.app */,
 				4F2DB5D91F75F7D400FB2315 /* BilibiliCD.appex */,
+				4F338F5420DD00410014226C /* BCDSharing.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -453,11 +511,11 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
-		9F8777D193FA8FFCFE41B3E0 /* Pods */ = {
+		D29527AD1C5758F5A4695C2A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8A8078299F9F4EA6B414ED7D /* Pods-BCD.debug.xcconfig */,
-				FD6425538132C362B8653B3A /* Pods-BCD.release.xcconfig */,
+				014002F5C328A516653ECA7C /* Pods-BCD.debug.xcconfig */,
+				BEBA8FE984A9CFA0E03424B0 /* Pods-BCD.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -482,23 +540,41 @@
 			productReference = 4F2DB5D91F75F7D400FB2315 /* BilibiliCD.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		4F338F5320DD00410014226C /* BCDSharing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F338F6120DD00410014226C /* Build configuration list for PBXNativeTarget "BCDSharing" */;
+			buildPhases = (
+				4F338F5020DD00410014226C /* Sources */,
+				4F338F5120DD00410014226C /* Frameworks */,
+				4F338F5220DD00410014226C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BCDSharing;
+			productName = BCDSharing;
+			productReference = 4F338F5420DD00410014226C /* BCDSharing.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		4FE8FF391EF4FC0600D31840 /* BCD */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4FE8FF651EF4FC0600D31840 /* Build configuration list for PBXNativeTarget "BCD" */;
 			buildPhases = (
-				0BAFF8C5C4560CD26254462B /* [CP] Check Pods Manifest.lock */,
+				6BD52D43BADCF65812B1A32D /* [CP] Check Pods Manifest.lock */,
 				4FE8FF361EF4FC0600D31840 /* Sources */,
 				4FE8FF371EF4FC0600D31840 /* Frameworks */,
 				4FE8FF381EF4FC0600D31840 /* Resources */,
-				5AED74E885AB7EFE68AF69D1 /* [CP] Embed Pods Frameworks */,
-				A539433C3C43E3E011A81045 /* [CP] Copy Pods Resources */,
 				4F2DB5E91F75F7D400FB2315 /* Embed App Extensions */,
 				4F585B3D1F7614FD004D1285 /* Embed Frameworks */,
+				7FA4649C27623AC486D9B8C5 /* [CP] Embed Pods Frameworks */,
+				2CAB5C155260A69253D30411 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				4F2DB5E41F75F7D400FB2315 /* PBXTargetDependency */,
+				4F338F5D20DD00410014226C /* PBXTargetDependency */,
 			);
 			name = BCD;
 			productName = BCD;
@@ -511,12 +587,22 @@
 		4FE8FF321EF4FC0600D31840 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0900;
+				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = Liuliet.Lee;
 				TargetAttributes = {
 					4F2DB5D81F75F7D400FB2315 = {
 						CreatedOnToolsVersion = 9.0;
+						DevelopmentTeam = ANB6MDJTLF;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					4F338F5320DD00410014226C = {
+						CreatedOnToolsVersion = 9.4;
 						DevelopmentTeam = ANB6MDJTLF;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -562,6 +648,7 @@
 			targets = (
 				4FE8FF391EF4FC0600D31840 /* BCD */,
 				4F2DB5D81F75F7D400FB2315 /* BilibiliCD */,
+				4F338F5320DD00410014226C /* BCDSharing */,
 			);
 		};
 /* End PBXProject section */
@@ -573,6 +660,15 @@
 			files = (
 				4F585B591F7627E2004D1285 /* Assets.xcassets in Resources */,
 				4F2DB5E11F75F7D400FB2315 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F338F5220DD00410014226C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F2F443D20DFDEE200C61EAD /* Assets.xcassets in Resources */,
+				4F338F5A20DD00410014226C /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,7 +688,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0BAFF8C5C4560CD26254462B /* [CP] Check Pods Manifest.lock */ = {
+		2CAB5C155260A69253D30411 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BCD/Pods-BCD-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6BD52D43BADCF65812B1A32D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -610,7 +721,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5AED74E885AB7EFE68AF69D1 /* [CP] Embed Pods Frameworks */ = {
+		7FA4649C27623AC486D9B8C5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -632,21 +743,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BCD/Pods-BCD-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A539433C3C43E3E011A81045 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BCD/Pods-BCD-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -681,6 +777,37 @@
 				4FE32FAC20D514F60043F648 /* BKArticle.swift in Sources */,
 				4FE32FB520D514F60043F648 /* BKVideo.swift in Sources */,
 				52E4E47E1F76C6B6008EF09C /* BilibiliCover.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F338F5020DD00410014226C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F338F7020DE56730014226C /* CoreDataStorage.swift in Sources */,
+				4F338F7120DE56730014226C /* Info.swift in Sources */,
+				4F338F6920DE566E0014226C /* BKVideo+Info.swift in Sources */,
+				4F338F6E20DE566E0014226C /* BKLoginHelper.swift in Sources */,
+				4F338F7420DE56730014226C /* ImageSaver.swift in Sources */,
+				4F338F7220DE56730014226C /* NetworkingModel.swift in Sources */,
+				4F338F6620DE566E0014226C /* URLSession+Extensions.swift in Sources */,
+				4F338F7820DE59EF0014226C /* UIImageToCVPixelBuffer.swift in Sources */,
+				4F338F5720DD00410014226C /* ShareViewController.swift in Sources */,
+				4F338F6820DE566E0014226C /* BKLiveRoom.swift in Sources */,
+				4F338F6720DE566E0014226C /* BKApp.swift in Sources */,
+				4F338F6520DE566E0014226C /* BKLiveRoom+Info.swift in Sources */,
+				4F338F7620DE57050014226C /* BCD.xcdatamodeld in Sources */,
+				4F338F6A20DE566E0014226C /* BKCookie.swift in Sources */,
+				4F338F6D20DE566E0014226C /* BKArticle+Info.swift in Sources */,
+				4F338F7720DE598A0014226C /* UIImage+Gif.swift in Sources */,
+				4F338F6B20DE566E0014226C /* URL+Extensions.swift in Sources */,
+				4F338F6420DE566E0014226C /* BKVideo+Page.swift in Sources */,
+				4F338F6F20DE566E0014226C /* BKSession.swift in Sources */,
+				4F338F7920DE5A070014226C /* Nudity.mlmodel in Sources */,
+				4F338F7320DE56730014226C /* BilibiliCover.swift in Sources */,
+				4F338F6C20DE566E0014226C /* BKVideo.swift in Sources */,
+				4F338F7520DE57020014226C /* CoreDataModel.swift in Sources */,
+				4F338F6320DE566E0014226C /* BKArticle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -766,6 +893,11 @@
 			target = 4F2DB5D81F75F7D400FB2315 /* BilibiliCD */;
 			targetProxy = 4F2DB5E31F75F7D400FB2315 /* PBXContainerItemProxy */;
 		};
+		4F338F5D20DD00410014226C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F338F5320DD00410014226C /* BCDSharing */;
+			targetProxy = 4F338F5C20DD00410014226C /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -773,6 +905,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				4F2DB5E01F75F7D400FB2315 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		4F338F5820DD00410014226C /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F338F5920DD00410014226C /* Base */,
 			);
 			name = MainInterface.storyboard;
 			sourceTree = "<group>";
@@ -842,6 +982,56 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		4F338F5F20DD00410014226C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = BCDSharing/BCDSharing.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ANB6MDJTLF;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = BCDSharing/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Future-Code-Institute.BCD.BCDSharing1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4F338F6020DD00410014226C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = BCDSharing/BCDSharing.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ANB6MDJTLF;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = BCDSharing/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Future-Code-Institute.BCD.BCDSharing1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -961,7 +1151,7 @@
 		};
 		4FE8FF661EF4FC0600D31840 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A8078299F9F4EA6B414ED7D /* Pods-BCD.debug.xcconfig */;
+			baseConfigurationReference = 014002F5C328A516653ECA7C /* Pods-BCD.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -990,7 +1180,7 @@
 		};
 		4FE8FF671EF4FC0600D31840 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD6425538132C362B8653B3A /* Pods-BCD.release.xcconfig */;
+			baseConfigurationReference = BEBA8FE984A9CFA0E03424B0 /* Pods-BCD.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1024,6 +1214,15 @@
 			buildConfigurations = (
 				4F2DB5E61F75F7D400FB2315 /* Debug */,
 				4F2DB5E71F75F7D400FB2315 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F338F6120DD00410014226C /* Build configuration list for PBXNativeTarget "BCDSharing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F338F5F20DD00410014226C /* Debug */,
+				4F338F6020DD00410014226C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

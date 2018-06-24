@@ -83,6 +83,10 @@ extension BilibiliCover {
     
     static func fromPasteboard() -> BilibiliCover? {
         guard let urlString = UIPasteboard.general.string else { return nil }
+        return BilibiliCover.fromURL(urlString)
+    }
+    
+    static func fromURL(_ urlString: String) -> BilibiliCover? {
         if let avNumber = avNumberMatcher.numberFound(in: urlString) {
             return BilibiliCover(number: avNumber, type: .video)
         } else if let cvNumber = cvNumberMatcher.numberFound(in: urlString) {
