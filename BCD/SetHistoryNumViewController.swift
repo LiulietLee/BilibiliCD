@@ -18,15 +18,13 @@ class SetHistoryNumViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     
-    private let dataModel = CoreDataModel()
-
     var delegate: SetHistoryNumDelegate?
     var isShowingFullHistory = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let num = dataModel.historyNum {
+        if let num = SettingManager.historyItemLimit {
             numberField.text = "\(num)"
         }
         
@@ -55,7 +53,7 @@ class SetHistoryNumViewController: UIViewController {
     @IBAction func saveButtonTapped() {
         if let text = numberField.text
             , let num = Int(text) {
-            dataModel.historyNum = max(min(num, 1000), 0)
+            SettingManager.historyItemLimit = max(min(num, 1000), 0)
             delegate?.historyNumLimitChanged()
         }
         goBack()

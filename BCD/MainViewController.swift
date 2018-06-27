@@ -16,7 +16,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var goButton: UIButton!
     @IBOutlet weak var menu: UIBarButtonItem!
     private var touchTime = DispatchTime(uptimeNanoseconds: 0)
-    private var dataModel = CoreDataModel()
+    private var manager = HistoryManager()
 //    private var existCover: History? = nil
     var cover = BilibiliCover(number: 0, type: .video) {
         didSet {
@@ -61,7 +61,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
             } else {
                 return
             }
-            if dataModel.isExistInHistory(cover: newCover) == nil {
+            if manager.isExistInHistory(cover: newCover) == nil {
                 isShowingImage = true
                 let storyBoard = UIStoryboard(name: "Main", bundle:nil)
                 let nextViewController = storyBoard.instantiateViewController(withIdentifier: "image controller") as! ImageViewController
@@ -150,7 +150,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? ImageViewController {
             vc.cover = cover
-            if let eCover = dataModel.isExistInHistory(cover: cover) {
+            if let eCover = manager.isExistInHistory(cover: cover) {
                 vc.itemFromHistory = eCover
             }
         }

@@ -12,15 +12,17 @@ import MobileCoreServices
 
 class ShareViewController: UIViewController, VideoCoverDelegate {
 
-    private let dataModel = CoreDataModel()
     private var url = ""
-    private var titleString = ""
     private var author = ""
+    private var titleString = ""
     private var cover: BilibiliCover?
     private let netModel = NetworkingModel()
     @IBOutlet weak var message: UILabel!
+    @IBOutlet weak var frameView: UIView!
     
     override func viewDidLoad() {
+        frameView.layer.masksToBounds = true
+        frameView.layer.cornerRadius = 10.0
         netModel.delegateForVideo = self
         let extensionItem = extensionContext?.inputItems[0] as! NSExtensionItem
         let contentTypeURL = kUTTypeURL as String
@@ -48,11 +50,13 @@ class ShareViewController: UIViewController, VideoCoverDelegate {
     
     func gotImage(_ image: Image) {
         downloadImage(image)
-        dataModel.addNewHistory(av: cover!.shortDescription,
-                                image: image,
-                                title: titleString,
-                                up: author,
-                                url: url)
+        CacheManager.addNewDraft(
+            stringID: cover!.shortDescription,
+            title: titleString,
+            imageURL: URL(string: url)!,
+            author: author,
+            image: image
+        )
         message.text = "封面已保存"
         disappear()
     }
@@ -67,9 +71,13 @@ class ShareViewController: UIViewController, VideoCoverDelegate {
         disappear()
     }
     
+    @IBAction func disappearButtonTapped() {
+        extensionContext!.completeRequest(returningItems: nil, completionHandler: nil)
+    }
+    
     private func disappear() {
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1000)) {
-            self.dismiss(animated: true, completion: nil)
+            self.disappearButtonTapped()
         }
     }
     

@@ -15,6 +15,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var menu: UIBarButtonItem!
     private let motionDetector = MotionDetector()
+    private let manager = HistoryManager()
     private var isAnimatedOnce = false
     private var history = [History]() {
         didSet {
@@ -56,8 +57,8 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         view.bringSubview(toFront: loadingView)
         
         DispatchQueue.global(qos: .userInitiated).async {
-            CoreDataModel.shared.refreshHistory()
-            self.history = CoreDataModel.shared.fetchHistory()
+            self.manager.refreshHistory()
+            self.history = self.manager.fetchHistory()
         }
         
         tableView.delegate = self
@@ -156,7 +157,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     @objc private func clearHistory() {
-        CoreDataModel.shared.clearHistory()
+        manager.clearHistory()
         history = []
         tableView.reloadData()
     }
@@ -214,15 +215,15 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
             hideString = "显示"
         }
         let hide = UITableViewRowAction(style: .normal, title: hideString) { action, index in
-            CoreDataModel.shared.changeIsHiddenOf(item)
-            self.history = CoreDataModel.shared.fetchHistory()
+            self.manager.changeIsHiddenOf(item)
+            self.history = self.manager.fetchHistory()
             self.tableView.reloadData()
         }
         hide.backgroundColor = .lightGray
         
         let delete = UITableViewRowAction(style: .normal, title: "删除") { action, index in
-            CoreDataModel.shared.deleteHistory(item)
-            self.history = CoreDataModel.shared.fetchHistory()
+            self.manager.deleteHistory(item)
+            self.history = self.manager.fetchHistory()
             self.tableView.deleteRows(at: [editActionsForRowAt], with: .left)
         }
         delete.backgroundColor = .red
@@ -231,8 +232,8 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func historyNumLimitChanged() {
-        CoreDataModel.shared.refreshHistory()
-        history = CoreDataModel.shared.fetchHistory()
+        manager.refreshHistory()
+        history = manager.fetchHistory()
         tableView.reloadData()
     }
     

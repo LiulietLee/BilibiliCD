@@ -15,11 +15,13 @@
 		4F26AA871F14D51100E1123D /* GreyNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F26AA861F14D51100E1123D /* GreyNavController.swift */; };
 		4F2AFBA41F21FBD100AA7CC7 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2AFBA31F21FBD100AA7CC7 /* HistoryViewController.swift */; };
 		4F2AFBA61F21FC6400AA7CC7 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2AFBA51F21FC6400AA7CC7 /* HistoryCell.swift */; };
-		4F2DB5DB1F75F7D400FB2315 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2DB5DA1F75F7D400FB2315 /* NotificationCenter.framework */; };
-		4F2DB5DE1F75F7D400FB2315 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2DB5DD1F75F7D400FB2315 /* TodayViewController.swift */; };
-		4F2DB5E11F75F7D400FB2315 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F2DB5DF1F75F7D400FB2315 /* MainInterface.storyboard */; };
-		4F2DB5E51F75F7D400FB2315 /* BilibiliCD.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4F2DB5D91F75F7D400FB2315 /* BilibiliCD.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4F2F443D20DFDEE200C61EAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F5041C91F18AF1C00B59337 /* Assets.xcassets */; };
+		4F2F443F20E35B2A00C61EAD /* SettingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2F443E20E35B2A00C61EAD /* SettingManager.swift */; };
+		4F2F444120E35C6D00C61EAD /* HistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2F444020E35C6D00C61EAD /* HistoryManager.swift */; };
+		4F2F444720E3643200C61EAD /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2F444620E3643200C61EAD /* CacheManager.swift */; };
+		4F2F444B20E367EF00C61EAD /* SettingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2F443E20E35B2A00C61EAD /* SettingManager.swift */; };
+		4F2F444C20E367EF00C61EAD /* HistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2F444020E35C6D00C61EAD /* HistoryManager.swift */; };
+		4F2F444D20E367EF00C61EAD /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2F444620E3643200C61EAD /* CacheManager.swift */; };
 		4F3077B81F1768E000E1C1AF /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3077B71F1768E000E1C1AF /* CoreDataModel.swift */; };
 		4F338F5720DD00410014226C /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F338F5620DD00410014226C /* ShareViewController.swift */; };
 		4F338F5A20DD00410014226C /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F338F5820DD00410014226C /* MainInterface.storyboard */; };
@@ -50,21 +52,14 @@
 		4F4157A21F1331000042FF40 /* SourceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4157A11F1331000042FF40 /* SourceTableViewController.swift */; };
 		4F4E60FC1F8DACE000BB9847 /* MotionDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E60FB1F8DACE000BB9847 /* MotionDetector.swift */; };
 		4F5041CA1F18AF1C00B59337 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F5041C91F18AF1C00B59337 /* Assets.xcassets */; };
-		4F585B2A1F760B38004D1285 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF701EF5000400D31840 /* Info.swift */; };
-		4F585B2B1F760B38004D1285 /* NetworkingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF6E1EF4FCC600D31840 /* NetworkingModel.swift */; };
-		4F585B591F7627E2004D1285 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F5041C91F18AF1C00B59337 /* Assets.xcassets */; };
 		4F6C86361F9C6C0700417A23 /* CheckLaunchTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6C86351F9C6C0700417A23 /* CheckLaunchTime.swift */; };
 		4F76B8801F8FB4FD00F714B9 /* HisTutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F76B87F1F8FB4FD00F714B9 /* HisTutViewController.swift */; };
 		4F76B8A51F905CB200F714B9 /* HisTutPage in Resources */ = {isa = PBXBuildFile; fileRef = 4F76B8A41F905CB200F714B9 /* HisTutPage */; };
 		4F76B8A71F90865B00F714B9 /* DetectiPhoneX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F76B8A61F90865B00F714B9 /* DetectiPhoneX.swift */; };
 		4F8385AD1F93AB050018D733 /* AnimateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8385AC1F93AB050018D733 /* AnimateView.swift */; };
-		4F8B90721F7B2E3800AB158D /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B90711F7B2E3800AB158D /* CoreDataStorage.swift */; };
 		4F8B90731F7B2E3800AB158D /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B90711F7B2E3800AB158D /* CoreDataStorage.swift */; };
-		4F959A7C1F8751650097DE30 /* BCD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F99A9951F21F0B600AE4143 /* BCD.xcdatamodeld */; };
-		4F959A7D1F8751760097DE30 /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3077B71F1768E000E1C1AF /* CoreDataModel.swift */; };
 		4F99A9971F21F0B600AE4143 /* BCD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F99A9951F21F0B600AE4143 /* BCD.xcdatamodeld */; };
 		4F9B213F1F16187000D3BDD2 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9B213E1F16187000D3BDD2 /* AboutViewController.swift */; };
-		4FA99A341F7661AE00CB2210 /* LLDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BFDF781F5B2D29002EE246 /* LLDialog.swift */; };
 		4FB044851F1F49CA00F96D5A /* TutorialContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB044841F1F49CA00F96D5A /* TutorialContentViewController.swift */; };
 		4FB044871F1F49D800F96D5A /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB044861F1F49D800F96D5A /* TutorialViewController.swift */; };
 		4FB3D9611F09DD9C0043066B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB3D9601F09DD9C0043066B /* LoadingView.swift */; };
@@ -84,19 +79,6 @@
 		4FE32FA920D514EE0043F648 /* BKArticle+Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE32F9C20D514EE0043F648 /* BKArticle+Info.swift */; };
 		4FE32FAA20D514EE0043F648 /* BKLoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE32F9D20D514EE0043F648 /* BKLoginHelper.swift */; };
 		4FE32FAB20D514EE0043F648 /* BKSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE32F9E20D514EE0043F648 /* BKSession.swift */; };
-		4FE32FAC20D514F60043F648 /* BKArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE32F9220D514EE0043F648 /* BKArticle.swift */; };
-		4FE32FAD20D514F60043F648 /* BKVideo+Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE32F9320D514EE0043F648 /* BKVideo+Page.swift */; };
-		4FE32FAE20D514F60043F648 /* BKLiveRoom+Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE32F9420D514EE0043F648 /* BKLiveRoom+Info.swift */; };
-		4FE32FAF20D514F60043F648 /* URLSession+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE32F9520D514EE0043F648 /* URLSession+Extensions.swift */; };
-		4FE32FB020D514F60043F648 /* BKApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE32F9620D514EE0043F648 /* BKApp.swift */; };
-		4FE32FB120D514F60043F648 /* BKLiveRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE32F9720D514EE0043F648 /* BKLiveRoom.swift */; };
-		4FE32FB220D514F60043F648 /* BKVideo+Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE32F9820D514EE0043F648 /* BKVideo+Info.swift */; };
-		4FE32FB320D514F60043F648 /* BKCookie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE32F9920D514EE0043F648 /* BKCookie.swift */; };
-		4FE32FB420D514F60043F648 /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE32F9A20D514EE0043F648 /* URL+Extensions.swift */; };
-		4FE32FB520D514F60043F648 /* BKVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE32F9B20D514EE0043F648 /* BKVideo.swift */; };
-		4FE32FB620D514F60043F648 /* BKArticle+Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE32F9C20D514EE0043F648 /* BKArticle+Info.swift */; };
-		4FE32FB720D514F60043F648 /* BKLoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE32F9D20D514EE0043F648 /* BKLoginHelper.swift */; };
-		4FE32FB820D514F60043F648 /* BKSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE32F9E20D514EE0043F648 /* BKSession.swift */; };
 		4FE8FF3E1EF4FC0600D31840 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF3D1EF4FC0600D31840 /* AppDelegate.swift */; };
 		4FE8FF401EF4FC0600D31840 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF3F1EF4FC0600D31840 /* MainViewController.swift */; };
 		4FE8FF431EF4FC0600D31840 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FE8FF411EF4FC0600D31840 /* Main.storyboard */; };
@@ -128,25 +110,13 @@
 		4FF6C4AD1FA44BD300A34870 /* ScalingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF6C4AC1FA44BD300A34870 /* ScalingViewController.swift */; };
 		4FFB80D31F970B2E00626CD7 /* Nudity.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB80D21F970B2E00626CD7 /* Nudity.mlmodel */; };
 		4FFB80D81F970B7800626CD7 /* UIImageToCVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB80D71F970B7800626CD7 /* UIImageToCVPixelBuffer.swift */; };
-		4FFB80D91F970B8600626CD7 /* Nudity.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB80D21F970B2E00626CD7 /* Nudity.mlmodel */; };
-		4FFB80DA1F971D7300626CD7 /* UIImageToCVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB80D71F970B7800626CD7 /* UIImageToCVPixelBuffer.swift */; };
 		5290FA032051B0DF00A1AAA4 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5290FA022051B0DF00A1AAA4 /* ImageSaver.swift */; };
-		5290FA042051B19B00A1AAA4 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5290FA022051B0DF00A1AAA4 /* ImageSaver.swift */; };
-		5292833D204BC44D009FEF65 /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF6C4A81FA4324200A34870 /* UIImage+Gif.swift */; };
 		52BFDF791F5B2D29002EE246 /* LLDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BFDF781F5B2D29002EE246 /* LLDialog.swift */; };
 		52E4E47D1F76C6A9008EF09C /* BilibiliCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E4E47C1F76C6A9008EF09C /* BilibiliCover.swift */; };
-		52E4E47E1F76C6B6008EF09C /* BilibiliCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E4E47C1F76C6A9008EF09C /* BilibiliCover.swift */; };
 		ACA6AB473F9866011CFB9920 /* Pods_BCD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1FDACCD6B09FD7A3A9DF0F1 /* Pods_BCD.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4F2DB5E31F75F7D400FB2315 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4FE8FF321EF4FC0600D31840 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4F2DB5D81F75F7D400FB2315;
-			remoteInfo = BilibiliCD;
-		};
 		4F338F5C20DD00410014226C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4FE8FF321EF4FC0600D31840 /* Project object */;
@@ -163,7 +133,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				4F2DB5E51F75F7D400FB2315 /* BilibiliCD.appex in Embed App Extensions */,
 				4F338F5E20DD00410014226C /* BCDSharing.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -191,11 +160,10 @@
 		4F26AA861F14D51100E1123D /* GreyNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreyNavController.swift; sourceTree = "<group>"; };
 		4F2AFBA31F21FBD100AA7CC7 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		4F2AFBA51F21FC6400AA7CC7 /* HistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
-		4F2DB5D91F75F7D400FB2315 /* BilibiliCD.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BilibiliCD.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F2DB5DA1F75F7D400FB2315 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		4F2DB5DD1F75F7D400FB2315 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
-		4F2DB5E01F75F7D400FB2315 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		4F2DB5E21F75F7D400FB2315 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F2F443E20E35B2A00C61EAD /* SettingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingManager.swift; sourceTree = "<group>"; };
+		4F2F444020E35C6D00C61EAD /* HistoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryManager.swift; sourceTree = "<group>"; };
+		4F2F444620E3643200C61EAD /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		4F3077B71F1768E000E1C1AF /* CoreDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataModel.swift; sourceTree = "<group>"; };
 		4F338F5420DD00410014226C /* BCDSharing.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BCDSharing.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F338F5620DD00410014226C /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
@@ -213,7 +181,6 @@
 		4F8B90711F7B2E3800AB158D /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 		4F99A9961F21F0B600AE4143 /* BCD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BCD.xcdatamodel; sourceTree = "<group>"; };
 		4F9B213E1F16187000D3BDD2 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		4FA99A371F775FDB00CB2210 /* BilibiliCD.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BilibiliCD.entitlements; sourceTree = "<group>"; };
 		4FB044841F1F49CA00F96D5A /* TutorialContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialContentViewController.swift; sourceTree = "<group>"; };
 		4FB044861F1F49D800F96D5A /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		4FB3D9601F09DD9C0043066B /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -276,14 +243,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4F2DB5D61F75F7D400FB2315 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4F2DB5DB1F75F7D400FB2315 /* NotificationCenter.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4F338F5120DD00410014226C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -314,15 +273,15 @@
 			name = NavigationController;
 			sourceTree = "<group>";
 		};
-		4F2DB5DC1F75F7D400FB2315 /* BilibiliCD */ = {
+		4F2F444E20E37D2700C61EAD /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				4FA99A371F775FDB00CB2210 /* BilibiliCD.entitlements */,
-				4F2DB5DD1F75F7D400FB2315 /* TodayViewController.swift */,
-				4F2DB5DF1F75F7D400FB2315 /* MainInterface.storyboard */,
-				4F2DB5E21F75F7D400FB2315 /* Info.plist */,
+				4F3077B71F1768E000E1C1AF /* CoreDataModel.swift */,
+				4F2F443E20E35B2A00C61EAD /* SettingManager.swift */,
+				4F2F444020E35C6D00C61EAD /* HistoryManager.swift */,
+				4F2F444620E3643200C61EAD /* CacheManager.swift */,
 			);
-			path = BilibiliCD;
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 		4F3077951F17478100E1C1AF /* Frameworks */ = {
@@ -370,9 +329,9 @@
 		4F5BE2F61EFAA1170054C53F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4F2F444E20E37D2700C61EAD /* CoreData */,
 				4FFB80D41F970B3600626CD7 /* Core ML */,
 				4F4E60FB1F8DACE000BB9847 /* MotionDetector.swift */,
-				4F3077B71F1768E000E1C1AF /* CoreDataModel.swift */,
 				4F99A9951F21F0B600AE4143 /* BCD.xcdatamodeld */,
 				4F6C86351F9C6C0700417A23 /* CheckLaunchTime.swift */,
 				4FF6C4A81FA4324200A34870 /* UIImage+Gif.swift */,
@@ -434,7 +393,6 @@
 				526B5BCC202EEA2D00E76FB3 /* README.md */,
 				52E4E47F1F76CF95008EF09C /* Shared */,
 				4FE8FF3C1EF4FC0600D31840 /* BCD */,
-				4F2DB5DC1F75F7D400FB2315 /* BilibiliCD */,
 				4F338F5520DD00410014226C /* BCDSharing */,
 				4FE8FF3B1EF4FC0600D31840 /* Products */,
 				4F3077951F17478100E1C1AF /* Frameworks */,
@@ -446,7 +404,6 @@
 			isa = PBXGroup;
 			children = (
 				4FE8FF3A1EF4FC0600D31840 /* BilibiliCD.app */,
-				4F2DB5D91F75F7D400FB2315 /* BilibiliCD.appex */,
 				4F338F5420DD00410014226C /* BCDSharing.appex */,
 			);
 			name = Products;
@@ -523,23 +480,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4F2DB5D81F75F7D400FB2315 /* BilibiliCD */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4F2DB5E81F75F7D400FB2315 /* Build configuration list for PBXNativeTarget "BilibiliCD" */;
-			buildPhases = (
-				4F2DB5D51F75F7D400FB2315 /* Sources */,
-				4F2DB5D61F75F7D400FB2315 /* Frameworks */,
-				4F2DB5D71F75F7D400FB2315 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = BilibiliCD;
-			productName = BilibiliCD;
-			productReference = 4F2DB5D91F75F7D400FB2315 /* BilibiliCD.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		4F338F5320DD00410014226C /* BCDSharing */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4F338F6120DD00410014226C /* Build configuration list for PBXNativeTarget "BCDSharing" */;
@@ -573,7 +513,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				4F2DB5E41F75F7D400FB2315 /* PBXTargetDependency */,
 				4F338F5D20DD00410014226C /* PBXTargetDependency */,
 			);
 			name = BCD;
@@ -591,16 +530,6 @@
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = Liuliet.Lee;
 				TargetAttributes = {
-					4F2DB5D81F75F7D400FB2315 = {
-						CreatedOnToolsVersion = 9.0;
-						DevelopmentTeam = ANB6MDJTLF;
-						ProvisioningStyle = Automatic;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
-							};
-						};
-					};
 					4F338F5320DD00410014226C = {
 						CreatedOnToolsVersion = 9.4;
 						DevelopmentTeam = ANB6MDJTLF;
@@ -647,22 +576,12 @@
 			projectRoot = "";
 			targets = (
 				4FE8FF391EF4FC0600D31840 /* BCD */,
-				4F2DB5D81F75F7D400FB2315 /* BilibiliCD */,
 				4F338F5320DD00410014226C /* BCDSharing */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4F2DB5D71F75F7D400FB2315 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4F585B591F7627E2004D1285 /* Assets.xcassets in Resources */,
-				4F2DB5E11F75F7D400FB2315 /* MainInterface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4F338F5220DD00410014226C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -748,50 +667,21 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4F2DB5D51F75F7D400FB2315 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4FFB80DA1F971D7300626CD7 /* UIImageToCVPixelBuffer.swift in Sources */,
-				4FE32FB420D514F60043F648 /* URL+Extensions.swift in Sources */,
-				4FE32FB020D514F60043F648 /* BKApp.swift in Sources */,
-				5290FA042051B19B00A1AAA4 /* ImageSaver.swift in Sources */,
-				4F2DB5DE1F75F7D400FB2315 /* TodayViewController.swift in Sources */,
-				4FA99A341F7661AE00CB2210 /* LLDialog.swift in Sources */,
-				4F959A7D1F8751760097DE30 /* CoreDataModel.swift in Sources */,
-				4F585B2A1F760B38004D1285 /* Info.swift in Sources */,
-				4F585B2B1F760B38004D1285 /* NetworkingModel.swift in Sources */,
-				4F959A7C1F8751650097DE30 /* BCD.xcdatamodeld in Sources */,
-				4FE32FAF20D514F60043F648 /* URLSession+Extensions.swift in Sources */,
-				4FE32FB820D514F60043F648 /* BKSession.swift in Sources */,
-				4F8B90721F7B2E3800AB158D /* CoreDataStorage.swift in Sources */,
-				4FE32FB620D514F60043F648 /* BKArticle+Info.swift in Sources */,
-				4FE32FB220D514F60043F648 /* BKVideo+Info.swift in Sources */,
-				4FFB80D91F970B8600626CD7 /* Nudity.mlmodel in Sources */,
-				4FE32FAE20D514F60043F648 /* BKLiveRoom+Info.swift in Sources */,
-				5292833D204BC44D009FEF65 /* UIImage+Gif.swift in Sources */,
-				4FE32FAD20D514F60043F648 /* BKVideo+Page.swift in Sources */,
-				4FE32FB320D514F60043F648 /* BKCookie.swift in Sources */,
-				4FE32FB120D514F60043F648 /* BKLiveRoom.swift in Sources */,
-				4FE32FB720D514F60043F648 /* BKLoginHelper.swift in Sources */,
-				4FE32FAC20D514F60043F648 /* BKArticle.swift in Sources */,
-				4FE32FB520D514F60043F648 /* BKVideo.swift in Sources */,
-				52E4E47E1F76C6B6008EF09C /* BilibiliCover.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4F338F5020DD00410014226C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F2F444B20E367EF00C61EAD /* SettingManager.swift in Sources */,
 				4F338F7020DE56730014226C /* CoreDataStorage.swift in Sources */,
 				4F338F7120DE56730014226C /* Info.swift in Sources */,
 				4F338F6920DE566E0014226C /* BKVideo+Info.swift in Sources */,
 				4F338F6E20DE566E0014226C /* BKLoginHelper.swift in Sources */,
 				4F338F7420DE56730014226C /* ImageSaver.swift in Sources */,
+				4F2F444C20E367EF00C61EAD /* HistoryManager.swift in Sources */,
 				4F338F7220DE56730014226C /* NetworkingModel.swift in Sources */,
 				4F338F6620DE566E0014226C /* URLSession+Extensions.swift in Sources */,
 				4F338F7820DE59EF0014226C /* UIImageToCVPixelBuffer.swift in Sources */,
+				4F2F444D20E367EF00C61EAD /* CacheManager.swift in Sources */,
 				4F338F5720DD00410014226C /* ShareViewController.swift in Sources */,
 				4F338F6820DE566E0014226C /* BKLiveRoom.swift in Sources */,
 				4F338F6720DE566E0014226C /* BKApp.swift in Sources */,
@@ -821,6 +711,7 @@
 				4FE9A54F1FA3019C002CABF9 /* UIImage+MultiArray.swift in Sources */,
 				4FE9A5651FA30389002CABF9 /* anime_noise3_model.mlmodel in Sources */,
 				4FE32FAB20D514EE0043F648 /* BKSession.swift in Sources */,
+				4F2F444720E3643200C61EAD /* CacheManager.swift in Sources */,
 				4FE9A5501FA3019C002CABF9 /* UIImage+IO.swift in Sources */,
 				4F26AA851F14D45900E1123D /* BrownNavController.swift in Sources */,
 				4FE9A5611FA30389002CABF9 /* anime_scale2x_model.mlmodel in Sources */,
@@ -845,6 +736,7 @@
 				4FE9A55F1FA30389002CABF9 /* photo_scale2x_model.mlmodel in Sources */,
 				4F2AFBA41F21FBD100AA7CC7 /* HistoryViewController.swift in Sources */,
 				4FFB80D31F970B2E00626CD7 /* Nudity.mlmodel in Sources */,
+				4F2F444120E35C6D00C61EAD /* HistoryManager.swift in Sources */,
 				4FE9A5511FA3019C002CABF9 /* UIImage+Crop.swift in Sources */,
 				4FE32FA020D514EE0043F648 /* BKVideo+Page.swift in Sources */,
 				4FB3D9611F09DD9C0043066B /* LoadingView.swift in Sources */,
@@ -855,6 +747,7 @@
 				4FE9A54D1FA3019C002CABF9 /* UIImage+RunModel.swift in Sources */,
 				4FE8FF6F1EF4FCC600D31840 /* NetworkingModel.swift in Sources */,
 				4FE32F9F20D514EE0043F648 /* BKArticle.swift in Sources */,
+				4F2F443F20E35B2A00C61EAD /* SettingManager.swift in Sources */,
 				4FE9A54C1FA3019C002CABF9 /* ThreadPool.swift in Sources */,
 				4FE8FF3E1EF4FC0600D31840 /* AppDelegate.swift in Sources */,
 				4FBD1D591F1F40D400C1CD59 /* TutorialPageViewController.swift in Sources */,
@@ -888,11 +781,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4F2DB5E41F75F7D400FB2315 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4F2DB5D81F75F7D400FB2315 /* BilibiliCD */;
-			targetProxy = 4F2DB5E31F75F7D400FB2315 /* PBXContainerItemProxy */;
-		};
 		4F338F5D20DD00410014226C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4F338F5320DD00410014226C /* BCDSharing */;
@@ -901,14 +789,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4F2DB5DF1F75F7D400FB2315 /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4F2DB5E01F75F7D400FB2315 /* Base */,
-			);
-			name = MainInterface.storyboard;
-			sourceTree = "<group>";
-		};
 		4F338F5820DD00410014226C /* MainInterface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -936,55 +816,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		4F2DB5E61F75F7D400FB2315 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = BilibiliCD/BilibiliCD.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ANB6MDJTLF;
-				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = BilibiliCD/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Future-Code-Institute.BCD.BilibiliCD1";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
-		4F2DB5E71F75F7D400FB2315 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = BilibiliCD/BilibiliCD.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ANB6MDJTLF;
-				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = BilibiliCD/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Future-Code-Institute.BCD.BilibiliCD1";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
 		4F338F5F20DD00410014226C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1209,15 +1040,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4F2DB5E81F75F7D400FB2315 /* Build configuration list for PBXNativeTarget "BilibiliCD" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4F2DB5E61F75F7D400FB2315 /* Debug */,
-				4F2DB5E71F75F7D400FB2315 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4F338F6120DD00410014226C /* Build configuration list for PBXNativeTarget "BCDSharing" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

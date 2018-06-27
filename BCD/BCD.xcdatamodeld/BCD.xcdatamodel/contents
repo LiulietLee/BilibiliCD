@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13240" systemVersion="" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17E202" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Draft" representedClassName="Draft" syncable="YES" codeGenerationType="class">
+        <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stringID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="History" representedClassName="History" syncable="YES" codeGenerationType="class">
         <attribute name="av" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -21,5 +29,6 @@
         <element name="History" positionX="-54" positionY="0" width="128" height="163"/>
         <element name="OriginCover" positionX="205" positionY="-36" width="128" height="73"/>
         <element name="Setting" positionX="169" positionY="174" width="128" height="58"/>
+        <element name="Draft" positionX="-38" positionY="288" width="128" height="133"/>
     </elements>
 </model>

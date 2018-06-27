@@ -5,7 +5,6 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,24 +25,37 @@
                                 <rect key="frame" x="40" y="269.5" width="295" height="128"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="少女祈祷中……" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1yF-yR-2yF">
-                                        <rect key="frame" x="0.0" y="0.0" width="295" height="128"/>
+                                        <rect key="frame" x="0.0" y="16" width="295" height="76"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                         <color key="textColor" red="0.39582031249999999" green="0.39582031249999999" blue="0.39582031249999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXr-97-JuW">
+                                        <rect key="frame" x="0.0" y="92" width="295" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="Wo0-pJ-K5S"/>
+                                        </constraints>
+                                        <state key="normal" image="ic_goback"/>
+                                        <connections>
+                                            <action selector="disappearButtonTapped" destination="7K2-TN-903" eventType="touchUpInside" id="YYw-jZ-kGu"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="5pD-Gn-Vrr"/>
                                     <constraint firstItem="1yF-yR-2yF" firstAttribute="leading" secondItem="yxH-6z-rw0" secondAttribute="leading" id="7ox-eV-jrA"/>
-                                    <constraint firstItem="1yF-yR-2yF" firstAttribute="top" secondItem="yxH-6z-rw0" secondAttribute="top" id="G0d-pl-USh"/>
+                                    <constraint firstItem="1yF-yR-2yF" firstAttribute="top" secondItem="yxH-6z-rw0" secondAttribute="top" constant="16" id="G0d-pl-USh"/>
+                                    <constraint firstItem="UXr-97-JuW" firstAttribute="leading" secondItem="yxH-6z-rw0" secondAttribute="leading" id="H93-Xp-uun"/>
+                                    <constraint firstItem="UXr-97-JuW" firstAttribute="top" secondItem="1yF-yR-2yF" secondAttribute="bottom" id="TJX-bW-fiY"/>
+                                    <constraint firstAttribute="trailing" secondItem="UXr-97-JuW" secondAttribute="trailing" id="an8-43-s0A"/>
                                     <constraint firstAttribute="trailing" secondItem="1yF-yR-2yF" secondAttribute="trailing" id="mpQ-KI-BA9"/>
-                                    <constraint firstAttribute="bottom" secondItem="1yF-yR-2yF" secondAttribute="bottom" id="rY7-Vx-avx"/>
+                                    <constraint firstAttribute="bottom" secondItem="UXr-97-JuW" secondAttribute="bottom" id="n0Q-k7-UMS"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.22926279362416108" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="yxH-6z-rw0" firstAttribute="centerY" secondItem="pyO-RL-h58" secondAttribute="centerY" id="AYy-fg-lNy"/>
                             <constraint firstItem="yxH-6z-rw0" firstAttribute="leading" secondItem="mM0-kO-6rZ" secondAttribute="leading" constant="40" id="Aas-Cm-3rb"/>
@@ -51,28 +63,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mM0-kO-6rZ"/>
                     </view>
-                    <navigationItem key="navigationItem" id="SX6-wq-61C">
-                        <rightBarButtonItems>
-                            <barButtonItem image="ic_file_download" id="nw7-vz-X5I">
-                                <connections>
-                                    <action selector="downloadButtonTapped:" destination="7K2-TN-903" id="P9g-hT-8eV"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="2x" id="HJz-fR-lX0"/>
-                        </rightBarButtonItems>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="SX6-wq-61C"/>
                     <connections>
-                        <outlet property="downloadButton" destination="nw7-vz-X5I" id="5CG-Um-V4y"/>
+                        <outlet property="frameView" destination="yxH-6z-rw0" id="1Lm-tw-Z4L"/>
                         <outlet property="message" destination="1yF-yR-2yF" id="7HO-fc-tSd"/>
-                        <outlet property="scaleButton" destination="HJz-fR-lX0" id="eUV-KG-oGh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pm2-rV-7Mn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1660" y="35.532233883058474"/>
+            <point key="canvasLocation" x="2599.1999999999998" y="35.532233883058474"/>
         </scene>
     </scenes>
     <resources>
-        <image name="ic_file_download" width="24" height="24"/>
+        <image name="ic_goback" width="24" height="24"/>
     </resources>
 </document>

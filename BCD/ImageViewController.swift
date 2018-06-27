@@ -32,7 +32,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
     var cover: BilibiliCover?
     var itemFromHistory: History?
     private let netModel = NetworkingModel()
-    private let dataModel = CoreDataModel()
+    private let manager = HistoryManager()
     private var loadingView: LoadingView!
     private var reference: (info: Info?, style: CitationStyle) = (nil, .apa) {
         didSet {
@@ -196,7 +196,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
     
     func scaleSucceed(scaledImage: UIImage) {
         imageView.image = scaledImage
-        dataModel.changeOriginCover(of: itemFromHistory!, image: scaledImage)
+        manager.changeOriginCover(of: itemFromHistory!, image: scaledImage)
         scaleButton.isEnabled = false
         
         let dialog = LLDialog()
@@ -209,7 +209,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
     private func addItemToDB(image: Image) {
         DispatchQueue.global(qos: .userInteractive).async {
             [info = reference.info!, id = cover!.shortDescription] in
-            self.itemFromHistory = self.dataModel.addNewHistory(
+            self.itemFromHistory = self.manager.addNewHistory(
                 av: id, image: image, title: info.title, up: info.author, url: info.imageURL
             )
         }

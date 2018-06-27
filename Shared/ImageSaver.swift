@@ -55,7 +55,7 @@ class ImageSaver {
             case .gif(_, data: let gifData):
                 data = gifData
             case .normal(let uiImage):
-                data = uiImage.toData()
+                data = uiImage.data()
             }
             PHPhotoLibrary.shared()
                 .performChanges({
