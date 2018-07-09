@@ -11,16 +11,24 @@ import Foundation
 import CoreData
 
 class HistoryManager: CoreDataModel {
-    
-    func refreshHistory() {
-        let settingManager = SettingManager()
-        
-        if let limit = settingManager.historyItemLimit {
-            checkHistoryNumLimit(limit)
+
+    private var historyLimit: Int {
+        let settingManager = SettingManager();
+        return settingManager.historyItemLimit;
+    }
+
+    func getHistory() -> [History] {
+        var history = fetchHistory();
+        var overflow = history.count - historyLimit
+        if overflow > 0 {
+            for i in 0..<overflow {
+                deleteHistory(list[count - 1 - i])
+            }
         }
+        return history;
     }
     
-    func fetchHistory() -> [History] {
+    private func fetchHistory() -> [History] {
         var items = [History]()
         
         let sort = NSSortDescriptor(key: #keyPath(History.date), ascending: false)
@@ -35,11 +43,16 @@ class HistoryManager: CoreDataModel {
         
         return items
     }
+
+    private func avOfLatestHistoryEqualTo(_ av: String) -> Bool {
+        let history = fetchHistory()
+        return history.count == 0 ? false : (av == history[0].av)
+    }
     
     @discardableResult
     func addNewHistory(av: String, image: Image, title: String, up: String, url: String, date: Date = Date()) -> History {
-        refreshHistory()
-        
+        if avOfLatestHistoryEqualTo(av) { return fetchHistory()[0] }
+
         let entity = NSEntityDescription.entity(forEntityName: "History", in: context)!
         let newItem = History(entity: entity, insertInto: context)
         
@@ -76,7 +89,7 @@ class HistoryManager: CoreDataModel {
         return newItem
     }
     
-    func isNeedHid(_ cover: UIImage) -> Bool {
+    private func isNeedHid(_ cover: UIImage) -> Bool {
         let size = CGSize(width: 224, height: 224)
         
         let resizedImages = cover.resizeTo(newSize: size)
@@ -138,18 +151,6 @@ class HistoryManager: CoreDataModel {
             for item in items { deleteHistory(item) }
         } catch {
             print(error)
-        }
-    }
-    
-    private func checkHistoryNumLimit(_ limit: Int, history: [History]! = nil) {
-        var list = history ?? fetchHistory()
-        let count = list.count
-        if count == 0 { return }
-        let overflow = count - limit
-        if overflow > 0 {
-            for i in 0..<overflow {
-                deleteHistory(list[count - 1 - i])
-            }
         }
     }
 }

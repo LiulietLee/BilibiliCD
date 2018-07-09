@@ -57,8 +57,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         view.bringSubview(toFront: loadingView)
         
         DispatchQueue.global(qos: .userInitiated).async {
-            self.manager.refreshHistory()
-            self.history = self.manager.fetchHistory()
+            self.history = self.manager.getHistory()
         }
         
         tableView.delegate = self
@@ -216,14 +215,14 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         let hide = UITableViewRowAction(style: .normal, title: hideString) { action, index in
             self.manager.changeIsHiddenOf(item)
-            self.history = self.manager.fetchHistory()
+            self.history = self.manager.getHistory()
             self.tableView.reloadData()
         }
         hide.backgroundColor = .lightGray
         
         let delete = UITableViewRowAction(style: .normal, title: "删除") { action, index in
             self.manager.deleteHistory(item)
-            self.history = self.manager.fetchHistory()
+            self.history = self.manager.getHistory()
             self.tableView.deleteRows(at: [editActionsForRowAt], with: .left)
         }
         delete.backgroundColor = .red
@@ -232,8 +231,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func historyNumLimitChanged() {
-        manager.refreshHistory()
-        history = manager.fetchHistory()
+        history = manager.getHistory()
         tableView.reloadData()
     }
     
