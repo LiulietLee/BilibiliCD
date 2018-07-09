@@ -24,7 +24,7 @@ class SetHistoryNumViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let num = SettingManager.historyItemLimit {
+        if let num = SettingManager().historyItemLimit {
             numberField.text = "\(num)"
         }
         
@@ -53,7 +53,7 @@ class SetHistoryNumViewController: UIViewController {
     @IBAction func saveButtonTapped() {
         if let text = numberField.text
             , let num = Int(text) {
-            SettingManager.historyItemLimit = max(min(num, 1000), 0)
+            SettingManager().historyItemLimit = max(min(num, 1000), 0)
             delegate?.historyNumLimitChanged()
         }
         goBack()

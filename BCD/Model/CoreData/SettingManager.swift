@@ -11,7 +11,7 @@ import CoreData
 
 class SettingManager: CoreDataModel {
     
-    static private func initSetting() {
+    private func initSetting() {
         let initHistoryNum: Int16 = 120
         let entity = NSEntityDescription.entity(forEntityName: "Setting", in: context)!
         let newItem = Setting(entity: entity, insertInto: context)
@@ -19,7 +19,7 @@ class SettingManager: CoreDataModel {
         saveContext()
     }
     
-    static private var setting: Setting? {
+    private var setting: Setting? {
         do {
             let searchResults = try context.fetch(Setting.fetchRequest())
             if searchResults.count == 0 {
@@ -35,7 +35,7 @@ class SettingManager: CoreDataModel {
         return nil
     }
     
-    static var historyItemLimit: Int! {
+    var historyItemLimit: Int! {
         get {
             return Int(setting?.historyNumber ?? 0)
         }

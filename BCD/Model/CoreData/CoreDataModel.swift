@@ -12,13 +12,11 @@ import CoreData
 
 class CoreDataModel {
     
-    static internal let context = CoreDataStorage.sharedInstance.mainQueueContext
     internal let context = CoreDataStorage.sharedInstance.mainQueueContext
     
-    static internal func saveContext() {
+    internal func saveContext() {
         CoreDataStorage.sharedInstance.saveContext(context)
     }
-
 }
 
 extension UIImage {

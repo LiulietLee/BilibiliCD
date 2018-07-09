@@ -50,7 +50,7 @@ class ShareViewController: UIViewController, VideoCoverDelegate {
     
     func gotImage(_ image: Image) {
         downloadImage(image)
-        CacheManager.addNewDraft(
+        CacheManager().addNewDraft(
             stringID: cover!.shortDescription,
             title: titleString,
             imageURL: URL(string: url)!,

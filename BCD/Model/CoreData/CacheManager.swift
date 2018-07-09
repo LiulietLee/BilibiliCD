@@ -12,7 +12,7 @@ import UIKit
 
 class CacheManager: CoreDataModel {
     
-    static func addNewDraft(stringID: String, title: String, imageURL: URL, author: String, image: Image) {
+    func addNewDraft(stringID: String, title: String, imageURL: URL, author: String, image: Image) {
         let entity = NSEntityDescription.entity(forEntityName: "Draft", in: context)
         let newItem = Draft(entity: entity!, insertInto: context)
         
@@ -26,7 +26,7 @@ class CacheManager: CoreDataModel {
         saveContext()
     }
     
-    static func migrateToHistory() {
+    func migrateToHistory() {
         var items = [Draft]()
         
         do {
@@ -52,7 +52,7 @@ class CacheManager: CoreDataModel {
         })
     }
     
-    static private func deleteDraft(_ draft: Draft) {
+    private func deleteDraft(_ draft: Draft) {
         context.delete(draft)
         saveContext()
     }

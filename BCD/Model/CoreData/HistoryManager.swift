@@ -13,7 +13,9 @@ import CoreData
 class HistoryManager: CoreDataModel {
     
     func refreshHistory() {
-        if let limit = SettingManager.historyItemLimit {
+        let settingManager = SettingManager()
+        
+        if let limit = settingManager.historyItemLimit {
             checkHistoryNumLimit(limit)
         }
     }
@@ -69,7 +71,7 @@ class HistoryManager: CoreDataModel {
         newItem.origin = newOrig
         newOrig.history = newItem
         
-        CoreDataModel.saveContext()
+        saveContext()
         
         return newItem
     }
@@ -117,17 +119,17 @@ class HistoryManager: CoreDataModel {
     
     func changeOriginCover(of item: History, image: UIImage) {
         item.origin?.image = image.data()
-        CoreDataModel.saveContext()
+        saveContext()
     }
     
     func changeIsHiddenOf(_ item: History) {
         item.isHidden = !item.isHidden
-        CoreDataModel.saveContext()
+        saveContext()
     }
     
     func deleteHistory(_ item: History) {
         context.delete(item)
-        CoreDataModel.saveContext()
+        saveContext()
     }
     
     func clearHistory() {
