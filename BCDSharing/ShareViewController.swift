@@ -46,6 +46,7 @@ class ShareViewController: UIViewController, VideoCoverDelegate {
     func gotVideoInfo(_ info: Info) {
         titleString = info.title
         author = info.author
+        url = info.imageURL
     }
     
     func gotImage(_ image: Image) {

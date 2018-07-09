@@ -19,10 +19,11 @@ class HistoryManager: CoreDataModel {
 
     func getHistory() -> [History] {
         var history = fetchHistory();
-        var overflow = history.count - historyLimit
+        let overflow = history.count - historyLimit
         if overflow > 0 {
+            let count = history.count
             for i in 0..<overflow {
-                deleteHistory(list[count - 1 - i])
+                deleteHistory(history[count - 1 - i])
             }
         }
         return history;
