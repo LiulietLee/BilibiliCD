@@ -43,7 +43,7 @@ class NetworkingModel {
     private let production = true
     private var baseAPI: String {
         if production {
-            return "http://www.bilibilicd.tk/api"
+            return "http://45.32.54.201/api"
         } else {
             return "http://127.0.0.1:8000/api"
         }
