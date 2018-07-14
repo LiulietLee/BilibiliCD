@@ -21,7 +21,7 @@ class TutorialContentViewController: UIViewController {
         imageView.image = image
         
         insideButton.titleLabel!.lineBreakMode = .byWordWrapping
-        if index != 6 {
+        if index != 7 {
             insideButton.removeFromSuperview()
         }
     }
