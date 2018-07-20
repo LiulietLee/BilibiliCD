@@ -306,7 +306,7 @@
         <!--Tutorial View Controller-->
         <scene sceneID="GY0-eR-vwK">
             <objects>
-                <viewController id="D67-0g-9IQ" customClass="TutorialViewController" customModule="BilibiliCD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TutorialViewController" id="D67-0g-9IQ" customClass="TutorialViewController" customModule="BilibiliCD" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xo7-6h-jAg"/>
                         <viewControllerLayoutGuide type="bottom" id="Xq8-e8-eI4"/>

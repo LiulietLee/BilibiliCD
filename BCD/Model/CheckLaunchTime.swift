@@ -8,7 +8,18 @@
 
 import UIKit
 
-public var isNeedToDisplayHisTut: Bool {
+public var needToDisplayAppTutorial: Bool {
+    let defaults = UserDefaults.standard
+    
+    if defaults.string(forKey: "needToDisplayAppTutorial") != nil {
+        return false
+    } else {
+        defaults.set(true, forKey: "needToDisplayAppTutorial")
+        return true
+    }
+}
+
+public var needToDisplayHisTut: Bool {
     let defaults = UserDefaults.standard
     
     if defaults.string(forKey: "isNeedToDisplayHisTut") != nil {
@@ -19,7 +30,7 @@ public var isNeedToDisplayHisTut: Bool {
     }
 }
 
-public var isNeedToDisplayAutoHis: Bool {
+public var needToDisplayAutoHidTutorial: Bool {
     let defaults = UserDefaults.standard
     
     if defaults.string(forKey: "isNeedToDisplayHisTut") != nil {

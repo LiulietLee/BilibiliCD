@@ -84,8 +84,12 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
         
-        if isNeedToDisplayAutoHis {
-            showTutMessage()
+        if needToDisplayAppTutorial {
+            showAppTutorialMessage()
+        }
+        
+        if needToDisplayAutoHidTutorial {
+            showAutoHidTutorialMessage()
         }
         
         setSwitchCoverTypeButton()
@@ -112,19 +116,33 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         cover = BilibiliCover(number: cover.number, type: CoverType(rawValue: nextType)!)
     }
     
-    private func showTutMessage() {
+    private func showAutoHidTutorialMessage() {
         let dialog = LLDialog()
         dialog.title = "(=・ω・=)"
         dialog.message = "想了解下「自动和谐」的什么东西嘛？"
         dialog.setNegativeButton(withTitle: "不想")
-        dialog.setPositiveButton(withTitle: "好的", target: self, action: #selector(showTutorial))
+        dialog.setPositiveButton(withTitle: "好的", target: self, action: #selector(showAutoHidTutorial))
         dialog.show()
     }
     
-    @objc private func showTutorial() {
+    private func showAppTutorialMessage() {
+        let dialog = LLDialog()
+        dialog.title = "(=・ω・=)"
+        dialog.message = "想看看这个 App 的使用说明嘛？"
+        dialog.setNegativeButton(withTitle: "不想")
+        dialog.setPositiveButton(withTitle: "好的", target: self, action: #selector(showAppTutorial))
+        dialog.show()
+    }
+    
+    @objc private func showAutoHidTutorial() {
         let vc = HisTutViewController()
         vc.page = "AutoHide"
         present(vc, animated: true, completion: nil)
+    }
+    
+    @objc private func showAppTutorial() {
+        let tutorialViewController = storyboard?.instantiateViewController(withIdentifier: "TutorialViewController") as! TutorialViewController
+        present(tutorialViewController, animated: true, completion: nil)
     }
     
     @IBAction func numberButtonTapped(_ sender: UIButton) {

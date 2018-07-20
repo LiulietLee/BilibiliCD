@@ -66,7 +66,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         menu.action = #selector(SWRevealViewController.revealToggle(_:))
         view.addGestureRecognizer(revealViewController().panGestureRecognizer())
         
-        if isNeedToDisplayHisTut {
+        if needToDisplayHisTut {
             showTutMessage()
         }
         
