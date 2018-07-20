@@ -39,18 +39,10 @@ class CoverInfoProvider {
     weak var delegateForVideo: VideoCoverDelegate?
     weak var delegateForUpuser: UpuserImgDelegate?
     private let session = URLSession.shared
-    
-    private let production = true
-    private var baseAPI: String {
-        if production {
-            return "http://45.32.54.201/api"
-        } else {
-            return "http://127.0.0.1:8000/api"
-        }
-    }
+    private let env = Environment.prod
     
     private func updateServerRecord(type: CoverType, nid: UInt64, info: Info) {
-        guard let url = generateAPI(byType: type, andNID: Int(nid), andInfo: info) else {
+        guard let url = APIFactory.getAPI(byType: type, andNID: Int(nid), andInfo: info, env: env) else {
             fatalError("cannot generate api url")
         }
 
@@ -83,35 +75,8 @@ class CoverInfoProvider {
         task.resume()
     }
     
-    private func generateAPI(byType type: CoverType, andNID nid: Int? = nil, andInfo newInfo: Info? = nil) -> URL? {
-        var api = baseAPI
-        
-        if type == .hotList {
-            return URL(string: api + "/hot_list")
-        } else {
-            api += "/db"
-            if newInfo != nil {
-                api += "/update"
-                return URL(string: api)
-            } else {
-                api += "/search?type="
-            }
-            
-            switch type {
-            case .video: api += "av"
-            case .article: api += "cv"
-            case .live: api += "lv"
-            default: return nil
-            }
-
-            api += "&nid=\(nid!)"
-        }
-        
-        return URL(string: api)
-    }
-    
     private func fetchCoverRecordFromServer(withType type: CoverType, andID nid: UInt64) {
-        guard let url = generateAPI(byType: type, andNID: Int(nid)) else {
+        guard let url = APIFactory.getAPI(byType: type, andNID: Int(nid), env: env) else {
             fatalError("cannot generate api url")
         }
         let request = URLRequest(url: url)

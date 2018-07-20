@@ -77,6 +77,10 @@
 		4F49435B20F347B400BB7785 /* UIImageToCVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F49433520F3468B00BB7785 /* UIImageToCVPixelBuffer.swift */; };
 		4F49435C20F347CB00BB7785 /* Nudity.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4F49433220F3468B00BB7785 /* Nudity.mlmodel */; };
 		4F49435D20F347D800BB7785 /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F49432120F3468200BB7785 /* UIImage+Gif.swift */; };
+		4F4C901E210214C100C3AAB0 /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C901D210214C100C3AAB0 /* URLBuilder.swift */; };
+		4F4C9020210215C100C3AAB0 /* APIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C901F210215C100C3AAB0 /* APIFactory.swift */; };
+		4F4C902121021A0E00C3AAB0 /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C901D210214C100C3AAB0 /* URLBuilder.swift */; };
+		4F4C902221021A0E00C3AAB0 /* APIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C901F210215C100C3AAB0 /* APIFactory.swift */; };
 		4F76B8A51F905CB200F714B9 /* HisTutPage in Resources */ = {isa = PBXBuildFile; fileRef = 4F76B8A41F905CB200F714B9 /* HisTutPage */; };
 		4F78820920F3423900344D62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F78820620F3423900344D62 /* AppDelegate.swift */; };
 		4F78820E20F3431300344D62 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F78820D20F3431300344D62 /* Info.plist */; };
@@ -199,6 +203,8 @@
 		4F49434E20F3469600BB7785 /* CoreDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataModel.swift; path = Model/CoreData/CoreDataModel.swift; sourceTree = "<group>"; };
 		4F49434F20F3469600BB7785 /* HistoryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryManager.swift; path = Model/CoreData/HistoryManager.swift; sourceTree = "<group>"; };
 		4F49435020F3469700BB7785 /* SettingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingManager.swift; path = Model/CoreData/SettingManager.swift; sourceTree = "<group>"; };
+		4F4C901D210214C100C3AAB0 /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
+		4F4C901F210215C100C3AAB0 /* APIFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIFactory.swift; sourceTree = "<group>"; };
 		4F76B8A41F905CB200F714B9 /* HisTutPage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = HisTutPage; sourceTree = "<group>"; };
 		4F78820620F3423900344D62 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Supporting Files/AppDelegate.swift"; sourceTree = "<group>"; };
 		4F78820720F3423900344D62 /* BCD.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; name = BCD.entitlements; path = "Supporting Files/BCD.entitlements"; sourceTree = "<group>"; };
@@ -319,6 +325,16 @@
 			);
 			name = Utils;
 			path = "Model/Core ML/Utils";
+			sourceTree = "<group>";
+		};
+		4F4C902321021BDE00C3AAB0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				4FE8FF6E1EF4FCC600D31840 /* CoverInfoProvider.swift */,
+				4F4C901D210214C100C3AAB0 /* URLBuilder.swift */,
+				4F4C901F210215C100C3AAB0 /* APIFactory.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		4F5BE2F51EFAA1040054C53F /* ViewController */ = {
@@ -460,10 +476,10 @@
 		52E4E47F1F76CF95008EF09C /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				4F4C902321021BDE00C3AAB0 /* Network */,
 				4FE32F9120D514EE0043F648 /* BilibiliKit */,
 				4F8B90711F7B2E3800AB158D /* CoreDataStorage.swift */,
 				4FE8FF701EF5000400D31840 /* Info.swift */,
-				4FE8FF6E1EF4FCC600D31840 /* CoverInfoProvider.swift */,
 				52E4E47C1F76C6A9008EF09C /* BilibiliCover.swift */,
 				5290FA022051B0DF00A1AAA4 /* ImageSaver.swift */,
 			);
@@ -673,12 +689,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F49435B20F347B400BB7785 /* UIImageToCVPixelBuffer.swift in Sources */,
+				4F4C902121021A0E00C3AAB0 /* URLBuilder.swift in Sources */,
 				4F338F7020DE56730014226C /* CoreDataStorage.swift in Sources */,
 				4F49435620F3476B00BB7785 /* BCD.xcdatamodeld in Sources */,
 				4F49435C20F347CB00BB7785 /* Nudity.mlmodel in Sources */,
 				4F338F7120DE56730014226C /* Info.swift in Sources */,
 				4F338F6920DE566E0014226C /* BKVideo+Info.swift in Sources */,
 				4F338F6E20DE566E0014226C /* BKLoginHelper.swift in Sources */,
+				4F4C902221021A0E00C3AAB0 /* APIFactory.swift in Sources */,
 				4F338F7420DE56730014226C /* ImageSaver.swift in Sources */,
 				4F49435820F3477900BB7785 /* CacheManager.swift in Sources */,
 				4F49435920F3479700BB7785 /* HistoryManager.swift in Sources */,
@@ -709,10 +727,12 @@
 				4F78823420F3443200344D62 /* TutorialPageViewController.swift in Sources */,
 				4F78823220F3443200344D62 /* SourceTableViewController.swift in Sources */,
 				4FE32FAB20D514EE0043F648 /* BKSession.swift in Sources */,
+				4F4C901E210214C100C3AAB0 /* URLBuilder.swift in Sources */,
 				4F49434620F3468B00BB7785 /* photo_noise2_model.mlmodel in Sources */,
 				4F49435520F3469700BB7785 /* SettingManager.swift in Sources */,
 				4F49435420F3469700BB7785 /* HistoryManager.swift in Sources */,
 				4F49433920F3468B00BB7785 /* photo_noise1_model.mlmodel in Sources */,
+				4F4C9020210215C100C3AAB0 /* APIFactory.swift in Sources */,
 				4F49432220F3468200BB7785 /* MotionDetector.swift in Sources */,
 				4F78822F20F3443200344D62 /* SettingViewController.swift in Sources */,
 				4F4942D020F344E200BB7785 /* ColoredNavController.swift in Sources */,
