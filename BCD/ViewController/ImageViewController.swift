@@ -31,7 +31,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
 
     var cover: BilibiliCover?
     var itemFromHistory: History?
-    private let netModel = NetworkingModel()
+    private let provider = CoverInfoProvider()
     private let manager = HistoryManager()
     private var loadingView: LoadingView!
     private var reference: (info: Info?, style: CitationStyle) = (nil, .apa) {
@@ -70,11 +70,11 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
         super.viewDidLoad()
         
         isShowingImage = true
-        netModel.delegateForVideo = self
+        provider.delegateForVideo = self
         if let cover = cover {
             title = cover.shortDescription
             if itemFromHistory == nil {
-                netModel.getCoverInfo(byType: cover.type, andNID: cover.number)
+                provider.getCoverInfo(byType: cover.type, andNID: cover.number)
             }
         } else {
             title = "No av number"

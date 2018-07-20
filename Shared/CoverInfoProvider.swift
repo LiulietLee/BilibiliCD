@@ -1,5 +1,5 @@
 //
-//  NetworkingModel.swift
+//  CoverInfoProvider.swift
 //  BCD
 //
 //  Created by Liuliet.Lee on 17/6/2017.
@@ -34,11 +34,11 @@ struct Upuser: Decodable {
     }
 }
 
-class NetworkingModel {
+class CoverInfoProvider {
     
     weak var delegateForVideo: VideoCoverDelegate?
     weak var delegateForUpuser: UpuserImgDelegate?
-    let session = URLSession.shared
+    private let session = URLSession.shared
     
     private let production = true
     private var baseAPI: String {

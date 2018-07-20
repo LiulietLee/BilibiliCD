@@ -16,14 +16,14 @@ class ShareViewController: UIViewController, VideoCoverDelegate {
     private var author = ""
     private var titleString = ""
     private var cover: BilibiliCover?
-    private let netModel = NetworkingModel()
+    private let provider = CoverInfoProvider()
     @IBOutlet weak var message: UILabel!
     @IBOutlet weak var frameView: UIView!
     
     override func viewDidLoad() {
         frameView.layer.masksToBounds = true
         frameView.layer.cornerRadius = 10.0
-        netModel.delegateForVideo = self
+        provider.delegateForVideo = self
         let extensionItem = extensionContext?.inputItems[0] as! NSExtensionItem
         let contentTypeURL = kUTTypeURL as String
         for attachment in extensionItem.attachments as! [NSItemProvider] {
@@ -40,7 +40,7 @@ class ShareViewController: UIViewController, VideoCoverDelegate {
     private func getCover() {
         guard let cover = BilibiliCover.fromURL(url) else { return }
         self.cover = cover
-        netModel.getCoverInfo(byType: cover.type, andNID: cover.number)
+        provider.getCoverInfo(byType: cover.type, andNID: cover.number)
     }
     
     func gotVideoInfo(_ info: Info) {

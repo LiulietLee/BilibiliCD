@@ -19,7 +19,7 @@ class ScalingViewController: UIViewController {
     var image = UIImage()
     weak var delegate: ScalingViewControllerDelegate?
     var protoc = [0, 2, 1]
-    private let netModel = NetworkingModel()
+    private let provider = CoverInfoProvider()
     private let selectNoiseModel: [[Model]] = [
         [.none, .anime_noise0, .anime_noise1, .anime_noise2, .anime_noise3],
         [.none, .photo_noise0, .photo_noise1, .photo_noise2, .photo_noise3]
@@ -78,7 +78,7 @@ class ScalingViewController: UIViewController {
                         let nanotime = end.uptimeNanoseconds - start.uptimeNanoseconds
                         let timeInterval = Double(nanotime) / 1_000_000_000
                         print("time: \(timeInterval)")
-                        // self.netModel.sendScaleData(type: Device.version().rawValue, size: self.image.size, time: timeInterval)
+                        // self.provider.sendScaleData(type: Device.version().rawValue, size: self.image.size, time: timeInterval)
                         DispatchQueue.main.async {
                             self.delegate?.scaleSucceed(scaledImage: image_scale!)
                             self.dismiss(animated: true, completion: nil)
@@ -88,7 +88,7 @@ class ScalingViewController: UIViewController {
             } else {
                 DispatchQueue.main.async {
                     self.delegate?.scaleSucceed(scaledImage: image_noise)
-                    // self.netModel.sendScaleData(type: Device.version().rawValue, size: self.image.size, time: timeInterval)
+                    // self.provider.sendScaleData(type: Device.version().rawValue, size: self.image.size, time: timeInterval)
                     self.dismiss(animated: true, completion: nil)
                 }
             }

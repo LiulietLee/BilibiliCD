@@ -25,7 +25,7 @@
 		4F338F6F20DE566E0014226C /* BKSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE32F9E20D514EE0043F648 /* BKSession.swift */; };
 		4F338F7020DE56730014226C /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B90711F7B2E3800AB158D /* CoreDataStorage.swift */; };
 		4F338F7120DE56730014226C /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF701EF5000400D31840 /* Info.swift */; };
-		4F338F7220DE56730014226C /* NetworkingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF6E1EF4FCC600D31840 /* NetworkingModel.swift */; };
+		4F338F7220DE56730014226C /* CoverInfoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF6E1EF4FCC600D31840 /* CoverInfoProvider.swift */; };
 		4F338F7320DE56730014226C /* BilibiliCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E4E47C1F76C6A9008EF09C /* BilibiliCover.swift */; };
 		4F338F7420DE56730014226C /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5290FA022051B0DF00A1AAA4 /* ImageSaver.swift */; };
 		4F4942CC20F344E200BB7785 /* GreyNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4942C720F344E200BB7785 /* GreyNavController.swift */; };
@@ -109,7 +109,7 @@
 		4FE32FA920D514EE0043F648 /* BKArticle+Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE32F9C20D514EE0043F648 /* BKArticle+Info.swift */; };
 		4FE32FAA20D514EE0043F648 /* BKLoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE32F9D20D514EE0043F648 /* BKLoginHelper.swift */; };
 		4FE32FAB20D514EE0043F648 /* BKSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE32F9E20D514EE0043F648 /* BKSession.swift */; };
-		4FE8FF6F1EF4FCC600D31840 /* NetworkingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF6E1EF4FCC600D31840 /* NetworkingModel.swift */; };
+		4FE8FF6F1EF4FCC600D31840 /* CoverInfoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF6E1EF4FCC600D31840 /* CoverInfoProvider.swift */; };
 		4FE8FF711EF5000400D31840 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF701EF5000400D31840 /* Info.swift */; };
 		5290FA032051B0DF00A1AAA4 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5290FA022051B0DF00A1AAA4 /* ImageSaver.swift */; };
 		52E4E47D1F76C6A9008EF09C /* BilibiliCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E4E47C1F76C6A9008EF09C /* BilibiliCover.swift */; };
@@ -233,7 +233,7 @@
 		4FE32F9D20D514EE0043F648 /* BKLoginHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKLoginHelper.swift; sourceTree = "<group>"; };
 		4FE32F9E20D514EE0043F648 /* BKSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKSession.swift; sourceTree = "<group>"; };
 		4FE8FF3A1EF4FC0600D31840 /* BilibiliCD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BilibiliCD.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4FE8FF6E1EF4FCC600D31840 /* NetworkingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingModel.swift; sourceTree = "<group>"; };
+		4FE8FF6E1EF4FCC600D31840 /* CoverInfoProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoverInfoProvider.swift; sourceTree = "<group>"; };
 		4FE8FF701EF5000400D31840 /* Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		526B5BCC202EEA2D00E76FB3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5290FA022051B0DF00A1AAA4 /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
@@ -463,7 +463,7 @@
 				4FE32F9120D514EE0043F648 /* BilibiliKit */,
 				4F8B90711F7B2E3800AB158D /* CoreDataStorage.swift */,
 				4FE8FF701EF5000400D31840 /* Info.swift */,
-				4FE8FF6E1EF4FCC600D31840 /* NetworkingModel.swift */,
+				4FE8FF6E1EF4FCC600D31840 /* CoverInfoProvider.swift */,
 				52E4E47C1F76C6A9008EF09C /* BilibiliCover.swift */,
 				5290FA022051B0DF00A1AAA4 /* ImageSaver.swift */,
 			);
@@ -683,7 +683,7 @@
 				4F49435820F3477900BB7785 /* CacheManager.swift in Sources */,
 				4F49435920F3479700BB7785 /* HistoryManager.swift in Sources */,
 				4F49435A20F3479A00BB7785 /* SettingManager.swift in Sources */,
-				4F338F7220DE56730014226C /* NetworkingModel.swift in Sources */,
+				4F338F7220DE56730014226C /* CoverInfoProvider.swift in Sources */,
 				4F338F6620DE566E0014226C /* URLSession+Extensions.swift in Sources */,
 				4F338F5720DD00410014226C /* ShareViewController.swift in Sources */,
 				4F338F6820DE566E0014226C /* BKLiveRoom.swift in Sources */,
@@ -753,7 +753,7 @@
 				4F49433820F3468B00BB7785 /* anime_noise2_model.mlmodel in Sources */,
 				4F49433A20F3468B00BB7785 /* anime_noise0_model.mlmodel in Sources */,
 				4F78822820F3443200344D62 /* TutorialContentViewController.swift in Sources */,
-				4FE8FF6F1EF4FCC600D31840 /* NetworkingModel.swift in Sources */,
+				4FE8FF6F1EF4FCC600D31840 /* CoverInfoProvider.swift in Sources */,
 				4FE32F9F20D514EE0043F648 /* BKArticle.swift in Sources */,
 				4F4942CE20F344E200BB7785 /* BlueNavController.swift in Sources */,
 				4F4942CF20F344E200BB7785 /* SakuraNavController.swift in Sources */,
