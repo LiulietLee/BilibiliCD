@@ -38,7 +38,11 @@ class ShareViewController: UIViewController, VideoCoverDelegate {
     }
     
     private func getCover() {
-        guard let cover = BilibiliCover.fromURL(url) else { return }
+        guard let cover = BilibiliCover.fromURL(url) else {
+            message.text = "无法解析封面信息呢"
+            disappear()
+            return
+        }
         self.cover = cover
         provider.getCoverInfo(byType: cover.type, andNID: cover.number)
     }

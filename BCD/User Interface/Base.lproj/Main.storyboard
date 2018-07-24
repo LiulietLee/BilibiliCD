@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--封面下载-->
+        <!--Bili Cita-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="main" id="BYZ-38-t0r" customClass="MainViewController" customModule="BilibiliCD" customModuleProvider="target" sceneMemberID="viewController">
@@ -231,7 +231,7 @@
                             <constraint firstItem="TFu-X0-Xuu" firstAttribute="leading" secondItem="4gJ-Wu-D4U" secondAttribute="trailing" constant="8" id="yRv-Nf-QgI"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="封面下载" id="Vxh-nz-ozR">
+                    <navigationItem key="navigationItem" title="Bili Cita" id="Vxh-nz-ozR">
                         <barButtonItem key="leftBarButtonItem" image="ic_menu" id="jUr-6b-adq"/>
                         <barButtonItem key="rightBarButtonItem" image="ic_help_outline" id="RKz-cg-nlJ">
                             <connections>
@@ -730,7 +730,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="封面下载" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADb-Jg-p7A">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="获取封面" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADb-Jg-p7A">
                                                     <rect key="frame" x="24" y="31" width="280" height="28"/>
                                                     <fontDescription key="fontDescription" name="PingFangHK-Medium" family="PingFang HK" pointSize="20"/>
                                                     <color key="textColor" red="0.26734374999999999" green="0.26734374999999999" blue="0.26734374999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
