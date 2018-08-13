@@ -154,6 +154,32 @@ class HistoryManager: CoreDataModel {
             print(error)
         }
     }
+
+    func importFromCache() {
+        var items = [Draft]()
+        let cacheManager = CacheManager()
+        
+        do {
+            items = try context.fetch(Draft.fetchRequest()) as! [Draft]
+            if items.count == 0 { return }
+        } catch {
+            print(error)
+            return
+        }
+        
+        items.forEach({ item in
+            self.addNewHistory(
+                av: item.stringID!,
+                image: item.isGIF ? .gif(item.uiImage!, data: item.image!) : .normal(item.uiImage!),
+                title: item.title!,
+                up: item.author!,
+                url: item.imageURL!,
+                date: item.date!
+            )
+            
+            cacheManager.deleteDraft(item)
+        })
+    }
 }
 
 extension History {

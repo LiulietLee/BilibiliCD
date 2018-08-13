@@ -65,8 +65,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         DispatchQueue.global(qos: .background).async {
-            let cacheManager = CacheManager()
-            cacheManager.migrateToHistory()
+            let historyManager = HistoryManager();
+            historyManager.importFromCache();
         }
     }
 

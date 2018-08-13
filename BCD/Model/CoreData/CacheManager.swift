@@ -26,32 +26,6 @@ class CacheManager: CoreDataModel {
         saveContext()
     }
     
-    func migrateToHistory() {
-        var items = [Draft]()
-        
-        do {
-            items = try context.fetch(Draft.fetchRequest()) as! [Draft]
-            if items.count == 0 { return }
-        } catch {
-            print(error)
-            return
-        }
-        
-        let historyManager = HistoryManager()
-        items.forEach({ item in
-            historyManager.addNewHistory(
-                av: item.stringID!,
-                image: item.isGIF ? .gif(item.uiImage!, data: item.image!) : .normal(item.uiImage!),
-                title: item.title!,
-                up: item.author!,
-                url: item.imageURL!,
-                date: item.date!
-            )
-            
-            deleteDraft(item)
-        })
-    }
-    
     private func deleteDraft(_ draft: Draft) {
         context.delete(draft)
         saveContext()
