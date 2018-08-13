@@ -13,8 +13,9 @@ class SourceTableViewController: UITableViewController {
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
     private let list: [(name: String, url: String)] = [
-        ("Liuliet.Lee/BilibiliCD", "https://github.com/LiulietLee/BilibiliCD"),
-        ("Liuliet.Lee/LLDialog", "https://github.com/LiulietLee/LLDialog"),
+        ("LiulietLee/BilibiliCD", "https://github.com/LiulietLee/BilibiliCD"),
+        ("LiulietLee/LLDialog", "https://github.com/LiulietLee/LLDialog"),
+        ("LiulietLee/bcd-backend", "https://github.com/LiulietLee/bcd-backend"),
         ("ApolloZhu/MaterialKit", "https://github.com/ApolloZhu/MaterialKit"),
         ("John-Lluch/SWRevealViewController", "https://github.com/John-Lluch/SWRevealViewController"),
         ("maximbilan/iOS-Shared-CoreData-Storage-for-App-Groups", "https://github.com/maximbilan/iOS-Shared-CoreData-Storage-for-App-Groups"),

@@ -141,11 +141,15 @@ class CoverInfoProvider {
                 self.fetchCoverRecordFromServer(withType: .live, andID: forLV)
                 return
             }
-            let url = info.coverImageURL.absoluteString
-            let newInfo = Info(author: String(info.mid), title: info.title, imageURL: url)
-            self.videoDelegate { $0.gotVideoInfo(newInfo) }
-            self.getImage(fromUrlPath: url)
-            self.updateServerRecord(type: .live, nid: forLV, info: newInfo)
+            BKUser(id: info.mid).getBasicInfo(then: { basicInfo in
+                if let userInfo = basicInfo {
+                    let url = info.coverImageURL.absoluteString
+                    let newInfo = Info(author: userInfo.name, title: info.title, imageURL: url)
+                    self.videoDelegate { $0.gotVideoInfo(newInfo) }
+                    self.getImage(fromUrlPath: url)
+                    self.updateServerRecord(type: .live, nid: forLV, info: newInfo)
+                }
+            })
         }
     }
     
