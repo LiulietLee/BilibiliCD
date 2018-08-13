@@ -72,7 +72,7 @@ final class CoreDataStorage {
             NSMigratePersistentStoresAutomaticallyOption: true,
             NSInferMappingModelAutomaticallyOption: true
         ]
-        let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.Future-Code-Institute.bilibilicdgroup")!
+        let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.Future-Code-Institute.bili_cita_group")!
         let url = directory.appendingPathComponent("BCD.sqlite")
         do {
             try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: url, options: options)
