@@ -21,7 +21,7 @@ class Waifu2xViewController: UIViewController, ScalingViewControllerDelegate, UI
     
     private var protoc = [0, 2, 1] // protoc = [次元, 降噪, 放大]
     private let header = ["次元", "降噪", "放大"]
-    private let footer = ["次元壁不可破！", "这是选降噪力度的，想放大的话建议直接用 Lunatic", ""]
+    private let footer = ["次元壁不可破！", "这是选降噪力度的，想放大的话建议用 High 或者 Lunatic", ""]
     private let list = [
         ["二次元", "三次元"],
         ["None", "Low", "Medium", "High", "Lunatic"],

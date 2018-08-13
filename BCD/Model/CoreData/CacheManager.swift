@@ -26,7 +26,7 @@ class CacheManager: CoreDataModel {
         saveContext()
     }
     
-    private func deleteDraft(_ draft: Draft) {
+    func deleteDraft(_ draft: Draft) {
         context.delete(draft)
         saveContext()
     }

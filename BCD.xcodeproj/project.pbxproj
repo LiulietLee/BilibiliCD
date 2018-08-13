@@ -52,7 +52,6 @@
 		4F49434920F3468B00BB7785 /* anime_scale2x_model.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4F49433620F3468B00BB7785 /* anime_scale2x_model.mlmodel */; };
 		4F49434A20F3468B00BB7785 /* photo_scale2x_model.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4F49433720F3468B00BB7785 /* photo_scale2x_model.mlmodel */; };
 		4F49435120F3469700BB7785 /* BCD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F49434B20F3469600BB7785 /* BCD.xcdatamodeld */; };
-		4F49435220F3469700BB7785 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F49434D20F3469600BB7785 /* CacheManager.swift */; };
 		4F49435320F3469700BB7785 /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F49434E20F3469600BB7785 /* CoreDataModel.swift */; };
 		4F49435420F3469700BB7785 /* HistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F49434F20F3469600BB7785 /* HistoryManager.swift */; };
 		4F49435520F3469700BB7785 /* SettingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F49435020F3469700BB7785 /* SettingManager.swift */; };
@@ -135,6 +134,7 @@
 		4FA964FF21212A950031983C /* BKVideo+Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA964BD21212A2A0031983C /* BKVideo+Page.swift */; };
 		4FA9650021212A950031983C /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA964BF21212A2A0031983C /* URL+Extensions.swift */; };
 		4FA9650121212A950031983C /* URLSession+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA964C121212A2B0031983C /* URLSession+Extensions.swift */; };
+		4FA965022121BF4A0031983C /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F49434D20F3469600BB7785 /* CacheManager.swift */; };
 		4FE8FF6F1EF4FCC600D31840 /* CoverInfoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF6E1EF4FCC600D31840 /* CoverInfoProvider.swift */; };
 		4FE8FF711EF5000400D31840 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF701EF5000400D31840 /* Info.swift */; };
 		5290FA032051B0DF00A1AAA4 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5290FA022051B0DF00A1AAA4 /* ImageSaver.swift */; };
@@ -808,7 +808,6 @@
 				4F49433F20F3468B00BB7785 /* UIImage+Reload.swift in Sources */,
 				4FA964E621212A2C0031983C /* BKApp.swift in Sources */,
 				4F4942CD20F344E200BB7785 /* BrownNavController.swift in Sources */,
-				4F49435220F3469700BB7785 /* CacheManager.swift in Sources */,
 				4F78820920F3423900344D62 /* AppDelegate.swift in Sources */,
 				4FA964E521212A2C0031983C /* BKAudio+URLs.swift in Sources */,
 				4F8B90731F7B2E3800AB158D /* CoreDataStorage.swift in Sources */,
@@ -856,6 +855,7 @@
 				4F49433B20F3468B00BB7785 /* photo_noise0_model.mlmodel in Sources */,
 				4F4942CC20F344E200BB7785 /* GreyNavController.swift in Sources */,
 				4F78823120F3443200344D62 /* DetailViewController.swift in Sources */,
+				4FA965022121BF4A0031983C /* CacheManager.swift in Sources */,
 				4F4942DF20F3455F00BB7785 /* LLDialog.swift in Sources */,
 				4FA964D421212A2C0031983C /* BKVideo+Info.swift in Sources */,
 				4F4942DE20F3455F00BB7785 /* DetectiPhoneX.swift in Sources */,
