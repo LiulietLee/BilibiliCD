@@ -185,8 +185,11 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
                 let item = history[indexPath.row]
                 DispatchQueue.global(qos: .userInteractive).async {
                     let image = item.uiImage
-                    DispatchQueue.main.async {
-                        cell.coverView.image = image
+                    DispatchQueue.main.async { [weak self] in
+                        let indexOfCell = self?.tableView.indexPath(for: cell)
+                        if indexOfCell == indexPath {
+                            cell.coverView.image = image
+                        }
                     }
                 }
             }

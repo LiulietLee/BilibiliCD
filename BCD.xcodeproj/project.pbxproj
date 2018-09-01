@@ -137,6 +137,7 @@
 		4FA965022121BF4A0031983C /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F49434D20F3469600BB7785 /* CacheManager.swift */; };
 		4FE8FF6F1EF4FCC600D31840 /* CoverInfoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF6E1EF4FCC600D31840 /* CoverInfoProvider.swift */; };
 		4FE8FF711EF5000400D31840 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF701EF5000400D31840 /* Info.swift */; };
+		4FFBABD1213A5CE20051B240 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F4942D420F3455E00BB7785 /* Assets.xcassets */; };
 		5290FA032051B0DF00A1AAA4 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5290FA022051B0DF00A1AAA4 /* ImageSaver.swift */; };
 		52E4E47D1F76C6A9008EF09C /* BilibiliCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E4E47C1F76C6A9008EF09C /* BilibiliCover.swift */; };
 		ACA6AB473F9866011CFB9920 /* Pods_BCD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1FDACCD6B09FD7A3A9DF0F1 /* Pods_BCD.framework */; };
@@ -651,6 +652,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FFBABD1213A5CE20051B240 /* Assets.xcassets in Resources */,
 				4F338F5A20DD00410014226C /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
