@@ -44,7 +44,7 @@ enum CitationStyle: Int {
     case chicago
 }
 
-let italicize: [NSAttributedStringKey: Any] = [
+let italicize: [NSAttributedString.Key: Any] = [
     .obliqueness: 0.5 as NSNumber
 ]
 
@@ -55,7 +55,7 @@ let paraStyle: NSParagraphStyle = {
     return style
 }()
 
-let hangingIndent: [NSAttributedStringKey: Any] = [
+let hangingIndent: [NSAttributedString.Key: Any] = [
     .paragraphStyle: paraStyle,
     .font: UIFont(name: "Times New Roman", size: 12) ?? UIFont.systemFont(ofSize: 12)
 ]

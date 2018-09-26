@@ -33,10 +33,10 @@ class TutorialViewController: UIViewController, UIPageViewControllerDataSource {
             view.layoutIfNeeded()
         }
         
-        addChildViewController(pageController)
+        addChild(pageController)
         view.addSubview(pageController.view)
-        pageController.didMove(toParentViewController: self)
-        view.bringSubview(toFront: closeButton)
+        pageController.didMove(toParent: self)
+        view.bringSubviewToFront(closeButton)
     }
     
     private func viewControllerAt(index: Int) -> TutorialContentViewController {

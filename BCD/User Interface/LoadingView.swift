@@ -26,7 +26,7 @@ class LoadingView: UIView {
         indicator.frame = f
         indicator.color = color
         addSubview(indicator)
-        bringSubview(toFront: indicator)
+        bringSubviewToFront(indicator)
         indicator.startAnimating()
     }
     

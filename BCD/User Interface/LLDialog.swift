@@ -65,7 +65,7 @@ open class LLDialog: UIView {
         cover.alpha = 0.0
         parent.addSubview(cover)
         parent.addSubview(self)
-        superview!.bringSubview(toFront: self)
+        superview!.bringSubviewToFront(self)
 
         addControls()
         placeControls()
@@ -73,7 +73,7 @@ open class LLDialog: UIView {
         UIView.animate(withDuration: 0.3) { [weak self] in self?.cover.alpha = 0.6 }
         UIView.animate(withDuration: 0.3) { [weak self] in self?.alpha = 1.0 }
 
-        NotificationCenter.default.addObserver(self, selector: #selector(LLDialog.placeControls), name: .UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(LLDialog.placeControls), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
 
     /**
@@ -107,7 +107,7 @@ open class LLDialog: UIView {
         button.setTitle(title, for: .normal)
         button.setTitleColor(#colorLiteral(red: 0.07, green: 0.58, blue: 0.96, alpha: 1), for: .normal)
         button.titleLabel?.font = button.titleLabel?.font.withSize(16)
-        button.contentEdgeInsets = UIEdgeInsetsMake(0, 8, 0, 8)
+        button.contentEdgeInsets = UIEdgeInsets.init(top: 0, left: 8, bottom: 0, right: 8)
         button.sizeToFit()
         button.addTarget(self, action: #selector(LLDialog.dismiss), for: .touchUpInside)
     }
@@ -219,7 +219,7 @@ open class LLDialog: UIView {
 
     /// Disapper the view when tapped button, remove observer
     @objc public func dismiss() {
-        NotificationCenter.default.removeObserver(self, name: .UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIDevice.orientationDidChangeNotification, object: nil)
         UIView.animate(
             withDuration: 0.3,
             animations: { [weak self] in

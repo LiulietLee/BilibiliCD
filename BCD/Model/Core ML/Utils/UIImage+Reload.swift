@@ -20,7 +20,7 @@ extension UIImage {
         if fm.fileExists(atPath: tmpfile.path) {
             try? fm.removeItem(at: tmpfile)
         }
-        try! UIImagePNGRepresentation(self)?.write(to: tmpfile)
+        try! self.pngData()?.write(to: tmpfile)
         let data = try! Data(contentsOf: tmpfile)
         let img = UIImage(data: data)
         if fm.fileExists(atPath: tmpfile.path) {

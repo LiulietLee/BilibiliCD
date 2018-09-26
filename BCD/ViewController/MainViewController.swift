@@ -38,7 +38,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         self.navigationController?.navigationBar.barTintColor = .bilibiliPink
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(getURLFromPasteboard),
-                                               name: .UIApplicationDidBecomeActive,
+                                               name: UIApplication.didBecomeActiveNotification,
                                                object: nil)
     }
     
@@ -99,7 +99,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         let button = UIButton()
         button.addTarget(self, action: #selector(switchCoverType), for: .touchUpInside)
         view.addSubview(button)
-        view.bringSubview(toFront: button)
+        view.bringSubviewToFront(button)
         
         button.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

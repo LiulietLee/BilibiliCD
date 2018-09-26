@@ -21,7 +21,7 @@ class CoreDataModel {
 
 extension UIImage {
     func data() -> Data {
-        return UIImagePNGRepresentation(self)!
+        return self.pngData()!
     }
     
     func resized(to size: CGSize = CGSize(width: 135, height: 84)) -> UIImage {

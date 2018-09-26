@@ -53,7 +53,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
         super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(goBackIfNeeded),
-                                               name: .UIApplicationWillResignActive,
+                                               name: UIApplication.willResignActiveNotification,
                                                object: nil)
     }
     
@@ -98,7 +98,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
 
             loadingView = LoadingView(frame: view.bounds)
             view.addSubview(loadingView)
-            view.bringSubview(toFront: loadingView)
+            view.bringSubviewToFront(loadingView)
         }
     }
     

@@ -21,7 +21,12 @@ class FindArtViewController: UIViewController {
     
     @IBAction func joinButtonTapped() {
         let url = "https://space.bilibili.com/4056345/#!/"
-        UIApplication.shared.open(URL(string: url)!, options: [:], completionHandler: nil)
+        UIApplication.shared.open(URL(string: url)!, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
     }
 
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

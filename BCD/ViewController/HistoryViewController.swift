@@ -54,7 +54,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         loadingView = LoadingView(frame: view.bounds)
         loadingView.color = .tianyiBlue
         view.addSubview(loadingView)
-        view.bringSubview(toFront: loadingView)
+        view.bringSubviewToFront(loadingView)
         
         DispatchQueue.global(qos: .userInitiated).async {
             self.history = self.manager.getHistory()
@@ -84,7 +84,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(hideCellsIfNeeded),
-            name: .UIApplicationWillResignActive,
+            name: UIApplication.willResignActiveNotification,
             object: nil
         ) 
     }
@@ -138,12 +138,12 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     private func showLabel() {
         nothingLabel.isHidden = false
-        view.bringSubview(toFront: nothingLabel)
+        view.bringSubviewToFront(nothingLabel)
     }
     
     private func hideLabel() {
         nothingLabel.isHidden = true
-        view.sendSubview(toBack: nothingLabel)
+        view.sendSubviewToBack(nothingLabel)
     }
     
     @IBAction func clearButtonTapped(_ sender: UIBarButtonItem) {

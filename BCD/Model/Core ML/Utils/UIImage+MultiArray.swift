@@ -42,7 +42,7 @@ extension UIImage {
                 arrs[i] = multi
             })
         }
-        return arrs
+        return arrs as! [MLMultiArray]
     }
     
     /// Expand the original image by shrink_size and store rgb in float array.

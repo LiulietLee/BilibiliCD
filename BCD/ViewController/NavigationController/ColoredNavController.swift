@@ -15,7 +15,7 @@ class ColoredNavController: UINavigationController {
         super.viewDidLoad()
         navigationBar.barTintColor = navbarTintColor
         navigationBar.tintColor = .white
-        navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
+        navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
 //        navigationBar.layer.shadowColor = UIColor.black.cgColor
 //        navigationBar.layer.shadowOffset = CGSize(width: 0.1, height: 0.1)
 //        navigationBar.layer.shadowRadius = 1.5
