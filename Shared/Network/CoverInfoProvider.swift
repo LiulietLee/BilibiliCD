@@ -10,7 +10,6 @@ import UIKit
 
 protocol VideoCoverDelegate: class {
     func gotVideoInfo(_ info: Info)
-    func gotImage(_ image: Image)
     func connectError()
     func cannotFindVideo()
 }
@@ -34,12 +33,10 @@ struct Upuser: Decodable {
     }
 }
 
-class CoverInfoProvider {
+class CoverInfoProvider: AbstractProvider {
     
     weak var delegateForVideo: VideoCoverDelegate?
     weak var delegateForUpuser: UpuserImgDelegate?
-    private let session = URLSession.shared
-    private let env = Environment.prod
     
     private func updateServerRecord(type: CoverType, nid: UInt64, info: Info) {
         guard let url = APIFactory.getAPI(byType: type, andNID: Int(nid), andInfo: info, env: env) else {
@@ -90,7 +87,6 @@ class CoverInfoProvider {
             }
             if newInfo.isValid {
                 self.videoDelegate { $0.gotVideoInfo(newInfo) }
-                self.getImage(fromUrlPath: newInfo.imageURL)
             } else {
                 self.videoDelegate { $0.cannotFindVideo() }
             }
@@ -116,7 +112,6 @@ class CoverInfoProvider {
             let url = info.coverImageURL.absoluteString
             let newInfo = Info(author: info.author, title: info.title, imageURL: url)
             self.videoDelegate { $0.gotVideoInfo(newInfo) }
-            self.getImage(fromUrlPath: url)
             self.updateServerRecord(type: .video, nid: forAV, info: newInfo)
         }
     }
@@ -130,7 +125,6 @@ class CoverInfoProvider {
             let url = info.coverImageURL.absoluteString
             let newInfo = Info(author: info.author, title: info.title, imageURL: url)
             self.videoDelegate { $0.gotVideoInfo(newInfo) }
-            self.getImage(fromUrlPath: url)
             self.updateServerRecord(type: .article, nid: forCV, info: newInfo)
         }
     }
@@ -146,37 +140,10 @@ class CoverInfoProvider {
                     let url = info.coverImageURL.absoluteString
                     let newInfo = Info(author: userInfo.name, title: info.title, imageURL: url)
                     self.videoDelegate { $0.gotVideoInfo(newInfo) }
-                    self.getImage(fromUrlPath: url)
                     self.updateServerRecord(type: .live, nid: forLV, info: newInfo)
                 }
             })
         }
-    }
-    
-    private func getImage(fromUrlPath path: String) {
-        let url = URL(string: path)
-        let request = URLRequest(url: url!)
-        let task = session.dataTask(with: request) { data, response, error in
-            if let content = data {
-                if path.isGIF {
-                    if let gif = UIImage.gif(data: content) {
-                        self.videoDelegate { $0.gotImage(.gif(gif, data: content)) }
-                    } else {
-                        self.videoDelegate { $0.connectError() }
-                    }
-                } else {
-                    if let img = UIImage(data: content) {
-                        self.videoDelegate { $0.gotImage(.normal(img)) }
-                    } else {
-                        self.videoDelegate { $0.connectError() }
-                    }
-                }
-            } else {
-                print(error ?? "network error")
-                self.videoDelegate { $0.connectError() }
-            }
-        }
-        task.resume()
     }
 
     private func videoDelegate(_ perform: @escaping (VideoCoverDelegate) -> Void) {

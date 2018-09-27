@@ -16,17 +16,20 @@ class ShareViewController: UIViewController, VideoCoverDelegate {
     private var author = ""
     private var titleString = ""
     private var cover: BilibiliCover?
-    private let provider = CoverInfoProvider()
+    
+    private let coverInfoProvider = CoverInfoProvider()
+    private let assetProvider = AssetProvider()
+    
     @IBOutlet weak var message: UILabel!
     @IBOutlet weak var frameView: UIView!
     
     override func viewDidLoad() {
         frameView.layer.masksToBounds = true
         frameView.layer.cornerRadius = 10.0
-        provider.delegateForVideo = self
+        coverInfoProvider.delegateForVideo = self
         let extensionItem = extensionContext?.inputItems[0] as! NSExtensionItem
         let contentTypeURL = kUTTypeURL as String
-        for attachment in extensionItem.attachments as! [NSItemProvider] {
+        for attachment in extensionItem.attachments! {
             if attachment.isURL {
                 attachment.loadItem(forTypeIdentifier: contentTypeURL, options: [:]) { (result, error) in
                     let url = result as! URL
@@ -44,26 +47,34 @@ class ShareViewController: UIViewController, VideoCoverDelegate {
             return
         }
         self.cover = cover
-        provider.getCoverInfo(byType: cover.type, andNID: cover.number)
+        coverInfoProvider.getCoverInfo(byType: cover.type, andNID: cover.number)
     }
     
     func gotVideoInfo(_ info: Info) {
         titleString = info.title
         author = info.author
         url = info.imageURL
-    }
-    
-    func gotImage(_ image: Image) {
-        downloadImage(image)
-        CacheManager().addNewDraft(
-            stringID: cover!.shortDescription,
-            title: titleString,
-            imageURL: URL(string: url)!,
-            author: author,
-            image: image
-        )
-        message.text = "封面已保存"
-        disappear()
+        
+        assetProvider.getImage(fromUrlPath: url) { img in
+            if let image = img {
+                self.downloadImage(image)
+                CacheManager().addNewDraft(
+                    stringID: self.cover!.shortDescription,
+                    title: self.titleString,
+                    imageURL: URL(string: self.url)!,
+                    author: self.author,
+                    image: image
+                )
+                DispatchQueue.main.async { [weak self] in
+                    self?.message.text = "封面已保存"
+                    self?.disappear()
+                }
+            } else {
+                DispatchQueue.main.async { [weak self] in
+                    self?.cannotFindVideo()
+                }
+            }
+        }
     }
     
     func connectError() {

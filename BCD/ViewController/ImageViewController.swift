@@ -29,9 +29,11 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
 
     @IBOutlet var labels: [UILabel]!
 
+    private let coverInfoProvider = CoverInfoProvider()
+    private let assetProvider = AssetProvider()
+
     var cover: BilibiliCover?
     var itemFromHistory: History?
-    private let provider = CoverInfoProvider()
     private let manager = HistoryManager()
     private var loadingView: LoadingView!
     private var reference: (info: Info?, style: CitationStyle) = (nil, .apa) {
@@ -70,11 +72,11 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
         super.viewDidLoad()
         
         isShowingImage = true
-        provider.delegateForVideo = self
+        coverInfoProvider.delegateForVideo = self
         if let cover = cover {
             title = cover.shortDescription
             if itemFromHistory == nil {
-                provider.getCoverInfo(byType: cover.type, andNID: cover.number)
+                coverInfoProvider.getCoverInfo(byType: cover.type, andNID: cover.number)
             }
         } else {
             title = "No av number"
@@ -180,18 +182,26 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
     
     func gotVideoInfo(_ info: Info) {
         reference.info = info
-    }
-    
-    func gotImage(_ image: Image) {
-        imageView.image = image.uiImage
-        switch image {
-        case .gif: scaleButton.isEnabled = false
-        case .normal: scaleButton.isEnabled = true
+        
+        assetProvider.getImage(fromUrlPath: info.imageURL) { img in
+            if let image = img {
+                DispatchQueue.main.async { [weak self] in
+                    self?.imageView.image = image.uiImage
+                    switch image {
+                    case .gif: self?.scaleButton.isEnabled = false
+                    case .normal: self?.scaleButton.isEnabled = true
+                    }
+                    self?.enableButtons()
+                    self?.loadingView.dismiss()
+                    self?.animateView()
+                    self?.addItemToDB(image: image)
+                }
+            } else {
+                DispatchQueue.main.async { [weak self] in
+                    self?.cannotFindVideo()
+                }
+            }
         }
-        enableButtons()
-        loadingView.dismiss()
-        animateView()
-        addItemToDB(image: image)
     }
     
     func scaleSucceed(scaledImage: UIImage) {

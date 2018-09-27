@@ -136,6 +136,11 @@
 		4FA965022121BF4A0031983C /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F49434D20F3469600BB7785 /* CacheManager.swift */; };
 		4FE8FF6F1EF4FCC600D31840 /* CoverInfoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF6E1EF4FCC600D31840 /* CoverInfoProvider.swift */; };
 		4FE8FF711EF5000400D31840 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF701EF5000400D31840 /* Info.swift */; };
+		4FF3FD1A215D30A500AF7F4B /* HotListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF3FD19215D30A500AF7F4B /* HotListProvider.swift */; };
+		4FF3FD1C215D339900AF7F4B /* AbstractProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF3FD1B215D339900AF7F4B /* AbstractProvider.swift */; };
+		4FF3FD1E215D340800AF7F4B /* AssetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF3FD1D215D340800AF7F4B /* AssetProvider.swift */; };
+		4FF3FD1F215D348F00AF7F4B /* AbstractProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF3FD1B215D339900AF7F4B /* AbstractProvider.swift */; };
+		4FF3FD20215D348F00AF7F4B /* AssetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF3FD1D215D340800AF7F4B /* AssetProvider.swift */; };
 		4FFBABD1213A5CE20051B240 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F4942D420F3455E00BB7785 /* Assets.xcassets */; };
 		5290FA032051B0DF00A1AAA4 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5290FA022051B0DF00A1AAA4 /* ImageSaver.swift */; };
 		52E4E47D1F76C6A9008EF09C /* BilibiliCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E4E47C1F76C6A9008EF09C /* BilibiliCover.swift */; };
@@ -274,6 +279,9 @@
 		4FE8FF3A1EF4FC0600D31840 /* BilibiliCD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BilibiliCD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FE8FF6E1EF4FCC600D31840 /* CoverInfoProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoverInfoProvider.swift; sourceTree = "<group>"; };
 		4FE8FF701EF5000400D31840 /* Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
+		4FF3FD19215D30A500AF7F4B /* HotListProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotListProvider.swift; sourceTree = "<group>"; };
+		4FF3FD1B215D339900AF7F4B /* AbstractProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractProvider.swift; sourceTree = "<group>"; };
+		4FF3FD1D215D340800AF7F4B /* AssetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetProvider.swift; sourceTree = "<group>"; };
 		526B5BCC202EEA2D00E76FB3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5290FA022051B0DF00A1AAA4 /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
 		52E4E47C1F76C6A9008EF09C /* BilibiliCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BilibiliCover.swift; sourceTree = "<group>"; };
@@ -363,7 +371,10 @@
 		4F4C902321021BDE00C3AAB0 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				4FF3FD1B215D339900AF7F4B /* AbstractProvider.swift */,
+				4FF3FD1D215D340800AF7F4B /* AssetProvider.swift */,
 				4FE8FF6E1EF4FCC600D31840 /* CoverInfoProvider.swift */,
+				4FF3FD19215D30A500AF7F4B /* HotListProvider.swift */,
 				4F4C901D210214C100C3AAB0 /* URLBuilder.swift */,
 				4F4C901F210215C100C3AAB0 /* APIFactory.swift */,
 			);
@@ -749,6 +760,7 @@
 				4FA964F221212A950031983C /* BKCurrentUser.swift in Sources */,
 				4F4C902121021A0E00C3AAB0 /* URLBuilder.swift in Sources */,
 				4F338F7020DE56730014226C /* CoreDataStorage.swift in Sources */,
+				4FF3FD1F215D348F00AF7F4B /* AbstractProvider.swift in Sources */,
 				4F49435620F3476B00BB7785 /* BCD.xcdatamodeld in Sources */,
 				4F49435C20F347CB00BB7785 /* Nudity.mlmodel in Sources */,
 				4FA964EE21212A950031983C /* BKAudio+Info.swift in Sources */,
@@ -776,6 +788,7 @@
 				4F338F7320DE56730014226C /* BilibiliCover.swift in Sources */,
 				4F49435720F3477200BB7785 /* CoreDataModel.swift in Sources */,
 				4FA964EB21212A950031983C /* BKArticle.swift in Sources */,
+				4FF3FD20215D348F00AF7F4B /* AssetProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -790,6 +803,7 @@
 				4F49434620F3468B00BB7785 /* photo_noise2_model.mlmodel in Sources */,
 				4F49435520F3469700BB7785 /* SettingManager.swift in Sources */,
 				4FA964D821212A2C0031983C /* BKSession.swift in Sources */,
+				4FF3FD1A215D30A500AF7F4B /* HotListProvider.swift in Sources */,
 				4F49435420F3469700BB7785 /* HistoryManager.swift in Sources */,
 				4FA964E321212A2C0031983C /* BKArticle+Info.swift in Sources */,
 				4F49433920F3468B00BB7785 /* photo_noise1_model.mlmodel in Sources */,
@@ -800,10 +814,12 @@
 				4F78822720F3443200344D62 /* SetHistoryNumViewController.swift in Sources */,
 				4F78823320F3443200344D62 /* FindArtViewController.swift in Sources */,
 				4F78823020F3443200344D62 /* TutorialViewController.swift in Sources */,
+				4FF3FD1C215D339900AF7F4B /* AbstractProvider.swift in Sources */,
 				4FA964D321212A2C0031983C /* BKUser+AudioStat.swift in Sources */,
 				4F49434720F3468B00BB7785 /* anime_noise1_model.mlmodel in Sources */,
 				4F49434320F3468B00BB7785 /* UIImage+Bicubic.swift in Sources */,
 				4F4942E420F3455F00BB7785 /* AnimateView.swift in Sources */,
+				4FF3FD1E215D340800AF7F4B /* AssetProvider.swift in Sources */,
 				4FA964DC21212A2C0031983C /* BKCurrentUser.swift in Sources */,
 				4FA964E121212A2C0031983C /* BKVideo.swift in Sources */,
 				52E4E47D1F76C6A9008EF09C /* BilibiliCover.swift in Sources */,
