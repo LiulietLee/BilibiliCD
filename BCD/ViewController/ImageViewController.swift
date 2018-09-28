@@ -84,8 +84,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
         }
 
         if let item = itemFromHistory {
-            let url = item.url!
-            reference.info = Info(author: item.up!, title: item.title!, imageURL: url)
+            reference.info = Info(stringID: item.av!, author: item.up!, title: item.title!, imageURL: item.url!)
             imageView.image = item.uiImage
 
             changeTextColor(to: item.isHidden ? .black : .tianyiBlue)

@@ -8,7 +8,23 @@
 
 import Foundation
 
-class HotListProvider {
+class HotListProvider: AbstractProvider {
     
-
+    open func getHotList(completion: @escaping ([Info]?) -> Void) {
+        guard let url = APIFactory.getAPI(byType: .hotList) else {
+            completion(nil)
+            return
+        }
+        let request = URLRequest(url: url)
+        let task = session.dataTask(with: request) { (data, response, error) in
+            if error == nil,
+                let content = data,
+                let list = try? JSONDecoder().decode([Info].self, from: content) {
+                completion(list)
+            } else {
+                completion(nil)
+            }
+        }
+        task.resume()
+    }
 }

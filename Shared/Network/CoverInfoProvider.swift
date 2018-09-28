@@ -110,7 +110,7 @@ class CoverInfoProvider: AbstractProvider {
                 return
             }
             let url = info.coverImageURL.absoluteString
-            let newInfo = Info(author: info.author, title: info.title, imageURL: url)
+            let newInfo = Info(stringID: "av" + String(forAV), author: info.author, title: info.title, imageURL: url)
             self.videoDelegate { $0.gotVideoInfo(newInfo) }
             self.updateServerRecord(type: .video, nid: forAV, info: newInfo)
         }
@@ -123,7 +123,7 @@ class CoverInfoProvider: AbstractProvider {
                 return
             }
             let url = info.coverImageURL.absoluteString
-            let newInfo = Info(author: info.author, title: info.title, imageURL: url)
+            let newInfo = Info(stringID: "cv" + String(forCV), author: info.author, title: info.title, imageURL: url)
             self.videoDelegate { $0.gotVideoInfo(newInfo) }
             self.updateServerRecord(type: .article, nid: forCV, info: newInfo)
         }
@@ -138,7 +138,7 @@ class CoverInfoProvider: AbstractProvider {
             BKUser(id: info.mid).getBasicInfo(then: { basicInfo in
                 if let userInfo = basicInfo {
                     let url = info.coverImageURL.absoluteString
-                    let newInfo = Info(author: userInfo.name, title: info.title, imageURL: url)
+                    let newInfo = Info(stringID: "lv" + String(forLV), author: userInfo.name, title: info.title, imageURL: url)
                     self.videoDelegate { $0.gotVideoInfo(newInfo) }
                     self.updateServerRecord(type: .live, nid: forLV, info: newInfo)
                 }

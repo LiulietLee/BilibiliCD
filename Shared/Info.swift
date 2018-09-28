@@ -12,6 +12,7 @@ import UIKit
 public var isShowingImage = false
 
 struct Info {
+    let stringID: String
     let author: String
     let title: String
     let imageURL: String
@@ -22,10 +23,16 @@ extension Info: Decodable {
         case author = "author"
         case title = "title"
         case imageURL = "url"
+        case stringID = "id"
     }
     
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
+        if let id = try? values.decode(String.self, forKey: .stringID) {
+            stringID = id
+        } else {
+            stringID = ""
+        }
         author = try values.decode(String.self, forKey: .author)
         title = try values.decode(String.self, forKey: .title)
         imageURL = try values.decode(String.self, forKey: .imageURL)
