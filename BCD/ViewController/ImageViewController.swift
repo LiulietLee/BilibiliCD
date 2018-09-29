@@ -216,7 +216,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
     }
     
     private func addItemToDB(image: Image) {
-        DispatchQueue.global(qos: .userInteractive).async {
+        DispatchQueue.global(qos: .userInteractive).asyncAfter(deadline: .now() + .milliseconds(500)) {
             [info = reference.info!, id = cover!.shortDescription] in
             self.itemFromHistory = self.manager.addNewHistory(
                 av: id, image: image, title: info.title, up: info.author, url: info.imageURL

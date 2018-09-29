@@ -23,7 +23,7 @@ extension UIImage {
         let expwidth = Int(self.size.width) + 2 * shrink_size
         let expheight = Int(self.size.height) + 2 * shrink_size
         let expanded = expand()
-        var arrs = [MLMultiArray!].init(repeating: nil, count: rects.count)
+        var arrs = [MLMultiArray?].init(repeating: nil, count: rects.count)
         autoreleasepool {
             let pool = ThreadPool<CGRect>()
             pool.run(objs: rects, task: { (i, rect) in

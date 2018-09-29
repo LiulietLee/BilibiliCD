@@ -141,6 +141,7 @@
 		4FF3FD1E215D340800AF7F4B /* AssetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF3FD1D215D340800AF7F4B /* AssetProvider.swift */; };
 		4FF3FD1F215D348F00AF7F4B /* AbstractProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF3FD1B215D339900AF7F4B /* AbstractProvider.swift */; };
 		4FF3FD20215D348F00AF7F4B /* AssetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF3FD1D215D340800AF7F4B /* AssetProvider.swift */; };
+		4FF3FD22215E82EC00AF7F4B /* HotListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF3FD21215E82EC00AF7F4B /* HotListController.swift */; };
 		4FFBABD1213A5CE20051B240 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F4942D420F3455E00BB7785 /* Assets.xcassets */; };
 		5290FA032051B0DF00A1AAA4 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5290FA022051B0DF00A1AAA4 /* ImageSaver.swift */; };
 		52E4E47D1F76C6A9008EF09C /* BilibiliCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E4E47C1F76C6A9008EF09C /* BilibiliCover.swift */; };
@@ -282,6 +283,7 @@
 		4FF3FD19215D30A500AF7F4B /* HotListProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotListProvider.swift; sourceTree = "<group>"; };
 		4FF3FD1B215D339900AF7F4B /* AbstractProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractProvider.swift; sourceTree = "<group>"; };
 		4FF3FD1D215D340800AF7F4B /* AssetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetProvider.swift; sourceTree = "<group>"; };
+		4FF3FD21215E82EC00AF7F4B /* HotListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HotListController.swift; path = ViewController/HotListController.swift; sourceTree = "<group>"; };
 		526B5BCC202EEA2D00E76FB3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5290FA022051B0DF00A1AAA4 /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
 		52E4E47C1F76C6A9008EF09C /* BilibiliCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BilibiliCover.swift; sourceTree = "<group>"; };
@@ -399,6 +401,7 @@
 				4F78822020F3443200344D62 /* TutorialPageViewController.swift */,
 				4F78821C20F3443200344D62 /* TutorialViewController.swift */,
 				4F78822120F3443200344D62 /* Waifu2xViewController.swift */,
+				4FF3FD21215E82EC00AF7F4B /* HotListController.swift */,
 				4F4942C620F344E200BB7785 /* NavigationController */,
 			);
 			name = ViewController;
@@ -881,6 +884,7 @@
 				4F4942DE20F3455F00BB7785 /* DetectiPhoneX.swift in Sources */,
 				4F49432320F3468200BB7785 /* UIImage+Gif.swift in Sources */,
 				4F78823720F3443200344D62 /* HistoryViewController.swift in Sources */,
+				4FF3FD22215E82EC00AF7F4B /* HotListController.swift in Sources */,
 				4F78822620F3443200344D62 /* MainViewController.swift in Sources */,
 				4F78822920F3443200344D62 /* ScalingViewController.swift in Sources */,
 			);

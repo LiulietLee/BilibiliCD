@@ -156,16 +156,10 @@ class HistoryManager: CoreDataModel {
     }
 
     func importFromCache() {
-        var items = [Draft]()
         let cacheManager = CacheManager()
+        let items = cacheManager.getCache()
         
-        do {
-            items = try context.fetch(Draft.fetchRequest()) as! [Draft]
-            if items.count == 0 { return }
-        } catch {
-            print(error)
-            return
-        }
+        if (items.count == 0) { return }
         
         items.forEach({ item in
             self.addNewHistory(

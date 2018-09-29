@@ -12,6 +12,16 @@ import UIKit
 
 class CacheManager: CoreDataModel {
     
+    func getCache() -> [Draft] {
+        var items = [Draft]()
+        do {
+            items = try context.fetch(Draft.fetchRequest()) as! [Draft]
+        } catch {
+            print(error)
+        }
+        return items
+    }
+    
     func addNewDraft(stringID: String, title: String, imageURL: URL, author: String, image: Image) {
         let entity = NSEntityDescription.entity(forEntityName: "Draft", in: context)
         let newItem = Draft(entity: entity!, insertInto: context)
