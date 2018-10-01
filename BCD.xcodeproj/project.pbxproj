@@ -67,6 +67,7 @@
 		4F4C9020210215C100C3AAB0 /* APIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C901F210215C100C3AAB0 /* APIFactory.swift */; };
 		4F4C902121021A0E00C3AAB0 /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C901D210214C100C3AAB0 /* URLBuilder.swift */; };
 		4F4C902221021A0E00C3AAB0 /* APIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C901F210215C100C3AAB0 /* APIFactory.swift */; };
+		4F6C0541216218A800ED57E0 /* HotListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6C0540216218A800ED57E0 /* HotListCell.swift */; };
 		4F76B8A51F905CB200F714B9 /* HisTutPage in Resources */ = {isa = PBXBuildFile; fileRef = 4F76B8A41F905CB200F714B9 /* HisTutPage */; };
 		4F78820920F3423900344D62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F78820620F3423900344D62 /* AppDelegate.swift */; };
 		4F78822420F3443200344D62 /* HisTutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F78820F20F3443100344D62 /* HisTutViewController.swift */; };
@@ -134,6 +135,7 @@
 		4FA9650021212A950031983C /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA964BF21212A2A0031983C /* URL+Extensions.swift */; };
 		4FA9650121212A950031983C /* URLSession+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA964C121212A2B0031983C /* URLSession+Extensions.swift */; };
 		4FA965022121BF4A0031983C /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F49434D20F3469600BB7785 /* CacheManager.swift */; };
+		4FE2EF4C2162169800E389CE /* CoverPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE2EF4B2162169800E389CE /* CoverPreviewCell.swift */; };
 		4FE8FF6F1EF4FCC600D31840 /* CoverInfoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF6E1EF4FCC600D31840 /* CoverInfoProvider.swift */; };
 		4FE8FF711EF5000400D31840 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF701EF5000400D31840 /* Info.swift */; };
 		4FF3FD1A215D30A500AF7F4B /* HotListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF3FD19215D30A500AF7F4B /* HotListProvider.swift */; };
@@ -195,7 +197,7 @@
 		4F4942C920F344E200BB7785 /* BlueNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueNavController.swift; sourceTree = "<group>"; };
 		4F4942CA20F344E200BB7785 /* SakuraNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SakuraNavController.swift; sourceTree = "<group>"; };
 		4F4942CB20F344E200BB7785 /* ColoredNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColoredNavController.swift; sourceTree = "<group>"; };
-		4F4942D120F3455E00BB7785 /* HistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryCell.swift; path = "User Interface/HistoryCell.swift"; sourceTree = "<group>"; };
+		4F4942D120F3455E00BB7785 /* HistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		4F4942D220F3455E00BB7785 /* DetectiPhoneX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetectiPhoneX.swift; path = "User Interface/DetectiPhoneX.swift"; sourceTree = "<group>"; };
 		4F4942D320F3455E00BB7785 /* LLDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LLDialog.swift; path = "User Interface/LLDialog.swift"; sourceTree = "<group>"; };
 		4F4942D420F3455E00BB7785 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "User Interface/Assets.xcassets"; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 		4F49435020F3469700BB7785 /* SettingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingManager.swift; path = Model/CoreData/SettingManager.swift; sourceTree = "<group>"; };
 		4F4C901D210214C100C3AAB0 /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
 		4F4C901F210215C100C3AAB0 /* APIFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIFactory.swift; sourceTree = "<group>"; };
+		4F6C0540216218A800ED57E0 /* HotListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotListCell.swift; sourceTree = "<group>"; };
 		4F76B8A41F905CB200F714B9 /* HisTutPage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = HisTutPage; sourceTree = "<group>"; };
 		4F78820620F3423900344D62 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Supporting Files/AppDelegate.swift"; sourceTree = "<group>"; };
 		4F78820720F3423900344D62 /* BCD.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; name = BCD.entitlements; path = "Supporting Files/BCD.entitlements"; sourceTree = "<group>"; };
@@ -277,6 +280,7 @@
 		4FA964CF21212A2B0031983C /* BKAudio+Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BKAudio+Info.swift"; sourceTree = "<group>"; };
 		4FA964D021212A2B0031983C /* BKLiveRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKLiveRoom.swift; sourceTree = "<group>"; };
 		4FA964D121212A2C0031983C /* BKAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKAudio.swift; sourceTree = "<group>"; };
+		4FE2EF4B2162169800E389CE /* CoverPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverPreviewCell.swift; sourceTree = "<group>"; };
 		4FE8FF3A1EF4FC0600D31840 /* BilibiliCD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BilibiliCD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FE8FF6E1EF4FCC600D31840 /* CoverInfoProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoverInfoProvider.swift; sourceTree = "<group>"; };
 		4FE8FF701EF5000400D31840 /* Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
@@ -422,12 +426,12 @@
 		4F5BE2F71EFAA12B0054C53F /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
+				4FE2EF4A2162163C00E389CE /* TableViewCell */,
 				4F4942DB20F3455E00BB7785 /* AnimateView.swift */,
 				4F4942D420F3455E00BB7785 /* Assets.xcassets */,
 				4F4942E820F3457100BB7785 /* LaunchScreen.storyboard */,
 				4F4942E620F3457100BB7785 /* Main.storyboard */,
 				4F4942D220F3455E00BB7785 /* DetectiPhoneX.swift */,
-				4F4942D120F3455E00BB7785 /* HistoryCell.swift */,
 				4F4942D320F3455E00BB7785 /* LLDialog.swift */,
 				4F4942D520F3455E00BB7785 /* LoadingView.swift */,
 				4F4942DC20F3455F00BB7785 /* scaling.gif */,
@@ -442,6 +446,16 @@
 				4F78820720F3423900344D62 /* BCD.entitlements */,
 			);
 			name = "Supporting File";
+			sourceTree = "<group>";
+		};
+		4FE2EF4A2162163C00E389CE /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				4F4942D120F3455E00BB7785 /* HistoryCell.swift */,
+				4FE2EF4B2162169800E389CE /* CoverPreviewCell.swift */,
+				4F6C0540216218A800ED57E0 /* HotListCell.swift */,
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 		4FE32F9120D514EE0043F648 /* BilibiliKit */ = {
@@ -810,6 +824,7 @@
 				4F49435420F3469700BB7785 /* HistoryManager.swift in Sources */,
 				4FA964E321212A2C0031983C /* BKArticle+Info.swift in Sources */,
 				4F49433920F3468B00BB7785 /* photo_noise1_model.mlmodel in Sources */,
+				4F6C0541216218A800ED57E0 /* HotListCell.swift in Sources */,
 				4F4C9020210215C100C3AAB0 /* APIFactory.swift in Sources */,
 				4F49432220F3468200BB7785 /* MotionDetector.swift in Sources */,
 				4F78822F20F3443200344D62 /* SettingViewController.swift in Sources */,
@@ -848,6 +863,7 @@
 				4FA964DD21212A2C0031983C /* BKArticle.swift in Sources */,
 				4F49434020F3468B00BB7785 /* UIImage+MultiArray.swift in Sources */,
 				4F49433D20F3468B00BB7785 /* ThreadPool.swift in Sources */,
+				4FE2EF4C2162169800E389CE /* CoverPreviewCell.swift in Sources */,
 				4FA964DF21212A2C0031983C /* BKAudio+Staff.swift in Sources */,
 				4FA964DE21212A2C0031983C /* BKUser+Info.swift in Sources */,
 				4F49434920F3468B00BB7785 /* anime_scale2x_model.mlmodel in Sources */,
