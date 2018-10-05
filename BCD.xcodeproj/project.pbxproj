@@ -451,9 +451,9 @@
 		4FE2EF4A2162163C00E389CE /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				4F6C0540216218A800ED57E0 /* HotListCell.swift */,
 				4F4942D120F3455E00BB7785 /* HistoryCell.swift */,
 				4FE2EF4B2162169800E389CE /* CoverPreviewCell.swift */,
-				4F6C0540216218A800ED57E0 /* HotListCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";

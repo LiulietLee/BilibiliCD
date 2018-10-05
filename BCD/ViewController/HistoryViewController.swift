@@ -239,7 +239,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func openInsideWorld() {
-        self.navigationController?.navigationBar.barTintColor = .black
+        navigationController?.navigationBar.barTintColor = .black
         isShowingFullHistory = true
         tableView.reloadData()
         motionDetector.endDetect()
