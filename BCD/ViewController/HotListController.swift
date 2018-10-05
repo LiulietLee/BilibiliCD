@@ -102,9 +102,6 @@ class HotListController: UIViewController, UITableViewDelegate, UITableViewDataS
         return cell
     }
     
-    @IBAction func helpButtonTapped(_ sender: UIBarButtonItem) {
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let backItem = UIBarButtonItem()
         backItem.title = ""

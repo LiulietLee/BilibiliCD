@@ -1277,7 +1277,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="七日热门" id="9rL-7m-E2R">
                         <barButtonItem key="leftBarButtonItem" title="menu" image="ic_menu" id="mOc-dq-sjG"/>
-                        <barButtonItem key="rightBarButtonItem" title="help" image="ic_help_outline" id="3VY-Mq-GSo"/>
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="mOc-dq-sjG" id="qiF-DF-3wl"/>
