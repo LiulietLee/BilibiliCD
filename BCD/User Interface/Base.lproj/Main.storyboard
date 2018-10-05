@@ -1210,7 +1210,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uOS-Iw-jJ2">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uOS-Iw-jJ2">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -1218,7 +1218,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GOi-4C-rAh" id="Msv-A5-SFW">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xAC-XZ-emX">
@@ -1277,11 +1277,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="七日热门" id="9rL-7m-E2R">
                         <barButtonItem key="leftBarButtonItem" title="menu" image="ic_menu" id="mOc-dq-sjG"/>
-                        <barButtonItem key="rightBarButtonItem" title="help" image="ic_help_outline" id="3VY-Mq-GSo">
-                            <connections>
-                                <action selector="helpButtonTapped:" destination="8Vf-3Q-9LO" id="t6k-79-Zot"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="help" image="ic_help_outline" id="3VY-Mq-GSo"/>
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="mOc-dq-sjG" id="qiF-DF-3wl"/>
@@ -1635,10 +1631,10 @@
             </objects>
             <point key="canvasLocation" x="4282.5" y="-209.1549295774648"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Green Nav Controller-->
         <scene sceneID="yU9-GC-yV5">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Vms-Iw-Gtt" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Vms-Iw-Gtt" customClass="GreenNavController" customModule="BilibiliCD" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ukr-yS-AZM">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>

@@ -144,6 +144,7 @@
 		4FF3FD1F215D348F00AF7F4B /* AbstractProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF3FD1B215D339900AF7F4B /* AbstractProvider.swift */; };
 		4FF3FD20215D348F00AF7F4B /* AssetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF3FD1D215D340800AF7F4B /* AssetProvider.swift */; };
 		4FF3FD22215E82EC00AF7F4B /* HotListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF3FD21215E82EC00AF7F4B /* HotListController.swift */; };
+		4FF64A622167264E0046302D /* GreenNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF64A612167264E0046302D /* GreenNavController.swift */; };
 		4FFBABD1213A5CE20051B240 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F4942D420F3455E00BB7785 /* Assets.xcassets */; };
 		5290FA032051B0DF00A1AAA4 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5290FA022051B0DF00A1AAA4 /* ImageSaver.swift */; };
 		52E4E47D1F76C6A9008EF09C /* BilibiliCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E4E47C1F76C6A9008EF09C /* BilibiliCover.swift */; };
@@ -288,6 +289,7 @@
 		4FF3FD1B215D339900AF7F4B /* AbstractProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractProvider.swift; sourceTree = "<group>"; };
 		4FF3FD1D215D340800AF7F4B /* AssetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetProvider.swift; sourceTree = "<group>"; };
 		4FF3FD21215E82EC00AF7F4B /* HotListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HotListController.swift; path = ViewController/HotListController.swift; sourceTree = "<group>"; };
+		4FF64A612167264E0046302D /* GreenNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenNavController.swift; sourceTree = "<group>"; };
 		526B5BCC202EEA2D00E76FB3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5290FA022051B0DF00A1AAA4 /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
 		52E4E47C1F76C6A9008EF09C /* BilibiliCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BilibiliCover.swift; sourceTree = "<group>"; };
@@ -352,6 +354,7 @@
 				4F4942C720F344E200BB7785 /* GreyNavController.swift */,
 				4F4942C820F344E200BB7785 /* BrownNavController.swift */,
 				4F4942C920F344E200BB7785 /* BlueNavController.swift */,
+				4FF64A612167264E0046302D /* GreenNavController.swift */,
 				4F4942CA20F344E200BB7785 /* SakuraNavController.swift */,
 				4F4942CB20F344E200BB7785 /* ColoredNavController.swift */,
 			);
@@ -867,6 +870,7 @@
 				4FA964DF21212A2C0031983C /* BKAudio+Staff.swift in Sources */,
 				4FA964DE21212A2C0031983C /* BKUser+Info.swift in Sources */,
 				4F49434920F3468B00BB7785 /* anime_scale2x_model.mlmodel in Sources */,
+				4FF64A622167264E0046302D /* GreenNavController.swift in Sources */,
 				4F78823620F3443200344D62 /* AboutViewController.swift in Sources */,
 				4F78822420F3443200344D62 /* HisTutViewController.swift in Sources */,
 				4F49434A20F3468B00BB7785 /* photo_scale2x_model.mlmodel in Sources */,

@@ -21,11 +21,16 @@ class HotListController: UIViewController, UITableViewDelegate, UITableViewDataS
     private var isAnimatedOnce = false
     private var loadingView: LoadingView!
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.barTintColor = .mikuGreen
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         loadingView = LoadingView(frame: view.bounds)
-        loadingView.color = .tianyiBlue
+        loadingView.color = .mikuGreen
         view.addSubview(loadingView)
         view.bringSubviewToFront(loadingView)
         
@@ -112,6 +117,7 @@ class HotListController: UIViewController, UITableViewDelegate, UITableViewDataS
                     let cell = sender as? HotListCell,
                     let indexPath = tableView.indexPath(for: cell),
                     hotList.count > indexPath.row {
+                    navigationController?.navigationBar.barTintColor = .bilibiliPink
                     let cover = BilibiliCover(hotList[indexPath.row].info.stringID)
                     vc.cover = cover
                 }
