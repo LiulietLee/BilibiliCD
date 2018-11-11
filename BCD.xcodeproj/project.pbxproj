@@ -135,6 +135,7 @@
 		4FA9650021212A950031983C /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA964BF21212A2A0031983C /* URL+Extensions.swift */; };
 		4FA9650121212A950031983C /* URLSession+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA964C121212A2B0031983C /* URLSession+Extensions.swift */; };
 		4FA965022121BF4A0031983C /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F49434D20F3469600BB7785 /* CacheManager.swift */; };
+		4FB5A49F2171F6D5009DF4F1 /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4FB5A49E2171F6D5009DF4F1 /* loading.gif */; };
 		4FE2EF4C2162169800E389CE /* CoverPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE2EF4B2162169800E389CE /* CoverPreviewCell.swift */; };
 		4FE8FF6F1EF4FCC600D31840 /* CoverInfoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF6E1EF4FCC600D31840 /* CoverInfoProvider.swift */; };
 		4FE8FF711EF5000400D31840 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF701EF5000400D31840 /* Info.swift */; };
@@ -204,7 +205,7 @@
 		4F4942D420F3455E00BB7785 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "User Interface/Assets.xcassets"; sourceTree = "<group>"; };
 		4F4942D520F3455E00BB7785 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingView.swift; path = "User Interface/LoadingView.swift"; sourceTree = "<group>"; };
 		4F4942DB20F3455E00BB7785 /* AnimateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimateView.swift; path = "User Interface/AnimateView.swift"; sourceTree = "<group>"; };
-		4F4942DC20F3455F00BB7785 /* scaling.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = scaling.gif; path = "User Interface/scaling.gif"; sourceTree = "<group>"; };
+		4F4942DC20F3455F00BB7785 /* scaling.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = scaling.gif; sourceTree = "<group>"; };
 		4F4942E720F3457100BB7785 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "User Interface/Base.lproj/Main.storyboard"; sourceTree = "<group>"; };
 		4F4942E920F3457100BB7785 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "User Interface/Base.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
 		4F49431E20F3467D00BB7785 /* CheckLaunchTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckLaunchTime.swift; path = Model/CheckLaunchTime.swift; sourceTree = "<group>"; };
@@ -281,6 +282,7 @@
 		4FA964CF21212A2B0031983C /* BKAudio+Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BKAudio+Info.swift"; sourceTree = "<group>"; };
 		4FA964D021212A2B0031983C /* BKLiveRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKLiveRoom.swift; sourceTree = "<group>"; };
 		4FA964D121212A2C0031983C /* BKAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKAudio.swift; sourceTree = "<group>"; };
+		4FB5A49E2171F6D5009DF4F1 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
 		4FE2EF4B2162169800E389CE /* CoverPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverPreviewCell.swift; sourceTree = "<group>"; };
 		4FE8FF3A1EF4FC0600D31840 /* BilibiliCD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BilibiliCD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FE8FF6E1EF4FCC600D31840 /* CoverInfoProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoverInfoProvider.swift; sourceTree = "<group>"; };
@@ -429,6 +431,7 @@
 		4F5BE2F71EFAA12B0054C53F /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
+				4FB5A49D2171F6CA009DF4F1 /* gifs */,
 				4FE2EF4A2162163C00E389CE /* TableViewCell */,
 				4F4942DB20F3455E00BB7785 /* AnimateView.swift */,
 				4F4942D420F3455E00BB7785 /* Assets.xcassets */,
@@ -437,7 +440,6 @@
 				4F4942D220F3455E00BB7785 /* DetectiPhoneX.swift */,
 				4F4942D320F3455E00BB7785 /* LLDialog.swift */,
 				4F4942D520F3455E00BB7785 /* LoadingView.swift */,
-				4F4942DC20F3455F00BB7785 /* scaling.gif */,
 			);
 			name = "User Interface";
 			sourceTree = "<group>";
@@ -449,6 +451,15 @@
 				4F78820720F3423900344D62 /* BCD.entitlements */,
 			);
 			name = "Supporting File";
+			sourceTree = "<group>";
+		};
+		4FB5A49D2171F6CA009DF4F1 /* gifs */ = {
+			isa = PBXGroup;
+			children = (
+				4F4942DC20F3455F00BB7785 /* scaling.gif */,
+				4FB5A49E2171F6D5009DF4F1 /* loading.gif */,
+			);
+			path = gifs;
 			sourceTree = "<group>";
 		};
 		4FE2EF4A2162163C00E389CE /* TableViewCell */ = {
@@ -695,6 +706,7 @@
 				4F4942EA20F3457100BB7785 /* Main.storyboard in Resources */,
 				4F4942E020F3455F00BB7785 /* Assets.xcassets in Resources */,
 				4F4942EB20F3457100BB7785 /* LaunchScreen.storyboard in Resources */,
+				4FB5A49F2171F6D5009DF4F1 /* loading.gif in Resources */,
 				4F4942E520F3455F00BB7785 /* scaling.gif in Resources */,
 				4F76B8A51F905CB200F714B9 /* HisTutPage in Resources */,
 			);

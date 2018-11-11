@@ -55,7 +55,7 @@ class HotListController: UIViewController, UITableViewDelegate, UITableViewDataS
         listProvider.getHotList { hotList in
             if let list = hotList {
                 list.forEach({ item in
-                    self.hotList.append((info: item, image: nil))
+                    self.hotList.append((info: item, image: UIImage(named: "placeholder_cover")))
                 })
                 
                 DispatchQueue.main.async {
