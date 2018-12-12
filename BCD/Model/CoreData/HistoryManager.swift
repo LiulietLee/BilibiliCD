@@ -45,6 +45,7 @@ class HistoryManager: CoreDataModel {
         return items
     }
 
+    @available(*, deprecated)
     private func avOfLatestHistoryEqualTo(_ av: String) -> Bool {
         let history = fetchHistory()
         return history.count == 0 ? false : (av == history[0].av)
@@ -52,7 +53,11 @@ class HistoryManager: CoreDataModel {
     
     @discardableResult
     func addNewHistory(av: String, image: Image, title: String, up: String, url: String, date: Date = Date()) -> History {
-        if avOfLatestHistoryEqualTo(av) { return fetchHistory()[0] }
+        if let existedItem = itemInHistory(stringID: av) {
+            existedItem.date = date
+            saveContext()
+            return existedItem
+        }
 
         let entity = NSEntityDescription.entity(forEntityName: "History", in: context)!
         let newItem = History(entity: entity, insertInto: context)
@@ -118,9 +123,9 @@ class HistoryManager: CoreDataModel {
     func itemInHistory(cover: BilibiliCover? = nil, stringID: String? = nil) -> History? {
         let request = NSFetchRequest<History>(entityName: "History")
         if cover != nil {
-            request.predicate = NSPredicate(format: "stringID", cover!.shortDescription)
+            request.predicate = NSPredicate(format: "av = %@", cover!.shortDescription)
         } else if stringID != nil {
-            request.predicate = NSPredicate(format: "stringID", stringID!)
+            request.predicate = NSPredicate(format: "av = %@", stringID!)
         } else {
             return nil
         }
