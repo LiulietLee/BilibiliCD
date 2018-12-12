@@ -61,7 +61,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
             } else {
                 return
             }
-            if manager.isExistInHistory(cover: newCover) == nil {
+            if manager.itemInHistory(cover: newCover) == nil {
                 isShowingImage = true
                 let storyBoard = UIStoryboard(name: "Main", bundle:nil)
                 let nextViewController = storyBoard.instantiateViewController(withIdentifier: "image controller") as! ImageViewController
@@ -168,7 +168,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? ImageViewController {
             vc.cover = cover
-            if let eCover = manager.isExistInHistory(cover: cover) {
+            if let eCover = manager.itemInHistory(cover: cover) {
                 vc.itemFromHistory = eCover
             }
         }

@@ -115,20 +115,24 @@ class HistoryManager: CoreDataModel {
         return false
     }
     
-    func isExistInHistory(cover: BilibiliCover? = nil, stringID: String? = nil) -> History? {
-        if cover == nil && stringID == nil { return nil }
-        let history = fetchHistory()
-        
-        for item in history {
-            if cover != nil, item.av == cover!.shortDescription {
-                return item
-            }
-            if stringID != nil, item.av == stringID {
-                return item
-            }
+    func itemInHistory(cover: BilibiliCover? = nil, stringID: String? = nil) -> History? {
+        let request = NSFetchRequest<History>(entityName: "History")
+        if cover != nil {
+            request.predicate = NSPredicate(format: "stringID", cover!.shortDescription)
+        } else if stringID != nil {
+            request.predicate = NSPredicate(format: "stringID", stringID!)
+        } else {
+            return nil
         }
         
-        return nil
+        var items = [History]()
+        do {
+            items = try context.fetch(request)
+        } catch {
+            print(error)
+        }
+        
+        return items.count == 0 ? nil : items[0]
     }
     
     func changeOriginCover(of item: History, image: UIImage) {
