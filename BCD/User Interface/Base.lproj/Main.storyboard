@@ -105,7 +105,7 @@
                                 <rect key="frame" x="117.5" y="148" width="85" height="97"/>
                                 <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="40"/>
                                 <state key="normal" title="2">
-                                    <color key="titleColor" red="0.99692672490000001" green="0.48709040879999999" blue="0.65352439880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.99607843137254903" green="0.48627450980392156" blue="0.65490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="numberButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s1Z-F7-NSG"/>
@@ -127,6 +127,7 @@
                                     <constraint firstAttribute="width" secondItem="JxB-sJ-9mF" secondAttribute="height" multiplier="1:1" id="7Xg-0q-ZZK"/>
                                     <constraint firstAttribute="height" constant="66" id="HcY-bq-0eV"/>
                                 </constraints>
+                                <color key="tintColor" red="0.99607843139999996" green="0.48627450979999998" blue="0.65490196079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="ic_search">
                                     <color key="titleColor" red="0.40090259909999998" green="0.80100601910000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -140,6 +141,7 @@
                                     <constraint firstAttribute="width" secondItem="WkO-Vo-nK5" secondAttribute="height" multiplier="1:1" id="5cq-QK-RAa"/>
                                     <constraint firstAttribute="height" constant="66" id="Q3b-yM-l51"/>
                                 </constraints>
+                                <color key="tintColor" red="0.99607843139999996" green="0.48627450979999998" blue="0.65490196079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="ic_backspace">
                                     <color key="titleColor" red="0.40090259909999998" green="0.80100601910000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -269,6 +271,9 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="62v-HH-Nsn">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="accessibilityIgnoresInvertColors" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKT-Rp-hSt">
                                 <rect key="frame" x="32" y="364" width="256" height="44"/>
@@ -318,6 +323,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="sdC-d6-FmO"/>
                                 </constraints>
+                                <color key="tintColor" red="0.99607843139999996" green="0.48627450979999998" blue="0.65490196079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="ic_goback"/>
                                 <connections>
                                     <action selector="goBack" destination="D67-0g-9IQ" eventType="touchUpInside" id="49y-Sk-6uT"/>
@@ -368,6 +374,9 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="CTr-1J-z2U" secondAttribute="height" multiplier="8:5" id="CYa-or-o71"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="accessibilityIgnoresInvertColors" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="视频标题" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFh-Yw-OOf">
                                                     <rect key="frame" x="147.5" y="11" width="157.5" height="61"/>
@@ -644,6 +653,9 @@
                                     <constraint firstAttribute="width" constant="375" id="DUy-qD-oqQ"/>
                                     <constraint firstAttribute="width" secondItem="BB4-Rm-pPw" secondAttribute="height" multiplier="8:5" id="I7z-kL-keP"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="accessibilityIgnoresInvertColors" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -942,6 +954,7 @@
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                             <integer key="value" value="50"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="accessibilityIgnoresInvertColors" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Liuliet.Lee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="onh-KQ-Wle">
@@ -1005,6 +1018,7 @@
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                             <integer key="value" value="50"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="accessibilityIgnoresInvertColors" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="波诺先生" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Sic-Zd-lix">
@@ -1068,6 +1082,7 @@
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                             <integer key="value" value="50"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="accessibilityIgnoresInvertColors" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apollonian" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="WkV-OD-y6Q">
@@ -1131,6 +1146,7 @@
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                             <integer key="value" value="50"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="accessibilityIgnoresInvertColors" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="美工（tan90°）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIr-0y-8oP">
@@ -1226,6 +1242,9 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="xAC-XZ-emX" secondAttribute="height" multiplier="8:5" id="9EC-2s-iws"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="accessibilityIgnoresInvertColors" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="视频标题" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yce-71-WdL">
                                                     <rect key="frame" x="147.5" y="11" width="157.5" height="61"/>
@@ -1584,6 +1603,9 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="P80-Y2-ItF" secondAttribute="height" multiplier="440:227" id="dgs-nu-aVY"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="accessibilityIgnoresInvertColors" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="图片尺寸：1080 x 768" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HgV-6J-QrD">
                                 <rect key="frame" x="16" y="267" width="288" height="24"/>
@@ -1619,6 +1641,9 @@
                             <constraint firstItem="HgV-6J-QrD" firstAttribute="trailing" secondItem="LFp-si-MUe" secondAttribute="trailingMargin" id="rc8-kB-DDx"/>
                             <constraint firstItem="dOv-la-xwi" firstAttribute="leading" secondItem="LFp-si-MUe" secondAttribute="leadingMargin" id="ycH-er-ah1"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="accessibilityIgnoresInvertColors" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="P80-Y2-ItF" id="AN9-bb-28a"/>
@@ -1666,6 +1691,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="pFk-eZ-ib2"/>
-        <segue reference="vJy-84-wTR"/>
+        <segue reference="4Jb-o1-lRn"/>
     </inferredMetricsTieBreakers>
 </document>

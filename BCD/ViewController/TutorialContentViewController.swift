@@ -11,7 +11,11 @@ import UIKit
 class TutorialContentViewController: UIViewController {
     
     @IBOutlet private weak var imageView: UIImageView!
-    @IBOutlet weak var insideButton: UIButton!
+    @IBOutlet weak var insideButton: UIButton! {
+        didSet {
+            insideButton.accessibilityIgnoresInvertColors = true
+        }
+    }
     
     var image = UIImage()
     var index = Int()

@@ -14,7 +14,11 @@ import MaterialKit
 class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageView: UIImageView! {
+        didSet {
+            imageView?.accessibilityIgnoresInvertColors = true
+        }
+    }
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var urlLabel: UILabel!
