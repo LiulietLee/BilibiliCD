@@ -1,22 +1,33 @@
-<img src="https://cdn.rawgit.com/marcosgriselli/ViewAnimator/3c78b078/Resources/banner.svg" height="80"/>
+<p align="center">
+<img src="https://cdn.jsdelivr.net/gh/marcosgriselli/ViewAnimator@65b0a97b14ad54c63b1f5b1862ad7c58dc5b5568/Resources/banner.svg" height="80"/>
+</p>
+
+<p align="center">
+    <img src="https://img.shields.io/badge/Swift-4.2-orange.svg" />
+        <img src="https://img.shields.io/badge/Platforms-iOS%20%7C%20tvOS-blue.svg?style=flat" />
+        <img src="https://img.shields.io/cocoapods/dt/ViewAnimator.svg?style=flat"/>
+    <a href="https://cocoapods.org/pods/ViewAnimator">
+        <img src="https://img.shields.io/cocoapods/v/ViewAnimator.svg" alt="CocoaPods" />
+    </a>
+    <a href="https://github.com/Carthage/Carthage">
+        <img src="https://img.shields.io/badge/carthage-compatible-4BC51D.svg?style=flat" alt="Carthage" />
+    </a>
+    <a href="https://codebeat.co/projects/github-com-marcosgriselli-viewanimator-master">
+      <img src="https://codebeat.co/badges/633fb33d-66b6-4034-93c0-0f52c5d0e15c" alt="Codebeat" />
+    </a>
+    <a href="https://opensource.org/licenses/MIT">
+      <img src="https://img.shields.io/cocoapods/l/ViewAnimator.svg?style=flat" alt="License" />
+    </a>
+</p>
 
 **ViewAnimator** is a library for building complex iOS UIView animations in an easy way. It provides one line animations for any view included the ones which contain other views like UITableView and UICollectionView with its cells or UIStackView with its arrangedSubviews.
 
-
-[![Version](https://img.shields.io/cocoapods/v/ViewAnimator.svg?style=flat)](http://cocoapods.org/pods/ViewAnimator)
-![iOS 8+](https://img.shields.io/badge/iOS-8%2B-blue.svg?style=flat)
-![Swift 4](https://img.shields.io/badge/Swift-4-orange.svg?style=flat)
-![Downloads](https://img.shields.io/cocoapods/dt/ViewAnimator.svg?style=flat)
-[![License](https://img.shields.io/cocoapods/l/ViewAnimator.svg?style=flat)](http://cocoapods.org/pods/ViewAnimator)
-[![codebeat badge](https://codebeat.co/badges/633fb33d-66b6-4034-93c0-0f52c5d0e15c)](https://codebeat.co/projects/github-com-marcosgriselli-viewanimator-master)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-
 ### Entire View&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UITableView&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UICollectionView
-<img src="https://cdn.rawgit.com/marcosgriselli/ViewAnimator/cf065e96/Resources/entireView.svg"/>&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="https://cdn.rawgit.com/marcosgriselli/ViewAnimator/cf065e96/Resources/horizontal.svg"/>&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="https://cdn.rawgit.com/marcosgriselli/ViewAnimator/cf065e96/Resources/vertical.svg"/>&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="https://cdn.rawgit.com/marcosgriselli/ViewAnimator/cf065e96/Resources/collection.svg"/>&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="https://cdn.rawgit.com/marcosgriselli/ViewAnimator/cf065e96/Resources/collectionX.svg"/>
+<img src="https://cdn.jsdelivr.net/gh/marcosgriselli/ViewAnimator@cf065e96ac34c924710dd84c718ecd3be179ae37/Resources/entireView.svg"/>&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://cdn.jsdelivr.net/gh/marcosgriselli/ViewAnimator@cf065e96ac34c924710dd84c718ecd3be179ae37/Resources/horizontal.svg"/>&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://cdn.jsdelivr.net/gh/marcosgriselli/ViewAnimator@cf065e96ac34c924710dd84c718ecd3be179ae37/Resources/vertical.svg"/>&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://cdn.jsdelivr.net/gh/marcosgriselli/ViewAnimator@cf065e96ac34c924710dd84c718ecd3be179ae37/Resources/collection.svg"/>&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://cdn.jsdelivr.net/gh/marcosgriselli/ViewAnimator@cf065e96ac34c924710dd84c718ecd3be179ae37/Resources/collectionX.svg"/>
 
 SVG animations inspired by [Luke Zhao's](http://lkzhao.com) project [Hero](https://github.com/lkzhao/Hero/blob/master/README.md)
 
@@ -156,10 +167,13 @@ Feel free to collaborate with ideas 💭, issues ⁉️ and/or pull requests �
 
 If you use ViewAnimator in your app I'd love to hear about it and feature your animation here!
 
+### Contributors
+
+[![](https://sourcerer.io/fame/marcosgriselli/marcosgriselli/ViewAnimator/images/0)](https://sourcerer.io/fame/marcosgriselli/marcosgriselli/ViewAnimator/links/0)[![](https://sourcerer.io/fame/marcosgriselli/marcosgriselli/ViewAnimator/images/1)](https://sourcerer.io/fame/marcosgriselli/marcosgriselli/ViewAnimator/links/1)[![](https://sourcerer.io/fame/marcosgriselli/marcosgriselli/ViewAnimator/images/2)](https://sourcerer.io/fame/marcosgriselli/marcosgriselli/ViewAnimator/links/2)[![](https://sourcerer.io/fame/marcosgriselli/marcosgriselli/ViewAnimator/images/3)](https://sourcerer.io/fame/marcosgriselli/marcosgriselli/ViewAnimator/links/3)[![](https://sourcerer.io/fame/marcosgriselli/marcosgriselli/ViewAnimator/images/4)](https://sourcerer.io/fame/marcosgriselli/marcosgriselli/ViewAnimator/links/4)[![](https://sourcerer.io/fame/marcosgriselli/marcosgriselli/ViewAnimator/images/5)](https://sourcerer.io/fame/marcosgriselli/marcosgriselli/ViewAnimator/links/5)[![](https://sourcerer.io/fame/marcosgriselli/marcosgriselli/ViewAnimator/images/6)](https://sourcerer.io/fame/marcosgriselli/marcosgriselli/ViewAnimator/links/6)[![](https://sourcerer.io/fame/marcosgriselli/marcosgriselli/ViewAnimator/images/7)](https://sourcerer.io/fame/marcosgriselli/marcosgriselli/ViewAnimator/links/7)
+
 ### Author
 
-Marcos Griselli | <a href="url"><img src="https://cdn.rawgit.com/marcosgriselli/ViewAnimator/cf065e96/Resources/twitterLogo.svg" height="17"></a> [@marcosgriselli](https://twitter.com/marcosgriselli)
-
+Marcos Griselli | <a href="url"><img src="https://cdn.jsdelivr.net/gh/marcosgriselli/ViewAnimator@cf065e96ac34c924710dd84c718ecd3be179ae37/Resources/twitterLogo.svg" height="17"></a> [@marcosgriselli](https://twitter.com/marcosgriselli)
 
 
 [![Twitter Follow](https://img.shields.io/twitter/follow/marcosgriselli.svg?style=social)](https://twitter.com/marcosgriselli)

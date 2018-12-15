@@ -13,12 +13,12 @@ import CoreData
 class HistoryManager: CoreDataModel {
 
     private var historyLimit: Int {
-        let settingManager = SettingManager();
-        return settingManager.historyItemLimit;
+        let settingManager = SettingManager()
+        return settingManager.historyItemLimit
     }
 
     func getHistory() -> [History] {
-        var history = fetchHistory();
+        var history = fetchHistory()
         let overflow = history.count - historyLimit
         if overflow > 0 {
             let count = history.count
@@ -26,7 +26,7 @@ class HistoryManager: CoreDataModel {
                 deleteHistory(history[count - 1 - i])
             }
         }
-        return history;
+        return history
     }
     
     private func fetchHistory() -> [History] {

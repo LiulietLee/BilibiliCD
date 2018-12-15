@@ -612,7 +612,6 @@
 				4F2DB5E91F75F7D400FB2315 /* Embed App Extensions */,
 				4F585B3D1F7614FD004D1285 /* Embed Frameworks */,
 				7FA4649C27623AC486D9B8C5 /* [CP] Embed Pods Frameworks */,
-				2CAB5C155260A69253D30411 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -715,21 +714,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2CAB5C155260A69253D30411 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BCD/Pods-BCD-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		6BD52D43BADCF65812B1A32D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -754,7 +738,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-BCD/Pods-BCD-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-BCD/Pods-BCD-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Device/Device.framework",
 				"${BUILT_PRODUCTS_DIR}/MaterialKit/MaterialKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SWRevealViewController/SWRevealViewController.framework",
@@ -769,7 +753,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BCD/Pods-BCD-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BCD/Pods-BCD-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

@@ -1,14 +1,19 @@
 PODS:
   - Device (3.0.3)
-  - MaterialKit (0.6.2)
+  - MaterialKit (0.6.3)
   - SWRevealViewController (2.4.0)
-  - ViewAnimator (2.1.1)
+  - ViewAnimator (2.2.2)
 
 DEPENDENCIES:
   - Device (~> 3.0.3)
   - MaterialKit (from `https://github.com/ApolloZhu/MaterialKit.git`)
   - SWRevealViewController (from `https://github.com/John-Lluch/SWRevealViewController.git`)
   - ViewAnimator
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Device
+    - ViewAnimator
 
 EXTERNAL SOURCES:
   MaterialKit:
@@ -18,7 +23,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   MaterialKit:
-    :commit: 022f7880647d655fba84dc187b03d13e5e5edbd0
+    :commit: 8c8945933856e01c7c1af139d998093557f81d2a
     :git: https://github.com/ApolloZhu/MaterialKit.git
   SWRevealViewController:
     :commit: bb4a110989d67a5fc5f5c533cacc92f6cb02f5e2
@@ -26,10 +31,10 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Device: 9a5264ee4e0f392e7153d2c46b10c8df46b7aad2
-  MaterialKit: 7a21f9c5d9af43afa20d3fa25054bef8087ced24
+  MaterialKit: f864cde5329f1c8f88a197fb4060a34c5a216c8b
   SWRevealViewController: b653f339865208c97be99a24876545f5be0cc4bb
-  ViewAnimator: 43c31539508d995ea2c5e98338211f7c009b358f
+  ViewAnimator: 6eaa112663b6a2d9e6b2573df65b416dd051cbe4
 
 PODFILE CHECKSUM: bfdbb9021390918d9c1ad8736b8aa5c1686305b0
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.6.0.beta.2
