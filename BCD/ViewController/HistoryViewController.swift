@@ -222,7 +222,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
             hideString = "显示"
         }
         let hide = UITableViewRowAction(style: .normal, title: hideString) { action, index in
-            self.manager.changeIsHiddenOf(item)
+            self.manager.toggleIsHidden(of: item)
             self.history = self.manager.getHistory()
             self.tableView.reloadData()
         }

@@ -209,7 +209,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
     
     func scaleSucceed(scaledImage: UIImage) {
         imageView.image = scaledImage
-        manager.changeOriginCover(of: itemFromHistory!, image: scaledImage)
+        manager.replaceOriginCover(of: itemFromHistory!, with: scaledImage)
         scaleButton.isEnabled = false
         
         let dialog = LLDialog()

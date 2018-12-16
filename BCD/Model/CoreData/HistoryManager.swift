@@ -138,13 +138,13 @@ class HistoryManager: CoreDataModel {
         return items.count == 0 ? nil : items[0]
     }
     
-    func changeOriginCover(of item: History, image: UIImage) {
+    func replaceOriginCover(of item: History, with image: UIImage) {
         item.origin?.image = image.data()
         saveContext()
     }
     
-    func changeIsHiddenOf(_ item: History) {
-        item.isHidden = !item.isHidden
+    func toggleIsHidden(of item: History) {
+        item.isHidden.toggle()
         saveContext()
     }
     
