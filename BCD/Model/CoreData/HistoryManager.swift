@@ -25,8 +25,9 @@ class HistoryManager: CoreDataModel {
             for i in 0..<overflow {
                 deleteHistory(history[count - 1 - i])
             }
+            history = Array(history.dropLast(overflow))
         }
-        return Array(history.dropLast(overflow))
+        return history
     }
     
     private func fetchHistory() -> [History] {
