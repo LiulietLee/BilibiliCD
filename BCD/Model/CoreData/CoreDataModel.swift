@@ -11,17 +11,16 @@ import Foundation
 import CoreData
 
 class CoreDataModel {
+    let context = CoreDataStorage.sharedInstance.mainQueueContext
     
-    internal let context = CoreDataStorage.sharedInstance.mainQueueContext
-    
-    internal func saveContext() {
+    func saveContext() {
         CoreDataStorage.sharedInstance.saveContext(context)
     }
 }
 
 extension UIImage {
     func data() -> Data {
-        return self.pngData()!
+        return pngData()!
     }
     
     func resized(to size: CGSize = CGSize(width: 135, height: 84)) -> UIImage {

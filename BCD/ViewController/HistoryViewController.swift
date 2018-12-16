@@ -22,14 +22,14 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         didSet {
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy.MM.dd hh:mm"
-            historyDateString = history.map {
-                formatter.string(from: $0.date!)
-            }
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
                 self.loadingView.dismiss()
                 
                 if self.history.count != 0 {
+                    self.historyDateString = self.history.map {
+                        formatter.string(from: $0.date!)
+                    }
                     self.tableView.reloadData()
                 } else {
                     self.setLabel()
