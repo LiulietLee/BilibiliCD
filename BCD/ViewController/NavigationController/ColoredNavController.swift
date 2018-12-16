@@ -10,6 +10,10 @@ import UIKit
 
 class ColoredNavController: UINavigationController {
     var navbarTintColor: UIColor { return .black }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
