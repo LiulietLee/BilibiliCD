@@ -19,14 +19,14 @@ class HistoryManager: CoreDataModel {
 
     func getHistory() -> [History] {
         var history = fetchHistory()
-        let overflow = history.count - historyLimit
+        let count = history.count
+        let overflow = count - historyLimit
         if overflow > 0 {
-            let count = history.count
             for i in 0..<overflow {
                 deleteHistory(history[count - 1 - i])
             }
         }
-        return history
+        return Array(history.dropLast(overflow))
     }
     
     private func fetchHistory() -> [History] {
@@ -61,9 +61,6 @@ class HistoryManager: CoreDataModel {
 
         let entity = NSEntityDescription.entity(forEntityName: "History", in: context)!
         let newItem = History(entity: entity, insertInto: context)
-        
-        let list = fetchHistory()
-        if list.count != 0, list[0].up == up && list[0].av == av { return list[0] }
         
         let uiImage = image.uiImage
         let originCoverData: Data
@@ -158,7 +155,7 @@ class HistoryManager: CoreDataModel {
     func clearHistory() {
         do {
             let items = try context.fetch(History.fetchRequest()) as! [History]
-            for item in items { deleteHistory(item) }
+            items.forEach(deleteHistory)
         } catch {
             print(error)
         }
@@ -170,8 +167,8 @@ class HistoryManager: CoreDataModel {
         
         if (items.count == 0) { return }
         
-        items.forEach({ item in
-            self.addNewHistory(
+        for item in items {
+            addNewHistory(
                 av: item.stringID!,
                 image: item.isGIF ? .gif(item.uiImage!, data: item.image!) : .normal(item.uiImage!),
                 title: item.title!,
@@ -181,7 +178,7 @@ class HistoryManager: CoreDataModel {
             )
             
             cacheManager.deleteDraft(item)
-        })
+        }
     }
 }
 
