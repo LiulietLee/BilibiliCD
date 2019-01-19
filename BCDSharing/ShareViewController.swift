@@ -29,13 +29,12 @@ class ShareViewController: UIViewController, VideoCoverDelegate {
         coverInfoProvider.delegateForVideo = self
         let extensionItem = extensionContext?.inputItems[0] as! NSExtensionItem
         let contentTypeURL = kUTTypeURL as String
-        for attachment in extensionItem.attachments! {
-            if attachment.isURL {
-                attachment.loadItem(forTypeIdentifier: contentTypeURL, options: [:]) { (result, error) in
-                    let url = result as! URL
-                    self.url = url.absoluteString
-                    self.getCover()
-                }
+        for attachment in extensionItem.attachments! where attachment.isURL {
+            attachment.loadItem(forTypeIdentifier: contentTypeURL) {
+                (result, error) in
+                let url = result as! URL
+                self.url = url.absoluteString
+                self.getCover()
             }
         }
     }
@@ -88,13 +87,12 @@ class ShareViewController: UIViewController, VideoCoverDelegate {
     }
     
     @IBAction func disappearButtonTapped() {
-        extensionContext!.completeRequest(returningItems: nil, completionHandler: nil)
+        extensionContext!.completeRequest(returningItems: nil)
     }
     
     private func disappear() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1000)) {
-            self.disappearButtonTapped()
-        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1),
+                                      execute: disappearButtonTapped)
     }
     
     private func downloadImage(_ image: Image) {

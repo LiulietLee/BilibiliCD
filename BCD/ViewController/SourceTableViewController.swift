@@ -8,22 +8,34 @@
 
 import UIKit
 
+private struct GitHubRepo: ExpressibleByStringLiteral {
+    let name: String
+
+    public init(stringLiteral value: StringLiteralType) {
+        self.name = value
+    }
+    
+    var url: URL {
+        return URL(string: "https://github.com/\(name)")!
+    }
+}
+
 class SourceTableViewController: UITableViewController {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
-    private let list: [(name: String, url: String)] = [
-        ("LiulietLee/BilibiliCD", "https://github.com/LiulietLee/BilibiliCD"),
-        ("LiulietLee/LLDialog", "https://github.com/LiulietLee/LLDialog"),
-        ("LiulietLee/bcd-backend", "https://github.com/LiulietLee/bcd-backend"),
-        ("ApolloZhu/MaterialKit", "https://github.com/ApolloZhu/MaterialKit"),
-        ("John-Lluch/SWRevealViewController", "https://github.com/John-Lluch/SWRevealViewController"),
-        ("maximbilan/iOS-Shared-CoreData-Storage-for-App-Groups", "https://github.com/maximbilan/iOS-Shared-CoreData-Storage-for-App-Groups"),
-        ("ph1ps/Nudity-CoreML", "https://github.com/ph1ps/Nudity-CoreML"),
-        ("marcosgriselli/ViewAnimator", "https://github.com/marcosgriselli/ViewAnimator"),
-        ("imxieyi/waifu2x-ios", "https://github.com/imxieyi/waifu2x-ios"),
-        ("Ekhoo/Device", "https://github.com/Ekhoo/Device"),
-        ("ApolloZhu/BilibiliKit", "https://github.com/ApolloZhu/BilibiliKit")
+    private let list: [GitHubRepo] = [
+        "LiulietLee/BilibiliCD",
+        "LiulietLee/LLDialog",
+        "LiulietLee/bcd-backend",
+        "ApolloZhu/MaterialKit",
+        "John-Lluch/SWRevealViewController",
+        "maximbilan/iOS-Shared-CoreData-Storage-for-App-Groups",
+        "ph1ps/Nudity-CoreML",
+        "marcosgriselli/ViewAnimator",
+        "imxieyi/waifu2x-ios",
+        "Ekhoo/Device",
+        "ApolloZhu/BilibiliKit"
     ]
     
     override func viewDidLoad() {
@@ -53,7 +65,6 @@ class SourceTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        UIApplication.shared.open(URL(string: list[indexPath.row].url)!)
+        UIApplication.shared.open(list[indexPath.row].url)
     }
-
 }

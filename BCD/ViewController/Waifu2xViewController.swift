@@ -59,7 +59,7 @@ class Waifu2xViewController: UIViewController, ScalingViewControllerDelegate, UI
     
     func scaleSucceed(scaledImage: UIImage) {
         delegate?.scaleSucceed(scaledImage: scaledImage)
-        self.navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

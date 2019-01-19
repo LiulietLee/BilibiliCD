@@ -42,7 +42,7 @@ class ScalingViewController: UIViewController {
         
         let size = image.size
         sizeLabel.text = "图片尺寸：\(size.width) x \(size.height)"
-        // TODO: - progress bar
+        #warning("TODO: Progress Bar")
         timeLabel.text = "其实我是想做个进度条来着...\n但是又做不粗来...\n所以就全当这里有进度条了吧"
     }
     
@@ -64,32 +64,34 @@ class ScalingViewController: UIViewController {
         let start = DispatchTime.now()
         let background = DispatchQueue(label: "background")
         
-        background.async {
+        background.async { [weak self] in
+            guard let self = self else { return }
             var image_noise = self.image
             if self.protoc[1] != 0 {
                 image_noise = (self.image.run(model: self.selectNoiseModel[self.protoc[0]][self.protoc[1]])?.reload())!
             }
         
             if self.protoc[2] != 0 {
-                DispatchQueue.main.async {
-                    background.async {
+                DispatchQueue.main.async { [weak self] in
+                    background.async { [weak self] in
+                        guard let self = self else { return }
                         let image_scale = image_noise.scale2x().reload()?.run(model: self.selectNoiseModel[self.protoc[0]][self.protoc[2]])
                         let end = DispatchTime.now()
                         let nanotime = end.uptimeNanoseconds - start.uptimeNanoseconds
                         let timeInterval = Double(nanotime) / 1_000_000_000
                         print("time: \(timeInterval)")
                         // self.provider.sendScaleData(type: Device.version().rawValue, size: self.image.size, time: timeInterval)
-                        DispatchQueue.main.async {
-                            self.delegate?.scaleSucceed(scaledImage: image_scale!)
-                            self.dismiss(animated: true, completion: nil)
+                        DispatchQueue.main.async { [weak self] in
+                            self?.delegate?.scaleSucceed(scaledImage: image_scale!)
+                            self?.dismiss(animated: true)
                         }
                     }
                 }
             } else {
-                DispatchQueue.main.async {
-                    self.delegate?.scaleSucceed(scaledImage: image_noise)
+                DispatchQueue.main.async { [weak self] in
+                    self?.delegate?.scaleSucceed(scaledImage: image_noise)
                     // self.provider.sendScaleData(type: Device.version().rawValue, size: self.image.size, time: timeInterval)
-                    self.dismiss(animated: true, completion: nil)
+                    self?.dismiss(animated: true)
                 }
             }
         }

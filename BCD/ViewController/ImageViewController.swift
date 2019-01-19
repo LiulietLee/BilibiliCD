@@ -57,10 +57,11 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(goBackIfNeeded),
-                                               name: UIApplication.willResignActiveNotification,
-                                               object: nil)
+        NotificationCenter.default.addObserver(
+            self, selector: #selector(goBackIfNeeded),
+            name: UIApplication.willResignActiveNotification,
+            object: nil
+        )
     }
     
     @objc private func goBackIfNeeded() {
@@ -84,7 +85,6 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
             }
         } else {
             title = "No av number"
-            print("No av number")
         }
 
         if let item = itemFromHistory {
@@ -229,7 +229,6 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
     }
     
     func connectError() {
-        print("Cannot connect\n")
         titleLabel.text = "啊叻？"
         authorLabel.text = "连不上服务器了？"
         urlLabel.text = "提示：如果一直提示这个可能是我们的服(V)务(P)器(S)炸了，你可以去「关于我们」页面找我们反映情况哦~"
@@ -265,10 +264,10 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
                 ]
             ]
             generator.notificationOccurred(.success)
-            MKSnackbar(withTitle: "Copied", withDuration: nil, withTitleColor: nil, withActionButtonTitle: nil, withActionButtonColor: nil).show()
+            MKSnackbar(withTitle: "已复制到剪贴板", withDuration: nil, withTitleColor: nil, withActionButtonTitle: nil, withActionButtonColor: nil).show()
         } catch {
             generator.notificationOccurred(.error)
-            MKSnackbar(withTitle: "Failed to Copy", withDuration: nil, withTitleColor: nil, withActionButtonTitle: nil, withActionButtonColor: nil).show()
+            MKSnackbar(withTitle: error.localizedDescription, withDuration: nil, withTitleColor: nil, withActionButtonTitle: nil, withActionButtonColor: nil).show()
         }
     }
 

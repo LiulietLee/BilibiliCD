@@ -34,10 +34,13 @@ class HisTutViewController: UIViewController {
                             y: margin * 1.25, width: width, height: width)
         
         if UIDevice().isiPhoneX {
+            #warning("Fix for iPhone XS, iPhone XS MAX, and iPhone XR")
             // 我真特么想一锤子锤烂 iPhone X ！这哪个ZZ设计出来的这么奇葩的屏幕啊 ！
             webView.frame = CGRect(x: 0.0, y: -45.0, width: size.width, height: size.height + 40.0)
-            back = UIButton(frame: CGRect(x: size.width - margin - width,
-                                          y: margin * 1.75, width: width, height: width))
+            back = UIButton(frame: CGRect(
+                x: size.width - margin - width, y: margin * 1.75,
+                width: width, height: width
+            ))
         }
         
         back.setImage(#imageLiteral(resourceName: "ic_arrow_downward"), for: .normal)

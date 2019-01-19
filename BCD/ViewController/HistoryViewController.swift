@@ -44,10 +44,10 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     private var isShowingFullHistory = false {
         didSet {
-            if oldValue {
-                navigationController?.navigationBar.barTintColor = .tianyiBlue
-            } else {
+            if isShowingFullHistory {
                 navigationController?.navigationBar.barTintColor = .black
+            } else {
+                navigationController?.navigationBar.barTintColor = .tianyiBlue
             }
             tableView.reloadData()
         }
@@ -64,6 +64,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         view.bringSubviewToFront(loadingView)
         
         DispatchQueue.global(qos: .userInitiated).async {
+            [weak self] in guard let self = self else { return }
             self.history = self.manager.getHistory()
         }
         
@@ -184,17 +185,18 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HistoryCell
         
         if !history[indexPath.row].isHidden || isShowingFullHistory {
-            if history[indexPath.row].title != nil {
-                cell.titleLabel.text = history[indexPath.row].title!
-                cell.dateLabel.text = historyDateString[indexPath.row]
-                let item = history[indexPath.row]
-                DispatchQueue.global(qos: .userInteractive).async {
-                    let image = item.uiImage
-                    DispatchQueue.main.async { [weak self] in
-                        let indexOfCell = self?.tableView.indexPath(for: cell)
-                        if indexOfCell == indexPath {
-                            cell.coverView.image = image
-                        }
+            guard let title = history[indexPath.row].title else {
+                cell.titleLabel.text = "Error: \(indexPath.row)"
+                return cell
+            }
+            cell.titleLabel.text = title
+            cell.dateLabel.text = historyDateString[indexPath.row]
+            let item = history[indexPath.row]
+            DispatchQueue.global(qos: .userInteractive).async {
+                let image = item.uiImage
+                DispatchQueue.main.async { [weak self] in
+                    if indexPath == self?.tableView.indexPath(for: cell) {
+                        cell.coverView.image = image
                     }
                 }
             }
@@ -221,14 +223,18 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
             hideString = "显示"
         }
-        let hide = UITableViewRowAction(style: .normal, title: hideString) { action, index in
+        let hide = UITableViewRowAction(style: .normal, title: hideString) {
+            [weak self] action, index in
+            guard let self = self else { return }
             self.manager.toggleIsHidden(of: item)
             self.history = self.manager.getHistory()
             self.tableView.reloadData()
         }
         hide.backgroundColor = .lightGray
         
-        let delete = UITableViewRowAction(style: .normal, title: "删除") { action, index in
+        let delete = UITableViewRowAction(style: .normal, title: "删除") {
+            [weak self ]action, index in
+            guard let self = self else { return }
             self.manager.deleteHistory(item)
             self.history = self.manager.getHistory()
             self.tableView.deleteRows(at: [editActionsForRowAt], with: .left)
@@ -277,8 +283,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
             identifier == "detail",
             let cell = sender as? HistoryCell,
             let indexPath = tableView.indexPath(for: cell) {
-            let item = history[indexPath.row]
-            if item.isHidden { return false }
+            return !history[indexPath.row].isHidden
         }
         return true
     }

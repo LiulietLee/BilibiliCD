@@ -33,11 +33,7 @@ class SetHistoryNumViewController: UIViewController {
         numberField.becomeFirstResponder()
         numberField.layer.borderColor = UIColor.clear.cgColor
         
-        if isShowingFullHistory {
-            changeColor(to: .black)
-        } else {
-            changeColor(to: .tianyiBlue)
-        }
+        changeColor(to: isShowingFullHistory ? .black : .tianyiBlue)
     }
     
     private func changeColor(to color: UIColor) {

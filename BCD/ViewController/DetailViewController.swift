@@ -34,19 +34,20 @@ class DetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(goBackIfNeeded),
-                                               name: UIApplication.willResignActiveNotification,
-                                               object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(goBackIfNeeded),
+            name: UIApplication.willResignActiveNotification,
+            object: nil
+        )
     }
     
     @objc private func goBackIfNeeded() {
-        if isHidden == true {
-            let storyBoard = UIStoryboard(name: "Main", bundle:nil)
-            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "main") as! MainViewController
-            
-            show(nextViewController, sender: self)
-        }
+        guard isHidden == true else { return }
+        let storyBoard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "main") as! MainViewController
+        
+        show(nextViewController, sender: self)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -73,8 +74,8 @@ class DetailViewController: UIViewController {
         widthConstraint.constant *= 3.0
         xConstraint.constant *= 3.0
         yConstraint.constant *= 3.0
-        UIView.animate(withDuration: 0.3) {
-            self.view.layoutIfNeeded()
+        UIView.animate(withDuration: 0.3) { [weak self] in
+            self?.view.layoutIfNeeded()
         }
     }
     

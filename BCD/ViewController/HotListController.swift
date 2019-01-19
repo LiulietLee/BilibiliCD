@@ -52,34 +52,35 @@ class HotListController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     private func getList() {
-        listProvider.getHotList { hotList in
-            if let list = hotList {
-                list.forEach({ item in
-                    self.hotList.append((info: item, image: UIImage(named: "placeholder_cover")))
-                })
-                
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                    self.loadingView.dismiss()
-                    if (!self.isAnimatedOnce) {
-                        self.animateView()
+        listProvider.getHotList { [weak self] hotList in
+            guard let self = self, let list = hotList else { return }
+            for item in list {
+                self.hotList.append((info: item, image: UIImage(named: "placeholder_cover")))
+            }
+            
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                self.tableView.reloadData()
+                self.loadingView.dismiss()
+                if (!self.isAnimatedOnce) {
+                    self.animateView()
+                }
+            }
+            
+            for item in list {
+                self.assetProvider.getImage(fromUrlPath: item.imageURL) { [weak self] image in
+                    guard let self = self,
+                        let image = image,
+                        let row = self.hotList.firstIndex(where: {$0.info.imageURL == item.imageURL})
+                        else { return }
+                    let img = image.uiImage.resized()
+                    DispatchQueue.main.async { [weak self] in
+                        guard let self = self else { return }
+                        self.hotList[row].image = img
+                        let indexPath = IndexPath(row: row, section: 0)
+                        self.tableView.reloadRows(at: [indexPath], with: .automatic)
                     }
                 }
-                
-                list.forEach({ item in
-                    self.assetProvider.getImage(fromUrlPath: item.imageURL, completion: { image in
-                        if let image = image {
-                            let img = image.uiImage.resized()
-                            if let row = self.hotList.firstIndex(where: {$0.info.imageURL == item.imageURL}) {
-                                DispatchQueue.main.async {
-                                    self.hotList[row].image = img
-                                    let indexPath = IndexPath(row: row, section: 0)
-                                    self.tableView.reloadRows(at: [indexPath], with: .automatic)
-                                }
-                            }
-                        }
-                    })
-                })
             }
         }
     }
@@ -107,20 +108,14 @@ class HotListController: UIViewController, UITableViewDelegate, UITableViewDataS
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
         
-        if let id = segue.identifier {
-            switch id {
-            case "detail":
-                if let vc = segue.destination as? ImageViewController,
-                    let cell = sender as? HotListCell,
-                    let indexPath = tableView.indexPath(for: cell),
-                    hotList.count > indexPath.row {
-                    navigationController?.navigationBar.barTintColor = .bilibiliPink
-                    let cover = BilibiliCover(hotList[indexPath.row].info.stringID)
-                    vc.cover = cover
-                }
-            default:
-                break
-            }
+        if segue.identifier == "detail",
+            let vc = segue.destination as? ImageViewController,
+            let cell = sender as? HotListCell,
+            let indexPath = tableView.indexPath(for: cell),
+            hotList.count > indexPath.row {
+            navigationController?.navigationBar.barTintColor = .bilibiliPink
+            let cover = BilibiliCover(hotList[indexPath.row].info.stringID)
+            vc.cover = cover
         }
     }
 
