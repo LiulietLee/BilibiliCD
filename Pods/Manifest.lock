@@ -1,5 +1,5 @@
 PODS:
-  - MaterialKit (0.6.3)
+  - MaterialKit (0.6.4)
   - SWRevealViewController (2.4.0)
   - ViewAnimator (2.2.2)
 
@@ -20,14 +20,14 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   MaterialKit:
-    :commit: 8c8945933856e01c7c1af139d998093557f81d2a
+    :commit: 6f7618bbdcbbebb462e0572ebd4c160e76123f53
     :git: https://github.com/ApolloZhu/MaterialKit.git
   SWRevealViewController:
     :commit: bb4a110989d67a5fc5f5c533cacc92f6cb02f5e2
     :git: https://github.com/John-Lluch/SWRevealViewController.git
 
 SPEC CHECKSUMS:
-  MaterialKit: f864cde5329f1c8f88a197fb4060a34c5a216c8b
+  MaterialKit: 47adee85449c3c5b4c29bb1a6a83a94b47504adc
   SWRevealViewController: b653f339865208c97be99a24876545f5be0cc4bb
   ViewAnimator: 6eaa112663b6a2d9e6b2573df65b416dd051cbe4
 

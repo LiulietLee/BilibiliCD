@@ -264,10 +264,10 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
                 ]
             ]
             generator.notificationOccurred(.success)
-            MKSnackbar(withTitle: "已复制到剪贴板", withDuration: nil, withTitleColor: nil, withActionButtonTitle: nil, withActionButtonColor: nil).show()
+            display("已复制到剪贴板")
         } catch {
             generator.notificationOccurred(.error)
-            MKSnackbar(withTitle: error.localizedDescription, withDuration: nil, withTitleColor: nil, withActionButtonTitle: nil, withActionButtonColor: nil).show()
+            display(error)
         }
     }
 

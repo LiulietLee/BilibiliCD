@@ -124,18 +124,16 @@ extension CoreDataStorage {
 #if canImport(MaterialKit)
 import MaterialKit
 
-func show(_ error: Error) {
+func display(_ error: Error) {
     var message = error.localizedDescription
     if let exception = error._userInfo?["NSUnderlyingException"] as? NSException,
         let reason = exception.reason {
         message += "(\(reason))"
     }
-    show(message)
+    display(message)
 }
 
-func show(_ message: String) {
-    print(message)
-    #warning("Snackbar not visible")
+func display(_ message: String) {
     MKSnackbar(withTitle: message, withDuration: nil, withTitleColor: nil, withActionButtonTitle: nil, withActionButtonColor: nil).show()
 }
 
@@ -148,9 +146,9 @@ extension CoreDataStorage {
             let saveAsCoordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
             try saveAsCoordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: urlInContainer, options: migrationOptions)
             try saveAsCoordinator.migratePersistentStore(saveAsCoordinator.persistentStore(for: urlInContainer)!, to: urlInDocuments, options: nil, withType: NSSQLiteStoreType)
-            show("导出成功")
+            display("导出成功")
         } catch {
-            show(error)
+            display(error)
         }
     }
     
@@ -160,12 +158,12 @@ extension CoreDataStorage {
                 try persistentStoreCoordinator.remove(persistentStoreCoordinator.persistentStore(for: urlInContainer)!)
                 try persistentStoreCoordinator.replacePersistentStore(at: urlInContainer, destinationOptions: nil, withPersistentStoreFrom: urlInDocuments, sourceOptions: nil, ofType: NSSQLiteStoreType)
                 try persistentStoreCoordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: urlInContainer, options: migrationOptions)
-                show("导入成功")
+                display("导入成功")
             } catch {
-                show(error)
+                display(error)
             }
         } else {
-            show("没有数据可以导入")
+            display("没有数据可以导入")
         }
     }
 }

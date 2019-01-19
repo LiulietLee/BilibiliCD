@@ -1,6 +1,6 @@
 {
   "name": "MaterialKit",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "summary": "Material design components for iOS written in Swift",
   "homepage": "https://github.com/ApolloZhu/MaterialKit",
   "screenshots": [
@@ -20,7 +20,7 @@
   },
   "source": {
     "git": "https://github.com/ApolloZhu/MaterialKit.git",
-    "tag": "0.6.3"
+    "tag": "0.6.4"
   },
   "source_files": "Source/*",
   "requires_arc": true
