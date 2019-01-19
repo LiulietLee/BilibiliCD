@@ -34,7 +34,6 @@ class SourceTableViewController: UITableViewController {
         "ph1ps/Nudity-CoreML",
         "marcosgriselli/ViewAnimator",
         "imxieyi/waifu2x-ios",
-        "Ekhoo/Device",
         "ApolloZhu/BilibiliKit"
     ]
     

@@ -8,7 +8,6 @@
 //
 
 import UIKit
-import Device
 
 protocol ScalingViewControllerDelegate: AnyObject {
     func scaleSucceed(scaledImage: UIImage)
@@ -55,11 +54,6 @@ class ScalingViewController: UIViewController {
         }
     }
     
-//    private func calculateRemainingTime(size: Double) -> Int {
-//        let time = 0.0002 * size + 11.19
-//        return Int(time)
-//    }
-    
     private func scaleImage() {
         let start = DispatchTime.now()
         let background = DispatchQueue(label: "background")
@@ -80,7 +74,6 @@ class ScalingViewController: UIViewController {
                         let nanotime = end.uptimeNanoseconds - start.uptimeNanoseconds
                         let timeInterval = Double(nanotime) / 1_000_000_000
                         print("time: \(timeInterval)")
-                        // self.provider.sendScaleData(type: Device.version().rawValue, size: self.image.size, time: timeInterval)
                         DispatchQueue.main.async { [weak self] in
                             self?.delegate?.scaleSucceed(scaledImage: image_scale!)
                             self?.dismiss(animated: true)
@@ -90,7 +83,6 @@ class ScalingViewController: UIViewController {
             } else {
                 DispatchQueue.main.async { [weak self] in
                     self?.delegate?.scaleSucceed(scaledImage: image_noise)
-                    // self.provider.sendScaleData(type: Device.version().rawValue, size: self.image.size, time: timeInterval)
                     self?.dismiss(animated: true)
                 }
             }
