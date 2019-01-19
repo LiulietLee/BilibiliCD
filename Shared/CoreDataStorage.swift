@@ -135,16 +135,20 @@ func show(_ error: Error) {
 
 func show(_ message: String) {
     print(message)
-    #warning("Snackbar not showing???")
+    #warning("Snackbar not visible")
     MKSnackbar(withTitle: message, withDuration: nil, withTitleColor: nil, withActionButtonTitle: nil, withActionButtonColor: nil).show()
 }
 
 extension CoreDataStorage {
     func saveCoreDataModelToDocuments() {
         do {
-            #warning("Not really working")
-            try persistentStoreCoordinator.migratePersistentStore(persistentStoreCoordinator.persistentStore(for: urlInContainer)!, to: urlInDocuments, options: nil, withType: NSSQLiteStoreType)
-            show("Export Complete")
+            if FileManager.default.fileExists(atPath: urlInDocuments.path) {
+                try FileManager.default.removeItem(at: urlInDocuments)
+            }
+            let saveAsCoordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
+            try saveAsCoordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: urlInContainer, options: migrationOptions)
+            try saveAsCoordinator.migratePersistentStore(saveAsCoordinator.persistentStore(for: urlInContainer)!, to: urlInDocuments, options: nil, withType: NSSQLiteStoreType)
+            show("导出成功")
         } catch {
             show(error)
         }
@@ -156,12 +160,12 @@ extension CoreDataStorage {
                 try persistentStoreCoordinator.remove(persistentStoreCoordinator.persistentStore(for: urlInContainer)!)
                 try persistentStoreCoordinator.replacePersistentStore(at: urlInContainer, destinationOptions: nil, withPersistentStoreFrom: urlInDocuments, sourceOptions: nil, ofType: NSSQLiteStoreType)
                 try persistentStoreCoordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: urlInContainer, options: migrationOptions)
-                show("Import Complete")
+                show("导入成功")
             } catch {
                 show(error)
             }
         } else {
-            show("Nothing to Import")
+            show("没有数据可以导入")
         }
     }
 }
