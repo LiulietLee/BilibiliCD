@@ -17,7 +17,6 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var menu: UIBarButtonItem!
     private var touchTime = DispatchTime(uptimeNanoseconds: 0)
     private var manager = HistoryManager()
-//    private var existCover: History? = nil
     var cover = BilibiliCover(number: 0, type: .video) {
         didSet {
             avLabel?.text = cover.shortDescription
@@ -36,10 +35,11 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.barTintColor = .bilibiliPink
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(getURLFromPasteboard),
-                                               name: UIApplication.didBecomeActiveNotification,
-                                               object: nil)
+        NotificationCenter.default.addObserver(
+            self, selector: #selector(getURLFromPasteboard),
+            name: UIApplication.didBecomeActiveNotification,
+            object: nil
+        )
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -53,23 +53,19 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     }
 
     @objc private func getURLFromPasteboard() {
-        if isShowingImage { return }
+        guard !isShowingImage,
+            let newCover = BilibiliCover.fromPasteboard(),
+            cover != newCover
+            else { return }
+        cover = newCover
+        guard manager.itemInHistory(cover: newCover) == nil else { return }
         
-        if let newCover = BilibiliCover.fromPasteboard() {
-            if cover != newCover {
-                cover = newCover
-            } else {
-                return
-            }
-            if manager.itemInHistory(cover: newCover) == nil {
-                isShowingImage = true
-                let storyBoard = UIStoryboard(name: "Main", bundle:nil)
-                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "image controller") as! ImageViewController
-                
-                nextViewController.cover = newCover
-                show(nextViewController, sender: self)
-            }
-        }
+        isShowingImage = true
+        let storyBoard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "image controller") as! ImageViewController
+        
+        nextViewController.cover = newCover
+        show(nextViewController, sender: self)
     }
     
     override func viewDidLoad() {
