@@ -49,6 +49,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        becomeFirstResponder()
         getURLFromPasteboard()
     }
 
@@ -172,6 +173,10 @@ class MainViewController: UIViewController, UITextFieldDelegate {
 }
 
 extension MainViewController {
+    override var canBecomeFirstResponder: Bool {
+        return true
+    }
+    
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         guard motion == .motionShake else { return }
         let alert = UIAlertController(title: "GDPR", message: "管理数据（试用）", preferredStyle: .actionSheet)

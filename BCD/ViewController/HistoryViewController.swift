@@ -17,23 +17,22 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     private let motionDetector = MotionDetector()
     private let manager = HistoryManager()
     private var isAnimatedOnce = false
-    private var historyDateString = [String]()
+    private lazy var formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy.MM.dd hh:mm"
+        return formatter
+    }()
     private var history = [History]() {
         didSet {
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy.MM.dd hh:mm"
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
                 self.loadingView.dismiss()
                 
-                if self.history.count != 0 {
-                    self.historyDateString = self.history.map {
-                        formatter.string(from: $0.date!)
-                    }
-                    self.tableView.reloadData()
-                } else {
+                if self.history.isEmpty {
                     self.setLabel()
                     self.showLabel()
+                } else {
+                    self.tableView.reloadData()
                 }
                 
                 if !self.isAnimatedOnce {
@@ -190,7 +189,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
                 return cell
             }
             cell.titleLabel.text = title
-            cell.dateLabel.text = historyDateString[indexPath.row]
+            cell.dateLabel.text = formatter.string(from: history[indexPath.row].date!)
             let item = history[indexPath.row]
             DispatchQueue.global(qos: .userInteractive).async {
                 let image = item.uiImage

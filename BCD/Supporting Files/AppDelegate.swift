@@ -112,10 +112,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         if context.hasChanges {
             do {
                 try context.save()
-            } catch {
+            } catch let error as NSError {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                fatalError("Unresolved error \(error), \(String(describing: error._userInfo))")
+                fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         }
     }

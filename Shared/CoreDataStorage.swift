@@ -50,51 +50,6 @@ final class CoreDataStorage {
         objc_sync_exit(lock)
     }
     
-    // MARK: - Core Data stack
-    
-    private lazy var applicationDocumentsDirectory: URL = {
-        // The directory the application uses to store the Core Data store file. This code uses a directory named 'Bundle identifier' in the application's documents Application Support directory.
-        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        return urls[urls.count-1]
-    }()
-    
-    private lazy var managedObjectModel: NSManagedObjectModel = {
-        // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
-        let modelURL = Bundle.main.url(forResource: "BCD", withExtension: "momd")!
-        return NSManagedObjectModel(contentsOf: modelURL)!
-    }()
-    
-    private lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
-        // The persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it. This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
-        // Create the coordinator and store
-        let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-        let options = [
-            NSMigratePersistentStoresAutomaticallyOption: true,
-            NSInferMappingModelAutomaticallyOption: true
-        ]
-        do {
-            try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: urlInContainer, options: options)
-        } catch {
-            fatalError("Unresolved error \(error), \(String(describing: error._userInfo))")
-        }
-        return coordinator
-    }()
-    
-    // MARK: - NSManagedObject Contexts
-    public private(set) lazy var mainQueueContext: NSManagedObjectContext = {
-        // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.) This property is optional since there are legitimate error conditions that could cause the creation of the context to fail.
-        var managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-        managedObjectContext.persistentStoreCoordinator = persistentStoreCoordinator
-        return managedObjectContext
-    }()
-    
-    private lazy var privateQueueContext: NSManagedObjectContext = {
-        // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.) This property is optional since there are legitimate error conditions that could cause the creation of the context to fail.
-        var managedObjectContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
-        managedObjectContext.persistentStoreCoordinator = persistentStoreCoordinator
-        return managedObjectContext
-    }()
-    
     // MARK: - Core Data Saving support
     
     public func saveContext(_ context: NSManagedObjectContext?) {
@@ -103,16 +58,49 @@ final class CoreDataStorage {
         }
     }
     
+    // MARK: - Core Data stack
+    
+    private lazy var managedObjectModel: NSManagedObjectModel = {
+        // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
+        let modelURL = Bundle.main.url(forResource: "BCD", withExtension: "momd")!
+        return NSManagedObjectModel(contentsOf: modelURL)!
+    }()
+    
+    private let migrationOptions = [
+        NSMigratePersistentStoresAutomaticallyOption: true,
+        NSInferMappingModelAutomaticallyOption: true
+    ]
+    
+    private lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
+        // The persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it. This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
+        // Create the coordinator and store
+        let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
+        do {
+            try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: urlInContainer, options: migrationOptions)
+        } catch {
+            fatalError("Unresolved error \(error), \(String(describing: error._userInfo))")
+        }
+        return coordinator
+    }()
+    
+    // MARK: - NSManagedObject Contexts
+    
+    /// Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application).
+    public private(set) lazy var mainQueueContext: NSManagedObjectContext = {
+        var managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+        managedObjectContext.persistentStoreCoordinator = persistentStoreCoordinator
+        return managedObjectContext
+    }()
+    
+    /// Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application).
+    private lazy var privateQueueContext: NSManagedObjectContext = {
+        var managedObjectContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        managedObjectContext.persistentStoreCoordinator = persistentStoreCoordinator
+        return managedObjectContext
+    }()
 }
 
-import UIKit
-import MaterialKit
-
-extension Error {
-    func show() {
-        MKSnackbar(withTitle: localizedDescription, withDuration: nil, withTitleColor: nil, withActionButtonTitle: nil, withActionButtonColor: nil).show()
-    }
-}
+//import UIKit
 
 extension CoreDataStorage {
     private static let name = "BCD.sqlite"
@@ -127,33 +115,54 @@ extension CoreDataStorage {
         return applicationDocumentsDirectory.appendingPathComponent(CoreDataStorage.name)
     }
     
+    /// The directory the application uses to store the Core Data store file. This code uses a directory named 'Bundle identifier' in the application's documents Application Support directory.
+    private var applicationDocumentsDirectory: URL {
+        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
+    }
+}
+
+#if canImport(MaterialKit)
+import MaterialKit
+
+func show(_ error: Error) {
+    var message = error.localizedDescription
+    if let exception = error._userInfo?["NSUnderlyingException"] as? NSException,
+        let reason = exception.reason {
+        message += "(\(reason))"
+    }
+    show(message)
+}
+
+func show(_ message: String) {
+    print(message)
+    #warning("Snackbar not showing???")
+    MKSnackbar(withTitle: message, withDuration: nil, withTitleColor: nil, withActionButtonTitle: nil, withActionButtonColor: nil).show()
+}
+
+extension CoreDataStorage {
     func saveCoreDataModelToDocuments() {
         do {
-            let backupName = "\(CoreDataStorage.name).bak"
-            if FileManager.default.fileExists(atPath: urlInDocuments.path) {
-                let backupURL = applicationDocumentsDirectory.appendingPathComponent(backupName)
-                if FileManager.default.fileExists(atPath: backupURL.path) {
-                    try FileManager.default.removeItem(at: backupURL)
-                }
-                _ = try FileManager.default.replaceItemAt(
-                    urlInDocuments, withItemAt: urlInContainer,
-                    backupItemName: backupName, options: .withoutDeletingBackupItem
-                )
-            } else {
-                try FileManager.default.copyItem(at: urlInContainer, to: urlInDocuments)
-            }
+            #warning("Not really working")
+            try persistentStoreCoordinator.migratePersistentStore(persistentStoreCoordinator.persistentStore(for: urlInContainer)!, to: urlInDocuments, options: nil, withType: NSSQLiteStoreType)
+            show("Export Complete")
         } catch {
-            error.show()
+            show(error)
         }
     }
     
     func replaceCoreDataModelWithOneInDocuments() {
-        do {
-            if FileManager.default.fileExists(atPath: urlInDocuments.path) {
-                _ = try FileManager.default.replaceItemAt(urlInContainer, withItemAt: urlInDocuments)
+        if FileManager.default.fileExists(atPath: urlInDocuments.path) {
+            do {
+                try persistentStoreCoordinator.remove(persistentStoreCoordinator.persistentStore(for: urlInContainer)!)
+                try persistentStoreCoordinator.replacePersistentStore(at: urlInContainer, destinationOptions: nil, withPersistentStoreFrom: urlInDocuments, sourceOptions: nil, ofType: NSSQLiteStoreType)
+                try persistentStoreCoordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: urlInContainer, options: migrationOptions)
+                show("Import Complete")
+            } catch {
+                show(error)
             }
-        } catch {
-            error.show()
+        } else {
+            show("Nothing to Import")
         }
     }
 }
+#endif

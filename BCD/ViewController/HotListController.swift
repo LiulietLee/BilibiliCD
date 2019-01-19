@@ -55,14 +55,14 @@ class HotListController: UIViewController, UITableViewDelegate, UITableViewDataS
         listProvider.getHotList { [weak self] hotList in
             guard let self = self, let list = hotList else { return }
             for item in list {
-                self.hotList.append((info: item, image: UIImage(named: "placeholder_cover")))
+                self.hotList.append((info: item, image: #imageLiteral(resourceName: "placeholder_cover")))
             }
             
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
                 self.tableView.reloadData()
                 self.loadingView.dismiss()
-                if (!self.isAnimatedOnce) {
+                if !self.isAnimatedOnce {
                     self.animateView()
                 }
             }
