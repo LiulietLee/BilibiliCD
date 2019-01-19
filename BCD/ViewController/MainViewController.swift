@@ -169,5 +169,19 @@ class MainViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
-    
+}
+
+extension MainViewController {
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        guard motion == .motionShake else { return }
+        let alert = UIAlertController(title: "GDPR", message: "管理数据（试用）", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "导出", style: .default) { _ in
+            CoreDataStorage.sharedInstance.saveCoreDataModelToDocuments()
+        })
+        alert.addAction(UIAlertAction(title: "导入", style: .destructive) { _ in
+            CoreDataStorage.sharedInstance.replaceCoreDataModelWithOneInDocuments()
+        })
+        alert.addAction(UIAlertAction(title: "取消", style: .cancel))
+        present(alert, animated: true)
+    }
 }

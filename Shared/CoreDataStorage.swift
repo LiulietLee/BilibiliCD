@@ -72,10 +72,8 @@ final class CoreDataStorage {
             NSMigratePersistentStoresAutomaticallyOption: true,
             NSInferMappingModelAutomaticallyOption: true
         ]
-        let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.Future-Code-Institute.bili_cita_group")!
-        let url = directory.appendingPathComponent("BCD.sqlite")
         do {
-            try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: url, options: options)
+            try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: urlInContainer, options: options)
         } catch {
             fatalError("Unresolved error \(error), \(String(describing: error._userInfo))")
         }
@@ -105,4 +103,57 @@ final class CoreDataStorage {
         }
     }
     
+}
+
+import UIKit
+import MaterialKit
+
+extension Error {
+    func show() {
+        MKSnackbar(withTitle: localizedDescription, withDuration: nil, withTitleColor: nil, withActionButtonTitle: nil, withActionButtonColor: nil).show()
+    }
+}
+
+extension CoreDataStorage {
+    private static let name = "BCD.sqlite"
+    
+    var urlInContainer: URL {
+        let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.Future-Code-Institute.bili_cita_group")!
+        let url = directory.appendingPathComponent(CoreDataStorage.name)
+        return url
+    }
+    
+    var urlInDocuments: URL {
+        return applicationDocumentsDirectory.appendingPathComponent(CoreDataStorage.name)
+    }
+    
+    func saveCoreDataModelToDocuments() {
+        do {
+            let backupName = "\(CoreDataStorage.name).bak"
+            if FileManager.default.fileExists(atPath: urlInDocuments.path) {
+                let backupURL = applicationDocumentsDirectory.appendingPathComponent(backupName)
+                if FileManager.default.fileExists(atPath: backupURL.path) {
+                    try FileManager.default.removeItem(at: backupURL)
+                }
+                _ = try FileManager.default.replaceItemAt(
+                    urlInDocuments, withItemAt: urlInContainer,
+                    backupItemName: backupName, options: .withoutDeletingBackupItem
+                )
+            } else {
+                try FileManager.default.copyItem(at: urlInContainer, to: urlInDocuments)
+            }
+        } catch {
+            error.show()
+        }
+    }
+    
+    func replaceCoreDataModelWithOneInDocuments() {
+        do {
+            if FileManager.default.fileExists(atPath: urlInDocuments.path) {
+                _ = try FileManager.default.replaceItemAt(urlInContainer, withItemAt: urlInDocuments)
+            }
+        } catch {
+            error.show()
+        }
+    }
 }

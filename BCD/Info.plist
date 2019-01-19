@@ -31,6 +31,8 @@
 	<string>我们需要通过访问照片应用来保存封面</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>我们需要通过访问照片应用来保存封面</string>
+	<key>UIFileSharingEnabled</key>
+	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
