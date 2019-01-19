@@ -11,15 +11,12 @@ import UIKit
 class ColoredNavController: UINavigationController {
     var navbarTintColor: UIColor { return .black }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationBar.barTintColor = navbarTintColor
         navigationBar.tintColor = .white
         navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
+        navigationBar.barStyle = .black
     }
 }
 
