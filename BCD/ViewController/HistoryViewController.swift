@@ -73,9 +73,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         menu.action = #selector(SWRevealViewController.revealToggle(_:))
         view.addGestureRecognizer(revealViewController().panGestureRecognizer())
         
-        if needToDisplayHisTut {
-            showTutMessage()
-        }
+        promptToShowTutorialIfNeeded()
         
         motionDetector.delegate = self
         motionDetector.beginDetect()
@@ -108,7 +106,8 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         isAnimatedOnce = true
     }
     
-    private func showTutMessage() {
+    private func promptToShowTutorialIfNeeded() {
+        guard needToDisplayHistoryTutorial else { return }
         let dialog = LLDialog()
         dialog.title = "(=・ω・=)"
         dialog.message = "想看看历史记录「里世界」的使用方法么？"
@@ -119,7 +118,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @objc private func showTutorial() {
         let vc = HisTutViewController()
-        present(vc, animated: true, completion: nil)
+        present(vc, animated: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

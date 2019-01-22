@@ -32,6 +32,6 @@ class TutorialContentViewController: UIViewController {
 
     @IBAction func goInside() {
         let vc = HisTutViewController()
-        present(vc, animated: true, completion: nil)
+        present(vc, animated: true)
     }
 }

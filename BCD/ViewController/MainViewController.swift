@@ -80,13 +80,8 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
         
-        if needToDisplayAppTutorial {
-            showAppTutorialMessage()
-        }
-        
-        if needToDisplayAutoHidTutorial {
-            showAutoHidTutorialMessage()
-        }
+        promptToShowAppTutorialIfNeeded()
+        promptToShowAutoHidTutorialIfNeeded()
         
         setSwitchCoverTypeButton()
     }
@@ -112,7 +107,8 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         cover = BilibiliCover(number: cover.number, type: CoverType(rawValue: nextType)!)
     }
     
-    private func showAutoHidTutorialMessage() {
+    private func promptToShowAutoHidTutorialIfNeeded() {
+        guard needToDisplayAutoHideTutorial else { return }
         let dialog = LLDialog()
         dialog.title = "(=・ω・=)"
         dialog.message = "想了解下「自动和谐」的什么东西嘛？"
@@ -121,7 +117,8 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         dialog.show()
     }
     
-    private func showAppTutorialMessage() {
+    private func promptToShowAppTutorialIfNeeded() {
+        guard needToDisplayAppTutorial else { return }
         let dialog = LLDialog()
         dialog.title = "(=・ω・=)"
         dialog.message = "想看看这个 App 的使用说明嘛？"
@@ -133,12 +130,12 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     @objc private func showAutoHidTutorial() {
         let vc = HisTutViewController()
         vc.page = "AutoHide"
-        present(vc, animated: true, completion: nil)
+        present(vc, animated: true)
     }
     
     @objc private func showAppTutorial() {
         let tutorialViewController = storyboard?.instantiateViewController(withIdentifier: "TutorialViewController") as! TutorialViewController
-        present(tutorialViewController, animated: true, completion: nil)
+        present(tutorialViewController, animated: true)
     }
     
     @IBAction func numberButtonTapped(_ sender: UIButton) {

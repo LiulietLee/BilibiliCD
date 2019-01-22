@@ -50,7 +50,7 @@ class Waifu2xViewController: UIViewController, ScalingViewControllerDelegate, UI
     @IBAction func openTut() {
         let vc = HisTutViewController()
         vc.page = "AboutWaifu2x"
-        present(vc, animated: true, completion: nil)
+        present(vc, animated: true)
     }
     
     @IBAction func startScale() {

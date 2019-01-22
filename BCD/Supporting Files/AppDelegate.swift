@@ -72,8 +72,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func showAlertAppDelegate(title: String, message: String, buttonTitle: String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: buttonTitle, style: .default, handler: nil))
-        window?.rootViewController?.present(alert, animated: false, completion: nil)
+        alert.addAction(UIAlertAction(title: buttonTitle, style: .default))
+        window?.rootViewController?.present(alert, animated: false)
     }
     
     // MARK: - Core Data stack

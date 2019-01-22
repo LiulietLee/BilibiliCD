@@ -23,7 +23,7 @@ class TutorialViewController: UIViewController, UIPageViewControllerDataSource {
         pageController = storyboard?.instantiateViewController(withIdentifier: "page") as! TutorialPageViewController
         pageController.dataSource = self
         let viewControllers = [viewControllerAt(index: 0)]
-        pageController.setViewControllers(viewControllers, direction: .forward, animated: true, completion: nil)
+        pageController.setViewControllers(viewControllers, direction: .forward, animated: true)
         pageController.view.frame = CGRect(x: 0, y: 20, width: size.width, height: size.height - 60)
         
         if UIDevice().isiPhoneX {
@@ -82,6 +82,6 @@ class TutorialViewController: UIViewController, UIPageViewControllerDataSource {
     }
     
     @IBAction func goBack() {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true)
     }
 }

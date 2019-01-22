@@ -8,40 +8,26 @@
 
 import UIKit
 
+private func never(_ key: String) -> Bool {
+    let defaults = UserDefaults.standard
+    
+    if defaults.bool(forKey: key) {
+        return false
+    } else {
+        defaults.set(true, forKey: key)
+        return true
+    }
+}
+
 public var needToDisplayAppTutorial: Bool {
-    let defaults = UserDefaults.standard
-    
-    if defaults.string(forKey: "needToDisplayAppTutorial") != nil {
-        return false
-    } else {
-        defaults.set(true, forKey: "needToDisplayAppTutorial")
-        return true
-    }
+    return never("needToDisplayAppTutorial")
 }
 
-public var needToDisplayHisTut: Bool {
-    let defaults = UserDefaults.standard
-    
-    if defaults.string(forKey: "isNeedToDisplayHisTut") != nil {
-        return false
-    } else {
-        defaults.set(true, forKey: "isNeedToDisplayHisTut")
-        return true
-    }
+public var needToDisplayHistoryTutorial: Bool {
+    return never("isNeedToDisplayHisTut")
 }
 
-public var needToDisplayAutoHidTutorial: Bool {
-    let defaults = UserDefaults.standard
-    
-    if defaults.string(forKey: "isNeedToDisplayHisTut") != nil {
-        if defaults.string(forKey: "isNeedToDisplayAutoHis") != nil {
-            return false
-        } else {
-            defaults.set(true, forKey: "isNeedToDisplayAutoHis")
-            return true
-        }
-    } else {
-        return false
-    }
-
+public var needToDisplayAutoHideTutorial: Bool {
+    return UserDefaults.standard.bool(forKey: "isNeedToDisplayHisTut")
+        && never("isNeedToDisplayAutoHis")
 }

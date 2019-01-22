@@ -45,7 +45,7 @@ class SetHistoryNumViewController: UIViewController {
     
     private func goBack() {
         numberField.resignFirstResponder()
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true)
     }
     
     @IBAction func saveButtonTapped() {

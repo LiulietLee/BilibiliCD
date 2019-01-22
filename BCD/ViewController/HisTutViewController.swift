@@ -51,6 +51,6 @@ class HisTutViewController: UIViewController {
     }
     
     @objc private func goBack() {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true)
     }
 }

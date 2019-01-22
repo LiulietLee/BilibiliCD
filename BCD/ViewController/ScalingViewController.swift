@@ -48,7 +48,7 @@ class ScalingViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         if protoc[1] == 0 && protoc[2] == 0 {
             self.delegate?.scaleSucceed(scaledImage: image)
-            self.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: true)
         } else {
             scaleImage()
         }

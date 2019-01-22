@@ -98,7 +98,6 @@ class ShareViewController: UIViewController, VideoCoverDelegate {
     private func downloadImage(_ image: Image) {
         ImageSaver.saveImage(image)
     }
-
 }
 
 extension NSItemProvider {
