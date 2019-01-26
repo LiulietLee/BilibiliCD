@@ -14,29 +14,9 @@ protocol VideoCoverDelegate: class {
     func cannotFindVideo()
 }
 
-protocol UpuserImgDelegate: class {
-    func gotUpusers(_ ups: [Upuser])
-    func connectError()
-    func cannotGetUser()
-}
-
-struct Upuser: Decodable {
-    var name: String
-    var videoNum: String
-    var fansNum: String
-    var imgURL: String
-    enum CodingKeys: String, CodingKey {
-        case name
-        case videoNum = "videonum"
-        case fansNum = "fansnum"
-        case imgURL = "imgurl"
-    }
-}
-
 class CoverInfoProvider: AbstractProvider {
     
     weak var delegateForVideo: VideoCoverDelegate?
-    weak var delegateForUpuser: UpuserImgDelegate?
     
     private func updateServerRecord(type: CoverType, nid: UInt64, info: Info) {
         guard let url = APIFactory.getAPI(byType: type, andNID: Int(nid), andInfo: info, env: env) else {
