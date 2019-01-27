@@ -10,12 +10,12 @@ import UIKit
 
 open class LLDialog: UIView {
 
-    // MARK: Properties
+    // MARK: - Properties
 
     /// Title of LLDialog
-    open lazy var title: String? = "Title"
+    open private(set) var title: String?
     /// Message of LLDialog
-    open lazy var message: String? = "This is the message."
+    open private(set) var message: String?
 
     private lazy var negativeButton = UIButton()
     private lazy var positiveButton = UIButton()
@@ -24,12 +24,13 @@ open class LLDialog: UIView {
     private lazy var cover: UIView = {
         let cover = UIView()
         cover.backgroundColor = .black
+        cover.translatesAutoresizingMaskIntoConstraints = false
         return cover
     }()
     private var negativeText: String?
     private lazy var positiveText = "OK"
 
-    // MARK: Auxiliaries
+    // MARK: - Auxiliaries
 
     private var superViewSize: CGSize! {
         return superview?.bounds.size
@@ -43,15 +44,37 @@ open class LLDialog: UIView {
         layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: 2).cgPath
     }
 
-    // MARK: Configure controls
+    // MARK: - Configure controls
 
-    /**
-     Refresh all controls, show dialog in application's key window, add observer to handle rotation
-     */
+    /// Set the title of this dialog.
+    ///
+    /// - Parameter title: title to display in this dialog.
+    /// - Returns: `self`
+    @discardableResult
+    open func set(title: String?) -> LLDialog {
+        self.title = title
+        return self
+    }
+
+    /// Set the message of this dialog.
+    ///
+    /// - Parameter message: message to display in this dialog.
+    /// - Returns: `self`
+    @discardableResult
+    open func set(message: String?) -> LLDialog {
+        self.message = message
+        return self
+    }
+
+    /// Refresh all controls, show dialog in application's key window, add observer to handle rotation
     @available(iOSApplicationExtension, unavailable, message: "This method is NS_EXTENSION_UNAVAILABLE.")
+    @available(watchOSApplicationExtension, unavailable, message: "This method is NS_EXTENSION_UNAVAILABLE.")
+    @available(tvOSApplicationExtension, unavailable, message: "This method is NS_EXTENSION_UNAVAILABLE.")
+    @available(iOSMacApplicationExtension, unavailable, message: "This method is NS_EXTENSION_UNAVAILABLE.")
+    @available(OSXApplicationExtension, unavailable, message: "This method is NS_EXTENSION_UNAVAILABLE.")
     open func show() {
-        let keyWindow = UIApplication.value(forKeyPath: #keyPath(UIApplication.shared.keyWindow))
-        show(in: keyWindow as? UIWindow)
+        let keyWindow = UIApplication.shared.keyWindow
+        show(in: keyWindow)
     }
 
     /**
@@ -64,6 +87,13 @@ open class LLDialog: UIView {
         alpha = 0.0
         cover.alpha = 0.0
         parent.addSubview(cover)
+        let constraints = [
+            cover.constraint(.centerX, equalTo: parent),
+            cover.constraint(.centerY, equalTo: parent),
+            cover.constraint(.width, equalTo: parent),
+            cover.constraint(.height, equalTo: parent)
+        ]
+        parent.addConstraints(constraints)
         parent.addSubview(self)
         superview!.bringSubviewToFront(self)
 
@@ -73,7 +103,7 @@ open class LLDialog: UIView {
         UIView.animate(withDuration: 0.3) { [weak self] in self?.cover.alpha = 0.6 }
         UIView.animate(withDuration: 0.3) { [weak self] in self?.alpha = 1.0 }
 
-        NotificationCenter.default.addObserver(self, selector: #selector(LLDialog.placeControls), name: UIDevice.orientationDidChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(placeControls), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
 
     /**
@@ -107,14 +137,13 @@ open class LLDialog: UIView {
         button.setTitle(title, for: .normal)
         button.setTitleColor(#colorLiteral(red: 0.07, green: 0.58, blue: 0.96, alpha: 1), for: .normal)
         button.titleLabel?.font = button.titleLabel?.font.withSize(16)
-        button.contentEdgeInsets = UIEdgeInsets.init(top: 0, left: 8, bottom: 0, right: 8)
+        button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
         button.sizeToFit()
-        button.addTarget(self, action: #selector(LLDialog.dismiss), for: .touchUpInside)
+        button.addTarget(self, action: #selector(dismiss), for: .touchUpInside)
     }
 
     /// Configure controls and add them to the view
     private func addControls() {
-
         configure(&titleLabel, withText: title, font: "HelveticaNeue-Medium", fontSize: 18)
         configure(&contentLabel, withText: message, fontSize: 16, textColor: #colorLiteral(red: 0.49, green: 0.49, blue: 0.49, alpha: 1))
 
@@ -155,7 +184,6 @@ open class LLDialog: UIView {
 
     /// Place all controls to correct position.
     @objc private func placeControls() {
-
         let width = superViewSize.width * (7 / 9)
 
         place(label: &titleLabel, width: width, y: 24)
@@ -179,29 +207,28 @@ open class LLDialog: UIView {
         let negativeButtonWidth = negativeButton.frame.width
         place(button: &positiveButton, x: positiveButtonX, y: buttonY)
         place(button: &negativeButton, x: positiveButtonX - 8 - negativeButtonWidth, y: buttonY)
-
-        cover.frame.size = superViewSize
     }
 
-    // MARK: Button actions
+    // MARK: - Button actions
 
     /**
      Function about configuring positiveButton
 
      - parameters:
-     - title: Title of positive button
+     - title: Title of positive button. Blank is the same as "OK".
      - target: The target object—that is, the object whose action method is called. Set to be nil by default, which means UIKit searches the responder chain for an object that responds to the specified action message and delivers the message to that object.
      - action: A selector identifying the action method to be called. Set to be nil by dafault, which means after taping the button, the LLDialog view disappears.
      */
-    open func setPositiveButton(withTitle title: String, target: Any? = nil,  action possibleFunction: Selector? = nil) {
+    @discardableResult
+    open func setPositiveButton(withTitle title: String = "", target: Any? = nil, action possibleFunction: Selector? = nil) -> LLDialog {
         if !title.isBlank {
             positiveText = title
         }
         if let function = possibleFunction {
             positiveButton.addTarget(target, action: function, for: .touchUpInside)
         }
+        return self
     }
-
 
     /**
      Function about configuring negativeButton
@@ -210,11 +237,13 @@ open class LLDialog: UIView {
      - parameter target:   The target object—that is, the object whose action method is called. Set to be nil by default, which means UIKit searches the responder chain for an object that responds to the specified action message and delivers the message to that object.
      - parameter function: A selector identifying the action method to be called. Set to be nil by dafault, which means after taping the button, the LLDialog view disappears.
      */
-    open func setNegativeButton(withTitle title: String? = nil, target: Any? = nil, action possibleFunction: Selector? = nil) {
+    @discardableResult
+    open func setNegativeButton(withTitle title: String? = nil, target: Any? = nil, action possibleFunction: Selector? = nil) -> LLDialog {
         negativeText = title
         if let function = possibleFunction {
             negativeButton.addTarget(target, action: function, for: .touchUpInside)
         }
+        return self
     }
 
     /// Disapper the view when tapped button, remove observer
@@ -233,9 +262,69 @@ open class LLDialog: UIView {
     }
 }
 
+// MARK: - Convenience Init
+
+extension LLDialog {
+    /// Initialize an LLDialog with all cutomizable parameters.
+    ///
+    /// - Parameters:
+    ///   - title: title
+    ///   - message: message
+    ///   - positiveButton: title and action for positive button
+    ///   - negativeButton: title and action for negative button
+    public convenience init(title: String?,
+                            message: String?,
+                            positiveButton: Button,
+                            negativeButton: Button? = nil) {
+        self.init()
+        set(title: title)
+        set(message: message)
+        setPositiveButton(withTitle: positiveButton.title ?? "",
+                          target: positiveButton.onTouchUpInside?.target,
+                          action: positiveButton.onTouchUpInside?.action)
+        setNegativeButton(withTitle: negativeButton?.title,
+                          target: negativeButton?.onTouchUpInside?.target,
+                          action: negativeButton?.onTouchUpInside?.action)
+    }
+
+    /// - target: The target object—that is, the object whose action method is called. If you specify `nil`, UIKit searches the responder chain for an object that responds to the specified action message and delivers the message to that object.
+    /// - action: A selector identifying the action method to be called. You may specify a selector whose signature matches any of the signatures in UIControl.
+    public typealias TargetAction = (target: Any?, action: Selector)
+    
+    /// A button on LLDialog.
+    public struct Button {
+        fileprivate let title: String?
+        fileprivate let onTouchUpInside: TargetAction?
+        
+        /// Constructs a button on LLDialog.
+        ///
+        /// - Parameters:
+        ///   - title: text on the button. Defaults to "OK" for positive button.
+        ///   - onTouchUpInside: `nil` is the same as `dismiss`.
+        public init(title: String? = nil, onTouchUpInside: TargetAction? = nil) {
+            self.title = title
+            self.onTouchUpInside = onTouchUpInside
+        }
+    }
+}
+
+// MARK: - Other Helpers
+
 extension String {
     /// To check if the string contains characters other than white space and \n
     fileprivate var isBlank: Bool {
         return trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+}
+
+extension UIView {
+    fileprivate func constraint(_ attribute: NSLayoutConstraint.Attribute,
+                                equalTo anotherView: UIView)
+        -> NSLayoutConstraint {
+            return NSLayoutConstraint(
+                item: self, attribute: attribute, relatedBy: .equal,
+                toItem: anotherView, attribute: attribute,
+                multiplier: 1, constant: 0
+            )
     }
 }

@@ -9,6 +9,7 @@
 import UIKit
 import SWRevealViewController
 import ViewAnimator
+import LLDialog
 
 class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate, SetHistoryNumDelegate, MotionDetectorDelegate {
     
@@ -108,12 +109,13 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     private func promptToShowTutorialIfNeeded() {
         guard needToDisplayHistoryTutorial else { return }
-        let dialog = LLDialog()
-        dialog.title = "(=・ω・=)"
-        dialog.message = "想看看历史记录「里世界」的使用方法么？"
-        dialog.setNegativeButton(withTitle: "不想")
-        dialog.setPositiveButton(withTitle: "好的", target: self, action: #selector(showTutorial))
-        dialog.show()
+        
+        LLDialog()
+            .set(title: "(=・ω・=)")
+            .set(message: "想看看历史记录「里世界」的使用方法么？")
+            .setNegativeButton(withTitle: "不想")
+            .setPositiveButton(withTitle: "好的", target: self, action: #selector(showTutorial))
+            .show()
     }
     
     @objc private func showTutorial() {
@@ -153,12 +155,12 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     @IBAction func clearButtonTapped(_ sender: UIBarButtonItem) {
-        let dialog = LLDialog()
-        dialog.title = "乃确定不是手滑了么"
-        dialog.message = "真的要清空历史记录嘛？"
-        dialog.setPositiveButton(withTitle: "我手滑了")
-        dialog.setNegativeButton(withTitle: "确认清空", target: self, action: #selector(clearHistory))
-        dialog.show()
+        LLDialog()
+            .set(title: "乃确定不是手滑了么")
+            .set(message: "真的要清空历史记录嘛？")
+            .setPositiveButton(withTitle: "我手滑了")
+            .setNegativeButton(withTitle: "确认清空", target: self, action: #selector(clearHistory))
+            .show()
     }
     
     @objc private func clearHistory() {

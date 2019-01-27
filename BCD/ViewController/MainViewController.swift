@@ -9,6 +9,7 @@
 import UIKit
 import SWRevealViewController
 import ViewAnimator
+import LLDialog
 
 class MainViewController: UIViewController, UITextFieldDelegate {
     
@@ -109,22 +110,22 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     
     private func promptToShowAutoHidTutorialIfNeeded() {
         guard needToDisplayAutoHideTutorial else { return }
-        let dialog = LLDialog()
-        dialog.title = "(=・ω・=)"
-        dialog.message = "想了解下「自动和谐」的什么东西嘛？"
-        dialog.setNegativeButton(withTitle: "不想")
-        dialog.setPositiveButton(withTitle: "好的", target: self, action: #selector(showAutoHidTutorial))
-        dialog.show()
+        LLDialog()
+            .set(title: "(=・ω・=)")
+            .set(message: "想了解下「自动和谐」的什么东西嘛？")
+            .setNegativeButton(withTitle: "不想")
+            .setPositiveButton(withTitle: "好的", target: self, action: #selector(showAutoHidTutorial))
+            .show()
     }
     
     private func promptToShowAppTutorialIfNeeded() {
         guard needToDisplayAppTutorial else { return }
-        let dialog = LLDialog()
-        dialog.title = "(=・ω・=)"
-        dialog.message = "想看看这个 App 的使用说明嘛？"
-        dialog.setNegativeButton(withTitle: "不想")
-        dialog.setPositiveButton(withTitle: "好的", target: self, action: #selector(showAppTutorial))
-        dialog.show()
+        LLDialog()
+            .set(title: "(=・ω・=)")
+            .set(message: "想看看这个 App 的使用说明嘛？")
+            .setNegativeButton(withTitle: "不想")
+            .setPositiveButton(withTitle: "好的", target: self, action: #selector(showAppTutorial))
+            .show()
     }
     
     @objc private func showAutoHidTutorial() {

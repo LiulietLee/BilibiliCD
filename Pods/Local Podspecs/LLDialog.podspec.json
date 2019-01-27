@@ -1,0 +1,25 @@
+{
+  "name": "LLDialog",
+  "version": "1.2.0",
+  "summary": "Material design dialog for iOS written in Swift.",
+  "description": "Material design dialog for iOS written in Swift.",
+  "homepage": "https://github.com/LiulietLee/LLDialog",
+  "screenshots": "https://cloud.githubusercontent.com/assets/9763162/12781499/b909ede8-caaf-11e5-8dac-d5fce055aec0.png",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE.txt"
+  },
+  "authors": {
+    "_liet": "lee.liuliet@hotmail.com"
+  },
+  "social_media_url": "https://space.bilibili.com/4056345/",
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source": {
+    "git": "https://github.com/LiulietLee/LLDialog.git",
+    "tag": "1.2.0"
+  },
+  "source_files": "Source",
+  "swift_version": "4.2"
+}

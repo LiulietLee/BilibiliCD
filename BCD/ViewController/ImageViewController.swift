@@ -10,6 +10,7 @@ import UIKit
 import ViewAnimator
 import MobileCoreServices
 import MaterialKit
+import LLDialog
 
 class ImageViewController: UIViewController, Waifu2xDelegate {
     
@@ -161,19 +162,20 @@ class ImageViewController: UIViewController, Waifu2xDelegate {
     private func imageSaved(successfully: Bool, error: Error?) {
         DispatchQueue.main.async { [weak self] in
             guard let `self` = self else { return }
-            let dialog = LLDialog()
             if !successfully || error != nil {
-                dialog.title = "啊叻？！"
-                dialog.message = "保存出错了Σ( ￣□￣||)"
-                dialog.setNegativeButton(withTitle: "好吧")
-                dialog.setPositiveButton(withTitle: "再试一次", target: self, action: #selector(self.saveImage))
-                dialog.show()
+                LLDialog()
+                    .set(title: "啊叻？！")
+                    .set(message: "保存出错了Σ( ￣□￣||)")
+                    .setNegativeButton(withTitle: "好吧")
+                    .setPositiveButton(withTitle: "再试一次", target: self, action: #selector(self.saveImage))
+                    .show()
                 print(error ?? "Unknown error")
             } else {
-                dialog.title = "保存成功！"
-                dialog.message = "封面被成功保存(〜￣△￣)〜"
-                dialog.setPositiveButton(withTitle: "OK")
-                dialog.show()
+                LLDialog()
+                    .set(title: "保存成功！")
+                    .set(message: "封面被成功保存(〜￣△￣)〜")
+                    .setPositiveButton(withTitle: "OK")
+                    .show()
             }
         }
     }
@@ -219,11 +221,11 @@ class ImageViewController: UIViewController, Waifu2xDelegate {
         manager.replaceOriginCover(of: itemFromHistory!, with: scaledImage)
         scaleButton.isEnabled = false
         
-        let dialog = LLDialog()
-        dialog.title = "(｡･ω･｡)"
-        dialog.message = "放大完成~"
-        dialog.setPositiveButton(withTitle: "嗯")
-        dialog.show()
+        LLDialog()
+            .set(title: "(｡･ω･｡)")
+            .set(message: "放大完成~")
+            .setPositiveButton(withTitle: "嗯")
+            .show()
     }
     
     private func addItemToDB(image: Image) {

@@ -5,5 +5,6 @@ target 'BCD' do
     use_frameworks!
     pod 'SWRevealViewController', :git => 'https://github.com/John-Lluch/SWRevealViewController.git'
     pod 'MaterialKit', :git => 'https://github.com/ApolloZhu/MaterialKit.git'
+    pod 'LLDialog', :git => 'https://github.com/LiulietLee/LLDialog.git'
     pod 'ViewAnimator'
 end

@@ -1,9 +1,11 @@
 PODS:
+  - LLDialog (1.2.0)
   - MaterialKit (0.6.4)
   - SWRevealViewController (2.4.0)
   - ViewAnimator (2.2.2)
 
 DEPENDENCIES:
+  - LLDialog (from `https://github.com/LiulietLee/LLDialog.git`)
   - MaterialKit (from `https://github.com/ApolloZhu/MaterialKit.git`)
   - SWRevealViewController (from `https://github.com/John-Lluch/SWRevealViewController.git`)
   - ViewAnimator
@@ -13,12 +15,17 @@ SPEC REPOS:
     - ViewAnimator
 
 EXTERNAL SOURCES:
+  LLDialog:
+    :git: https://github.com/LiulietLee/LLDialog.git
   MaterialKit:
     :git: https://github.com/ApolloZhu/MaterialKit.git
   SWRevealViewController:
     :git: https://github.com/John-Lluch/SWRevealViewController.git
 
 CHECKOUT OPTIONS:
+  LLDialog:
+    :commit: d26a1c8c51101f1b50f5f2eaa1c2c893e6d21a57
+    :git: https://github.com/LiulietLee/LLDialog.git
   MaterialKit:
     :commit: 6f7618bbdcbbebb462e0572ebd4c160e76123f53
     :git: https://github.com/ApolloZhu/MaterialKit.git
@@ -27,10 +34,11 @@ CHECKOUT OPTIONS:
     :git: https://github.com/John-Lluch/SWRevealViewController.git
 
 SPEC CHECKSUMS:
+  LLDialog: 471eb81049e4912431383c0f192ee7dc9b4d4366
   MaterialKit: 47adee85449c3c5b4c29bb1a6a83a94b47504adc
   SWRevealViewController: b653f339865208c97be99a24876545f5be0cc4bb
   ViewAnimator: 6eaa112663b6a2d9e6b2573df65b416dd051cbe4
 
-PODFILE CHECKSUM: 7a3df114c8b6f0a900e75264b07059c6dc5b8123
+PODFILE CHECKSUM: 5fc09d521b522c1af7b9e5c1a706efa01bc0eb8a
 
 COCOAPODS: 1.5.3
