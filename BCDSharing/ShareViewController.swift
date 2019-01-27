@@ -10,7 +10,7 @@ import UIKit
 import Social
 import MobileCoreServices
 
-class ShareViewController: UIViewController, VideoCoverDelegate {
+class ShareViewController: UIViewController {
 
     private var url = ""
     private var author = ""
@@ -26,7 +26,6 @@ class ShareViewController: UIViewController, VideoCoverDelegate {
     override func viewDidLoad() {
         frameView.layer.masksToBounds = true
         frameView.layer.cornerRadius = 10.0
-        coverInfoProvider.delegateForVideo = self
         let extensionItem = extensionContext?.inputItems[0] as! NSExtensionItem
         let contentTypeURL = kUTTypeURL as String
         for attachment in extensionItem.attachments! where attachment.isURL {
@@ -46,10 +45,18 @@ class ShareViewController: UIViewController, VideoCoverDelegate {
             return
         }
         self.cover = cover
-        coverInfoProvider.getCoverInfo(byType: cover.type, andNID: cover.number)
+        coverInfoProvider.getCoverInfoBy(type: cover.type, andStringID: cover.number) { info in
+            DispatchQueue.main.async { [weak self] in
+                if let info = info {
+                    self?.updateUIFrom(info: info)
+                } else {
+                    self?.cannotFindVideo()
+                }
+            }
+        }
     }
     
-    func gotVideoInfo(_ info: Info) {
+    private func updateUIFrom(info: Info) {
         titleString = info.title
         author = info.author
         url = info.imageURL
@@ -76,12 +83,7 @@ class ShareViewController: UIViewController, VideoCoverDelegate {
         }
     }
     
-    func connectError() {
-        message.text = "连接不到服务器呢"
-        disappear()
-    }
-    
-    func cannotFindVideo() {
+    private func cannotFindVideo() {
         message.text = "找不到封面呢"
         disappear()
     }

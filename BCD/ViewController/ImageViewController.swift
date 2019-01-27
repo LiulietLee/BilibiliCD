@@ -11,7 +11,7 @@ import ViewAnimator
 import MobileCoreServices
 import MaterialKit
 
-class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate {
+class ImageViewController: UIViewController, Waifu2xDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView! {
@@ -66,7 +66,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
     
     @objc private func goBackIfNeeded() {
         if itemFromHistory != nil, itemFromHistory!.isHidden {
-            let storyBoard = UIStoryboard(name: "Main", bundle:nil)
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "main") as! MainViewController
             
             show(nextViewController, sender: self)
@@ -77,11 +77,18 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
         super.viewDidLoad()
         
         isShowingImage = true
-        coverInfoProvider.delegateForVideo = self
         if let cover = cover {
             title = cover.shortDescription
             if itemFromHistory == nil {
-                coverInfoProvider.getCoverInfo(byType: cover.type, andNID: cover.number)
+                coverInfoProvider.getCoverInfoBy(type: cover.type, andStringID: cover.number) { info in
+                    DispatchQueue.main.async { [weak self] in
+                        if let info = info {
+                            self?.updateUIFrom(info: info)
+                        } else {
+                            self?.cannotFindVideo()
+                        }
+                    }
+                }
             }
         } else {
             title = "No av number"
@@ -183,7 +190,7 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
         pushButton.isEnabled = false
     }
     
-    func gotVideoInfo(_ info: Info) {
+    private func updateUIFrom(info: Info) {
         reference.info = info
         
         assetProvider.getImage(fromUrlPath: info.imageURL) { img in
@@ -228,18 +235,10 @@ class ImageViewController: UIViewController, VideoCoverDelegate, Waifu2xDelegate
         }
     }
     
-    func connectError() {
-        titleLabel.text = "啊叻？"
-        authorLabel.text = "连不上服务器了？"
-        urlLabel.text = "提示：如果一直提示这个可能是我们的服(V)务(P)器(S)炸了，你可以去「关于我们」页面找我们反映情况哦~"
-        loadingView.dismiss()
-        imageView.image = #imageLiteral(resourceName: "error_image")
-    }
-    
-    func cannotFindVideo() {
+    private func cannotFindVideo() {
         titleLabel.text = "啊叻？"
         authorLabel.text = "视频不见了？"
-        urlLabel.text = "emmmmmmmm... 大概这个视频是真的不见了吧 (\"▔□▔)/"
+        urlLabel.text = ""
         loadingView.dismiss()
         imageView.image = #imageLiteral(resourceName: "novideo_image")
     }

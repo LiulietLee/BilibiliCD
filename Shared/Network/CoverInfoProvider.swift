@@ -8,15 +8,20 @@
 
 import UIKit
 
-protocol VideoCoverDelegate: class {
-    func gotVideoInfo(_ info: Info)
-    func connectError()
-    func cannotFindVideo()
-}
-
 class CoverInfoProvider: AbstractProvider {
     
-    weak var delegateForVideo: VideoCoverDelegate?
+    open func getCoverInfoBy(
+        type: CoverType,
+        andStringID id: UInt64,
+        completion: @escaping (Info?) -> Void
+    ) {
+        switch type {
+        case .video:   getInfo(forAV: id, completion)
+        case .article: getInfo(forCV: id, completion)
+        case .live:    getInfo(forLV: id, completion)
+        default: break
+        }
+    }
     
     private func updateServerRecord(type: CoverType, nid: UInt64, info: Info) {
         guard let url = APIFactory.getAPI(byType: type, andNID: Int(nid), andInfo: info, env: env) else {
@@ -52,7 +57,7 @@ class CoverInfoProvider: AbstractProvider {
         task.resume()
     }
     
-    private func fetchCoverRecordFromServer(withType type: CoverType, andID nid: UInt64) {
+    private func fetchCoverRecordFromServer(withType type: CoverType, andID nid: UInt64, _ completion: @escaping (Info?) -> Void) {
         guard let url = APIFactory.getAPI(byType: type, andNID: Int(nid), env: env) else {
             fatalError("cannot generate api url")
         }
@@ -62,75 +67,58 @@ class CoverInfoProvider: AbstractProvider {
                 let content = data,
                 let newInfo = try? JSONDecoder().decode(Info.self, from: content)
                 else {
-                    self.videoDelegate { $0.cannotFindVideo() }
+                    completion(nil)
                     return
             }
             if newInfo.isValid {
-                self.videoDelegate { $0.gotVideoInfo(newInfo) }
+                completion(newInfo)
             } else {
-                self.videoDelegate { $0.cannotFindVideo() }
+                completion(nil)
             }
         }
         task.resume()
     }
     
-    open func getCoverInfo(byType type: CoverType, andNID nid: UInt64) {
-        switch type {
-        case .video:   getInfo(forAV: nid)
-        case .article: getInfo(forCV: nid)
-        case .live:    getInfo(forLV: nid)
-        default: break
-        }
-    }
-    
-    private func getInfo(forAV: UInt64) {
+    private func getInfo(forAV: UInt64, _ completion: @escaping (Info?) -> Void) {
         BKVideo(av: Int(forAV)).getInfo {
             guard let info = $0 else {
-                self.fetchCoverRecordFromServer(withType: .video, andID: forAV)
+                self.fetchCoverRecordFromServer(withType: .video, andID: forAV, completion)
                 return
             }
             let url = info.coverImageURL.absoluteString
             let newInfo = Info(stringID: "av" + String(forAV), author: info.author, title: info.title, imageURL: url)
-            self.videoDelegate { $0.gotVideoInfo(newInfo) }
             self.updateServerRecord(type: .video, nid: forAV, info: newInfo)
+            completion(newInfo)
         }
     }
     
-    private func getInfo(forCV: UInt64) {
+    private func getInfo(forCV: UInt64, _ completion: @escaping (Info?) -> Void) {
         BKArticle(cv: Int(forCV)).getInfo {
             guard let info = $0 else {
-                self.fetchCoverRecordFromServer(withType: .article, andID: forCV)
+                self.fetchCoverRecordFromServer(withType: .article, andID: forCV, completion)
                 return
             }
             let url = info.coverImageURL.absoluteString
             let newInfo = Info(stringID: "cv" + String(forCV), author: info.author, title: info.title, imageURL: url)
-            self.videoDelegate { $0.gotVideoInfo(newInfo) }
             self.updateServerRecord(type: .article, nid: forCV, info: newInfo)
+            completion(newInfo)
         }
     }
     
-    private func getInfo(forLV: UInt64) {
+    private func getInfo(forLV: UInt64, _ completion: @escaping (Info?) -> Void) {
         BKLiveRoom(Int(forLV)).getInfo {
             guard let info = $0 else {
-                self.fetchCoverRecordFromServer(withType: .live, andID: forLV)
+                self.fetchCoverRecordFromServer(withType: .live, andID: forLV, completion)
                 return
             }
             BKUser(id: info.mid).getBasicInfo(then: { basicInfo in
                 if let userInfo = basicInfo {
                     let url = info.coverImageURL.absoluteString
                     let newInfo = Info(stringID: "lv" + String(forLV), author: userInfo.name, title: info.title, imageURL: url)
-                    self.videoDelegate { $0.gotVideoInfo(newInfo) }
                     self.updateServerRecord(type: .live, nid: forLV, info: newInfo)
+                    completion(newInfo)
                 }
             })
-        }
-    }
-
-    private func videoDelegate(_ perform: @escaping (VideoCoverDelegate) -> Void) {
-        DispatchQueue.main.async {
-            if let delegate = self.delegateForVideo {
-                perform(delegate)
-            }
         }
     }
 }
