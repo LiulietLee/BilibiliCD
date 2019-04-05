@@ -735,7 +735,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-BCD/Pods-BCD-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-BCD/Pods-BCD-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/LLDialog/LLDialog.framework",
 				"${BUILT_PRODUCTS_DIR}/MaterialKit/MaterialKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SWRevealViewController/SWRevealViewController.framework",
@@ -750,7 +750,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BCD/Pods-BCD-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BCD/Pods-BCD-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

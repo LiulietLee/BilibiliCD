@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://cdn.jsdelivr.net/gh/marcosgriselli/ViewAnimator@65b0a97b14ad54c63b1f5b1862ad7c58dc5b5568/Resources/banner.svg" height="80"/>
+<img src="./Resources/banner_new.svg"/>
 </p>
 
 <p align="center">
@@ -35,6 +35,8 @@ SVG animations inspired by [Luke Zhao's](http://lkzhao.com) project [Hero](https
 <image src="https://cdn.dribbble.com/users/702789/screenshots/3816087/preview-messaki.gif" width="400"/>
 
 UI created by [Messaki](https://dribbble.com/messaki), make sure to check out his profile.
+
+*Logo and banner created by [@cintia_ve](https://twitter.com/cintia_ve)*
 
 ## Installation
 
@@ -72,6 +74,8 @@ func animate(animations: [Animation],
              finalAlpha: CGFloat = 1.0,
              delay: Double = 0,
              duration: TimeInterval = ViewAnimatorConfig.duration,
+             usingSpringWithDamping dampingRatio: CGFloat = ViewAnimatorConfig.springDampingRatio,
+             initialSpringVelocity velocity: CGFloat = ViewAnimatorConfig.initialSpringVelocity,
              completion: (() -> Void)? = nil)
 ``` 
 
@@ -88,6 +92,8 @@ static func animate(views: [UIView],
                     delay: Double = 0,
                     animationInterval: TimeInterval = 0.05,
                     duration: TimeInterval = ViewAnimatorConfig.duration,
+                    usingSpringWithDamping dampingRatio: CGFloat = ViewAnimatorConfig.springDampingRatio,
+                    initialSpringVelocity velocity: CGFloat = ViewAnimatorConfig.initialSpringVelocity,
                     completion: (() -> Void)? = nil)
 ```
 

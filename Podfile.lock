@@ -2,7 +2,7 @@ PODS:
   - LLDialog (1.2.0)
   - MaterialKit (0.6.4)
   - SWRevealViewController (2.4.0)
-  - ViewAnimator (2.2.2)
+  - ViewAnimator (2.4.0)
 
 DEPENDENCIES:
   - LLDialog (from `https://github.com/LiulietLee/LLDialog.git`)
@@ -37,8 +37,8 @@ SPEC CHECKSUMS:
   LLDialog: 471eb81049e4912431383c0f192ee7dc9b4d4366
   MaterialKit: 47adee85449c3c5b4c29bb1a6a83a94b47504adc
   SWRevealViewController: b653f339865208c97be99a24876545f5be0cc4bb
-  ViewAnimator: 6eaa112663b6a2d9e6b2573df65b416dd051cbe4
+  ViewAnimator: 28b9ef703e280a02852b1271ef36295ea96eae4b
 
-PODFILE CHECKSUM: 5fc09d521b522c1af7b9e5c1a706efa01bc0eb8a
+PODFILE CHECKSUM: e453e40c4826ff97ae564e0f6a964b6e83240398
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.1
