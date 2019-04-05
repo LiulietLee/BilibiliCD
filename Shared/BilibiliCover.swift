@@ -26,7 +26,7 @@ enum CoverType: Int {
 }
 
 struct BilibiliCover {
-    internal(set) var number: UInt64
+    var number: UInt64
     let type: CoverType
     var shortDescription: String {
         switch type {

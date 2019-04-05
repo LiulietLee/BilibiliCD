@@ -3,6 +3,7 @@
 //  BilibiliKit
 //
 //  Created by Apollo Zhu on 8/9/18.
+//  Copyright (c) 2017-2019 ApolloZhu. MIT License.
 //
 
 import Foundation
@@ -21,19 +22,14 @@ extension BKUser {
 }
 
 extension BKUser {
-    /// Handler type for audio stats of a user fetched.
-    ///
-    /// - Parameter audioStat: audio stat fetched, `nil` if failed.
-    public typealias AudioStatHandler = (_ audioStat: AudioStat?) -> Void
-
     /// Fetchs and passes this up's audio stat to `handler`.
     ///
     /// - Important: Won't fail for invalid user.
     ///
     /// - Parameters:
     ///   - handler: code to process an optional `AudioStat`.
-    public func getAudioStat(then handler: @escaping AudioStatHandler) {
+    public func getAudioStat(then handler: @escaping BKHandler<AudioStat>) {
         let url = "https://www.bilibili.com/audio/music-service-c/web/stat/user?uid=\(mid)"
-        URLSession.get(url, unwrap: BKAudio.Wrapper<AudioStat>.self, then: handler)
+        URLSession.get(url, unwrap: BKWrapperMsg<AudioStat>.self, then: handler)
     }
 }

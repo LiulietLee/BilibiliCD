@@ -3,6 +3,7 @@
 //  BilibiliKit
 //
 //  Created by Apollo Zhu on 8/8/18.
+//  Copyright (c) 2017-2019 ApolloZhu. MIT License.
 //
 
 import Foundation
@@ -23,18 +24,13 @@ extension BKAudio {
 }
 
 extension BKAudio {
-    /// Handler type for urls of a song fetched.
-    ///
-    /// - Parameter urls: urls fetched, `nil` if failed.
-    public typealias URLsHandler = (_ urls: URLs?) -> Void
-
     /// Fetchs and passes this song's download urls to `handler`.
     ///
     /// - Parameters:
     ///   - handler: code to process an optional `URLs`.
-    public func getURLs(then handler: @escaping URLsHandler) {
+    public func getURLs(then handler: @escaping BKHandler<URLs>) {
         // Maybe: privilege=2&quality=2
         let url = "https://www.bilibili.com/audio/music-service-c/web/url?sid=\(sid)"
-        URLSession.get(url, unwrap: Wrapper<URLs>.self, then: handler)
+        URLSession.get(url, unwrap: BKWrapperMsg<URLs>.self, then: handler)
     }
 }

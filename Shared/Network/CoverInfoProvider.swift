@@ -81,7 +81,7 @@ class CoverInfoProvider: AbstractProvider {
     
     private func getInfo(forAV: UInt64, _ completion: @escaping (Info?) -> Void) {
         BKVideo(av: Int(forAV)).getInfo {
-            guard let info = $0 else {
+            guard let info = try? $0.get() else {
                 self.fetchCoverRecordFromServer(withType: .video, andID: forAV, completion)
                 return
             }
@@ -94,7 +94,7 @@ class CoverInfoProvider: AbstractProvider {
     
     private func getInfo(forCV: UInt64, _ completion: @escaping (Info?) -> Void) {
         BKArticle(cv: Int(forCV)).getInfo {
-            guard let info = $0 else {
+            guard let info = try? $0.get() else {
                 self.fetchCoverRecordFromServer(withType: .article, andID: forCV, completion)
                 return
             }
@@ -107,12 +107,12 @@ class CoverInfoProvider: AbstractProvider {
     
     private func getInfo(forLV: UInt64, _ completion: @escaping (Info?) -> Void) {
         BKLiveRoom(Int(forLV)).getInfo {
-            guard let info = $0 else {
+            guard let info = try? $0.get() else {
                 self.fetchCoverRecordFromServer(withType: .live, andID: forLV, completion)
                 return
             }
             BKUser(id: info.mid).getBasicInfo(then: { basicInfo in
-                if let userInfo = basicInfo {
+                if let userInfo = try? basicInfo.get() {
                     let url = info.coverImageURL.absoluteString
                     let newInfo = Info(stringID: "lv" + String(forLV), author: userInfo.name, title: info.title, imageURL: url)
                     self.updateServerRecord(type: .live, nid: forLV, info: newInfo)

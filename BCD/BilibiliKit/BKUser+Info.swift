@@ -3,6 +3,7 @@
 //  BilibiliKit
 //
 //  Created by Apollo Zhu on 8/9/18.
+//  Copyright (c) 2017-2019 ApolloZhu. MIT License.
 //
 
 import Foundation
@@ -12,41 +13,39 @@ extension BKUser {
     public struct Info: Codable {
         // let mid: Int
         private let name: String
-        // Might be in HTTP
-        private let face: URL
-        private let sign: String
         /// 男，女，保密, ""
         ///
         /// - Note: 110352985 is an interesting test case
         private let sex: String
+        /// Might be in HTTP
+        private let face: URL
+        private let sign: String
         // 10000 for normal, 20000 for bishi, 5000 for 0
         // let rank: Int
+        public let level: Int
         // Registration time, optional?
-        private let regtime: Int?
-        // let spacesta: Int
+        private let jointime: Int?
+        // let moral: Int
+        // let silence: Int
         /// MM-dd
         public let birthday: String?
-        private let level_info: BKUser.Info.Level.Simple
+        // let coins: Double
+        // let fans_badge: Bool
         public struct Official: Codable {
-            public let type: Int
+            public let role: Int
             public let desc: String
-            public let suffix: String
+            public let title: String
         }
-        public let official_verify: Official
+        public let official: Official
         public struct VIP: Codable {
-            public let vipType: Int
-            public let vipStatus: Int
+            public let type: Int
+            public let status: Int
         }
         public let vip: VIP
-        /// Missing scheme and prefix, low resolution
-        private let toutu: String
-        /// Cover Image ID
-        public let toutuId: Int
-        // let theme: String // default
-        // let theme_preview: String
-        // let coins: Int
-        // let im9_sign: String
-        // let fans_badge: Bool
+        private let is_followed: Bool
+        /// Might be in HTTP
+        private let top_photo: URL
+        // let theme: Any
     }
 }
 
@@ -65,7 +64,7 @@ extension BKUser.Info {
     ///
     /// - Note: HeadphoneTokyo 没有注册日期？
     public var registrationTime: Date? {
-        guard let time = regtime else { return nil }
+        guard let time = jointime else { return nil }
         return Date(timeIntervalSince1970: TimeInterval(time))
     }
     
@@ -77,18 +76,25 @@ extension BKUser.Info {
 
     /// 生日（月-日）
     public var birthdate: Date? {
-        guard let birthday = birthday else { return nil }
+        guard let birthday = birthday, !birthday.isEmpty else { return nil }
         return BKUser.Info.formatter.date(from: birthday)!
     }
 
     /// 用户等级
+    @available(swift, deprecated: 5.0, renamed: "level")
     public var currentLevel: Int {
-        return level_info.current
+        return level
     }
 
     /// 小号头图
+    @available(swift, deprecated: 5.0, renamed: "coverImage")
     public var coverImageSmall: URL {
-        return URL(string: "https://i0.hdslb.com/\(toutu)")!
+        return coverImage
+    }
+    
+    /// 头图
+    public var coverImage: URL {
+        return top_photo
     }
 }
 
@@ -99,27 +105,6 @@ extension BKUser.Info {
         case male = "男"
         case female = "女"
         case secret = "保密"
-    }
-    
-    public struct Level: Codable {
-        public let current: Int
-        public let currentExperience: Int
-        public let minExperience: Int
-        public let nextLevelMinExperience: Int
-        
-        enum CodingKeys: String, CodingKey {
-            case current = "current_level"
-            case currentExperience = "current_min"
-            case minExperience = "current_exp"
-            case nextLevelMinExperience = "next_exp"
-        }
-        
-        public struct Simple: Codable {
-            public let current: Int
-            enum CodingKeys: String, CodingKey {
-                case current = "current_level"
-            }
-        }
     }
 }
 
@@ -145,39 +130,21 @@ extension BKUser.Info {
 // MARK: - Networking
 
 extension BKUser {
-    /// Handler type for basic info of a user fetched.
-    ///
-    /// - Parameter info: basic information fetched, `nil` if failed.
-    public typealias InfoHandler = (_ info: Info?) -> Void
-    
     /// Fetchs and passes this user's info to `handler`.
     ///
     /// - Parameters:
     ///   - handler: code to process an optional `Info`.
-    public func getInfo(then handler: @escaping InfoHandler) {
-        let url = "https://space.bilibili.com/ajax/member/GetInfo" as URL
-        var request = BKSession.shared.postRequest(to: url)
-        request.addValue("https://space.bilibili.com",
-                         forHTTPHeaderField: "Referer")
-        request.httpBody = "mid=\(mid)".data(using: .utf8)
-        struct PostWrapper: BKWrapper {
-            let status: Bool
-            let data: BKUser.Info?
-        }
-        URLSession.get(request, unwrap: PostWrapper.self, then: handler)
+    public func getInfo(then handler: @escaping BKHandler<Info>) {
+        URLSession.get("http://api.bilibili.com/x/space/acc/info?mid=\(mid)&jsonp=jsonp",
+            unwrap: BKWrapperMessage<Info>.self, then: handler)
     }
-    
-    /// Handler type for basic info of a user fetched.
-    ///
-    /// - Parameter info: basic information fetched, `nil` if failed.
-    public typealias BasicInfoHandler = (_ info: Info.Basic?) -> Void
     
     /// Fetchs and passes this user's basic info to `handler`.
     ///
     /// - Parameters:
     ///   - handler: code to process an optional `Info.Basic`.
-    public func getBasicInfo(then handler: @escaping BasicInfoHandler) {
+    public func getBasicInfo(then handler: @escaping BKHandler<Info.Basic>) {
         let url = "https://www.bilibili.com/audio/music-service-c/web/user/info?uid=\(mid)"
-        URLSession.get(url, unwrap: BKAudio.Wrapper<Info.Basic>.self, then: handler)
+        URLSession.get(url, unwrap: BKWrapperMsg<Info.Basic>.self, then: handler)
     }
 }

@@ -15,7 +15,7 @@ public extension UIViewController {
      This is the recommended method of accessing the SideNavigationViewController
      through child UIViewControllers.
      */
-    public var sideDrawerViewController: MKSideDrawerViewController? {
+    var sideDrawerViewController: MKSideDrawerViewController? {
         var viewController: UIViewController? = self
         while viewController != nil {
             if viewController is MKSideDrawerViewController {

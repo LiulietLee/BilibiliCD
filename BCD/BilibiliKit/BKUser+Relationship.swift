@@ -3,6 +3,7 @@
 //  BilibiliKit
 //
 //  Created by Apollo Zhu on 8/9/18.
+//  Copyright (c) 2017-2019 ApolloZhu. MIT License.
 //
 
 import Foundation
@@ -22,20 +23,15 @@ extension BKUser {
 }
 
 extension BKUser {
-    /// Handler type for relationships of a user fetched.
-    ///
-    /// - Parameter relationship: relationship fetched, `nil` if failed.
-    public typealias RelationshipHandler = (_ relationship: Relationship?) -> Void
-
     /// Fetchs and passes this up's stat to `handler`.
     ///
     /// - Parameters:
     ///   - handler: code to process an optional `Relationship`.
     public func getRelationship(session: BKSession = .shared,
-                                then handler: @escaping RelationshipHandler) {
+                                then handler: @escaping BKHandler<Relationship>) {
         let url = "https://api.bilibili.com/x/relation/stat?vmid=\(mid)"
         URLSession.get(url, session: session,
-                       unwrap: Wrapper<Relationship>.self,
+                       unwrap: BKWrapperMessage<Relationship>.self,
                        then: handler)
     }
 }
