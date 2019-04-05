@@ -1,4 +1,4 @@
-framework module Pods_BCD {
+module Pods_BCD {
   umbrella header "Pods-BCD-umbrella.h"
 
   export *

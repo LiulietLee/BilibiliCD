@@ -1,4 +1,4 @@
-framework module MaterialKit {
+module MaterialKit {
   umbrella header "MaterialKit-umbrella.h"
 
   export *

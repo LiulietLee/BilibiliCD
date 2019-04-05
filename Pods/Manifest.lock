@@ -1,6 +1,6 @@
 PODS:
   - LLDialog (1.2.0)
-  - MaterialKit (0.6.4)
+  - MaterialKit (0.6.5)
   - SWRevealViewController (2.4.0)
   - ViewAnimator (2.4.0)
 
@@ -27,7 +27,7 @@ CHECKOUT OPTIONS:
     :commit: d26a1c8c51101f1b50f5f2eaa1c2c893e6d21a57
     :git: https://github.com/LiulietLee/LLDialog.git
   MaterialKit:
-    :commit: 6f7618bbdcbbebb462e0572ebd4c160e76123f53
+    :commit: ca9b156a7577fae339b9c7b2af58a8f3f453b5a6
     :git: https://github.com/ApolloZhu/MaterialKit.git
   SWRevealViewController:
     :commit: bb4a110989d67a5fc5f5c533cacc92f6cb02f5e2
@@ -35,7 +35,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   LLDialog: 471eb81049e4912431383c0f192ee7dc9b4d4366
-  MaterialKit: 47adee85449c3c5b4c29bb1a6a83a94b47504adc
+  MaterialKit: c99dd8af397c84fe216538303d0be9749f8cd9b0
   SWRevealViewController: b653f339865208c97be99a24876545f5be0cc4bb
   ViewAnimator: 28b9ef703e280a02852b1271ef36295ea96eae4b
 
