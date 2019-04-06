@@ -3,11 +3,12 @@
 //  BilibiliKit
 //
 //  Created by Apollo Zhu on 12/31/17.
+//  Copyright (c) 2017-2019 ApolloZhu. MIT License.
 //
 
 import Foundation
 
-extension URL: ExpressibleByStringLiteral {
+extension URL: ExpressibleByStringInterpolation {
     /// Initialize url with string literals.
     ///
     /// - Parameter value: url.
@@ -15,7 +16,7 @@ extension URL: ExpressibleByStringLiteral {
         self.init(string: value)!
     }
 
-    @available(*, deprecated: 1.1.5, obsoleted: 2.0.0, renamed: "inHTTPS")
+    @available(swift, deprecated: 3.0, obsoleted: 5.0, renamed: "inHTTPS")
     /// Deprecated, use `inHTTPS` instead.
     public var inHttps: URL? { return inHTTPS }
 
@@ -33,6 +34,6 @@ extension URL: ExpressibleByStringLiteral {
         return components?.url
     }
 
-    /// `nil` value for URL where a non-optional URL is required
+    /// Pesudo `nil` value for URL where a non-optional URL is required
     public static let notFound: URL = "https://static.hdslb.com/images/akari.jpg"
 }

@@ -3,6 +3,7 @@
 //  BilibiliKit
 //
 //  Created by Apollo Zhu on 5/11/18.
+//  Copyright (c) 2017-2019 ApolloZhu. MIT License.
 //
 
 import Foundation
@@ -82,39 +83,16 @@ extension BKArticle.Info {
 // MARK: - Networking
 
 extension BKArticle {
-    private struct Wrapper: Codable {
-        /// Error code or 0.
-        let code: Int
-        /// Information if exists.
-        let data: Info?
-        /// Error description in Chinese.
-        let message: String
-        /// Usually 1.
-        // let ttl: Int
-    }
-    
-    /// Handler type for information of an article fetched.
-    ///
-    /// - Parameter info: info fetched, `nil` if failed.
-    public typealias InfoHandler = (_ info: Info?) -> Void
-    
     /// Fetchs and passes an article's info to `handler`.
     ///
     /// - Parameters:
     ///   - session: BKSession to generate request. Default to `BKSession.shared`.
     ///   - handler: code to process an optional `Info`.
     public func getInfo(withSession session: BKSession = .shared,
-                        then handler: @escaping InfoHandler) {
-        let baseURL = URL(string: "https://api.bilibili.com/x/article/viewinfo?id=\(id)")
-        let request = session.request(to: baseURL!)
-        let task = URLSession.bk.dataTask(with: request)
-        { data, _, _ in
-            guard let data = data
-                , let wrapper = try? JSONDecoder().decode(Wrapper.self, from: data)
-                , let info = wrapper.data
-                else { return handler(nil) }
-            handler(info)
-        }
-        task.resume()
+                        then handler: @escaping BKHandler<Info>) {
+        URLSession.get("https://api.bilibili.com/x/article/viewinfo?id=\(id)",
+            /// Error code or 0.
+            /// Error description in Chinese.
+            session: session, unwrap: BKWrapperMessage<Info>.self, then: handler)
     }
 }

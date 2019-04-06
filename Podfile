@@ -2,7 +2,7 @@
 platform :ios, '11.0'
 
 target 'BCD' do
-    use_frameworks!
+    use_modular_headers!
     pod 'SWRevealViewController', :git => 'https://github.com/John-Lluch/SWRevealViewController.git'
     pod 'MaterialKit', :git => 'https://github.com/ApolloZhu/MaterialKit.git'
     pod 'LLDialog', :git => 'https://github.com/LiulietLee/LLDialog.git'

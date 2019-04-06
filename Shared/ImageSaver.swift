@@ -40,6 +40,8 @@ class ImageSaver {
                 }
             }
         case .restricted, .denied:
+            fallthrough
+        @unknown default:
             saveImage(image, hasPermission: false,
                       completionHandler: completionHandler,
                       alternateHandler: alternateHandler)

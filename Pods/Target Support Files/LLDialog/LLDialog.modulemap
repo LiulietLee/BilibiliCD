@@ -1,4 +1,4 @@
-framework module LLDialog {
+module LLDialog {
   umbrella header "LLDialog-umbrella.h"
 
   export *
