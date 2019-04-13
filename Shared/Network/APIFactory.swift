@@ -45,7 +45,7 @@ class APIFactory {
             default:       return nil
             }
             
-            return builder.addQueryItem(name: "nil", value: "\(nid!)").build()
+            return builder.addQueryItem(name: "nid", value: "\(nid!)").build()
         }
         
     }
