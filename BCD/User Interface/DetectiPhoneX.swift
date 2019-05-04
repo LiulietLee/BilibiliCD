@@ -7,12 +7,20 @@
 //
 
 import UIKit
+import LocalAuthentication
 
 extension UIDevice {
-    var isiPhoneX: Bool {
-        if self.userInterfaceIdiom == .phone {
-            return UIScreen.main.nativeBounds.height == 2436
+    var supportsFaceID: Bool {
+        var nsError: NSError?
+        let context = LAContext()
+        context.canEvaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, error: &nsError)
+        switch context.biometryType {
+        case .faceID:
+            return true
+        case .touchID, .none:
+            return false
+        @unknown default:
+            return true
         }
-        return false
     }
 }

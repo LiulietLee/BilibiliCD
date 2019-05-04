@@ -26,8 +26,7 @@ class TutorialViewController: UIViewController, UIPageViewControllerDataSource {
         pageController.setViewControllers(viewControllers, direction: .forward, animated: true)
         pageController.view.frame = CGRect(x: 0, y: 20, width: size.width, height: size.height - 60)
         
-        if UIDevice().isiPhoneX {
-            #warning("for iPhone X")
+        if UIDevice().supportsFaceID {
             pageController.view.frame = CGRect(x: 0, y: -10, width: size.width, height: size.height - 20)
             bottomConsOfBackButton.constant = 20.0
             view.layoutIfNeeded()
