@@ -15,19 +15,35 @@ enum Environment {
 
 class APIFactory {
     
-    static func getAPI(
+    static private func baseAPI(_ env: Environment = .prod) -> URLBuilder {
+        let builder = URLBuilder().set(scheme: "http")
+        switch env {
+        case .prod:
+            builder.set(host: "45.32.54.201")
+        default: // .dev
+            builder.set(host: "127.0.0.1").set(port: 8000)
+        }
+        return builder
+    }
+    
+    static public func getAPI(
+        withCommentPage page: Int,
+        andCount limit: Int = 20
+    ) -> URL? {
+        return baseAPI()
+            .set(path: "api/comment/all")
+            .addQueryItem(name: "page", value: "\(page)")
+            .addQueryItem(name: "limit", value: "\(limit)")
+            .build()
+    }
+    
+    static public func getAPI(
         byType type: CoverType,
         andNID nid: Int? = nil,
         andInfo newInfo: Info? = nil,
         env: Environment = .prod
     ) -> URL? {
-        let builder = URLBuilder().set(scheme: "http")
-        
-        if env == .prod {
-            builder.set(host: "45.32.54.201")
-        } else {
-            builder.set(host: "127.0.0.1").set(port: 8000)
-        }
+        let builder = baseAPI(env)
 
         if type == .hotList {
             return builder.set(path: "api/hot_list").build()

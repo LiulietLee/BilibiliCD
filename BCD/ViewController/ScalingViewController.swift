@@ -41,7 +41,6 @@ class ScalingViewController: UIViewController {
         
         let size = image.size
         sizeLabel.text = "图片尺寸：\(size.width) x \(size.height)"
-        #warning("TODO: Progress Bar")
         timeLabel.text = "其实我是想做个进度条来着...\n但是又做不粗来...\n所以就全当这里有进度条了吧"
     }
     
