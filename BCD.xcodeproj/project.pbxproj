@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F1AF3C822D77CED009C8328 /* FeedbackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1AF3C722D77CED009C8328 /* FeedbackController.swift */; };
 		4F270F2122D21261008C07A6 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F270F2022D21261008C07A6 /* Comment.swift */; };
 		4F338F5720DD00410014226C /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F338F5620DD00410014226C /* ShareViewController.swift */; };
 		4F338F5A20DD00410014226C /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F338F5820DD00410014226C /* MainInterface.storyboard */; };
@@ -191,6 +192,7 @@
 
 /* Begin PBXFileReference section */
 		014002F5C328A516653ECA7C /* Pods-BCD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BCD/Pods-BCD.debug.xcconfig"; sourceTree = "<group>"; };
+		4F1AF3C722D77CED009C8328 /* FeedbackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FeedbackController.swift; path = ViewController/FeedbackController.swift; sourceTree = "<group>"; };
 		4F270F2022D21261008C07A6 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		4F2DB5DA1F75F7D400FB2315 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		4F338F5420DD00410014226C /* BCDSharing.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BCDSharing.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -417,6 +419,7 @@
 				4F78821C20F3443200344D62 /* TutorialViewController.swift */,
 				4F78822120F3443200344D62 /* Waifu2xViewController.swift */,
 				4FF3FD21215E82EC00AF7F4B /* HotListController.swift */,
+				4F1AF3C722D77CED009C8328 /* FeedbackController.swift */,
 				4F4942C620F344E200BB7785 /* NavigationController */,
 			);
 			name = ViewController;
@@ -861,6 +864,7 @@
 				528D36732257A07100F4FEB2 /* BKArticle+Info.swift in Sources */,
 				4F49433820F3468B00BB7785 /* anime_noise2_model.mlmodel in Sources */,
 				528D366F2257A07100F4FEB2 /* BKLiveRoom.swift in Sources */,
+				4F1AF3C822D77CED009C8328 /* FeedbackController.swift in Sources */,
 				4F49433A20F3468B00BB7785 /* anime_noise0_model.mlmodel in Sources */,
 				528D366D2257A07100F4FEB2 /* BKVideo.swift in Sources */,
 				4F78822820F3443200344D62 /* TutorialContentViewController.swift in Sources */,
