@@ -28,9 +28,10 @@ class APIFactory {
     
     static public func getAPI(
         withCommentPage page: Int,
-        andCount limit: Int = 20
+        andCount limit: Int = 20,
+        env: Environment = .prod
     ) -> URL? {
-        return baseAPI()
+        return baseAPI(env)
             .set(path: "api/comment/all")
             .addQueryItem(name: "page", value: "\(page)")
             .addQueryItem(name: "limit", value: "\(limit)")

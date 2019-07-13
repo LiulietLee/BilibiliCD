@@ -1734,7 +1734,7 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="182" id="xZE-Ec-BBM">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="182" id="xZE-Ec-BBM" customClass="CommentCell" customModule="BilibiliCD" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="182"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xZE-Ec-BBM" id="8Xi-KL-Hr4">
@@ -1767,11 +1767,15 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="AsJ-aX-jgJ"/>
                                                     </constraints>
-                                                    <state key="normal" image="ic_suki"/>
+                                                    <state key="normal" title="   10" image="ic_suki">
+                                                        <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISe-hv-Q0p">
                                                     <rect key="frame" x="176" y="147" width="129" height="24"/>
-                                                    <state key="normal" image="ic_kirai"/>
+                                                    <state key="normal" title="   999" image="ic_kirai">
+                                                        <color key="titleColor" red="0.32604168649999998" green="0.32604168649999998" blue="0.32604168649999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -1794,6 +1798,11 @@
                                                 <constraint firstItem="zCc-bY-d09" firstAttribute="trailing" secondItem="8Xi-KL-Hr4" secondAttribute="trailingMargin" id="zc6-Eh-Nsz"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="content" destination="hCP-My-fYF" id="qiQ-IK-qU2"/>
+                                            <outlet property="date" destination="FmU-mc-81Y" id="Ez2-rp-Dzs"/>
+                                            <outlet property="username" destination="zCc-bY-d09" id="c9q-BI-gxA"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -1807,8 +1816,17 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="留言版" id="Y3A-pY-h0V">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="ic_help_outline" id="6qp-sM-NF9"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="ic_menu" id="2Qq-B6-AXg"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="ic_help_outline" id="6qp-sM-NF9">
+                            <connections>
+                                <action selector="helpButtonTapped:" destination="Oa1-Ok-dqG" id="KUD-Uh-bbD"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="menuButton" destination="2Qq-B6-AXg" id="rWW-I7-gqd"/>
+                        <outlet property="tableView" destination="fF3-gR-r7H" id="9i3-yu-yhL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gBd-zy-v0J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
