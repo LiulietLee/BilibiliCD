@@ -37,3 +37,11 @@ extension Comment: Decodable {
         time = try value.decode(Date.self, forKey: .time)
     }
 }
+
+struct Reply: Decodable {
+    let id: Int
+    let username: String
+    let content: String
+    let time: Date
+    let commentID: Int
+}

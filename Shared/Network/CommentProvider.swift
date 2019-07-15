@@ -15,6 +15,7 @@ class CommentProvider: AbstractProvider {
             completion(nil)
             return
         }
+        
         session.dataTask(with: URLRequest(url: url)) { (data, response, error) in
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
@@ -22,6 +23,26 @@ class CommentProvider: AbstractProvider {
             if error == nil,
                 let content = data,
                 let list = try? decoder.decode([Comment].self, from: content) {
+                completion(list)
+            } else {
+                completion(nil)
+            }
+        }.resume()
+    }
+    
+    public func getReplies(comment: Comment, page: Int, count: Int = 20, completion: @escaping ([Reply]?) -> Void) {
+        guard let url = APIFactory.getAPI(withCommentID: comment.id, andPage: page, andCount: count, env: env) else {
+            completion(nil)
+            return
+        }
+        
+        session.dataTask(with: URLRequest(url: url)) { (data, response, error) in
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .iso8601
+            
+            if error == nil,
+                let content = data,
+                let list = try? decoder.decode([Reply].self, from: content) {
                 completion(list)
             } else {
                 completion(nil)

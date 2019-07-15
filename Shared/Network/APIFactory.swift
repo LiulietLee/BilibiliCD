@@ -39,6 +39,19 @@ class APIFactory {
     }
     
     static public func getAPI(
+        withCommentID commentID: Int,
+        andPage page: Int,
+        andCount limit: Int = 20,
+        env: Environment = .prod
+    ) -> URL? {
+        return baseAPI(env)
+            .set(path: "api/reply/all/\(commentID)")
+            .addQueryItem(name: "page", value: "\(page)")
+            .addQueryItem(name: "limit", value: "\(limit)")
+            .build()
+    }
+    
+    static public func getAPI(
         byType type: CoverType,
         andNID nid: Int? = nil,
         andInfo newInfo: Info? = nil,
