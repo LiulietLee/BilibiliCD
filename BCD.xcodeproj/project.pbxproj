@@ -89,6 +89,8 @@
 		4F78823720F3443200344D62 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F78822320F3443200344D62 /* HistoryViewController.swift */; };
 		4F8B90731F7B2E3800AB158D /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B90711F7B2E3800AB158D /* CoreDataStorage.swift */; };
 		4FA965022121BF4A0031983C /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F49434D20F3469600BB7785 /* CacheManager.swift */; };
+		4FB59F5C22DCB15800939DE3 /* ReplyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB59F5B22DCB15800939DE3 /* ReplyCell.swift */; };
+		4FB59F5E22DCB16E00939DE3 /* ReplyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB59F5D22DCB16E00939DE3 /* ReplyController.swift */; };
 		4FB5A49F2171F6D5009DF4F1 /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4FB5A49E2171F6D5009DF4F1 /* loading.gif */; };
 		4FB5CC8122D0A11300A6A47B /* CommentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB5CC8022D0A11300A6A47B /* CommentProvider.swift */; };
 		4FE2EF4C2162169800E389CE /* CoverPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE2EF4B2162169800E389CE /* CoverPreviewCell.swift */; };
@@ -193,7 +195,7 @@
 
 /* Begin PBXFileReference section */
 		014002F5C328A516653ECA7C /* Pods-BCD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BCD/Pods-BCD.debug.xcconfig"; sourceTree = "<group>"; };
-		4F1AF3C722D77CED009C8328 /* FeedbackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FeedbackController.swift; path = ViewController/FeedbackController.swift; sourceTree = "<group>"; };
+		4F1AF3C722D77CED009C8328 /* FeedbackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackController.swift; sourceTree = "<group>"; };
 		4F1AF3C922D78E9C009C8328 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		4F270F2022D21261008C07A6 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		4F2DB5DA1F75F7D400FB2315 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
@@ -265,6 +267,8 @@
 		4F78822220F3443200344D62 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutViewController.swift; path = ViewController/AboutViewController.swift; sourceTree = "<group>"; };
 		4F78822320F3443200344D62 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryViewController.swift; path = ViewController/HistoryViewController.swift; sourceTree = "<group>"; };
 		4F8B90711F7B2E3800AB158D /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
+		4FB59F5B22DCB15800939DE3 /* ReplyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyCell.swift; sourceTree = "<group>"; };
+		4FB59F5D22DCB16E00939DE3 /* ReplyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyController.swift; sourceTree = "<group>"; };
 		4FB5A49E2171F6D5009DF4F1 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
 		4FB5CC8022D0A11300A6A47B /* CommentProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentProvider.swift; sourceTree = "<group>"; };
 		4FE2EF4B2162169800E389CE /* CoverPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverPreviewCell.swift; sourceTree = "<group>"; };
@@ -407,7 +411,6 @@
 			children = (
 				4F78822220F3443200344D62 /* AboutViewController.swift */,
 				4F78821D20F3443200344D62 /* DetailViewController.swift */,
-				4F1AF3C722D77CED009C8328 /* FeedbackController.swift */,
 				4F78821F20F3443200344D62 /* FindArtViewController.swift */,
 				4F78822320F3443200344D62 /* HistoryViewController.swift */,
 				4F78820F20F3443100344D62 /* HisTutViewController.swift */,
@@ -422,6 +425,7 @@
 				4F78821C20F3443200344D62 /* TutorialViewController.swift */,
 				4F78822120F3443200344D62 /* Waifu2xViewController.swift */,
 				4FF3FD21215E82EC00AF7F4B /* HotListController.swift */,
+				4FB59F5F22DCB17A00939DE3 /* Feedback */,
 				4F4942C620F344E200BB7785 /* NavigationController */,
 			);
 			name = ViewController;
@@ -463,6 +467,15 @@
 			name = "Supporting File";
 			sourceTree = "<group>";
 		};
+		4FB59F5F22DCB17A00939DE3 /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				4F1AF3C722D77CED009C8328 /* FeedbackController.swift */,
+				4FB59F5D22DCB16E00939DE3 /* ReplyController.swift */,
+			);
+			path = Feedback;
+			sourceTree = "<group>";
+		};
 		4FB5A49D2171F6CA009DF4F1 /* gifs */ = {
 			isa = PBXGroup;
 			children = (
@@ -479,6 +492,7 @@
 				4F4942D120F3455E00BB7785 /* HistoryCell.swift */,
 				4FE2EF4B2162169800E389CE /* CoverPreviewCell.swift */,
 				4F1AF3C922D78E9C009C8328 /* CommentCell.swift */,
+				4FB59F5B22DCB15800939DE3 /* ReplyCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -803,6 +817,7 @@
 			files = (
 				4F1AF3CA22D78E9C009C8328 /* CommentCell.swift in Sources */,
 				4F78823420F3443200344D62 /* TutorialPageViewController.swift in Sources */,
+				4FB59F5E22DCB16E00939DE3 /* ReplyController.swift in Sources */,
 				528D36672257A07100F4FEB2 /* URL+Extensions.swift in Sources */,
 				528D364F2257A07100F4FEB2 /* BKLiveRoom+Info.swift in Sources */,
 				4F78823220F3443200344D62 /* SourceTableViewController.swift in Sources */,
@@ -887,6 +902,7 @@
 				528D36572257A07100F4FEB2 /* URLSession+Extensions.swift in Sources */,
 				4F49433B20F3468B00BB7785 /* photo_noise0_model.mlmodel in Sources */,
 				4F4942CC20F344E200BB7785 /* GreyNavController.swift in Sources */,
+				4FB59F5C22DCB15800939DE3 /* ReplyCell.swift in Sources */,
 				4F78823120F3443200344D62 /* DetailViewController.swift in Sources */,
 				4FA965022121BF4A0031983C /* CacheManager.swift in Sources */,
 				4F4942DE20F3455F00BB7785 /* DetectiPhoneX.swift in Sources */,

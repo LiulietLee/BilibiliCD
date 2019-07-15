@@ -54,4 +54,17 @@ class FeedbackController: UIViewController, UITableViewDelegate, UITableViewData
         // TODO
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationItem.backBarButtonItem = backItem
+        
+        if let vc = segue.destination as? ReplyController,
+            let cell = sender as? UITableViewCell,
+            let index = tableView.indexPath(for: cell),
+            comments.count > index.row {
+            vc.comment = comments[index.row]
+        }
+    }
+    
 }
