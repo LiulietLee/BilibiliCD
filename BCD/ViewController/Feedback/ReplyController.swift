@@ -8,10 +8,11 @@
 
 import UIKit
 
-class ReplyController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ReplyController: UIViewController, UITableViewDataSource, UITableViewDelegate, EditControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-
+    @IBOutlet weak var newReplyButton: UIButton!
+    
     private var reply = [Reply]()
     private var commentProvider = CommentProvider()
     var comment: Comment? = nil
@@ -56,6 +57,16 @@ class ReplyController: UIViewController, UITableViewDataSource, UITableViewDeleg
             cell.content.text = reply[row].content
             
             return cell
+        }
+    }
+    
+    func editFinished(username: String, content: String) {
+        print("- \(username):\n\(content)")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? EditController {
+            vc.delegate = self
         }
     }
 }

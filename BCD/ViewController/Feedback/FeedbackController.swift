@@ -8,10 +8,11 @@
 
 import UIKit
 
-class FeedbackController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FeedbackController: UIViewController, UITableViewDelegate, UITableViewDataSource, EditControllerDelegate {
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var newCommentButton: UIButton!
     
     private var comments = [Comment]()
     private let commentProvider = CommentProvider()
@@ -21,7 +22,11 @@ class FeedbackController: UIViewController, UITableViewDelegate, UITableViewData
         
         tableView.dataSource = self
         tableView.delegate = self
-
+        tableView.tableFooterView = UIView()
+        
+        newCommentButton.layer.masksToBounds = true
+        newCommentButton.layer.cornerRadius = 28.0
+        
         menuButton.target = revealViewController()
         menuButton.action = #selector(revealViewController().revealToggle(_:))
         view.addGestureRecognizer(revealViewController().panGestureRecognizer())
@@ -54,6 +59,10 @@ class FeedbackController: UIViewController, UITableViewDelegate, UITableViewData
         // TODO
     }
     
+    func editFinished(username: String, content: String) {
+        print("- \(username):\n\(content)")
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let backItem = UIBarButtonItem()
         backItem.title = ""
@@ -64,6 +73,8 @@ class FeedbackController: UIViewController, UITableViewDelegate, UITableViewData
             let index = tableView.indexPath(for: cell),
             comments.count > index.row {
             vc.comment = comments[index.row]
+        } else if let vc = segue.destination as? EditController {
+            vc.delegate = self
         }
     }
     

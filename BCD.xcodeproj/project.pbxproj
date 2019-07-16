@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4F1AF3C822D77CED009C8328 /* FeedbackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1AF3C722D77CED009C8328 /* FeedbackController.swift */; };
+		4F15D82622DDE6990080204E /* FeedbackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F15D82422DDE6990080204E /* FeedbackController.swift */; };
+		4F15D82722DDE6990080204E /* ReplyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F15D82522DDE6990080204E /* ReplyController.swift */; };
+		4F15D82922DDE6A70080204E /* EditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F15D82822DDE6A70080204E /* EditController.swift */; };
 		4F1AF3CA22D78E9C009C8328 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1AF3C922D78E9C009C8328 /* CommentCell.swift */; };
 		4F270F2122D21261008C07A6 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F270F2022D21261008C07A6 /* Comment.swift */; };
 		4F338F5720DD00410014226C /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F338F5620DD00410014226C /* ShareViewController.swift */; };
@@ -90,7 +92,6 @@
 		4F8B90731F7B2E3800AB158D /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B90711F7B2E3800AB158D /* CoreDataStorage.swift */; };
 		4FA965022121BF4A0031983C /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F49434D20F3469600BB7785 /* CacheManager.swift */; };
 		4FB59F5C22DCB15800939DE3 /* ReplyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB59F5B22DCB15800939DE3 /* ReplyCell.swift */; };
-		4FB59F5E22DCB16E00939DE3 /* ReplyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB59F5D22DCB16E00939DE3 /* ReplyController.swift */; };
 		4FB5A49F2171F6D5009DF4F1 /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4FB5A49E2171F6D5009DF4F1 /* loading.gif */; };
 		4FB5CC8122D0A11300A6A47B /* CommentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB5CC8022D0A11300A6A47B /* CommentProvider.swift */; };
 		4FE2EF4C2162169800E389CE /* CoverPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE2EF4B2162169800E389CE /* CoverPreviewCell.swift */; };
@@ -195,7 +196,9 @@
 
 /* Begin PBXFileReference section */
 		014002F5C328A516653ECA7C /* Pods-BCD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BCD/Pods-BCD.debug.xcconfig"; sourceTree = "<group>"; };
-		4F1AF3C722D77CED009C8328 /* FeedbackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackController.swift; sourceTree = "<group>"; };
+		4F15D82422DDE6990080204E /* FeedbackController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackController.swift; sourceTree = "<group>"; };
+		4F15D82522DDE6990080204E /* ReplyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyController.swift; sourceTree = "<group>"; };
+		4F15D82822DDE6A70080204E /* EditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditController.swift; sourceTree = "<group>"; };
 		4F1AF3C922D78E9C009C8328 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		4F270F2022D21261008C07A6 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		4F2DB5DA1F75F7D400FB2315 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
@@ -268,7 +271,6 @@
 		4F78822320F3443200344D62 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryViewController.swift; path = ViewController/HistoryViewController.swift; sourceTree = "<group>"; };
 		4F8B90711F7B2E3800AB158D /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 		4FB59F5B22DCB15800939DE3 /* ReplyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyCell.swift; sourceTree = "<group>"; };
-		4FB59F5D22DCB16E00939DE3 /* ReplyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyController.swift; sourceTree = "<group>"; };
 		4FB5A49E2171F6D5009DF4F1 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
 		4FB5CC8022D0A11300A6A47B /* CommentProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentProvider.swift; sourceTree = "<group>"; };
 		4FE2EF4B2162169800E389CE /* CoverPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverPreviewCell.swift; sourceTree = "<group>"; };
@@ -331,6 +333,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F15D82322DDE6990080204E /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				4F15D82422DDE6990080204E /* FeedbackController.swift */,
+				4F15D82522DDE6990080204E /* ReplyController.swift */,
+				4F15D82822DDE6A70080204E /* EditController.swift */,
+			);
+			name = Feedback;
+			path = ViewController/Feedback;
+			sourceTree = "<group>";
+		};
 		4F2F444E20E37D2700C61EAD /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -425,7 +438,7 @@
 				4F78821C20F3443200344D62 /* TutorialViewController.swift */,
 				4F78822120F3443200344D62 /* Waifu2xViewController.swift */,
 				4FF3FD21215E82EC00AF7F4B /* HotListController.swift */,
-				4FB59F5F22DCB17A00939DE3 /* Feedback */,
+				4F15D82322DDE6990080204E /* Feedback */,
 				4F4942C620F344E200BB7785 /* NavigationController */,
 			);
 			name = ViewController;
@@ -465,15 +478,6 @@
 				4F78820720F3423900344D62 /* BCD.entitlements */,
 			);
 			name = "Supporting File";
-			sourceTree = "<group>";
-		};
-		4FB59F5F22DCB17A00939DE3 /* Feedback */ = {
-			isa = PBXGroup;
-			children = (
-				4F1AF3C722D77CED009C8328 /* FeedbackController.swift */,
-				4FB59F5D22DCB16E00939DE3 /* ReplyController.swift */,
-			);
-			path = Feedback;
 			sourceTree = "<group>";
 		};
 		4FB5A49D2171F6CA009DF4F1 /* gifs */ = {
@@ -817,7 +821,7 @@
 			files = (
 				4F1AF3CA22D78E9C009C8328 /* CommentCell.swift in Sources */,
 				4F78823420F3443200344D62 /* TutorialPageViewController.swift in Sources */,
-				4FB59F5E22DCB16E00939DE3 /* ReplyController.swift in Sources */,
+				4F15D82722DDE6990080204E /* ReplyController.swift in Sources */,
 				528D36672257A07100F4FEB2 /* URL+Extensions.swift in Sources */,
 				528D364F2257A07100F4FEB2 /* BKLiveRoom+Info.swift in Sources */,
 				4F78823220F3443200344D62 /* SourceTableViewController.swift in Sources */,
@@ -836,6 +840,7 @@
 				4F78822F20F3443200344D62 /* SettingViewController.swift in Sources */,
 				4F4942D020F344E200BB7785 /* ColoredNavController.swift in Sources */,
 				4F78822720F3443200344D62 /* SetHistoryNumViewController.swift in Sources */,
+				4F15D82922DDE6A70080204E /* EditController.swift in Sources */,
 				4F78823320F3443200344D62 /* FindArtViewController.swift in Sources */,
 				4F78823020F3443200344D62 /* TutorialViewController.swift in Sources */,
 				4FF3FD1C215D339900AF7F4B /* AbstractProvider.swift in Sources */,
@@ -883,7 +888,6 @@
 				528D36732257A07100F4FEB2 /* BKArticle+Info.swift in Sources */,
 				4F49433820F3468B00BB7785 /* anime_noise2_model.mlmodel in Sources */,
 				528D366F2257A07100F4FEB2 /* BKLiveRoom.swift in Sources */,
-				4F1AF3C822D77CED009C8328 /* FeedbackController.swift in Sources */,
 				4F49433A20F3468B00BB7785 /* anime_noise0_model.mlmodel in Sources */,
 				528D366D2257A07100F4FEB2 /* BKVideo.swift in Sources */,
 				4F78822820F3443200344D62 /* TutorialContentViewController.swift in Sources */,
@@ -909,6 +913,7 @@
 				4F49432320F3468200BB7785 /* UIImage+Gif.swift in Sources */,
 				4F78823720F3443200344D62 /* HistoryViewController.swift in Sources */,
 				4FF3FD22215E82EC00AF7F4B /* HotListController.swift in Sources */,
+				4F15D82622DDE6990080204E /* FeedbackController.swift in Sources */,
 				4F78822620F3443200344D62 /* MainViewController.swift in Sources */,
 				4F78822920F3443200344D62 /* ScalingViewController.swift in Sources */,
 				528D36492257A07100F4FEB2 /* BKApp.swift in Sources */,
