@@ -24,7 +24,7 @@ class CoverInfoProvider: AbstractProvider {
     }
     
     private func updateServerRecord(type: CoverType, nid: UInt64, info: Info) {
-        guard let url = APIFactory.getAPI(byType: type, andNID: Int(nid), andInfo: info, env: env) else {
+        guard let url = APIFactory.getCoverAPI(byType: type, andNID: Int(nid), andInfo: info, env: env) else {
             fatalError("cannot generate api url")
         }
 
@@ -58,7 +58,7 @@ class CoverInfoProvider: AbstractProvider {
     }
     
     private func fetchCoverRecordFromServer(withType type: CoverType, andID nid: UInt64, _ completion: @escaping (Info?) -> Void) {
-        guard let url = APIFactory.getAPI(byType: type, andNID: Int(nid), env: env) else {
+        guard let url = APIFactory.getCoverAPI(byType: type, andNID: Int(nid), env: env) else {
             fatalError("cannot generate api url")
         }
         let request = URLRequest(url: url)

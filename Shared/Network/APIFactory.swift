@@ -26,7 +26,7 @@ class APIFactory {
         return builder
     }
     
-    static public func getAPI(
+    static public func getCommentListAPI(
         withCommentPage page: Int,
         andCount limit: Int = 20,
         env: Environment = .prod
@@ -38,7 +38,7 @@ class APIFactory {
             .build()
     }
     
-    static public func getAPI(
+    static public func getReplyListAPI(
         withCommentID commentID: Int,
         andPage page: Int,
         andCount limit: Int = 20,
@@ -51,7 +51,22 @@ class APIFactory {
             .build()
     }
     
-    static public func getAPI(
+    static public func getNewCommentAPI(
+        env: Environment = .prod
+    ) -> URL? {
+        return baseAPI(env).set(path: "/api/comment/new").build()
+    }
+    
+    static public func getNewReplyAPI(
+        withCommentID commentID: Int,
+        env: Environment = .prod
+    ) -> URL? {
+        return baseAPI(env)
+            .set(path: "/api/reply/new/\(commentID)")
+            .build()
+    }
+    
+    static public func getCoverAPI(
         byType type: CoverType,
         andNID nid: Int? = nil,
         andInfo newInfo: Info? = nil,
