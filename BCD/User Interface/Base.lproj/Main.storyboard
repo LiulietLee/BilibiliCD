@@ -2110,6 +2110,8 @@
                     </view>
                     <connections>
                         <outlet property="bottomConstraint" destination="ZXT-Ew-WkJ" id="et7-GI-daA"/>
+                        <outlet property="cancelButton" destination="hzu-kC-pV3" id="XUg-c2-kfC"/>
+                        <outlet property="postButton" destination="KWH-YA-Uwm" id="VlL-L9-kvx"/>
                         <outlet property="textView" destination="Wmb-es-gri" id="nOn-Dx-KQW"/>
                         <outlet property="usernameField" destination="O93-WR-poG" id="tmp-8c-2un"/>
                     </connections>
@@ -2139,7 +2141,7 @@
         <image name="liuliet-pro" width="115.33333587646484" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iAP-o1-lDR"/>
+        <segue reference="bbS-pi-LKM"/>
         <segue reference="pFk-eZ-ib2"/>
         <segue reference="vJy-84-wTR"/>
     </inferredMetricsTieBreakers>

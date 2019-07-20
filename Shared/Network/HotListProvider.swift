@@ -11,7 +11,7 @@ import Foundation
 class HotListProvider: AbstractProvider {
     
     open func getHotList(completion: @escaping ([Info]?) -> Void) {
-        guard let url = APIFactory.getAPI(byType: .hotList) else {
+        guard let url = APIFactory.getCoverAPI(byType: .hotList) else {
             completion(nil)
             return
         }

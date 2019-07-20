@@ -75,6 +75,7 @@ class FeedbackController: UIViewController, UITableViewDelegate, UITableViewData
             vc.comment = comments[index.row]
         } else if let vc = segue.destination as? EditController {
             vc.delegate = self
+            vc.model = .comment
         }
     }
     

@@ -26,7 +26,11 @@ class ReplyController: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.tableFooterView = UIView()
         
+        newReplyButton.layer.masksToBounds = true
+        newReplyButton.layer.cornerRadius = 28.0
+
         commentProvider.getReplies(comment: comment!, page: 0) { [weak self] (data) in
             guard let self = self, let list = data else { return }
             self.reply = list
@@ -67,6 +71,8 @@ class ReplyController: UIViewController, UITableViewDataSource, UITableViewDeleg
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? EditController {
             vc.delegate = self
+            vc.model = .reply
+            vc.currentComment = comment
         }
     }
 }

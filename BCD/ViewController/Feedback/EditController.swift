@@ -13,12 +13,22 @@ protocol EditControllerDelegate: class {
 }
 
 class EditController: UIViewController {
+    
+    enum EditModel {
+        case comment
+        case reply
+    }
 
+    @IBOutlet weak var postButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     weak var delegate: EditControllerDelegate? = nil
+    var model = EditModel.comment
+    var currentComment: Comment? = nil
+    private var commentProvider = CommentProvider()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,8 +62,39 @@ class EditController: UIViewController {
     }
     
     @IBAction func goButtonTapped() {
-        delegate?.editFinished(username: usernameField.text!, content: textView.text)
-        goBack()
+        if let username = usernameField.text,
+            let content = textView.text,
+            username != "",
+            content != "" {
+            postButton.isEnabled = false
+            
+            let completion: (Int?) -> Void = { [weak self] (status) in
+                guard let self = self else { return }
+                DispatchQueue.main.async {
+                    switch status {
+                    case 200:
+                        self.delegate?.editFinished(username: username, content: content)
+                        self.goBack()
+                    default:
+                        print("error status code: \(status ?? -1)")
+                        self.postButton.isEnabled = true
+                    }
+                }
+            }
+            
+            switch model {
+            case .comment:
+                commentProvider.newComment(username: username, content: content, completion: completion)
+            case .reply:
+                if let comment = currentComment {
+                    commentProvider.newReply(commentID: comment.id, username: username, content: content, completion: completion)
+                } else {
+                    delegate?.editFinished(username: username, content: content)
+                    goBack()
+                }
+            }
+        } else {
+            // TODO: - dialog
+        }
     }
-
 }
