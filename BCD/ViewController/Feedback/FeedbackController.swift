@@ -48,9 +48,7 @@ class FeedbackController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CommentCell
         
-        let row = indexPath.row
-        cell.username.text = comments[row].username
-        cell.content.text = comments[row].content
+        cell.data = comments[indexPath.row]
         
         return cell
     }

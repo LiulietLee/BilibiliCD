@@ -10,6 +10,17 @@ import UIKit
 
 class ReplyCell: UITableViewCell {
 
+    var data: Reply! {
+        didSet {
+            self.username.text = data.username
+            self.content.text = data.content
+            
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yy.MM.dd hh:mm"
+            self.date.text = formatter.string(from: data.time)
+        }
+    }
+    
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var content: UILabel!
     @IBOutlet weak var date: UILabel!

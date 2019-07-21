@@ -49,16 +49,13 @@ class ReplyController: UIViewController, UITableViewDataSource, UITableViewDeleg
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "comment", for: indexPath) as! CommentCell
             
-            cell.username.text = comment!.username
-            cell.content.text = comment!.content
+            cell.data = comment!
             
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "reply", for: indexPath) as! ReplyCell
             
-            let row = indexPath.row - 1
-            cell.username.text = reply[row].username
-            cell.content.text = reply[row].content
+            cell.data = reply[indexPath.row - 1]
             
             return cell
         }
@@ -66,6 +63,7 @@ class ReplyController: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     func editFinished(username: String, content: String) {
         print("- \(username):\n\(content)")
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -998,13 +998,13 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B站新进动态区UP主" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nRS-N4-fEY">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arcaea 听歌向玩家" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nRS-N4-fEY">
                                                     <rect key="frame" x="132" y="102" width="168" height="28"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="沉迷萌豚番的危重病患" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ZIY-Rf-Wg9">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="一天推一个也叫单推.jpg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ZIY-Rf-Wg9">
                                                     <rect key="frame" x="24" y="147" width="276" height="22"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                                     <color key="textColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1757,7 +1757,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCP-My-fYF">
-                                                    <rect key="frame" x="15" y="61.5" width="290" height="77.5"/>
+                                                    <rect key="frame" x="15" y="69.5" width="290" height="61.5"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1793,14 +1793,16 @@
                                                 <constraint firstAttribute="bottom" secondItem="ISe-hv-Q0p" secondAttribute="bottom" constant="10.5" id="oW5-pA-fEX"/>
                                                 <constraint firstItem="Ceh-e3-8gB" firstAttribute="leading" secondItem="8Xi-KL-Hr4" secondAttribute="leading" constant="15" id="plr-eN-VMh"/>
                                                 <constraint firstItem="ISe-hv-Q0p" firstAttribute="leading" secondItem="Ceh-e3-8gB" secondAttribute="trailing" constant="32" id="vwt-7m-UdW"/>
-                                                <constraint firstItem="hCP-My-fYF" firstAttribute="top" secondItem="FmU-mc-81Y" secondAttribute="bottom" constant="8" id="xGj-Mf-Kep"/>
-                                                <constraint firstItem="Ceh-e3-8gB" firstAttribute="top" secondItem="hCP-My-fYF" secondAttribute="bottom" constant="8" id="yLo-u8-stG"/>
+                                                <constraint firstItem="hCP-My-fYF" firstAttribute="top" secondItem="FmU-mc-81Y" secondAttribute="bottom" constant="16" id="xGj-Mf-Kep"/>
+                                                <constraint firstItem="Ceh-e3-8gB" firstAttribute="top" secondItem="hCP-My-fYF" secondAttribute="bottom" constant="16" id="yLo-u8-stG"/>
                                                 <constraint firstItem="zCc-bY-d09" firstAttribute="trailing" secondItem="8Xi-KL-Hr4" secondAttribute="trailingMargin" id="zc6-Eh-Nsz"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="content" destination="hCP-My-fYF" id="qiQ-IK-qU2"/>
                                             <outlet property="date" destination="FmU-mc-81Y" id="Ez2-rp-Dzs"/>
+                                            <outlet property="dislikeButton" destination="ISe-hv-Q0p" id="FCu-b8-Jic"/>
+                                            <outlet property="likeButton" destination="Ceh-e3-8gB" id="9wU-5w-83n"/>
                                             <outlet property="username" destination="zCc-bY-d09" id="c9q-BI-gxA"/>
                                             <segue destination="Kb8-gW-wdW" kind="show" id="NZX-dT-CpY"/>
                                         </connections>
@@ -1933,6 +1935,8 @@
                                         <connections>
                                             <outlet property="content" destination="VZI-Je-DhO" id="gaQ-Rj-4CB"/>
                                             <outlet property="date" destination="zgw-4r-2hd" id="jo5-tX-12E"/>
+                                            <outlet property="dislikeButton" destination="UfF-Zj-SU5" id="J2V-ok-46e"/>
+                                            <outlet property="likeButton" destination="On5-QP-xjn" id="hA3-S6-QI8"/>
                                             <outlet property="username" destination="R7U-n7-FVr" id="KbY-8j-OVW"/>
                                         </connections>
                                     </tableViewCell>
@@ -1953,7 +1957,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zf1-sz-0N1">
-                                                    <rect key="frame" x="15" y="43" width="290" height="58.5"/>
+                                                    <rect key="frame" x="15" y="51" width="290" height="42.5"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1967,7 +1971,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ddF-dG-qfW" firstAttribute="trailing" secondItem="nYE-j6-im0" secondAttribute="trailingMargin" id="4YM-75-HIS"/>
-                                                <constraint firstItem="ddF-dG-qfW" firstAttribute="top" secondItem="Zf1-sz-0N1" secondAttribute="bottom" constant="8" id="CQb-Gq-YFi"/>
+                                                <constraint firstItem="ddF-dG-qfW" firstAttribute="top" secondItem="Zf1-sz-0N1" secondAttribute="bottom" constant="16" id="CQb-Gq-YFi"/>
                                                 <constraint firstItem="tIh-fS-pB8" firstAttribute="leading" secondItem="nYE-j6-im0" secondAttribute="leadingMargin" id="Cut-AB-ACq"/>
                                                 <constraint firstItem="ddF-dG-qfW" firstAttribute="leading" secondItem="nYE-j6-im0" secondAttribute="leadingMargin" id="E80-P8-LyB"/>
                                                 <constraint firstItem="tIh-fS-pB8" firstAttribute="trailing" secondItem="nYE-j6-im0" secondAttribute="trailingMargin" id="dZy-zh-0oM"/>
@@ -1975,7 +1979,7 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="ddF-dG-qfW" secondAttribute="bottom" id="goB-e8-5dG"/>
                                                 <constraint firstItem="Zf1-sz-0N1" firstAttribute="trailing" secondItem="nYE-j6-im0" secondAttribute="trailingMargin" id="o81-LK-bF5"/>
                                                 <constraint firstItem="Zf1-sz-0N1" firstAttribute="leading" secondItem="nYE-j6-im0" secondAttribute="leadingMargin" id="toa-1A-GbI"/>
-                                                <constraint firstItem="Zf1-sz-0N1" firstAttribute="top" secondItem="tIh-fS-pB8" secondAttribute="bottom" constant="8" id="zi0-a8-DYu"/>
+                                                <constraint firstItem="Zf1-sz-0N1" firstAttribute="top" secondItem="tIh-fS-pB8" secondAttribute="bottom" constant="16" id="zi0-a8-DYu"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
