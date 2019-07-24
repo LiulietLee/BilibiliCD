@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ReplyControllerDelegate: class {
+    func getBackFromReplyController(comment: Comment, liked: Bool, disliked: Bool)
+}
+
 class ReplyController: UIViewController, UITableViewDataSource, UITableViewDelegate, EditControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
@@ -15,7 +19,9 @@ class ReplyController: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     private var reply = [Reply]()
     private var commentProvider = CommentProvider()
-    var comment: Comment? = nil
+    var comment: Comment!
+    var liked = false, disliked = false
+    weak var delegate: ReplyControllerDelegate? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +37,7 @@ class ReplyController: UIViewController, UITableViewDataSource, UITableViewDeleg
         newReplyButton.layer.masksToBounds = true
         newReplyButton.layer.cornerRadius = 28.0
 
-        commentProvider.getReplies(comment: comment!, page: 0) { [weak self] (data) in
+        commentProvider.getNextReplyList(comment: comment!) { [weak self] (data) in
             guard let self = self, let list = data else { return }
             self.reply = list
             DispatchQueue.main.async { [weak self] in
@@ -39,6 +45,11 @@ class ReplyController: UIViewController, UITableViewDataSource, UITableViewDeleg
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        delegate?.getBackFromReplyController(comment: comment, liked: liked, disliked: disliked)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -50,6 +61,8 @@ class ReplyController: UIViewController, UITableViewDataSource, UITableViewDeleg
             let cell = tableView.dequeueReusableCell(withIdentifier: "comment", for: indexPath) as! CommentCell
             
             cell.data = comment!
+            cell.liked = liked
+            cell.disliked = disliked
             
             return cell
         } else {
@@ -64,6 +77,24 @@ class ReplyController: UIViewController, UITableViewDataSource, UITableViewDeleg
     func editFinished(username: String, content: String) {
         print("- \(username):\n\(content)")
         
+    }
+    
+    @IBAction func dislikeButtonTapped() {
+        if let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? CommentCell {
+            liked = !liked
+            comment.suki += liked ? 1 : -1
+            cell.liked = liked
+            cell.data = comment
+        }
+    }
+    
+    @IBAction func likeButtonTapped() {
+        if let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? CommentCell {
+            disliked = !disliked
+            comment.kirai += disliked ? 1 : -1
+            cell.disliked = disliked
+            cell.data = comment
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

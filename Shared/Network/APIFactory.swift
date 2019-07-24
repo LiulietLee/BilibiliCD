@@ -51,9 +51,7 @@ class APIFactory {
             .build()
     }
     
-    static public func getNewCommentAPI(
-        env: Environment = .prod
-    ) -> URL? {
+    static public func getNewCommentAPI(env: Environment = .prod) -> URL? {
         return baseAPI(env).set(path: "/api/comment/new").build()
     }
     
@@ -63,6 +61,28 @@ class APIFactory {
     ) -> URL? {
         return baseAPI(env)
             .set(path: "/api/reply/new/\(commentID)")
+            .build()
+    }
+    
+    static public func getLikeCommentAPI(
+        withCommentID commentID: Int,
+        cancel: Bool,
+        env: Environment = .prod
+    ) -> URL? {
+        return baseAPI(env)
+            .set(path: "/api/comment/like/\(commentID)")
+            .addQueryItem(name: "cancel", value: "\(cancel)")
+            .build()
+    }
+    
+    static public func getDislikeCommentAPI(
+        withCommentID commentID: Int,
+        cancel: Bool,
+        env: Environment = .prod
+    ) -> URL? {
+        return baseAPI(env)
+            .set(path: "/api/comment/dislike/\(commentID)")
+            .addQueryItem(name: "cancel", value: "\(cancel)")
             .build()
     }
     

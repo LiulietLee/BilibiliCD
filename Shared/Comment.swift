@@ -9,18 +9,18 @@
 import Foundation
 
 struct Comment: Decodable {
-    let id: Int
-    let username: String
-    let content: String
-    let suki: Int
-    let kirai: Int
-    let time: Date
+    var id: Int
+    var username: String
+    var content: String
+    var suki: Int
+    var kirai: Int
+    var time: Date
 }
 
 struct Reply: Decodable {
-    let id: Int
-    let username: String
-    let content: String
-    let time: Date
-    let commentID: Int
+    var id: Int
+    var username: String
+    var content: String
+    var time: Date
+    var commentID: Int
 }

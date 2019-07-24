@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MaterialKit
 
-class ReplyCell: UITableViewCell {
+class ReplyCell: MKTableViewCell {
 
     var data: Reply! {
         didSet {

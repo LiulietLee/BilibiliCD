@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MaterialKit
 
-class CommentCell: UITableViewCell {
+class CommentCell: MKTableViewCell {
 
     var data: Comment! {
         didSet {
@@ -20,6 +21,26 @@ class CommentCell: UITableViewCell {
             let formatter = DateFormatter()
             formatter.dateFormat = "yy.MM.dd hh:mm"
             self.date.text = formatter.string(from: data.time)
+        }
+    }
+    
+    var liked: Bool! {
+        didSet {
+            if liked {
+                likeButton.setImage(UIImage(named: "ic_suki_tapped"), for: .normal)
+            } else {
+                likeButton.setImage(UIImage(named: "ic_suki"), for: .normal)
+            }
+        }
+    }
+    
+    var disliked: Bool! {
+        didSet {
+            if disliked {
+                dislikeButton.setImage(UIImage(named: "ic_kirai_tapped"), for: .normal)
+            } else {
+                dislikeButton.setImage(UIImage(named: "ic_kirai"), for: .normal)
+            }
         }
     }
     

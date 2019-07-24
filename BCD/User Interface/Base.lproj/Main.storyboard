@@ -1770,12 +1770,18 @@
                                                     <state key="normal" title="   10" image="ic_suki">
                                                         <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="likeButtonTapped:" destination="Oa1-Ok-dqG" eventType="touchUpInside" id="xV1-pZ-hJo"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISe-hv-Q0p">
                                                     <rect key="frame" x="176" y="147" width="129" height="24"/>
                                                     <state key="normal" title="   999" image="ic_kirai">
                                                         <color key="titleColor" red="0.32604168649999998" green="0.32604168649999998" blue="0.32604168649999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="dislikeButtonTapped:" destination="Oa1-Ok-dqG" eventType="touchUpInside" id="rjT-qV-cqF"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -1904,12 +1910,18 @@
                                                     <state key="normal" title="   10" image="ic_suki">
                                                         <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="likeButtonTapped" destination="Kb8-gW-wdW" eventType="touchUpInside" id="IT2-LW-TAx"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UfF-Zj-SU5">
                                                     <rect key="frame" x="176" y="147" width="129" height="24"/>
                                                     <state key="normal" title="   999" image="ic_kirai">
                                                         <color key="titleColor" red="0.32604168649999998" green="0.32604168649999998" blue="0.32604168649999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="dislikeButtonTapped" destination="Kb8-gW-wdW" eventType="touchUpInside" id="0AU-vN-8C2"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -2147,6 +2159,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="bbS-pi-LKM"/>
         <segue reference="pFk-eZ-ib2"/>
-        <segue reference="vJy-84-wTR"/>
+        <segue reference="4Jb-o1-lRn"/>
     </inferredMetricsTieBreakers>
 </document>

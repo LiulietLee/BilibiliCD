@@ -8,13 +8,16 @@
 
 import UIKit
 
-class FeedbackController: UIViewController, UITableViewDelegate, UITableViewDataSource, EditControllerDelegate {
+class FeedbackController: UIViewController, UITableViewDelegate, UITableViewDataSource, EditControllerDelegate, ReplyControllerDelegate {
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var newCommentButton: UIButton!
     
+    private var isLoading = false
+    private var stopLoading = false
     private var comments = [Comment]()
+    private var buttonStatus: [(liked: Bool, disliked: Bool)] = []
     private let commentProvider = CommentProvider()
     
     override func viewDidLoad() {
@@ -31,12 +34,26 @@ class FeedbackController: UIViewController, UITableViewDelegate, UITableViewData
         menuButton.action = #selector(revealViewController().revealToggle(_:))
         view.addGestureRecognizer(revealViewController().panGestureRecognizer())
         
-        commentProvider.getComments(page: 0) { [weak self] (data) in
+        load()
+    }
+    
+    private func load() {
+        if isLoading || stopLoading { return }
+        isLoading = true
+        commentProvider.getNextCommentList() { [weak self] (data) in
             guard let self = self, let list = data else { return }
-            self.comments = list
+            if list.isEmpty {
+                self.stopLoading = true
+                return
+            }
+            self.comments.append(contentsOf: list)
+            while self.buttonStatus.count < self.comments.count {
+                self.buttonStatus.append((false, false))
+            }
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
                 self.tableView.reloadData()
+                self.isLoading = false
             }
         }
     }
@@ -48,9 +65,49 @@ class FeedbackController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CommentCell
         
-        cell.data = comments[indexPath.row]
+        let idx = indexPath.row
+        cell.data = comments[idx]
+        cell.liked = buttonStatus[idx].liked
+        cell.disliked = buttonStatus[idx].disliked
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let count = comments.count
+        if indexPath.row == count - 1 {
+            load()
+        }
+    }
+    
+    @IBAction func likeButtonTapped(_ sender: UIButton) {
+        if let superView = sender.superview,
+            let cell = superView.superview as? CommentCell,
+            let index = tableView.indexPath(for: cell) {
+            buttonStatus[index.row].liked = !buttonStatus[index.row].liked
+            let liked = buttonStatus[index.row].liked
+            comments[index.row].suki += liked ? 1 : -1
+            cell.data = comments[index.row]
+            cell.liked = liked
+            commentProvider.likeComment(commentID: comments[index.row].id, cancel: !liked)
+        }
+    }
+    
+    @IBAction func dislikeButtonTapped(_ sender: UIButton) {
+        if let superView = sender.superview,
+            let cell = superView.superview as? CommentCell,
+            let index = tableView.indexPath(for: cell) {
+            buttonStatus[index.row].disliked = !buttonStatus[index.row].disliked
+            let disliked = buttonStatus[index.row].disliked
+            comments[index.row].kirai += disliked ? 1 : -1
+            cell.data = comments[index.row]
+            cell.disliked = disliked
+            commentProvider.dislikeComment(commentID: comments[index.row].id, cancel: !disliked)
+        }
+    }
+    
+    func getBackFromReplyController(comment: Comment, liked: Bool, disliked: Bool) {
+        // TODO
     }
     
     @IBAction func helpButtonTapped(_ sender: UIBarButtonItem) {
@@ -71,6 +128,7 @@ class FeedbackController: UIViewController, UITableViewDelegate, UITableViewData
             let index = tableView.indexPath(for: cell),
             comments.count > index.row {
             vc.comment = comments[index.row]
+            (vc.liked, vc.disliked) = buttonStatus[index.row]
         } else if let vc = segue.destination as? EditController {
             vc.delegate = self
             vc.model = .comment

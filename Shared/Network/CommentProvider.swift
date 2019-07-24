@@ -10,8 +10,12 @@ import Foundation
 
 class CommentProvider: AbstractProvider {
     
-    public func getComments(page: Int, count: Int = 20, completion: @escaping ([Comment]?) -> Void) {
-        guard let url = APIFactory.getCommentListAPI(withCommentPage: page, andCount: count, env: env) else {
+    private var commentPage = 0
+    private var replyPage = 0
+    private var countLimit = 20
+    
+    public func getNextCommentList(completion: @escaping ([Comment]?) -> Void) {
+        guard let url = APIFactory.getCommentListAPI(withCommentPage: commentPage, andCount: countLimit, env: env) else {
             completion(nil)
             return
         }
@@ -23,6 +27,7 @@ class CommentProvider: AbstractProvider {
             if error == nil,
                 let content = data,
                 let list = try? decoder.decode([Comment].self, from: content) {
+                self.commentPage += 1
                 completion(list)
             } else {
                 completion(nil)
@@ -30,8 +35,8 @@ class CommentProvider: AbstractProvider {
         }.resume()
     }
     
-    public func getReplies(comment: Comment, page: Int, count: Int = 20, completion: @escaping ([Reply]?) -> Void) {
-        guard let url = APIFactory.getReplyListAPI(withCommentID: comment.id, andPage: page, andCount: count, env: env) else {
+    public func getNextReplyList(comment: Comment, completion: @escaping ([Reply]?) -> Void) {
+        guard let url = APIFactory.getReplyListAPI(withCommentID: comment.id, andPage: replyPage, andCount: countLimit, env: env) else {
             completion(nil)
             return
         }
@@ -44,6 +49,7 @@ class CommentProvider: AbstractProvider {
                 let content = data,
                 let list = try? decoder.decode([Reply].self, from: content) {
                 completion(list)
+                self.replyPage += 1
             } else {
                 completion(nil)
             }
@@ -94,5 +100,19 @@ class CommentProvider: AbstractProvider {
             return
         }
         sendDataToServer(url: url, username: username, content: content, completion)
+    }
+    
+    public func likeComment(commentID: Int, cancel: Bool) {
+        guard let url = APIFactory.getLikeCommentAPI(withCommentID: commentID, cancel: cancel, env: env) else {
+            return
+        }
+        session.dataTask(with: URLRequest(url: url)).resume()
+    }
+    
+    public func dislikeComment(commentID: Int, cancel: Bool) {
+        guard let url = APIFactory.getDislikeCommentAPI(withCommentID: commentID, cancel: cancel, env: env) else {
+            return
+        }
+        session.dataTask(with: URLRequest(url: url)).resume()
     }
 }
