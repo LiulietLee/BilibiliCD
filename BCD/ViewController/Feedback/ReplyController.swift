@@ -8,27 +8,16 @@
 
 import UIKit
 
-protocol ReplyControllerDelegate: class {
-    func getBackFromReplyController(comment: Comment, liked: Bool, disliked: Bool)
-}
-
 class ReplyController: UIViewController, UITableViewDataSource, UITableViewDelegate, EditControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var newReplyButton: UIButton!
     
-    private var reply = [Reply]()
-    private var commentProvider = CommentProvider()
-    var comment: Comment!
-    var liked = false, disliked = false
-    weak var delegate: ReplyControllerDelegate? = nil
+    private var provider = CommentProvider.shared
+    private var isLoading = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if comment == nil {
-            // TODO
-        }
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -37,40 +26,48 @@ class ReplyController: UIViewController, UITableViewDataSource, UITableViewDeleg
         newReplyButton.layer.masksToBounds = true
         newReplyButton.layer.cornerRadius = 28.0
 
-        commentProvider.getNextReplyList(comment: comment!) { [weak self] (data) in
-            guard let self = self, let list = data else { return }
-            self.reply = list
+        load()
+    }
+    
+    private func load() {
+        if isLoading { return }
+        isLoading = true
+        provider.getNextReplyList() { [weak self] in
+            guard let self = self else { return }
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
                 self.tableView.reloadData()
+                self.isLoading = false
             }
         }
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        delegate?.getBackFromReplyController(comment: comment, liked: liked, disliked: disliked)
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return reply.count + (comment == nil ? 0 : 1)
+        return provider.replies.count + (provider.currentComment == nil ? 0 : 1)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "comment", for: indexPath) as! CommentCell
             
-            cell.data = comment!
-            cell.liked = liked
-            cell.disliked = disliked
+            cell.data = provider.currentComment
+            cell.liked = provider.buttonStatus[provider.currentCommentIndex].liked
+            cell.disliked = provider.buttonStatus[provider.currentCommentIndex].disliked
             
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "reply", for: indexPath) as! ReplyCell
             
-            cell.data = reply[indexPath.row - 1]
+            cell.data = provider.replies[indexPath.row - 1]
             
             return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let count = provider.replies.count
+        if indexPath.row == count - 1, count < provider.replyCount {
+            load()
         }
     }
     
@@ -80,20 +77,20 @@ class ReplyController: UIViewController, UITableViewDataSource, UITableViewDeleg
     }
     
     @IBAction func dislikeButtonTapped() {
-        if let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? CommentCell {
-            liked = !liked
-            comment.suki += liked ? 1 : -1
-            cell.liked = liked
-            cell.data = comment
+        provider.dislikeComment(commentIndex: provider.currentCommentIndex) { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                self.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
+            }
         }
     }
     
     @IBAction func likeButtonTapped() {
-        if let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? CommentCell {
-            disliked = !disliked
-            comment.kirai += disliked ? 1 : -1
-            cell.disliked = disliked
-            cell.data = comment
+        provider.likeComment(commentIndex: provider.currentCommentIndex) { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                self.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
+            }
         }
     }
     
@@ -101,7 +98,6 @@ class ReplyController: UIViewController, UITableViewDataSource, UITableViewDeleg
         if let vc = segue.destination as? EditController {
             vc.delegate = self
             vc.model = .reply
-            vc.currentComment = comment
         }
     }
 }

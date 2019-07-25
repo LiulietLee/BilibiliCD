@@ -8,6 +8,11 @@
 
 import Foundation
 
+struct ListResponse<T: Decodable>: Decodable {
+    var count: Int
+    var data: [T]
+}
+
 class AbstractProvider {
     
     internal let session = URLSession.shared

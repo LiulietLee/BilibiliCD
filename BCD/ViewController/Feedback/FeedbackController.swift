@@ -8,17 +8,14 @@
 
 import UIKit
 
-class FeedbackController: UIViewController, UITableViewDelegate, UITableViewDataSource, EditControllerDelegate, ReplyControllerDelegate {
+class FeedbackController: UIViewController, UITableViewDelegate, UITableViewDataSource, EditControllerDelegate {
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var newCommentButton: UIButton!
     
     private var isLoading = false
-    private var stopLoading = false
-    private var comments = [Comment]()
-    private var buttonStatus: [(liked: Bool, disliked: Bool)] = []
-    private let commentProvider = CommentProvider()
+    private let commentProvider = CommentProvider.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,19 +34,16 @@ class FeedbackController: UIViewController, UITableViewDelegate, UITableViewData
         load()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
     private func load() {
-        if isLoading || stopLoading { return }
+        if isLoading { return }
         isLoading = true
-        commentProvider.getNextCommentList() { [weak self] (data) in
-            guard let self = self, let list = data else { return }
-            if list.isEmpty {
-                self.stopLoading = true
-                return
-            }
-            self.comments.append(contentsOf: list)
-            while self.buttonStatus.count < self.comments.count {
-                self.buttonStatus.append((false, false))
-            }
+        commentProvider.getNextCommentList() { [weak self] in
+            guard let self = self else { return }
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
                 self.tableView.reloadData()
@@ -59,23 +53,23 @@ class FeedbackController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return comments.count
+        return commentProvider.comments.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CommentCell
         
         let idx = indexPath.row
-        cell.data = comments[idx]
-        cell.liked = buttonStatus[idx].liked
-        cell.disliked = buttonStatus[idx].disliked
+        cell.data = commentProvider.comments[idx]
+        cell.liked = commentProvider.buttonStatus[idx].liked
+        cell.disliked = commentProvider.buttonStatus[idx].disliked
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let count = comments.count
-        if indexPath.row == count - 1 {
+        let count = commentProvider.comments.count
+        if indexPath.row == count - 1, count < commentProvider.commentCount {
             load()
         }
     }
@@ -84,12 +78,13 @@ class FeedbackController: UIViewController, UITableViewDelegate, UITableViewData
         if let superView = sender.superview,
             let cell = superView.superview as? CommentCell,
             let index = tableView.indexPath(for: cell) {
-            buttonStatus[index.row].liked = !buttonStatus[index.row].liked
-            let liked = buttonStatus[index.row].liked
-            comments[index.row].suki += liked ? 1 : -1
-            cell.data = comments[index.row]
-            cell.liked = liked
-            commentProvider.likeComment(commentID: comments[index.row].id, cancel: !liked)
+            commentProvider.likeComment(commentIndex: index.row) { [weak self] in
+                guard let self = self else { return }
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
+                    self.tableView.reloadRows(at: [index], with: .none)
+                }
+            }
         }
     }
     
@@ -97,17 +92,14 @@ class FeedbackController: UIViewController, UITableViewDelegate, UITableViewData
         if let superView = sender.superview,
             let cell = superView.superview as? CommentCell,
             let index = tableView.indexPath(for: cell) {
-            buttonStatus[index.row].disliked = !buttonStatus[index.row].disliked
-            let disliked = buttonStatus[index.row].disliked
-            comments[index.row].kirai += disliked ? 1 : -1
-            cell.data = comments[index.row]
-            cell.disliked = disliked
-            commentProvider.dislikeComment(commentID: comments[index.row].id, cancel: !disliked)
+            commentProvider.dislikeComment(commentIndex: index.row) { [weak self] in
+                guard let self = self else { return }
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
+                    self.tableView.reloadRows(at: [index], with: .none)
+                }
+            }
         }
-    }
-    
-    func getBackFromReplyController(comment: Comment, liked: Bool, disliked: Bool) {
-        // TODO
     }
     
     @IBAction func helpButtonTapped(_ sender: UIBarButtonItem) {
@@ -123,12 +115,11 @@ class FeedbackController: UIViewController, UITableViewDelegate, UITableViewData
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
         
-        if let vc = segue.destination as? ReplyController,
+        if segue.destination is ReplyController,
             let cell = sender as? UITableViewCell,
             let index = tableView.indexPath(for: cell),
-            comments.count > index.row {
-            vc.comment = comments[index.row]
-            (vc.liked, vc.disliked) = buttonStatus[index.row]
+            commentProvider.comments.count > index.row {
+            commentProvider.currentCommentIndex = index.row
         } else if let vc = segue.destination as? EditController {
             vc.delegate = self
             vc.model = .comment
