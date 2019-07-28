@@ -14,7 +14,8 @@ class FeedbackController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var newCommentButton: UIButton!
-    
+    private var refreshControl = UIRefreshControl()
+
     private var isLoading = false
     private let commentProvider = CommentProvider.shared
     
@@ -32,12 +33,20 @@ class FeedbackController: UIViewController, UITableViewDelegate, UITableViewData
         menuButton.action = #selector(revealViewController().revealToggle(_:))
         view.addGestureRecognizer(revealViewController().panGestureRecognizer())
         
+        refreshControl.addTarget(self, action: #selector(reload), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+        
         load()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+    }
+    
+    @objc private func reload() {
+        commentProvider.resetParam()
+        load()
     }
     
     private func load() {
@@ -49,6 +58,7 @@ class FeedbackController: UIViewController, UITableViewDelegate, UITableViewData
                 guard let self = self else { return }
                 self.tableView.reloadData()
                 self.isLoading = false
+                self.refreshControl.endRefreshing()
             }
         }
     }
@@ -119,8 +129,7 @@ class FeedbackController: UIViewController, UITableViewDelegate, UITableViewData
                         .show()
                 }
             } else {
-                self.commentProvider.resetParam()
-                self.load()
+                self.reload()
             }
         }
     }

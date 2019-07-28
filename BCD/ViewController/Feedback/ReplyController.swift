@@ -13,6 +13,7 @@ class ReplyController: UIViewController, UITableViewDataSource, UITableViewDeleg
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var newReplyButton: UIButton!
+    private var refreshControl = UIRefreshControl()
     
     private var provider = CommentProvider.shared
     private var isLoading = false
@@ -27,6 +28,14 @@ class ReplyController: UIViewController, UITableViewDataSource, UITableViewDeleg
         newReplyButton.layer.masksToBounds = true
         newReplyButton.layer.cornerRadius = 28.0
 
+        refreshControl.addTarget(self, action: #selector(reload), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+        
+        load()
+    }
+    
+    @objc private func reload() {
+        provider.resetReplyParam()
         load()
     }
     
@@ -39,6 +48,7 @@ class ReplyController: UIViewController, UITableViewDataSource, UITableViewDeleg
                 guard let self = self else { return }
                 self.tableView.reloadData()
                 self.isLoading = false
+                self.refreshControl.endRefreshing()
             }
         }
     }
@@ -84,8 +94,7 @@ class ReplyController: UIViewController, UITableViewDataSource, UITableViewDeleg
                         .show()
                 }
             } else {
-                self.provider.resetReplyParam()
-                self.load()
+                self.reload()
             }
         }
     }
