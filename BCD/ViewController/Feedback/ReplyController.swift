@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LLDialog
 
 class ReplyController: UIViewController, UITableViewDataSource, UITableViewDelegate, EditControllerDelegate {
 
@@ -72,8 +73,21 @@ class ReplyController: UIViewController, UITableViewDataSource, UITableViewDeleg
     }
     
     func editFinished(username: String, content: String) {
-        print("- \(username):\n\(content)")
-        
+        provider.newReply(username: username, content: content) { [weak self] (reply) in
+            guard let self = self else { return }
+            if reply == nil {
+                DispatchQueue.main.async { [weak self] in
+                    guard self != nil else { return }
+                    LLDialog()
+                        .set(title: "咦")
+                        .set(title: "哪里出了问题……")
+                        .show()
+                }
+            } else {
+                self.provider.resetReplyParam()
+                self.load()
+            }
+        }
     }
     
     @IBAction func dislikeButtonTapped() {

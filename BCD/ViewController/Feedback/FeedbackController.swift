@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LLDialog
 
 class FeedbackController: UIViewController, UITableViewDelegate, UITableViewDataSource, EditControllerDelegate {
     
@@ -107,7 +108,21 @@ class FeedbackController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func editFinished(username: String, content: String) {
-        print("- \(username):\n\(content)")
+        commentProvider.newComment(username: username, content: content) { [weak self] (comment) in
+            guard let self = self else { return }
+            if comment == nil {
+                DispatchQueue.main.async { [weak self] in
+                    guard self != nil else { return }
+                    LLDialog()
+                        .set(title: "咦")
+                        .set(title: "哪里出了问题……")
+                        .show()
+                }
+            } else {
+                self.commentProvider.resetParam()
+                self.load()
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

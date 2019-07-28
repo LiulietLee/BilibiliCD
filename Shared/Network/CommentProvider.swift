@@ -49,6 +49,11 @@ class CommentProvider: AbstractProvider {
         currentCommentIndex = 0
     }
     
+    public func resetParam() {
+        resetCommentParam()
+        resetReplyParam()
+    }
+    
     public func getNextCommentList(completion: @escaping () -> Void) {
         guard let url = APIFactory.getCommentListAPI(withCommentPage: commentPage, andCount: countLimit, env: env) else {
             completion()
@@ -58,7 +63,7 @@ class CommentProvider: AbstractProvider {
         session.dataTask(with: URLRequest(url: url)) { (data, response, error) in
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
-            
+
             if error == nil,
                 let content = data,
                 let result = try? decoder.decode(ListResponse<Comment>.self, from: content) {
@@ -95,20 +100,24 @@ class CommentProvider: AbstractProvider {
         }.resume()
     }
     
-    public func newComment(username: String, content: String, completion: @escaping (Int?) -> Void) {
+    public func newComment(username: String, content: String, completion: @escaping (Comment?) -> Void) {
         guard let url = APIFactory.getNewCommentAPI(env: env) else {
             completion(nil)
             return
         }
-        sendDataToServer(url: url, username: username, content: content, completion)
+        sendDataToServer(Comment.self, url: url, username: username, content: content) { (response) in
+            completion(response?.data)
+        }
     }
     
-    public func newReply(commentID: Int, username: String, content: String, completion: @escaping (Int?) -> Void) {
-        guard let url = APIFactory.getNewReplyAPI(withCommentID: commentID, env: env) else {
+    public func newReply(username: String, content: String, completion: @escaping (Reply?) -> Void) {
+        guard let url = APIFactory.getNewReplyAPI(withCommentID: currentComment!.id, env: env) else {
             completion(nil)
             return
         }
-        sendDataToServer(url: url, username: username, content: content, completion)
+        sendDataToServer(Reply.self, url: url, username: username, content: content) { (response) in
+            completion(response?.data)
+        }
     }
     
     public func likeComment(commentIndex i: Int, completion: @escaping () -> Void) {
@@ -137,7 +146,7 @@ class CommentProvider: AbstractProvider {
 }
 
 extension CommentProvider {
-    private func sendDataToServer(url: URL, username: String, content: String, _ completion: @escaping (Int?) -> Void) {
+    private func sendDataToServer<T: Decodable>(_ type: T.Type, url: URL, username: String, content: String, _ completion: @escaping (MessageResponse<T>?) -> Void) {
         let parameters: [String : Any] = ["username": username, "content": content]
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -151,16 +160,13 @@ extension CommentProvider {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
         session.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {
-                print("\(String(describing: error))")
-                return
-            }
-            
-            let responseString = String(data: data, encoding: .utf8)
-            print("responseString = \(String(describing: responseString))")
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .iso8601
 
-            if let httpStatus = response as? HTTPURLResponse {
-                completion(httpStatus.statusCode)
+            if error == nil,
+                let content = data,
+                let result = try? decoder.decode(MessageResponse<T>.self, from: content) {
+                completion(result)
             } else {
                 completion(nil)
             }

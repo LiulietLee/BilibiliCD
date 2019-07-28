@@ -2050,10 +2050,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z8I-tI-MRw">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzu-kC-pV3">
-                                        <rect key="frame" x="16" y="32" width="30" height="30"/>
+                                        <rect key="frame" x="16" y="12" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="hzu-kC-pV3" secondAttribute="height" id="Wjf-tH-ztF"/>
                                         </constraints>
@@ -2063,7 +2063,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWH-YA-Uwm">
-                                        <rect key="frame" x="262" y="32" width="42" height="30"/>
+                                        <rect key="frame" x="262" y="12" width="42" height="30"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="POST"/>
                                         <connections>
@@ -2071,7 +2071,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZ5-L5-hw9">
-                                        <rect key="frame" x="0.0" y="69" width="320" height="1"/>
+                                        <rect key="frame" x="0.0" y="49" width="320" height="1"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="nOt-9C-dm4"/>
@@ -2085,21 +2085,16 @@
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="KWH-YA-Uwm" secondAttribute="bottom" constant="8" id="1dI-MA-Bo7"/>
                                     <constraint firstAttribute="bottom" secondItem="uZ5-L5-hw9" secondAttribute="bottom" id="3Ak-dO-3fO"/>
+                                    <constraint firstItem="KWH-YA-Uwm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hzu-kC-pV3" secondAttribute="trailing" constant="8" symbolic="YES" id="4jR-hH-ror"/>
                                     <constraint firstItem="hzu-kC-pV3" firstAttribute="height" secondItem="KWH-YA-Uwm" secondAttribute="height" id="Chg-rx-DzJ"/>
                                     <constraint firstAttribute="bottom" secondItem="hzu-kC-pV3" secondAttribute="bottom" constant="8" id="Ofk-ZZ-aFU"/>
                                     <constraint firstItem="hzu-kC-pV3" firstAttribute="leading" secondItem="z8I-tI-MRw" secondAttribute="leading" constant="16" id="WGg-BU-jm6"/>
                                     <constraint firstAttribute="trailing" secondItem="uZ5-L5-hw9" secondAttribute="trailing" id="eEM-lP-I8g"/>
                                     <constraint firstItem="uZ5-L5-hw9" firstAttribute="leading" secondItem="z8I-tI-MRw" secondAttribute="leading" id="jrl-92-Ut2"/>
                                     <constraint firstAttribute="trailing" secondItem="KWH-YA-Uwm" secondAttribute="trailing" constant="16" id="lHo-2E-QRP"/>
-                                    <constraint firstAttribute="height" constant="70" id="yIh-TY-Jay"/>
+                                    <constraint firstAttribute="height" constant="50" id="yIh-TY-Jay"/>
                                 </constraints>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wmb-es-gri">
-                                <rect key="frame" x="16" y="134" width="288" height="434"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="在这里输入用户名" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O93-WR-poG">
                                 <rect key="frame" x="16" y="78" width="288" height="48"/>
                                 <constraints>
@@ -2109,12 +2104,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wmb-es-gri">
+                                <rect key="frame" x="16" y="134" width="288" height="434"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Wmb-es-gri" secondAttribute="trailing" constant="16" id="364-E4-vfV"/>
                             <constraint firstItem="O93-WR-poG" firstAttribute="leading" secondItem="PEG-h8-VQ5" secondAttribute="leadingMargin" id="8fx-4r-hTt"/>
-                            <constraint firstItem="z8I-tI-MRw" firstAttribute="top" secondItem="PEG-h8-VQ5" secondAttribute="top" id="ENd-WP-yeF"/>
+                            <constraint firstItem="z8I-tI-MRw" firstAttribute="top" secondItem="dQ0-Hh-kRc" secondAttribute="bottom" id="PB8-KY-aTY"/>
                             <constraint firstItem="z8I-tI-MRw" firstAttribute="leading" secondItem="PEG-h8-VQ5" secondAttribute="leading" id="UCA-9X-1tU"/>
                             <constraint firstItem="ZTn-5E-kl7" firstAttribute="top" secondItem="Wmb-es-gri" secondAttribute="bottom" id="ZXT-Ew-WkJ"/>
                             <constraint firstItem="Wmb-es-gri" firstAttribute="leading" secondItem="PEG-h8-VQ5" secondAttribute="leading" constant="16" id="bFl-YL-yHA"/>

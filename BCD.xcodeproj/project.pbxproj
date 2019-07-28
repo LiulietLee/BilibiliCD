@@ -71,6 +71,8 @@
 		4F4C9020210215C100C3AAB0 /* APIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C901F210215C100C3AAB0 /* APIFactory.swift */; };
 		4F4C902121021A0E00C3AAB0 /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C901D210214C100C3AAB0 /* URLBuilder.swift */; };
 		4F4C902221021A0E00C3AAB0 /* APIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C901F210215C100C3AAB0 /* APIFactory.swift */; };
+		4F65FC7422EDA20900363BA0 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F65FC7322EDA20900363BA0 /* Response.swift */; };
+		4F65FC7522EDA20900363BA0 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F65FC7322EDA20900363BA0 /* Response.swift */; };
 		4F6C0541216218A800ED57E0 /* HotListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6C0540216218A800ED57E0 /* HotListCell.swift */; };
 		4F76B8A51F905CB200F714B9 /* HisTutPage in Resources */ = {isa = PBXBuildFile; fileRef = 4F76B8A41F905CB200F714B9 /* HisTutPage */; };
 		4F78820920F3423900344D62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F78820620F3423900344D62 /* AppDelegate.swift */; };
@@ -249,6 +251,7 @@
 		4F49435020F3469700BB7785 /* SettingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingManager.swift; path = Model/CoreData/SettingManager.swift; sourceTree = "<group>"; };
 		4F4C901D210214C100C3AAB0 /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
 		4F4C901F210215C100C3AAB0 /* APIFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIFactory.swift; sourceTree = "<group>"; };
+		4F65FC7322EDA20900363BA0 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		4F6C0540216218A800ED57E0 /* HotListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotListCell.swift; sourceTree = "<group>"; };
 		4F76B8A41F905CB200F714B9 /* HisTutPage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = HisTutPage; sourceTree = "<group>"; };
 		4F78820620F3423900344D62 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Supporting Files/AppDelegate.swift"; sourceTree = "<group>"; };
@@ -415,6 +418,7 @@
 				4FF3FD19215D30A500AF7F4B /* HotListProvider.swift */,
 				4F4C901D210214C100C3AAB0 /* URLBuilder.swift */,
 				4F4C901F210215C100C3AAB0 /* APIFactory.swift */,
+				4F65FC7322EDA20900363BA0 /* Response.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -809,6 +813,7 @@
 				528D36622257A07100F4FEB2 /* BKVideo+Page.swift in Sources */,
 				528D365E2257A07100F4FEB2 /* BKVideo+Info.swift in Sources */,
 				528D36602257A07100F4FEB2 /* BKUser+Relationship.swift in Sources */,
+				4F65FC7522EDA20900363BA0 /* Response.swift in Sources */,
 				4FF3FD20215D348F00AF7F4B /* AssetProvider.swift in Sources */,
 				528D36562257A07100F4FEB2 /* BKArticle.swift in Sources */,
 				528D36762257A07100F4FEB2 /* BKLoginHelper.swift in Sources */,
@@ -859,6 +864,7 @@
 				4F78820920F3423900344D62 /* AppDelegate.swift in Sources */,
 				4F8B90731F7B2E3800AB158D /* CoreDataStorage.swift in Sources */,
 				4F49434220F3468B00BB7785 /* UIImage+Crop.swift in Sources */,
+				4F65FC7422EDA20900363BA0 /* Response.swift in Sources */,
 				528D36552257A07100F4FEB2 /* BKArticle.swift in Sources */,
 				528D36512257A07100F4FEB2 /* BKUser+AudioStat.swift in Sources */,
 				4F49433C20F3468B00BB7785 /* photo_noise3_model.mlmodel in Sources */,

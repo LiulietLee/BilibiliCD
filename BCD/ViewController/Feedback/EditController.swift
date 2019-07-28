@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LLDialog
 
 protocol EditControllerDelegate: class {
     func editFinished(username: String, content: String)
@@ -62,39 +63,19 @@ class EditController: UIViewController {
     }
     
     @IBAction func goButtonTapped() {
-        if let username = usernameField.text,
+        if var username = usernameField.text,
             let content = textView.text,
-            username != "",
             content != "" {
-            postButton.isEnabled = false
             
-            let completion: (Int?) -> Void = { [weak self] (status) in
-                guard let self = self else { return }
-                DispatchQueue.main.async {
-                    switch status {
-                    case 200:
-                        self.delegate?.editFinished(username: username, content: content)
-                        self.goBack()
-                    default:
-                        print("error status code: \(status ?? -1)")
-                        self.postButton.isEnabled = true
-                    }
-                }
-            }
-            
-            switch model {
-            case .comment:
-                commentProvider.newComment(username: username, content: content, completion: completion)
-            case .reply:
-                if let comment = currentComment {
-                    commentProvider.newReply(commentID: comment.id, username: username, content: content, completion: completion)
-                } else {
-                    delegate?.editFinished(username: username, content: content)
-                    goBack()
-                }
-            }
+            if username == "" { username = "anonymous" }
+            self.delegate?.editFinished(username: username, content: content)
+            self.goBack()
         } else {
-            // TODO: - dialog
+            LLDialog()
+                .set(title: "注意")
+                .set(message: "什么都不填是不行的呢")
+                .setPositiveButton(withTitle: "好的")
+                .show()
         }
     }
 }
