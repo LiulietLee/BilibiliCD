@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F0A450022EF0A7D00F4101E /* InariHairNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0A44FF22EF0A7D00F4101E /* InariHairNavController.swift */; };
 		4F15D82622DDE6990080204E /* FeedbackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F15D82422DDE6990080204E /* FeedbackController.swift */; };
 		4F15D82722DDE6990080204E /* ReplyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F15D82522DDE6990080204E /* ReplyController.swift */; };
 		4F15D82922DDE6A70080204E /* EditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F15D82822DDE6A70080204E /* EditController.swift */; };
@@ -198,6 +199,7 @@
 
 /* Begin PBXFileReference section */
 		014002F5C328A516653ECA7C /* Pods-BCD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BCD/Pods-BCD.debug.xcconfig"; sourceTree = "<group>"; };
+		4F0A44FF22EF0A7D00F4101E /* InariHairNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InariHairNavController.swift; sourceTree = "<group>"; };
 		4F15D82422DDE6990080204E /* FeedbackController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackController.swift; sourceTree = "<group>"; };
 		4F15D82522DDE6990080204E /* ReplyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyController.swift; sourceTree = "<group>"; };
 		4F15D82822DDE6A70080204E /* EditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditController.swift; sourceTree = "<group>"; };
@@ -387,6 +389,7 @@
 				4F4942C920F344E200BB7785 /* BlueNavController.swift */,
 				4FF64A612167264E0046302D /* GreenNavController.swift */,
 				4F4942CA20F344E200BB7785 /* SakuraNavController.swift */,
+				4F0A44FF22EF0A7D00F4101E /* InariHairNavController.swift */,
 				4F4942CB20F344E200BB7785 /* ColoredNavController.swift */,
 			);
 			name = NavigationController;
@@ -863,6 +866,7 @@
 				528D365F2257A07100F4FEB2 /* BKUser+Relationship.swift in Sources */,
 				4F78820920F3423900344D62 /* AppDelegate.swift in Sources */,
 				4F8B90731F7B2E3800AB158D /* CoreDataStorage.swift in Sources */,
+				4F0A450022EF0A7D00F4101E /* InariHairNavController.swift in Sources */,
 				4F49434220F3468B00BB7785 /* UIImage+Crop.swift in Sources */,
 				4F65FC7422EDA20900363BA0 /* Response.swift in Sources */,
 				528D36552257A07100F4FEB2 /* BKArticle.swift in Sources */,

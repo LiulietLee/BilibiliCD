@@ -36,7 +36,8 @@ class FeedbackController: UIViewController, UITableViewDelegate, UITableViewData
         refreshControl.addTarget(self, action: #selector(reload), for: .valueChanged)
         tableView.addSubview(refreshControl)
         
-        load()
+        refreshControl.beginRefreshing()
+        reload()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -89,11 +90,13 @@ class FeedbackController: UIViewController, UITableViewDelegate, UITableViewData
         if let superView = sender.superview,
             let cell = superView.superview as? CommentCell,
             let index = tableView.indexPath(for: cell) {
+            sender.isEnabled = false
             commentProvider.likeComment(commentIndex: index.row) { [weak self] in
                 guard let self = self else { return }
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
                     self.tableView.reloadRows(at: [index], with: .none)
+                    sender.isEnabled = true
                 }
             }
         }
@@ -103,11 +106,13 @@ class FeedbackController: UIViewController, UITableViewDelegate, UITableViewData
         if let superView = sender.superview,
             let cell = superView.superview as? CommentCell,
             let index = tableView.indexPath(for: cell) {
+            sender.isEnabled = false
             commentProvider.dislikeComment(commentIndex: index.row) { [weak self] in
                 guard let self = self else { return }
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
                     self.tableView.reloadRows(at: [index], with: .none)
+                    sender.isEnabled = true
                 }
             }
         }

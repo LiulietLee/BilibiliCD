@@ -464,7 +464,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xej-wM-HLJ">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xej-wM-HLJ">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="200" translatesAutoresizingMaskIntoConstraints="NO" id="Zsa-yu-und">
@@ -871,7 +871,7 @@
                                         </tableViewCellContentView>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="rippleLayerColor">
-                                                <color key="value" red="0.81761169430000002" green="0.73280304669999996" blue="0.74446588749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" red="0.79607843140000001" green="0.49803921569999998" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -1702,10 +1702,10 @@
             </objects>
             <point key="canvasLocation" x="1238" y="-1402"/>
         </scene>
-        <!--Grey Nav Controller-->
+        <!--Inari Hair Nav Controller-->
         <scene sceneID="J0N-sZ-CMR">
             <objects>
-                <navigationController id="FNs-da-MkX" customClass="GreyNavController" customModule="BilibiliCD" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="FNs-da-MkX" customClass="InariHairNavController" customModule="BilibiliCD" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3TV-RE-u2L">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1817,7 +1817,7 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jhy-7K-TQs" customClass="MKButton" customModule="MaterialKit">
                                 <rect key="frame" x="240" y="488" width="56" height="56"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.79607843137254897" green="0.49803921568627452" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="56" id="3EA-SG-o3M"/>
                                     <constraint firstAttribute="height" constant="56" id="IRI-yt-jzI"/>
@@ -1911,7 +1911,7 @@
                                                         <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="likeButtonTapped" destination="Kb8-gW-wdW" eventType="touchUpInside" id="IT2-LW-TAx"/>
+                                                        <action selector="likeButtonTapped:" destination="Kb8-gW-wdW" eventType="touchUpInside" id="lPL-xs-kCU"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UfF-Zj-SU5">
@@ -1920,7 +1920,7 @@
                                                         <color key="titleColor" red="0.32604168649999998" green="0.32604168649999998" blue="0.32604168649999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="dislikeButtonTapped" destination="Kb8-gW-wdW" eventType="touchUpInside" id="0AU-vN-8C2"/>
+                                                        <action selector="dislikeButtonTapped:" destination="Kb8-gW-wdW" eventType="touchUpInside" id="v9p-nH-E1G"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -2004,7 +2004,7 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPl-yD-kVD" customClass="MKButton" customModule="MaterialKit">
                                 <rect key="frame" x="240" y="488" width="56" height="56"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.79607843137254897" green="0.49803921568627452" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="56" id="g0b-PN-QYa"/>
                                     <constraint firstAttribute="height" constant="56" id="gbm-gO-bIQ"/>
@@ -2158,7 +2158,7 @@
         <image name="liuliet-pro" width="115.33333587646484" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iAP-o1-lDR"/>
+        <segue reference="bbS-pi-LKM"/>
         <segue reference="pFk-eZ-ib2"/>
         <segue reference="4Jb-o1-lRn"/>
     </inferredMetricsTieBreakers>

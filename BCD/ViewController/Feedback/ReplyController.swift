@@ -31,7 +31,8 @@ class ReplyController: UIViewController, UITableViewDataSource, UITableViewDeleg
         refreshControl.addTarget(self, action: #selector(reload), for: .valueChanged)
         tableView.addSubview(refreshControl)
         
-        load()
+        refreshControl.beginRefreshing()
+        reload()
     }
     
     @objc private func reload() {
@@ -99,20 +100,24 @@ class ReplyController: UIViewController, UITableViewDataSource, UITableViewDeleg
         }
     }
     
-    @IBAction func dislikeButtonTapped() {
-        provider.dislikeComment(commentIndex: provider.currentCommentIndex) { [weak self] in
-            DispatchQueue.main.async {
-                guard let self = self else { return }
-                self.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
-            }
-        }
-    }
-    
-    @IBAction func likeButtonTapped() {
+    @IBAction func likeButtonTapped(_ sender: UIButton) {
+        sender.isEnabled = false
         provider.likeComment(commentIndex: provider.currentCommentIndex) { [weak self] in
             DispatchQueue.main.async {
                 guard let self = self else { return }
                 self.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
+                sender.isEnabled = true
+            }
+        }
+    }
+    
+    @IBAction func dislikeButtonTapped(_ sender: UIButton) {
+        sender.isEnabled = false
+        provider.dislikeComment(commentIndex: provider.currentCommentIndex) { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                self.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
+                sender.isEnabled = true
             }
         }
     }
