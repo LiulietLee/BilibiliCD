@@ -15,8 +15,14 @@ class CommentCell: MKTableViewCell {
         didSet {
             self.username.text = data.username
             self.content.text = data.content
-            self.likeButton.setTitle("  \(data.suki)", for: .normal)
-            self.dislikeButton.setTitle("  \(data.kirai)", for: .normal)
+            self.likeButton.setTitle(
+                "  \(data.suki > 999 ? 999 : data.suki)" + (data.suki > 999 ? "+" : ""),
+                for: .normal
+            )
+            self.dislikeButton.setTitle(
+                "  \(data.kirai > 999 ? 999 : data.kirai)" + (data.kirai > 999 ? "+" : ""),
+                for: .normal
+            )
             
             let formatter = DateFormatter()
             formatter.dateFormat = "yy.MM.dd hh:mm"

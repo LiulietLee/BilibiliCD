@@ -54,7 +54,7 @@ class ReplyController: UIViewController, UITableViewDataSource, UITableViewDeleg
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return provider.replies.count + (provider.currentComment == nil ? 0 : 1)
+        return provider.currentComment == nil ? 0 : provider.replies.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -134,6 +134,12 @@ class FeedbackController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    @IBAction func showHelp(_ sender: UIBarButtonItem) {
+        let vc = HisTutViewController()
+        vc.page = "AboutFeedback"
+        present(vc, animated: true)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let backItem = UIBarButtonItem()
         backItem.title = ""

@@ -813,7 +813,7 @@
                                         </tableViewCellContentView>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="rippleLayerColor">
-                                                <color key="value" red="0.40090259909999998" green="0.80100601910000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" red="0.074509803921568626" green="0.47843137254901957" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -1844,7 +1844,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Item" image="ic_menu" id="2Qq-B6-AXg"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="ic_help_outline" id="6qp-sM-NF9">
                             <connections>
-                                <action selector="helpButtonTapped:" destination="Oa1-Ok-dqG" id="KUD-Uh-bbD"/>
+                                <action selector="showHelp:" destination="Oa1-Ok-dqG" id="6py-9E-cf5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -2158,7 +2158,7 @@
         <image name="liuliet-pro" width="115.33333587646484" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bbS-pi-LKM"/>
+        <segue reference="iAP-o1-lDR"/>
         <segue reference="pFk-eZ-ib2"/>
         <segue reference="4Jb-o1-lRn"/>
     </inferredMetricsTieBreakers>
