@@ -62,20 +62,74 @@ class EditController: UIViewController {
         goBack()
     }
     
+    private var isUsernameFirst = false
+
+    @objc private func showKeyboard() {
+        if isUsernameFirst {
+            usernameField.becomeFirstResponder()
+        } else {
+            textView.becomeFirstResponder()
+        }
+    }
+    
+    private func showTip(message str: String) {
+        isUsernameFirst = usernameField.isFirstResponder
+        usernameField.resignFirstResponder()
+        textView.resignFirstResponder()
+        LLDialog()
+            .set(message: str)
+            .setPositiveButton(withTitle: "嗯", target: self, action: #selector(showKeyboard))
+            .show()
+    }
+    
     @IBAction func goButtonTapped() {
         if var username = usernameField.text,
-            let content = textView.text,
-            content != "" {
+            var content = textView.text {
+            
+            username = username.trimmingCharacters(in: .whitespacesAndNewlines)
+            content = content.trimmingCharacters(in: .whitespacesAndNewlines)
+            var tempString = content.replacingOccurrences(of: "\n\n\n", with: "\n\n")
+            while tempString != content {
+                content = tempString
+                tempString = content.replacingOccurrences(of: "\n\n\n", with: "\n\n")
+            }
+            
+            if content == "" {
+                showTip(message: "什么都不填是不行的呢")
+                return
+            } else if content.count > 450 {
+                showTip(message: "正文最长可以有 450 个字哦。")
+                return
+            } else if username.hasSpecialCharacters() {
+                showTip(message: "用户名只能由数字和英文字母组成哦。")
+                return
+            } else if username.count > 12 {
+                showTip(message: "用户名最长可以有 12 个字哦。")
+                return
+            }
             
             if username == "" { username = "anonymous" }
             self.delegate?.editFinished(username: username, content: content)
             self.goBack()
-        } else {
-            LLDialog()
-                .set(title: "注意")
-                .set(message: "什么都不填是不行的呢")
-                .setPositiveButton(withTitle: "好的")
-                .show()
         }
+    }
+}
+
+extension String {
+    func hasSpecialCharacters() -> Bool {
+        do {
+            let regex = try NSRegularExpression(pattern: ".*[^A-Za-z0-9].*", options: .caseInsensitive)
+            if regex.firstMatch(
+                in: self,
+                options: .reportCompletion, range: NSMakeRange(0, self.count)
+            ) != nil {
+                return true
+            }
+        } catch {
+            debugPrint(error.localizedDescription)
+            return false
+        }
+        
+        return false
     }
 }
