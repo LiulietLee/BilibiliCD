@@ -1,1 +1,6 @@
-../../../Target Support Files/MaterialKit/MaterialKit.modulemap
+module MaterialKit {
+  umbrella header "MaterialKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

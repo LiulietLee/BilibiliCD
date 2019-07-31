@@ -55,6 +55,8 @@ class CommentProvider: AbstractProvider {
     }
     
     public func getNextCommentList(completion: @escaping () -> Void) {
+        if commentPage > 100 { return }
+        
         guard let url = APIFactory.getCommentListAPI(withCommentPage: commentPage, andCount: countLimit, env: env) else {
             completion()
             return
@@ -80,6 +82,8 @@ class CommentProvider: AbstractProvider {
     }
     
     public func getNextReplyList(completion: @escaping () -> Void) {
+        if replyPage > 100 { return }
+        
         guard let url = APIFactory.getReplyListAPI(withCommentID: comments[currentCommentIndex].id, andPage: replyPage, andCount: countLimit, env: env) else {
             return
         }
