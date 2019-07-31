@@ -47,7 +47,7 @@ class EditController: UIViewController {
         if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             let keyboardRectangle = keyboardFrame.cgRectValue
             let height = keyboardRectangle.height
-            bottomConstraint.constant = -height
+            bottomConstraint.constant = height
             view.layoutIfNeeded()
         }
     }

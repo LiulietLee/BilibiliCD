@@ -15,6 +15,7 @@ struct Comment: Decodable {
     var suki: Int
     var kirai: Int
     var time: Date
+    var top: Int
 }
 
 struct Reply: Decodable {
