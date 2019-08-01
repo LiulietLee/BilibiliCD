@@ -44,6 +44,7 @@ class CommentProvider: AbstractProvider {
     
     public func resetCommentParam() {
         comments = []
+        buttonStatus = []
         commentCount = 0
         commentPage = 0
         currentCommentIndex = 0
@@ -54,8 +55,13 @@ class CommentProvider: AbstractProvider {
         resetReplyParam()
     }
     
-    public func getNextCommentList(completion: @escaping () -> Void) {
+    public func getNextCommentList(reset: Bool = false, completion: @escaping () -> Void) {
         if commentPage > 100 { return }
+        
+        if reset {
+            commentPage = 0
+            currentCommentIndex = 0
+        }
         
         guard let url = APIFactory.getCommentListAPI(withCommentPage: commentPage, andCount: countLimit, env: env) else {
             completion()
@@ -71,7 +77,13 @@ class CommentProvider: AbstractProvider {
                 let result = try? decoder.decode(ListResponse<Comment>.self, from: content) {
                 self.commentPage += 1
                 self.commentCount = result.count
-                self.comments.append(contentsOf: result.data)
+                
+                if reset {
+                    self.comments = result.data
+                } else {
+                    self.comments.append(contentsOf: result.data)
+                }
+                
                 while self.buttonStatus.count < self.comments.count {
                     self.buttonStatus.append((false, false))
                 }
@@ -81,8 +93,12 @@ class CommentProvider: AbstractProvider {
         }.resume()
     }
     
-    public func getNextReplyList(completion: @escaping () -> Void) {
+    public func getNextReplyList(reset: Bool = false, completion: @escaping () -> Void) {
         if replyPage > 100 { return }
+        
+        if reset {
+            replyPage = 0
+        }
         
         guard let url = APIFactory.getReplyListAPI(withCommentID: comments[currentCommentIndex].id, andPage: replyPage, andCount: countLimit, env: env) else {
             return
@@ -97,7 +113,12 @@ class CommentProvider: AbstractProvider {
                 let result = try? decoder.decode(ListResponse<Reply>.self, from: content) {
                 self.replyPage += 1
                 self.replyCount = result.count
-                self.replies.append(contentsOf: result.data)
+
+                if reset {
+                    self.replies = result.data
+                } else {
+                    self.replies.append(contentsOf: result.data)
+                }
             }
             
             completion()

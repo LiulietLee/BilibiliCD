@@ -46,14 +46,13 @@ class FeedbackController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @objc private func reload() {
-        commentProvider.resetParam()
-        load()
+        load(reset: true)
     }
     
-    private func load() {
+    private func load(reset: Bool = false) {
         if isLoading { return }
         isLoading = true
-        commentProvider.getNextCommentList() { [weak self] in
+        commentProvider.getNextCommentList(reset: reset) { [weak self] in
             guard let self = self else { return }
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }

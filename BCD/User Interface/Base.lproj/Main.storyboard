@@ -820,37 +820,8 @@
                                             <segue destination="Vms-Iw-Gtt" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="nQf-1n-9x3"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="Gom-jE-D2T" customClass="MKTableViewCell" customModule="MaterialKit">
-                                        <rect key="frame" x="0.0" y="270" width="320" height="90"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gom-jE-D2T" id="eLa-IK-kSb">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关于我们" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IqQ-Uo-fXu">
-                                                    <rect key="frame" x="24" y="31" width="280" height="28"/>
-                                                    <fontDescription key="fontDescription" name="PingFangHK-Medium" family="PingFang HK" pointSize="20"/>
-                                                    <color key="textColor" red="0.26734374999999999" green="0.26734374999999999" blue="0.26734374999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="leadingMargin" secondItem="IqQ-Uo-fXu" secondAttribute="leading" constant="-8" id="Lr8-rQ-Oby"/>
-                                                <constraint firstItem="IqQ-Uo-fXu" firstAttribute="centerY" secondItem="eLa-IK-kSb" secondAttribute="centerY" id="RjA-xl-Gcl"/>
-                                                <constraint firstItem="IqQ-Uo-fXu" firstAttribute="trailing" secondItem="eLa-IK-kSb" secondAttribute="trailingMargin" id="eRc-Jf-l0f"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="rippleLayerColor">
-                                                <color key="value" red="0.8176116943359375" green="0.73280304670333862" blue="0.74446588754653931" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <segue destination="NFI-Ou-sCf" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="xkI-Je-9lR"/>
-                                        </connections>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="DgN-mp-G4o" customClass="MKTableViewCell" customModule="MaterialKit">
-                                        <rect key="frame" x="0.0" y="360" width="320" height="90"/>
+                                        <rect key="frame" x="0.0" y="270" width="320" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DgN-mp-G4o" id="Y2Y-Gq-bHq">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
@@ -876,6 +847,35 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="FNs-da-MkX" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="fr6-53-ai4"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="Gom-jE-D2T" customClass="MKTableViewCell" customModule="MaterialKit">
+                                        <rect key="frame" x="0.0" y="360" width="320" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gom-jE-D2T" id="eLa-IK-kSb">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关于我们" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IqQ-Uo-fXu">
+                                                    <rect key="frame" x="24" y="31" width="280" height="28"/>
+                                                    <fontDescription key="fontDescription" name="PingFangHK-Medium" family="PingFang HK" pointSize="20"/>
+                                                    <color key="textColor" red="0.26734374999999999" green="0.26734374999999999" blue="0.26734374999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="leadingMargin" secondItem="IqQ-Uo-fXu" secondAttribute="leading" constant="-8" id="Lr8-rQ-Oby"/>
+                                                <constraint firstItem="IqQ-Uo-fXu" firstAttribute="centerY" secondItem="eLa-IK-kSb" secondAttribute="centerY" id="RjA-xl-Gcl"/>
+                                                <constraint firstItem="IqQ-Uo-fXu" firstAttribute="trailing" secondItem="eLa-IK-kSb" secondAttribute="trailingMargin" id="eRc-Jf-l0f"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="rippleLayerColor">
+                                                <color key="value" red="0.8176116943359375" green="0.73280304670333862" blue="0.74446588754653931" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="NFI-Ou-sCf" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="xkI-Je-9lR"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="uHg-dJ-JSI" customClass="MKTableViewCell" customModule="MaterialKit">
