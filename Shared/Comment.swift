@@ -16,6 +16,7 @@ struct Comment: Decodable {
     var kirai: Int
     var time: Date
     var top: Int
+    var replyCount: Int
 }
 
 struct Reply: Decodable {

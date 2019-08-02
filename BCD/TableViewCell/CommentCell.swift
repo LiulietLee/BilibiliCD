@@ -15,12 +15,17 @@ class CommentCell: MKTableViewCell {
         didSet {
             self.username.text = data.username
             self.content.text = data.content
+            
             self.likeButton.setTitle(
                 "  \(data.suki > 999 ? 999 : data.suki)" + (data.suki > 999 ? "+" : ""),
                 for: .normal
             )
             self.dislikeButton.setTitle(
                 "  \(data.kirai > 999 ? 999 : data.kirai)" + (data.kirai > 999 ? "+" : ""),
+                for: .normal
+            )
+            self.replyCount.setTitle(
+                "  \(data.replyCount > 999 ? 999 : data.replyCount)" + (data.replyCount > 999 ? "+" : ""),
                 for: .normal
             )
             
@@ -55,6 +60,11 @@ class CommentCell: MKTableViewCell {
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var content: UILabel!
     @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var replyCount: UIButton! {
+        didSet {
+            replyCount.isEnabled = false
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

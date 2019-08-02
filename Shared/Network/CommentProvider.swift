@@ -141,6 +141,7 @@ class CommentProvider: AbstractProvider {
             return
         }
         sendDataToServer(Reply.self, url: url, username: username, content: content) { (response) in
+            self.comments[self.currentCommentIndex].replyCount += 1
             completion(response?.data)
         }
     }
