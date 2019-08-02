@@ -34,6 +34,9 @@ class EditController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        usernameField.text = UserDefaults.standard.string(forKey: "feedbackUsername")
+        textView.text = UserDefaults.standard.string(forKey: "feedbackContent")
+        
         textView.becomeFirstResponder()
         NotificationCenter.default.addObserver(
             self,
@@ -53,12 +56,14 @@ class EditController: UIViewController {
     }
     
     private func goBack() {
+        UserDefaults.standard.set(usernameField.text!, forKey: "feedbackUsername")
         usernameField.resignFirstResponder()
         textView.resignFirstResponder()
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func backButtonTapped() {
+        UserDefaults.standard.set(textView.text!, forKey: "feedbackContent")
         goBack()
     }
     
@@ -110,6 +115,7 @@ class EditController: UIViewController {
             
             if username == "" { username = "anonymous" }
             self.delegate?.editFinished(username: username, content: content)
+            UserDefaults.standard.set("", forKey: "feedbackContent")
             self.goBack()
         }
     }

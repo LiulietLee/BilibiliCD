@@ -11,6 +11,6 @@ import Foundation
 class AbstractProvider {
     
     internal let session = URLSession.shared
-    internal let env = Environment.dev
+    internal let env = Environment.prod
     
 }
