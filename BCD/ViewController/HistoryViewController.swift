@@ -203,7 +203,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         } else {
             cell.titleLabel.text = "[数据删除]"
             cell.dateLabel.text = "[数据删除]"
-            cell.coverView.image = #imageLiteral(resourceName: "ripanda")
+            cell.coverView.image = #imageLiteral(resourceName: "sadpanda")
         }
         
         return cell
