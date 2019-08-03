@@ -12,8 +12,14 @@ import CoreData
 
 class CoreDataModel {
     let context = CoreDataStorage.sharedInstance.mainQueueContext
-    
+   
+    static let context = CoreDataStorage.sharedInstance.mainQueueContext
+
     func saveContext() {
+        CoreDataStorage.sharedInstance.saveContext(context)
+    }
+    
+    static func saveContext() {
         CoreDataStorage.sharedInstance.saveContext(context)
     }
 }

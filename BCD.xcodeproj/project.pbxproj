@@ -93,6 +93,7 @@
 		4F78823620F3443200344D62 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F78822220F3443200344D62 /* AboutViewController.swift */; };
 		4F78823720F3443200344D62 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F78822320F3443200344D62 /* HistoryViewController.swift */; };
 		4F8B90731F7B2E3800AB158D /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B90711F7B2E3800AB158D /* CoreDataStorage.swift */; };
+		4F97677422F5CE9300165320 /* CommentDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F97677322F5CE9300165320 /* CommentDataManager.swift */; };
 		4FA965022121BF4A0031983C /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F49434D20F3469600BB7785 /* CacheManager.swift */; };
 		4FB59F5C22DCB15800939DE3 /* ReplyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB59F5B22DCB15800939DE3 /* ReplyCell.swift */; };
 		4FB5A49F2171F6D5009DF4F1 /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4FB5A49E2171F6D5009DF4F1 /* loading.gif */; };
@@ -275,6 +276,7 @@
 		4F78822220F3443200344D62 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutViewController.swift; path = ViewController/AboutViewController.swift; sourceTree = "<group>"; };
 		4F78822320F3443200344D62 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryViewController.swift; path = ViewController/HistoryViewController.swift; sourceTree = "<group>"; };
 		4F8B90711F7B2E3800AB158D /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
+		4F97677322F5CE9300165320 /* CommentDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommentDataManager.swift; path = Model/CoreData/CommentDataManager.swift; sourceTree = "<group>"; };
 		4FB59F5B22DCB15800939DE3 /* ReplyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyCell.swift; sourceTree = "<group>"; };
 		4FB5A49E2171F6D5009DF4F1 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
 		4FB5CC8022D0A11300A6A47B /* CommentProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentProvider.swift; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 				4F49434E20F3469600BB7785 /* CoreDataModel.swift */,
 				4F49434F20F3469600BB7785 /* HistoryManager.swift */,
 				4F49435020F3469700BB7785 /* SettingManager.swift */,
+				4F97677322F5CE9300165320 /* CommentDataManager.swift */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -858,6 +861,7 @@
 				4F270F2122D21261008C07A6 /* Comment.swift in Sources */,
 				4F4942E420F3455F00BB7785 /* AnimateView.swift in Sources */,
 				4FF3FD1E215D340800AF7F4B /* AssetProvider.swift in Sources */,
+				4F97677422F5CE9300165320 /* CommentDataManager.swift in Sources */,
 				528D36752257A07100F4FEB2 /* BKLoginHelper.swift in Sources */,
 				52E4E47D1F76C6A9008EF09C /* BilibiliCover.swift in Sources */,
 				4F49435120F3469700BB7785 /* BCD.xcdatamodeld in Sources */,
