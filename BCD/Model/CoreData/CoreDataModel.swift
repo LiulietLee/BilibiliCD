@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 import CoreData
+import ImageIO
 
 class CoreDataModel {
     let context = CoreDataStorage.sharedInstance.mainQueueContext
@@ -35,6 +36,25 @@ extension UIImage {
         draw(in: CGRect(origin: .zero, size: size))
         let resizedImage = UIGraphicsGetImageFromCurrentImageContext()!
         return resizedImage
+    }
+}
+
+extension Data {
+    func toImage(size: CGSize) -> UIImage? {
+        let options: [CFString: Any] = [
+            kCGImageSourceCreateThumbnailFromImageIfAbsent: true,
+            kCGImageSourceCreateThumbnailWithTransform: true,
+            kCGImageSourceShouldCacheImmediately: true,
+            kCGImageSourceThumbnailMaxPixelSize: Swift.max(size.width, size.height)
+        ]
+
+        guard let imageSource = CGImageSourceCreateWithData(self as CFData, nil),
+            let image = CGImageSourceCreateThumbnailAtIndex(imageSource, 0, options as CFDictionary)
+        else {
+            return nil
+        }
+
+        return UIImage(cgImage: image)
     }
 }
 

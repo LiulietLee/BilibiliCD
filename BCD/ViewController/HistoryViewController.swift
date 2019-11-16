@@ -193,7 +193,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
             cell.dateLabel.text = formatter.string(from: history[indexPath.row].date!)
             let item = history[indexPath.row]
             DispatchQueue.global(qos: .userInteractive).async {
-                let image = item.uiImage
+                let image = item.image!.toImage(size: CGSize(width: 134.0, height: 84.0))!
                 DispatchQueue.main.async { [weak self] in
                     if indexPath == self?.tableView.indexPath(for: cell) {
                         cell.coverView.image = image
