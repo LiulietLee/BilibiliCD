@@ -11,7 +11,7 @@ import SWRevealViewController
 import ViewAnimator
 import LLDialog
 
-class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MotionDetectorDelegate {
+class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MotionDetectorDelegate, HistoryLimitDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var menu: UIBarButtonItem!
@@ -229,7 +229,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         return [delete, hide]
     }
     
-    func historyNumLimitChanged() {
+    func historyChanged() {
         history = manager.getHistory()
         tableView.reloadData()
     }
@@ -248,10 +248,9 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
         
-        if segue.identifier == "set limit"{
-//            let vc = segue.destination as? SetHistoryNumViewController {
-//            vc.delegate = self
-//            vc.isShowingFullHistory = isShowingFullHistory
+        if segue.identifier == "set limit",
+            let vc = segue.destination as? SettingViewController {
+            vc.delegate = self
         } else if segue.identifier == "detail",
             let vc = segue.destination as? ImageViewController,
             let cell = sender as? HistoryCell,

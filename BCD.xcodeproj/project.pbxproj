@@ -80,7 +80,6 @@
 		4F78822420F3443200344D62 /* HisTutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F78820F20F3443100344D62 /* HisTutViewController.swift */; };
 		4F78822520F3443200344D62 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F78821020F3443100344D62 /* ImageViewController.swift */; };
 		4F78822620F3443200344D62 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F78821120F3443200344D62 /* MainViewController.swift */; };
-		4F78822720F3443200344D62 /* SetHistoryNumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F78821220F3443200344D62 /* SetHistoryNumViewController.swift */; };
 		4F78822820F3443200344D62 /* TutorialContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F78821320F3443200344D62 /* TutorialContentViewController.swift */; };
 		4F78822920F3443200344D62 /* ScalingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F78821420F3443200344D62 /* ScalingViewController.swift */; };
 		4F78822F20F3443200344D62 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F78821B20F3443200344D62 /* SettingViewController.swift */; };
@@ -263,7 +262,6 @@
 		4F78820F20F3443100344D62 /* HisTutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HisTutViewController.swift; path = ViewController/HisTutViewController.swift; sourceTree = "<group>"; };
 		4F78821020F3443100344D62 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageViewController.swift; path = ViewController/ImageViewController.swift; sourceTree = "<group>"; };
 		4F78821120F3443200344D62 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ViewController/MainViewController.swift; sourceTree = "<group>"; };
-		4F78821220F3443200344D62 /* SetHistoryNumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetHistoryNumViewController.swift; path = ViewController/SetHistoryNumViewController.swift; sourceTree = "<group>"; };
 		4F78821320F3443200344D62 /* TutorialContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialContentViewController.swift; path = ViewController/TutorialContentViewController.swift; sourceTree = "<group>"; };
 		4F78821420F3443200344D62 /* ScalingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScalingViewController.swift; path = ViewController/ScalingViewController.swift; sourceTree = "<group>"; };
 		4F78821B20F3443200344D62 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingViewController.swift; path = ViewController/SettingViewController.swift; sourceTree = "<group>"; };
@@ -441,7 +439,6 @@
 				4F78821020F3443100344D62 /* ImageViewController.swift */,
 				4F78821120F3443200344D62 /* MainViewController.swift */,
 				4F78821420F3443200344D62 /* ScalingViewController.swift */,
-				4F78821220F3443200344D62 /* SetHistoryNumViewController.swift */,
 				4F78821B20F3443200344D62 /* SettingViewController.swift */,
 				4F78821320F3443200344D62 /* TutorialContentViewController.swift */,
 				4F78822020F3443200344D62 /* TutorialPageViewController.swift */,
@@ -873,7 +870,6 @@
 				528D36452257A07100F4FEB2 /* BKUser+Info.swift in Sources */,
 				4F78822F20F3443200344D62 /* SettingViewController.swift in Sources */,
 				4F4942D020F344E200BB7785 /* ColoredNavController.swift in Sources */,
-				4F78822720F3443200344D62 /* SetHistoryNumViewController.swift in Sources */,
 				4F15D82922DDE6A70080204E /* EditController.swift in Sources */,
 				4F78823320F3443200344D62 /* FindArtViewController.swift in Sources */,
 				4F78823020F3443200344D62 /* TutorialViewController.swift in Sources */,
@@ -1017,7 +1013,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1041,7 +1037,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

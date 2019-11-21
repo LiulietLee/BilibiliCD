@@ -54,14 +54,14 @@ class HistoryManager: CoreDataModel {
     
     @discardableResult
     func addNewHistory(av: String, image: Image, title: String, up: String, url: String, date: Date = Date()) -> History {
+        var newItem: History
+        
         if let existedItem = itemInHistory(stringID: av) {
-            existedItem.date = date
-            saveContext()
-            return existedItem
+            newItem = existedItem
+        } else {
+            let entity = NSEntityDescription.entity(forEntityName: "History", in: context)!
+            newItem = History(entity: entity, insertInto: context)
         }
-
-        let entity = NSEntityDescription.entity(forEntityName: "History", in: context)!
-        let newItem = History(entity: entity, insertInto: context)
         
         let uiImage = image.uiImage
         let originCoverData: Data
@@ -81,12 +81,14 @@ class HistoryManager: CoreDataModel {
         newItem.url = url
         newItem.isHidden = isNeedHid(uiImage)
         
-        let origEntity = NSEntityDescription.entity(forEntityName: "OriginCover", in: context)!
-        let newOrig = OriginCover(entity: origEntity, insertInto: context)
-        newOrig.image = originCoverData
-        
-        newItem.origin = newOrig
-        newOrig.history = newItem
+        if (SettingManager().isSaveOriginImageData) {
+            let origEntity = NSEntityDescription.entity(forEntityName: "OriginCover", in: context)!
+            let newOrig = OriginCover(entity: origEntity, insertInto: context)
+            newOrig.image = originCoverData
+            
+            newItem.origin = newOrig
+            newOrig.history = newItem
+        }
         
         saveContext()
         
@@ -149,6 +151,9 @@ class HistoryManager: CoreDataModel {
     }
     
     func deleteHistory(_ item: History) {
+        if let origin = item.origin {
+            context.delete(origin)
+        }
         context.delete(item)
         saveContext()
     }
@@ -168,6 +173,7 @@ class HistoryManager: CoreDataModel {
             items.forEach { (history) in
                 if let origin = history.origin {
                     context.delete(origin)
+                    history.origin = nil
                     saveContext()
                 }
             }

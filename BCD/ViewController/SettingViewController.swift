@@ -9,10 +9,15 @@
 import Eureka
 import LLDialog
 
+protocol HistoryLimitDelegate {
+    func historyChanged()
+}
+
 class SettingViewController: FormViewController {
     
     private var settingManager = SettingManager()
-    
+    var delegate: HistoryLimitDelegate?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,9 +63,11 @@ class SettingViewController: FormViewController {
             <<< ButtonRow() { row in
                 row.title = "确定"
                 row.onCellSelection { (_, _) in
-                    self.dismiss(animated: true) {
-                        if let row = self.form.rowBy(tag: "num-limit") as? PhoneRow {
+                    self.dismiss(animated: true) { [weak self] in
+                        if let self = self,
+                            let row = self.form.rowBy(tag: "num-limit") as? PhoneRow {
                             self.settingManager.historyItemLimit = Int(row.value ?? "0")
+                            self.delegate?.historyChanged()
                         }
                     }
                 }
@@ -76,6 +83,11 @@ class SettingViewController: FormViewController {
     @objc private func clearHistory() {
         let manager = HistoryManager()
         manager.clearHistory()
-        dismiss(animated: true, completion: nil)
+
+        dismiss(animated: true) { [weak self] in
+            if let self = self {
+                self.delegate?.historyChanged()
+            }
+        }
     }
 }

@@ -40,7 +40,7 @@ class ImageViewController: UIViewController, Waifu2xDelegate {
     var cover: BilibiliCover?
     var itemFromHistory: History?
     private let manager = HistoryManager()
-    private var loadingView: LoadingView!
+    private var loadingView: LoadingView?
     private var reference: (info: Info?, style: CitationStyle) = (nil, .apa) {
         didSet {
             guard let info = reference.info else { return }
@@ -96,11 +96,16 @@ class ImageViewController: UIViewController, Waifu2xDelegate {
         }
 
         if let item = itemFromHistory {
-            reference.info = Info(stringID: item.av!, author: item.up!, title: item.title!, imageURL: item.url!)
+            reference.info = Info(
+                stringID: item.av!, author: item.up!, title: item.title!, imageURL: item.url!
+            )
+            
+            if item.origin == nil {
+                updateUIFrom(info: reference.info!)
+            }
+            
             imageView.image = item.uiImage
-
             changeTextColor(to: item.isHidden ? .black : .tianyiBlue)
-
             animateView()
         } else {
             titleLabel.text = ""
@@ -110,8 +115,8 @@ class ImageViewController: UIViewController, Waifu2xDelegate {
             disableButtons()
 
             loadingView = LoadingView(frame: view.bounds)
-            view.addSubview(loadingView)
-            view.bringSubviewToFront(loadingView)
+            view.addSubview(loadingView!)
+            view.bringSubviewToFront(loadingView!)
         }
     }
     
@@ -204,7 +209,7 @@ class ImageViewController: UIViewController, Waifu2xDelegate {
                     case .normal: self?.scaleButton.isEnabled = true
                     }
                     self?.enableButtons()
-                    self?.loadingView.dismiss()
+                    self?.loadingView?.dismiss()
                     self?.animateView()
                     self?.addItemToDB(image: image)
                 }
@@ -241,7 +246,7 @@ class ImageViewController: UIViewController, Waifu2xDelegate {
         titleLabel.text = "啊叻？"
         authorLabel.text = "视频不见了？"
         urlLabel.text = ""
-        loadingView.dismiss()
+        loadingView?.dismiss()
         imageView.image = #imageLiteral(resourceName: "novideo_image")
     }
 
