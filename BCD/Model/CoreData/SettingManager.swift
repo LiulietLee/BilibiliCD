@@ -44,5 +44,14 @@ class SettingManager: CoreDataModel {
             saveContext()
         }
     }
+    
+    var isSaveOriginImageData: Bool! {
+        get {
+            return Bool(setting?.saveOrigin ?? true)
+        } set {
+            setting?.saveOrigin = newValue
+            saveContext()
+        }
+    }
 
 }

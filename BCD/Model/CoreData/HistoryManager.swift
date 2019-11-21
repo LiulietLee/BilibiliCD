@@ -162,6 +162,20 @@ class HistoryManager: CoreDataModel {
         }
     }
 
+    func removeAllOriginCover() {
+        do {
+            let items = try context.fetch(History.fetchRequest()) as! [History]
+            items.forEach { (history) in
+                if let origin = history.origin {
+                    context.delete(origin)
+                    saveContext()
+                }
+            }
+        } catch {
+            print(error)
+        }
+    }
+    
     func importFromCache() {
         let cacheManager = CacheManager()
         let items = cacheManager.getCache()

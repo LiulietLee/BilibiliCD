@@ -11,7 +11,7 @@ import SWRevealViewController
 import ViewAnimator
 import LLDialog
 
-class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate, SetHistoryNumDelegate, MotionDetectorDelegate {
+class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MotionDetectorDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var menu: UIBarButtonItem!
@@ -154,21 +154,6 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         view.sendSubviewToBack(nothingLabel)
     }
     
-    @IBAction func clearButtonTapped(_ sender: UIBarButtonItem) {
-        LLDialog()
-            .set(title: "乃确定不是手滑了么")
-            .set(message: "真的要清空历史记录嘛？")
-            .setPositiveButton(withTitle: "我手滑了")
-            .setNegativeButton(withTitle: "确认清空", target: self, action: #selector(clearHistory))
-            .show()
-    }
-    
-    @objc private func clearHistory() {
-        manager.clearHistory()
-        history = []
-        tableView.reloadData()
-    }
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -263,11 +248,10 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
         
-        if segue.identifier == "set limit",
-            let vc = segue.destination as? SetHistoryNumViewController {
-            vc.delegate = self
-            vc.isShowingFullHistory = isShowingFullHistory
-            vc.popoverPresentationController?.delegate = self
+        if segue.identifier == "set limit"{
+//            let vc = segue.destination as? SetHistoryNumViewController {
+//            vc.delegate = self
+//            vc.isShowingFullHistory = isShowingFullHistory
         } else if segue.identifier == "detail",
             let vc = segue.destination as? ImageViewController,
             let cell = sender as? HistoryCell,
@@ -287,8 +271,5 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         return true
     }
-    
-    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
-        return .none
-    }
+
 }

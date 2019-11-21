@@ -12,6 +12,7 @@ protocol SetHistoryNumDelegate {
     func historyNumLimitChanged()
 }
 
+@available(*, deprecated)
 class SetHistoryNumViewController: UIViewController {
 
     @IBOutlet weak var numberField: UITextField!

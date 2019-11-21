@@ -652,6 +652,7 @@
 				4FE8FF381EF4FC0600D31840 /* Resources */,
 				4F2DB5E91F75F7D400FB2315 /* Embed App Extensions */,
 				4F585B3D1F7614FD004D1285 /* Embed Frameworks */,
+				24EBD449713F773EB0E70B8A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -754,6 +755,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		24EBD449713F773EB0E70B8A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BCD/Pods-BCD-resources.sh",
+				"${PODS_ROOT}/Eureka/Source/Resources/Eureka.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Eureka.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BCD/Pods-BCD-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6BD52D43BADCF65812B1A32D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

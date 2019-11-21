@@ -7,4 +7,5 @@ target 'BCD' do
     pod 'MaterialKit', :git => 'https://github.com/ApolloZhu/MaterialKit.git'
     pod 'LLDialog', :git => 'https://github.com/LiulietLee/LLDialog.git'
     pod 'ViewAnimator'
+    pod 'Eureka'
 end
