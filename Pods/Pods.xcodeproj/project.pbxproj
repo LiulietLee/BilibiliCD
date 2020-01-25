@@ -183,7 +183,7 @@
 		230344DDD2E2A27F245628D5D4D6B8EC /* SliderRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SliderRow.swift; path = Source/Rows/SliderRow.swift; sourceTree = "<group>"; };
 		23B05817FDEC0915981FE2A3679822B5 /* MaterialKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = MaterialKit.modulemap; path = ../../Headers/Public/MaterialKit/MaterialKit.modulemap; sourceTree = "<group>"; };
 		23DE8721638FD4851E4AF3C9A7232CFF /* MaterialKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MaterialKit.xcconfig; sourceTree = "<group>"; };
-		24390EFD555DD124430DFF9724065945 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		24390EFD555DD124430DFF9724065945 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		260793E9F4A3E8AF4A78B7FC8AC9A238 /* MKTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKTableViewCell.swift; path = Source/MKTableViewCell.swift; sourceTree = "<group>"; };
 		265942DF814B0A7C153955E267CC5F2F /* ViewAnimator.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ViewAnimator.xcconfig; sourceTree = "<group>"; };
 		26F419AF4C324690325B3AD2FD093ACE /* Eureka-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Eureka-dummy.m"; sourceTree = "<group>"; };
@@ -202,18 +202,18 @@
 		48E46B927ED8C32C7AFC1ADED18F4476 /* FieldRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FieldRow.swift; path = Source/Rows/Common/FieldRow.swift; sourceTree = "<group>"; };
 		490C298849AFC5EEE366EE03D196AEF9 /* DateRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateRow.swift; path = Source/Rows/DateRow.swift; sourceTree = "<group>"; };
 		493F8089F168FE8E6D4BEF93F2771B21 /* Form.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Form.swift; path = Source/Core/Form.swift; sourceTree = "<group>"; };
-		4A6E9138B3C1C5E9FCB20F34E43453F4 /* libViewAnimator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libViewAnimator.a; path = libViewAnimator.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A6E9138B3C1C5E9FCB20F34E43453F4 /* libViewAnimator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libViewAnimator.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DAA55049416AFE4629C41AAD5E47D4B /* LLDialog.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LLDialog.xcconfig; sourceTree = "<group>"; };
 		5011AF9670B02F07874DDD2895231E40 /* RuleEqualsToRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RuleEqualsToRow.swift; path = Source/Validations/RuleEqualsToRow.swift; sourceTree = "<group>"; };
 		5221D52154F0CE055BAFDAE23583D3C3 /* Eureka.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = Eureka.bundle; path = Source/Resources/Eureka.bundle; sourceTree = "<group>"; };
 		533E57ABF7FAE4297C806C8752C147B9 /* ButtonRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ButtonRow.swift; path = Source/Rows/ButtonRow.swift; sourceTree = "<group>"; };
 		54B8399E20CA0D2F7CE0055B1E92BF68 /* MKImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKImageView.swift; path = Source/MKImageView.swift; sourceTree = "<group>"; };
-		5544FDC31C8D1F75DC73DBDE72BC452B /* libMaterialKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMaterialKit.a; path = libMaterialKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5544FDC31C8D1F75DC73DBDE72BC452B /* libMaterialKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMaterialKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5575008732267DF8906ADC075830B693 /* BaseRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BaseRow.swift; path = Source/Core/BaseRow.swift; sourceTree = "<group>"; };
 		55FB3F1AEFCD04482DD7C9D3873EE3CE /* RowProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RowProtocols.swift; path = Source/Core/RowProtocols.swift; sourceTree = "<group>"; };
 		5612629422A10E9F5841D120B6949A25 /* SelectorViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SelectorViewController.swift; path = Source/Rows/Controllers/SelectorViewController.swift; sourceTree = "<group>"; };
 		576609084F541982E6FB153E3B012D09 /* SWRevealViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SWRevealViewController-umbrella.h"; path = "../../Headers/Public/SWRevealViewController/SWRevealViewController-umbrella.h"; sourceTree = "<group>"; };
-		5A18AA4B682B4D5942AA82830E343BC8 /* libEureka.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libEureka.a; path = libEureka.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A18AA4B682B4D5942AA82830E343BC8 /* libEureka.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEureka.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C6F33AB8E4E06F2737A28D742EA1F8C /* AlertRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlertRow.swift; path = Source/Rows/AlertRow.swift; sourceTree = "<group>"; };
 		5EF92E006FB3ECC5C38E499AA511A2AD /* SWRevealViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWRevealViewController-prefix.pch"; sourceTree = "<group>"; };
 		63AF69417C1F144407C03CA666CF5737 /* LLDialog-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LLDialog-umbrella.h"; path = "../../Headers/Public/LLDialog/LLDialog-umbrella.h"; sourceTree = "<group>"; };
@@ -235,12 +235,12 @@
 		8791F6A19BB4DE8DB7CD98148E60C495 /* PushRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PushRow.swift; path = Source/Rows/PushRow.swift; sourceTree = "<group>"; };
 		8CC14D54CF483CF531F6412BFC589C4B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		8D1F41FEC77C4E6641462F933E7BEF7C /* ActionSheetRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ActionSheetRow.swift; path = Source/Rows/ActionSheetRow.swift; sourceTree = "<group>"; };
-		8D55B5A83C3BAD517FEBFDE5EECC8330 /* libLLDialog.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libLLDialog.a; path = libLLDialog.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D55B5A83C3BAD517FEBFDE5EECC8330 /* libLLDialog.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLLDialog.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		90F0541CF220BE314663C957497552EF /* MaterialKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MaterialKit-umbrella.h"; path = "../../Headers/Public/MaterialKit/MaterialKit-umbrella.h"; sourceTree = "<group>"; };
 		95BCB832515E25620C95031BACCB64AC /* SelectorRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SelectorRow.swift; path = Source/Rows/Common/SelectorRow.swift; sourceTree = "<group>"; };
 		973D6D5651A1A7D74FB7E2E2312A3C44 /* MaterialKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MaterialKit-prefix.pch"; sourceTree = "<group>"; };
 		97A7868D6D9B87CD30EE69ABE84C438C /* OptionsRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OptionsRow.swift; path = Source/Rows/Common/OptionsRow.swift; sourceTree = "<group>"; };
-		9D0FFA40F3FA94E8B8F7165A7DDC6069 /* libPods-BCD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-BCD.a"; path = "libPods-BCD.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D0FFA40F3FA94E8B8F7165A7DDC6069 /* libPods-BCD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BCD.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D15670FDD8BEB6955D2C7750BD13E89 /* Eureka-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Eureka-prefix.pch"; sourceTree = "<group>"; };
 		A0A41F516978A359DA5F346779C64F90 /* Row.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Row.swift; path = Source/Core/Row.swift; sourceTree = "<group>"; };
 		A2AF5EA4D9F769D41042A99A80FFB9ED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -276,7 +276,7 @@
 		D9318F1D8B87B2CC16871F2BBAC4583C /* ViewAnimator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ViewAnimator-dummy.m"; sourceTree = "<group>"; };
 		D9D4ECC2319C4CB15DC4EC64D8ACB9BE /* SwipeActions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeActions.swift; path = Source/Core/SwipeActions.swift; sourceTree = "<group>"; };
 		DB6DF2E1B814804EDF0474868FB2F890 /* ButtonRowWithPresent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ButtonRowWithPresent.swift; path = Source/Rows/ButtonRowWithPresent.swift; sourceTree = "<group>"; };
-		DC5AF8219BCD0420A3AF0E7E6F6955FF /* libSWRevealViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libSWRevealViewController.a; path = libSWRevealViewController.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC5AF8219BCD0420A3AF0E7E6F6955FF /* libSWRevealViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSWRevealViewController.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE37F78C6A7845470363701D737C2A7A /* Section.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Section.swift; path = Source/Core/Section.swift; sourceTree = "<group>"; };
 		E633D35434AF2369FD22A33295E6F66C /* CellType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CellType.swift; path = Source/Core/CellType.swift; sourceTree = "<group>"; };
 		E6A6E060F5C828E8051CE8B251DA8FC8 /* InlineRowType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InlineRowType.swift; path = Source/Core/InlineRowType.swift; sourceTree = "<group>"; };
@@ -440,7 +440,6 @@
 				4FD9C5C8040348E8A3A1582117585068 /* Resources */,
 				BA00BB1F3B4128521DA3B3C487F9B8DD /* Support Files */,
 			);
-			name = Eureka;
 			path = Eureka;
 			sourceTree = "<group>";
 		};
@@ -471,7 +470,6 @@
 				41B858B231839A3B9C015D2781E4116A /* LLDialog.swift */,
 				D742DFE53C87E6118BD615227E2E9D5A /* Support Files */,
 			);
-			name = LLDialog;
 			path = LLDialog;
 			sourceTree = "<group>";
 		};
@@ -500,7 +498,6 @@
 				43C114B59D12B0C3626C13C25C0BB08A /* ViewAnimatorConfig.swift */,
 				0DC09B2E60FC1B58B7024176B937619B /* Support Files */,
 			);
-			name = ViewAnimator;
 			path = ViewAnimator;
 			sourceTree = "<group>";
 		};
@@ -567,7 +564,6 @@
 				F4B3A5904E24F9B1971D5AB89F439109 /* MKTextField.swift */,
 				80A9937625326AC2CDF68949AB1D7E5B /* Support Files */,
 			);
-			name = MaterialKit;
 			path = MaterialKit;
 			sourceTree = "<group>";
 		};
@@ -591,7 +587,6 @@
 				4876C4F5842F87EF127F74CD2E33F18E /* SWRevealViewController.m */,
 				55D5449EFF794C25812300D5E00A66EE /* Support Files */,
 			);
-			name = SWRevealViewController;
 			path = SWRevealViewController;
 			sourceTree = "<group>";
 		};
@@ -812,14 +807,15 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1130;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			productRefGroup = 418763B2D03322898A3CFF071104A170 /* Products */;
@@ -1319,6 +1315,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1416,7 +1413,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/SWRevealViewController/SWRevealViewController-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULEMAP_FILE = Headers/Public/SWRevealViewController/SWRevealViewController.modulemap;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
@@ -1441,7 +1438,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/SWRevealViewController/SWRevealViewController-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULEMAP_FILE = Headers/Public/SWRevealViewController/SWRevealViewController.modulemap;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
@@ -1485,6 +1482,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1536,8 +1534,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};

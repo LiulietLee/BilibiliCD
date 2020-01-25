@@ -50,6 +50,8 @@ class SettingViewController: FormViewController {
                         .setNegativeButton(withTitle: "不要")
                         .setPositiveButton(withTitle: "好的", target: self, action: #selector(self.clearHistory))
                         .show()
+                }.cellSetup { (cell, button) in
+                    cell.tintColor = .red
                 }
             }
             
