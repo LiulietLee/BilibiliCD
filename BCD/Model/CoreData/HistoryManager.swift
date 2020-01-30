@@ -81,6 +81,10 @@ class HistoryManager: CoreDataModel {
         newItem.url = url
         newItem.isHidden = isNeedHid(uiImage)
         
+        if needToSetSaveOriginTrue {
+            SettingManager().isSaveOriginImageData = true
+        }
+        
         if (SettingManager().isSaveOriginImageData) {
             let origEntity = NSEntityDescription.entity(forEntityName: "OriginCover", in: context)!
             let newOrig = OriginCover(entity: origEntity, insertInto: context)

@@ -148,7 +148,7 @@ class ImageViewController: UIViewController, Waifu2xDelegate {
         guard let item = itemFromHistory
             , let url = item.url
             , let uiImage = imageView?.image
-            , let data = item.origin?.image
+            , let data = imageView.image?.data()
             else {
                 return imageSaved(successfully: false, error: nil)
         }

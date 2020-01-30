@@ -97,6 +97,7 @@
 		4FB59F5C22DCB15800939DE3 /* ReplyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB59F5B22DCB15800939DE3 /* ReplyCell.swift */; };
 		4FB5A49F2171F6D5009DF4F1 /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4FB5A49E2171F6D5009DF4F1 /* loading.gif */; };
 		4FB5CC8122D0A11300A6A47B /* CommentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB5CC8022D0A11300A6A47B /* CommentProvider.swift */; };
+		4FBACF1023E2A66F002C485E /* CheckLaunchTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F49431E20F3467D00BB7785 /* CheckLaunchTime.swift */; };
 		4FE2EF4C2162169800E389CE /* CoverPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE2EF4B2162169800E389CE /* CoverPreviewCell.swift */; };
 		4FE8FF6F1EF4FCC600D31840 /* CoverInfoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF6E1EF4FCC600D31840 /* CoverInfoProvider.swift */; };
 		4FE8FF711EF5000400D31840 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8FF701EF5000400D31840 /* Info.swift */; };
@@ -832,6 +833,7 @@
 				528D36642257A07100F4FEB2 /* BKAudio+URLs.swift in Sources */,
 				528D36702257A07100F4FEB2 /* BKLiveRoom.swift in Sources */,
 				4F338F7220DE56730014226C /* CoverInfoProvider.swift in Sources */,
+				4FBACF1023E2A66F002C485E /* CheckLaunchTime.swift in Sources */,
 				4F338F5720DD00410014226C /* ShareViewController.swift in Sources */,
 				4F49435D20F347D800BB7785 /* UIImage+Gif.swift in Sources */,
 				4F338F7320DE56730014226C /* BilibiliCover.swift in Sources */,
@@ -1001,13 +1003,13 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 32;
+				CURRENT_PROJECT_VERSION = 33;
 				DEVELOPMENT_TEAM = 54YMT4F4W9;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = BCDSharing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.3.4;
+				MARKETING_VERSION = 1.3.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Future-Code-Institute.Bili-Cita.BCDSharing1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1029,13 +1031,13 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 32;
+				CURRENT_PROJECT_VERSION = 33;
 				DEVELOPMENT_TEAM = 54YMT4F4W9;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = BCDSharing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.3.4;
+				MARKETING_VERSION = 1.3.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Future-Code-Institute.Bili-Cita.BCDSharing1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1172,7 +1174,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 32;
+				CURRENT_PROJECT_VERSION = 33;
 				DEVELOPMENT_TEAM = 54YMT4F4W9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1181,7 +1183,7 @@
 				INFOPLIST_FILE = BCD/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.3.4;
+				MARKETING_VERSION = 1.3.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Future-Code-Institute.Bili-Cita";
 				PRODUCT_NAME = BilibiliCD;
 				PROVISIONING_PROFILE = "";
@@ -1203,7 +1205,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 32;
+				CURRENT_PROJECT_VERSION = 33;
 				DEVELOPMENT_TEAM = 54YMT4F4W9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1212,7 +1214,7 @@
 				INFOPLIST_FILE = BCD/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.3.4;
+				MARKETING_VERSION = 1.3.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Future-Code-Institute.Bili-Cita";
 				PRODUCT_NAME = BilibiliCD;
 				PROVISIONING_PROFILE = "";

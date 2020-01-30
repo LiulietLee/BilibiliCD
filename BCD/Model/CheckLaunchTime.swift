@@ -31,3 +31,7 @@ public var needToDisplayAutoHideTutorial: Bool {
     return UserDefaults.standard.bool(forKey: "isNeedToDisplayHisTut")
         && never("isNeedToDisplayAutoHis")
 }
+
+public var needToSetSaveOriginTrue: Bool {
+    return never("isNeedToSetSaveOriginTrue")
+}

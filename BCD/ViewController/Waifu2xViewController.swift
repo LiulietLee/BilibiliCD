@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LLDialog
 
 protocol Waifu2xDelegate {
     func scaleSucceed(scaledImage: UIImage)
@@ -45,6 +46,17 @@ class Waifu2xViewController: UIViewController, ScalingViewControllerDelegate, UI
         }
         
         print("image width: \(originImage!.size.width), height: \(originImage!.size.height)")
+        
+        LLDialog()
+            .set(title: "OHHHHHH")
+            .set(message: "突然发现 waifu2x-ios 炸了，现在暂时不能用了，等修好了之后会再开放的。")
+            .setPositiveButton(withTitle: "哦", target: self, action: #selector(self.goBack))
+            .show()
+
+    }
+    
+    @objc func goBack() {
+        _ = navigationController?.popViewController(animated: true)
     }
     
     @IBAction func openTut() {
