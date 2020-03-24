@@ -13,29 +13,39 @@ import LLDialog
 
 class MainViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var avLabel: UILabel!
+    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var goButton: UIButton!
     @IBOutlet weak var menu: UIBarButtonItem!
-    private var touchTime = DispatchTime(uptimeNanoseconds: 0)
     private var manager = HistoryManager()
-    var cover = BilibiliCover(id: 0, type: .video) {
-        didSet {
-            avLabel?.text = cover.shortDescription
-            if cover.number == 0 {
-                goButton.isEnabled = false
+    var cover = BilibiliCover(bvid: "")
+    
+    var currentCoverType: CoverType {
+        get { cover.type }
+        set {
+            if newValue == .bvideo {
+                searchField.keyboardType = .asciiCapable
+                searchField.autocorrectionType = .no
+                typeLabel.text = "视频 BV"
+                cover = BilibiliCover(bvid: "")
             } else {
-                goButton.isEnabled = true
+                searchField.keyboardType = .numberPad
+                cover = BilibiliCover(id: 0, type: newValue)
+                switch newValue {
+                case .video:    typeLabel.text = "视频 AV"
+                case .article:  typeLabel.text = "专栏 CV"
+                case .live:     typeLabel.text = "直播间 LV"
+                default: break
+                }
             }
+            searchField.text = ""
         }
-    }
-    private var avNumber: UInt64 {
-        get { return cover.number }
-        set { cover.number = newValue }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.barTintColor = .bilibiliPink
+        self.navigationController?.navigationBar.barTintColor = .white
+        view.endEditing(true)
         NotificationCenter.default.addObserver(
             self, selector: #selector(getURLFromPasteboard),
             name: UIApplication.didBecomeActiveNotification,
@@ -46,6 +56,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         NotificationCenter.default.removeObserver(self)
+        view.endEditing(true)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -58,7 +69,12 @@ class MainViewController: UIViewController, UITextFieldDelegate {
             let newCover = BilibiliCover.fromPasteboard(),
             cover != newCover
             else { return }
+        currentCoverType = newCover.type
         cover = newCover
+        let index = cover.shortDescription.index(cover.shortDescription.startIndex, offsetBy: 2)
+        searchField.text = String(cover.shortDescription[index...])
+        goButton.isEnabled = true
+        
         guard manager.itemInHistory(cover: newCover) == nil else { return }
         
         isShowingImage = true
@@ -66,12 +82,17 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "image controller") as! ImageViewController
         
         nextViewController.cover = newCover
+        self.navigationController?.navigationBar.barTintColor = .bilibiliPink
         show(nextViewController, sender: self)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         isShowingImage = false
+        searchField.delegate = self
+        searchField.addTarget(self, action: #selector(searchFieldDidChanged), for: .editingChanged)
+        searchField.layer.borderColor = UIColor.clear.cgColor
         goButton.isEnabled = false
         menu.target = revealViewController()
         menu.action = #selector(SWRevealViewController.revealToggle(_:))
@@ -83,29 +104,14 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         
         promptToShowAppTutorialIfNeeded()
         promptToShowAutoHidTutorialIfNeeded()
-        
-        setSwitchCoverTypeButton()
     }
-    
-    private func setSwitchCoverTypeButton() {
-        let button = UIButton()
-        button.addTarget(self, action: #selector(switchCoverType), for: .touchUpInside)
-        view.addSubview(button)
-        view.bringSubviewToFront(button)
         
-        button.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            button.topAnchor.constraint(equalTo: avLabel.topAnchor),
-            button.leadingAnchor.constraint(equalTo: avLabel.leadingAnchor),
-            button.trailingAnchor.constraint(equalTo: avLabel.trailingAnchor),
-            button.bottomAnchor.constraint(equalTo: avLabel.bottomAnchor)
-        ])
-    }
-    
-    @objc private func switchCoverType() {
+    @IBAction func switchCoverType() {
         let currentType = cover.type.rawValue
-        let nextType = currentType % 3 + 1
-        cover = BilibiliCover(id: cover.number, type: CoverType(rawValue: nextType)!)
+        let nextType = currentType % 4 + 1
+        currentCoverType = CoverType(rawValue: nextType)!
+        goButton.isEnabled = false
+        view.endEditing(true)
     }
     
     private func promptToShowAutoHidTutorialIfNeeded() {
@@ -139,32 +145,27 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         present(tutorialViewController, animated: true)
     }
     
-    @IBAction func numberButtonTapped(_ sender: UIButton) {
-        let new = sender.currentTitle!
-        avNumber = avNumber &* 10 &+ UInt64(new)!
-    }
-    
-    @IBAction func touchBackButtonDown() {
-        touchTime = DispatchTime.now()
-    }
-    @IBAction func touchBackButtonUp() {
-        let endTime = DispatchTime.now()
-        let nanoTime = endTime.uptimeNanoseconds - touchTime.uptimeNanoseconds
-        let interval = Double(nanoTime) / 1_000_000_000
-        
-        if (interval > 0.4) {
-            avNumber = 0
-        } else {
-            avNumber /= 10
-        }
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? ImageViewController {
+            self.navigationController?.navigationBar.barTintColor = .bilibiliPink
             vc.cover = cover
+            view.endEditing(true)
             if let eCover = manager.itemInHistory(cover: cover) {
                 vc.itemFromHistory = eCover
             }
         }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    @objc func searchFieldDidChanged() {
+        if currentCoverType == .bvideo {
+            cover.bvid = searchField.text!
+        } else {
+            cover.number = UInt64(searchField.text!) ?? 0
+        }
+        goButton.isEnabled = searchField.text != ""
     }
 }
