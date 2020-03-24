@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -91,68 +91,6 @@
 		4F78823520F3443200344D62 /* Waifu2xViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F78822120F3443200344D62 /* Waifu2xViewController.swift */; };
 		4F78823620F3443200344D62 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F78822220F3443200344D62 /* AboutViewController.swift */; };
 		4F78823720F3443200344D62 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F78822320F3443200344D62 /* HistoryViewController.swift */; };
-		4F7EDD1E2429DA6000FCE3C4 /* BKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDCFD2429DA6000FCE3C4 /* BKError.swift */; };
-		4F7EDD1F2429DA6000FCE3C4 /* BKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDCFD2429DA6000FCE3C4 /* BKError.swift */; };
-		4F7EDD202429DA6000FCE3C4 /* URLSession+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDCFE2429DA6000FCE3C4 /* URLSession+Extensions.swift */; };
-		4F7EDD212429DA6000FCE3C4 /* URLSession+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDCFE2429DA6000FCE3C4 /* URLSession+Extensions.swift */; };
-		4F7EDD222429DA6000FCE3C4 /* BKApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDCFF2429DA6000FCE3C4 /* BKApp.swift */; };
-		4F7EDD232429DA6000FCE3C4 /* BKApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDCFF2429DA6000FCE3C4 /* BKApp.swift */; };
-		4F7EDD242429DA6000FCE3C4 /* BKCookie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD002429DA6000FCE3C4 /* BKCookie.swift */; };
-		4F7EDD252429DA6000FCE3C4 /* BKCookie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD002429DA6000FCE3C4 /* BKCookie.swift */; };
-		4F7EDD262429DA6000FCE3C4 /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD012429DA6000FCE3C4 /* URL+Extensions.swift */; };
-		4F7EDD272429DA6000FCE3C4 /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD012429DA6000FCE3C4 /* URL+Extensions.swift */; };
-		4F7EDD282429DA6000FCE3C4 /* BKSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD022429DA6000FCE3C4 /* BKSession.swift */; };
-		4F7EDD292429DA6000FCE3C4 /* BKSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD022429DA6000FCE3C4 /* BKSession.swift */; };
-		4F7EDD2A2429DA6000FCE3C4 /* RSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD042429DA6000FCE3C4 /* RSA.swift */; };
-		4F7EDD2B2429DA6000FCE3C4 /* RSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD042429DA6000FCE3C4 /* RSA.swift */; };
-		4F7EDD2C2429DA6000FCE3C4 /* MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD052429DA6000FCE3C4 /* MD5.swift */; };
-		4F7EDD2D2429DA6000FCE3C4 /* MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD052429DA6000FCE3C4 /* MD5.swift */; };
-		4F7EDD2E2429DA6000FCE3C4 /* BKSec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD062429DA6000FCE3C4 /* BKSec.swift */; };
-		4F7EDD2F2429DA6000FCE3C4 /* BKSec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD062429DA6000FCE3C4 /* BKSec.swift */; };
-		4F7EDD302429DA6000FCE3C4 /* BilibiliKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD082429DA6000FCE3C4 /* BilibiliKit.swift */; };
-		4F7EDD312429DA6000FCE3C4 /* BilibiliKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD082429DA6000FCE3C4 /* BilibiliKit.swift */; };
-		4F7EDD322429DA6000FCE3C4 /* BKArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD092429DA6000FCE3C4 /* BKArticle.swift */; };
-		4F7EDD332429DA6000FCE3C4 /* BKArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD092429DA6000FCE3C4 /* BKArticle.swift */; };
-		4F7EDD342429DA6000FCE3C4 /* BKVideo+Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD0A2429DA6000FCE3C4 /* BKVideo+Page.swift */; };
-		4F7EDD352429DA6000FCE3C4 /* BKVideo+Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD0A2429DA6000FCE3C4 /* BKVideo+Page.swift */; };
-		4F7EDD362429DA6000FCE3C4 /* BKSession+PasswordLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD0B2429DA6000FCE3C4 /* BKSession+PasswordLogin.swift */; };
-		4F7EDD372429DA6000FCE3C4 /* BKSession+PasswordLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD0B2429DA6000FCE3C4 /* BKSession+PasswordLogin.swift */; };
-		4F7EDD382429DA6000FCE3C4 /* BKUpUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD0C2429DA6000FCE3C4 /* BKUpUser.swift */; };
-		4F7EDD392429DA6000FCE3C4 /* BKUpUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD0C2429DA6000FCE3C4 /* BKUpUser.swift */; };
-		4F7EDD3A2429DA6000FCE3C4 /* BKVideo+Stat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD0D2429DA6000FCE3C4 /* BKVideo+Stat.swift */; };
-		4F7EDD3B2429DA6000FCE3C4 /* BKVideo+Stat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD0D2429DA6000FCE3C4 /* BKVideo+Stat.swift */; };
-		4F7EDD3C2429DA6000FCE3C4 /* BKLiveRoom+Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD0E2429DA6000FCE3C4 /* BKLiveRoom+Info.swift */; };
-		4F7EDD3D2429DA6000FCE3C4 /* BKLiveRoom+Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD0E2429DA6000FCE3C4 /* BKLiveRoom+Info.swift */; };
-		4F7EDD3E2429DA6000FCE3C4 /* BKSession+QRCodeLoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD0F2429DA6000FCE3C4 /* BKSession+QRCodeLoginHelper.swift */; };
-		4F7EDD3F2429DA6000FCE3C4 /* BKSession+QRCodeLoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD0F2429DA6000FCE3C4 /* BKSession+QRCodeLoginHelper.swift */; };
-		4F7EDD402429DA6000FCE3C4 /* BKCurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD102429DA6000FCE3C4 /* BKCurrentUser.swift */; };
-		4F7EDD412429DA6000FCE3C4 /* BKCurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD102429DA6000FCE3C4 /* BKCurrentUser.swift */; };
-		4F7EDD422429DA6000FCE3C4 /* BKUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD112429DA6000FCE3C4 /* BKUser.swift */; };
-		4F7EDD432429DA6000FCE3C4 /* BKUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD112429DA6000FCE3C4 /* BKUser.swift */; };
-		4F7EDD442429DA6000FCE3C4 /* BKUser+Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD122429DA6000FCE3C4 /* BKUser+Info.swift */; };
-		4F7EDD452429DA6000FCE3C4 /* BKUser+Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD122429DA6000FCE3C4 /* BKUser+Info.swift */; };
-		4F7EDD462429DA6000FCE3C4 /* BKAudio+Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD132429DA6000FCE3C4 /* BKAudio+Info.swift */; };
-		4F7EDD472429DA6000FCE3C4 /* BKAudio+Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD132429DA6000FCE3C4 /* BKAudio+Info.swift */; };
-		4F7EDD482429DA6000FCE3C4 /* BKLiveRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD142429DA6000FCE3C4 /* BKLiveRoom.swift */; };
-		4F7EDD492429DA6000FCE3C4 /* BKLiveRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD142429DA6000FCE3C4 /* BKLiveRoom.swift */; };
-		4F7EDD4A2429DA6000FCE3C4 /* BKUser+Relationship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD152429DA6000FCE3C4 /* BKUser+Relationship.swift */; };
-		4F7EDD4B2429DA6000FCE3C4 /* BKUser+Relationship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD152429DA6000FCE3C4 /* BKUser+Relationship.swift */; };
-		4F7EDD4C2429DA6000FCE3C4 /* BKVideo+Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD162429DA6000FCE3C4 /* BKVideo+Info.swift */; };
-		4F7EDD4D2429DA6000FCE3C4 /* BKVideo+Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD162429DA6000FCE3C4 /* BKVideo+Info.swift */; };
-		4F7EDD4E2429DA6000FCE3C4 /* BKUpUser+Stat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD172429DA6000FCE3C4 /* BKUpUser+Stat.swift */; };
-		4F7EDD4F2429DA6000FCE3C4 /* BKUpUser+Stat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD172429DA6000FCE3C4 /* BKUpUser+Stat.swift */; };
-		4F7EDD502429DA6000FCE3C4 /* BKAudio+URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD182429DA6000FCE3C4 /* BKAudio+URLs.swift */; };
-		4F7EDD512429DA6000FCE3C4 /* BKAudio+URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD182429DA6000FCE3C4 /* BKAudio+URLs.swift */; };
-		4F7EDD522429DA6000FCE3C4 /* BKAudio+Staff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD192429DA6000FCE3C4 /* BKAudio+Staff.swift */; };
-		4F7EDD532429DA6000FCE3C4 /* BKAudio+Staff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD192429DA6000FCE3C4 /* BKAudio+Staff.swift */; };
-		4F7EDD542429DA6000FCE3C4 /* BKUser+AudioStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD1A2429DA6000FCE3C4 /* BKUser+AudioStat.swift */; };
-		4F7EDD552429DA6000FCE3C4 /* BKUser+AudioStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD1A2429DA6000FCE3C4 /* BKUser+AudioStat.swift */; };
-		4F7EDD562429DA6000FCE3C4 /* BKVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD1B2429DA6000FCE3C4 /* BKVideo.swift */; };
-		4F7EDD572429DA6000FCE3C4 /* BKVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD1B2429DA6000FCE3C4 /* BKVideo.swift */; };
-		4F7EDD582429DA6000FCE3C4 /* BKAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD1C2429DA6000FCE3C4 /* BKAudio.swift */; };
-		4F7EDD592429DA6000FCE3C4 /* BKAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD1C2429DA6000FCE3C4 /* BKAudio.swift */; };
-		4F7EDD5A2429DA6000FCE3C4 /* BKArticle+Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD1D2429DA6000FCE3C4 /* BKArticle+Info.swift */; };
-		4F7EDD5B2429DA6000FCE3C4 /* BKArticle+Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EDD1D2429DA6000FCE3C4 /* BKArticle+Info.swift */; };
 		4F8B90731F7B2E3800AB158D /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B90711F7B2E3800AB158D /* CoreDataStorage.swift */; };
 		4F97677422F5CE9300165320 /* CommentDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F97677322F5CE9300165320 /* CommentDataManager.swift */; };
 		4FA965022121BF4A0031983C /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F49434D20F3469600BB7785 /* CacheManager.swift */; };
@@ -174,6 +112,11 @@
 		5290FA032051B0DF00A1AAA4 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5290FA022051B0DF00A1AAA4 /* ImageSaver.swift */; };
 		52E4E47D1F76C6A9008EF09C /* BilibiliCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E4E47C1F76C6A9008EF09C /* BilibiliCover.swift */; };
 		A9956396813C99705AFF8D75 /* libPods-BCD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BCEF4F0F637FFBAB56600BC /* libPods-BCD.a */; };
+		D258AE48242A07E4000F56FC /* BilibiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = D258AE47242A07E4000F56FC /* BilibiliKit */; };
+		D258AE4A242A07F0000F56FC /* BilibiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = D258AE49242A07F0000F56FC /* BilibiliKit */; };
+		D258AE4D242A09D2000F56FC /* Eureka in Frameworks */ = {isa = PBXBuildFile; productRef = D258AE4C242A09D2000F56FC /* Eureka */; };
+		D258AE50242A0A40000F56FC /* ViewAnimator in Frameworks */ = {isa = PBXBuildFile; productRef = D258AE4F242A0A40000F56FC /* ViewAnimator */; };
+		D258AE53242A0AA7000F56FC /* MaterialKit in Frameworks */ = {isa = PBXBuildFile; productRef = D258AE52242A0AA7000F56FC /* MaterialKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -286,37 +229,6 @@
 		4F78822120F3443200344D62 /* Waifu2xViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Waifu2xViewController.swift; path = ViewController/Waifu2xViewController.swift; sourceTree = "<group>"; };
 		4F78822220F3443200344D62 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutViewController.swift; path = ViewController/AboutViewController.swift; sourceTree = "<group>"; };
 		4F78822320F3443200344D62 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryViewController.swift; path = ViewController/HistoryViewController.swift; sourceTree = "<group>"; };
-		4F7EDCFD2429DA6000FCE3C4 /* BKError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKError.swift; sourceTree = "<group>"; };
-		4F7EDCFE2429DA6000FCE3C4 /* URLSession+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLSession+Extensions.swift"; sourceTree = "<group>"; };
-		4F7EDCFF2429DA6000FCE3C4 /* BKApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKApp.swift; sourceTree = "<group>"; };
-		4F7EDD002429DA6000FCE3C4 /* BKCookie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKCookie.swift; sourceTree = "<group>"; };
-		4F7EDD012429DA6000FCE3C4 /* URL+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
-		4F7EDD022429DA6000FCE3C4 /* BKSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKSession.swift; sourceTree = "<group>"; };
-		4F7EDD042429DA6000FCE3C4 /* RSA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSA.swift; sourceTree = "<group>"; };
-		4F7EDD052429DA6000FCE3C4 /* MD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MD5.swift; sourceTree = "<group>"; };
-		4F7EDD062429DA6000FCE3C4 /* BKSec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKSec.swift; sourceTree = "<group>"; };
-		4F7EDD082429DA6000FCE3C4 /* BilibiliKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BilibiliKit.swift; sourceTree = "<group>"; };
-		4F7EDD092429DA6000FCE3C4 /* BKArticle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKArticle.swift; sourceTree = "<group>"; };
-		4F7EDD0A2429DA6000FCE3C4 /* BKVideo+Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BKVideo+Page.swift"; sourceTree = "<group>"; };
-		4F7EDD0B2429DA6000FCE3C4 /* BKSession+PasswordLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BKSession+PasswordLogin.swift"; sourceTree = "<group>"; };
-		4F7EDD0C2429DA6000FCE3C4 /* BKUpUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKUpUser.swift; sourceTree = "<group>"; };
-		4F7EDD0D2429DA6000FCE3C4 /* BKVideo+Stat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BKVideo+Stat.swift"; sourceTree = "<group>"; };
-		4F7EDD0E2429DA6000FCE3C4 /* BKLiveRoom+Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BKLiveRoom+Info.swift"; sourceTree = "<group>"; };
-		4F7EDD0F2429DA6000FCE3C4 /* BKSession+QRCodeLoginHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BKSession+QRCodeLoginHelper.swift"; sourceTree = "<group>"; };
-		4F7EDD102429DA6000FCE3C4 /* BKCurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKCurrentUser.swift; sourceTree = "<group>"; };
-		4F7EDD112429DA6000FCE3C4 /* BKUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKUser.swift; sourceTree = "<group>"; };
-		4F7EDD122429DA6000FCE3C4 /* BKUser+Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BKUser+Info.swift"; sourceTree = "<group>"; };
-		4F7EDD132429DA6000FCE3C4 /* BKAudio+Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BKAudio+Info.swift"; sourceTree = "<group>"; };
-		4F7EDD142429DA6000FCE3C4 /* BKLiveRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKLiveRoom.swift; sourceTree = "<group>"; };
-		4F7EDD152429DA6000FCE3C4 /* BKUser+Relationship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BKUser+Relationship.swift"; sourceTree = "<group>"; };
-		4F7EDD162429DA6000FCE3C4 /* BKVideo+Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BKVideo+Info.swift"; sourceTree = "<group>"; };
-		4F7EDD172429DA6000FCE3C4 /* BKUpUser+Stat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BKUpUser+Stat.swift"; sourceTree = "<group>"; };
-		4F7EDD182429DA6000FCE3C4 /* BKAudio+URLs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BKAudio+URLs.swift"; sourceTree = "<group>"; };
-		4F7EDD192429DA6000FCE3C4 /* BKAudio+Staff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BKAudio+Staff.swift"; sourceTree = "<group>"; };
-		4F7EDD1A2429DA6000FCE3C4 /* BKUser+AudioStat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BKUser+AudioStat.swift"; sourceTree = "<group>"; };
-		4F7EDD1B2429DA6000FCE3C4 /* BKVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKVideo.swift; sourceTree = "<group>"; };
-		4F7EDD1C2429DA6000FCE3C4 /* BKAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKAudio.swift; sourceTree = "<group>"; };
-		4F7EDD1D2429DA6000FCE3C4 /* BKArticle+Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BKArticle+Info.swift"; sourceTree = "<group>"; };
 		4F8B90711F7B2E3800AB158D /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 		4F97677322F5CE9300165320 /* CommentDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommentDataManager.swift; path = Model/CoreData/CommentDataManager.swift; sourceTree = "<group>"; };
 		4FB59F5B22DCB15800939DE3 /* ReplyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyCell.swift; sourceTree = "<group>"; };
@@ -343,6 +255,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D258AE4A242A07F0000F56FC /* BilibiliKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,7 +263,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D258AE53242A0AA7000F56FC /* MaterialKit in Frameworks */,
 				A9956396813C99705AFF8D75 /* libPods-BCD.a in Frameworks */,
+				D258AE48242A07E4000F56FC /* BilibiliKit in Frameworks */,
+				D258AE50242A0A40000F56FC /* ViewAnimator in Frameworks */,
+				D258AE4D242A09D2000F56FC /* Eureka in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,68 +423,6 @@
 			name = "Supporting File";
 			sourceTree = "<group>";
 		};
-		4F7EDCFB2429DA6000FCE3C4 /* BilibiliKit */ = {
-			isa = PBXGroup;
-			children = (
-				4F7EDCFC2429DA6000FCE3C4 /* BKFoundation */,
-				4F7EDD032429DA6000FCE3C4 /* BKSecurity */,
-				4F7EDD072429DA6000FCE3C4 /* BilibiliKit */,
-			);
-			path = BilibiliKit;
-			sourceTree = "<group>";
-		};
-		4F7EDCFC2429DA6000FCE3C4 /* BKFoundation */ = {
-			isa = PBXGroup;
-			children = (
-				4F7EDCFD2429DA6000FCE3C4 /* BKError.swift */,
-				4F7EDCFE2429DA6000FCE3C4 /* URLSession+Extensions.swift */,
-				4F7EDCFF2429DA6000FCE3C4 /* BKApp.swift */,
-				4F7EDD002429DA6000FCE3C4 /* BKCookie.swift */,
-				4F7EDD012429DA6000FCE3C4 /* URL+Extensions.swift */,
-				4F7EDD022429DA6000FCE3C4 /* BKSession.swift */,
-			);
-			path = BKFoundation;
-			sourceTree = "<group>";
-		};
-		4F7EDD032429DA6000FCE3C4 /* BKSecurity */ = {
-			isa = PBXGroup;
-			children = (
-				4F7EDD042429DA6000FCE3C4 /* RSA.swift */,
-				4F7EDD052429DA6000FCE3C4 /* MD5.swift */,
-				4F7EDD062429DA6000FCE3C4 /* BKSec.swift */,
-			);
-			path = BKSecurity;
-			sourceTree = "<group>";
-		};
-		4F7EDD072429DA6000FCE3C4 /* BilibiliKit */ = {
-			isa = PBXGroup;
-			children = (
-				4F7EDD082429DA6000FCE3C4 /* BilibiliKit.swift */,
-				4F7EDD092429DA6000FCE3C4 /* BKArticle.swift */,
-				4F7EDD0A2429DA6000FCE3C4 /* BKVideo+Page.swift */,
-				4F7EDD0B2429DA6000FCE3C4 /* BKSession+PasswordLogin.swift */,
-				4F7EDD0C2429DA6000FCE3C4 /* BKUpUser.swift */,
-				4F7EDD0D2429DA6000FCE3C4 /* BKVideo+Stat.swift */,
-				4F7EDD0E2429DA6000FCE3C4 /* BKLiveRoom+Info.swift */,
-				4F7EDD0F2429DA6000FCE3C4 /* BKSession+QRCodeLoginHelper.swift */,
-				4F7EDD102429DA6000FCE3C4 /* BKCurrentUser.swift */,
-				4F7EDD112429DA6000FCE3C4 /* BKUser.swift */,
-				4F7EDD122429DA6000FCE3C4 /* BKUser+Info.swift */,
-				4F7EDD132429DA6000FCE3C4 /* BKAudio+Info.swift */,
-				4F7EDD142429DA6000FCE3C4 /* BKLiveRoom.swift */,
-				4F7EDD152429DA6000FCE3C4 /* BKUser+Relationship.swift */,
-				4F7EDD162429DA6000FCE3C4 /* BKVideo+Info.swift */,
-				4F7EDD172429DA6000FCE3C4 /* BKUpUser+Stat.swift */,
-				4F7EDD182429DA6000FCE3C4 /* BKAudio+URLs.swift */,
-				4F7EDD192429DA6000FCE3C4 /* BKAudio+Staff.swift */,
-				4F7EDD1A2429DA6000FCE3C4 /* BKUser+AudioStat.swift */,
-				4F7EDD1B2429DA6000FCE3C4 /* BKVideo.swift */,
-				4F7EDD1C2429DA6000FCE3C4 /* BKAudio.swift */,
-				4F7EDD1D2429DA6000FCE3C4 /* BKArticle+Info.swift */,
-			);
-			path = BilibiliKit;
-			sourceTree = "<group>";
-		};
 		4FB5A49D2171F6CA009DF4F1 /* gifs */ = {
 			isa = PBXGroup;
 			children = (
@@ -647,7 +502,6 @@
 		52E4E47F1F76CF95008EF09C /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				4F7EDCFB2429DA6000FCE3C4 /* BilibiliKit */,
 				4F4C902321021BDE00C3AAB0 /* Network */,
 				4F8B90711F7B2E3800AB158D /* CoreDataStorage.swift */,
 				4FE8FF701EF5000400D31840 /* Info.swift */,
@@ -683,6 +537,9 @@
 			dependencies = (
 			);
 			name = BCDSharing;
+			packageProductDependencies = (
+				D258AE49242A07F0000F56FC /* BilibiliKit */,
+			);
 			productName = BCDSharing;
 			productReference = 4F338F5420DD00410014226C /* BCDSharing.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -697,7 +554,6 @@
 				4FE8FF381EF4FC0600D31840 /* Resources */,
 				4F2DB5E91F75F7D400FB2315 /* Embed App Extensions */,
 				4F585B3D1F7614FD004D1285 /* Embed Frameworks */,
-				24EBD449713F773EB0E70B8A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -705,6 +561,12 @@
 				4F338F5D20DD00410014226C /* PBXTargetDependency */,
 			);
 			name = BCD;
+			packageProductDependencies = (
+				D258AE47242A07E4000F56FC /* BilibiliKit */,
+				D258AE4C242A09D2000F56FC /* Eureka */,
+				D258AE4F242A0A40000F56FC /* ViewAnimator */,
+				D258AE52242A0AA7000F56FC /* MaterialKit */,
+			);
 			productName = BCD;
 			productReference = 4FE8FF3A1EF4FC0600D31840 /* BilibiliCD.app */;
 			productType = "com.apple.product-type.application";
@@ -764,6 +626,12 @@
 				Base,
 			);
 			mainGroup = 4FE8FF311EF4FC0600D31840;
+			packageReferences = (
+				D258AE46242A07E4000F56FC /* XCRemoteSwiftPackageReference "BilibiliKit" */,
+				D258AE4B242A09D2000F56FC /* XCRemoteSwiftPackageReference "Eureka" */,
+				D258AE4E242A0A40000F56FC /* XCRemoteSwiftPackageReference "ViewAnimator" */,
+				D258AE51242A0AA7000F56FC /* XCRemoteSwiftPackageReference "MaterialKit" */,
+			);
 			productRefGroup = 4FE8FF3B1EF4FC0600D31840 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -800,28 +668,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		24EBD449713F773EB0E70B8A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-BCD/Pods-BCD-resources.sh",
-				"${PODS_ROOT}/Eureka/Source/Resources/Eureka.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Eureka.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BCD/Pods-BCD-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		6BD52D43BADCF65812B1A32D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -847,57 +693,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F7EDD392429DA6000FCE3C4 /* BKUpUser.swift in Sources */,
-				4F7EDD3D2429DA6000FCE3C4 /* BKLiveRoom+Info.swift in Sources */,
-				4F7EDD252429DA6000FCE3C4 /* BKCookie.swift in Sources */,
-				4F7EDD4B2429DA6000FCE3C4 /* BKUser+Relationship.swift in Sources */,
 				4F49435B20F347B400BB7785 /* UIImageToCVPixelBuffer.swift in Sources */,
 				4F4C902121021A0E00C3AAB0 /* URLBuilder.swift in Sources */,
 				4F338F7020DE56730014226C /* CoreDataStorage.swift in Sources */,
-				4F7EDD592429DA6000FCE3C4 /* BKAudio.swift in Sources */,
 				4FF3FD1F215D348F00AF7F4B /* AbstractProvider.swift in Sources */,
 				4F49435620F3476B00BB7785 /* BCD.xcdatamodeld in Sources */,
 				4F49435C20F347CB00BB7785 /* Nudity.mlmodel in Sources */,
-				4F7EDD492429DA6000FCE3C4 /* BKLiveRoom.swift in Sources */,
 				4F338F7120DE56730014226C /* Info.swift in Sources */,
 				4F4C902221021A0E00C3AAB0 /* APIFactory.swift in Sources */,
-				4F7EDD4F2429DA6000FCE3C4 /* BKUpUser+Stat.swift in Sources */,
-				4F7EDD3F2429DA6000FCE3C4 /* BKSession+QRCodeLoginHelper.swift in Sources */,
-				4F7EDD432429DA6000FCE3C4 /* BKUser.swift in Sources */,
 				4F338F7420DE56730014226C /* ImageSaver.swift in Sources */,
-				4F7EDD4D2429DA6000FCE3C4 /* BKVideo+Info.swift in Sources */,
-				4F7EDD312429DA6000FCE3C4 /* BilibiliKit.swift in Sources */,
-				4F7EDD452429DA6000FCE3C4 /* BKUser+Info.swift in Sources */,
 				4F49435820F3477900BB7785 /* CacheManager.swift in Sources */,
 				4F49435920F3479700BB7785 /* HistoryManager.swift in Sources */,
-				4F7EDD552429DA6000FCE3C4 /* BKUser+AudioStat.swift in Sources */,
 				4F49435A20F3479A00BB7785 /* SettingManager.swift in Sources */,
-				4F7EDD572429DA6000FCE3C4 /* BKVideo.swift in Sources */,
-				4F7EDD212429DA6000FCE3C4 /* URLSession+Extensions.swift in Sources */,
-				4F7EDD332429DA6000FCE3C4 /* BKArticle.swift in Sources */,
-				4F7EDD412429DA6000FCE3C4 /* BKCurrentUser.swift in Sources */,
-				4F7EDD2D2429DA6000FCE3C4 /* MD5.swift in Sources */,
 				4F338F7220DE56730014226C /* CoverInfoProvider.swift in Sources */,
 				4FBACF1023E2A66F002C485E /* CheckLaunchTime.swift in Sources */,
 				4F338F5720DD00410014226C /* ShareViewController.swift in Sources */,
-				4F7EDD2B2429DA6000FCE3C4 /* RSA.swift in Sources */,
-				4F7EDD272429DA6000FCE3C4 /* URL+Extensions.swift in Sources */,
-				4F7EDD532429DA6000FCE3C4 /* BKAudio+Staff.swift in Sources */,
-				4F7EDD1F2429DA6000FCE3C4 /* BKError.swift in Sources */,
 				4F49435D20F347D800BB7785 /* UIImage+Gif.swift in Sources */,
-				4F7EDD372429DA6000FCE3C4 /* BKSession+PasswordLogin.swift in Sources */,
 				4F338F7320DE56730014226C /* BilibiliCover.swift in Sources */,
-				4F7EDD5B2429DA6000FCE3C4 /* BKArticle+Info.swift in Sources */,
-				4F7EDD352429DA6000FCE3C4 /* BKVideo+Page.swift in Sources */,
-				4F7EDD472429DA6000FCE3C4 /* BKAudio+Info.swift in Sources */,
 				4F49435720F3477200BB7785 /* CoreDataModel.swift in Sources */,
-				4F7EDD3B2429DA6000FCE3C4 /* BKVideo+Stat.swift in Sources */,
 				4F65FC7522EDA20900363BA0 /* Response.swift in Sources */,
-				4F7EDD512429DA6000FCE3C4 /* BKAudio+URLs.swift in Sources */,
 				4FF3FD20215D348F00AF7F4B /* AssetProvider.swift in Sources */,
-				4F7EDD232429DA6000FCE3C4 /* BKApp.swift in Sources */,
-				4F7EDD2F2429DA6000FCE3C4 /* BKSec.swift in Sources */,
-				4F7EDD292429DA6000FCE3C4 /* BKSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -907,9 +722,7 @@
 			files = (
 				4F1AF3CA22D78E9C009C8328 /* CommentCell.swift in Sources */,
 				4F78823420F3443200344D62 /* TutorialPageViewController.swift in Sources */,
-				4F7EDD222429DA6000FCE3C4 /* BKApp.swift in Sources */,
 				4F15D82722DDE6990080204E /* ReplyController.swift in Sources */,
-				4F7EDD502429DA6000FCE3C4 /* BKAudio+URLs.swift in Sources */,
 				4F78823220F3443200344D62 /* SourceTableViewController.swift in Sources */,
 				4F4C901E210214C100C3AAB0 /* URLBuilder.swift in Sources */,
 				4F49434620F3468B00BB7785 /* photo_noise2_model.mlmodel in Sources */,
@@ -917,13 +730,9 @@
 				4FF3FD1A215D30A500AF7F4B /* HotListProvider.swift in Sources */,
 				4F49435420F3469700BB7785 /* HistoryManager.swift in Sources */,
 				4F49433920F3468B00BB7785 /* photo_noise1_model.mlmodel in Sources */,
-				4F7EDD422429DA6000FCE3C4 /* BKUser.swift in Sources */,
 				4F6C0541216218A800ED57E0 /* HotListCell.swift in Sources */,
 				4F4C9020210215C100C3AAB0 /* APIFactory.swift in Sources */,
-				4F7EDD202429DA6000FCE3C4 /* URLSession+Extensions.swift in Sources */,
-				4F7EDD3A2429DA6000FCE3C4 /* BKVideo+Stat.swift in Sources */,
 				4F49432220F3468200BB7785 /* MotionDetector.swift in Sources */,
-				4F7EDD302429DA6000FCE3C4 /* BilibiliKit.swift in Sources */,
 				4F78822F20F3443200344D62 /* SettingViewController.swift in Sources */,
 				4F4942D020F344E200BB7785 /* ColoredNavController.swift in Sources */,
 				4F15D82922DDE6A70080204E /* EditController.swift in Sources */,
@@ -931,18 +740,13 @@
 				4F78823020F3443200344D62 /* TutorialViewController.swift in Sources */,
 				4FF3FD1C215D339900AF7F4B /* AbstractProvider.swift in Sources */,
 				4F49434720F3468B00BB7785 /* anime_noise1_model.mlmodel in Sources */,
-				4F7EDD242429DA6000FCE3C4 /* BKCookie.swift in Sources */,
-				4F7EDD362429DA6000FCE3C4 /* BKSession+PasswordLogin.swift in Sources */,
 				4F49434320F3468B00BB7785 /* UIImage+Bicubic.swift in Sources */,
 				4F270F2122D21261008C07A6 /* Comment.swift in Sources */,
 				4F4942E420F3455F00BB7785 /* AnimateView.swift in Sources */,
 				4FF3FD1E215D340800AF7F4B /* AssetProvider.swift in Sources */,
 				4F97677422F5CE9300165320 /* CommentDataManager.swift in Sources */,
-				4F7EDD322429DA6000FCE3C4 /* BKArticle.swift in Sources */,
-				4F7EDD542429DA6000FCE3C4 /* BKUser+AudioStat.swift in Sources */,
 				52E4E47D1F76C6A9008EF09C /* BilibiliCover.swift in Sources */,
 				4F49435120F3469700BB7785 /* BCD.xcdatamodeld in Sources */,
-				4F7EDD1E2429DA6000FCE3C4 /* BKError.swift in Sources */,
 				4F49433F20F3468B00BB7785 /* UIImage+Reload.swift in Sources */,
 				4F4942CD20F344E200BB7785 /* BrownNavController.swift in Sources */,
 				4F78820920F3423900344D62 /* AppDelegate.swift in Sources */,
@@ -950,52 +754,35 @@
 				4F0A450022EF0A7D00F4101E /* InariHairNavController.swift in Sources */,
 				4F49434220F3468B00BB7785 /* UIImage+Crop.swift in Sources */,
 				4F65FC7422EDA20900363BA0 /* Response.swift in Sources */,
-				4F7EDD522429DA6000FCE3C4 /* BKAudio+Staff.swift in Sources */,
-				4F7EDD2C2429DA6000FCE3C4 /* MD5.swift in Sources */,
 				4F49433C20F3468B00BB7785 /* photo_noise3_model.mlmodel in Sources */,
-				4F7EDD482429DA6000FCE3C4 /* BKLiveRoom.swift in Sources */,
 				4F4942E120F3455F00BB7785 /* LoadingView.swift in Sources */,
 				4F4942DD20F3455F00BB7785 /* HistoryCell.swift in Sources */,
-				4F7EDD2E2429DA6000FCE3C4 /* BKSec.swift in Sources */,
-				4F7EDD562429DA6000FCE3C4 /* BKVideo.swift in Sources */,
-				4F7EDD5A2429DA6000FCE3C4 /* BKArticle+Info.swift in Sources */,
 				4F78823520F3443200344D62 /* Waifu2xViewController.swift in Sources */,
-				4F7EDD3C2429DA6000FCE3C4 /* BKLiveRoom+Info.swift in Sources */,
 				4F49434520F3468B00BB7785 /* Nudity.mlmodel in Sources */,
 				4F49434020F3468B00BB7785 /* UIImage+MultiArray.swift in Sources */,
 				4F49433D20F3468B00BB7785 /* ThreadPool.swift in Sources */,
-				4F7EDD402429DA6000FCE3C4 /* BKCurrentUser.swift in Sources */,
 				4FE2EF4C2162169800E389CE /* CoverPreviewCell.swift in Sources */,
 				4F49434920F3468B00BB7785 /* anime_scale2x_model.mlmodel in Sources */,
 				4FF64A622167264E0046302D /* GreenNavController.swift in Sources */,
-				4F7EDD342429DA6000FCE3C4 /* BKVideo+Page.swift in Sources */,
 				4F78823620F3443200344D62 /* AboutViewController.swift in Sources */,
 				4F78822420F3443200344D62 /* HisTutViewController.swift in Sources */,
-				4F7EDD442429DA6000FCE3C4 /* BKUser+Info.swift in Sources */,
 				4F49434A20F3468B00BB7785 /* photo_scale2x_model.mlmodel in Sources */,
 				4F49434420F3468B00BB7785 /* anime_noise3_model.mlmodel in Sources */,
 				4F78822520F3443200344D62 /* ImageViewController.swift in Sources */,
 				4FE8FF711EF5000400D31840 /* Info.swift in Sources */,
 				4F49433820F3468B00BB7785 /* anime_noise2_model.mlmodel in Sources */,
 				4F49433A20F3468B00BB7785 /* anime_noise0_model.mlmodel in Sources */,
-				4F7EDD462429DA6000FCE3C4 /* BKAudio+Info.swift in Sources */,
 				4F78822820F3443200344D62 /* TutorialContentViewController.swift in Sources */,
 				4FE8FF6F1EF4FCC600D31840 /* CoverInfoProvider.swift in Sources */,
 				4FB5CC8122D0A11300A6A47B /* CommentProvider.swift in Sources */,
 				4F4942CE20F344E200BB7785 /* BlueNavController.swift in Sources */,
 				4F4942CF20F344E200BB7785 /* SakuraNavController.swift in Sources */,
-				4F7EDD3E2429DA6000FCE3C4 /* BKSession+QRCodeLoginHelper.swift in Sources */,
 				4F49433E20F3468B00BB7785 /* UIImage+RunModel.swift in Sources */,
 				5290FA032051B0DF00A1AAA4 /* ImageSaver.swift in Sources */,
 				4F49434820F3468B00BB7785 /* UIImageToCVPixelBuffer.swift in Sources */,
-				4F7EDD4E2429DA6000FCE3C4 /* BKUpUser+Stat.swift in Sources */,
 				4F49431F20F3467D00BB7785 /* CheckLaunchTime.swift in Sources */,
 				4F49435320F3469700BB7785 /* CoreDataModel.swift in Sources */,
-				4F7EDD282429DA6000FCE3C4 /* BKSession.swift in Sources */,
 				4F49434120F3468B00BB7785 /* UIImage+IO.swift in Sources */,
-				4F7EDD582429DA6000FCE3C4 /* BKAudio.swift in Sources */,
-				4F7EDD382429DA6000FCE3C4 /* BKUpUser.swift in Sources */,
-				4F7EDD2A2429DA6000FCE3C4 /* RSA.swift in Sources */,
 				4F49433B20F3468B00BB7785 /* photo_noise0_model.mlmodel in Sources */,
 				4F4942CC20F344E200BB7785 /* GreyNavController.swift in Sources */,
 				4FB59F5C22DCB15800939DE3 /* ReplyCell.swift in Sources */,
@@ -1005,10 +792,7 @@
 				4F49432320F3468200BB7785 /* UIImage+Gif.swift in Sources */,
 				4F78823720F3443200344D62 /* HistoryViewController.swift in Sources */,
 				4FF3FD22215E82EC00AF7F4B /* HotListController.swift in Sources */,
-				4F7EDD4C2429DA6000FCE3C4 /* BKVideo+Info.swift in Sources */,
 				4F15D82622DDE6990080204E /* FeedbackController.swift in Sources */,
-				4F7EDD262429DA6000FCE3C4 /* URL+Extensions.swift in Sources */,
-				4F7EDD4A2429DA6000FCE3C4 /* BKUser+Relationship.swift in Sources */,
 				4F78822620F3443200344D62 /* MainViewController.swift in Sources */,
 				4F78822920F3443200344D62 /* ScalingViewController.swift in Sources */,
 			);
@@ -1067,7 +851,11 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = BCDSharing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				MARKETING_VERSION = 1.3.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Future-Code-Institute.Bili-Cita.BCDSharing1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1095,7 +883,11 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = BCDSharing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				MARKETING_VERSION = 1.3.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Future-Code-Institute.Bili-Cita.BCDSharing1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1216,7 +1008,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1241,7 +1034,10 @@
 				);
 				INFOPLIST_FILE = BCD/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.3.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Future-Code-Institute.Bili-Cita";
 				PRODUCT_NAME = BilibiliCD;
@@ -1272,7 +1068,10 @@
 				);
 				INFOPLIST_FILE = BCD/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.3.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Future-Code-Institute.Bili-Cita";
 				PRODUCT_NAME = BilibiliCD;
@@ -1314,6 +1113,69 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D258AE46242A07E4000F56FC /* XCRemoteSwiftPackageReference "BilibiliKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ApolloZhu/BilibiliKit.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		D258AE4B242A09D2000F56FC /* XCRemoteSwiftPackageReference "Eureka" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/xmartlabs/Eureka.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.0;
+			};
+		};
+		D258AE4E242A0A40000F56FC /* XCRemoteSwiftPackageReference "ViewAnimator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marcosgriselli/ViewAnimator.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.0;
+			};
+		};
+		D258AE51242A0AA7000F56FC /* XCRemoteSwiftPackageReference "MaterialKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ApolloZhu/MaterialKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.6.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D258AE47242A07E4000F56FC /* BilibiliKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D258AE46242A07E4000F56FC /* XCRemoteSwiftPackageReference "BilibiliKit" */;
+			productName = BilibiliKit;
+		};
+		D258AE49242A07F0000F56FC /* BilibiliKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D258AE46242A07E4000F56FC /* XCRemoteSwiftPackageReference "BilibiliKit" */;
+			productName = BilibiliKit;
+		};
+		D258AE4C242A09D2000F56FC /* Eureka */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D258AE4B242A09D2000F56FC /* XCRemoteSwiftPackageReference "Eureka" */;
+			productName = Eureka;
+		};
+		D258AE4F242A0A40000F56FC /* ViewAnimator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D258AE4E242A0A40000F56FC /* XCRemoteSwiftPackageReference "ViewAnimator" */;
+			productName = ViewAnimator;
+		};
+		D258AE52242A0AA7000F56FC /* MaterialKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D258AE51242A0AA7000F56FC /* XCRemoteSwiftPackageReference "MaterialKit" */;
+			productName = MaterialKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		4F49434B20F3469600BB7785 /* BCD.xcdatamodeld */ = {

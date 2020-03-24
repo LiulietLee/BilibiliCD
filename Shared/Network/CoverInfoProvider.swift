@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BilibiliKit
 
 class CoverInfoProvider: AbstractProvider {
     
