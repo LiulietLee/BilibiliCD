@@ -11,10 +11,10 @@ import UIKit
 enum CoverType: Int {
     case none = 0
     case video = 1
-    case article = 2
-    case live = 3
-    case hotList = 4
-    case bvideo = 5
+    case bvideo = 2
+    case article = 3
+    case live = 4
+    case hotList = 5
     
     static func stringType(type: CoverType) -> String? {
         switch type {
