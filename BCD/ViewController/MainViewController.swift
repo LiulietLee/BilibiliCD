@@ -18,7 +18,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var menu: UIBarButtonItem!
     private var touchTime = DispatchTime(uptimeNanoseconds: 0)
     private var manager = HistoryManager()
-    var cover = BilibiliCover(number: 0, type: .video) {
+    var cover = BilibiliCover(id: 0, type: .video) {
         didSet {
             avLabel?.text = cover.shortDescription
             if cover.number == 0 {
@@ -105,7 +105,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     @objc private func switchCoverType() {
         let currentType = cover.type.rawValue
         let nextType = currentType % 3 + 1
-        cover = BilibiliCover(number: cover.number, type: CoverType(rawValue: nextType)!)
+        cover = BilibiliCover(id: cover.number, type: CoverType(rawValue: nextType)!)
     }
     
     private func promptToShowAutoHidTutorialIfNeeded() {

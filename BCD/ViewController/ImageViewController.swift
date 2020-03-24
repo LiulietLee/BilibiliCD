@@ -81,7 +81,7 @@ class ImageViewController: UIViewController, Waifu2xDelegate {
         if let cover = cover {
             title = cover.shortDescription
             if itemFromHistory == nil {
-                coverInfoProvider.getCoverInfoBy(type: cover.type, andStringID: cover.number) { info in
+                coverInfoProvider.getCoverInfoBy(cover: cover) { info in
                     DispatchQueue.main.async { [weak self] in
                         if let info = info {
                             self?.updateUIFrom(info: info)

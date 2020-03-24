@@ -3,7 +3,7 @@
 //  BilibiliKit
 //
 //  Created by Apollo Zhu on 12/31/17.
-//  Copyright (c) 2017-2019 ApolloZhu. MIT License.
+//  Copyright (c) 2017-2020 ApolloZhu. MIT License.
 //
 
 import Foundation
@@ -11,7 +11,8 @@ import Foundation
 /// APPKEY associated operations
 public enum BKApp {
     /// APPKEY from bilibili website.
-    public static let appkey = "8e9fc618fbd41e28"
+    public static let appkey = "4409e2ce8ffd12b8"
+    public static let salt = "59b43e04ad6965f34319062b478f83dd"
     
     // MARK: - Dynamic Fetching
     
@@ -21,9 +22,10 @@ public enum BKApp {
     /// Fetch a valid appkey from bilibili.
     ///
     /// - Parameter handler: code to run with fetched appkey.
+    /// - Important: No salt (secret for this key).
     public static func fetchKey(_ handler: @escaping BKHandler<String>) {
         func raise(_ error: BKError) { handler(.failure(error)) }
-        let task = URLSession.bk.dataTask(with: playerURL) { data, res, err in
+        let task = URLSession._bk.dataTask(with: playerURL) { data, res, err in
             guard let data = data else {
                 return raise(.responseError(
                     reason: .urlSessionError(err, response: res)))

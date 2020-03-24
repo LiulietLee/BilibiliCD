@@ -88,7 +88,7 @@ class APIFactory {
     
     static public func getCoverAPI(
         byType type: CoverType,
-        andNID nid: Int? = nil,
+        andNID nid: String? = nil,
         andInfo newInfo: Info? = nil,
         env: Environment = .prod
     ) -> URL? {
@@ -105,12 +105,13 @@ class APIFactory {
             
             switch type {
             case .video:   builder.addQueryItem(name: "type", value: "av")
+            case .bvideo:  builder.addQueryItem(name: "type", value: "BV")
             case .article: builder.addQueryItem(name: "type", value: "cv")
             case .live:    builder.addQueryItem(name: "type", value: "lv")
             default:       return nil
             }
             
-            return builder.addQueryItem(name: "nid", value: "\(nid!)").build()
+            return builder.addQueryItem(name: "nid", value: nid!).build()
         }
         
     }

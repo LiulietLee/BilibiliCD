@@ -23,8 +23,18 @@ class CoverInfoProvider: AbstractProvider {
         }
     }
     
-    private func updateServerRecord(type: CoverType, nid: UInt64, info: Info) {
-        guard let url = APIFactory.getCoverAPI(byType: type, andNID: Int(nid), andInfo: info, env: env) else {
+    open func getCoverInfoBy(cover: BilibiliCover, completion: @escaping (Info?) -> Void) {
+        switch cover.type {
+        case .video:   getInfo(forAV: cover.number, completion)
+        case .bvideo:  getInfo(forBV: cover.bvid, completion)
+        case .article: getInfo(forCV: cover.number, completion)
+        case .live:    getInfo(forLV: cover.number, completion)
+        default: break
+        }
+    }
+    
+    private func updateServerRecord(type: CoverType, nid: String, info: Info) {
+        guard let url = APIFactory.getCoverAPI(byType: type, andNID: nid, andInfo: info, env: env) else {
             fatalError("cannot generate api url")
         }
 
@@ -57,8 +67,8 @@ class CoverInfoProvider: AbstractProvider {
         task.resume()
     }
     
-    private func fetchCoverRecordFromServer(withType type: CoverType, andID nid: UInt64, _ completion: @escaping (Info?) -> Void) {
-        guard let url = APIFactory.getCoverAPI(byType: type, andNID: Int(nid), env: env) else {
+    private func fetchCoverRecordFromServer(withType type: CoverType, andID nid: String, _ completion: @escaping (Info?) -> Void) {
+        guard let url = APIFactory.getCoverAPI(byType: type, andNID: nid, env: env) else {
             fatalError("cannot generate api url")
         }
         let request = URLRequest(url: url)
@@ -80,14 +90,27 @@ class CoverInfoProvider: AbstractProvider {
     }
     
     private func getInfo(forAV: UInt64, _ completion: @escaping (Info?) -> Void) {
-        BKVideo(av: Int(forAV)).getInfo {
+        BKVideo.av(Int(forAV)).getInfo {
             guard let info = try? $0.get() else {
-                self.fetchCoverRecordFromServer(withType: .video, andID: forAV, completion)
+                self.fetchCoverRecordFromServer(withType: .video, andID: String(forAV), completion)
                 return
             }
             let url = info.coverImageURL.absoluteString
-            let newInfo = Info(stringID: "av" + String(forAV), author: info.author, title: info.title, imageURL: url)
-            self.updateServerRecord(type: .video, nid: forAV, info: newInfo)
+            let newInfo = Info(stringID: "av" + String(forAV), author: info.author.name, title: info.title, imageURL: url)
+            self.updateServerRecord(type: .video, nid: String(forAV), info: newInfo)
+            completion(newInfo)
+        }
+    }
+    
+    private func getInfo(forBV: String, _ completion: @escaping (Info?) -> Void) {
+        BKVideo.bv(forBV).getInfo {
+            guard let info = try? $0.get() else {
+                self.fetchCoverRecordFromServer(withType: .bvideo, andID: forBV, completion)
+                return
+            }
+            let url = info.coverImageURL.absoluteString
+            let newInfo = Info(stringID: forBV, author: info.author.name, title: info.title, imageURL: url)
+            self.updateServerRecord(type: .video, nid: forBV, info: newInfo)
             completion(newInfo)
         }
     }
@@ -95,12 +118,12 @@ class CoverInfoProvider: AbstractProvider {
     private func getInfo(forCV: UInt64, _ completion: @escaping (Info?) -> Void) {
         BKArticle(cv: Int(forCV)).getInfo {
             guard let info = try? $0.get() else {
-                self.fetchCoverRecordFromServer(withType: .article, andID: forCV, completion)
+                self.fetchCoverRecordFromServer(withType: .article, andID: String(forCV), completion)
                 return
             }
             let url = info.coverImageURL.absoluteString
             let newInfo = Info(stringID: "cv" + String(forCV), author: info.author, title: info.title, imageURL: url)
-            self.updateServerRecord(type: .article, nid: forCV, info: newInfo)
+            self.updateServerRecord(type: .article, nid: String(forCV), info: newInfo)
             completion(newInfo)
         }
     }
@@ -108,14 +131,14 @@ class CoverInfoProvider: AbstractProvider {
     private func getInfo(forLV: UInt64, _ completion: @escaping (Info?) -> Void) {
         BKLiveRoom(Int(forLV)).getInfo {
             guard let info = try? $0.get() else {
-                self.fetchCoverRecordFromServer(withType: .live, andID: forLV, completion)
+                self.fetchCoverRecordFromServer(withType: .live, andID: String(forLV), completion)
                 return
             }
             BKUser(id: info.mid).getBasicInfo(then: { basicInfo in
                 if let userInfo = try? basicInfo.get() {
                     let url = info.coverImageURL.absoluteString
                     let newInfo = Info(stringID: "lv" + String(forLV), author: userInfo.name, title: info.title, imageURL: url)
-                    self.updateServerRecord(type: .live, nid: forLV, info: newInfo)
+                    self.updateServerRecord(type: .live, nid: String(forLV), info: newInfo)
                     completion(newInfo)
                 }
             })

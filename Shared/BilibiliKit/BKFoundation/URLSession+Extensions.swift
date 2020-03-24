@@ -3,7 +3,7 @@
 //  BilibiliKit
 //
 //  Created by Apollo Zhu on 12/31/17.
-//  Copyright (c) 2017-2019 ApolloZhu. MIT License.
+//  Copyright (c) 2017-2020 ApolloZhu. MIT License.
 //
 
 import Foundation
@@ -18,6 +18,16 @@ public protocol BKWrapper: Codable {
     var data: Wrapped? { get }
     /// Response description
     var message: String { get }
+}
+
+public struct BKErrorResponse: Decodable, Error, LocalizedError {
+    // let ts: Int
+    public let code: Int
+    public let message: String
+
+    public var errorDescription: String? {
+        return message
+    }
 }
 
 /// Response by middleware where message is keyed as message.
@@ -46,7 +56,7 @@ extension BKWrapperMsg {
 
 extension URLSession {
     /// Shared url session, alias of URLSession.shared
-    static var bk: URLSession { return .shared }
+    public static var _bk: URLSession { return .shared }
 
     /// Fetches a decodable wrapper JSON and pass the unwrapped to handler.
     ///
@@ -79,13 +89,13 @@ extension URLSession {
         unwrap wrapperType: Wrapper.Type,
         then handler: @escaping BKHandler<Wrapper.Wrapped>)
     {
-        let task = URLSession.bk.dataTask(with: request) { data, res, err in
+        let task = URLSession._bk.dataTask(with: request) { data, res, err in
             guard let data = data else {
                 return handler(.failure(.responseError(
                     reason: .urlSessionError(err, response: res))))
             }
             handler(Result { try JSONDecoder().decode(Wrapper.self, from: data) }
-                .mapError { BKError.parseError(reason: .jsonDecodeFailure($0)) }
+                .mapError { BKError.parseError(reason: .jsonDecode(data, failure: $0)) }
                 .flatMap { $0.data.map { .success($0) }
                     ?? .failure(.responseError(reason: .reason($0.message)))
             })

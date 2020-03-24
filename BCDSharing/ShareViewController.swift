@@ -45,7 +45,7 @@ class ShareViewController: UIViewController {
             return
         }
         self.cover = cover
-        coverInfoProvider.getCoverInfoBy(type: cover.type, andStringID: cover.number) { info in
+        coverInfoProvider.getCoverInfoBy(cover: cover) { info in
             DispatchQueue.main.async { [weak self] in
                 if let info = info {
                     self?.updateUIFrom(info: info)
