@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Bili Cita-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="main" id="BYZ-38-t0r" customClass="MainViewController" customModule="BilibiliCD" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,233 +19,88 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gJ-Wu-D4U" customClass="MKButton" customModule="MaterialKit">
-                                <rect key="frame" x="117.5" y="458" width="85" height="102"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="40"/>
-                                <state key="normal" title="0">
-                                    <color key="titleColor" red="0.99692672490000001" green="0.48709040879999999" blue="0.65352439880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="numberButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="09K-Kt-FFj"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5FV-ng-vLE" customClass="MKButton" customModule="MaterialKit">
-                                <rect key="frame" x="210.5" y="348" width="85.5" height="102"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="40"/>
-                                <state key="normal" title="9">
-                                    <color key="titleColor" red="0.99692672490000001" green="0.48709040879999999" blue="0.65352439880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="numberButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I6q-qm-JiN"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gq4-jN-Rz8" customClass="MKButton" customModule="MaterialKit">
-                                <rect key="frame" x="117.5" y="348" width="85" height="102"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="40"/>
-                                <state key="normal" title="8">
-                                    <color key="titleColor" red="0.99692672490000001" green="0.48709040879999999" blue="0.65352439880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="numberButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7NU-1W-sIP"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoC-Sf-2pO" customClass="MKButton" customModule="MaterialKit">
-                                <rect key="frame" x="24" y="348" width="85.5" height="102"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="40"/>
-                                <state key="normal" title="7">
-                                    <color key="titleColor" red="0.99692672490000001" green="0.48709040879999999" blue="0.65352439880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="numberButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xtT-QY-XY3"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Jv-ZF-1xQ" customClass="MKButton" customModule="MaterialKit">
-                                <rect key="frame" x="210.5" y="238" width="85.5" height="102"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="40"/>
-                                <state key="normal" title="6">
-                                    <color key="titleColor" red="0.99692672490000001" green="0.48709040879999999" blue="0.65352439880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="numberButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vSg-3y-Jci"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dp3-9z-bWD" customClass="MKButton" customModule="MaterialKit">
-                                <rect key="frame" x="117.5" y="238" width="85" height="102"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="40"/>
-                                <state key="normal" title="5">
-                                    <color key="titleColor" red="0.99692672490000001" green="0.48709040879999999" blue="0.65352439880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="numberButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y5g-io-gMm"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wv9-Id-3O0" customClass="MKButton" customModule="MaterialKit">
-                                <rect key="frame" x="24" y="238" width="85.5" height="102"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="40"/>
-                                <state key="normal" title="4">
-                                    <color key="titleColor" red="0.99692672490000001" green="0.48709040879999999" blue="0.65352439880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="numberButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2qx-Fb-ENm"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPg-fz-nPK" customClass="MKButton" customModule="MaterialKit">
-                                <rect key="frame" x="210.5" y="128" width="85.5" height="102"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="40"/>
-                                <state key="normal" title="3">
-                                    <color key="titleColor" red="0.99692672490000001" green="0.48709040879999999" blue="0.65352439880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="numberButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qIm-3h-wyF"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vv4-nB-5IW" customClass="MKButton" customModule="MaterialKit">
-                                <rect key="frame" x="117.5" y="128" width="85" height="102"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="40"/>
-                                <state key="normal" title="2">
-                                    <color key="titleColor" red="0.99607843137254903" green="0.48627450980392156" blue="0.65490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="numberButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s1Z-F7-NSG"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kmh-jW-Sy8" customClass="MKButton" customModule="MaterialKit">
-                                <rect key="frame" x="24" y="128" width="85.5" height="102"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="40"/>
-                                <state key="normal" title="1">
-                                    <color key="titleColor" red="0.99692672490000001" green="0.48709040879999999" blue="0.65352439880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="numberButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TEH-Ls-6Ox"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JxB-sJ-9mF" customClass="MKButton" customModule="MaterialKit">
-                                <rect key="frame" x="16" y="54" width="66" height="66"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="JxB-sJ-9mF" secondAttribute="height" multiplier="1:1" id="7Xg-0q-ZZK"/>
-                                    <constraint firstAttribute="height" constant="66" id="HcY-bq-0eV"/>
-                                </constraints>
-                                <color key="tintColor" red="0.99607843139999996" green="0.48627450979999998" blue="0.65490196079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" image="ic_search">
-                                    <color key="titleColor" red="0.40090259909999998" green="0.80100601910000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="J1l-gt-L0q" kind="show" id="Eeb-QN-AAw"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WkO-Vo-nK5" customClass="MKButton" customModule="MaterialKit">
-                                <rect key="frame" x="238" y="52" width="66" height="66"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="WkO-Vo-nK5" secondAttribute="height" multiplier="1:1" id="5cq-QK-RAa"/>
-                                    <constraint firstAttribute="height" constant="66" id="Q3b-yM-l51"/>
-                                </constraints>
-                                <color key="tintColor" red="0.99607843139999996" green="0.48627450979999998" blue="0.65490196079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" image="ic_backspace">
-                                    <color key="titleColor" red="0.40090259909999998" green="0.80100601910000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="touchBackButtonDown" destination="BYZ-38-t0r" eventType="touchDown" id="zvv-Un-kBw"/>
-                                    <action selector="touchBackButtonUp" destination="BYZ-38-t0r" eventType="touchUpInside" id="bfW-Sb-k7L"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="av0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="6Ki-9m-7UR">
-                                <rect key="frame" x="90" y="54" width="140" height="66"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Light" family="PingFang HK" pointSize="26"/>
-                                <color key="textColor" red="0.99692672490000001" green="0.48709040879999999" blue="0.65352439880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="视频 BV" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yc-wz-DIs">
+                                <rect key="frame" x="16" y="165" width="288" height="27"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Light" family="PingFang HK" pointSize="19"/>
+                                <color key="textColor" red="1" green="0.4788373709" blue="0.65352439880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a3V-eH-kiT">
-                                <rect key="frame" x="24" y="458" width="85.5" height="102"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TFu-X0-Xuu">
-                                <rect key="frame" x="210.5" y="458" width="85.5" height="102"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bZG-Dm-xlz" customClass="MKTextField" customModule="MaterialKit">
+                                <rect key="frame" x="16" y="192" width="288" height="70"/>
+                                <color key="tintColor" red="1" green="0.4788373709" blue="0.65352439880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="Cmm-NG-8fg"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="0.4788373709" blue="0.65352439880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Light" family="PingFang HK" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="floatingPlaceholderEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="floatingLabelBottomMargin">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bottomBorderEnabled" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erC-h8-3hB">
+                                <rect key="frame" x="130" y="325" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="erC-h8-3hB" secondAttribute="height" id="DLN-RP-wbJ"/>
+                                    <constraint firstAttribute="height" constant="60" id="F4Z-oq-Pyo"/>
+                                </constraints>
+                                <state key="normal" image="ic_swap"/>
+                                <connections>
+                                    <action selector="switchCoverType" destination="BYZ-38-t0r" eventType="touchUpInside" id="p7Y-Dd-se6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sOr-ig-uNi">
+                                <rect key="frame" x="274" y="222" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="3Yy-E6-I0P"/>
+                                    <constraint firstAttribute="width" secondItem="sOr-ig-uNi" secondAttribute="height" multiplier="1:1" id="QG4-NP-cko"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="0.4788373709" blue="0.65352439880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="ic_search"/>
+                                <connections>
+                                    <segue destination="J1l-gt-L0q" kind="show" id="Das-cU-6dY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="zoC-Sf-2pO" firstAttribute="height" secondItem="Kmh-jW-Sy8" secondAttribute="height" id="2h7-QN-cXq"/>
-                            <constraint firstItem="vv4-nB-5IW" firstAttribute="width" secondItem="Kmh-jW-Sy8" secondAttribute="width" id="6Vp-cd-c6q"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="a3V-eH-kiT" secondAttribute="bottom" constant="8" id="6iq-Bu-JtR"/>
-                            <constraint firstItem="wv9-Id-3O0" firstAttribute="width" secondItem="Kmh-jW-Sy8" secondAttribute="width" id="6zZ-jC-puv"/>
-                            <constraint firstItem="TFu-X0-Xuu" firstAttribute="height" secondItem="Kmh-jW-Sy8" secondAttribute="height" id="7fZ-Vc-Gkk"/>
-                            <constraint firstItem="zoC-Sf-2pO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="85U-sO-vWo"/>
-                            <constraint firstItem="uPg-fz-nPK" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="-8" id="9c6-hM-g0F"/>
-                            <constraint firstItem="TFu-X0-Xuu" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="-8" id="BOG-Sw-MlE"/>
-                            <constraint firstItem="a3V-eH-kiT" firstAttribute="width" secondItem="Kmh-jW-Sy8" secondAttribute="width" id="BiG-gf-sil"/>
-                            <constraint firstItem="7Jv-ZF-1xQ" firstAttribute="height" secondItem="Kmh-jW-Sy8" secondAttribute="height" id="DbF-Fg-jO3"/>
-                            <constraint firstItem="wv9-Id-3O0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="E2w-OW-kp3"/>
-                            <constraint firstItem="a3V-eH-kiT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="G5Y-08-wZK"/>
-                            <constraint firstItem="Kmh-jW-Sy8" firstAttribute="top" secondItem="6Ki-9m-7UR" secondAttribute="bottom" constant="8" id="Gb3-Mo-f41"/>
-                            <constraint firstItem="4gJ-Wu-D4U" firstAttribute="top" secondItem="gq4-jN-Rz8" secondAttribute="bottom" constant="8" id="Hhd-KI-IXO"/>
-                            <constraint firstItem="Kmh-jW-Sy8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="ITo-Qu-SKl"/>
-                            <constraint firstItem="gq4-jN-Rz8" firstAttribute="height" secondItem="Kmh-jW-Sy8" secondAttribute="height" id="IWS-Jv-TLz"/>
-                            <constraint firstItem="a3V-eH-kiT" firstAttribute="top" secondItem="zoC-Sf-2pO" secondAttribute="bottom" constant="8" id="JAX-Pj-2Nd"/>
-                            <constraint firstItem="gq4-jN-Rz8" firstAttribute="leading" secondItem="zoC-Sf-2pO" secondAttribute="trailing" constant="8" id="KTS-JR-1ls"/>
-                            <constraint firstItem="6Ki-9m-7UR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="L6q-xZ-1Xv"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4gJ-Wu-D4U" secondAttribute="bottom" constant="8" id="Lfl-B4-Lce"/>
-                            <constraint firstItem="5FV-ng-vLE" firstAttribute="width" secondItem="Kmh-jW-Sy8" secondAttribute="width" id="Li4-0l-NaM"/>
-                            <constraint firstItem="JxB-sJ-9mF" firstAttribute="width" secondItem="JxB-sJ-9mF" secondAttribute="height" multiplier="1:1" id="Mqa-Sh-YjH"/>
-                            <constraint firstItem="vv4-nB-5IW" firstAttribute="height" secondItem="Kmh-jW-Sy8" secondAttribute="height" id="NZU-ci-nye"/>
-                            <constraint firstItem="zoC-Sf-2pO" firstAttribute="top" secondItem="wv9-Id-3O0" secondAttribute="bottom" constant="8" id="Oy1-Uc-7LC"/>
-                            <constraint firstItem="vv4-nB-5IW" firstAttribute="top" secondItem="6Ki-9m-7UR" secondAttribute="bottom" constant="8" id="Q7Q-x5-gE0"/>
-                            <constraint firstItem="TFu-X0-Xuu" firstAttribute="top" secondItem="5FV-ng-vLE" secondAttribute="bottom" constant="8" id="QB9-s6-juP"/>
-                            <constraint firstItem="gq4-jN-Rz8" firstAttribute="top" secondItem="Dp3-9z-bWD" secondAttribute="bottom" constant="8" id="SXg-25-VTx"/>
-                            <constraint firstItem="vv4-nB-5IW" firstAttribute="leading" secondItem="Kmh-jW-Sy8" secondAttribute="trailing" constant="8" id="TQc-ML-V3O"/>
-                            <constraint firstItem="wv9-Id-3O0" firstAttribute="height" secondItem="Kmh-jW-Sy8" secondAttribute="height" id="U7C-i7-jmo"/>
-                            <constraint firstItem="4gJ-Wu-D4U" firstAttribute="height" secondItem="Kmh-jW-Sy8" secondAttribute="height" id="XZC-FY-DGk"/>
-                            <constraint firstItem="Dp3-9z-bWD" firstAttribute="top" secondItem="vv4-nB-5IW" secondAttribute="bottom" constant="8" id="Xi5-L1-gsx"/>
-                            <constraint firstItem="4gJ-Wu-D4U" firstAttribute="width" secondItem="Kmh-jW-Sy8" secondAttribute="width" id="YWt-Gd-cAS"/>
-                            <constraint firstItem="5FV-ng-vLE" firstAttribute="top" secondItem="7Jv-ZF-1xQ" secondAttribute="bottom" constant="8" id="ZA8-63-DQw"/>
-                            <constraint firstItem="6Ki-9m-7UR" firstAttribute="leading" secondItem="JxB-sJ-9mF" secondAttribute="trailing" constant="8" id="ZBE-R2-v1O"/>
-                            <constraint firstItem="zoC-Sf-2pO" firstAttribute="width" secondItem="Kmh-jW-Sy8" secondAttribute="width" id="b4a-Ff-4Uk"/>
-                            <constraint firstItem="7Jv-ZF-1xQ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="-8" id="daq-qr-Ri7"/>
-                            <constraint firstItem="WkO-Vo-nK5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="ddu-FD-Kky"/>
-                            <constraint firstItem="gq4-jN-Rz8" firstAttribute="width" secondItem="Kmh-jW-Sy8" secondAttribute="width" id="dzN-i9-ofG"/>
-                            <constraint firstItem="uPg-fz-nPK" firstAttribute="top" secondItem="6Ki-9m-7UR" secondAttribute="bottom" constant="8" id="eJz-ah-uLj"/>
-                            <constraint firstItem="WkO-Vo-nK5" firstAttribute="leading" secondItem="6Ki-9m-7UR" secondAttribute="trailing" constant="8" id="eZ6-T5-kRl"/>
-                            <constraint firstItem="uPg-fz-nPK" firstAttribute="leading" secondItem="vv4-nB-5IW" secondAttribute="trailing" constant="8" id="fa9-8d-NBV"/>
-                            <constraint firstItem="wv9-Id-3O0" firstAttribute="top" secondItem="Kmh-jW-Sy8" secondAttribute="bottom" constant="8" id="gV2-ew-cnn"/>
-                            <constraint firstItem="Dp3-9z-bWD" firstAttribute="leading" secondItem="wv9-Id-3O0" secondAttribute="trailing" constant="8" id="iqg-Ls-arX"/>
-                            <constraint firstItem="uPg-fz-nPK" firstAttribute="height" secondItem="Kmh-jW-Sy8" secondAttribute="height" id="jBx-4S-bwJ"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="JxB-sJ-9mF" secondAttribute="leading" id="l51-Pa-wfh"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="WkO-Vo-nK5" secondAttribute="trailing" id="lfZ-76-OPd"/>
-                            <constraint firstItem="7Jv-ZF-1xQ" firstAttribute="width" secondItem="Kmh-jW-Sy8" secondAttribute="width" id="lgB-OT-l0k"/>
-                            <constraint firstItem="5FV-ng-vLE" firstAttribute="leading" secondItem="gq4-jN-Rz8" secondAttribute="trailing" constant="8" id="mDc-Q5-7YY"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="TFu-X0-Xuu" secondAttribute="bottom" constant="8" id="nfX-ow-mlP"/>
-                            <constraint firstItem="7Jv-ZF-1xQ" firstAttribute="top" secondItem="uPg-fz-nPK" secondAttribute="bottom" constant="8" id="nlW-5v-a7R"/>
-                            <constraint firstItem="Dp3-9z-bWD" firstAttribute="height" secondItem="Kmh-jW-Sy8" secondAttribute="height" id="oAL-pD-7bw"/>
-                            <constraint firstItem="7Jv-ZF-1xQ" firstAttribute="leading" secondItem="Dp3-9z-bWD" secondAttribute="trailing" constant="8" id="pJP-R2-AQr"/>
-                            <constraint firstItem="Dp3-9z-bWD" firstAttribute="width" secondItem="Kmh-jW-Sy8" secondAttribute="width" id="qxz-6c-uTQ"/>
-                            <constraint firstItem="5FV-ng-vLE" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="-8" id="rEn-sL-lK2"/>
-                            <constraint firstItem="5FV-ng-vLE" firstAttribute="height" secondItem="Kmh-jW-Sy8" secondAttribute="height" id="rXS-Si-xBH"/>
-                            <constraint firstItem="JxB-sJ-9mF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="ros-xr-J1G"/>
-                            <constraint firstItem="a3V-eH-kiT" firstAttribute="height" secondItem="Kmh-jW-Sy8" secondAttribute="height" id="tRB-7l-VEQ"/>
-                            <constraint firstItem="6Ki-9m-7UR" firstAttribute="height" secondItem="WkO-Vo-nK5" secondAttribute="height" id="ukb-xD-CDB"/>
-                            <constraint firstItem="TFu-X0-Xuu" firstAttribute="width" secondItem="Kmh-jW-Sy8" secondAttribute="width" id="vMu-3K-cAc"/>
-                            <constraint firstItem="uPg-fz-nPK" firstAttribute="width" secondItem="Kmh-jW-Sy8" secondAttribute="width" id="w6d-ch-YTf"/>
-                            <constraint firstItem="4gJ-Wu-D4U" firstAttribute="leading" secondItem="a3V-eH-kiT" secondAttribute="trailing" constant="8" id="wjw-Rr-PUY"/>
-                            <constraint firstItem="TFu-X0-Xuu" firstAttribute="leading" secondItem="4gJ-Wu-D4U" secondAttribute="trailing" constant="8" id="yRv-Nf-QgI"/>
+                            <constraint firstItem="erC-h8-3hB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.25" id="6IO-8l-l0O"/>
+                            <constraint firstItem="6yc-wz-DIs" firstAttribute="trailing" secondItem="bZG-Dm-xlz" secondAttribute="trailing" id="AhO-FB-mHu"/>
+                            <constraint firstItem="6yc-wz-DIs" firstAttribute="leading" secondItem="bZG-Dm-xlz" secondAttribute="leading" id="Hl7-zv-v1V"/>
+                            <constraint firstItem="bZG-Dm-xlz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="LM1-Nq-Ra7"/>
+                            <constraint firstItem="bZG-Dm-xlz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="P1v-j3-S4y"/>
+                            <constraint firstAttribute="trailing" secondItem="sOr-ig-uNi" secondAttribute="trailing" constant="16" id="TNx-te-c00"/>
+                            <constraint firstItem="bZG-Dm-xlz" firstAttribute="top" secondItem="6yc-wz-DIs" secondAttribute="bottom" id="asf-68-Pv7"/>
+                            <constraint firstItem="sOr-ig-uNi" firstAttribute="centerY" secondItem="bZG-Dm-xlz" secondAttribute="centerY" constant="10" id="jpJ-v7-Olx"/>
+                            <constraint firstItem="bZG-Dm-xlz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.8" id="lu8-5x-WlM"/>
+                            <constraint firstItem="erC-h8-3hB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rgg-Ca-OtW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Bili Cita" id="Vxh-nz-ozR">
-                        <barButtonItem key="leftBarButtonItem" image="ic_menu" id="jUr-6b-adq"/>
+                    <navigationItem key="navigationItem" id="Vxh-nz-ozR">
+                        <barButtonItem key="leftBarButtonItem" image="ic_menu" id="jUr-6b-adq">
+                            <color key="tintColor" red="1" green="0.4788373709" blue="0.65352439880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="ic_help_outline" id="RKz-cg-nlJ">
+                            <color key="tintColor" red="1" green="0.4788373709" blue="0.65352439880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="D67-0g-9IQ" kind="presentation" id="H4I-IK-T2E"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="avLabel" destination="6Ki-9m-7UR" id="Q4y-OT-GJV"/>
-                        <outlet property="goButton" destination="JxB-sJ-9mF" id="OSC-RZ-zLv"/>
+                        <outlet property="goButton" destination="sOr-ig-uNi" id="gil-YA-qax"/>
                         <outlet property="menu" destination="jUr-6b-adq" id="bZf-ma-9VD"/>
+                        <outlet property="searchField" destination="bZG-Dm-xlz" id="ekf-Uv-SfH"/>
+                        <outlet property="typeLabel" destination="6yc-wz-DIs" id="1ey-G8-64P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="924" y="35.532233883058474"/>
+            <point key="canvasLocation" x="922.5" y="34.859154929577464"/>
         </scene>
         <!--Tutorial Page View Controller-->
         <scene sceneID="fZx-fV-87X">
@@ -975,7 +830,7 @@
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="accessibilityIgnoresInvertColors" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Liuliet.Lee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="onh-KQ-Wle">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_liet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="onh-KQ-Wle">
                                                     <rect key="frame" x="132" y="27" width="168" height="31"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="22"/>
                                                     <nil key="textColor"/>
@@ -2001,7 +1856,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzu-kC-pV3">
-                                        <rect key="frame" x="16" y="12" width="30" height="30"/>
+                                        <rect key="frame" x="16" y="-6" width="48" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="hzu-kC-pV3" secondAttribute="height" id="Wjf-tH-ztF"/>
                                         </constraints>
@@ -2011,7 +1866,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWH-YA-Uwm">
-                                        <rect key="frame" x="262" y="12" width="42" height="30"/>
+                                        <rect key="frame" x="262" y="-6" width="42" height="48"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="POST"/>
                                         <connections>
@@ -2089,7 +1944,6 @@
         <image name="akkarin" width="250" height="250"/>
         <image name="az-pro" width="170.66667175292969" height="170.66667175292969"/>
         <image name="bonuo-pro" width="170.66667175292969" height="170.66667175292969"/>
-        <image name="ic_backspace" width="24" height="24"/>
         <image name="ic_content_paste" width="24" height="24"/>
         <image name="ic_edit" width="24" height="24"/>
         <image name="ic_file_download" width="24" height="24"/>
@@ -2102,11 +1956,12 @@
         <image name="ic_search" width="24" height="24"/>
         <image name="ic_settings" width="24" height="24"/>
         <image name="ic_suki" width="18" height="18"/>
+        <image name="ic_swap" width="40" height="40"/>
         <image name="liuliet-pro" width="115.33333587646484" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="bbS-pi-LKM"/>
         <segue reference="dIf-Ib-BVL"/>
-        <segue reference="4Jb-o1-lRn"/>
+        <segue reference="Das-cU-6dY"/>
     </inferredMetricsTieBreakers>
 </document>
