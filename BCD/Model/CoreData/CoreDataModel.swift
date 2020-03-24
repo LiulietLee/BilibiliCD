@@ -13,7 +13,7 @@ import ImageIO
 
 class CoreDataModel {
     let context = CoreDataStorage.sharedInstance.mainQueueContext
-   
+    
     static let context = CoreDataStorage.sharedInstance.mainQueueContext
 
     func saveContext() {

@@ -1,27 +1,14 @@
 PODS:
-  - Eureka (5.0.0)
   - LLDialog (1.2.0)
-  - MaterialKit (0.6.5)
   - SWRevealViewController (2.4.0)
-  - ViewAnimator (2.5.1)
 
 DEPENDENCIES:
-  - Eureka
   - LLDialog (from `https://github.com/LiulietLee/LLDialog.git`)
-  - MaterialKit (from `https://github.com/ApolloZhu/MaterialKit.git`)
   - SWRevealViewController (from `https://github.com/John-Lluch/SWRevealViewController.git`)
-  - ViewAnimator
-
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - Eureka
-    - ViewAnimator
 
 EXTERNAL SOURCES:
   LLDialog:
     :git: https://github.com/LiulietLee/LLDialog.git
-  MaterialKit:
-    :git: https://github.com/ApolloZhu/MaterialKit.git
   SWRevealViewController:
     :git: https://github.com/John-Lluch/SWRevealViewController.git
 
@@ -29,20 +16,14 @@ CHECKOUT OPTIONS:
   LLDialog:
     :commit: 316ba8d1af690e4111188a12bcff6d7ce27b23c7
     :git: https://github.com/LiulietLee/LLDialog.git
-  MaterialKit:
-    :commit: ca9b156a7577fae339b9c7b2af58a8f3f453b5a6
-    :git: https://github.com/ApolloZhu/MaterialKit.git
   SWRevealViewController:
     :commit: bb4a110989d67a5fc5f5c533cacc92f6cb02f5e2
     :git: https://github.com/John-Lluch/SWRevealViewController.git
 
 SPEC CHECKSUMS:
-  Eureka: 0f64f477ec8ef6201c6fec143d60ff5c201cf654
-  LLDialog: 471eb81049e4912431383c0f192ee7dc9b4d4366
-  MaterialKit: c99dd8af397c84fe216538303d0be9749f8cd9b0
+  LLDialog: e8a347d4ef0891bf4d2eaedb7f54b84c69e141cc
   SWRevealViewController: b653f339865208c97be99a24876545f5be0cc4bb
-  ViewAnimator: 173932c659a43c5a15c665878750d92801ae2cf1
 
-PODFILE CHECKSUM: ea251e4364c264b7562e42eabb8c6defc297d3c8
+PODFILE CHECKSUM: 5c32863f4ddf04c0a3e13e4fb6c5cb05096a2286
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.9.1
