@@ -25,12 +25,19 @@ class CoreDataModel {
     }
 }
 
+extension CGSize {
+    static let coverThumnailSize = CGSize(
+        width: 125 * UIScreen.main.scale,
+        height: 78 * UIScreen.main.scale
+    )
+}
+
 extension UIImage {
     func data() -> Data {
         return pngData()!
     }
     
-    func resized(to size: CGSize = CGSize(width: 135, height: 84)) -> UIImage {
+    func resized(to size: CGSize = .coverThumnailSize) -> UIImage {
         UIGraphicsBeginImageContext(size)
         defer { UIGraphicsEndImageContext() }
         draw(in: CGRect(origin: .zero, size: size))
@@ -40,7 +47,7 @@ extension UIImage {
 }
 
 extension Data {
-    func toImage(size: CGSize) -> UIImage? {
+    func toImage(sized size: CGSize = .coverThumnailSize) -> UIImage? {
         let options: [CFString: Any] = [
             kCGImageSourceCreateThumbnailFromImageIfAbsent: true,
             kCGImageSourceCreateThumbnailWithTransform: true,

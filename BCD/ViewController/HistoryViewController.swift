@@ -173,8 +173,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
             cell.titleLabel.text = title
             cell.dateLabel.text = DateFormatter.shortStyle.string(from: item.date!)
             DispatchQueue.global(qos: .userInteractive).async {
-                #warning("TODO: UISreen scale")
-                let image = item.image!.toImage(size: CGSize(width: 134.0, height: 84.0))!
+                let image = item.image!.toImage()!
                 DispatchQueue.main.async { [weak self] in
                     if indexPath == self?.tableView.indexPath(for: cell) {
                         cell.coverView.image = image

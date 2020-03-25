@@ -122,7 +122,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="62v-HH-Nsn">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="62v-HH-Nsn">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="accessibilityIgnoresInvertColors" value="YES"/>
@@ -139,7 +139,6 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="62v-HH-Nsn" secondAttribute="trailing" id="7Ir-Qt-ZNP"/>
                             <constraint firstItem="IKT-Rp-hSt" firstAttribute="trailing" secondItem="MvM-Px-gqJ" secondAttribute="trailingMargin" constant="-16" id="QE8-SR-QmD"/>
@@ -182,7 +181,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="XsU-ss-UBH" secondAttribute="trailing" constant="-16" id="MYR-jV-DMh"/>
                             <constraint firstItem="Xq8-e8-eI4" firstAttribute="top" secondItem="XsU-ss-UBH" secondAttribute="bottom" id="PlG-5B-n1z"/>
@@ -190,7 +189,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="bottomConsOfBackButton" destination="PlG-5B-n1z" id="hog-Tw-yWw"/>
                         <outlet property="closeButton" destination="XsU-ss-UBH" id="8G2-TJ-038"/>
                     </connections>
                 </viewController>
@@ -571,7 +569,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ftn-Hg-hxF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <sections>
                             <tableViewSection id="S8v-5y-c5p">
                                 <cells>
@@ -585,7 +583,6 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="获取封面" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADb-Jg-p7A">
                                                     <rect key="frame" x="24" y="31" width="280" height="28"/>
                                                     <fontDescription key="fontDescription" name="PingFangHK-Medium" family="PingFang HK" pointSize="20"/>
-                                                    <color key="textColor" red="0.26734374999999999" green="0.26734374999999999" blue="0.26734374999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -614,7 +611,6 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="历史记录" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAn-Uv-9dK">
                                                     <rect key="frame" x="24" y="31" width="280" height="28"/>
                                                     <fontDescription key="fontDescription" name="PingFangHK-Medium" family="PingFang HK" pointSize="20"/>
-                                                    <color key="textColor" red="0.26734374999999999" green="0.26734374999999999" blue="0.26734374999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -643,7 +639,6 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="七日热门" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HIJ-Z1-Wok">
                                                     <rect key="frame" x="24" y="31" width="280" height="28"/>
                                                     <fontDescription key="fontDescription" name="PingFangHK-Medium" family="PingFang HK" pointSize="20"/>
-                                                    <color key="textColor" red="0.26734374999999999" green="0.26734374999999999" blue="0.26734374999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -672,7 +667,6 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="反馈留言" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXU-AU-xgM">
                                                     <rect key="frame" x="24" y="31" width="280" height="28"/>
                                                     <fontDescription key="fontDescription" name="PingFangHK-Medium" family="PingFang HK" pointSize="20"/>
-                                                    <color key="textColor" red="0.26734374999999999" green="0.26734374999999999" blue="0.26734374999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -701,7 +695,6 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关于我们" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IqQ-Uo-fXu">
                                                     <rect key="frame" x="24" y="31" width="280" height="28"/>
                                                     <fontDescription key="fontDescription" name="PingFangHK-Medium" family="PingFang HK" pointSize="20"/>
-                                                    <color key="textColor" red="0.26734374999999999" green="0.26734374999999999" blue="0.26734374999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -730,7 +723,6 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开源组件" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDn-Ac-ukI">
                                                     <rect key="frame" x="24" y="31" width="280" height="28"/>
                                                     <fontDescription key="fontDescription" name="PingFangHK-Medium" family="PingFang HK" pointSize="20"/>
-                                                    <color key="textColor" red="0.26734374999999999" green="0.26734374999999999" blue="0.26734374999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1099,7 +1091,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uOS-Iw-jJ2">
                                 <rect key="frame" x="0.0" y="44" width="320" height="524"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" id="GOi-4C-rAh" customClass="HotListCell" customModule="BilibiliCD" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="100"/>
@@ -1160,7 +1152,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="uOS-Iw-jJ2" firstAttribute="leading" secondItem="fmL-pT-RlE" secondAttribute="leading" id="62O-vs-5aW"/>
-                            <constraint firstItem="TKT-R0-Ivu" firstAttribute="top" secondItem="uOS-Iw-jJ2" secondAttribute="bottom" id="Vwx-i2-ChV"/>
+                            <constraint firstAttribute="bottom" secondItem="uOS-Iw-jJ2" secondAttribute="bottom" id="Vwx-i2-ChV"/>
                             <constraint firstItem="uOS-Iw-jJ2" firstAttribute="top" secondItem="wa8-nO-daa" secondAttribute="bottom" id="ouE-vn-sRT"/>
                             <constraint firstAttribute="trailing" secondItem="uOS-Iw-jJ2" secondAttribute="trailing" id="qYg-2x-02e"/>
                         </constraints>
@@ -1940,8 +1932,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="iAP-o1-lDR"/>
-        <segue reference="dIf-Ib-BVL"/>
-        <segue reference="Das-cU-6dY"/>
+        <segue reference="pFk-eZ-ib2"/>
+        <segue reference="4Jb-o1-lRn"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="akkarin" width="250" height="250"/>

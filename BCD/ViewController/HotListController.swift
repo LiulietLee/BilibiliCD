@@ -92,14 +92,12 @@ class HotListController: UIViewController, UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return hotList.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HotListCell
-        
         cell.authorLabel.text = hotList[indexPath.row].info.author
         cell.titleLabel.text = hotList[indexPath.row].info.title
         cell.coverView.image = hotList[indexPath.row].image
-        
         return cell
     }
     

@@ -18,7 +18,7 @@ class TutorialContentViewController: UIViewController {
     }
     
     var image = UIImage()
-    var index = Int()
+    var index = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()

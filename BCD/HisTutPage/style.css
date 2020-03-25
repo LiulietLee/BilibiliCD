@@ -16,7 +16,7 @@ body {
 .description h1 {
     background: #6cf;
     color: #fff;
-    padding: 70px 40px 28px 20px;
+    padding: calc(env(safe-area-inset-top) + 20px) 40px 28px 20px;
     font-weight: normal;
 }
 .description p {
