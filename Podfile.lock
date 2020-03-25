@@ -1,18 +1,14 @@
 PODS:
   - LLDialog (1.2.0)
-  - MaterialKit (0.6.5)
   - SWRevealViewController (2.4.0)
 
 DEPENDENCIES:
   - LLDialog (from `https://github.com/LiulietLee/LLDialog.git`)
-  - MaterialKit (from `https://github.com/ApolloZhu/MaterialKit.git`)
   - SWRevealViewController (from `https://github.com/John-Lluch/SWRevealViewController.git`)
 
 EXTERNAL SOURCES:
   LLDialog:
     :git: https://github.com/LiulietLee/LLDialog.git
-  MaterialKit:
-    :git: https://github.com/ApolloZhu/MaterialKit.git
   SWRevealViewController:
     :git: https://github.com/John-Lluch/SWRevealViewController.git
 
