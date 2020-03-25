@@ -1189,6 +1189,7 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D29C5CF8242B666400BB66C7 /* XCRemoteSwiftPackageReference "BilibiliKit" */;
 			productName = BilibiliKitDYLB;
+
 		};
 /* End XCSwiftPackageProductDependency section */
 
