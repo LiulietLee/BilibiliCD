@@ -1,0 +1,43 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "BilibiliKit",
+        "repositoryURL": "https://github.com/ApolloZhu/BilibiliKit.git",
+        "state": {
+          "branch": "master",
+          "revision": "9f10c36116df41279827ae8fcea9c4da0ce3aaff",
+          "version": null
+        }
+      },
+      {
+        "package": "Eureka",
+        "repositoryURL": "https://github.com/xmartlabs/Eureka.git",
+        "state": {
+          "branch": null,
+          "revision": "9a30ae436ec9e9fcb8b3eb1bdfd95e95989d6ca5",
+          "version": "5.2.1"
+        }
+      },
+      {
+        "package": "MaterialKit",
+        "repositoryURL": "https://github.com/ApolloZhu/MaterialKit.git",
+        "state": {
+          "branch": null,
+          "revision": "2e9e8575ccd601e454bea5627a2bf3e2b7bccf05",
+          "version": "0.6.6"
+        }
+      },
+      {
+        "package": "ViewAnimator",
+        "repositoryURL": "https://github.com/marcosgriselli/ViewAnimator.git",
+        "state": {
+          "branch": null,
+          "revision": "17e7ba9e9c9e09bfd46086e0189b198fedc67847",
+          "version": "2.7.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

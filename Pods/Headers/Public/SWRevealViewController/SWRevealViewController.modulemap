@@ -1,6 +1,1 @@
-module SWRevealViewController {
-  umbrella header "SWRevealViewController-umbrella.h"
-
-  export *
-  module * { export * }
-}
+../../../Target Support Files/SWRevealViewController/SWRevealViewController.modulemap
