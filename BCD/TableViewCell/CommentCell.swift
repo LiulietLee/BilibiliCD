@@ -9,29 +9,32 @@
 import UIKit
 import MaterialKit
 
+extension DateFormatter {
+    static let shortStyle: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .short
+        return formatter
+    }()
+}
+
 class CommentCell: MKTableViewCell {
 
     var data: Comment! {
         didSet {
             self.username.text = data.username
             self.content.text = data.content
+
+            func format(_ keyPath: KeyPath<Comment, Int>) -> String {
+                let number = data?[keyPath: keyPath] ?? 0
+                return number > 999 ? "  999+" : "  \(number)"
+            }
             
-            self.likeButton.setTitle(
-                "  \(data.suki > 999 ? 999 : data.suki)" + (data.suki > 999 ? "+" : ""),
-                for: .normal
-            )
-            self.dislikeButton.setTitle(
-                "  \(data.kirai > 999 ? 999 : data.kirai)" + (data.kirai > 999 ? "+" : ""),
-                for: .normal
-            )
-            self.replyCount.setTitle(
-                "  \(data.replyCount > 999 ? 999 : data.replyCount)" + (data.replyCount > 999 ? "+" : ""),
-                for: .normal
-            )
-            
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yy.MM.dd hh:mm"
-            self.date.text = formatter.string(from: data.time)
+            self.likeButton.setTitle(format(\.suki), for: .normal)
+            self.dislikeButton.setTitle(format(\.kirai), for: .normal)
+            self.replyCount.setTitle(format(\.replyCount), for: .normal)
+
+            self.date.text = DateFormatter.shortStyle.string(from: data.time)
         }
     }
     
@@ -64,17 +67,6 @@ class CommentCell: MKTableViewCell {
         didSet {
             replyCount.isEnabled = false
         }
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

@@ -12,25 +12,21 @@ import ViewAnimator
 extension UIView {
     func doAnimation(type: AnimationType) {
         let interval = ViewAnimatorConfig.interval
-        for (index, view) in self.subviews.enumerated() {
+        for (index, view) in subviews.enumerated()
+            where !(view is LoadingView) {
             let delay = Double(index) * interval
-            if let _ = view as? LoadingView { continue }
             view.animate(animations: [type], delay: delay)
         }
     }
     
     func animateTableView(type: AnimationType) {
         let interval = ViewAnimatorConfig.interval
-        for (_, view) in self.subviews.enumerated() {
-            if let tableView = view as? UITableView {
-                var index = 0
-                for cell in tableView.visibleCells {
-                    let delay = Double(index) * interval
-                    cell.animate(animations: [type], delay: delay)
-                    index += 1
-                }
-                break
-            }
+        guard let tableView = subviews.lazy
+            .compactMap({ $0 as? UITableView }).first
+            else { return }
+        for (index, cell) in tableView.visibleCells.enumerated() {
+            let delay = Double(index) * interval
+            cell.animate(animations: [type], delay: delay)
         }
     }
 }
