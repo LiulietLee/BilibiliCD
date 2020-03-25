@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xAa-In-jj9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xAa-In-jj9">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -176,7 +176,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="sdC-d6-FmO"/>
                                 </constraints>
-                                <color key="tintColor" red="0.99607843139999996" green="0.48627450979999998" blue="0.65490196079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="ic_goback"/>
                                 <connections>
                                     <action selector="goBack" destination="D67-0g-9IQ" eventType="touchUpInside" id="49y-Sk-6uT"/>
@@ -276,7 +275,7 @@
                             <constraint firstAttribute="trailing" secondItem="MF4-nh-3l8" secondAttribute="trailing" id="5Do-Pg-ShS"/>
                             <constraint firstItem="MF4-nh-3l8" firstAttribute="leading" secondItem="P92-VT-zyS" secondAttribute="leading" id="QAi-xJ-Gqy"/>
                             <constraint firstItem="MF4-nh-3l8" firstAttribute="top" secondItem="P92-VT-zyS" secondAttribute="top" id="g1w-0x-X8t"/>
-                            <constraint firstItem="0MF-ph-1u6" firstAttribute="top" secondItem="MF4-nh-3l8" secondAttribute="bottom" id="gN4-li-qPa"/>
+                            <constraint firstAttribute="bottom" secondItem="MF4-nh-3l8" secondAttribute="bottom" id="gN4-li-qPa"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="历史记录" id="4A2-Rh-b2z">
@@ -370,11 +369,10 @@
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="288" placeholderIntrinsicHeight="70.5" directionalLockEnabled="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y2S-hZ-eph">
                                         <rect key="frame" x="16" y="430" width="288" height="70.5"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Citation">
                                                 <attributes>
-                                                    <font key="NSFont" metaFont="menu" size="14"/>
+                                                    <font key="NSFont" metaFont="system" size="14"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
@@ -432,7 +430,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Zsa-yu-und" secondAttribute="trailing" id="BRC-fT-zT8"/>
                             <constraint firstItem="LdW-Kp-l09" firstAttribute="top" secondItem="xej-wM-HLJ" secondAttribute="bottom" id="I8h-Nm-RYq"/>
@@ -1856,7 +1854,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzu-kC-pV3">
-                                        <rect key="frame" x="16" y="-6" width="48" height="48"/>
+                                        <rect key="frame" x="16" y="12" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="hzu-kC-pV3" secondAttribute="height" id="Wjf-tH-ztF"/>
                                         </constraints>
@@ -1866,7 +1864,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWH-YA-Uwm">
-                                        <rect key="frame" x="262" y="-6" width="42" height="48"/>
+                                        <rect key="frame" x="262" y="12" width="42" height="30"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="POST"/>
                                         <connections>
@@ -1940,6 +1938,11 @@
             <point key="canvasLocation" x="3562.5" y="-2580.6338028169016"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="iAP-o1-lDR"/>
+        <segue reference="dIf-Ib-BVL"/>
+        <segue reference="4Jb-o1-lRn"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="akkarin" width="250" height="250"/>
         <image name="az-pro" width="170.66667175292969" height="170.66667175292969"/>
@@ -1959,9 +1962,4 @@
         <image name="ic_swap" width="40" height="40"/>
         <image name="liuliet-pro" width="115.33333587646484" height="120"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="bbS-pi-LKM"/>
-        <segue reference="dIf-Ib-BVL"/>
-        <segue reference="Das-cU-6dY"/>
-    </inferredMetricsTieBreakers>
 </document>
