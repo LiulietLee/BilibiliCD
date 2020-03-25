@@ -1,0 +1,27 @@
+{
+  "name": "MaterialKit",
+  "version": "0.6.5",
+  "summary": "Material design components for iOS written in Swift",
+  "homepage": "https://github.com/ApolloZhu/MaterialKit",
+  "screenshots": [
+    "https://dl.dropboxusercontent.com/u/8556646/MKTextField.gif",
+    "https://raw.githubusercontent.com/nghialv/MaterialKit/master/Assets/MKButton.gif"
+  ],
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Le Van Nghia": "nghialv2607@gmail.com"
+  },
+  "social_media_url": "https://twitter.com/nghialv2607",
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source": {
+    "git": "https://github.com/ApolloZhu/MaterialKit.git",
+    "tag": "0.6.5"
+  },
+  "source_files": "Source/*",
+  "requires_arc": true
+}

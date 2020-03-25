@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "79CCD80120DA4D09ED1E13F564888E83"
+               BlueprintIdentifier = "3970349EA80A699948960929C8797515"
                BuildableName = "libLLDialog.a"
                BlueprintName = "LLDialog"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -43,7 +43,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "79CCD80120DA4D09ED1E13F564888E83"
+            BlueprintIdentifier = "3970349EA80A699948960929C8797515"
             BuildableName = "libLLDialog.a"
             BlueprintName = "LLDialog"
             ReferencedContainer = "container:Pods.xcodeproj">
@@ -59,7 +59,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "79CCD80120DA4D09ED1E13F564888E83"
+            BlueprintIdentifier = "3970349EA80A699948960929C8797515"
             BuildableName = "libLLDialog.a"
             BlueprintName = "LLDialog"
             ReferencedContainer = "container:Pods.xcodeproj">
