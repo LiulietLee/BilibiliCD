@@ -112,13 +112,12 @@
 		5290FA032051B0DF00A1AAA4 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5290FA022051B0DF00A1AAA4 /* ImageSaver.swift */; };
 		52E4E47D1F76C6A9008EF09C /* BilibiliCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E4E47C1F76C6A9008EF09C /* BilibiliCover.swift */; };
 		A9956396813C99705AFF8D75 /* libPods-BCD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BCEF4F0F637FFBAB56600BC /* libPods-BCD.a */; };
-		D21CDCB5242BE314005EB083 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = D21CDCB4242BE314005EB083 /* SwiftPackageProductDependency */; };
-		D21CDCB6242BE314005EB083 /* BuildFile in Embed Frameworks */ = {isa = PBXBuildFile; productRef = D21CDCB4242BE314005EB083 /* SwiftPackageProductDependency */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		D21CDCB8242BE31C005EB083 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = D21CDCB7242BE31C005EB083 /* SwiftPackageProductDependency */; };
-		D21CDCB9242BE31C005EB083 /* BuildFile in Embed Frameworks */ = {isa = PBXBuildFile; productRef = D21CDCB7242BE31C005EB083 /* SwiftPackageProductDependency */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		D21CDCBD242BE32F005EB083 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = D21CDCBC242BE32F005EB083 /* SwiftPackageProductDependency */; };
-		D21CDCC0242BE363005EB083 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = D21CDCBF242BE363005EB083 /* SwiftPackageProductDependency */; };
-		D21CDCC3242BE384005EB083 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = D21CDCC2242BE384005EB083 /* SwiftPackageProductDependency */; };
+		D21CDCB5242BE314005EB083 /* BilibiliKitDYLB in Frameworks */ = {isa = PBXBuildFile; productRef = D21CDCB4242BE314005EB083 /* BilibiliKitDYLB */; };
+		D21CDCB6242BE314005EB083 /* BilibiliKitDYLB in Embed Frameworks */ = {isa = PBXBuildFile; productRef = D21CDCB4242BE314005EB083 /* BilibiliKitDYLB */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		D21CDCB8242BE31C005EB083 /* BilibiliKitDYLB in Frameworks */ = {isa = PBXBuildFile; productRef = D21CDCB7242BE31C005EB083 /* BilibiliKitDYLB */; };
+		D21CDCB9242BE31C005EB083 /* BilibiliKitDYLB in Embed Frameworks */ = {isa = PBXBuildFile; productRef = D21CDCB7242BE31C005EB083 /* BilibiliKitDYLB */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		D21CDCBD242BE32F005EB083 /* ViewAnimator in Frameworks */ = {isa = PBXBuildFile; productRef = D21CDCBC242BE32F005EB083 /* ViewAnimator */; };
+		D21CDCC0242BE363005EB083 /* Eureka in Frameworks */ = {isa = PBXBuildFile; productRef = D21CDCBF242BE363005EB083 /* Eureka */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,7 +148,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D21CDCB6242BE314005EB083 /* BuildFile in Embed Frameworks */,
+				D21CDCB6242BE314005EB083 /* BilibiliKitDYLB in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,7 +159,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D21CDCB9242BE31C005EB083 /* BuildFile in Embed Frameworks */,
+				D21CDCB9242BE31C005EB083 /* BilibiliKitDYLB in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,7 +268,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D21CDCB8242BE31C005EB083 /* BuildFile in Frameworks */,
+				D21CDCB8242BE31C005EB083 /* BilibiliKitDYLB in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,11 +276,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D21CDCC3242BE384005EB083 /* BuildFile in Frameworks */,
-				D21CDCB5242BE314005EB083 /* BuildFile in Frameworks */,
+				D21CDCB5242BE314005EB083 /* BilibiliKitDYLB in Frameworks */,
 				A9956396813C99705AFF8D75 /* libPods-BCD.a in Frameworks */,
-				D21CDCBD242BE32F005EB083 /* BuildFile in Frameworks */,
-				D21CDCC0242BE363005EB083 /* BuildFile in Frameworks */,
+				D21CDCBD242BE32F005EB083 /* ViewAnimator in Frameworks */,
+				D21CDCC0242BE363005EB083 /* Eureka in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,7 +551,7 @@
 			);
 			name = BCDSharing;
 			packageProductDependencies = (
-				D21CDCB7242BE31C005EB083 /* SwiftPackageProductDependency */,
+				D21CDCB7242BE31C005EB083 /* BilibiliKitDYLB */,
 			);
 			productName = BCDSharing;
 			productReference = 4F338F5420DD00410014226C /* BCDSharing.appex */;
@@ -577,10 +575,9 @@
 			);
 			name = BCD;
 			packageProductDependencies = (
-				D21CDCB4242BE314005EB083 /* SwiftPackageProductDependency */,
-				D21CDCBC242BE32F005EB083 /* SwiftPackageProductDependency */,
-				D21CDCBF242BE363005EB083 /* SwiftPackageProductDependency */,
-				D21CDCC2242BE384005EB083 /* SwiftPackageProductDependency */,
+				D21CDCB4242BE314005EB083 /* BilibiliKitDYLB */,
+				D21CDCBC242BE32F005EB083 /* ViewAnimator */,
+				D21CDCBF242BE363005EB083 /* Eureka */,
 			);
 			productName = BCD;
 			productReference = 4FE8FF3A1EF4FC0600D31840 /* BilibiliCD.app */;
@@ -642,10 +639,10 @@
 			);
 			mainGroup = 4FE8FF311EF4FC0600D31840;
 			packageReferences = (
-				D21CDCB3242BE314005EB083 /* RemoteSwiftPackageReference */,
-				D21CDCBB242BE32F005EB083 /* RemoteSwiftPackageReference */,
-				D21CDCBE242BE363005EB083 /* RemoteSwiftPackageReference */,
-				D21CDCC1242BE384005EB083 /* RemoteSwiftPackageReference */,
+				D21CDCB3242BE314005EB083 /* XCRemoteSwiftPackageReference "BilibiliKit" */,
+				D21CDCBB242BE32F005EB083 /* XCRemoteSwiftPackageReference "ViewAnimator" */,
+				D21CDCBE242BE363005EB083 /* XCRemoteSwiftPackageReference "Eureka" */,
+				D21CDCC1242BE384005EB083 /* XCRemoteSwiftPackageReference "MaterialKit" */,
 			);
 			productRefGroup = 4FE8FF3B1EF4FC0600D31840 /* Products */;
 			projectDirPath = "";
@@ -1130,7 +1127,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D21CDCB3242BE314005EB083 /* RemoteSwiftPackageReference */ = {
+		D21CDCB3242BE314005EB083 /* XCRemoteSwiftPackageReference "BilibiliKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ApolloZhu/BilibiliKit.git";
 			requirement = {
@@ -1138,7 +1135,7 @@
 				kind = branch;
 			};
 		};
-		D21CDCBB242BE32F005EB083 /* RemoteSwiftPackageReference */ = {
+		D21CDCBB242BE32F005EB083 /* XCRemoteSwiftPackageReference "ViewAnimator" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/marcosgriselli/ViewAnimator.git";
 			requirement = {
@@ -1146,7 +1143,7 @@
 				minimumVersion = 2.7.0;
 			};
 		};
-		D21CDCBE242BE363005EB083 /* RemoteSwiftPackageReference */ = {
+		D21CDCBE242BE363005EB083 /* XCRemoteSwiftPackageReference "Eureka" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/xmartlabs/Eureka.git";
 			requirement = {
@@ -1154,7 +1151,7 @@
 				minimumVersion = 5.2.1;
 			};
 		};
-		D21CDCC1242BE384005EB083 /* RemoteSwiftPackageReference */ = {
+		D21CDCC1242BE384005EB083 /* XCRemoteSwiftPackageReference "MaterialKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ApolloZhu/MaterialKit.git";
 			requirement = {
@@ -1165,30 +1162,25 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D21CDCB4242BE314005EB083 /* SwiftPackageProductDependency */ = {
+		D21CDCB4242BE314005EB083 /* BilibiliKitDYLB */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D21CDCB3242BE314005EB083 /* RemoteSwiftPackageReference */;
+			package = D21CDCB3242BE314005EB083 /* XCRemoteSwiftPackageReference "BilibiliKit" */;
 			productName = BilibiliKitDYLB;
 		};
-		D21CDCB7242BE31C005EB083 /* SwiftPackageProductDependency */ = {
+		D21CDCB7242BE31C005EB083 /* BilibiliKitDYLB */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D21CDCB3242BE314005EB083 /* RemoteSwiftPackageReference */;
+			package = D21CDCB3242BE314005EB083 /* XCRemoteSwiftPackageReference "BilibiliKit" */;
 			productName = BilibiliKitDYLB;
 		};
-		D21CDCBC242BE32F005EB083 /* SwiftPackageProductDependency */ = {
+		D21CDCBC242BE32F005EB083 /* ViewAnimator */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D21CDCBB242BE32F005EB083 /* RemoteSwiftPackageReference */;
+			package = D21CDCBB242BE32F005EB083 /* XCRemoteSwiftPackageReference "ViewAnimator" */;
 			productName = ViewAnimator;
 		};
-		D21CDCBF242BE363005EB083 /* SwiftPackageProductDependency */ = {
+		D21CDCBF242BE363005EB083 /* Eureka */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D21CDCBE242BE363005EB083 /* RemoteSwiftPackageReference */;
+			package = D21CDCBE242BE363005EB083 /* XCRemoteSwiftPackageReference "Eureka" */;
 			productName = Eureka;
-		};
-		D21CDCC2242BE384005EB083 /* SwiftPackageProductDependency */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D21CDCC1242BE384005EB083 /* RemoteSwiftPackageReference */;
-			productName = MaterialKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 

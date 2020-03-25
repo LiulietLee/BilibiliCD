@@ -1,14 +1,18 @@
 PODS:
   - LLDialog (1.2.0)
+  - MaterialKit (0.6.5)
   - SWRevealViewController (2.4.0)
 
 DEPENDENCIES:
   - LLDialog (from `https://github.com/LiulietLee/LLDialog.git`)
+  - MaterialKit (from `https://github.com/ApolloZhu/MaterialKit.git`)
   - SWRevealViewController (from `https://github.com/John-Lluch/SWRevealViewController.git`)
 
 EXTERNAL SOURCES:
   LLDialog:
     :git: https://github.com/LiulietLee/LLDialog.git
+  MaterialKit:
+    :git: https://github.com/ApolloZhu/MaterialKit.git
   SWRevealViewController:
     :git: https://github.com/John-Lluch/SWRevealViewController.git
 
@@ -16,14 +20,18 @@ CHECKOUT OPTIONS:
   LLDialog:
     :commit: 316ba8d1af690e4111188a12bcff6d7ce27b23c7
     :git: https://github.com/LiulietLee/LLDialog.git
+  MaterialKit:
+    :commit: ae1777c83e33012bb35476bc982f76ce3e4488c8
+    :git: https://github.com/ApolloZhu/MaterialKit.git
   SWRevealViewController:
     :commit: bb4a110989d67a5fc5f5c533cacc92f6cb02f5e2
     :git: https://github.com/John-Lluch/SWRevealViewController.git
 
 SPEC CHECKSUMS:
   LLDialog: e8a347d4ef0891bf4d2eaedb7f54b84c69e141cc
+  MaterialKit: c99dd8af397c84fe216538303d0be9749f8cd9b0
   SWRevealViewController: b653f339865208c97be99a24876545f5be0cc4bb
 
-PODFILE CHECKSUM: 5c32863f4ddf04c0a3e13e4fb6c5cb05096a2286
+PODFILE CHECKSUM: 06259bef35b2e23af9efb1f6c1b8982e0e484b23
 
 COCOAPODS: 1.9.1
