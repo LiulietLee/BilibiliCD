@@ -16,12 +16,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+
+        window?.tintColor = UIColor.bilibiliPink
+
         let pageController = UIPageControl.appearance()
-        pageController.pageIndicatorTintColor = .lightGray
-        pageController.currentPageIndicatorTintColor = .black
-        pageController.backgroundColor = .white
-        
+        if #available(iOS 13.0, *) {
+            pageController.pageIndicatorTintColor = .secondaryLabel
+            pageController.currentPageIndicatorTintColor = .label
+            pageController.backgroundColor = .systemBackground
+        } else {
+            pageController.pageIndicatorTintColor = .lightGray
+            pageController.currentPageIndicatorTintColor = .black
+            pageController.backgroundColor = .white
+        }
+
         UNUserNotificationCenter.current().delegate = self
         
         let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]

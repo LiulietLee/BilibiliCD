@@ -66,7 +66,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="erC-h8-3hB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.25" id="6IO-8l-l0O"/>
                             <constraint firstItem="6yc-wz-DIs" firstAttribute="trailing" secondItem="bZG-Dm-xlz" secondAttribute="trailing" id="AhO-FB-mHu"/>
@@ -372,7 +372,7 @@
                                         <attributedString key="attributedText">
                                             <fragment content="Citation">
                                                 <attributes>
-                                                    <font key="NSFont" metaFont="system" size="14"/>
+                                                    <font key="NSFont" metaFont="menu" size="14"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
@@ -1941,7 +1941,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="iAP-o1-lDR"/>
         <segue reference="dIf-Ib-BVL"/>
-        <segue reference="4Jb-o1-lRn"/>
+        <segue reference="Das-cU-6dY"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="akkarin" width="250" height="250"/>
