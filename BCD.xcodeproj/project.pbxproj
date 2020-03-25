@@ -642,7 +642,6 @@
 				D21CDCB3242BE314005EB083 /* XCRemoteSwiftPackageReference "BilibiliKit" */,
 				D21CDCBB242BE32F005EB083 /* XCRemoteSwiftPackageReference "ViewAnimator" */,
 				D21CDCBE242BE363005EB083 /* XCRemoteSwiftPackageReference "Eureka" */,
-				D21CDCC1242BE384005EB083 /* XCRemoteSwiftPackageReference "MaterialKit" */,
 			);
 			productRefGroup = 4FE8FF3B1EF4FC0600D31840 /* Products */;
 			projectDirPath = "";
@@ -1149,14 +1148,6 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.2.1;
-			};
-		};
-		D21CDCC1242BE384005EB083 /* XCRemoteSwiftPackageReference "MaterialKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ApolloZhu/MaterialKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.6.6;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
