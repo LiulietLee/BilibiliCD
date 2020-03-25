@@ -34,6 +34,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="Wo0-pJ-K5S"/>
                                         </constraints>
+                                        <color key="tintColor" red="1" green="0.23137254901960785" blue="0.49803921568627452" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" image="ic_goback"/>
                                         <connections>
                                             <action selector="disappearButtonTapped" destination="7K2-TN-903" eventType="touchUpInside" id="YYw-jZ-kGu"/>

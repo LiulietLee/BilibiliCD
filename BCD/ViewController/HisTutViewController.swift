@@ -20,6 +20,10 @@ class HisTutViewController: UIViewController {
         super.viewDidLoad()
 
         webView = WKWebView()
+        if #available(iOS 13.0, *) {
+            webView.isOpaque = false
+            webView.backgroundColor = .systemBackground
+        }
 
         let url = Bundle.main.url(forResource: "HisTutPage/\(page)", withExtension: "html")
         let request = URLRequest(url: url!)

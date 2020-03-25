@@ -1604,6 +1604,7 @@
                                     <constraint firstAttribute="width" constant="56" id="3EA-SG-o3M"/>
                                     <constraint firstAttribute="height" constant="56" id="IRI-yt-jzI"/>
                                 </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="ic_edit">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -1618,7 +1619,7 @@
                             <constraint firstAttribute="trailing" secondItem="fF3-gR-r7H" secondAttribute="trailing" id="Pb3-lB-gYA"/>
                             <constraint firstItem="DO1-fa-vKP" firstAttribute="top" secondItem="jhy-7K-TQs" secondAttribute="bottom" constant="24" id="c1P-Vo-l38"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jhy-7K-TQs" secondAttribute="trailing" constant="8" id="nZk-5e-CD2"/>
-                            <constraint firstItem="DO1-fa-vKP" firstAttribute="top" secondItem="fF3-gR-r7H" secondAttribute="bottom" id="p6W-0N-gdn"/>
+                            <constraint firstAttribute="bottom" secondItem="fF3-gR-r7H" secondAttribute="bottom" id="p6W-0N-gdn"/>
                             <constraint firstItem="fF3-gR-r7H" firstAttribute="leading" secondItem="2ON-WV-ekx" secondAttribute="leading" id="siq-bH-R3C"/>
                         </constraints>
                     </view>
@@ -1802,6 +1803,7 @@
                                     <constraint firstAttribute="width" constant="56" id="g0b-PN-QYa"/>
                                     <constraint firstAttribute="height" constant="56" id="gbm-gO-bIQ"/>
                                 </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="ic_reply">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -1812,7 +1814,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="eHD-pi-om6" firstAttribute="top" secondItem="wWt-QP-qgx" secondAttribute="bottom" id="2lY-ua-qD0"/>
+                            <constraint firstAttribute="bottom" secondItem="wWt-QP-qgx" secondAttribute="bottom" id="2lY-ua-qD0"/>
                             <constraint firstItem="eHD-pi-om6" firstAttribute="top" secondItem="GPl-yD-kVD" secondAttribute="bottom" constant="24" id="F0K-48-hhL"/>
                             <constraint firstAttribute="trailing" secondItem="wWt-QP-qgx" secondAttribute="trailing" id="HaS-e1-hhA"/>
                             <constraint firstItem="wWt-QP-qgx" firstAttribute="top" secondItem="8FP-IX-yho" secondAttribute="bottom" id="XhB-VZ-R5m"/>
@@ -1874,7 +1876,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="KWH-YA-Uwm" secondAttribute="bottom" constant="8" id="1dI-MA-Bo7"/>
                                     <constraint firstAttribute="bottom" secondItem="uZ5-L5-hw9" secondAttribute="bottom" id="3Ak-dO-3fO"/>
@@ -1888,22 +1890,34 @@
                                     <constraint firstAttribute="height" constant="50" id="yIh-TY-Jay"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="在这里输入用户名" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O93-WR-poG">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="用户名" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O93-WR-poG" customClass="MKTextField" customModule="MaterialKit">
                                 <rect key="frame" x="16" y="58" width="288" height="48"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="RuH-9k-EUA"/>
+                                    <constraint firstAttribute="height" constant="60" id="RuH-9k-EUA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bottomBorderEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="floatingPlaceholderEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomBorderColor">
+                                        <color key="value" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="floatingLabelBottomMargin">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wmb-es-gri">
                                 <rect key="frame" x="16" y="114" width="288" height="434"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Wmb-es-gri" secondAttribute="trailing" constant="16" id="364-E4-vfV"/>
                             <constraint firstItem="O93-WR-poG" firstAttribute="leading" secondItem="PEG-h8-VQ5" secondAttribute="leadingMargin" id="8fx-4r-hTt"/>
@@ -1931,9 +1945,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="iAP-o1-lDR"/>
+        <segue reference="bbS-pi-LKM"/>
         <segue reference="pFk-eZ-ib2"/>
-        <segue reference="4Jb-o1-lRn"/>
+        <segue reference="Das-cU-6dY"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="akkarin" width="250" height="250"/>

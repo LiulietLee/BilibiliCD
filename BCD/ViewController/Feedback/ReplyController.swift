@@ -20,6 +20,7 @@ class ReplyController: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.tintColor = UIColor.systemOrange
         
         tableView.dataSource = self
         tableView.delegate = self
