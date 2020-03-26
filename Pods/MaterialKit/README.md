@@ -2,7 +2,7 @@
 
 [![Release](https://img.shields.io/github/release/ApolloZhu/MaterialKit/all.svg)](https://github.com/ApolloZhu/MaterialKit/releases)
 [![Platform](https://img.shields.io/badge/platform-iOS-brightgreen.svg)](https://developer.apple.com/iphone/index.action)
-[![Language](https://img.shields.io/badge/swift-3|4-ffac45.svg)](https://developer.apple.com/swift)
+[![Language](https://img.shields.io/badge/swift-3|4|5-ffac45.svg)](https://developer.apple.com/swift)
 [![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](http://mit-license.org)
 [![Issues](https://img.shields.io/github/issues/ApolloZhu/MaterialKit.svg)](https://github.com/ApolloZhu/MaterialKit/issues?state=open)
 [![Up Stream Issues](https://img.shields.io/github/issues/nghialv/MaterialKit.svg)](https://github.com/nghialv/MaterialKit/issues?state=open)
@@ -93,7 +93,7 @@ cell.rippleLayerColor = UIColor.MKColor.Blue
 ``` swift
 var refreshControl = MKRefreshControl()
 refreshControl.addToScrollView(tableView) { [weak self] in
-	self?.tableViewRefresh()
+    self?.tableViewRefresh()
 }
 refreshControl.beginRefreshing()
 ```
@@ -102,7 +102,7 @@ refreshControl.beginRefreshing()
 
 ``` swift
 deinit {
-	refreshControl.recycle()
+    refreshControl.recycle()
 }
 ```
 
@@ -136,7 +136,7 @@ A subclass of CALayer.
 
 ``` swift
 deinit {
-	mkLayer.recycle()
+    mkLayer.recycle()
 }
 ```
 
@@ -162,11 +162,20 @@ On/off switches toggle the state of a single settings option. The option that th
 
 ## Installation
 
-- Install using CocoaPods
+### Swift Package Manager
 
+``` swift
+.package(url: "https://github.com/ApolloZhu/MaterialKit.git",
+         .upToNextMinor(from: "0.6.6")),
 ```
-	pod 'MaterialKit', :git => 'https://github.com/ApolloZhu/MaterialKit.git'
+
+### Using CocoaPods
+
+``` ruby
+pod 'MaterialKit', :git => 'https://github.com/ApolloZhu/MaterialKit.git'
 ```
+
+### Other Methods
 
 - Copying all the files into your project
 - Using submodule

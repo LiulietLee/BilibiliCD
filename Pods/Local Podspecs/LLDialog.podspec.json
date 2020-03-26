@@ -21,5 +21,6 @@
     "tag": "1.2.0"
   },
   "source_files": "Source",
+  "swift_versions": "4.2",
   "swift_version": "4.2"
 }
