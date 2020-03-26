@@ -111,7 +111,7 @@ class CoverInfoProvider: AbstractProvider {
             }
             let url = info.coverImageURL.absoluteString
             let newInfo = Info(stringID: forBV, author: info.author.name, title: info.title, imageURL: url)
-            self.updateServerRecord(type: .video, nid: forBV, info: newInfo)
+            self.updateServerRecord(type: .bvideo, nid: forBV, info: newInfo)
             completion(newInfo)
         }
     }
