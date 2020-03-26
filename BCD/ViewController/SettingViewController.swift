@@ -8,6 +8,7 @@
 
 import Eureka
 import LLDialog
+import Foundation
 
 protocol HistoryLimitDelegate {
     func historyChanged()
