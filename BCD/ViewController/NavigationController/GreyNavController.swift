@@ -9,5 +9,5 @@
 import UIKit
 
 class GreyNavController: ColoredNavController {
-    override var navbarTintColor: UIColor { return #colorLiteral(red: 0.1265681581, green: 0.1291619012, blue: 0.1445390625, alpha: 1) }
+    override var navbarTintColor: UIColor { return .navGray }
 }

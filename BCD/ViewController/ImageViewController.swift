@@ -92,7 +92,10 @@ class ImageViewController: UIViewController, Waifu2xDelegate {
                 }
             }
         } else {
-            title = "No av number"
+            title = NSLocalizedString(
+                "COVER NOT FOUND", value: "开发者把封面弄丢了",
+                comment: "Indicate cover is not there because developer made a mistkae"
+            )
         }
 
         if let item = itemFromHistory {
@@ -126,10 +129,14 @@ class ImageViewController: UIViewController, Waifu2xDelegate {
     }
     
     private func changeTextColor(to color: UIColor) {
-        labels?.forEach { $0.textColor = color }
-        citationStyleControl?.tintColor = color
-        separator?.progressTintColor = color
-        copyButton?.tintColor = color
+        var labelColor = color
+        if #available(iOS 13.0, *), labelColor == UIColor.black {
+            labelColor = .label
+        }
+        labels?.forEach { $0.textColor = labelColor }
+        citationStyleControl?.tintColor = labelColor
+        separator?.progressTintColor = labelColor
+        copyButton?.tintColor = labelColor
         navigationController?.navigationBar.barTintColor = color
     }
     
@@ -166,7 +173,7 @@ class ImageViewController: UIViewController, Waifu2xDelegate {
 
     private func imageSaved(successfully: Bool, error: Error?) {
         DispatchQueue.main.async { [weak self] in
-            guard let `self` = self else { return }
+            guard let self = self else { return }
             if !successfully || error != nil {
                 LLDialog()
                     .set(title: "啊叻？！")

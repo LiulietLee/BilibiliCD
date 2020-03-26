@@ -21,7 +21,8 @@ class FeedbackController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.tintColor = UIColor.systemOrange
+
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
@@ -91,8 +92,7 @@ class FeedbackController: UIViewController, UITableViewDelegate, UITableViewData
             let index = tableView.indexPath(for: cell) {
             sender.isEnabled = false
             commentProvider.likeComment(commentIndex: index.row) { [weak self] in
-                guard let self = self else { return }
-                DispatchQueue.main.async { [weak self] in
+                DispatchQueue.main.async {
                     guard let self = self else { return }
                     self.tableView.reloadRows(at: [index], with: .none)
                     sender.isEnabled = true
@@ -107,8 +107,7 @@ class FeedbackController: UIViewController, UITableViewDelegate, UITableViewData
             let index = tableView.indexPath(for: cell) {
             sender.isEnabled = false
             commentProvider.dislikeComment(commentIndex: index.row) { [weak self] in
-                guard let self = self else { return }
-                DispatchQueue.main.async { [weak self] in
+                DispatchQueue.main.async {
                     guard let self = self else { return }
                     self.tableView.reloadRows(at: [index], with: .none)
                     sender.isEnabled = true

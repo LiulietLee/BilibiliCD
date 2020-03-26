@@ -19,34 +19,36 @@ class HisTutViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let size = view.bounds
         webView = WKWebView()
-        webView.frame = CGRect(x: 0.0, y: -20.0, width: size.width, height: size.height + 22.0)
-        
+        if #available(iOS 13.0, *) {
+            webView.isOpaque = false
+            webView.backgroundColor = .systemBackground
+        }
+
         let url = Bundle.main.url(forResource: "HisTutPage/\(page)", withExtension: "html")
         let request = URLRequest(url: url!)
         webView.load(request)
-        
+
         let margin: CGFloat = 20.0
         let width: CGFloat = 40.0
         back = UIButton()
-        back.frame = CGRect(x: size.width - margin - width,
-                            y: margin * 1.25, width: width, height: width)
-        
-        if UIDevice().supportsFaceID {
-            // 我真特么想一锤子锤烂 iPhone X ！这哪个ZZ设计出来的这么奇葩的屏幕啊 ！
-            webView.frame = CGRect(x: 0.0, y: -45.0, width: size.width, height: size.height + 40.0)
-            back = UIButton(frame: CGRect(
-                x: size.width - margin - width, y: margin * 1.75,
-                width: width, height: width
-            ))
-        }
-        
         back.setImage(#imageLiteral(resourceName: "ic_arrow_downward"), for: .normal)
         back.addTarget(self, action: #selector(goBack), for: .touchUpInside)
 
         view.addSubview(webView)
         view.addSubview(back)
+        webView.translatesAutoresizingMaskIntoConstraints = false
+        back.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            webView.topAnchor.constraint(equalTo: view.topAnchor),
+            webView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            webView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            webView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            back.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: margin),
+            back.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -margin),
+            back.widthAnchor.constraint(equalToConstant: width),
+            back.heightAnchor.constraint(equalToConstant: width),
+        ])
     }
     
     @objc private func goBack() {

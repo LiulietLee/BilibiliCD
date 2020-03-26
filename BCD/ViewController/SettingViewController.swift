@@ -43,7 +43,7 @@ class SettingViewController: FormViewController {
                 }
             }
             <<< ButtonRow() { row in
-                row.title = "清空历史记录"
+                row.title = "⚠️ 清空历史记录"
                 row.onCellSelection { (_, _) in
                     LLDialog()
                         .set(title: "清空历史记录")
@@ -52,7 +52,7 @@ class SettingViewController: FormViewController {
                         .setPositiveButton(withTitle: "好的", target: self, action: #selector(self.clearHistory))
                         .show()
                 }.cellSetup { (cell, button) in
-                    cell.tintColor = .red
+                    cell.tintColor = .systemRed
                 }
             }
             

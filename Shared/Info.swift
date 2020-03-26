@@ -64,7 +64,14 @@ let paraStyle: NSParagraphStyle = {
 
 let hangingIndent: [NSAttributedString.Key: Any] = [
     .paragraphStyle: paraStyle,
-    .font: UIFont(name: "Times New Roman", size: 12) ?? UIFont.systemFont(ofSize: 12)
+    .font: UIFont(name: "Times New Roman", size: 12) ?? UIFont.systemFont(ofSize: 12),
+    .foregroundColor: {
+        if #available(iOS 13.0, *) {
+            return UIColor.label
+        } else {
+            return UIColor.black
+        }
+    }()
 ]
 
 extension DateFormatter {

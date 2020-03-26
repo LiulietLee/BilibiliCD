@@ -51,6 +51,16 @@ class MainViewController: UIViewController, UITextFieldDelegate {
             name: UIApplication.didBecomeActiveNotification,
             object: nil
         )
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+        navigationController?.navigationBar.shadowImage = nil
+        navigationController?.navigationBar.isTranslucent = false
+        super.viewWillDisappear(animated)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -82,7 +92,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "image controller") as! ImageViewController
         
         nextViewController.cover = newCover
-        self.navigationController?.navigationBar.barTintColor = .bilibiliPink
+        navigationController?.navigationBar.barTintColor = .bilibiliPink
         show(nextViewController, sender: self)
     }
     

@@ -27,7 +27,6 @@
 		4F4942CF20F344E200BB7785 /* SakuraNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4942CA20F344E200BB7785 /* SakuraNavController.swift */; };
 		4F4942D020F344E200BB7785 /* ColoredNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4942CB20F344E200BB7785 /* ColoredNavController.swift */; };
 		4F4942DD20F3455F00BB7785 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4942D120F3455E00BB7785 /* HistoryCell.swift */; };
-		4F4942DE20F3455F00BB7785 /* DetectiPhoneX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4942D220F3455E00BB7785 /* DetectiPhoneX.swift */; };
 		4F4942E020F3455F00BB7785 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F4942D420F3455E00BB7785 /* Assets.xcassets */; };
 		4F4942E120F3455F00BB7785 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4942D520F3455E00BB7785 /* LoadingView.swift */; };
 		4F4942E420F3455F00BB7785 /* AnimateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4942DB20F3455E00BB7785 /* AnimateView.swift */; };
@@ -186,7 +185,6 @@
 		4F4942CA20F344E200BB7785 /* SakuraNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SakuraNavController.swift; sourceTree = "<group>"; };
 		4F4942CB20F344E200BB7785 /* ColoredNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColoredNavController.swift; sourceTree = "<group>"; };
 		4F4942D120F3455E00BB7785 /* HistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
-		4F4942D220F3455E00BB7785 /* DetectiPhoneX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetectiPhoneX.swift; path = "User Interface/DetectiPhoneX.swift"; sourceTree = "<group>"; };
 		4F4942D420F3455E00BB7785 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "User Interface/Assets.xcassets"; sourceTree = "<group>"; };
 		4F4942D520F3455E00BB7785 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingView.swift; path = "User Interface/LoadingView.swift"; sourceTree = "<group>"; };
 		4F4942DB20F3455E00BB7785 /* AnimateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimateView.swift; path = "User Interface/AnimateView.swift"; sourceTree = "<group>"; };
@@ -420,7 +418,6 @@
 				4F4942D420F3455E00BB7785 /* Assets.xcassets */,
 				4F4942E820F3457100BB7785 /* LaunchScreen.storyboard */,
 				4F4942E620F3457100BB7785 /* Main.storyboard */,
-				4F4942D220F3455E00BB7785 /* DetectiPhoneX.swift */,
 				4F4942D520F3455E00BB7785 /* LoadingView.swift */,
 			);
 			name = "User Interface";
@@ -799,7 +796,6 @@
 				4FB59F5C22DCB15800939DE3 /* ReplyCell.swift in Sources */,
 				4F78823120F3443200344D62 /* DetailViewController.swift in Sources */,
 				4FA965022121BF4A0031983C /* CacheManager.swift in Sources */,
-				4F4942DE20F3455F00BB7785 /* DetectiPhoneX.swift in Sources */,
 				4F49432320F3468200BB7785 /* UIImage+Gif.swift in Sources */,
 				4F78823720F3443200344D62 /* HistoryViewController.swift in Sources */,
 				4FF3FD22215E82EC00AF7F4B /* HotListController.swift in Sources */,

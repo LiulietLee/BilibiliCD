@@ -11,30 +11,25 @@ import MaterialKit
 
 class TutorialViewController: UIViewController, UIPageViewControllerDataSource {
     @IBOutlet private weak var closeButton: UIButton!
-    @IBOutlet weak var bottomConsOfBackButton: NSLayoutConstraint!
     private var pageController = UIPageViewController()
     private let pageImages = [#imageLiteral(resourceName: "tut1"), #imageLiteral(resourceName: "tut2"), #imageLiteral(resourceName: "tut3"), #imageLiteral(resourceName: "tut4"), #imageLiteral(resourceName: "tut5"), #imageLiteral(resourceName: "tut6"), #imageLiteral(resourceName: "tut7"), #imageLiteral(resourceName: "tut8")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let size = view.bounds.size
-        
         pageController = storyboard?.instantiateViewController(withIdentifier: "page") as! TutorialPageViewController
         pageController.dataSource = self
         let viewControllers = [viewControllerAt(index: 0)]
         pageController.setViewControllers(viewControllers, direction: .forward, animated: true)
-        pageController.view.frame = CGRect(x: 0, y: 20, width: size.width, height: size.height - 60)
-        
-        if UIDevice().supportsFaceID {
-            pageController.view.frame = CGRect(x: 0, y: -10, width: size.width, height: size.height - 20)
-            bottomConsOfBackButton.constant = 20.0
-            view.layoutIfNeeded()
-        }
-        
         addChild(pageController)
         view.addSubview(pageController.view)
         pageController.didMove(toParent: self)
+        pageController.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            pageController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            pageController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            pageController.view.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            pageController.view.bottomAnchor.constraint(equalTo: closeButton.topAnchor),
+        ])
         view.bringSubviewToFront(closeButton)
     }
     

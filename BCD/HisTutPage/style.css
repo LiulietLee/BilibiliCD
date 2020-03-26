@@ -1,17 +1,27 @@
+:root {
+    color-scheme: light dark;
+    --secondary-label: rgba(0, 0, 0, 0.498);
+    --shadow: #555;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --secondary-label: rgba(255, 255, 255, 0.549);
+        --shadow: #bbb;
+    }
+}
 * { margin: 0; padding: 0; }
 body { 
     font-family: "Roboto", UILanguageFont, Arial, sans-serif ;
-    background: #fdfdfd;
 }
 .description h1 {
     background: #6cf;
     color: #fff;
-    padding: 70px 40px 28px 20px;
+    padding: calc(env(safe-area-inset-top) + 20px) 40px 28px 20px;
     font-weight: normal;
 }
 .description p {
     margin: 20px 10px;
-    color: #777;
+    color: var(--secondary-label);
     letter-spacing: 0.38px;
 }
 section { 
@@ -23,7 +33,6 @@ section h4 {
     font-weight: normal;
     font-size: 125%;
     letter-spacing: 0.38px;
-    color: #333;
 }
 .image-container {
     text-align: center;
@@ -32,10 +41,10 @@ section h4 {
 }
 .image-container img {
     width: 100%;
-    box-shadow: 1px 1px 2px #555;
+    box-shadow: 1px 1px 2px var(--shadow);
 }
 .image-container p {
-    color: #777;
+    color: var(--secondary-label);
     letter-spacing: 0.38px;
     margin-top: 16px;
     font-size: 75%;
@@ -44,7 +53,7 @@ a {
     display: block;
     text-decoration: none;
     text-align: right;
-    color: #777;    
+    color: #ff3b7f;
 }
 .go-back a {
     text-align: center;

@@ -16,7 +16,6 @@ class LoadingView: UIView {
 
     override func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
-        backgroundColor = .white
         let width = bounds.size.width
         let height = bounds.size.height
         let x = width * 0.375

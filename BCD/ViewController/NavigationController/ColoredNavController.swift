@@ -44,7 +44,9 @@ class ColoredNavController: UINavigationController {
 
 extension UIColor {
     static let tianyiBlue = UIColor(hex: 0x56bcef)
-    static let bilibiliPink = #colorLiteral(red: 1, green: 0.2319664663, blue: 0.4985880365, alpha: 1)
+    static let bilibiliPink = #colorLiteral(red: 1, green: 0.231372549, blue: 0.4980392157, alpha: 1)
     static let mikuGreen = UIColor(hex: 0x137a7f)
     static let inariHair = UIColor(hex: 0xCB7F53)
+    static let brown = #colorLiteral(red: 0.5803921569, green: 0.5058823529, blue: 0.5176470588, alpha: 1)
+    static let navGray = #colorLiteral(red: 0.1265681581, green: 0.1291619012, blue: 0.1445390625, alpha: 1)
 }

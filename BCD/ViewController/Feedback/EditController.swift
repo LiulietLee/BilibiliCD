@@ -33,6 +33,7 @@ class EditController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.tintColor = UIColor.systemOrange
         
         usernameField.text = UserDefaults.standard.string(forKey: "feedbackUsername")
         textView.text = UserDefaults.standard.string(forKey: "feedbackContent")

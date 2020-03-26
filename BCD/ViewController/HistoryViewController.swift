@@ -18,11 +18,6 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     private let motionDetector = MotionDetector()
     private let manager = HistoryManager()
     private var isAnimatedOnce = false
-    private lazy var formatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy.MM.dd hh:mm"
-        return formatter
-    }()
     private var history = [History]() {
         didSet {
             DispatchQueue.main.async { [weak self] in
@@ -168,17 +163,17 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HistoryCell
-        
-        if !history[indexPath.row].isHidden || isShowingFullHistory {
-            guard let title = history[indexPath.row].title else {
+        let item = history[indexPath.row]
+
+        if !item.isHidden || isShowingFullHistory {
+            guard let title = item.title else {
                 cell.titleLabel.text = "Error: \(indexPath.row)"
                 return cell
             }
             cell.titleLabel.text = title
-            cell.dateLabel.text = formatter.string(from: history[indexPath.row].date!)
-            let item = history[indexPath.row]
+            cell.dateLabel.text = DateFormatter.shortStyle.string(from: item.date!)
             DispatchQueue.global(qos: .userInteractive).async {
-                let image = item.image!.toImage(size: CGSize(width: 134.0, height: 84.0))!
+                let image = item.image!.toImage()!
                 DispatchQueue.main.async { [weak self] in
                     if indexPath == self?.tableView.indexPath(for: cell) {
                         cell.coverView.image = image
@@ -224,7 +219,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
             self.history = self.manager.getHistory()
             self.tableView.deleteRows(at: [editActionsForRowAt], with: .left)
         }
-        delete.backgroundColor = .red
+        delete.backgroundColor = .systemRed
         
         return [delete, hide]
     }
@@ -235,9 +230,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func openInsideWorld() {
-        navigationController?.navigationBar.barTintColor = .black
         isShowingFullHistory = true
-        tableView.reloadData()
         motionDetector.endDetect()
     }
     
