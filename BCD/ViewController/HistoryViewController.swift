@@ -87,13 +87,25 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
             selector: #selector(hideCellsIfNeeded),
             name: UIApplication.willResignActiveNotification,
             object: nil
-        ) 
+        )
     }
     
     @objc private func hideCellsIfNeeded() {
         if isShowingFullHistory {
             isShowingFullHistory = false
         }
+    }
+
+    @objc private func toggleShowingFullHistory() {
+        isShowingFullHistory.toggle()
+    }
+
+    override var keyCommands: [UIKeyCommand] {
+        return [UIKeyCommand(input: "a", modifierFlags: [.command, .shift], action: #selector(toggleShowingFullHistory))]
+    }
+
+    override var canBecomeFirstResponder: Bool {
+        return true
     }
     
     private func animateView() {
