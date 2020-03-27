@@ -6,7 +6,7 @@
         "repositoryURL": "https://github.com/ApolloZhu/BilibiliKit.git",
         "state": {
           "branch": "master",
-          "revision": "9f10c36116df41279827ae8fcea9c4da0ce3aaff",
+          "revision": "0b4a247ebd1414854703fba50064fc95292d4747",
           "version": null
         }
       },
@@ -17,6 +17,15 @@
           "branch": null,
           "revision": "9a30ae436ec9e9fcb8b3eb1bdfd95e95989d6ca5",
           "version": "5.2.1"
+        }
+      },
+      {
+        "package": "LLDialog",
+        "repositoryURL": "https://github.com/LiulietLee/LLDialog.git",
+        "state": {
+          "branch": "master",
+          "revision": "322f2674b36046eec6d9ad2413d9715353b8d923",
+          "version": null
         }
       },
       {
