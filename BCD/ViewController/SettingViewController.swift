@@ -6,7 +6,6 @@
 //  Copyright © 2017 Liuliet.Lee. All rights reserved.
 //
 
-import UIKit
 import Eureka
 import LLDialog
 import Foundation

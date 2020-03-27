@@ -1,52 +1,54 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>关于无损放大</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
-        <link rel="stylesheet" href="style.css">
-    </head>
 
-    <body>
-        <div class="description">
-            <h1 id="top">「无损放大」功能的注意事项</h1>
-            <p>
-                「无损放大」这个功能是我和 <i>波诺先生</i> 从最开始就想做的一个功能，当时我还觉得这个功能如果不开个通向 Waifu2x 服务器的 API 的话是完全没法做的，不过好在现在有了 Core ML 这个东西可以让我很简单地在本机实现这个功能（虽然效果并不是非常好）。
-            </p>
+<head>
+    <title>关于无损放大</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="description">
+        <h1 id="top">「无损放大」功能的注意事项</h1>
+        <p>
+            「无损放大」这个功能是我和 <i>波诺先生</i> 从最开始就想做的一个功能，当时我还觉得这个功能如果不开个通向 Waifu2x 服务器的 API 的话是完全没法做的，不过好在现在有了 Core ML 这个东西可以让我很简单地在本机实现这个功能（虽然效果并不是非常好）。
+        </p>
+    </div>
+
+    <section>
+        <h4>下面是对于运行时间的说明。</h4>
+        <h4>
+            如果你的手机是 iPhone 6 之类的老机型的话你会发现运行时间相当长，有时甚至会长达数分钟，所以尽量做好心理准备；
+        </h4>
+        <h4>
+            而对于之后出的新机型来说运行速度就会缩短很多了，甚至可以比 iPhone 6 快一个数量级。
+        </h4>
+    </section>
+
+    <section>
+        <h4>下面是关于崩溃的说明。</h4>
+        <h4>
+            因为我并不清楚各个机型的放大极限在哪里，所以就不限定图片尺寸最大值了。
+        </h4>
+        <h4>由于 Input type：</h4>
+        <div class="image-container">
+            <img src="Images/Input.png" alt="input type image">
         </div>
+        <h4>因此长宽最小值为 150。</h4>
+        <h4>
+            另外就是执行放大操作之后偶尔会出现历史记录崩溃的情况，因为这问题过于灵异所以我暂时没找到解决方案，如果历史记录崩了你就把 App 删了重装一遍好了。
+        </h4>
+    </section>
 
-        <section>
-            <h4>下面是对于运行时间的说明。</h4>
-            <h4>
-                如果你的手机是 iPhone 6 之类的老机型的话你会发现运行时间相当长，有时甚至会长达数分钟，所以尽量做好心理准备；
-            </h4>
-            <h4>
-                而对于之后出的新机型来说运行速度就会缩短很多了，甚至可以比 iPhone 6 快一个数量级。
-            </h4>
-        </section>
+    <section>
+        <h4>需要注意的地方差不多就是这些，希望各位玩的开心~</h4>
+        <h4 style="text-decoration: line-through">最后祝您，身体健康。</h4>
+    </section>
 
-        <section>
-            <h4>下面是关于崩溃的说明。</h4>
-            <h4>
-                因为我并不清楚各个机型的放大极限在哪里，所以就不限定图片尺寸最大值了。
-            </h4>
-            <h4>由于 Input type：</h4>
-            <div class="image-container">
-                <img src="Images/Input.png" alt="input type image">
-            </div>
-            <h4>因此长宽最小值为 150。</h4>
-            <h4>
-                另外就是执行放大操作之后偶尔会出现历史记录崩溃的情况，因为这问题过于灵异所以我暂时没找到解决方案，如果历史记录崩了你就把 App 删了重装一遍好了。
-            </h4>
-        </section>
+    <div class="go-back">
+        <a href="#top">返回顶部</a>
+    </div>
+</body>
 
-        <section>
-            <h4>需要注意的地方差不多就是这些，希望各位玩的开心~</h4>
-            <h4 style="text-decoration: line-through">最后祝您，身体健康。</h4>
-        </section>
-
-        <div class="go-back">
-            <a href="#top">返回顶部</a>
-        </div>
-    </body>
 </html>

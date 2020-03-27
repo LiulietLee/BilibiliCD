@@ -4,53 +4,67 @@
     --shadow: #555;
     --pointer-interaction-background: #ddd;
 }
+
 @media (prefers-color-scheme: dark) {
-    :root {
+     :root {
         --secondary-label: rgba(255, 255, 255, 0.549);
         --shadow: #bbb;
         --pointer-interaction-background: #555;
     }
 }
-* { margin: 0; padding: 0; }
-body { 
-    font-family: "Roboto", UILanguageFont, Arial, sans-serif ;
+
+* {
+    margin: 0;
+    padding: 0;
 }
+
+body {
+    font-family: "Roboto", UILanguageFont, Arial, sans-serif;
+}
+
 .description h1 {
     background: #6cf;
     color: #fff;
     padding: calc(env(safe-area-inset-top) + 20px) 40px 28px 20px;
     font-weight: normal;
 }
+
 .description p {
     margin: 20px 10px;
     color: var(--secondary-label);
     letter-spacing: 0.38px;
 }
-section { 
-    margin: 45px 16px; 
+
+section {
+    margin: 45px 16px;
     border-top: 0.3px #ddd solid;
 }
+
 section h4 {
     margin-top: 24px;
     font-weight: normal;
     font-size: 125%;
     letter-spacing: 0.38px;
 }
+
 .image-container {
     text-align: center;
     padding: 0 16px;
     margin: 30px 0;
 }
+
 .image-container img {
     width: 100%;
     box-shadow: 1px 1px 2px var(--shadow);
 }
+
 .image-container p {
     color: var(--secondary-label);
     letter-spacing: 0.38px;
     margin-top: 16px;
     font-size: 75%;
 }
+
 a {
     text-decoration: none;
     color: #ff3b7f;
@@ -59,9 +73,11 @@ a {
     transition: 0.2s;
     transition-timing-function: ease-out;
 }
+
 a:hover {
     background: var(--pointer-interaction-background);
 }
+
 .go-back a {
     border-radius: 0;
     display: block;
@@ -73,14 +89,17 @@ a:hover {
     line-height: 100px;
     font-size: 150%;
 }
+
 .go-back a:hover {
     background: #777;
 }
+
 section ol {
     padding: 0 20px 0 40px;
     margin-top: 20px;
     border-left: 4px solid #aaa;
 }
+
 section ol li {
     letter-spacing: 0.38px;
     margin: 10px 0;
