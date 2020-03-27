@@ -192,10 +192,29 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-    
-    func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
-        let item = history[editActionsForRowAt.row]
-        
+
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let item = history[indexPath.row]
+        if item.isHidden && !isShowingFullHistory {
+            return nil
+        }
+        let hideActionTitle = item.isHidden ? "显示" : "隐藏"
+        let hide = UIContextualAction(style: .normal, title: hideActionTitle) {
+            [weak self] (contextualAction, view, completionHandler) in
+            self?.toggleIsHidden(for: indexPath)
+            completionHandler(self != nil)
+        }
+        let delete = UIContextualAction(style: .destructive, title: "删除") {
+            [weak self] (contextualAction, view, completionHandler) in
+            self?.delete(at: indexPath)
+            completionHandler(self != nil)
+        }
+        return UISwipeActionsConfiguration(actions: [delete, hide])
+    }
+
+    @available(iOS, deprecated: 13.0)
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let item = history[indexPath.row]
         var hideString = "隐藏"
         if item.isHidden {
             if !isShowingFullHistory {
@@ -205,23 +224,30 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         let hide = UITableViewRowAction(style: .normal, title: hideString) {
             [weak self] action, index in
-            guard let self = self else { return }
-            self.manager.toggleIsHidden(of: item)
-            self.history = self.manager.getHistory()
-            self.tableView.reloadData()
+            self?.toggleIsHidden(for: index)
         }
         hide.backgroundColor = .lightGray
         
-        let delete = UITableViewRowAction(style: .normal, title: "删除") {
-            [weak self ]action, index in
-            guard let self = self else { return }
-            self.manager.deleteHistory(item)
-            self.history = self.manager.getHistory()
-            self.tableView.deleteRows(at: [editActionsForRowAt], with: .left)
+        let delete = UITableViewRowAction(style: .destructive, title: "删除") {
+            [weak self] action, index in
+            self?.delete(at: index)
         }
-        delete.backgroundColor = .systemRed
-        
+
         return [delete, hide]
+    }
+
+    private func toggleIsHidden(for indexPath: IndexPath) {
+        let item = history[indexPath.row]
+        manager.toggleIsHidden(of: item)
+        history = manager.getHistory()
+        tableView.reloadData()
+    }
+
+    private func delete(at indexPath: IndexPath) {
+        let item = history[indexPath.row]
+        manager.deleteHistory(item)
+        history = manager.getHistory()
+        tableView.deleteRows(at: [indexPath], with: .left)
     }
     
     func historyChanged() {

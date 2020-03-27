@@ -25,6 +25,12 @@ class SettingViewController: FormViewController {
         
         form
             +++ Section("历史记录设定")
+            <<< PhoneRow() { row in
+                row.title = "历史记录数量限制"
+                row.placeholder = "设定历史记录保存的最大数量"
+                row.value = String(settingManager.historyItemLimit)
+                row.tag = "num-limit"
+            }
             <<< SwitchRow() { row in
                 row.title = "在保存记录时保存封面原图"
                 row.value = settingManager.isSaveOriginImageData
@@ -32,6 +38,9 @@ class SettingViewController: FormViewController {
                     self.settingManager.isSaveOriginImageData = row.value
                 }
             }
+
+            
+            +++ Section("释放存储空间")
             <<< ButtonRow() { row in
                 row.title = "清除封面原图（不清除记录）"
                 row.onCellSelection { [weak self] (_, _) in
@@ -64,16 +73,9 @@ class SettingViewController: FormViewController {
                     }
                 }
             }
-            
             +++ Section()
-            <<< PhoneRow() { row in
-                row.title = "历史记录数量限制"
-                row.placeholder = "设定历史记录保存的最大数量"
-                row.value = String(settingManager.historyItemLimit)
-                row.tag = "num-limit"
-            }
             <<< ButtonRow() { row in
-                row.title = "确定"
+                row.title = "完成"
                 row.onCellSelection {  [weak self] (_, _) in
                     self?.dismiss(animated: true) {
                         if let self = self,
