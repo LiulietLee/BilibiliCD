@@ -210,7 +210,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MF4-nh-3l8">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" id="Fp5-t7-21j" customClass="HistoryCell" customModule="BilibiliCD" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="100"/>
@@ -271,7 +271,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="MF4-nh-3l8" secondAttribute="trailing" id="5Do-Pg-ShS"/>
                             <constraint firstItem="MF4-nh-3l8" firstAttribute="leading" secondItem="P92-VT-zyS" secondAttribute="leading" id="QAi-xJ-Gqy"/>
@@ -373,7 +373,7 @@
                                         <attributedString key="attributedText">
                                             <fragment content="Citation">
                                                 <attributes>
-                                                    <font key="NSFont" metaFont="system" size="14"/>
+                                                    <font key="NSFont" metaFont="menu" size="14"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
@@ -554,7 +554,7 @@
                     <view key="view" contentMode="scaleToFill" id="NWc-Qf-6xh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     </view>
                     <connections>
                         <segue destination="uMu-2d-WQe" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="dIf-Ib-BVL"/>
@@ -804,7 +804,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="x6Q-MI-X3e">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <sections>
                             <tableViewSection id="p1s-2s-cpN">
                                 <cells>
@@ -1340,7 +1340,7 @@
                     <view key="view" contentMode="scaleToFill" id="KEh-3y-msY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     </view>
                     <value key="contentSizeForViewInPopover" type="size" width="360" height="150"/>
                 </viewController>
@@ -1539,7 +1539,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fF3-gR-r7H">
                                 <rect key="frame" x="0.0" y="44" width="320" height="524"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="182" id="xZE-Ec-BBM" customClass="CommentCell" customModule="BilibiliCD" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="182"/>
@@ -1652,7 +1652,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="fF3-gR-r7H" firstAttribute="top" secondItem="j6J-3p-r7A" secondAttribute="bottom" id="L9A-8t-Ov2"/>
                             <constraint firstAttribute="trailing" secondItem="fF3-gR-r7H" secondAttribute="trailing" id="Pb3-lB-gYA"/>
@@ -1694,7 +1694,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wWt-QP-qgx">
                                 <rect key="frame" x="0.0" y="44" width="320" height="524"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="comment" rowHeight="182" id="eLV-LL-EAD" customClass="CommentCell" customModule="BilibiliCD" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="182"/>
@@ -1851,7 +1851,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="wWt-QP-qgx" secondAttribute="bottom" id="2lY-ua-qD0"/>
                             <constraint firstItem="eHD-pi-om6" firstAttribute="top" secondItem="GPl-yD-kVD" secondAttribute="bottom" constant="24" id="F0K-48-hhL"/>
@@ -1985,7 +1985,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="bbS-pi-LKM"/>
-        <segue reference="pFk-eZ-ib2"/>
+        <segue reference="dIf-Ib-BVL"/>
         <segue reference="4Jb-o1-lRn"/>
     </inferredMetricsTieBreakers>
     <resources>
