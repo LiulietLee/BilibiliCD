@@ -514,9 +514,6 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="KRb-BT-2Od"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="imageView" destination="BB4-Rm-pPw" id="0H2-kT-7V0"/>
                         <outlet property="widthConstraint" destination="DUy-qD-oqQ" id="mUL-JN-zb6"/>

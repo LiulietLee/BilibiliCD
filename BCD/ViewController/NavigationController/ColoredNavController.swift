@@ -30,7 +30,11 @@ class ColoredNavController: UINavigationController {
     
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         guard motion == .motionShake else { return }
-        let alert = UIAlertController(title: "GDPR", message: "管理数据（试用）", preferredStyle: .actionSheet)
+        let hSize = traitCollection.horizontalSizeClass
+        let vSize = traitCollection.verticalSizeClass
+        let useAlert = hSize == .regular && vSize == .regular
+        let alert = UIAlertController(title: "GDPR", message: "管理数据（试用）",
+                                      preferredStyle: useAlert ? .alert : .actionSheet)
         alert.addAction(UIAlertAction(title: "导出", style: .default) { _ in
             CoreDataStorage.sharedInstance.saveCoreDataModelToDocuments()
         })
