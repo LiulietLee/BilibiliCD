@@ -51,6 +51,13 @@ class MainViewController: UIViewController, UITextFieldDelegate {
             name: UIApplication.didBecomeActiveNotification,
             object: nil
         )
+        #if targetEnvironment(macCatalyst)
+        NotificationCenter.default.addObserver(
+            self, selector: #selector(getURLFromPasteboard),
+            name: Notification.Name(rawValue: "NSWindowDidBecomeKeyNotification"),
+            object: nil
+        )
+        #endif
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true
