@@ -73,15 +73,6 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         motionDetector.delegate = self
         motionDetector.beginDetect()
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        NotificationCenter.default.removeObserver(self)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(hideCellsIfNeeded),
@@ -89,7 +80,11 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
             object: nil
         )
     }
-    
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
     @objc private func hideCellsIfNeeded() {
         if isShowingFullHistory {
             isShowingFullHistory = false
@@ -101,7 +96,12 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     override var keyCommands: [UIKeyCommand] {
-        return [UIKeyCommand(input: "a", modifierFlags: [.command, .shift], action: #selector(toggleShowingFullHistory))]
+        #if targetEnvironment(simulator)
+        let flags: UIKeyModifierFlags = [.command, .shift, .control]
+        #else
+        let flags: UIKeyModifierFlags = [.command, .shift]
+        #endif
+        return [UIKeyCommand(input: "a", modifierFlags: flags, action: #selector(toggleShowingFullHistory))]
     }
 
     override var canBecomeFirstResponder: Bool {
@@ -184,9 +184,9 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
             cell.titleLabel.text = title
             cell.dateLabel.text = DateFormatter.shortStyle.string(from: item.date!)
-            DispatchQueue.global(qos: .userInteractive).async {
+            DispatchQueue.global(qos: .userInteractive).async { [weak self] in
                 let image = item.image!.toImage()!
-                DispatchQueue.main.async { [weak self] in
+                DispatchQueue.main.async {
                     if indexPath == self?.tableView.indexPath(for: cell) {
                         cell.coverView.image = image
                     }

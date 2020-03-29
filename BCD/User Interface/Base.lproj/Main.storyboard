@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="视频 BV" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yc-wz-DIs">
-                                <rect key="frame" x="16" y="165" width="288" height="27"/>
+                                <rect key="frame" x="16" y="156" width="288" height="36"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <color key="textColor" red="1" green="0.4788373709" blue="0.65352439880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -62,7 +62,7 @@
                                 <color key="tintColor" red="1" green="0.4788373709" blue="0.65352439880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="ic_search"/>
                                 <connections>
-                                    <segue destination="J1l-gt-L0q" kind="show" id="Das-cU-6dY"/>
+                                    <segue destination="J1l-gt-L0q" kind="show" identifier="showImageVC" id="Das-cU-6dY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -373,7 +373,7 @@
                                         <attributedString key="attributedText">
                                             <fragment content="Citation">
                                                 <attributes>
-                                                    <font key="NSFont" metaFont="menu" size="14"/>
+                                                    <font key="NSFont" metaFont="system" size="14"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
@@ -1983,7 +1983,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="bbS-pi-LKM"/>
         <segue reference="dIf-Ib-BVL"/>
-        <segue reference="4Jb-o1-lRn"/>
+        <segue reference="Das-cU-6dY"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="akkarin" width="250" height="250"/>
