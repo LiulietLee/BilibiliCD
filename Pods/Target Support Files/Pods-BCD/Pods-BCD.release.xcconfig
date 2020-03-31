@@ -1,13 +1,13 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/SWRevealViewController"
-LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/LLDialog" "${PODS_CONFIGURATION_BUILD_DIR}/MaterialKit" "${PODS_CONFIGURATION_BUILD_DIR}/SWRevealViewController"
-OTHER_CFLAGS = $(inherited) -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/LLDialog/LLDialog.modulemap" -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/MaterialKit/MaterialKit.modulemap" -fmodule-map-file="${PODS_ROOT}/Headers/Public/SWRevealViewController/SWRevealViewController.modulemap" -isystem "${PODS_ROOT}/Headers/Public"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"LLDialog" -l"MaterialKit" -l"SWRevealViewController" -framework "CoreGraphics"
-OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/LLDialog/LLDialog.modulemap" -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/MaterialKit/MaterialKit.modulemap" -Xcc -fmodule-map-file="${PODS_ROOT}/Headers/Public/SWRevealViewController/SWRevealViewController.modulemap"
+LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/MaterialKit" "${PODS_CONFIGURATION_BUILD_DIR}/SWRevealViewController"
+OTHER_CFLAGS = $(inherited) -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/MaterialKit/MaterialKit.modulemap" -fmodule-map-file="${PODS_ROOT}/Headers/Public/SWRevealViewController/SWRevealViewController.modulemap" -isystem "${PODS_ROOT}/Headers/Public"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"MaterialKit" -l"SWRevealViewController" -framework "CoreGraphics"
+OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/MaterialKit/MaterialKit.modulemap" -Xcc -fmodule-map-file="${PODS_ROOT}/Headers/Public/SWRevealViewController/SWRevealViewController.modulemap"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
 PODS_ROOT = ${SRCROOT}/Pods
-SWIFT_INCLUDE_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/LLDialog" "${PODS_CONFIGURATION_BUILD_DIR}/MaterialKit"
+SWIFT_INCLUDE_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/MaterialKit"
 USE_RECURSIVE_SCRIPT_INPUTS_IN_SCRIPT_PHASES = YES

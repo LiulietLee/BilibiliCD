@@ -7,53 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		10A740DFDCB7BB72DD28281E352ECEE1 /* MKTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8806EC00D8854E0FFBBB705E169F6F3D /* MKTableViewCell.swift */; };
-		15813AC4BAB9FDD6EFD0020A6D12A026 /* MKCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9443F931774A8ABCFB67ACACD6F21E /* MKCollectionViewCell.swift */; };
-		168A278B6A71AF9F6A9549EEB7A6542D /* MKExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B098F4168FEDAAF33D9A88CC06DE9049 /* MKExtensions.swift */; };
-		199410E9C174817067E4A95FC242C678 /* MKLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B85CEA7C7F7F7F4E1325E620A7F2227 /* MKLabel.swift */; };
-		28764BB623D55710EF6E90F5DC659C1E /* MKLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C611145B1ECEE51EE34DBEF88F2ECE /* MKLayer.swift */; };
-		2A1D856B7F1B7C1685C5272441875335 /* MKRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208CC883501130D776D2A7A2EDC61167 /* MKRefreshControl.swift */; };
-		3AB8A5062032729BFAF780E0758E4F3B /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B4BDA8B1ABC90DA6AF40A9587489277 /* SWRevealViewController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		474CF2FCBAAF45596058F3904B8FE590 /* LLDialog-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6C4630061A01D4E0D9D9E537673D0F /* LLDialog-dummy.m */; };
-		517AFC5C75C8783B246B6FA79E681553 /* Pods-BCD-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 74148F731EF6EA4B092FD15CFCA67C47 /* Pods-BCD-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		6149AE93F082762E6345852F93C9F4EE /* MKSnackbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99DFCA944BE641988D6BE305E9AE957 /* MKSnackbar.swift */; };
-		6159B1873EAB1CE5B531B9B641812BF7 /* MKActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35225EEB96ACFFD57633FF2A688ABA93 /* MKActivityIndicator.swift */; };
-		61FCE212A94CC445B44FCCBEF42351DA /* SWRevealViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 89F5B9EA88E4E1AC7BBE37453702D31A /* SWRevealViewController.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		66781735A8ABFD10A5E182CF072DB9D1 /* MKImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AE3A3D000072FC5F89E988448515D8 /* MKImageView.swift */; };
-		6862067B558ADB4526EEED58DE9D85E0 /* LLDialog-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 856B13CEF9D538DEF0E6CB95AF7D14D0 /* LLDialog-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		92E7DE5B418DD128B2E6A59792109094 /* MaterialKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB2E06D6E2C038DD377265B95034F8E /* MaterialKit-dummy.m */; };
-		98AEC67DFE98E320F7D30C47AB5245EB /* MKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7373C3399712C41595AF586367C579CD /* MKButton.swift */; };
-		A0240E398302E93397B8A2AA1E2E6603 /* Pods-BCD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E60CC9FA2C5A92B51EB056B957A22B6 /* Pods-BCD-dummy.m */; };
-		AAEE77BE5F41DDF38E2EB312021BD665 /* MKEmbedMainControllerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F98CCB735C3CD611C66F10127AEB83 /* MKEmbedMainControllerSegue.swift */; };
-		B9C028A84EB9EF8B47338149FC1279E6 /* SWRevealViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 63368FB98341116045A353CA9CCFFEA1 /* SWRevealViewController-dummy.m */; };
-		BE7036C3D45290000987994631AEDDC4 /* MKSideDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47B6123DDC42AC48BE1E17F72D4A73B /* MKSideDrawerViewController.swift */; };
-		BFCAD8CCCF118CAE0EF5625B1BB32B9B /* MKEmbedDrawerControllerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B090B2E3BE52A52B93DE83D7D6790B90 /* MKEmbedDrawerControllerSegue.swift */; };
-		C6AFDA5C6D0789A0CD4272AC86F3F236 /* MaterialKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EA09C3AFDB16935071CC31739FE43D28 /* MaterialKit-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C7C15506B32BD45D3477A4DDCB06A312 /* SWRevealViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F6278BFC76AF0F00CBC6D9AFA7545597 /* SWRevealViewController-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		D5C51EA7249616CC230D4FF8C0271460 /* MKSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A3715D9FAB376E46AB93FBC72A67B /* MKSwitch.swift */; };
-		D7DEED9360FF6CC734E8F8F2D3022A32 /* LLDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A0C9DE094540872FAD468739EE2B4D /* LLDialog.swift */; };
-		ECB617C94AF8CB355CC7A73554364A3D /* MKNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D336F4A69556386A2AD1E6024DF331C4 /* MKNavigationBar.swift */; };
-		F112E753C1F06F720F40F6763F4EFED8 /* MKColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A952F5A0889C97D2F10BA75E65FBAC4 /* MKColor.swift */; };
-		F6602C19ADADA18E21AA87DD2F93F5E2 /* MKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1623764312587D085D5B3B71AE5B4A5E /* MKTextField.swift */; };
-		FEF12E26C2F66033E48AF9574068FDD9 /* MKCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B757E86CB27017EB321FFDEFF6A70E8 /* MKCardView.swift */; };
+		0B647176C8DD1B04BDB9EF777246E3AC /* Pods-BCD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E60CC9FA2C5A92B51EB056B957A22B6 /* Pods-BCD-dummy.m */; };
+		10A740DFDCB7BB72DD28281E352ECEE1 /* MKTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC55E34CD7B23E2681B433A9F6AB8805 /* MKTableViewCell.swift */; };
+		15813AC4BAB9FDD6EFD0020A6D12A026 /* MKCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD603818B28B349E13C0535C602E1C6 /* MKCollectionViewCell.swift */; };
+		168A278B6A71AF9F6A9549EEB7A6542D /* MKExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B33AC6B78FC9491CE270AF43903E6B /* MKExtensions.swift */; };
+		182EABFA03523308DB63CA58962BE118 /* Pods-BCD-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 74148F731EF6EA4B092FD15CFCA67C47 /* Pods-BCD-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		199410E9C174817067E4A95FC242C678 /* MKLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8959C6ADAB2D381D5461716028249D /* MKLabel.swift */; };
+		28764BB623D55710EF6E90F5DC659C1E /* MKLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E37EBFB2AF4479FE8E126004FBCACBB /* MKLayer.swift */; };
+		2A1D856B7F1B7C1685C5272441875335 /* MKRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D55B2F61EF7F19DCFCB29114821DE23 /* MKRefreshControl.swift */; };
+		3AB8A5062032729BFAF780E0758E4F3B /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93DA077C8793D4AB73BF92DF640229D8 /* SWRevealViewController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		6149AE93F082762E6345852F93C9F4EE /* MKSnackbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C13E1FBDE6A7DF8A545E1288D04491 /* MKSnackbar.swift */; };
+		6159B1873EAB1CE5B531B9B641812BF7 /* MKActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314924D2B33D7583D02519E283CBA8B2 /* MKActivityIndicator.swift */; };
+		61FCE212A94CC445B44FCCBEF42351DA /* SWRevealViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1856BEA058FD397F34F9EF8C889844E9 /* SWRevealViewController.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		66781735A8ABFD10A5E182CF072DB9D1 /* MKImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CF1C7C1937FA2FE5F4FD4FB8564509 /* MKImageView.swift */; };
+		92E7DE5B418DD128B2E6A59792109094 /* MaterialKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D172FF641E7D4BE557E2CDD95BDC9 /* MaterialKit-dummy.m */; };
+		98AEC67DFE98E320F7D30C47AB5245EB /* MKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4A4CA96FDE1E5489E43147A67FF08E /* MKButton.swift */; };
+		AAEE77BE5F41DDF38E2EB312021BD665 /* MKEmbedMainControllerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8146B53A76DFEB9C2CD78ACBBA8AD3 /* MKEmbedMainControllerSegue.swift */; };
+		B9C028A84EB9EF8B47338149FC1279E6 /* SWRevealViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A2A659707E20A9BE4D58E47C7A600D /* SWRevealViewController-dummy.m */; };
+		BE7036C3D45290000987994631AEDDC4 /* MKSideDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6605F1B1649ECB178D8CA16197ED27 /* MKSideDrawerViewController.swift */; };
+		BFCAD8CCCF118CAE0EF5625B1BB32B9B /* MKEmbedDrawerControllerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5DFD7429F67AF04B97376613E80E08 /* MKEmbedDrawerControllerSegue.swift */; };
+		C6AFDA5C6D0789A0CD4272AC86F3F236 /* MaterialKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F71AE11AE2EFBDA044AB554774DFC4F /* MaterialKit-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C7C15506B32BD45D3477A4DDCB06A312 /* SWRevealViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A80B19CA6D7F2E65B71757DA8D8DB66 /* SWRevealViewController-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D5C51EA7249616CC230D4FF8C0271460 /* MKSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D751F7A0BEEE40B3510D9E958A7B69 /* MKSwitch.swift */; };
+		ECB617C94AF8CB355CC7A73554364A3D /* MKNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC851D7854F0A0F9D2409771321C317 /* MKNavigationBar.swift */; };
+		F112E753C1F06F720F40F6763F4EFED8 /* MKColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C5C8DC243ED82F9518A374CCEB0F15 /* MKColor.swift */; };
+		F6602C19ADADA18E21AA87DD2F93F5E2 /* MKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6CED190598CE5F5DB3EC16EF6E80DA /* MKTextField.swift */; };
+		FEF12E26C2F66033E48AF9574068FDD9 /* MKCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE8A7A5AF8A76CC7FCF6AEF718FA712 /* MKCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		6E763A44E9BA22CE9AE809DE8B5F4CBD /* PBXContainerItemProxy */ = {
+		050935D2D9A3BD80D185CA27BDD81F75 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0C874D04DEBF423FBCE3BC0C1F23CBAE;
 			remoteInfo = MaterialKit;
 		};
-		B7E74B5D09843DF17FA800789F9FAC12 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3970349EA80A699948960929C8797515;
-			remoteInfo = LLDialog;
-		};
-		EFD75BE8A504A927C0AE1D80DF73B3DA /* PBXContainerItemProxy */ = {
+		22C8B407902EC11DD6832490843FE65A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -63,57 +53,49 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		033225B23FA8EBD003A71C6E0178389D /* SWRevealViewController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SWRevealViewController.modulemap; sourceTree = "<group>"; };
-		0E172E64643A1712C06059C3FFFC77DC /* MaterialKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MaterialKit.debug.xcconfig; sourceTree = "<group>"; };
-		12AE3A3D000072FC5F89E988448515D8 /* MKImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKImageView.swift; path = Source/MKImageView.swift; sourceTree = "<group>"; };
-		1623764312587D085D5B3B71AE5B4A5E /* MKTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKTextField.swift; path = Source/MKTextField.swift; sourceTree = "<group>"; };
-		208CC883501130D776D2A7A2EDC61167 /* MKRefreshControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKRefreshControl.swift; path = Source/MKRefreshControl.swift; sourceTree = "<group>"; };
+		00CFDFD7DB35CD5857B2B809DB236DC6 /* MaterialKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MaterialKit-prefix.pch"; sourceTree = "<group>"; };
+		0A8146B53A76DFEB9C2CD78ACBBA8AD3 /* MKEmbedMainControllerSegue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKEmbedMainControllerSegue.swift; path = Source/MKEmbedMainControllerSegue.swift; sourceTree = "<group>"; };
+		13818A61802F39C0C143D06EE79C82AD /* SWRevealViewController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SWRevealViewController.debug.xcconfig; sourceTree = "<group>"; };
+		1856BEA058FD397F34F9EF8C889844E9 /* SWRevealViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
+		1A80B19CA6D7F2E65B71757DA8D8DB66 /* SWRevealViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWRevealViewController-umbrella.h"; sourceTree = "<group>"; };
+		1B4A4CA96FDE1E5489E43147A67FF08E /* MKButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKButton.swift; path = Source/MKButton.swift; sourceTree = "<group>"; };
+		1DE8A7A5AF8A76CC7FCF6AEF718FA712 /* MKCardView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKCardView.swift; path = Source/MKCardView.swift; sourceTree = "<group>"; };
+		2A6CED190598CE5F5DB3EC16EF6E80DA /* MKTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKTextField.swift; path = Source/MKTextField.swift; sourceTree = "<group>"; };
+		2D55B2F61EF7F19DCFCB29114821DE23 /* MKRefreshControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKRefreshControl.swift; path = Source/MKRefreshControl.swift; sourceTree = "<group>"; };
+		2D6605F1B1649ECB178D8CA16197ED27 /* MKSideDrawerViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKSideDrawerViewController.swift; path = Source/MKSideDrawerViewController.swift; sourceTree = "<group>"; };
+		2F405A3DFD1E766E8DD97048CCD4161D /* SWRevealViewController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SWRevealViewController.modulemap; sourceTree = "<group>"; };
 		31290809CB0C03F803ACD7312DCC8319 /* Pods-BCD-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BCD-acknowledgements.markdown"; sourceTree = "<group>"; };
-		35225EEB96ACFFD57633FF2A688ABA93 /* MKActivityIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKActivityIndicator.swift; path = Source/MKActivityIndicator.swift; sourceTree = "<group>"; };
-		3A952F5A0889C97D2F10BA75E65FBAC4 /* MKColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKColor.swift; path = Source/MKColor.swift; sourceTree = "<group>"; };
-		3B757E86CB27017EB321FFDEFF6A70E8 /* MKCardView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKCardView.swift; path = Source/MKCardView.swift; sourceTree = "<group>"; };
-		58A000300253F2EB304F95ACC26AD519 /* libPods-BCD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-BCD.a"; path = "libPods-BCD.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		314924D2B33D7583D02519E283CBA8B2 /* MKActivityIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKActivityIndicator.swift; path = Source/MKActivityIndicator.swift; sourceTree = "<group>"; };
+		4F71AE11AE2EFBDA044AB554774DFC4F /* MaterialKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MaterialKit-umbrella.h"; sourceTree = "<group>"; };
+		51A2A659707E20A9BE4D58E47C7A600D /* SWRevealViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SWRevealViewController-dummy.m"; sourceTree = "<group>"; };
+		58A000300253F2EB304F95ACC26AD519 /* libPods-BCD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BCD.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		604031570BA809FD5BE96AE1C4959B6E /* Pods-BCD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BCD.debug.xcconfig"; sourceTree = "<group>"; };
-		63368FB98341116045A353CA9CCFFEA1 /* SWRevealViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SWRevealViewController-dummy.m"; sourceTree = "<group>"; };
-		642D710A3A2AE91EE01BF6C24D6E1800 /* SWRevealViewController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SWRevealViewController.release.xcconfig; sourceTree = "<group>"; };
-		6B85CEA7C7F7F7F4E1325E620A7F2227 /* MKLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKLabel.swift; path = Source/MKLabel.swift; sourceTree = "<group>"; };
+		61C5C8DC243ED82F9518A374CCEB0F15 /* MKColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKColor.swift; path = Source/MKColor.swift; sourceTree = "<group>"; };
+		64CF1C7C1937FA2FE5F4FD4FB8564509 /* MKImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKImageView.swift; path = Source/MKImageView.swift; sourceTree = "<group>"; };
 		6E962B654502F64625B57AF39728666A /* Pods-BCD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BCD.release.xcconfig"; sourceTree = "<group>"; };
-		6FC744EA8F98374924E5BA06973E30CB /* libMaterialKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMaterialKit.a; path = libMaterialKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		7373C3399712C41595AF586367C579CD /* MKButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKButton.swift; path = Source/MKButton.swift; sourceTree = "<group>"; };
+		6FC744EA8F98374924E5BA06973E30CB /* libMaterialKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMaterialKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		74148F731EF6EA4B092FD15CFCA67C47 /* Pods-BCD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BCD-umbrella.h"; sourceTree = "<group>"; };
 		766885658E454DA126CFF43A8C86001A /* Pods-BCD-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BCD-acknowledgements.plist"; sourceTree = "<group>"; };
-		76C52E446A4F1DFB7D2ED683DB202540 /* LLDialog.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LLDialog.modulemap; sourceTree = "<group>"; };
-		772CD295E4E49CD324467817FC3A9C74 /* LLDialog-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LLDialog-prefix.pch"; sourceTree = "<group>"; };
-		7B4BDA8B1ABC90DA6AF40A9587489277 /* SWRevealViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
-		82A0C9DE094540872FAD468739EE2B4D /* LLDialog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LLDialog.swift; path = Source/LLDialog.swift; sourceTree = "<group>"; };
-		834F895D553C19A8B5FE3D72A7E3903B /* MaterialKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MaterialKit-prefix.pch"; sourceTree = "<group>"; };
-		856B13CEF9D538DEF0E6CB95AF7D14D0 /* LLDialog-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LLDialog-umbrella.h"; sourceTree = "<group>"; };
-		8806EC00D8854E0FFBBB705E169F6F3D /* MKTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKTableViewCell.swift; path = Source/MKTableViewCell.swift; sourceTree = "<group>"; };
-		89F5B9EA88E4E1AC7BBE37453702D31A /* SWRevealViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
-		8BED95590A67566B3C43703C6BBA8496 /* MaterialKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MaterialKit.release.xcconfig; sourceTree = "<group>"; };
+		7C5DFD7429F67AF04B97376613E80E08 /* MKEmbedDrawerControllerSegue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKEmbedDrawerControllerSegue.swift; path = Source/MKEmbedDrawerControllerSegue.swift; sourceTree = "<group>"; };
+		7E37EBFB2AF4479FE8E126004FBCACBB /* MKLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKLayer.swift; path = Source/MKLayer.swift; sourceTree = "<group>"; };
+		7FD603818B28B349E13C0535C602E1C6 /* MKCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKCollectionViewCell.swift; path = Source/MKCollectionViewCell.swift; sourceTree = "<group>"; };
+		81D751F7A0BEEE40B3510D9E958A7B69 /* MKSwitch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKSwitch.swift; path = Source/MKSwitch.swift; sourceTree = "<group>"; };
+		8B8959C6ADAB2D381D5461716028249D /* MKLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKLabel.swift; path = Source/MKLabel.swift; sourceTree = "<group>"; };
 		8E60CC9FA2C5A92B51EB056B957A22B6 /* Pods-BCD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BCD-dummy.m"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A63966D9CE1E65E5B5698AA1C384A4E6 /* SWRevealViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWRevealViewController-prefix.pch"; sourceTree = "<group>"; };
-		ADB2E06D6E2C038DD377265B95034F8E /* MaterialKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MaterialKit-dummy.m"; sourceTree = "<group>"; };
-		B090B2E3BE52A52B93DE83D7D6790B90 /* MKEmbedDrawerControllerSegue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKEmbedDrawerControllerSegue.swift; path = Source/MKEmbedDrawerControllerSegue.swift; sourceTree = "<group>"; };
-		B098F4168FEDAAF33D9A88CC06DE9049 /* MKExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKExtensions.swift; path = Source/MKExtensions.swift; sourceTree = "<group>"; };
-		BB9443F931774A8ABCFB67ACACD6F21E /* MKCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKCollectionViewCell.swift; path = Source/MKCollectionViewCell.swift; sourceTree = "<group>"; };
-		BF4C3CD9669E28EB8D834B423BFCA9EE /* LLDialog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LLDialog.release.xcconfig; sourceTree = "<group>"; };
-		C2FF1A698DA2D6B80AC336FC9BFFE804 /* SWRevealViewController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SWRevealViewController.debug.xcconfig; sourceTree = "<group>"; };
-		CA6C4630061A01D4E0D9D9E537673D0F /* LLDialog-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LLDialog-dummy.m"; sourceTree = "<group>"; };
-		D334B9CDEC21015DD48358DB94CB1CFA /* libSWRevealViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libSWRevealViewController.a; path = libSWRevealViewController.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		D336F4A69556386A2AD1E6024DF331C4 /* MKNavigationBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKNavigationBar.swift; path = Source/MKNavigationBar.swift; sourceTree = "<group>"; };
+		93DA077C8793D4AB73BF92DF640229D8 /* SWRevealViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
+		96327180412C05E76CB569B74E364972 /* MaterialKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MaterialKit.modulemap; sourceTree = "<group>"; };
+		9C3D172FF641E7D4BE557E2CDD95BDC9 /* MaterialKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MaterialKit-dummy.m"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C3B33AC6B78FC9491CE270AF43903E6B /* MKExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKExtensions.swift; path = Source/MKExtensions.swift; sourceTree = "<group>"; };
+		CC05529D638A95BE58BEF91A1389A50B /* MaterialKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MaterialKit.debug.xcconfig; sourceTree = "<group>"; };
+		D079F6AC4B7CE8CEBAE9D0FF39532B55 /* SWRevealViewController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SWRevealViewController.release.xcconfig; sourceTree = "<group>"; };
+		D334B9CDEC21015DD48358DB94CB1CFA /* libSWRevealViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSWRevealViewController.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D34BC0D0599E1DEDA9C2327548A90404 /* Pods-BCD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BCD.modulemap"; sourceTree = "<group>"; };
-		D4C611145B1ECEE51EE34DBEF88F2ECE /* MKLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKLayer.swift; path = Source/MKLayer.swift; sourceTree = "<group>"; };
-		D4F98CCB735C3CD611C66F10127AEB83 /* MKEmbedMainControllerSegue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKEmbedMainControllerSegue.swift; path = Source/MKEmbedMainControllerSegue.swift; sourceTree = "<group>"; };
-		D86EDFDB065B472DD118CF5C5EFF617D /* MaterialKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MaterialKit.modulemap; sourceTree = "<group>"; };
-		D93B0FE84A46E47794580FA06BB074AC /* libLLDialog.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libLLDialog.a; path = libLLDialog.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		E47B6123DDC42AC48BE1E17F72D4A73B /* MKSideDrawerViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKSideDrawerViewController.swift; path = Source/MKSideDrawerViewController.swift; sourceTree = "<group>"; };
-		E62A3715D9FAB376E46AB93FBC72A67B /* MKSwitch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKSwitch.swift; path = Source/MKSwitch.swift; sourceTree = "<group>"; };
-		EA09C3AFDB16935071CC31739FE43D28 /* MaterialKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MaterialKit-umbrella.h"; sourceTree = "<group>"; };
-		F6278BFC76AF0F00CBC6D9AFA7545597 /* SWRevealViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWRevealViewController-umbrella.h"; sourceTree = "<group>"; };
-		F99DFCA944BE641988D6BE305E9AE957 /* MKSnackbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKSnackbar.swift; path = Source/MKSnackbar.swift; sourceTree = "<group>"; };
-		FE8AB10FC00DC1DD574DA30A7DC04CEA /* LLDialog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LLDialog.debug.xcconfig; sourceTree = "<group>"; };
+		D8C13E1FBDE6A7DF8A545E1288D04491 /* MKSnackbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKSnackbar.swift; path = Source/MKSnackbar.swift; sourceTree = "<group>"; };
+		DC96A1E7B77CDBB78661DDB916A0C16F /* MaterialKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MaterialKit.release.xcconfig; sourceTree = "<group>"; };
+		ECC851D7854F0A0F9D2409771321C317 /* MKNavigationBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKNavigationBar.swift; path = Source/MKNavigationBar.swift; sourceTree = "<group>"; };
+		FA0D4AE0CFE6D14F34EB2CDA0390F53B /* SWRevealViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWRevealViewController-prefix.pch"; sourceTree = "<group>"; };
+		FC55E34CD7B23E2681B433A9F6AB8805 /* MKTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKTableViewCell.swift; path = Source/MKTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +106,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		537F917E2481644481E76358C3B4B962 /* Frameworks */ = {
+		4C785F5F98671A00F2FD4B44BFE6B31E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -138,42 +120,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F40057E4E2A03BF25C3F774BF4C7C7D9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0F2AAA5A7BF276E24529F3220A0F4E78 /* Support Files */ = {
+		173FBBA93EF27D40713B32949D363263 /* SWRevealViewController */ = {
 			isa = PBXGroup;
 			children = (
-				033225B23FA8EBD003A71C6E0178389D /* SWRevealViewController.modulemap */,
-				63368FB98341116045A353CA9CCFFEA1 /* SWRevealViewController-dummy.m */,
-				A63966D9CE1E65E5B5698AA1C384A4E6 /* SWRevealViewController-prefix.pch */,
-				F6278BFC76AF0F00CBC6D9AFA7545597 /* SWRevealViewController-umbrella.h */,
-				C2FF1A698DA2D6B80AC336FC9BFFE804 /* SWRevealViewController.debug.xcconfig */,
-				642D710A3A2AE91EE01BF6C24D6E1800 /* SWRevealViewController.release.xcconfig */,
+				1856BEA058FD397F34F9EF8C889844E9 /* SWRevealViewController.h */,
+				93DA077C8793D4AB73BF92DF640229D8 /* SWRevealViewController.m */,
+				3CEEE12F8EBF935AB758D35601EFBB50 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/SWRevealViewController";
-			sourceTree = "<group>";
-		};
-		1C5720CEB19299E150A1FF56E59819CC /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				D86EDFDB065B472DD118CF5C5EFF617D /* MaterialKit.modulemap */,
-				ADB2E06D6E2C038DD377265B95034F8E /* MaterialKit-dummy.m */,
-				834F895D553C19A8B5FE3D72A7E3903B /* MaterialKit-prefix.pch */,
-				EA09C3AFDB16935071CC31739FE43D28 /* MaterialKit-umbrella.h */,
-				0E172E64643A1712C06059C3FFFC77DC /* MaterialKit.debug.xcconfig */,
-				8BED95590A67566B3C43703C6BBA8496 /* MaterialKit.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/MaterialKit";
+			path = SWRevealViewController;
 			sourceTree = "<group>";
 		};
 		2F11138F50FC0BDCD41EC4318ABD2C00 /* Targets Support Files */ = {
@@ -184,14 +141,32 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		34149E015689BAB4109DF438099BE2F8 /* LLDialog */ = {
+		2FE7F371442D70236B85FF930781EED7 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				82A0C9DE094540872FAD468739EE2B4D /* LLDialog.swift */,
-				B6540CB549A88383A87D2BBC43E9AB65 /* Support Files */,
+				96327180412C05E76CB569B74E364972 /* MaterialKit.modulemap */,
+				9C3D172FF641E7D4BE557E2CDD95BDC9 /* MaterialKit-dummy.m */,
+				00CFDFD7DB35CD5857B2B809DB236DC6 /* MaterialKit-prefix.pch */,
+				4F71AE11AE2EFBDA044AB554774DFC4F /* MaterialKit-umbrella.h */,
+				CC05529D638A95BE58BEF91A1389A50B /* MaterialKit.debug.xcconfig */,
+				DC96A1E7B77CDBB78661DDB916A0C16F /* MaterialKit.release.xcconfig */,
 			);
-			name = LLDialog;
-			path = LLDialog;
+			name = "Support Files";
+			path = "../Target Support Files/MaterialKit";
+			sourceTree = "<group>";
+		};
+		3CEEE12F8EBF935AB758D35601EFBB50 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2F405A3DFD1E766E8DD97048CCD4161D /* SWRevealViewController.modulemap */,
+				51A2A659707E20A9BE4D58E47C7A600D /* SWRevealViewController-dummy.m */,
+				FA0D4AE0CFE6D14F34EB2CDA0390F53B /* SWRevealViewController-prefix.pch */,
+				1A80B19CA6D7F2E65B71757DA8D8DB66 /* SWRevealViewController-umbrella.h */,
+				13818A61802F39C0C143D06EE79C82AD /* SWRevealViewController.debug.xcconfig */,
+				D079F6AC4B7CE8CEBAE9D0FF39532B55 /* SWRevealViewController.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SWRevealViewController";
 			sourceTree = "<group>";
 		};
 		66B99870168AD65556B7AB150793C8C1 /* Pods-BCD */ = {
@@ -209,45 +184,18 @@
 			path = "Target Support Files/Pods-BCD";
 			sourceTree = "<group>";
 		};
-		6A1D992DCD4B2677B9904D6B532A10CA /* Pods */ = {
+		741147D7D77C5CB0601DD145378F0D65 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				34149E015689BAB4109DF438099BE2F8 /* LLDialog */,
-				D7FC8070883A60144DB389D401FF620B /* MaterialKit */,
-				9DA0528AFB6E379A4EEA0F6768CAB012 /* SWRevealViewController */,
+				86485615DF4755DB7DCAA70F6399C731 /* MaterialKit */,
+				173FBBA93EF27D40713B32949D363263 /* SWRevealViewController */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		9DA0528AFB6E379A4EEA0F6768CAB012 /* SWRevealViewController */ = {
+		7E86D4F736D7D437FAAB676B4C53E905 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				89F5B9EA88E4E1AC7BBE37453702D31A /* SWRevealViewController.h */,
-				7B4BDA8B1ABC90DA6AF40A9587489277 /* SWRevealViewController.m */,
-				0F2AAA5A7BF276E24529F3220A0F4E78 /* Support Files */,
-			);
-			name = SWRevealViewController;
-			path = SWRevealViewController;
-			sourceTree = "<group>";
-		};
-		B6540CB549A88383A87D2BBC43E9AB65 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				76C52E446A4F1DFB7D2ED683DB202540 /* LLDialog.modulemap */,
-				CA6C4630061A01D4E0D9D9E537673D0F /* LLDialog-dummy.m */,
-				772CD295E4E49CD324467817FC3A9C74 /* LLDialog-prefix.pch */,
-				856B13CEF9D538DEF0E6CB95AF7D14D0 /* LLDialog-umbrella.h */,
-				FE8AB10FC00DC1DD574DA30A7DC04CEA /* LLDialog.debug.xcconfig */,
-				BF4C3CD9669E28EB8D834B423BFCA9EE /* LLDialog.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/LLDialog";
-			sourceTree = "<group>";
-		};
-		C1B2289AE5FE6927537A8802F14C302D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D93B0FE84A46E47794580FA06BB074AC /* libLLDialog.a */,
 				6FC744EA8F98374924E5BA06973E30CB /* libMaterialKit.a */,
 				58A000300253F2EB304F95ACC26AD519 /* libPods-BCD.a */,
 				D334B9CDEC21015DD48358DB94CB1CFA /* libSWRevealViewController.a */,
@@ -255,42 +203,41 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		86485615DF4755DB7DCAA70F6399C731 /* MaterialKit */ = {
+			isa = PBXGroup;
+			children = (
+				314924D2B33D7583D02519E283CBA8B2 /* MKActivityIndicator.swift */,
+				1B4A4CA96FDE1E5489E43147A67FF08E /* MKButton.swift */,
+				1DE8A7A5AF8A76CC7FCF6AEF718FA712 /* MKCardView.swift */,
+				7FD603818B28B349E13C0535C602E1C6 /* MKCollectionViewCell.swift */,
+				61C5C8DC243ED82F9518A374CCEB0F15 /* MKColor.swift */,
+				7C5DFD7429F67AF04B97376613E80E08 /* MKEmbedDrawerControllerSegue.swift */,
+				0A8146B53A76DFEB9C2CD78ACBBA8AD3 /* MKEmbedMainControllerSegue.swift */,
+				C3B33AC6B78FC9491CE270AF43903E6B /* MKExtensions.swift */,
+				64CF1C7C1937FA2FE5F4FD4FB8564509 /* MKImageView.swift */,
+				8B8959C6ADAB2D381D5461716028249D /* MKLabel.swift */,
+				7E37EBFB2AF4479FE8E126004FBCACBB /* MKLayer.swift */,
+				ECC851D7854F0A0F9D2409771321C317 /* MKNavigationBar.swift */,
+				2D55B2F61EF7F19DCFCB29114821DE23 /* MKRefreshControl.swift */,
+				2D6605F1B1649ECB178D8CA16197ED27 /* MKSideDrawerViewController.swift */,
+				D8C13E1FBDE6A7DF8A545E1288D04491 /* MKSnackbar.swift */,
+				81D751F7A0BEEE40B3510D9E958A7B69 /* MKSwitch.swift */,
+				FC55E34CD7B23E2681B433A9F6AB8805 /* MKTableViewCell.swift */,
+				2A6CED190598CE5F5DB3EC16EF6E80DA /* MKTextField.swift */,
+				2FE7F371442D70236B85FF930781EED7 /* Support Files */,
+			);
+			path = MaterialKit;
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
-				6A1D992DCD4B2677B9904D6B532A10CA /* Pods */,
-				C1B2289AE5FE6927537A8802F14C302D /* Products */,
+				741147D7D77C5CB0601DD145378F0D65 /* Pods */,
+				7E86D4F736D7D437FAAB676B4C53E905 /* Products */,
 				2F11138F50FC0BDCD41EC4318ABD2C00 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		D7FC8070883A60144DB389D401FF620B /* MaterialKit */ = {
-			isa = PBXGroup;
-			children = (
-				35225EEB96ACFFD57633FF2A688ABA93 /* MKActivityIndicator.swift */,
-				7373C3399712C41595AF586367C579CD /* MKButton.swift */,
-				3B757E86CB27017EB321FFDEFF6A70E8 /* MKCardView.swift */,
-				BB9443F931774A8ABCFB67ACACD6F21E /* MKCollectionViewCell.swift */,
-				3A952F5A0889C97D2F10BA75E65FBAC4 /* MKColor.swift */,
-				B090B2E3BE52A52B93DE83D7D6790B90 /* MKEmbedDrawerControllerSegue.swift */,
-				D4F98CCB735C3CD611C66F10127AEB83 /* MKEmbedMainControllerSegue.swift */,
-				B098F4168FEDAAF33D9A88CC06DE9049 /* MKExtensions.swift */,
-				12AE3A3D000072FC5F89E988448515D8 /* MKImageView.swift */,
-				6B85CEA7C7F7F7F4E1325E620A7F2227 /* MKLabel.swift */,
-				D4C611145B1ECEE51EE34DBEF88F2ECE /* MKLayer.swift */,
-				D336F4A69556386A2AD1E6024DF331C4 /* MKNavigationBar.swift */,
-				208CC883501130D776D2A7A2EDC61167 /* MKRefreshControl.swift */,
-				E47B6123DDC42AC48BE1E17F72D4A73B /* MKSideDrawerViewController.swift */,
-				F99DFCA944BE641988D6BE305E9AE957 /* MKSnackbar.swift */,
-				E62A3715D9FAB376E46AB93FBC72A67B /* MKSwitch.swift */,
-				8806EC00D8854E0FFBBB705E169F6F3D /* MKTableViewCell.swift */,
-				1623764312587D085D5B3B71AE5B4A5E /* MKTextField.swift */,
-				1C5720CEB19299E150A1FF56E59819CC /* Support Files */,
-			);
-			name = MaterialKit;
-			path = MaterialKit;
 			sourceTree = "<group>";
 		};
 		D89477F20FB1DE18A04690586D7808C4 /* Frameworks */ = {
@@ -303,28 +250,20 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		16330640F98A4BDC42CCC1CBB2B9355D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				182EABFA03523308DB63CA58962BE118 /* Pods-BCD-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1950EC0A55FE860F2B1D9F8E6CD18153 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C7C15506B32BD45D3477A4DDCB06A312 /* SWRevealViewController-umbrella.h in Headers */,
 				61FCE212A94CC445B44FCCBEF42351DA /* SWRevealViewController.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1E3F88D6EDF9719AFC911DB87AD700BC /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6862067B558ADB4526EEED58DE9D85E0 /* LLDialog-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AFE1D404A06B7662CA1CCF7BC60E4DF6 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				517AFC5C75C8783B246B6FA79E681553 /* Pods-BCD-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,38 +296,19 @@
 			productReference = 6FC744EA8F98374924E5BA06973E30CB /* libMaterialKit.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		3970349EA80A699948960929C8797515 /* LLDialog */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 210E020095485B83E74646A47E3324FA /* Build configuration list for PBXNativeTarget "LLDialog" */;
-			buildPhases = (
-				1E3F88D6EDF9719AFC911DB87AD700BC /* Headers */,
-				73F1065A4DECEFF4233C1DEECE3248EB /* Sources */,
-				F40057E4E2A03BF25C3F774BF4C7C7D9 /* Frameworks */,
-				D4BE2AC290EEA6803DCCD742013C3372 /* Copy generated compatibility header */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = LLDialog;
-			productName = LLDialog;
-			productReference = D93B0FE84A46E47794580FA06BB074AC /* libLLDialog.a */;
-			productType = "com.apple.product-type.library.static";
-		};
 		747A2671FF31839B59B72337B945E406 /* Pods-BCD */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CE3190FD9E8B66AF67BA2ADF57B0126B /* Build configuration list for PBXNativeTarget "Pods-BCD" */;
+			buildConfigurationList = 1DD9F72B5D7AEB125F51343589F11291 /* Build configuration list for PBXNativeTarget "Pods-BCD" */;
 			buildPhases = (
-				AFE1D404A06B7662CA1CCF7BC60E4DF6 /* Headers */,
-				99EAB52D0651F92A745ACA5D5D9E77A4 /* Sources */,
-				537F917E2481644481E76358C3B4B962 /* Frameworks */,
+				16330640F98A4BDC42CCC1CBB2B9355D /* Headers */,
+				DFE30C7747FC2901BD0DC744D4BD510A /* Sources */,
+				4C785F5F98671A00F2FD4B44BFE6B31E /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D3D01F52106870AD33213068DA84877F /* PBXTargetDependency */,
-				4D4373A0628A40A6132D47AA620E5EEB /* PBXTargetDependency */,
-				4D049B9DDCC128B772C580440EE4B9F0 /* PBXTargetDependency */,
+				A2E620E1DB71C2ED63B88EEBD5230B36 /* PBXTargetDependency */,
+				697A6BF61A6BB72015963324635C9D23 /* PBXTargetDependency */,
 			);
 			name = "Pods-BCD";
 			productName = "Pods-BCD";
@@ -419,7 +339,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1140;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 11.0";
@@ -430,11 +350,10 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = C1B2289AE5FE6927537A8802F14C302D /* Products */;
+			productRefGroup = 7E86D4F736D7D437FAAB676B4C53E905 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3970349EA80A699948960929C8797515 /* LLDialog */,
 				0C874D04DEBF423FBCE3BC0C1F23CBAE /* MaterialKit */,
 				747A2671FF31839B59B72337B945E406 /* Pods-BCD */,
 				A54C3C20DA76528607950189DA743CA4 /* SWRevealViewController */,
@@ -467,30 +386,6 @@
 			shellPath = /bin/sh;
 			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/MaterialKit/MaterialKit.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/MaterialKit/MaterialKit-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
 		};
-		D4BE2AC290EEA6803DCCD742013C3372 /* Copy generated compatibility header */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h",
-				"${PODS_ROOT}/Headers/Public/LLDialog/LLDialog.modulemap",
-				"${PODS_ROOT}/Headers/Public/LLDialog/LLDialog-umbrella.h",
-			);
-			name = "Copy generated compatibility header";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap",
-				"${BUILT_PRODUCTS_DIR}/LLDialog-umbrella.h",
-				"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/LLDialog/LLDialog.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/LLDialog/LLDialog-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -500,23 +395,6 @@
 			files = (
 				B9C028A84EB9EF8B47338149FC1279E6 /* SWRevealViewController-dummy.m in Sources */,
 				3AB8A5062032729BFAF780E0758E4F3B /* SWRevealViewController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		73F1065A4DECEFF4233C1DEECE3248EB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				474CF2FCBAAF45596058F3904B8FE590 /* LLDialog-dummy.m in Sources */,
-				D7DEED9360FF6CC734E8F8F2D3022A32 /* LLDialog.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		99EAB52D0651F92A745ACA5D5D9E77A4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A0240E398302E93397B8A2AA1E2E6603 /* Pods-BCD-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,26 +424,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DFE30C7747FC2901BD0DC744D4BD510A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B647176C8DD1B04BDB9EF777246E3AC /* Pods-BCD-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4D049B9DDCC128B772C580440EE4B9F0 /* PBXTargetDependency */ = {
+		697A6BF61A6BB72015963324635C9D23 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SWRevealViewController;
 			target = A54C3C20DA76528607950189DA743CA4 /* SWRevealViewController */;
-			targetProxy = EFD75BE8A504A927C0AE1D80DF73B3DA /* PBXContainerItemProxy */;
+			targetProxy = 22C8B407902EC11DD6832490843FE65A /* PBXContainerItemProxy */;
 		};
-		4D4373A0628A40A6132D47AA620E5EEB /* PBXTargetDependency */ = {
+		A2E620E1DB71C2ED63B88EEBD5230B36 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MaterialKit;
 			target = 0C874D04DEBF423FBCE3BC0C1F23CBAE /* MaterialKit */;
-			targetProxy = 6E763A44E9BA22CE9AE809DE8B5F4CBD /* PBXContainerItemProxy */;
-		};
-		D3D01F52106870AD33213068DA84877F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = LLDialog;
-			target = 3970349EA80A699948960929C8797515 /* LLDialog */;
-			targetProxy = B7E74B5D09843DF17FA800789F9FAC12 /* PBXContainerItemProxy */;
+			targetProxy = 050935D2D9A3BD80D185CA27BDD81F75 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -630,41 +510,16 @@
 			};
 			name = Release;
 		};
-		26F6AD3D62F5D23E5A35D13EE16C3E0E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FE8AB10FC00DC1DD574DA30A7DC04CEA /* LLDialog.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/LLDialog/LLDialog-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MODULEMAP_FILE = Headers/Public/LLDialog/LLDialog.modulemap;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = LLDialog;
-				PRODUCT_NAME = LLDialog;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
 		38231BF04E881DDF7726261E0D94A954 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 642D710A3A2AE91EE01BF6C24D6E1800 /* SWRevealViewController.release.xcconfig */;
+			baseConfigurationReference = D079F6AC4B7CE8CEBAE9D0FF39532B55 /* SWRevealViewController.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/SWRevealViewController/SWRevealViewController-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULEMAP_FILE = Headers/Public/SWRevealViewController/SWRevealViewController.modulemap;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
@@ -681,30 +536,7 @@
 			};
 			name = Release;
 		};
-		4A7FAC5589BF581EBC944746F74EFA9B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 604031570BA809FD5BE96AE1C4959B6E /* Pods-BCD.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-BCD/Pods-BCD.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		78AE3CD84B42308277F091B94F9B4AA9 /* Release */ = {
+		90B775AA23297AD77C794921A8B8ABF0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6E962B654502F64625B57AF39728666A /* Pods-BCD.release.xcconfig */;
 			buildSettings = {
@@ -730,7 +562,7 @@
 		};
 		957BDCEBE7F5596C9ACB116A86A57425 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E172E64643A1712C06059C3FFFC77DC /* MaterialKit.debug.xcconfig */;
+			baseConfigurationReference = CC05529D638A95BE58BEF91A1389A50B /* MaterialKit.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -753,42 +585,16 @@
 			};
 			name = Debug;
 		};
-		9F07795778B27D7066B4DECF592C0B8E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BF4C3CD9669E28EB8D834B423BFCA9EE /* LLDialog.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/LLDialog/LLDialog-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MODULEMAP_FILE = Headers/Public/LLDialog/LLDialog.modulemap;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = LLDialog;
-				PRODUCT_NAME = LLDialog;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 		A8F5A8C6C2B8113EF15652690336EFFC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C2FF1A698DA2D6B80AC336FC9BFFE804 /* SWRevealViewController.debug.xcconfig */;
+			baseConfigurationReference = 13818A61802F39C0C143D06EE79C82AD /* SWRevealViewController.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/SWRevealViewController/SWRevealViewController-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULEMAP_FILE = Headers/Public/SWRevealViewController/SWRevealViewController.modulemap;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
@@ -804,9 +610,32 @@
 			};
 			name = Debug;
 		};
+		B516E08D2C34A915F8F0E374DDFFAA2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 604031570BA809FD5BE96AE1C4959B6E /* Pods-BCD.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BCD/Pods-BCD.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 		DB478BAFCB7E8A1E8D245A66BB747A08 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8BED95590A67566B3C43703C6BBA8496 /* MaterialKit.release.xcconfig */;
+			baseConfigurationReference = DC96A1E7B77CDBB78661DDB916A0C16F /* MaterialKit.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -906,11 +735,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		210E020095485B83E74646A47E3324FA /* Build configuration list for PBXNativeTarget "LLDialog" */ = {
+		1DD9F72B5D7AEB125F51343589F11291 /* Build configuration list for PBXNativeTarget "Pods-BCD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				26F6AD3D62F5D23E5A35D13EE16C3E0E /* Debug */,
-				9F07795778B27D7066B4DECF592C0B8E /* Release */,
+				B516E08D2C34A915F8F0E374DDFFAA2F /* Debug */,
+				90B775AA23297AD77C794921A8B8ABF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -920,15 +749,6 @@
 			buildConfigurations = (
 				DD8F832993327D1DD8046C3CBCBD97CD /* Debug */,
 				257497152829C177993B5EC99C1D227A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CE3190FD9E8B66AF67BA2ADF57B0126B /* Build configuration list for PBXNativeTarget "Pods-BCD" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4A7FAC5589BF581EBC944746F74EFA9B /* Debug */,
-				78AE3CD84B42308277F091B94F9B4AA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

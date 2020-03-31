@@ -66,11 +66,8 @@ class ImageViewController: UIViewController, Waifu2xDelegate {
     }
     
     @objc private func goBackIfNeeded() {
-        if itemFromHistory != nil, itemFromHistory!.isHidden {
-            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "main") as! MainViewController
-            
-            show(nextViewController, sender: self)
+        if itemFromHistory?.isHidden == true {
+            navigationController?.popToRootViewController(animated: false)
         }
     }
     
@@ -111,6 +108,7 @@ class ImageViewController: UIViewController, Waifu2xDelegate {
             changeTextColor(to: item.isHidden ? .black : .tianyiBlue)
             animateView()
         } else {
+            changeTextColor(to: .bilibiliPink)
             titleLabel.text = ""
             authorLabel.text = ""
             urlLabel.text = ""

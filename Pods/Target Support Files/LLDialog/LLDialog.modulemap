@@ -1,6 +1,0 @@
-module LLDialog {
-  umbrella header "LLDialog-umbrella.h"
-
-  export *
-  module * { export * }
-}

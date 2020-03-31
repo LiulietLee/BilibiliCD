@@ -29,4 +29,19 @@ extension UIView {
             cell.animate(animations: [type], delay: delay)
         }
     }
+
+    @available(iOS 13.4, *)
+    @IBInspectable
+    public var isPointerInteractionEnabled: Bool {
+        get {
+            return interactions.contains { $0 is UIPointerInteraction }
+        }
+        set(setEnabled) {
+            if setEnabled {
+                addInteraction(UIPointerInteraction())
+            } else {
+                interactions.removeAll { $0 is UIPointerInteraction }
+            }
+        }
+    }
 }

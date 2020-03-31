@@ -51,6 +51,13 @@ class MainViewController: UIViewController, UITextFieldDelegate {
             name: UIApplication.didBecomeActiveNotification,
             object: nil
         )
+        #if targetEnvironment(macCatalyst)
+        NotificationCenter.default.addObserver(
+            self, selector: #selector(getURLFromPasteboard),
+            name: Notification.Name(rawValue: "NSWindowDidBecomeKeyNotification"),
+            object: nil
+        )
+        #endif
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true
@@ -81,19 +88,16 @@ class MainViewController: UIViewController, UITextFieldDelegate {
             else { return }
         currentCoverType = newCover.type
         cover = newCover
-        let index = cover.shortDescription.index(cover.shortDescription.startIndex, offsetBy: 2)
-        searchField.text = String(cover.shortDescription[index...])
+        searchField.text = String(cover.shortDescription.dropFirst(2))
         goButton.isEnabled = true
         
         guard manager.itemInHistory(cover: newCover) == nil else { return }
         
         isShowingImage = true
-        let storyBoard = UIStoryboard(name: "Main", bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "image controller") as! ImageViewController
-        
-        nextViewController.cover = newCover
-        navigationController?.navigationBar.barTintColor = .bilibiliPink
-        show(nextViewController, sender: self)
+
+        DispatchQueue.main.async { [weak self] in
+            self?.performSegue(withIdentifier: "showImageVC", sender: self)
+        }
     }
     
     override func viewDidLoad() {
@@ -157,7 +161,6 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? ImageViewController {
-            self.navigationController?.navigationBar.barTintColor = .bilibiliPink
             vc.cover = cover
             view.endEditing(true)
             if let eCover = manager.itemInHistory(cover: cover) {
