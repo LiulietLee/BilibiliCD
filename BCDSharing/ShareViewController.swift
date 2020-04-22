@@ -39,21 +39,26 @@ class ShareViewController: UIViewController {
     }
     
     private func getCover() {
-        guard let cover = BilibiliCover.fromURL(url) else {
-            message.text = "无法解析封面信息呢"
-            disappear()
-            return
-        }
-        self.cover = cover
-        coverInfoProvider.getCoverInfoBy(cover: cover) { info in
-            DispatchQueue.main.async { [weak self] in
-                if let info = info {
-                    self?.updateUIFrom(info: info)
-                } else {
-                    self?.cannotFindVideo()
+        BilibiliCover.fromPasteboard { (newCover) in
+            if let cover = newCover {
+                self.cover = cover
+                self.coverInfoProvider.getCoverInfoBy(cover: cover) { info in
+                    DispatchQueue.main.async { [weak self] in
+                        if let info = info {
+                            self?.updateUIFrom(info: info)
+                        } else {
+                            self?.cannotFindVideo()
+                        }
+                    }
+                }
+            } else {
+                DispatchQueue.main.async { [weak self] in
+                    self?.message.text = "无法解析封面信息呢"
+                    self?.disappear()
                 }
             }
         }
+
     }
     
     private func updateUIFrom(info: Info) {
