@@ -39,7 +39,13 @@ class CoverInfoProvider: AbstractProvider {
             fatalError("cannot generate api url")
         }
 
-        let parameters: [String : Any] = ["type": CoverType.stringType(type: type)!, "nid": nid, "url": info.imageURL, "title": info.title, "author": info.author]
+        let parameters: [String : Any] = [
+            "type": CoverType.stringType(type: type)!,
+            "nid": nid,
+            "url": info.imageURL,
+            "title": info.title,
+            "author": info.author
+        ]
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
 
@@ -72,8 +78,7 @@ class CoverInfoProvider: AbstractProvider {
         guard let url = APIFactory.getCoverAPI(byType: type, andNID: nid, env: env) else {
             fatalError("cannot generate api url")
         }
-        let request = URLRequest(url: url)
-        let task = session.dataTask(with: request) { data, response, error in
+        let task = session.dataTask(with: url) { data, response, error in
             guard error == nil,
                 let content = data,
                 let newInfo = try? JSONDecoder().decode(Info.self, from: content)
