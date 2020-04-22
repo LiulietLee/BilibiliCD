@@ -42,7 +42,7 @@ struct BilibiliCover {
     }
     var url: URL! {
         switch type {
-        case .video, .bvideo:   return URL(string: "https://www.bilibili.com/video/\(shortDescription)/")
+        case .video, .bvideo: return URL(string: "https://www.bilibili.com/video/\(shortDescription)/")
         case .live:    return URL(string: "https://live.bilibili.com/\(number)")
         case .article: return URL(string: "https://www.bilibili.com/read/\(shortDescription)")
         default:       fatalError("todo \(type)")
@@ -95,32 +95,45 @@ extension BilibiliCover: Equatable {
     }
 }
 
+import Alamofire
+
 extension BilibiliCover {
     static let avNumberMatcher = try! NSRegularExpression(pattern: "(?<=av)\\d+")
     static let bvidMatcher     = try! NSRegularExpression(pattern: "(?<=BV)[A-Za-z0-9]+")
     static let cvNumberMatcher = try! NSRegularExpression(pattern: "(?<=cv)\\d+")
     static let lvNumberMatcher = try! NSRegularExpression(pattern: "(?<=\\/)\\d+")
+
+    typealias Handler = (BilibiliCover?) -> Void
     
-    static func fromPasteboard() -> BilibiliCover? {
-        guard let urlString = UIPasteboard.general.string else { return nil }
-        return BilibiliCover.fromURL(urlString)
+    static func fromPasteboard(then handle: @escaping Handler) {
+        guard let urlString = UIPasteboard.general.string
+            else { return handle(nil) }
+        BilibiliCover.fromURL(urlString, then: handle)
     }
     
-    static func fromURL(_ urlString: String) -> BilibiliCover? {
+    static func fromURL(_ urlString: String, then handle: @escaping Handler) {
         if let avNumber = avNumberMatcher.numberFound(in: urlString) {
-            return BilibiliCover(id: avNumber, type: .video)
+            handle(BilibiliCover(id: avNumber, type: .video))
         } else if let cvNumber = cvNumberMatcher.numberFound(in: urlString) {
-            return BilibiliCover(id: cvNumber, type: .article)
+            handle(BilibiliCover(id: cvNumber, type: .article))
         } else if urlString.contains("live.bilibili")
             , let number = lvNumberMatcher.numberFound(in: urlString) {
-            return BilibiliCover(id: number, type: .live)
+            handle(BilibiliCover(id: number, type: .live))
         } else if let matchNSRange = bvidMatcher.firstMatch(
                 in: urlString,
                 range: NSRange(urlString.startIndex..<urlString.endIndex, in: urlString)
             )?.range,
             let matchRange = Range(matchNSRange, in: urlString) {
-            return BilibiliCover(bvid: String(urlString[matchRange]))
-        } else { return nil }
+            handle(BilibiliCover(bvid: String(urlString[matchRange])))
+        } else if urlString.contains("b23.tv") {
+            Session.noRedirect.request(urlString).response { res in
+                if let location = res.response?.allHeaderFields["Location"] as? String {
+                    fromURL(location, then: handle)
+                } else {
+                    handle(nil)
+                }
+            }
+        } else { handle(nil) }
     }
 }
 
