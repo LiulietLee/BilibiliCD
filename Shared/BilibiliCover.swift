@@ -106,6 +106,21 @@ extension BilibiliCover {
         return BilibiliCover.fromURL(urlString)
     }
     
+    static func fromPasteboard(_ completion: @escaping (BilibiliCover?) ->()) {
+        guard let urlString = UIPasteboard.general.string else {
+            completion(nil)
+            return
+        }
+        if let cover = BilibiliCover.fromURL(urlString) {
+            completion(cover)
+        } else {
+            _ = ShortURLHandle(urlString) { (originURL) in
+                let cover = BilibiliCover.fromURL(originURL ?? "")
+                completion(cover)
+            }
+        }
+    }
+    
     static func fromURL(_ urlString: String) -> BilibiliCover? {
         if let avNumber = avNumberMatcher.numberFound(in: urlString) {
             return BilibiliCover(id: avNumber, type: .video)
@@ -121,6 +136,33 @@ extension BilibiliCover {
             let matchRange = Range(matchNSRange, in: urlString) {
             return BilibiliCover(bvid: String(urlString[matchRange]))
         } else { return nil }
+    }
+}
+
+class ShortURLHandle: NSObject, URLSessionTaskDelegate {
+    var completion: (String?) -> Void
+    
+    init(_ urlString: String, _ completion: @escaping (String?) -> Void) {
+        self.completion = completion
+        super.init()
+        self.redirect(urlString)
+    }
+    
+    func redirect(_ urlString: String) {
+        guard let url = URL(string: urlString) else {
+            completion(nil)
+            return
+        }
+        let config = URLSessionConfiguration.default
+        let delegate = self
+        let session = URLSession(configuration: config, delegate: delegate, delegateQueue: nil)
+        let dataTask = session.dataTask(with: url)
+        dataTask.resume()
+    }
+    
+    func urlSession(_ session: URLSession, task: URLSessionTask, willPerformHTTPRedirection response: HTTPURLResponse, newRequest request: URLRequest, completionHandler: @escaping (URLRequest?) -> Void) {
+        let originURL = response.allHeaderFields["Location"] as? String
+        self.completion(originURL)
     }
 }
 
