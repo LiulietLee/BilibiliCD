@@ -68,7 +68,7 @@ class CommentProvider: AbstractProvider {
             return
         }
         
-        session.dataTask(with: URLRequest(url: url)) { (data, response, error) in
+        session.dataTask(with: url) { (data, response, error) in
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
 
@@ -83,7 +83,8 @@ class CommentProvider: AbstractProvider {
                 } else {
                     self.comments.append(contentsOf: result.data)
                 }
-                
+
+                #warning("TODO: really?")
                 while self.buttonStatus.count < self.comments.count {
                     self.buttonStatus.append((false, false))
                 }
@@ -104,7 +105,7 @@ class CommentProvider: AbstractProvider {
             return
         }
         
-        session.dataTask(with: URLRequest(url: url)) { (data, response, error) in
+        session.dataTask(with: url) { (data, response, error) in
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
             
@@ -150,10 +151,10 @@ class CommentProvider: AbstractProvider {
         buttonStatus[i].liked = !buttonStatus[i].liked
         let liked = buttonStatus[i].liked
         comments[i].suki += liked ? 1 : -1
-        guard let url = APIFactory.getLikeCommentAPI(withCommentID: comments[i].id, cancel: !liked, env: env) else {
-            return
-        }
-        session.dataTask(with: URLRequest(url: url)) { (_, _, _) in
+        guard let url = APIFactory
+            .getLikeCommentAPI(withCommentID: comments[i].id, cancel: !liked, env: env)
+            else { return }
+        session.dataTask(with: url) { (_, _, _) in
             completion()
         }.resume()
     }
@@ -162,10 +163,10 @@ class CommentProvider: AbstractProvider {
         buttonStatus[i].disliked = !buttonStatus[i].disliked
         let disliked = buttonStatus[i].disliked
         comments[i].kirai += disliked ? 1 : -1
-        guard let url = APIFactory.getDislikeCommentAPI(withCommentID: comments[i].id, cancel: !disliked, env: env) else {
-            return
-        }
-        session.dataTask(with: URLRequest(url: url)) { (_, _, _) in
+        guard let url = APIFactory
+            .getDislikeCommentAPI(withCommentID: comments[i].id, cancel: !disliked, env: env)
+            else { return }
+        session.dataTask(with: url) { (_, _, _) in
             completion()
         }.resume()
     }

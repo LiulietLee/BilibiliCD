@@ -113,11 +113,11 @@
 		A9956396813C99705AFF8D75 /* libPods-BCD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BCEF4F0F637FFBAB56600BC /* libPods-BCD.a */; };
 		D21CDCBD242BE32F005EB083 /* ViewAnimator in Frameworks */ = {isa = PBXBuildFile; productRef = D21CDCBC242BE32F005EB083 /* ViewAnimator */; };
 		D21CDCC0242BE363005EB083 /* Eureka in Frameworks */ = {isa = PBXBuildFile; productRef = D21CDCBF242BE363005EB083 /* Eureka */; };
-		D25A63CC242DEBCC00F3B818 /* BilibiliKitDYLIB in Frameworks */ = {isa = PBXBuildFile; productRef = D25A63CB242DEBCC00F3B818 /* BilibiliKitDYLIB */; };
-		D25A63CD242DEBCC00F3B818 /* BilibiliKitDYLIB in Embed Frameworks */ = {isa = PBXBuildFile; productRef = D25A63CB242DEBCC00F3B818 /* BilibiliKitDYLIB */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		D25A63CF242DEBD600F3B818 /* BilibiliKitDYLIB in Frameworks */ = {isa = PBXBuildFile; productRef = D25A63CE242DEBD600F3B818 /* BilibiliKitDYLIB */; };
-		D25A63D0242DEBD600F3B818 /* BilibiliKitDYLIB in Embed Frameworks */ = {isa = PBXBuildFile; productRef = D25A63CE242DEBD600F3B818 /* BilibiliKitDYLIB */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		D25A63D3242DEC3200F3B818 /* LLDialog in Frameworks */ = {isa = PBXBuildFile; productRef = D25A63D2242DEC3200F3B818 /* LLDialog */; };
+		D2AA4ECF245043BF0064104C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D2AA4ECE245043BF0064104C /* Alamofire */; };
+		D2AA4ED1245043D60064104C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D2AA4ED0245043D60064104C /* Alamofire */; };
+		D2AA4ED3245044E30064104C /* BilibiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = D2AA4ED2245044E30064104C /* BilibiliKit */; };
+		D2AA4ED5245044EF0064104C /* BilibiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = D2AA4ED4245044EF0064104C /* BilibiliKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,7 +148,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D25A63CD242DEBCC00F3B818 /* BilibiliKitDYLIB in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,7 +158,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D25A63D0242DEBD600F3B818 /* BilibiliKitDYLIB in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,7 +265,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D25A63CF242DEBD600F3B818 /* BilibiliKitDYLIB in Frameworks */,
+				D2AA4ED1245043D60064104C /* Alamofire in Frameworks */,
+				D2AA4ED3245044E30064104C /* BilibiliKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,8 +275,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D25A63D3242DEC3200F3B818 /* LLDialog in Frameworks */,
-				D25A63CC242DEBCC00F3B818 /* BilibiliKitDYLIB in Frameworks */,
 				A9956396813C99705AFF8D75 /* libPods-BCD.a in Frameworks */,
+				D2AA4ECF245043BF0064104C /* Alamofire in Frameworks */,
+				D2AA4ED5245044EF0064104C /* BilibiliKit in Frameworks */,
 				D21CDCBD242BE32F005EB083 /* ViewAnimator in Frameworks */,
 				D21CDCC0242BE363005EB083 /* Eureka in Frameworks */,
 			);
@@ -550,7 +550,8 @@
 			);
 			name = BCDSharing;
 			packageProductDependencies = (
-				D25A63CE242DEBD600F3B818 /* BilibiliKitDYLIB */,
+				D2AA4ED0245043D60064104C /* Alamofire */,
+				D2AA4ED2245044E30064104C /* BilibiliKit */,
 			);
 			productName = BCDSharing;
 			productReference = 4F338F5420DD00410014226C /* BCDSharing.appex */;
@@ -576,8 +577,9 @@
 			packageProductDependencies = (
 				D21CDCBC242BE32F005EB083 /* ViewAnimator */,
 				D21CDCBF242BE363005EB083 /* Eureka */,
-				D25A63CB242DEBCC00F3B818 /* BilibiliKitDYLIB */,
 				D25A63D2242DEC3200F3B818 /* LLDialog */,
+				D2AA4ECE245043BF0064104C /* Alamofire */,
+				D2AA4ED4245044EF0064104C /* BilibiliKit */,
 			);
 			productName = BCD;
 			productReference = 4FE8FF3A1EF4FC0600D31840 /* BilibiliCD.app */;
@@ -643,6 +645,7 @@
 				D21CDCBB242BE32F005EB083 /* XCRemoteSwiftPackageReference "ViewAnimator" */,
 				D21CDCBE242BE363005EB083 /* XCRemoteSwiftPackageReference "Eureka" */,
 				D25A63D1242DEC3200F3B818 /* XCRemoteSwiftPackageReference "LLDialog" */,
+				D2AA4ECD245043BF0064104C /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 4FE8FF3B1EF4FC0600D31840 /* Products */;
 			projectDirPath = "";
@@ -1162,6 +1165,14 @@
 				kind = branch;
 			};
 		};
+		D2AA4ECD245043BF0064104C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1175,20 +1186,30 @@
 			package = D21CDCBE242BE363005EB083 /* XCRemoteSwiftPackageReference "Eureka" */;
 			productName = Eureka;
 		};
-		D25A63CB242DEBCC00F3B818 /* BilibiliKitDYLIB */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D21CDCB3242BE314005EB083 /* XCRemoteSwiftPackageReference "BilibiliKit" */;
-			productName = BilibiliKitDYLIB;
-		};
-		D25A63CE242DEBD600F3B818 /* BilibiliKitDYLIB */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D21CDCB3242BE314005EB083 /* XCRemoteSwiftPackageReference "BilibiliKit" */;
-			productName = BilibiliKitDYLIB;
-		};
 		D25A63D2242DEC3200F3B818 /* LLDialog */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D25A63D1242DEC3200F3B818 /* XCRemoteSwiftPackageReference "LLDialog" */;
 			productName = LLDialog;
+		};
+		D2AA4ECE245043BF0064104C /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D2AA4ECD245043BF0064104C /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		D2AA4ED0245043D60064104C /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D2AA4ECD245043BF0064104C /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		D2AA4ED2245044E30064104C /* BilibiliKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D21CDCB3242BE314005EB083 /* XCRemoteSwiftPackageReference "BilibiliKit" */;
+			productName = BilibiliKit;
+		};
+		D2AA4ED4245044EF0064104C /* BilibiliKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D21CDCB3242BE314005EB083 /* XCRemoteSwiftPackageReference "BilibiliKit" */;
+			productName = BilibiliKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 

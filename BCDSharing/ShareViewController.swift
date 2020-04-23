@@ -26,10 +26,14 @@ class ShareViewController: UIViewController {
     override func viewDidLoad() {
         frameView.layer.masksToBounds = true
         frameView.layer.cornerRadius = 10.0
-        let extensionItem = extensionContext?.inputItems[0] as! NSExtensionItem
-        let contentTypeURL = kUTTypeURL as String
-        for attachment in extensionItem.attachments! where attachment.isURL {
-            attachment.loadItem(forTypeIdentifier: contentTypeURL) {
+
+        let attachments = (extensionContext?.inputItems.first as? NSExtensionItem)?
+            .attachments?.filter { $0.isURL } ?? []
+        if attachments.isEmpty {
+            return cannotFindVideo()
+        }
+        for attachment in attachments {
+            attachment.loadItem(forTypeIdentifier: kUTTypeURL as String) {
                 (result, error) in
                 let url = result as! URL
                 self.url = url.absoluteString
@@ -39,16 +43,16 @@ class ShareViewController: UIViewController {
     }
     
     private func getCover() {
-        guard let cover = BilibiliCover.fromURL(url) else {
-            message.text = "无法解析封面信息呢"
-            disappear()
-            return
-        }
-        self.cover = cover
-        coverInfoProvider.getCoverInfoBy(cover: cover) { info in
-            DispatchQueue.main.async { [weak self] in
+        BilibiliCover.fromURL(url) { [weak self] (cover) in
+            guard let cover = cover else {
+                self?.disappear(because: "无法解析封面信息呢"); return
+            }
+            self?.cover = cover
+            self?.coverInfoProvider.getCoverInfoBy(cover: cover) { info in
                 if let info = info {
-                    self?.updateUIFrom(info: info)
+                    DispatchQueue.main.async {
+                        self?.updateUIFrom(info: info)
+                    }
                 } else {
                     self?.cannotFindVideo()
                 }
@@ -61,7 +65,8 @@ class ShareViewController: UIViewController {
         author = info.author
         url = info.imageURL
         
-        assetProvider.getImage(fromUrlPath: url) { img in
+        assetProvider.getImage(fromUrlPath: url) { [weak self] img in
+            guard let self = self else { return }
             if let image = img {
                 self.downloadImage(image)
                 CacheManager().addNewDraft(
@@ -71,28 +76,25 @@ class ShareViewController: UIViewController {
                     author: self.author,
                     image: image
                 )
-                DispatchQueue.main.async { [weak self] in
-                    self?.message.text = "封面已保存"
-                    self?.disappear()
-                }
+                self.disappear(because: "封面已保存")
             } else {
-                DispatchQueue.main.async { [weak self] in
-                    self?.cannotFindVideo()
-                }
+                self.cannotFindVideo()
             }
         }
     }
     
     private func cannotFindVideo() {
-        message.text = "找不到封面呢"
-        disappear()
+        disappear(because: "找不到封面呢")
     }
     
     @IBAction func disappearButtonTapped() {
         extensionContext!.completeRequest(returningItems: nil)
     }
     
-    private func disappear() {
+    private func disappear(because reason: String) {
+        DispatchQueue.main.async { [weak self] in
+            self?.message.text = reason
+        }
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1),
                                       execute: disappearButtonTapped)
     }

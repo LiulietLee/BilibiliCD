@@ -12,5 +12,11 @@ class AbstractProvider {
     
     internal let session = URLSession.shared
     internal let env = Environment.prod
-    
+
+}
+
+import Alamofire
+
+extension Session {
+    static let noRedirect = Session(redirectHandler: Redirector(behavior: .doNotFollow))
 }

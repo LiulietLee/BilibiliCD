@@ -82,21 +82,21 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     }
 
     @objc private func getURLFromPasteboard() {
-        guard !isShowingImage,
-            let newCover = BilibiliCover.fromPasteboard(),
-            cover != newCover
-            else { return }
-        currentCoverType = newCover.type
-        cover = newCover
-        searchField.text = String(cover.shortDescription.dropFirst(2))
-        goButton.isEnabled = true
-        
-        guard manager.itemInHistory(cover: newCover) == nil else { return }
-        
-        isShowingImage = true
-
-        DispatchQueue.main.async { [weak self] in
-            self?.performSegue(withIdentifier: "showImageVC", sender: self)
+        BilibiliCover.fromPasteboard { [weak self] (newCover) in
+            guard self != nil,
+                let newCover = newCover,
+                self!.cover != newCover
+                else { return }
+            DispatchQueue.main.async {
+                guard let self = self, !isShowingImage else { return }
+                self.currentCoverType = newCover.type
+                self.cover = newCover
+                self.searchField.text = String(newCover.shortDescription.dropFirst(2))
+                self.goButton.isEnabled = true
+                guard self.manager.itemInHistory(cover: newCover) == nil else { return }
+                isShowingImage = true
+                self.performSegue(withIdentifier: "showImageVC", sender: self)
+            }
         }
     }
     

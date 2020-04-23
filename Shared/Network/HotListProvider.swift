@@ -15,8 +15,7 @@ class HotListProvider: AbstractProvider {
             completion(nil)
             return
         }
-        let request = URLRequest(url: url)
-        let task = session.dataTask(with: request) { (data, response, error) in
+        let task = session.dataTask(with: url) { (data, response, error) in
             if error == nil,
                 let content = data,
                 let list = try? JSONDecoder().decode([Info].self, from: content) {
