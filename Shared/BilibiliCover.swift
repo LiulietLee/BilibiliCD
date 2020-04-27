@@ -125,7 +125,7 @@ extension BilibiliCover {
             )?.range,
             let matchRange = Range(matchNSRange, in: urlString) {
             handle(BilibiliCover(bvid: String(urlString[matchRange])))
-        } else if urlString.contains("b23.tv") {
+        } else if urlString.contains("b23.tv") || urlString.contains("b.acg.tv") {
             Session.noRedirect.request(urlString).response { res in
                 if let location = res.response?.allHeaderFields["Location"] as? String {
                     fromURL(location, then: handle)
