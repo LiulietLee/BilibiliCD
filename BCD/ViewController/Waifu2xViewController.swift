@@ -22,7 +22,7 @@ class Waifu2xViewController: UIViewController, ScalingViewControllerDelegate, UI
     
     private var protoc = [0, 2, 1] // protoc = [次元, 降噪, 放大]
     private let header = ["次元", "降噪", "放大"]
-    private let footer = ["次元壁不可破！", "这是选降噪力度的，想放大的话建议用 High 或者 Lunatic", ""]
+    private let footer = ["次元壁不可破！", "这是选降噪力度的，建议用强度大一点的", ""]
     private let list = [
         ["二次元", "三次元"],
         ["None", "Low", "Medium", "High", "Lunatic"],
@@ -46,13 +46,6 @@ class Waifu2xViewController: UIViewController, ScalingViewControllerDelegate, UI
         }
         
         print("image width: \(originImage!.size.width), height: \(originImage!.size.height)")
-        
-        LLDialog()
-            .set(title: "OHHHHHH")
-            .set(message: "突然发现 waifu2x-ios 炸了，现在暂时不能用了，等修好了之后会再开放的。")
-            .setPositiveButton(withTitle: "哦", target: self, action: #selector(self.goBack))
-            .show()
-
     }
     
     @objc func goBack() {

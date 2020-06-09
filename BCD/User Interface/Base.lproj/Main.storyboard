@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xAa-In-jj9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xAa-In-jj9">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -373,7 +373,7 @@
                                         <attributedString key="attributedText">
                                             <fragment content="Citation">
                                                 <attributes>
-                                                    <font key="NSFont" metaFont="system" size="14"/>
+                                                    <font key="NSFont" metaFont="menu" size="14"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
@@ -1345,7 +1345,7 @@
             </objects>
             <point key="canvasLocation" x="2782.5" y="-675"/>
         </scene>
-        <!--无损放大（beta）-->
+        <!--无损放大-->
         <scene sceneID="mot-uj-qLi">
             <objects>
                 <viewController id="bBP-L5-6UR" customClass="Waifu2xViewController" customModule="BilibiliCD" customModuleProvider="target" sceneMemberID="viewController">
@@ -1402,7 +1402,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="无损放大（beta）" id="ab2-Wo-toz">
+                    <navigationItem key="navigationItem" title="无损放大" id="ab2-Wo-toz">
                         <barButtonItem key="rightBarButtonItem" image="ic_help_outline" id="sUc-Is-DP5">
                             <connections>
                                 <action selector="openTut" destination="bBP-L5-6UR" id="D6I-gL-KOa"/>

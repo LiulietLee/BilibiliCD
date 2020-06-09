@@ -19,7 +19,7 @@ class APIFactory {
         let builder = URLBuilder().set(scheme: "http")
         switch env {
         case .prod:
-            builder.set(host: "45.32.54.201")
+            builder.set(host: "167.179.114.167")
         default: // .dev
             builder.set(host: "127.0.0.1").set(port: 8000)
         }

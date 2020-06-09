@@ -84,7 +84,6 @@ class CommentProvider: AbstractProvider {
                     self.comments.append(contentsOf: result.data)
                 }
 
-                #warning("TODO: really?")
                 while self.buttonStatus.count < self.comments.count {
                     self.buttonStatus.append((false, false))
                 }
@@ -189,7 +188,7 @@ extension CommentProvider {
         session.dataTask(with: request) { data, response, error in
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
-
+            
             if error == nil,
                 let content = data,
                 let result = try? decoder.decode(MessageResponse<T>.self, from: content) {

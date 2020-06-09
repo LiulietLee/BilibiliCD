@@ -17,17 +17,9 @@ class ScalingViewController: UIViewController {
     
     var image = UIImage()
     weak var delegate: ScalingViewControllerDelegate?
-    var protoc = [0, 2, 1]
-    private let provider = CoverInfoProvider()
-    private let selectNoiseModel: [[Model]] = [
-        [.none, .anime_noise0, .anime_noise1, .anime_noise2, .anime_noise3],
-        [.none, .photo_noise0, .photo_noise1, .photo_noise2, .photo_noise3]
-    ]
-    private let selectScaleModel: [[Model]] = [
-        [.none, .anime_scale2x],
-        [.none, .photo_scale2x]
-    ]
-
+    var protoc = [0, 2, 1] // protoc = [次元, 降噪, 放大]
+    var model: Model?
+    
     @IBOutlet weak var sizeLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView! {
@@ -45,11 +37,12 @@ class ScalingViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if protoc[1] == 0 && protoc[2] == 0 {
+        if let model = modelSwitch(protoc: protoc) {
+            self.model = model
+            scaleImage()
+        } else {
             self.delegate?.scaleSucceed(scaledImage: image)
             self.dismiss(animated: true)
-        } else {
-            scaleImage()
         }
     }
     
@@ -59,32 +52,85 @@ class ScalingViewController: UIViewController {
         
         background.async { [weak self] in
             guard let self = self else { return }
-            var image_noise = self.image
-            if self.protoc[1] != 0 {
-                image_noise = (self.image.run(model: self.selectNoiseModel[self.protoc[0]][self.protoc[1]])?.reload())!
-            }
         
-            if self.protoc[2] != 0 {
-                DispatchQueue.main.async { [weak self] in
-                    background.async { [weak self] in
-                        guard let self = self else { return }
-                        let image_scale = image_noise.scale2x().reload()?.run(model: self.selectNoiseModel[self.protoc[0]][self.protoc[2]])
-                        let end = DispatchTime.now()
-                        let nanotime = end.uptimeNanoseconds - start.uptimeNanoseconds
-                        let timeInterval = Double(nanotime) / 1_000_000_000
-                        print("time: \(timeInterval)")
-                        DispatchQueue.main.async { [weak self] in
-                            self?.delegate?.scaleSucceed(scaledImage: image_scale!)
-                            self?.dismiss(animated: true)
-                        }
-                    }
+            let image_scale = Waifu2x.run(self.image, model: self.model!)?.reload()
+            let end = DispatchTime.now()
+            let nanotime = end.uptimeNanoseconds - start.uptimeNanoseconds
+            let timeInterval = Double(nanotime) / 1_000_000_000
+            print("time: \(timeInterval)")
+            DispatchQueue.main.async { [weak self] in
+                self?.delegate?.scaleSucceed(scaledImage: image_scale!)
+                self?.dismiss(animated: true)
+            }
+        }
+    }
+}
+
+extension ScalingViewController {
+    func modelSwitch(protoc: [Int]) -> Model? {
+        if protoc[0] == 0 {     // 二次元
+            if protoc[2] == 0 { // 不放大
+                switch protoc[1] {
+                case 0:     return nil
+                case 1:     return .anime_noise0
+                case 2:     return .anime_noise1
+                case 3:     return .anime_noise2
+                default:    return .anime_noise3
                 }
-            } else {
-                DispatchQueue.main.async { [weak self] in
-                    self?.delegate?.scaleSucceed(scaledImage: image_noise)
-                    self?.dismiss(animated: true)
+            } else {            // 放大
+                switch protoc[1] {
+                case 0:     return .anime_scale2x
+                case 1:     return .anime_noise0_scale2x
+                case 2:     return .anime_noise1_scale2x
+                case 3:     return .anime_noise2_scale2x
+                default:    return .anime_noise3_scale2x
+                }
+            }
+        } else {                // 三次元
+            if protoc[2] == 0 { // 不放大
+                switch protoc[1] {
+                case 0:     return nil
+                case 1:     return .photo_noise0
+                case 2:     return .photo_noise1
+                case 3:     return .photo_noise2
+                default:    return .photo_noise3
+                }
+            } else {            // 放大
+                switch protoc[1] {
+                case 0:     return .photo_scale2x
+                case 1:     return .photo_noise0_scale2x
+                case 2:     return .photo_noise1_scale2x
+                case 3:     return .photo_noise2_scale2x
+                default:    return .photo_noise3_scale2x
                 }
             }
         }
     }
+}
+
+extension UIImage {
+    
+    /// Workaround: Apply two ML filters sequently will break the image
+    ///
+    /// - Returns: the reloaded image
+    public func reload(jpg: Bool = false, quality: CGFloat = 0.9) -> UIImage? {
+        var tmpfile: URL
+        if jpg {
+            tmpfile = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("temp.jpg")
+        } else {
+            tmpfile = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("temp.png")
+        }
+        let fm = FileManager.default
+        if fm.fileExists(atPath: tmpfile.path) {
+            try? fm.removeItem(at: tmpfile)
+        }
+        if jpg {
+            try! self.jpegData(compressionQuality: quality)?.write(to: tmpfile)
+        } else {
+            try! self.pngData()?.write(to: tmpfile)
+        }
+        let img = UIImage(contentsOfFile: tmpfile.path)
+        return img
+    }
+    
 }
