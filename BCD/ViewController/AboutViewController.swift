@@ -14,7 +14,6 @@ class AboutViewController: UITableViewController {
     @IBOutlet weak var menu: UIBarButtonItem!
     private let developers = [
         "https://space.bilibili.com/4056345/#!/",
-        "https://github.com/Haut-Stone",
         "https://apollozhu.github.io/"
     ]
     

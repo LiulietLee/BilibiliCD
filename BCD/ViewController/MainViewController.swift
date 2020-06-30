@@ -116,8 +116,10 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
         
-        promptToShowAppTutorialIfNeeded()
-        promptToShowAutoHidTutorialIfNeeded()
+        if !pasteBoardTipWillAppear() {
+            promptToShowAppTutorialIfNeeded()
+            promptToShowAutoHidTutorialIfNeeded()
+        }
     }
         
     @IBAction func switchCoverType() {
@@ -146,6 +148,21 @@ class MainViewController: UIViewController, UITextFieldDelegate {
             .setNegativeButton(withTitle: "不想")
             .setPositiveButton(withTitle: "好的", target: self, action: #selector(showAppTutorial))
             .show()
+    }
+    
+    private func pasteBoardTipWillAppear() -> Bool {
+        guard needToShowPasteBoardTip else { return false }
+        LLDialog()
+            .set(title: "关于剪贴板的使用")
+            .set(message: "每当打开 Bili Cita 首页的时候，App 会自动扫描剪贴板的内容，这么做的目的是找到剪贴板中的 BV 号并自动进行搜索。App 不会将剪贴板的内容存储或上传到任何地方。")
+            .setPositiveButton(withTitle: "好的", target: self, action: #selector(pastBoardTipDidDisappear))
+            .show()
+        return true
+    }
+    
+    @objc private func pastBoardTipDidDisappear() {
+        promptToShowAppTutorialIfNeeded()
+        promptToShowAutoHidTutorialIfNeeded()
     }
     
     @objc private func showAutoHidTutorial() {

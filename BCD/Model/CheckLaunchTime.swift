@@ -35,3 +35,7 @@ public var needToDisplayAutoHideTutorial: Bool {
 public var needToSetSaveOriginTrue: Bool {
     return never("isNeedToSetSaveOriginTrue")
 }
+
+public var needToShowPasteBoardTip: Bool {
+    return never("needToShowPastBoardTip")
+}
