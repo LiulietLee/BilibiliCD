@@ -15,7 +15,7 @@
         "repositoryURL": "https://github.com/ApolloZhu/BilibiliKit.git",
         "state": {
           "branch": "master",
-          "revision": "0b4a247ebd1414854703fba50064fc95292d4747",
+          "revision": "c83521734715a3274155500e55a75a364da5cf09",
           "version": null
         }
       },
@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/xmartlabs/Eureka.git",
         "state": {
           "branch": null,
-          "revision": "9a30ae436ec9e9fcb8b3eb1bdfd95e95989d6ca5",
-          "version": "5.2.1"
+          "revision": "ae025915335f02e7277ed5446b4de002bab05866",
+          "version": "5.3.1"
         }
       },
       {

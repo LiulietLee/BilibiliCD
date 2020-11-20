@@ -35,7 +35,8 @@ class HisTutViewController: UIViewController {
         back.setImage(#imageLiteral(resourceName: "ic_arrow_downward"), for: .normal)
         back.addTarget(self, action: #selector(goBack), for: .touchUpInside)
         if #available(iOS 13.4, *) {
-            back.isPointerInteractionEnabled = true
+            // TODO: - 这是个啥
+//            back.isPointerInteractionEnabled = true
         }
 
         view.addSubview(webView)
