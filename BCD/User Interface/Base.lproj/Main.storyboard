@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xAa-In-jj9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17700" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xAa-In-jj9">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -260,7 +260,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isPointerInteractionEnabled" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isEnablingPointerInteraction" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="coverView" destination="CTr-1J-z2U" id="iUj-2p-YBY"/>
@@ -597,7 +597,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="rippleLayerColor">
                                                 <color key="value" red="0.99692672490000001" green="0.48709040879999999" blue="0.65352439880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isPointerInteractionEnabled" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isEnablingPointerInteraction" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="uMu-2d-WQe" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="pFk-eZ-ib2"/>
@@ -626,7 +626,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="rippleLayerColor">
                                                 <color key="value" red="0.40090259909999998" green="0.80100601910000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isPointerInteractionEnabled" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isEnablingPointerInteraction" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="Enq-T1-832" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="QYP-Sc-lmq"/>
@@ -655,7 +655,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="rippleLayerColor">
                                                 <color key="value" red="0.074509803921568626" green="0.47843137254901957" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isPointerInteractionEnabled" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isEnablingPointerInteraction" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="Vms-Iw-Gtt" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="nQf-1n-9x3"/>
@@ -684,7 +684,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="rippleLayerColor">
                                                 <color key="value" red="0.79607843140000001" green="0.49803921569999998" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isPointerInteractionEnabled" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isEnablingPointerInteraction" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="FNs-da-MkX" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="fr6-53-ai4"/>
@@ -713,7 +713,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="rippleLayerColor">
                                                 <color key="value" red="0.8176116943359375" green="0.73280304670333862" blue="0.74446588754653931" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isPointerInteractionEnabled" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isEnablingPointerInteraction" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="NFI-Ou-sCf" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="xkI-Je-9lR"/>
@@ -742,7 +742,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="rippleLayerColor">
                                                 <color key="value" red="0.38015270233154297" green="0.38382208347320557" blue="0.41283655166625977" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isPointerInteractionEnabled" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isEnablingPointerInteraction" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="dzb-zd-eId" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="rMX-bf-Ig1"/>
@@ -870,7 +870,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isPointerInteractionEnabled" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isEnablingPointerInteraction" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="186" id="OeM-fR-tBM" customClass="MKTableViewCell" customModule="MaterialKit">
@@ -937,7 +937,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isPointerInteractionEnabled" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isEnablingPointerInteraction" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="186" id="2WN-IM-W0V" customClass="MKTableViewCell" customModule="MaterialKit">
@@ -1004,7 +1004,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isPointerInteractionEnabled" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isEnablingPointerInteraction" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="YeT-dB-PfP" kind="show" id="6M8-CU-oLi"/>
@@ -1092,7 +1092,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isPointerInteractionEnabled" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isEnablingPointerInteraction" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="authorLabel" destination="qoG-FP-ZRX" id="neH-dR-zT3"/>
@@ -1222,7 +1222,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isPointerInteractionEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isEnablingPointerInteraction" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </tableViewCell>
                         </prototypes>
@@ -1303,7 +1303,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isPointerInteractionEnabled" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isEnablingPointerInteraction" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </tableViewCell>
                                 </prototypes>
@@ -1553,7 +1553,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isPointerInteractionEnabled" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isEnablingPointerInteraction" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="content" destination="hCP-My-fYF" id="qiQ-IK-qU2"/>

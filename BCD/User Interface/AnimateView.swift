@@ -32,7 +32,7 @@ extension UIView {
 
     @available(iOS 13.4, *)
     @IBInspectable
-    public var isPointerInteractionEnabled: Bool {
+    public var isEnablingPointerInteraction: Bool {
         get {
             return interactions.contains { $0 is UIPointerInteraction }
         }

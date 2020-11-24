@@ -53,7 +53,7 @@ class SettingViewController: FormViewController {
                 }
             }.cellSetup { (cell, buttonRow) in
                 if #available(iOS 13.4, *) {
-                    cell.isPointerInteractionEnabled = true
+                    cell.isEnablingPointerInteraction = true
                 }
             }
             <<< ButtonRow() { row in
@@ -68,7 +68,7 @@ class SettingViewController: FormViewController {
                 }.cellSetup { (cell, buttonRow) in
                     cell.tintColor = .systemRed
                     if #available(iOS 13.4, *) {
-                        cell.isPointerInteractionEnabled = true
+                        cell.isEnablingPointerInteraction = true
                     }
                 }
             }
@@ -86,7 +86,7 @@ class SettingViewController: FormViewController {
                 }
             }.cellSetup { (cell, buttonRow) in
                 if #available(iOS 13.4, *) {
-                    cell.isPointerInteractionEnabled = true
+                    cell.isEnablingPointerInteraction = true
                 }
             }
     }
