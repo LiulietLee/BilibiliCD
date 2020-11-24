@@ -227,13 +227,10 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     @available(iOS, deprecated: 13.0)
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let item = history[indexPath.row]
-        var hideString = "隐藏"
-        if item.isHidden {
-            if !isShowingFullHistory {
-                return []
-            }
-            hideString = "显示"
+        if item.isHidden && !isShowingFullHistory {
+            return []
         }
+        let hideString = item.isHidden ? "显示" : "隐藏"
         let hide = UITableViewRowAction(style: .normal, title: hideString) {
             [weak self] action, index in
             self?.toggleIsHidden(for: index)
