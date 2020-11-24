@@ -131,6 +131,8 @@
 		5290FA032051B0DF00A1AAA4 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5290FA022051B0DF00A1AAA4 /* ImageSaver.swift */; };
 		52E4E47D1F76C6A9008EF09C /* BilibiliCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E4E47C1F76C6A9008EF09C /* BilibiliCover.swift */; };
 		A9956396813C99705AFF8D75 /* libPods-BCD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BCEF4F0F637FFBAB56600BC /* libPods-BCD.a */; };
+		D2285CAD256D644200A633CF /* MaterialKit in Frameworks */ = {isa = PBXBuildFile; productRef = D2285CAC256D644200A633CF /* MaterialKit */; };
+		D2285CB2256D647400A633CF /* MaterialKit in Frameworks */ = {isa = PBXBuildFile; productRef = D2285CB1256D647400A633CF /* MaterialKit */; };
 		D2AA4ED1245043D60064104C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D2AA4ED0245043D60064104C /* Alamofire */; };
 /* End PBXBuildFile section */
 
@@ -296,6 +298,7 @@
 			files = (
 				D2AA4ED1245043D60064104C /* Alamofire in Frameworks */,
 				4FEAF526254D243300E4CBD1 /* BilibiliKit in Frameworks */,
+				D2285CB2256D647400A633CF /* MaterialKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +309,7 @@
 				4FA8DA25254D1E1800F0CEC4 /* LLDialog in Frameworks */,
 				A9956396813C99705AFF8D75 /* libPods-BCD.a in Frameworks */,
 				4FA8DA27254D1E1F00F0CEC4 /* Alamofire in Frameworks */,
+				D2285CAD256D644200A633CF /* MaterialKit in Frameworks */,
 				4FEAF524254D242000E4CBD1 /* BilibiliKit in Frameworks */,
 				4FA8DA21254D1E1000F0CEC4 /* ViewAnimator in Frameworks */,
 				4FA8DA23254D1E1400F0CEC4 /* Eureka in Frameworks */,
@@ -611,6 +615,7 @@
 			packageProductDependencies = (
 				D2AA4ED0245043D60064104C /* Alamofire */,
 				4FEAF525254D243300E4CBD1 /* BilibiliKit */,
+				D2285CB1256D647400A633CF /* MaterialKit */,
 			);
 			productName = BCDSharing;
 			productReference = 4F338F5420DD00410014226C /* BCDSharing.appex */;
@@ -639,6 +644,7 @@
 				4FA8DA24254D1E1800F0CEC4 /* LLDialog */,
 				4FA8DA26254D1E1F00F0CEC4 /* Alamofire */,
 				4FEAF523254D242000E4CBD1 /* BilibiliKit */,
+				D2285CAC256D644200A633CF /* MaterialKit */,
 			);
 			productName = BCD;
 			productReference = 4FE8FF3A1EF4FC0600D31840 /* BilibiliCD.app */;
@@ -705,6 +711,7 @@
 				D25A63D1242DEC3200F3B818 /* XCRemoteSwiftPackageReference "LLDialog" */,
 				D2AA4ECD245043BF0064104C /* XCRemoteSwiftPackageReference "Alamofire" */,
 				4FEAF522254D242000E4CBD1 /* XCRemoteSwiftPackageReference "BilibiliKit" */,
+				D2285CAB256D644200A633CF /* XCRemoteSwiftPackageReference "MaterialKit" */,
 			);
 			productRefGroup = 4FE8FF3B1EF4FC0600D31840 /* Products */;
 			projectDirPath = "";
@@ -1232,6 +1239,14 @@
 				minimumVersion = 5.3.1;
 			};
 		};
+		D2285CAB256D644200A633CF /* XCRemoteSwiftPackageReference "MaterialKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ApolloZhu/MaterialKit.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		D25A63D1242DEC3200F3B818 /* XCRemoteSwiftPackageReference "LLDialog" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/LiulietLee/LLDialog.git";
@@ -1280,6 +1295,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4FEAF522254D242000E4CBD1 /* XCRemoteSwiftPackageReference "BilibiliKit" */;
 			productName = BilibiliKit;
+		};
+		D2285CAC256D644200A633CF /* MaterialKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D2285CAB256D644200A633CF /* XCRemoteSwiftPackageReference "MaterialKit" */;
+			productName = MaterialKit;
+		};
+		D2285CB1256D647400A633CF /* MaterialKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D2285CAB256D644200A633CF /* XCRemoteSwiftPackageReference "MaterialKit" */;
+			productName = MaterialKit;
 		};
 		D2AA4ED0245043D60064104C /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;

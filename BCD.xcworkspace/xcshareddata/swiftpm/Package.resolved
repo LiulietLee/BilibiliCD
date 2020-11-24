@@ -38,6 +38,15 @@
         }
       },
       {
+        "package": "MaterialKit",
+        "repositoryURL": "https://github.com/ApolloZhu/MaterialKit.git",
+        "state": {
+          "branch": "master",
+          "revision": "a6e7a5bc20f420f21ebdfc56f0f1039a0d02009e",
+          "version": null
+        }
+      },
+      {
         "package": "ViewAnimator",
         "repositoryURL": "https://github.com/marcosgriselli/ViewAnimator.git",
         "state": {

@@ -7,43 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B647176C8DD1B04BDB9EF777246E3AC /* Pods-BCD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E60CC9FA2C5A92B51EB056B957A22B6 /* Pods-BCD-dummy.m */; };
-		10A740DFDCB7BB72DD28281E352ECEE1 /* MKTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC55E34CD7B23E2681B433A9F6AB8805 /* MKTableViewCell.swift */; };
-		15813AC4BAB9FDD6EFD0020A6D12A026 /* MKCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD603818B28B349E13C0535C602E1C6 /* MKCollectionViewCell.swift */; };
-		168A278B6A71AF9F6A9549EEB7A6542D /* MKExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B33AC6B78FC9491CE270AF43903E6B /* MKExtensions.swift */; };
-		182EABFA03523308DB63CA58962BE118 /* Pods-BCD-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 74148F731EF6EA4B092FD15CFCA67C47 /* Pods-BCD-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		199410E9C174817067E4A95FC242C678 /* MKLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8959C6ADAB2D381D5461716028249D /* MKLabel.swift */; };
-		28764BB623D55710EF6E90F5DC659C1E /* MKLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E37EBFB2AF4479FE8E126004FBCACBB /* MKLayer.swift */; };
-		2A1D856B7F1B7C1685C5272441875335 /* MKRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D55B2F61EF7F19DCFCB29114821DE23 /* MKRefreshControl.swift */; };
-		3AB8A5062032729BFAF780E0758E4F3B /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93DA077C8793D4AB73BF92DF640229D8 /* SWRevealViewController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		6149AE93F082762E6345852F93C9F4EE /* MKSnackbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C13E1FBDE6A7DF8A545E1288D04491 /* MKSnackbar.swift */; };
-		6159B1873EAB1CE5B531B9B641812BF7 /* MKActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314924D2B33D7583D02519E283CBA8B2 /* MKActivityIndicator.swift */; };
-		61FCE212A94CC445B44FCCBEF42351DA /* SWRevealViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1856BEA058FD397F34F9EF8C889844E9 /* SWRevealViewController.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		66781735A8ABFD10A5E182CF072DB9D1 /* MKImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CF1C7C1937FA2FE5F4FD4FB8564509 /* MKImageView.swift */; };
-		92E7DE5B418DD128B2E6A59792109094 /* MaterialKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D172FF641E7D4BE557E2CDD95BDC9 /* MaterialKit-dummy.m */; };
-		98AEC67DFE98E320F7D30C47AB5245EB /* MKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4A4CA96FDE1E5489E43147A67FF08E /* MKButton.swift */; };
-		AAEE77BE5F41DDF38E2EB312021BD665 /* MKEmbedMainControllerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8146B53A76DFEB9C2CD78ACBBA8AD3 /* MKEmbedMainControllerSegue.swift */; };
-		B9C028A84EB9EF8B47338149FC1279E6 /* SWRevealViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A2A659707E20A9BE4D58E47C7A600D /* SWRevealViewController-dummy.m */; };
-		BE7036C3D45290000987994631AEDDC4 /* MKSideDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6605F1B1649ECB178D8CA16197ED27 /* MKSideDrawerViewController.swift */; };
-		BFCAD8CCCF118CAE0EF5625B1BB32B9B /* MKEmbedDrawerControllerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5DFD7429F67AF04B97376613E80E08 /* MKEmbedDrawerControllerSegue.swift */; };
-		C6AFDA5C6D0789A0CD4272AC86F3F236 /* MaterialKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F71AE11AE2EFBDA044AB554774DFC4F /* MaterialKit-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C7C15506B32BD45D3477A4DDCB06A312 /* SWRevealViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A80B19CA6D7F2E65B71757DA8D8DB66 /* SWRevealViewController-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		D5C51EA7249616CC230D4FF8C0271460 /* MKSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D751F7A0BEEE40B3510D9E958A7B69 /* MKSwitch.swift */; };
-		ECB617C94AF8CB355CC7A73554364A3D /* MKNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC851D7854F0A0F9D2409771321C317 /* MKNavigationBar.swift */; };
-		F112E753C1F06F720F40F6763F4EFED8 /* MKColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C5C8DC243ED82F9518A374CCEB0F15 /* MKColor.swift */; };
-		F6602C19ADADA18E21AA87DD2F93F5E2 /* MKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6CED190598CE5F5DB3EC16EF6E80DA /* MKTextField.swift */; };
-		FEF12E26C2F66033E48AF9574068FDD9 /* MKCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE8A7A5AF8A76CC7FCF6AEF718FA712 /* MKCardView.swift */; };
+		3AB8A5062032729BFAF780E0758E4F3B /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B57A05110CED4DC950999DEEC1B87508 /* SWRevealViewController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		61FCE212A94CC445B44FCCBEF42351DA /* SWRevealViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A21F724F9342DA7D3254139A26C66578 /* SWRevealViewController.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9A26B69A29B12DBDC5EC49926283A5DD /* Pods-BCD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B2511BC8AC2504DE020AA817C1B93 /* Pods-BCD-dummy.m */; };
+		B9C028A84EB9EF8B47338149FC1279E6 /* SWRevealViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 272BAF63F7AA8EE15011ED5C8AECAA2E /* SWRevealViewController-dummy.m */; };
+		C7C15506B32BD45D3477A4DDCB06A312 /* SWRevealViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EB2A5501A35FE14FC18A55C2B579BB79 /* SWRevealViewController-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		050935D2D9A3BD80D185CA27BDD81F75 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0C874D04DEBF423FBCE3BC0C1F23CBAE;
-			remoteInfo = MaterialKit;
-		};
-		22C8B407902EC11DD6832490843FE65A /* PBXContainerItemProxy */ = {
+		E019D71DD3D66E2458F8A39C69DD27A1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -53,49 +25,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00CFDFD7DB35CD5857B2B809DB236DC6 /* MaterialKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MaterialKit-prefix.pch"; sourceTree = "<group>"; };
-		0A8146B53A76DFEB9C2CD78ACBBA8AD3 /* MKEmbedMainControllerSegue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKEmbedMainControllerSegue.swift; path = Source/MKEmbedMainControllerSegue.swift; sourceTree = "<group>"; };
-		13818A61802F39C0C143D06EE79C82AD /* SWRevealViewController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SWRevealViewController.debug.xcconfig; sourceTree = "<group>"; };
-		1856BEA058FD397F34F9EF8C889844E9 /* SWRevealViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
-		1A80B19CA6D7F2E65B71757DA8D8DB66 /* SWRevealViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWRevealViewController-umbrella.h"; sourceTree = "<group>"; };
-		1B4A4CA96FDE1E5489E43147A67FF08E /* MKButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKButton.swift; path = Source/MKButton.swift; sourceTree = "<group>"; };
-		1DE8A7A5AF8A76CC7FCF6AEF718FA712 /* MKCardView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKCardView.swift; path = Source/MKCardView.swift; sourceTree = "<group>"; };
-		2A6CED190598CE5F5DB3EC16EF6E80DA /* MKTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKTextField.swift; path = Source/MKTextField.swift; sourceTree = "<group>"; };
-		2D55B2F61EF7F19DCFCB29114821DE23 /* MKRefreshControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKRefreshControl.swift; path = Source/MKRefreshControl.swift; sourceTree = "<group>"; };
-		2D6605F1B1649ECB178D8CA16197ED27 /* MKSideDrawerViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKSideDrawerViewController.swift; path = Source/MKSideDrawerViewController.swift; sourceTree = "<group>"; };
-		2F405A3DFD1E766E8DD97048CCD4161D /* SWRevealViewController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SWRevealViewController.modulemap; sourceTree = "<group>"; };
-		31290809CB0C03F803ACD7312DCC8319 /* Pods-BCD-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BCD-acknowledgements.markdown"; sourceTree = "<group>"; };
-		314924D2B33D7583D02519E283CBA8B2 /* MKActivityIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKActivityIndicator.swift; path = Source/MKActivityIndicator.swift; sourceTree = "<group>"; };
-		4F71AE11AE2EFBDA044AB554774DFC4F /* MaterialKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MaterialKit-umbrella.h"; sourceTree = "<group>"; };
-		51A2A659707E20A9BE4D58E47C7A600D /* SWRevealViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SWRevealViewController-dummy.m"; sourceTree = "<group>"; };
-		58A000300253F2EB304F95ACC26AD519 /* libPods-BCD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BCD.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		604031570BA809FD5BE96AE1C4959B6E /* Pods-BCD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BCD.debug.xcconfig"; sourceTree = "<group>"; };
-		61C5C8DC243ED82F9518A374CCEB0F15 /* MKColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKColor.swift; path = Source/MKColor.swift; sourceTree = "<group>"; };
-		64CF1C7C1937FA2FE5F4FD4FB8564509 /* MKImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKImageView.swift; path = Source/MKImageView.swift; sourceTree = "<group>"; };
-		6E962B654502F64625B57AF39728666A /* Pods-BCD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BCD.release.xcconfig"; sourceTree = "<group>"; };
-		6FC744EA8F98374924E5BA06973E30CB /* libMaterialKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMaterialKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		74148F731EF6EA4B092FD15CFCA67C47 /* Pods-BCD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BCD-umbrella.h"; sourceTree = "<group>"; };
-		766885658E454DA126CFF43A8C86001A /* Pods-BCD-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BCD-acknowledgements.plist"; sourceTree = "<group>"; };
-		7C5DFD7429F67AF04B97376613E80E08 /* MKEmbedDrawerControllerSegue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKEmbedDrawerControllerSegue.swift; path = Source/MKEmbedDrawerControllerSegue.swift; sourceTree = "<group>"; };
-		7E37EBFB2AF4479FE8E126004FBCACBB /* MKLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKLayer.swift; path = Source/MKLayer.swift; sourceTree = "<group>"; };
-		7FD603818B28B349E13C0535C602E1C6 /* MKCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKCollectionViewCell.swift; path = Source/MKCollectionViewCell.swift; sourceTree = "<group>"; };
-		81D751F7A0BEEE40B3510D9E958A7B69 /* MKSwitch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKSwitch.swift; path = Source/MKSwitch.swift; sourceTree = "<group>"; };
-		8B8959C6ADAB2D381D5461716028249D /* MKLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKLabel.swift; path = Source/MKLabel.swift; sourceTree = "<group>"; };
-		8E60CC9FA2C5A92B51EB056B957A22B6 /* Pods-BCD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BCD-dummy.m"; sourceTree = "<group>"; };
-		93DA077C8793D4AB73BF92DF640229D8 /* SWRevealViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
-		96327180412C05E76CB569B74E364972 /* MaterialKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MaterialKit.modulemap; sourceTree = "<group>"; };
-		9C3D172FF641E7D4BE557E2CDD95BDC9 /* MaterialKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MaterialKit-dummy.m"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C3B33AC6B78FC9491CE270AF43903E6B /* MKExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKExtensions.swift; path = Source/MKExtensions.swift; sourceTree = "<group>"; };
-		CC05529D638A95BE58BEF91A1389A50B /* MaterialKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MaterialKit.debug.xcconfig; sourceTree = "<group>"; };
-		D079F6AC4B7CE8CEBAE9D0FF39532B55 /* SWRevealViewController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SWRevealViewController.release.xcconfig; sourceTree = "<group>"; };
-		D334B9CDEC21015DD48358DB94CB1CFA /* libSWRevealViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSWRevealViewController.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		D34BC0D0599E1DEDA9C2327548A90404 /* Pods-BCD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BCD.modulemap"; sourceTree = "<group>"; };
-		D8C13E1FBDE6A7DF8A545E1288D04491 /* MKSnackbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKSnackbar.swift; path = Source/MKSnackbar.swift; sourceTree = "<group>"; };
-		DC96A1E7B77CDBB78661DDB916A0C16F /* MaterialKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MaterialKit.release.xcconfig; sourceTree = "<group>"; };
-		ECC851D7854F0A0F9D2409771321C317 /* MKNavigationBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKNavigationBar.swift; path = Source/MKNavigationBar.swift; sourceTree = "<group>"; };
-		FA0D4AE0CFE6D14F34EB2CDA0390F53B /* SWRevealViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWRevealViewController-prefix.pch"; sourceTree = "<group>"; };
-		FC55E34CD7B23E2681B433A9F6AB8805 /* MKTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKTableViewCell.swift; path = Source/MKTableViewCell.swift; sourceTree = "<group>"; };
+		0B97F2D8D8FDC31EA45A43D4845D049F /* Pods-BCD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BCD.release.xcconfig"; sourceTree = "<group>"; };
+		1715E08851607A7279245A4E6657AF9E /* SWRevealViewController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SWRevealViewController.modulemap; sourceTree = "<group>"; };
+		272BAF63F7AA8EE15011ED5C8AECAA2E /* SWRevealViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SWRevealViewController-dummy.m"; sourceTree = "<group>"; };
+		32E49D0DE55A9D47E57565C94D424708 /* SWRevealViewController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SWRevealViewController.release.xcconfig; sourceTree = "<group>"; };
+		47417154E74B75E0E4761D3D7FE02CF5 /* Pods-BCD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BCD.debug.xcconfig"; sourceTree = "<group>"; };
+		4E75965D57BEAA93069B8B505857E835 /* Pods-BCD-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BCD-acknowledgements.markdown"; sourceTree = "<group>"; };
+		58A000300253F2EB304F95ACC26AD519 /* libPods-BCD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-BCD.a"; path = "libPods-BCD.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		855344A2D9585F9ACA2A4BD23C85CDDF /* SWRevealViewController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SWRevealViewController.debug.xcconfig; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A21F724F9342DA7D3254139A26C66578 /* SWRevealViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
+		B57A05110CED4DC950999DEEC1B87508 /* SWRevealViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
+		BC82408BDC92C2E6BE89D8750174D3B7 /* Pods-BCD-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BCD-acknowledgements.plist"; sourceTree = "<group>"; };
+		BDDD1FF41B5B12A7630FCC59EDA28104 /* SWRevealViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWRevealViewController-prefix.pch"; sourceTree = "<group>"; };
+		D334B9CDEC21015DD48358DB94CB1CFA /* libSWRevealViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libSWRevealViewController.a; path = libSWRevealViewController.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB3B2511BC8AC2504DE020AA817C1B93 /* Pods-BCD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BCD-dummy.m"; sourceTree = "<group>"; };
+		EB2A5501A35FE14FC18A55C2B579BB79 /* SWRevealViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWRevealViewController-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,14 +51,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4C785F5F98671A00F2FD4B44BFE6B31E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6921BC6BF7AB89C19791B5D99F56CA11 /* Frameworks */ = {
+		97E0F9F463CEB965A2F61A252EF89D6D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -123,110 +61,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		173FBBA93EF27D40713B32949D363263 /* SWRevealViewController */ = {
+		206159EF20B7ACABFA8ACEAAEF0DFAE5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1856BEA058FD397F34F9EF8C889844E9 /* SWRevealViewController.h */,
-				93DA077C8793D4AB73BF92DF640229D8 /* SWRevealViewController.m */,
-				3CEEE12F8EBF935AB758D35601EFBB50 /* Support Files */,
-			);
-			path = SWRevealViewController;
-			sourceTree = "<group>";
-		};
-		2F11138F50FC0BDCD41EC4318ABD2C00 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				66B99870168AD65556B7AB150793C8C1 /* Pods-BCD */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		2FE7F371442D70236B85FF930781EED7 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				96327180412C05E76CB569B74E364972 /* MaterialKit.modulemap */,
-				9C3D172FF641E7D4BE557E2CDD95BDC9 /* MaterialKit-dummy.m */,
-				00CFDFD7DB35CD5857B2B809DB236DC6 /* MaterialKit-prefix.pch */,
-				4F71AE11AE2EFBDA044AB554774DFC4F /* MaterialKit-umbrella.h */,
-				CC05529D638A95BE58BEF91A1389A50B /* MaterialKit.debug.xcconfig */,
-				DC96A1E7B77CDBB78661DDB916A0C16F /* MaterialKit.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/MaterialKit";
-			sourceTree = "<group>";
-		};
-		3CEEE12F8EBF935AB758D35601EFBB50 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				2F405A3DFD1E766E8DD97048CCD4161D /* SWRevealViewController.modulemap */,
-				51A2A659707E20A9BE4D58E47C7A600D /* SWRevealViewController-dummy.m */,
-				FA0D4AE0CFE6D14F34EB2CDA0390F53B /* SWRevealViewController-prefix.pch */,
-				1A80B19CA6D7F2E65B71757DA8D8DB66 /* SWRevealViewController-umbrella.h */,
-				13818A61802F39C0C143D06EE79C82AD /* SWRevealViewController.debug.xcconfig */,
-				D079F6AC4B7CE8CEBAE9D0FF39532B55 /* SWRevealViewController.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/SWRevealViewController";
-			sourceTree = "<group>";
-		};
-		66B99870168AD65556B7AB150793C8C1 /* Pods-BCD */ = {
-			isa = PBXGroup;
-			children = (
-				D34BC0D0599E1DEDA9C2327548A90404 /* Pods-BCD.modulemap */,
-				31290809CB0C03F803ACD7312DCC8319 /* Pods-BCD-acknowledgements.markdown */,
-				766885658E454DA126CFF43A8C86001A /* Pods-BCD-acknowledgements.plist */,
-				8E60CC9FA2C5A92B51EB056B957A22B6 /* Pods-BCD-dummy.m */,
-				74148F731EF6EA4B092FD15CFCA67C47 /* Pods-BCD-umbrella.h */,
-				604031570BA809FD5BE96AE1C4959B6E /* Pods-BCD.debug.xcconfig */,
-				6E962B654502F64625B57AF39728666A /* Pods-BCD.release.xcconfig */,
-			);
-			name = "Pods-BCD";
-			path = "Target Support Files/Pods-BCD";
-			sourceTree = "<group>";
-		};
-		741147D7D77C5CB0601DD145378F0D65 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				86485615DF4755DB7DCAA70F6399C731 /* MaterialKit */,
-				173FBBA93EF27D40713B32949D363263 /* SWRevealViewController */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		7E86D4F736D7D437FAAB676B4C53E905 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				6FC744EA8F98374924E5BA06973E30CB /* libMaterialKit.a */,
 				58A000300253F2EB304F95ACC26AD519 /* libPods-BCD.a */,
 				D334B9CDEC21015DD48358DB94CB1CFA /* libSWRevealViewController.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		86485615DF4755DB7DCAA70F6399C731 /* MaterialKit */ = {
+		346471175B85464A646FC1FBF202C002 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				314924D2B33D7583D02519E283CBA8B2 /* MKActivityIndicator.swift */,
-				1B4A4CA96FDE1E5489E43147A67FF08E /* MKButton.swift */,
-				1DE8A7A5AF8A76CC7FCF6AEF718FA712 /* MKCardView.swift */,
-				7FD603818B28B349E13C0535C602E1C6 /* MKCollectionViewCell.swift */,
-				61C5C8DC243ED82F9518A374CCEB0F15 /* MKColor.swift */,
-				7C5DFD7429F67AF04B97376613E80E08 /* MKEmbedDrawerControllerSegue.swift */,
-				0A8146B53A76DFEB9C2CD78ACBBA8AD3 /* MKEmbedMainControllerSegue.swift */,
-				C3B33AC6B78FC9491CE270AF43903E6B /* MKExtensions.swift */,
-				64CF1C7C1937FA2FE5F4FD4FB8564509 /* MKImageView.swift */,
-				8B8959C6ADAB2D381D5461716028249D /* MKLabel.swift */,
-				7E37EBFB2AF4479FE8E126004FBCACBB /* MKLayer.swift */,
-				ECC851D7854F0A0F9D2409771321C317 /* MKNavigationBar.swift */,
-				2D55B2F61EF7F19DCFCB29114821DE23 /* MKRefreshControl.swift */,
-				2D6605F1B1649ECB178D8CA16197ED27 /* MKSideDrawerViewController.swift */,
-				D8C13E1FBDE6A7DF8A545E1288D04491 /* MKSnackbar.swift */,
-				81D751F7A0BEEE40B3510D9E958A7B69 /* MKSwitch.swift */,
-				FC55E34CD7B23E2681B433A9F6AB8805 /* MKTableViewCell.swift */,
-				2A6CED190598CE5F5DB3EC16EF6E80DA /* MKTextField.swift */,
-				2FE7F371442D70236B85FF930781EED7 /* Support Files */,
+				771D8AE4B10280200546193597190CC0 /* SWRevealViewController */,
 			);
-			path = MaterialKit;
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		56F23C5D1943025A56C48CE91F80EBEA /* Pods-BCD */ = {
+			isa = PBXGroup;
+			children = (
+				4E75965D57BEAA93069B8B505857E835 /* Pods-BCD-acknowledgements.markdown */,
+				BC82408BDC92C2E6BE89D8750174D3B7 /* Pods-BCD-acknowledgements.plist */,
+				DB3B2511BC8AC2504DE020AA817C1B93 /* Pods-BCD-dummy.m */,
+				47417154E74B75E0E4761D3D7FE02CF5 /* Pods-BCD.debug.xcconfig */,
+				0B97F2D8D8FDC31EA45A43D4845D049F /* Pods-BCD.release.xcconfig */,
+			);
+			name = "Pods-BCD";
+			path = "Target Support Files/Pods-BCD";
+			sourceTree = "<group>";
+		};
+		771D8AE4B10280200546193597190CC0 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A21F724F9342DA7D3254139A26C66578 /* SWRevealViewController.h */,
+				B57A05110CED4DC950999DEEC1B87508 /* SWRevealViewController.m */,
+				F8C5A47913FF8715B1A97F6D662695F6 /* Support Files */,
+			);
+			name = SWRevealViewController;
+			path = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		7EE23C3A0CC4BB105B732472A098B4C8 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				56F23C5D1943025A56C48CE91F80EBEA /* Pods-BCD */,
+			);
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -234,9 +115,9 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
-				741147D7D77C5CB0601DD145378F0D65 /* Pods */,
-				7E86D4F736D7D437FAAB676B4C53E905 /* Products */,
-				2F11138F50FC0BDCD41EC4318ABD2C00 /* Targets Support Files */,
+				346471175B85464A646FC1FBF202C002 /* Pods */,
+				206159EF20B7ACABFA8ACEAAEF0DFAE5 /* Products */,
+				7EE23C3A0CC4BB105B732472A098B4C8 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -247,14 +128,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F8C5A47913FF8715B1A97F6D662695F6 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1715E08851607A7279245A4E6657AF9E /* SWRevealViewController.modulemap */,
+				272BAF63F7AA8EE15011ED5C8AECAA2E /* SWRevealViewController-dummy.m */,
+				BDDD1FF41B5B12A7630FCC59EDA28104 /* SWRevealViewController-prefix.pch */,
+				EB2A5501A35FE14FC18A55C2B579BB79 /* SWRevealViewController-umbrella.h */,
+				855344A2D9585F9ACA2A4BD23C85CDDF /* SWRevealViewController.debug.xcconfig */,
+				32E49D0DE55A9D47E57565C94D424708 /* SWRevealViewController.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SWRevealViewController";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		16330640F98A4BDC42CCC1CBB2B9355D /* Headers */ = {
+		11844227641197CA67A896BE4C072E7B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				182EABFA03523308DB63CA58962BE118 /* Pods-BCD-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,50 +161,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EE926C96F8DCDCF24A2D56D517F4C035 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C6AFDA5C6D0789A0CD4272AC86F3F236 /* MaterialKit-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		0C874D04DEBF423FBCE3BC0C1F23CBAE /* MaterialKit */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F0173D10E25F2B7730B1677F498607EA /* Build configuration list for PBXNativeTarget "MaterialKit" */;
-			buildPhases = (
-				EE926C96F8DCDCF24A2D56D517F4C035 /* Headers */,
-				BB3FC804B632265403D9EF9D12BB90C5 /* Sources */,
-				6921BC6BF7AB89C19791B5D99F56CA11 /* Frameworks */,
-				4AF31F857A9F9DA7FCA2D2EB38C93D47 /* Copy generated compatibility header */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = MaterialKit;
-			packageProductDependencies = (
-			);
-			productName = MaterialKit;
-			productReference = 6FC744EA8F98374924E5BA06973E30CB /* libMaterialKit.a */;
-			productType = "com.apple.product-type.library.static";
-		};
 		747A2671FF31839B59B72337B945E406 /* Pods-BCD */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1DD9F72B5D7AEB125F51343589F11291 /* Build configuration list for PBXNativeTarget "Pods-BCD" */;
+			buildConfigurationList = BFCEA542656DA1DDF9213D166A9A805E /* Build configuration list for PBXNativeTarget "Pods-BCD" */;
 			buildPhases = (
-				16330640F98A4BDC42CCC1CBB2B9355D /* Headers */,
-				DFE30C7747FC2901BD0DC744D4BD510A /* Sources */,
-				4C785F5F98671A00F2FD4B44BFE6B31E /* Frameworks */,
+				11844227641197CA67A896BE4C072E7B /* Headers */,
+				2C54751EA8CA6D7FC7206A6829A342C4 /* Sources */,
+				97E0F9F463CEB965A2F61A252EF89D6D /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A2E620E1DB71C2ED63B88EEBD5230B36 /* PBXTargetDependency */,
-				697A6BF61A6BB72015963324635C9D23 /* PBXTargetDependency */,
+				D411178A1F3C1C8F174767131EE8E1A5 /* PBXTargetDependency */,
 			);
 			name = "Pods-BCD";
 			productName = "Pods-BCD";
@@ -341,7 +206,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1210;
+				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 11.0";
@@ -352,47 +217,25 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			packageReferences = (
-			);
-			productRefGroup = 7E86D4F736D7D437FAAB676B4C53E905 /* Products */;
+			productRefGroup = 206159EF20B7ACABFA8ACEAAEF0DFAE5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0C874D04DEBF423FBCE3BC0C1F23CBAE /* MaterialKit */,
 				747A2671FF31839B59B72337B945E406 /* Pods-BCD */,
 				A54C3C20DA76528607950189DA743CA4 /* SWRevealViewController */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		4AF31F857A9F9DA7FCA2D2EB38C93D47 /* Copy generated compatibility header */ = {
-			isa = PBXShellScriptBuildPhase;
+/* Begin PBXSourcesBuildPhase section */
+		2C54751EA8CA6D7FC7206A6829A342C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h",
-				"${PODS_ROOT}/Headers/Public/MaterialKit/MaterialKit.modulemap",
-				"${PODS_ROOT}/Headers/Public/MaterialKit/MaterialKit-umbrella.h",
-			);
-			name = "Copy generated compatibility header";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap",
-				"${BUILT_PRODUCTS_DIR}/MaterialKit-umbrella.h",
-				"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h",
+				9A26B69A29B12DBDC5EC49926283A5DD /* Pods-BCD-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/MaterialKit/MaterialKit.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/MaterialKit/MaterialKit-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
 		};
-/* End PBXShellScriptBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
 		2DFFF9E828FD8586CBF21E6B704A0FDD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -402,62 +245,115 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BB3FC804B632265403D9EF9D12BB90C5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				92E7DE5B418DD128B2E6A59792109094 /* MaterialKit-dummy.m in Sources */,
-				6159B1873EAB1CE5B531B9B641812BF7 /* MKActivityIndicator.swift in Sources */,
-				98AEC67DFE98E320F7D30C47AB5245EB /* MKButton.swift in Sources */,
-				FEF12E26C2F66033E48AF9574068FDD9 /* MKCardView.swift in Sources */,
-				15813AC4BAB9FDD6EFD0020A6D12A026 /* MKCollectionViewCell.swift in Sources */,
-				F112E753C1F06F720F40F6763F4EFED8 /* MKColor.swift in Sources */,
-				BFCAD8CCCF118CAE0EF5625B1BB32B9B /* MKEmbedDrawerControllerSegue.swift in Sources */,
-				AAEE77BE5F41DDF38E2EB312021BD665 /* MKEmbedMainControllerSegue.swift in Sources */,
-				168A278B6A71AF9F6A9549EEB7A6542D /* MKExtensions.swift in Sources */,
-				66781735A8ABFD10A5E182CF072DB9D1 /* MKImageView.swift in Sources */,
-				199410E9C174817067E4A95FC242C678 /* MKLabel.swift in Sources */,
-				28764BB623D55710EF6E90F5DC659C1E /* MKLayer.swift in Sources */,
-				ECB617C94AF8CB355CC7A73554364A3D /* MKNavigationBar.swift in Sources */,
-				2A1D856B7F1B7C1685C5272441875335 /* MKRefreshControl.swift in Sources */,
-				BE7036C3D45290000987994631AEDDC4 /* MKSideDrawerViewController.swift in Sources */,
-				6149AE93F082762E6345852F93C9F4EE /* MKSnackbar.swift in Sources */,
-				D5C51EA7249616CC230D4FF8C0271460 /* MKSwitch.swift in Sources */,
-				10A740DFDCB7BB72DD28281E352ECEE1 /* MKTableViewCell.swift in Sources */,
-				F6602C19ADADA18E21AA87DD2F93F5E2 /* MKTextField.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DFE30C7747FC2901BD0DC744D4BD510A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0B647176C8DD1B04BDB9EF777246E3AC /* Pods-BCD-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		697A6BF61A6BB72015963324635C9D23 /* PBXTargetDependency */ = {
+		D411178A1F3C1C8F174767131EE8E1A5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SWRevealViewController;
 			target = A54C3C20DA76528607950189DA743CA4 /* SWRevealViewController */;
-			targetProxy = 22C8B407902EC11DD6832490843FE65A /* PBXContainerItemProxy */;
-		};
-		A2E620E1DB71C2ED63B88EEBD5230B36 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MaterialKit;
-			target = 0C874D04DEBF423FBCE3BC0C1F23CBAE /* MaterialKit */;
-			targetProxy = 050935D2D9A3BD80D185CA27BDD81F75 /* PBXContainerItemProxy */;
+			targetProxy = E019D71DD3D66E2458F8A39C69DD27A1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		257497152829C177993B5EC99C1D227A /* Release */ = {
+		2A19DDCD705B0C84C352E5E5233E5986 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47417154E74B75E0E4761D3D7FE02CF5 /* Pods-BCD.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2C6A73A3A92623D0DCC66DFE61D230B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32E49D0DE55A9D47E57565C94D424708 /* SWRevealViewController.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/SWRevealViewController/SWRevealViewController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MODULEMAP_FILE = Headers/Public/SWRevealViewController/SWRevealViewController.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SWRevealViewController;
+				PRODUCT_NAME = SWRevealViewController;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6EF037D20E16B4AEFC8A05808339A1F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 855344A2D9585F9ACA2A4BD23C85CDDF /* SWRevealViewController.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/SWRevealViewController/SWRevealViewController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MODULEMAP_FILE = Headers/Public/SWRevealViewController/SWRevealViewController.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SWRevealViewController;
+				PRODUCT_NAME = SWRevealViewController;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		833C10EFBCC78FF608A69DF63CFE1008 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B97F2D8D8FDC31EA45A43D4845D049F /* Pods-BCD.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		903A0004D3E6651EFD5D2E16214D101B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -503,7 +399,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -515,159 +411,11 @@
 			};
 			name = Release;
 		};
-		38231BF04E881DDF7726261E0D94A954 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D079F6AC4B7CE8CEBAE9D0FF39532B55 /* SWRevealViewController.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/SWRevealViewController/SWRevealViewController-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				MODULEMAP_FILE = Headers/Public/SWRevealViewController/SWRevealViewController.modulemap;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = SWRevealViewController;
-				PRODUCT_NAME = SWRevealViewController;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		90B775AA23297AD77C794921A8B8ABF0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6E962B654502F64625B57AF39728666A /* Pods-BCD.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-BCD/Pods-BCD.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		957BDCEBE7F5596C9ACB116A86A57425 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CC05529D638A95BE58BEF91A1389A50B /* MaterialKit.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/MaterialKit/MaterialKit-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				MODULEMAP_FILE = Headers/Public/MaterialKit/MaterialKit.modulemap;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = MaterialKit;
-				PRODUCT_NAME = MaterialKit;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		A8F5A8C6C2B8113EF15652690336EFFC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 13818A61802F39C0C143D06EE79C82AD /* SWRevealViewController.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/SWRevealViewController/SWRevealViewController-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				MODULEMAP_FILE = Headers/Public/SWRevealViewController/SWRevealViewController.modulemap;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = SWRevealViewController;
-				PRODUCT_NAME = SWRevealViewController;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		B516E08D2C34A915F8F0E374DDFFAA2F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 604031570BA809FD5BE96AE1C4959B6E /* Pods-BCD.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-BCD/Pods-BCD.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		DB478BAFCB7E8A1E8D245A66BB747A08 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DC96A1E7B77CDBB78661DDB916A0C16F /* MaterialKit.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/MaterialKit/MaterialKit-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				MODULEMAP_FILE = Headers/Public/MaterialKit/MaterialKit.modulemap;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = MaterialKit;
-				PRODUCT_NAME = MaterialKit;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		DD8F832993327D1DD8046C3CBCBD97CD /* Debug */ = {
+		B4EFE046ACF8F37157F6E322C7FCFC28 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -716,7 +464,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -735,17 +483,8 @@
 		0C5EA70130B469B0975E7A61A920976C /* Build configuration list for PBXNativeTarget "SWRevealViewController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A8F5A8C6C2B8113EF15652690336EFFC /* Debug */,
-				38231BF04E881DDF7726261E0D94A954 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1DD9F72B5D7AEB125F51343589F11291 /* Build configuration list for PBXNativeTarget "Pods-BCD" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B516E08D2C34A915F8F0E374DDFFAA2F /* Debug */,
-				90B775AA23297AD77C794921A8B8ABF0 /* Release */,
+				6EF037D20E16B4AEFC8A05808339A1F0 /* Debug */,
+				2C6A73A3A92623D0DCC66DFE61D230B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -753,17 +492,17 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DD8F832993327D1DD8046C3CBCBD97CD /* Debug */,
-				257497152829C177993B5EC99C1D227A /* Release */,
+				B4EFE046ACF8F37157F6E322C7FCFC28 /* Debug */,
+				903A0004D3E6651EFD5D2E16214D101B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F0173D10E25F2B7730B1677F498607EA /* Build configuration list for PBXNativeTarget "MaterialKit" */ = {
+		BFCEA542656DA1DDF9213D166A9A805E /* Build configuration list for PBXNativeTarget "Pods-BCD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				957BDCEBE7F5596C9ACB116A86A57425 /* Debug */,
-				DB478BAFCB7E8A1E8D245A66BB747A08 /* Release */,
+				2A19DDCD705B0C84C352E5E5233E5986 /* Debug */,
+				833C10EFBCC78FF608A69DF63CFE1008 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

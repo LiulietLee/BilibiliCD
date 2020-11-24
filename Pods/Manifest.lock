@@ -1,29 +1,21 @@
 PODS:
-  - MaterialKit (0.6.5)
   - SWRevealViewController (2.4.0)
 
 DEPENDENCIES:
-  - MaterialKit (from `https://github.com/ApolloZhu/MaterialKit.git`)
   - SWRevealViewController (from `https://github.com/John-Lluch/SWRevealViewController.git`)
 
 EXTERNAL SOURCES:
-  MaterialKit:
-    :git: https://github.com/ApolloZhu/MaterialKit.git
   SWRevealViewController:
     :git: https://github.com/John-Lluch/SWRevealViewController.git
 
 CHECKOUT OPTIONS:
-  MaterialKit:
-    :commit: ae1777c83e33012bb35476bc982f76ce3e4488c8
-    :git: https://github.com/ApolloZhu/MaterialKit.git
   SWRevealViewController:
     :commit: bb4a110989d67a5fc5f5c533cacc92f6cb02f5e2
     :git: https://github.com/John-Lluch/SWRevealViewController.git
 
 SPEC CHECKSUMS:
-  MaterialKit: c99dd8af397c84fe216538303d0be9749f8cd9b0
   SWRevealViewController: b653f339865208c97be99a24876545f5be0cc4bb
 
-PODFILE CHECKSUM: 9a9d6ea64c1fd0736136979513871c4f952c3094
+PODFILE CHECKSUM: 37a5eeaedbeb58b9058fc41297c7e989fc1a2323
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.10.0

@@ -5,5 +5,4 @@ inhibit_all_warnings!
 target 'BCD' do
     use_modular_headers!
     pod 'SWRevealViewController', :git => 'https://github.com/John-Lluch/SWRevealViewController.git'
-    pod 'MaterialKit', :git => 'https://github.com/ApolloZhu/MaterialKit.git'
 end
