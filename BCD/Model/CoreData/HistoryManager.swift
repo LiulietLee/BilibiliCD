@@ -45,12 +45,6 @@ class HistoryManager: CoreDataModel {
         
         return items
     }
-
-    @available(*, deprecated)
-    private func avOfLatestHistoryEqualTo(_ av: String) -> Bool {
-        let history = fetchHistory()
-        return history.count == 0 ? false : (av == history[0].av)
-    }
     
     @discardableResult
     func addNewHistory(av: String, image: Image, title: String, up: String, url: String, date: Date = Date()) -> History {
@@ -108,8 +102,7 @@ class HistoryManager: CoreDataModel {
             guard let buffer = image?.pixelBuffer() else {
                 fatalError("Converting to pixel buffer failed!")
             }
-            
-            guard let result = try? Nudity().prediction(data: buffer) else {
+            guard let result = try? Nudity(configuration: .init()).prediction(data: buffer) else {
                 fatalError("Prediction failed!")
             }
             
